@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-brief-hub/schemas/tab.schema.json",
+  "title": "Tab",
+  "description": "Universal schema for any of the 7 tabs. Sub-sections vary by tab but the item shape is unified.",
+  "type": "object",
+  "required": ["tab_id", "tab_name", "subtitle", "executive_summary", "top_picks", "sections", "index", "suggested_refinements"],
+  "additionalProperties": false,
+  "properties": {
+    "tab_id": { "type": "string", "enum": ["youtube", "x", "reddit", "builders", "launches", "social", "research"] },
+    "tab_name": { "type": "string" },
+    "subtitle": { "type": "string", "description": "e.g. 'Video Intelligence'" },
+    "icon": { "type": "string", "description": "Lucide icon name" },
+
+    "executive_summary": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["headline", "body"],
+        "properties": {
+          "headline": { "type": "string" },
+          "body": { "type": "string" },
+          "primary_url": { "type": "string", "format": "uri" }
+        }
+      }
+    },
+
+    "top_picks": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 8,
+      "items": { "$ref": "#/$defs/item" }
+    },
+
+    "sections": {
+      "type": "array",
+      "description": "Tab-specific sub-sections (e.g. Tool Updates, Tutorials, Hot Takes). Order is preserved.",
+      "items": {
+        "type": "object",
+        "required": ["section_id", "title", "items"],
+        "properties": {
+          "section_id": { "type": "string" },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "layout": { "type": "string", "enum": ["cards", "table", "leaderboard", "list", "debate"], "default": "cards" },
+          "items": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/item" }
+          }
+        }
+      }
+    },
+
+    "index": {
+      "type": "array",
+      "description": "Flat sortable index of every item considered for the tab",
+      "items": {
+        "type": "object",
+        "required": ["title", "primary_url", "score"],
+        "properties": {
+          "title": { "type": "string" },
+          "source": { "type": "string" },
+          "author": { "type": "string" },
+          "date": { "type": "string" },
+          "primary_url": { "type": "string", "format": "uri" },
+          "score": { "type": "number", "minimum": 0, "maximum": 10 }
+        }
+      }
+    },
+
+    "emerging_signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pattern", "evidence"],
+        "properties": {
+          "pattern": { "type": "string" },
+          "evidence": { "type": "string" },
+          "what_to_watch": { "type": "string" }
+        }
+      }
+    },
+
+    "flagged_unverified": {
+      "type": "array",
+      "description": "Items that surfaced in research but failed verification. Listed for transparency, not promoted.",
+      "items": {
+        "type": "object",
+        "required": ["claim", "reason"],
+        "properties": {
+          "claim": { "type": "string" },
+          "reason": { "type": "string" },
+          "attempted_url": { "type": "string" }
+        }
+      }
+    },
+
+    "suggested_refinements": {
+      "type": "object",
+      "description": "How to improve this tab next week",
+      "properties": {
+        "sources_to_add": { "type": "array", "items": { "type": "string" } },
+        "sources_to_drop": { "type": "array", "items": { "type": "string" } },
+        "topics_to_add": { "type": "array", "items": { "type": "string" } },
+        "topics_to_drop": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      }
+    }
+  },
+
+  "$defs": {
+    "item": {
+      "type": "object",
+      "required": ["id", "title", "primary_url", "summary", "verified", "verified_at"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "description": "Stable ID (slug). Used for cross-tab dedup." },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "source": { "type": "string", "description": "Channel/handle/subreddit/repo/publication" },
+        "author": { "type": "string" },
+        "date": { "type": "string", "description": "Publish or post date, ISO or human-readable" },
+        "primary_url": { "type": "string", "format": "uri" },
+        "secondary_urls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "url"],
+            "properties": { "label": { "type": "string" }, "url": { "type": "string", "format": "uri" } }
+          }
+        },
+        "verified": { "type": "boolean" },
+        "verified_at": { "type": "string", "format": "date-time" },
+
+        "summary": { "type": "string", "description": "1-3 sentence summary, source-grounded" },
+
+        "score": {
+          "type": "object",
+          "required": ["total", "signal", "novelty", "actionability", "source_quality"],
+          "properties": {
+            "total": { "type": "number", "minimum": 0, "maximum": 10 },
+            "signal": { "type": "integer", "minimum": 0, "maximum": 3 },
+            "novelty": { "type": "integer", "minimum": 0, "maximum": 3 },
+            "actionability": { "type": "integer", "minimum": 0, "maximum": 2 },
+            "source_quality": { "type": "integer", "minimum": 0, "maximum": 2 }
+          }
+        },
+
+        "engagement": {
+          "type": "object",
+          "description": "Platform-specific engagement metrics where available",
+          "properties": {
+            "views": { "type": "integer" },
+            "likes": { "type": "integer" },
+            "upvotes": { "type": "integer" },
+            "comments": { "type": "integer" },
+            "stars": { "type": "integer" },
+            "shares": { "type": "integer" }
+          }
+        },
+
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "category": { "type": "string", "description": "Tab-specific category (e.g. 'Enterprise AI', 'Dev Tools')" },
+        "evaluation": {
+          "type": "string",
+          "enum": ["EVALUATE NOW", "ADD TO WATCHLIST", "MONITOR", "SKIP"],
+          "description": "Recommendation badge (Launches tab)"
+        },
+        "priority": { "type": "string", "enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW"] },
+
+        "key_takeaways": { "type": "array", "items": { "type": "string" }, "maxItems": 5 },
+        "suggested_actions": { "type": "array", "items": { "type": "string" }, "maxItems": 5 },
+        "enterprise_translation": {
+          "type": "string",
+          "description": "How a leader at a public-enterprise company translates this consumer/hobbyist signal into a workplace concept (the OpenClaw-on-personal-machines pattern). Required on Social tab items, optional elsewhere."
+        },
+        "why_it_matters": { "type": "string" },
+        "competitive_context": { "type": "string" },
+        "pricing": { "type": "string" },
+        "results": { "type": "string", "description": "Concrete measurable outcomes claimed (with verification)" },
+
+        "thumbnail_url": { "type": "string", "format": "uri" },
+        "platform": { "type": "string", "description": "youtube, x, reddit, github, hackernews, n8n, producthunt, linkedin, instagram, tiktok, facebook, arxiv, etc." }
+      }
+    }
+  }
+}

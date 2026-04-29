@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-brief-hub/schemas/meta.schema.json",
+  "title": "Weekly Meta",
+  "type": "object",
+  "required": ["week_start", "week_end", "week_label", "generated_at", "sources", "executive_summary"],
+  "additionalProperties": false,
+  "properties": {
+    "week_start": { "type": "string", "format": "date", "description": "Monday of the week, YYYY-MM-DD" },
+    "week_end": { "type": "string", "format": "date", "description": "Sunday of the week, YYYY-MM-DD" },
+    "week_label": { "type": "string", "description": "Display label, e.g. 'April 27 – May 3, 2026'" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "is_latest": { "type": "boolean" },
+    "prepared_for": { "type": "string", "description": "Generic persona label, e.g. 'AI & Innovation Leader, Public Enterprise'" },
+    "sources": {
+      "type": "object",
+      "required": ["youtube", "x", "reddit", "builders", "launches", "social", "research"],
+      "properties": {
+        "youtube": { "type": "integer", "minimum": 0 },
+        "x": { "type": "integer", "minimum": 0 },
+        "reddit": { "type": "integer", "minimum": 0 },
+        "builders": { "type": "integer", "minimum": 0 },
+        "launches": { "type": "integer", "minimum": 0 },
+        "social": { "type": "integer", "minimum": 0 },
+        "research": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "executive_summary": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["headline", "body"],
+        "properties": {
+          "headline": { "type": "string", "maxLength": 120 },
+          "body": { "type": "string", "maxLength": 600 },
+          "primary_url": { "type": "string", "format": "uri" }
+        }
+      }
+    }
+  }
+}
