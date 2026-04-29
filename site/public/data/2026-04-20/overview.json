@@ -1,0 +1,398 @@
+{
+  "week_start": "2026-04-20",
+  "generated_at": "2026-04-29T12:00:00Z",
+  "headline": "GPT-5.5 and DeepSeek V4 landed within 24 hours while enterprise agent platforms from OpenAI and Google went GA simultaneously — the frontier and the infrastructure layer moved together this week.",
+  "themes": [
+    {
+      "theme_id": "frontier-model-race-gpt55-deepseek",
+      "headline": "GPT-5.5 and DeepSeek V4 ship within 24 hours, creating a two-tier cost architecture for enterprise AI",
+      "summary": "OpenAI released GPT-5.5 on April 23 — scoring 88.7% on SWE-bench Verified and 82.7% on Terminal Bench — while DeepSeek released V4-Pro the next day under MIT license at $1.74/M input tokens, roughly one-tenth the cost of frontier closed models. Three weeks of production testing (Every's Senior Engineer Benchmark) scored GPT-5.5 at 62.5/100, about 30 points above Opus 4.7, and identified a two-model pattern: Opus 4.7 writes the spec, GPT-5.5 executes. Kimi K2.6 (1.1T params, MIT) and DeepSeek V4 Flash expand the open-weight tier further, with r/LocalLLaMA endorsing Kimi as the first genuine Opus 4.7 substitute.",
+      "implication": "Tier workloads now: use GPT-5.5 for autonomous coding tasks with defined success criteria, route bulk long-context processing to DeepSeek V4 Flash at one-tenth the cost, and add explicit hallucination-check steps — GPT-5.5's confident-when-wrong rate (86%) is measurably higher than Opus 4.7's (36%).",
+      "citations": [
+        {
+          "tab_id": "youtube",
+          "item_id": "ai-explained-gpt55-deepseek-v4-2026-04-24",
+          "label": "AI Explained: GPT-5.5 vs DeepSeek V4 — benchmarks, pricing, and cost-performance verdict",
+          "primary_url": "https://www.youtube.com/watch?v=jz0rNhfAKo8"
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "every-gpt55-3week-test-2026-04-23",
+          "label": "Every: 3-week GPT-5.5 production test — 62.5/100 Senior Engineer Benchmark, 30-point jump over Opus 4.7",
+          "primary_url": "https://www.youtube.com/watch?v=GROt1Nd4asY"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "x-openai-gpt55-launch",
+          "label": "OpenAI: GPT-5.5 launch announcement on X",
+          "primary_url": "https://x.com/OpenAI/status/2047376561205325845"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "x-deepseek-v4-release",
+          "label": "DeepSeek V4 drops with 1M token context, MIT license, and open-source SOTA in agentic coding",
+          "primary_url": "https://api-docs.deepseek.com/news/news260424"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "gpt-5-5-openai-apr23",
+          "label": "GPT-5.5 launch: first full retrain since GPT-4.5, 88.7% SWE-bench Verified",
+          "primary_url": "https://www.cnbc.com/2026/04/23/openai-announces-latest-artificial-intelligence-model.html"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "localllama-kimi-k26-opus-replacement-2026-04-21",
+          "label": "r/LocalLLaMA: Kimi K2.6 endorsed as legit Opus 4.7 replacement (1,231 upvotes)",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1sr8p49/kimi_k26_is_a_legit_opus_47_replacement/"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-04-20"
+      },
+      "tags": ["frontier-models", "model-economics", "deepseek", "gpt-5.5", "open-weights", "agentic-coding", "benchmarks"]
+    },
+    {
+      "theme_id": "enterprise-agent-platform-consolidation",
+      "headline": "OpenAI and Google launched competing enterprise agent platforms on April 22 — persistent cross-tool agents are now a three-vendor market",
+      "summary": "On April 22, OpenAI launched Workspace Agents — Codex-powered persistent agents across Slack, Salesforce, Google Drive, Notion, and 90+ connectors, replacing custom GPTs for Business and Enterprise — while Google unveiled the Gemini Enterprise Agent Platform at Cloud Next '26. Microsoft's Copilot Edit Mode went GA in Word, Excel, and PowerPoint the same day. Three competing GA platforms landed in a single 24-hour window, all targeting the same buyer. The Builders tab identified the shared architectural pattern: background execution, permission scoping, and team-level sharing.",
+      "implication": "Enterprise AI teams should treat this week as the start of a meaningful vendor-evaluation cycle: all three platforms — OpenAI Workspace Agents, Gemini Enterprise Agent Platform, and Microsoft Copilot Edit Mode — are now GA, enabling structured pilots against real internal workflows rather than preview access agreements.",
+      "citations": [
+        {
+          "tab_id": "launches",
+          "item_id": "openai-workspace-agents-apr22",
+          "label": "OpenAI Workspace Agents GA: Codex-powered cross-tool persistent agents replace custom GPTs",
+          "primary_url": "https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "google-cloud-next-gemini-enterprise-agent-platform-apr22",
+          "label": "Google Cloud Next: Gemini Enterprise Agent Platform — 'mission control for the agentic enterprise'",
+          "primary_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/"
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "copilot-community-edit-mode-2026-04-20",
+          "label": "Microsoft Copilot Edit Mode GA in Word, Excel, PowerPoint — multi-step agentic tasks inside M365",
+          "primary_url": "https://www.youtube.com/watch?v=wA2UYR5l_q0"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "openai-workspace-agents-apr22",
+          "label": "Builders: Workspace Agents architecture — role-based controls, Compliance API, per-agent suspension",
+          "primary_url": "https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "tp-openai-workspace-agents-li-apr22",
+          "label": "LinkedIn: OpenAI Workspace Agents reset the enterprise AI vendor map",
+          "primary_url": "https://www.linkedin.com/pulse/openai-ships-workspace-agents-gives-enterprise-ai-vendor-jon-goodey-zjqse"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-04-20"
+      },
+      "tags": ["enterprise-agents", "platform-consolidation", "openai", "google-gemini", "microsoft-copilot", "m365", "workspace-agents"]
+    },
+    {
+      "theme_id": "agentic-system-reliability-harness-bugs",
+      "headline": "Anthropic's Claude Code postmortem and an MCP RCE flaw expose agent runtime reliability as a first-order engineering concern",
+      "summary": "Anthropic's April 23 postmortem traced six weeks of Claude Code regression to three harness bugs — not model regression: a reasoning-effort downgrade, a mid-session caching bug, and a verbosity system prompt that cut eval scores 3%. OX Security separately confirmed a by-design RCE path in MCP's STDIO interface across 150M+ downloads that Anthropic declined to patch at the protocol level. ICLR 2026's outstanding paper adds the formal baseline: all 15 tested frontier LLMs degrade 39% in multi-turn conversations versus single-turn. Agent reliability risk lives in the runtime scaffold, not in model weights.",
+      "implication": "Any enterprise team running agents in production should audit the gap between model API behavior and harness behavior — specifically: whether reasoning-effort settings are version-controlled, whether session caching is tested under load, and whether MCP integrations use STDIO or HTTP transport with appropriate process isolation.",
+      "citations": [
+        {
+          "tab_id": "x",
+          "item_id": "x-anthropic-claude-code-postmortem",
+          "label": "Anthropic postmortem: six weeks of Claude Code quality regression traced to three harness bugs",
+          "primary_url": "https://www.anthropic.com/engineering/april-23-postmortem"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "x-mcp-rce-vulnerability",
+          "label": "MCP STDIO interface enables arbitrary code execution across 150M+ downloads — Anthropic declines protocol patch",
+          "primary_url": "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "anthropic-claude-code-postmortem-apr23",
+          "label": "Builders: Claude Code postmortem — three independent changes, version numbers, eval deltas",
+          "primary_url": "https://www.anthropic.com/engineering/april-23-postmortem"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "tp-iclr-multiturn",
+          "label": "ICLR 2026 Outstanding Paper: LLMs perform 39% worse in multi-turn conversations across 15 frontier models",
+          "primary_url": "https://www.microsoft.com/en-us/research/publication/llms-get-lost-in-multi-turn-conversation/"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "tp-anthropic-postmortem-apr23",
+          "label": "Social: Anthropic postmortem generated 3,000+ Reddit upvotes — developer trust in vendor transparency rising",
+          "primary_url": "https://www.anthropic.com/engineering/april-23-postmortem"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-04-20"
+      },
+      "tags": ["agent-reliability", "harness-engineering", "mcp-security", "claude-code", "multi-turn", "postmortem", "agentic-systems"]
+    },
+    {
+      "theme_id": "agent-environment-security",
+      "headline": "Two independent research streams confirm the agent attack surface is the environment, not the model — and current defenses are inadequate",
+      "summary": "A Google DeepMind paper documented adversarial content embedded invisibly in web pages — hidden HTML, CSS metadata, and image pixels — that redirects agent behavior with 86% exploit success rates in testing, with memory poisoning persisting across sessions. An arXiv paper submitted April 25 evaluated 13 multi-agent system architectural configurations and found attack success rates vary up to 3.8× by design choice at comparable task accuracy — meaning architecture, not model choice, is the primary security lever. Both papers frame the same threat model: agents exposed to external environments inherit the attack surface of everything they read, browse, or ingest.",
+      "implication": "Enterprise teams deploying agents that touch external web content, third-party APIs, or uncontrolled data sources should treat environment isolation as a non-optional architectural requirement — agents that browse externally should run in sandboxed environments with no access to internal memory, credentials, or execution actions.",
+      "citations": [
+        {
+          "tab_id": "youtube",
+          "item_id": "deepmind-agent-traps-aim-2026-04-20",
+          "label": "DeepMind agent-trap paper: 86% exploit success via invisible web-page injections, memory poisoning persists",
+          "primary_url": "https://www.youtube.com/watch?v=IXIlqa06B5c"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "tp-mas-security-architecture",
+          "label": "arXiv: MAS architecture determines attack surface — 3.8× variance in attack success rates across 13 configurations",
+          "primary_url": "https://arxiv.org/abs/2604.23459"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "x-mcp-rce-vulnerability",
+          "label": "MCP STDIO RCE: supply-chain attack path across 150M+ downloads confirmed by OX Security",
+          "primary_url": "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-04-20"
+      },
+      "tags": ["agent-security", "prompt-injection", "multi-agent", "deepmind", "mcp", "environment-attacks", "enterprise-risk"]
+    },
+    {
+      "theme_id": "open-weight-models-cost-pressure",
+      "headline": "Open-weight frontier models reached enterprise viability this week — and the Uber budget story shows why cost governance is now urgent",
+      "summary": "DeepSeek V4-Pro (MIT, $1.74/M input), Kimi K2.6 (58.6% SWE-Bench Pro), Meta Llama 4 Scout (Apache 2.0, single-H100), and Tencent Hy3 (74.4% SWE-bench Verified) shipped open weights in the same week. Against that backdrop, Uber's CTO disclosed the company burned through its full-year AI budget by April via Claude Code, and an NBER study of ~6,000 executives found 90% reported zero productivity impact from AI over three years. The open-weight tier is now cost-competitive for bulk workloads; the remaining gap is governance and data-residency review, not capability.",
+      "implication": "An enterprise AI team should run a formal workload tiering exercise: identify which tasks require frontier API quality and which can run on open-weight models (locally or via low-cost API) — the cost difference is an order of magnitude, and the Uber case demonstrates that unmanaged token consumption becomes a budget crisis within a single fiscal year.",
+      "citations": [
+        {
+          "tab_id": "launches",
+          "item_id": "deepseek-v4-apr24",
+          "label": "DeepSeek V4 Preview: MIT license, 1.6T params, 1M context, $1.74/M input — frontier-adjacent at one-tenth cost",
+          "primary_url": "https://api-docs.deepseek.com/news/news260424"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "meta-llama4-llamacon-apr22",
+          "label": "Meta Llama 4 Scout and Maverick: Apache 2.0, 10M context, single-H100 deployable",
+          "primary_url": "https://smartchunks.com/meta-llama-4-scout-maverick-llamacon-2026/"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "singularity-uber-claude-code-budget-2026-04-22",
+          "label": "r/singularity: Uber burns full-year AI budget by April — Claude Code token consumption the primary driver",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1ssp3bw/uber_blows_through_its_it_budget_for_ai_for_2026/"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "artificialinteligence-ceos-ai-no-productivity-2026-04-20",
+          "label": "NBER: 90% of 6,000 executives report zero AI productivity impact over three years — Solow paradox resurfaces",
+          "primary_url": "https://www.reddit.com/r/ArtificialInteligence/comments/1sqsmid/thousands_of_ceos_admit_ai_had_no_impact_on/"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "kimi-k2-6-release-apr20",
+          "label": "Kimi K2.6: 1T-param open-weight, 300-subagent parallel swarm, 58.6% SWE-Bench Pro",
+          "primary_url": "https://www.kimi.com/blog/kimi-k2-6"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-04-20"
+      },
+      "tags": ["open-weights", "model-economics", "cost-governance", "deepseek", "llama-4", "enterprise-AI-spend", "ROI"]
+    },
+    {
+      "theme_id": "ai-capital-infrastructure-signals",
+      "headline": "Amazon and Google committed over $65B to AI infrastructure this week while GitHub repriced Copilot around agentic token consumption",
+      "summary": "Amazon committed up to $25B in new Anthropic investment on April 20 (on top of $8B prior), requiring Anthropic to spend the majority on AWS. GitHub announced Copilot will shift to usage-based AI Credits billing on June 1 — agentic compute is the stated driver, as background agents consume token volumes that flat-seat pricing cannot sustain. Hyperscaler capital is concentrating around model providers, and enterprise AI tool billing is repricing around agentic token economics rather than chat-session counts.",
+      "implication": "Enterprise AI teams should model Copilot token consumption against the June 1 billing change before deployment scales — and use the GitHub pricing shift as a precedent signal: every other AI vendor with agentic features will face the same repricing pressure within 12 months.",
+      "citations": [
+        {
+          "tab_id": "launches",
+          "item_id": "amazon-anthropic-25b-apr20",
+          "label": "Amazon–Anthropic: up to $25B investment, majority spend committed to AWS",
+          "primary_url": "https://www.nytimes.com/2026/04/20/technology/amazon-anthropic-investment.html"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "github-copilot-usage-billing-apr27",
+          "label": "GitHub Copilot shifts to usage-based AI Credits billing June 1 — agentic compute is the driver",
+          "primary_url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "li-amazon-anthropic-apr21",
+          "label": "LinkedIn: Amazon deepens Anthropic investment to $13B total — AWS cloud strategy pivot",
+          "primary_url": "https://www.linkedin.com/news/story/amazon-deepens-anthropic-ties-8725106/"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-04-20"
+      },
+      "tags": ["capital-signals", "hyperscaler", "amazon", "anthropic", "github-copilot", "agent-pricing", "enterprise-cost"]
+    },
+    {
+      "theme_id": "ai-regulation-enforcement-approaching",
+      "headline": "EU AI Act high-risk enforcement lands August 2 — under 100 days out and harmonized standards are eight months late",
+      "summary": "The EU AI Act's Annex III high-risk obligations — covering employment, credit scoring, law enforcement, and biometrics — enter enforcement on August 2, 2026. A November 2025 assessment found fewer than 30% of organizations in scope had completed required conformity steps, and harmonized technical standards are not expected before early 2027. The FTC's April 8 guidance mandating AI model portability for large-cap platforms adds a parallel US compliance surface. NIST's AI RMF Profile for Critical Infrastructure (April 7 concept note) creates a governance framework that regulated-sector teams can use as a risk-management baseline before sector-specific mandates arrive.",
+      "implication": "An enterprise AI team in any organization operating in the EU should confirm whether any deployed AI system touches Annex III categories and, if so, initiate a conformity assessment process now — the August 2 deadline is binding and harmonized standards will not arrive in time to simplify compliance.",
+      "citations": [
+        {
+          "tab_id": "research",
+          "item_id": "tp-eu-ai-act-high-risk-aug2026",
+          "label": "EU AI Act August 2, 2026: high-risk enforcement deadline, <30% organizations compliant",
+          "primary_url": "https://artificialintelligenceact.eu/implementation-timeline/"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "reg-nist-critical-infra",
+          "label": "NIST: AI RMF Profile for Trustworthy AI in Critical Infrastructure — governance baseline for regulated sectors",
+          "primary_url": "https://www.nist.gov/programs-projects/concept-note-ai-rmf-profile-trustworthy-ai-critical-infrastructure"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "reg-ftc-ai-interoperability",
+          "label": "FTC April 8 guidance: AI model portability mandated for large-cap platforms — enterprise contract implications",
+          "primary_url": "https://markets.financialcontent.com/stocks/article/marketminute-2026-4-8-breaking-the-walled-garden-ftc-mandates-ai-interoperability-for-tech-giants"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "x-lecun-amodei-jobs-debate",
+          "label": "LeCun vs. Amodei labor-market debate: 2.3M views — governance and displacement framing reaching mainstream",
+          "primary_url": "https://x.com/ylecun/status/2045610129119117574"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-04-20"
+      },
+      "tags": ["eu-ai-act", "regulation", "compliance", "ftc", "nist", "high-risk", "enforcement", "governance"]
+    }
+  ],
+  "ninety_second_brief": [
+    {
+      "tab_id": "launches",
+      "item_id": "deepseek-v4-apr24",
+      "title": "DeepSeek V4 Preview (V4-Pro and V4-Flash)",
+      "one_line": "MIT-licensed, frontier-adjacent performance at $1.74/M input tokens — the first open-weight model that makes a cost-vs-quality tradeoff genuinely defensible for enterprise bulk workloads.",
+      "primary_url": "https://api-docs.deepseek.com/news/news260424",
+      "score": 10.0,
+      "source_label": "DeepSeek API Docs"
+    },
+    {
+      "tab_id": "youtube",
+      "item_id": "ai-explained-gpt55-deepseek-v4-2026-04-24",
+      "title": "GPT 5.5 Arrives, DeepSeek V4 Drops, and the Compute War Intensifies",
+      "one_line": "GPT-5.5 leads on agentic coding (82.7% Terminal Bench) but hallucinates confidently 86% of the time when wrong — pair with Opus 4.7 for evaluation, not as a solo replacement.",
+      "primary_url": "https://www.youtube.com/watch?v=jz0rNhfAKo8",
+      "score": 9.0,
+      "source_label": "AI Explained (YouTube)"
+    },
+    {
+      "tab_id": "social",
+      "item_id": "tp-mollick-gpt55-substack-apr23",
+      "title": "Ethan Mollick: 'Sign of the future — GPT-5.5'",
+      "one_line": "Mollick documents GPT-5.5 autonomously reconstructing academic papers from scratch — the implication for knowledge work automation is concrete, not theoretical.",
+      "primary_url": "https://www.oneusefulthing.org/p/sign-of-the-future-gpt-55",
+      "score": 9.0,
+      "source_label": "One Useful Thing (Substack)"
+    },
+    {
+      "tab_id": "social",
+      "item_id": "tp-anthropic-postmortem-apr23",
+      "title": "Anthropic publishes Claude Code postmortem: three bugs explained, usage limits reset",
+      "one_line": "Six weeks of quality degradation traced to three harness bugs — the postmortem is a template for what enterprise-grade AI vendor transparency should look like.",
+      "primary_url": "https://www.anthropic.com/engineering/april-23-postmortem",
+      "score": 9.0,
+      "source_label": "Anthropic Engineering"
+    },
+    {
+      "tab_id": "social",
+      "item_id": "tp-openai-workspace-agents-li-apr22",
+      "title": "OpenAI Workspace Agents: background-executing, permission-scoped team agents replace Custom GPTs",
+      "one_line": "Custom GPTs are deprecated for org accounts; Workspace Agents with Slack, Salesforce, and Drive integrations are the replacement — GA status means the procurement conversation starts now.",
+      "primary_url": "https://www.linkedin.com/pulse/openai-ships-workspace-agents-gives-enterprise-ai-vendor-jon-goodey-zjqse",
+      "score": 9.0,
+      "source_label": "LinkedIn / Jon Goodey"
+    },
+    {
+      "tab_id": "social",
+      "item_id": "tp-meta-employee-tracking-cnbc-apr22",
+      "title": "Meta's Model Capability Initiative: tracking employee keystrokes and mouse clicks to train AI agents",
+      "one_line": "Meta is mining employee computer-use data across 100+ sites to train agentic models — task-mining at scale is now a live model-development strategy with governance questions every legal and HR team will need to address.",
+      "primary_url": "https://www.cnbc.com/2026/04/22/meta-tracks-employee-usage-on-google-linkedin-ai-training-project.html",
+      "score": 9.0,
+      "source_label": "CNBC"
+    },
+    {
+      "tab_id": "research",
+      "item_id": "tp-iclr-multiturn",
+      "title": "LLMs Get Lost In Multi-Turn Conversation — ICLR 2026 Outstanding Paper",
+      "one_line": "All 15 tested frontier LLMs degrade 39% on average in multi-turn conversations versus single-turn — conversational agents in production are less reliable than single-call evaluations suggest.",
+      "primary_url": "https://www.microsoft.com/en-us/research/publication/llms-get-lost-in-multi-turn-conversation/",
+      "score": 9.0,
+      "source_label": "Microsoft Research / ICLR 2026"
+    },
+    {
+      "tab_id": "x",
+      "item_id": "x-mcp-rce-vulnerability",
+      "title": "MCP's STDIO interface enables arbitrary code execution across 150M+ downloads",
+      "one_line": "A by-design execution path in MCP's STDIO interface creates an RCE vector across all tools using it — Anthropic declined to patch at the protocol level, so mitigation falls to implementers.",
+      "primary_url": "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html",
+      "score": 8.5,
+      "source_label": "The Hacker News"
+    },
+    {
+      "tab_id": "builders",
+      "item_id": "kimi-k2-6-release-apr20",
+      "title": "Kimi K2.6: 1T-Parameter Open-Weight Agent Model with 300-Subagent Parallel Swarm",
+      "one_line": "Kimi K2.6 topped SWE-Bench Pro at 58.6%, supports 300-subagent parallel execution, and ships under Modified MIT — the first open-weight model with production swarm orchestration built in.",
+      "primary_url": "https://www.kimi.com/blog/kimi-k2-6",
+      "score": 8.5,
+      "source_label": "Moonshot AI / Kimi Blog"
+    },
+    {
+      "tab_id": "research",
+      "item_id": "tp-anthropic-project-deal",
+      "title": "Project Deal: Anthropic's AI Marketplace Experiment — Agent Quality Determines Economic Outcomes",
+      "one_line": "Stronger agents produced better deal outcomes while users with weaker agents didn't notice the gap — model quality is now a structural economic variable in agent-mediated transactions.",
+      "primary_url": "https://www.anthropic.com/features/project-deal",
+      "score": 8.5,
+      "source_label": "Anthropic Research"
+    }
+  ],
+  "deltas_vs_prior_week": {
+    "themes_new_this_week": [
+      "frontier-model-race-gpt55-deepseek",
+      "enterprise-agent-platform-consolidation",
+      "agentic-system-reliability-harness-bugs",
+      "agent-environment-security",
+      "open-weight-models-cost-pressure",
+      "ai-capital-infrastructure-signals",
+      "ai-regulation-enforcement-approaching"
+    ],
+    "themes_dropped_off": [],
+    "themes_intensifying": [],
+    "note": "First week — no prior comparison available. All 7 themes are new. The week was unusually dense: GPT-5.5 and DeepSeek V4 landing within 24 hours, three enterprise agent platforms reaching GA simultaneously, and two security research papers converging on the same threat model created more cross-source clustering than a typical week would produce."
+  },
+  "theme_tracker": []
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-brief-hub/schemas/overview.schema.json",
+  "title": "Weekly Overview",
+  "type": "object",
+  "required": ["week_start", "themes", "ninety_second_brief"],
+  "additionalProperties": false,
+  "properties": {
+    "week_start": { "type": "string", "format": "date" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "headline": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Single sentence framing the entire week. Lead with the answer."
+    },
+    "themes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 7,
+      "description": "Cross-source themes that emerged this week. Each theme is grounded in evidence from 2+ source tabs.",
+      "items": {
+        "type": "object",
+        "required": ["theme_id", "headline", "summary", "implication", "citations", "recurrence"],
+        "additionalProperties": false,
+        "properties": {
+          "theme_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$",
+            "description": "Stable identifier — used to track recurrence across weeks. Same concept => same id, week after week."
+          },
+          "headline": { "type": "string", "maxLength": 140 },
+          "summary": {
+            "type": "string",
+            "maxLength": 700,
+            "description": "2-3 sentences. Lead with the answer. State what's happening across sources."
+          },
+          "implication": {
+            "type": "string",
+            "maxLength": 400,
+            "description": "One sentence on what an enterprise AI team should do or watch as a result."
+          },
+          "citations": {
+            "type": "array",
+            "minItems": 2,
+            "description": "Links to underlying items in the source tabs. Minimum 2 sources to qualify as a cross-source theme.",
+            "items": {
+              "type": "object",
+              "required": ["tab_id", "item_id", "label"],
+              "additionalProperties": false,
+              "properties": {
+                "tab_id": {
+                  "type": "string",
+                  "enum": ["youtube", "x", "reddit", "builders", "launches", "social", "research"]
+                },
+                "item_id": { "type": "string" },
+                "label": { "type": "string", "maxLength": 140 },
+                "primary_url": { "type": "string", "format": "uri" }
+              }
+            }
+          },
+          "recurrence": {
+            "type": "object",
+            "required": ["status", "weeks_count"],
+            "additionalProperties": false,
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": ["new", "returning", "intensifying", "fading"],
+                "description": "new = first appearance | returning = appeared in prior week(s) at similar intensity | intensifying = more sources covering vs prior week | fading = fewer sources vs prior week"
+              },
+              "weeks_count": { "type": "integer", "minimum": 1 },
+              "first_seen_week": { "type": "string", "format": "date" },
+              "note": { "type": "string", "maxLength": 280 }
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string", "maxLength": 40 }
+          }
+        }
+      }
+    },
+    "ninety_second_brief": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 10,
+      "description": "The 5-10 highest-signal individual items across all 7 source tabs, ranked by composite score. The 'if you only have 90 seconds' read.",
+      "items": {
+        "type": "object",
+        "required": ["tab_id", "item_id", "title", "one_line", "primary_url", "score"],
+        "additionalProperties": false,
+        "properties": {
+          "tab_id": {
+            "type": "string",
+            "enum": ["youtube", "x", "reddit", "builders", "launches", "social", "research"]
+          },
+          "item_id": { "type": "string" },
+          "title": { "type": "string", "maxLength": 200 },
+          "one_line": { "type": "string", "maxLength": 240 },
+          "primary_url": { "type": "string", "format": "uri" },
+          "score": { "type": "number", "minimum": 0, "maximum": 10 },
+          "source_label": { "type": "string", "maxLength": 80 }
+        }
+      }
+    },
+    "deltas_vs_prior_week": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "themes_new_this_week": { "type": "array", "items": { "type": "string" } },
+        "themes_dropped_off": { "type": "array", "items": { "type": "string" } },
+        "themes_intensifying": { "type": "array", "items": { "type": "string" } },
+        "note": { "type": "string", "maxLength": 400 }
+      }
+    },
+    "theme_tracker": {
+      "type": "array",
+      "description": "Themes that have appeared 2 or more weeks running. Computed from all prior overview.json files.",
+      "items": {
+        "type": "object",
+        "required": ["theme_id", "headline", "weeks_active", "intensity_history"],
+        "additionalProperties": false,
+        "properties": {
+          "theme_id": { "type": "string" },
+          "headline": { "type": "string", "maxLength": 140 },
+          "weeks_active": { "type": "integer", "minimum": 2 },
+          "first_seen_week": { "type": "string", "format": "date" },
+          "intensity_history": {
+            "type": "array",
+            "description": "One entry per week the theme has appeared, oldest first. citation_count = how many source tabs cited it that week.",
+            "items": {
+              "type": "object",
+              "required": ["week_start", "citation_count"],
+              "additionalProperties": false,
+              "properties": {
+                "week_start": { "type": "string", "format": "date" },
+                "citation_count": { "type": "integer", "minimum": 1 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

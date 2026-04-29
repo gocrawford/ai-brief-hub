@@ -32,7 +32,7 @@ export default function ItemCard({ item }: { item: Item }) {
   );
 
   return (
-    <article className="card flex flex-col gap-3">
+    <article className="card flex flex-col gap-3 transition-shadow" data-item-id={item.id}>
       {/* Top meta row */}
       <div className="flex flex-wrap items-center gap-2 text-[11px]">
         {item.priority && (

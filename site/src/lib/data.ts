@@ -1,4 +1,4 @@
-import type { Tab, Meta, WeekIndex, TabId } from "../types";
+import type { Tab, Meta, WeekIndex, TabId, Overview } from "../types";
 
 // Data files live in /public/data/ so Vite copies them as-is into dist/data/.
 // Vite prepends import.meta.env.BASE_URL to absolute paths, so this works in
@@ -24,5 +24,11 @@ export async function fetchMeta(weekStart: string): Promise<Meta> {
 export async function fetchTab(weekStart: string, tabId: TabId): Promise<Tab> {
   const res = await fetch(url(`data/${weekStart}/${tabId}.json`));
   if (!res.ok) throw new Error(`Could not load ${tabId} for ${weekStart} (${res.status})`);
+  return res.json();
+}
+
+export async function fetchOverview(weekStart: string): Promise<Overview | null> {
+  const res = await fetch(url(`data/${weekStart}/overview.json`));
+  if (!res.ok) return null; // Overview is optional — weeks without it just don't show that page
   return res.json();
 }

@@ -153,3 +153,64 @@ export interface WeekIndexEntry {
 export interface WeekIndex {
   weeks: WeekIndexEntry[];
 }
+
+// ---- Overview ----
+
+export interface OverviewCitation {
+  tab_id: TabId;
+  item_id: string;
+  label: string;
+  primary_url?: string;
+}
+
+export interface OverviewRecurrence {
+  status: "new" | "returning" | "intensifying" | "fading";
+  weeks_count: number;
+  first_seen_week?: string;
+  note?: string;
+}
+
+export interface OverviewTheme {
+  theme_id: string;
+  headline: string;
+  summary: string;
+  implication: string;
+  citations: OverviewCitation[];
+  recurrence: OverviewRecurrence;
+  tags?: string[];
+}
+
+export interface NinetySecondBriefItem {
+  tab_id: TabId;
+  item_id: string;
+  title: string;
+  one_line: string;
+  primary_url: string;
+  score: number;
+  source_label?: string;
+}
+
+export interface ThemeTrackerEntry {
+  theme_id: string;
+  headline: string;
+  weeks_active: number;
+  first_seen_week?: string;
+  intensity_history: Array<{ week_start: string; citation_count: number }>;
+}
+
+export interface OverviewDeltas {
+  themes_new_this_week?: string[];
+  themes_dropped_off?: string[];
+  themes_intensifying?: string[];
+  note?: string;
+}
+
+export interface Overview {
+  week_start: string;
+  generated_at?: string;
+  headline?: string;
+  themes: OverviewTheme[];
+  ninety_second_brief: NinetySecondBriefItem[];
+  deltas_vs_prior_week?: OverviewDeltas;
+  theme_tracker?: ThemeTrackerEntry[];
+}
