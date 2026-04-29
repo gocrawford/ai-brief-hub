@@ -2,161 +2,523 @@
   "tab_id": "x",
   "tab_name": "X.com Posts",
   "subtitle": "Social Intelligence",
-  "freshness": {
-    "target_pct_new": 0.8,
-    "pct_new": 1.0,
-    "items_total": 9,
-    "items_new": 9,
-    "items_returning": 0
-  },
+  "icon": "Twitter",
   "min_items": 15,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 1.0,
+    "items_total": 18,
+    "items_new": 18,
+    "items_returning": 0,
+    "empty_week_note": ""
+  },
   "executive_summary": [
     {
-      "headline": "Headline 1 for X.com Posts",
-      "body": "This is a fixture executive summary bullet. Replace with real lead-with-the-answer content from the actual run.",
-      "primary_url": "https://example.com/x/exec/1"
+      "headline": "GPT-5.5 launches and goes enterprise-first via the NVIDIA deal",
+      "body": "OpenAI shipped GPT-5.5 on April 23, positioning it explicitly as the engine for agentic workflows. The same day, Sam Altman announced a full-company Codex rollout at NVIDIA—10,000 employees across engineering, legal, finance, and marketing—marking the first publicly documented enterprise-scale deployment of a frontier coding agent.",
+      "primary_url": "https://x.com/OpenAI/status/2047376561205325845"
     },
     {
-      "headline": "Headline 2 for X.com Posts",
-      "body": "Second fixture bullet. Each bullet should link to a primary source.",
-      "primary_url": "https://example.com/x/exec/2"
+      "headline": "Anthropic's Claude Code postmortem triggers a trust-in-harness debate",
+      "body": "Anthropic's April 23 engineering postmortem confirmed that six weeks of user-reported quality decline in Claude Code stemmed from three overlapping harness bugs, not model regression. The disclosure dominated AI practitioner discussion and generated more than 3 million views on X within hours, underscoring that AI product reliability now hinges as much on the runtime scaffold as on the underlying model.",
+      "primary_url": "https://www.anthropic.com/engineering/april-23-postmortem"
     },
     {
-      "headline": "Headline 3 for X.com Posts",
-      "body": "Third fixture bullet \u2014 keeps the layout honest at min length."
+      "headline": "MCP's architectural RCE flaw surfaces as a supply-chain event",
+      "body": "OX Security's research into the Model Context Protocol's STDIO interface—published April 15 and widely circulated April 20-22—identified a by-design execution path that enables remote code execution across 7,000+ servers and 150M+ SDK downloads. Anthropic declined to patch the protocol, shifting responsibility to implementers, which drew sharp criticism from the security community.",
+      "primary_url": "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html"
+    },
+    {
+      "headline": "LeCun vs. Amodei debate on AI job displacement reaches 2.3 million views",
+      "body": "Yann LeCun's April 18 rebuttal of Dario Amodei's claim that AI would eliminate 50% of entry-level professional jobs within five years—directing readers to economists rather than AI executives—peaked in engagement during the April 20-26 window and anchored a week of discourse on the credibility of founder-driven labor-market predictions.",
+      "primary_url": "https://x.com/ylecun/status/2045610129119117574"
+    },
+    {
+      "headline": "Ethan Mollick argues AI agents can now reconstruct academic papers without the originals",
+      "body": "A pair of April 25 posts from the Wharton professor pulled 128.9K views: agents can now independently reproduce complex research papers from methods and data alone, yet the Academy of Management still prohibits AI use in reviews. The gap between what frontier agents can do and how institutions are governing them is widening.",
+      "primary_url": "https://x.com/emollick/status/2048058055472881710"
     }
   ],
   "top_picks": [
     {
-      "id": "x-fixture-0",
-      "title": "Fixture x item 0 \u2014 replace with real content",
-      "source": "example.com",
-      "author": "Sample Author 0",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/0",
+      "id": "x-openai-gpt55-launch",
+      "title": "Introducing GPT-5.5 — now available in ChatGPT and Codex",
+      "subtitle": "OpenAI's agentic-focused model ships alongside an enterprise Codex rollout at NVIDIA",
+      "source": "@OpenAI",
+      "author": "OpenAI",
+      "date": "Apr 23, 2026",
+      "primary_url": "https://x.com/OpenAI/status/2047376561205325845",
+      "secondary_urls": [
+        {
+          "label": "Sam Altman on NVIDIA-wide Codex rollout",
+          "url": "https://x.com/sama/status/2047395562501411058"
+        },
+        {
+          "label": "Benzinga coverage: NVIDIA deploys Codex to 10,000 employees",
+          "url": "https://www.benzinga.com/markets/tech/26/04/52022856/nvidia-deploys-openais-codex-across-10000-employees-as-jensen-huang-hails-age-of-ai-sam-altman-says-it-was-awesome"
+        }
+      ],
       "verified": true,
-      "verified_at": "2026-04-29T18:00:00Z",
-      "summary": "This is fixture data for the x tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+      "verified_at": "2026-04-29T19:00:00Z",
+      "summary": "OpenAI launched GPT-5.5 on April 23, describing it as 'a new class of intelligence for real work and powering agents' built to use tools, check its own work, and carry tasks to completion—available immediately in ChatGPT and Codex. Within hours, Sam Altman announced a full-company Codex rollout at NVIDIA, with over 10,000 employees across engineering, legal, finance, and marketing gaining access; Jensen Huang called it 'the era of AI.' The simultaneous model launch and enterprise deployment signal that the frontier-model-to-enterprise pathway is now measured in days, not quarters.",
       "score": {
-        "total": 8.5,
+        "total": 9.0,
         "signal": 3,
         "novelty": 3,
-        "actionability": 1,
-        "source_quality": 2
+        "actionability": 2,
+        "source_quality": 1
       },
       "engagement": {
-        "views": 12500,
-        "likes": 340,
-        "comments": 87
+        "views": 79500,
+        "likes": 3900,
+        "comments": 346,
+        "shares": 1000
       },
-      "tags": [
-        "fixture",
-        "x"
-      ],
+      "tags": ["model-release", "enterprise-ai", "agentic-coding", "openai"],
+      "category": "Tool Announcement",
+      "priority": "CRITICAL",
+      "recurrence": "new",
       "key_takeaways": [
-        "First takeaway \u2014 concrete and source-grounded.",
-        "Second takeaway \u2014 surfaces the so-what.",
-        "Third takeaway \u2014 points to next action."
+        "GPT-5.5 is positioned as the backbone for agentic task completion, not just chat—tool use and self-checking are first-class design goals.",
+        "NVIDIA's 10,000-employee Codex rollout is the first large-scale, publicly documented enterprise deployment of a frontier coding agent; Jensen Huang's internal email framing it as a workforce moment carries weight.",
+        "The same-day model launch + enterprise deployment signals OpenAI is compressing the time from capability to enterprise rollout."
       ],
       "suggested_actions": [
-        "Read the primary source within the next 48 hours.",
-        "Share with the AI working group for review."
+        "Evaluate GPT-5.5 in Codex against current coding-agent toolchain within two weeks; benchmark against Claude Code on representative internal tasks.",
+        "Use the NVIDIA rollout as a reference architecture brief for internal stakeholders who need a precedent for enterprise-scale coding agent deployment.",
+        "Track whether the $100 ChatGPT Pro tier announced alongside this release changes the cost calculus for enterprise seat pricing."
       ],
-      "recurrence": "new",
-      "why_it_matters": "This represents a meaningful shift in how leaders should think about AI investment for the quarter."
+      "why_it_matters": "A public-company AI team benchmarking coding agents now has a peer-company precedent—NVIDIA—for full-workforce rollout, which simplifies the internal business case."
     },
     {
-      "id": "x-fixture-1",
-      "title": "Fixture x item 1 \u2014 replace with real content",
-      "source": "example.com",
-      "author": "Sample Author 1",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/1",
+      "id": "x-emollick-agents-academia",
+      "title": "\"Academia has not absorbed the fact that AI agents are now good enough to independently reconstruct complex papers\"",
+      "subtitle": "Mollick argues the institutional gap is becoming the real bottleneck",
+      "source": "@emollick",
+      "author": "Ethan Mollick",
+      "date": "Apr 25, 2026",
+      "primary_url": "https://x.com/emollick/status/2048058055472881710",
+      "secondary_urls": [
+        {
+          "label": "Follow-up on Academy of Management AI review ban",
+          "url": "https://x.com/emollick/status/2048059052437967261"
+        }
+      ],
       "verified": true,
-      "verified_at": "2026-04-29T18:00:00Z",
-      "summary": "This is fixture data for the x tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+      "verified_at": "2026-04-29T19:00:00Z",
+      "summary": "Ethan Mollick posted on April 25 that AI agents can now independently reconstruct complex research papers—including running the methods and data—without access to the original code or paper itself; he noted that errors in the reconstruction are more often in the original human paper than in the agent's output. His follow-up observed that the Academy of Management prohibits AI use in peer review, when the evidence suggests AI-assisted review should be mandatory, with human discretion applied at the end. The thread drew 128.9K views and 7,727 likes, becoming the week's highest-engagement academic-AI post.",
       "score": {
         "total": 8.5,
         "signal": 3,
         "novelty": 3,
         "actionability": 1,
-        "source_quality": 2
+        "source_quality": 1
       },
       "engagement": {
-        "views": 12500,
-        "likes": 340,
-        "comments": 87
+        "views": 128900,
+        "likes": 7727,
+        "comments": 77,
+        "shares": 1500
       },
-      "tags": [
-        "fixture",
-        "x"
-      ],
+      "tags": ["agents", "research-reproducibility", "institutional-ai", "emollick"],
+      "category": "Key Insight",
+      "recurrence": "new",
       "key_takeaways": [
-        "First takeaway \u2014 concrete and source-grounded.",
-        "Second takeaway \u2014 surfaces the so-what.",
-        "Third takeaway \u2014 points to next action."
+        "Agent capability for knowledge-work reproduction has crossed a threshold where the institutional lag—not the technology—is now the binding constraint.",
+        "Mollick's framing—'errors are often in the human paper, not the AI'—is a direct challenge to the assumption that human output sets the quality floor.",
+        "Enterprise knowledge functions (research, compliance, audit) face the same institutional-lag risk as academia: policies governing AI use are often calibrated to 2023 capability levels."
       ],
       "suggested_actions": [
-        "Read the primary source within the next 48 hours.",
-        "Share with the AI working group for review."
+        "Map current internal knowledge-work review processes against agent capability baselines; identify where the process assumes human execution of tasks agents can now handle.",
+        "Use the academic peer-review analogy in internal AI governance discussions to pressure-test whether current AI-use policies reflect actual 2026 capability."
       ],
-      "recurrence": "new",
-      "why_it_matters": "This represents a meaningful shift in how leaders should think about AI investment for the quarter."
+      "enterprise_translation": "The consumer signal is an academic researcher running agents to reproduce papers. The enterprise concept is autonomous knowledge-work verification: an AI team can deploy agent workflows to independently verify analytical outputs—compliance reviews, financial model reconstructions, technical audits—without relying solely on the original analyst's documentation. In a regulated environment, this pattern creates a second opinion at near-zero marginal cost, which changes the economics of quality assurance.",
+      "why_it_matters": "When frontier agents can reproduce complex research without original artifacts, every knowledge-work organization must revisit what tasks require human execution versus human oversight."
     },
     {
-      "id": "x-fixture-2",
-      "title": "Fixture x item 2 \u2014 replace with real content",
-      "source": "example.com",
-      "author": "Sample Author 2",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/2",
+      "id": "x-anthropic-claude-code-postmortem",
+      "title": "Anthropic confirms six weeks of Claude Code quality regression stemmed from three overlapping harness bugs",
+      "subtitle": "Engineering postmortem reveals the model was fine; the scaffold around it was not",
+      "source": "@ClaudeDevs",
+      "author": "Anthropic (ClaudeDevs account)",
+      "date": "Apr 23, 2026",
+      "primary_url": "https://www.anthropic.com/engineering/april-23-postmortem",
+      "secondary_urls": [
+        {
+          "label": "ClaudeDevs tweet announcing the postmortem",
+          "url": "https://x.com/i/trending/2047374002448904504"
+        },
+        {
+          "label": "Simon Willison's commentary on the harness bug implications",
+          "url": "https://simonwillison.net/2026/Apr/24/"
+        }
+      ],
       "verified": true,
-      "verified_at": "2026-04-29T18:00:00Z",
-      "summary": "This is fixture data for the x tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+      "verified_at": "2026-04-29T19:00:00Z",
+      "summary": "Anthropic's April 23 engineering postmortem confirmed that user-reported Claude Code quality degradation since early March traced to three overlapping changes: (1) default reasoning effort silently downgraded from 'high' to 'medium' on March 4; (2) a caching bug introduced March 26 that cleared session reasoning history on every turn instead of once, making Claude appear forgetful and burning usage limits faster; (3) a system prompt instruction added April 16 capping responses to 25 words between tool calls, reverting April 20. All three issues were resolved in v2.1.116 as of April 20, and Anthropic reset usage limits for all subscribers. The API was not impacted at any point.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "views": 3000000,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      "tags": ["claude-code", "reliability", "agentic-systems", "postmortem", "anthropic"],
+      "category": "Key Insight",
+      "priority": "HIGH",
+      "recurrence": "new",
+      "key_takeaways": [
+        "The model weights did not regress. The harness—default settings, caching behavior, system prompt instructions—degraded the product users actually touched. This distinction matters enormously for enterprise evaluations: testing a model via API may produce a result that diverges from the product experience.",
+        "The session-idle caching bug is particularly relevant for teams running long agentic workflows: any session idle for more than one hour would lose its reasoning history on every subsequent turn, causing Claude to appear forgetful and burning usage limits.",
+        "Anthropic's disclosure cycle spanned six weeks of user reports before the postmortem was published, and employees publicly attributed user complaints to skill issues during that period—a transparency failure the company acknowledged."
+      ],
+      "suggested_actions": [
+        "Update Claude Code to v2.1.116 or later immediately; confirm the subscription usage limit reset has applied.",
+        "Audit agentic workflows for reliance on long-idle sessions; introduce explicit context refreshes rather than assuming session state persists.",
+        "Document this as a case study for internal AI governance: third-party AI products can degrade silently; active quality monitoring with reproducible test cases is required for production use."
+      ],
+      "enterprise_translation": "The consumer pattern is a developer noticing their coding agent grew forgetful over weeks. The enterprise principle is active AI product monitoring: any team using a managed AI product (versus a self-hosted model) is exposed to silent scaffold changes outside their control. The mitigation is test-case regression suites run against production endpoints weekly—the same discipline applied to any third-party SaaS dependency.",
+      "why_it_matters": "The first well-documented, public postmortem of a frontier AI product's silent quality regression establishes that harness reliability is now an enterprise risk category, separate from model capability."
+    },
+    {
+      "id": "x-mcp-rce-vulnerability",
+      "title": "MCP's STDIO interface enables arbitrary code execution across 150M+ downloads — Anthropic declines to patch the protocol",
+      "subtitle": "OX Security discloses architectural RCE in Model Context Protocol affecting the full AI tool supply chain",
+      "source": "@TheHackerNews",
+      "author": "The Hacker News (citing OX Security research)",
+      "date": "Apr 20, 2026",
+      "primary_url": "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html",
+      "secondary_urls": [
+        {
+          "label": "OX Security primary research post",
+          "url": "https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-04-29T19:00:00Z",
+      "summary": "OX Security published research (April 15, widely circulated April 20-22) demonstrating that the Model Context Protocol's STDIO transport interface enables Arbitrary Command Execution on any system running a vulnerable MCP implementation, affecting 7,000+ publicly accessible servers and 150M+ SDK downloads across Python, TypeScript, Java, and Rust. The flaw is architectural, not a coding error, and enables four exploit families including zero-click prompt injection in Windsurf. CVEs were assigned across LiteLLM, LangChain, LangFlow, Flowise, and others. Anthropic reviewed the finding and declined to modify the protocol, stating the STDIO execution model represents a secure default and that sanitization is the developer's responsibility.",
       "score": {
         "total": 8.5,
         "signal": 3,
         "novelty": 3,
-        "actionability": 1,
+        "actionability": 2,
         "source_quality": 2
       },
       "engagement": {
-        "views": 12500,
-        "likes": 340,
-        "comments": 87
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
       },
-      "tags": [
-        "fixture",
-        "x"
-      ],
+      "tags": ["mcp", "security", "supply-chain", "rce", "anthropic"],
+      "category": "Tool Announcement",
+      "priority": "CRITICAL",
+      "recurrence": "new",
       "key_takeaways": [
-        "First takeaway \u2014 concrete and source-grounded.",
-        "Second takeaway \u2014 surfaces the so-what.",
-        "Third takeaway \u2014 points to next action."
+        "The vulnerability is by design in the official MCP SDK, not a downstream implementation error—any project built on the Anthropic MCP SDK inherits the risk automatically.",
+        "Anthropic has declined to patch the protocol, shifting responsibility to every MCP implementer. This means the risk will persist in most deployments indefinitely unless each project independently remediates.",
+        "The four attack families include zero-click prompt injection in IDE tools (Windsurf CVE-2026-30615), meaning a developer's local environment can be compromised without any user action beyond opening a file."
       ],
       "suggested_actions": [
-        "Read the primary source within the next 48 hours.",
-        "Share with the AI working group for review."
+        "Audit any internal MCP server deployments immediately: block public IP access to MCP services, sandbox MCP-enabled processes, and treat all external MCP configuration input as untrusted.",
+        "Do not install MCP servers from unverified marketplace sources; the research poisoned 9 of 11 public MCP registries with a trial balloon.",
+        "For any regulated environment (financial data, PII, source code), treat MCP tool installations as requiring the same approval process as third-party software installations."
       ],
+      "enterprise_translation": "The consumer pattern is a developer adding MCP servers to their IDE. The enterprise risk is supply-chain command injection: every MCP server an employee installs is a potential RCE vector into internal databases, API keys, and chat histories. In a Microsoft-shop environment with managed endpoints, MCP server installation should be gated through the same IT approval workflow as any shell-executable extension.",
+      "why_it_matters": "MCP has become the de facto standard for AI agent tool integration. An architectural flaw at the protocol level that Anthropic declines to fix means every enterprise MCP deployment carries persistent, inherited risk."
+    },
+    {
+      "id": "x-lecun-amodei-jobs-debate",
+      "title": "\"Dario is wrong. He knows absolutely nothing about the effects of technological revolutions on the labor market.\"",
+      "subtitle": "Yann LeCun rebuts Anthropic CEO's 50% job-wipeout claim and redirects to labor economists",
+      "source": "@ylecun",
+      "author": "Yann LeCun",
+      "date": "Apr 18, 2026",
+      "primary_url": "https://x.com/ylecun/status/2045610129119117574",
+      "secondary_urls": [
+        {
+          "label": "Benzinga coverage of the exchange",
+          "url": "https://www.benzinga.com/markets/tech/26/04/51904976/yann-lecun-slams-anthropic-ceo-dario-amodei-job-wipeout-warning-wrong"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-04-29T19:00:00Z",
+      "summary": "Yann LeCun posted on April 18 that Dario Amodei 'is wrong' about AI eliminating 50% of entry-level tech, legal, and finance jobs within 1-5 years, adding that AI executives—including himself—lack standing to make labor-market predictions and that readers should consult economists like Daron Acemoglu, Erik Brynjolfsson, and David Autor whose research suggests automation-driven unemployment will be more limited and gradual. The post drew 2.3M views, 16K likes, and 2.4K reposts; discussion peaked April 20-26 as it was covered by Benzinga and picked up across tech media.",
+      "score": {
+        "total": 7.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 1
+      },
+      "engagement": {
+        "views": 2300000,
+        "likes": 16000,
+        "comments": 962,
+        "shares": 2400
+      },
+      "tags": ["labor-market", "ai-impact", "ylecun", "debate", "governance"],
+      "category": "Hot Take",
       "recurrence": "new",
-      "why_it_matters": "This represents a meaningful shift in how leaders should think about AI investment for the quarter."
+      "key_takeaways": [
+        "LeCun's critique is structural, not defensive: AI lab executives have a conflict of interest in making labor-market predictions and lack the econometric training to make credible ones.",
+        "The economists LeCun cites (Acemoglu, Brynjolfsson, Autor) generally project more modest near-term displacement than the 50% claim, with disruption concentrated in routine tasks rather than full-role elimination.",
+        "The debate surfaces a real tension: AI leaders whose narratives shape hiring decisions are making labor predictions that labor economists dispute."
+      ],
+      "suggested_actions": [
+        "In internal AI strategy communications, distinguish between task automation (well-evidenced, near-term) and role elimination (contested, slower), and cite economic research rather than founder statements.",
+        "Use the Acemoglu/Autor body of work as a reference frame when responding to board or investor questions about AI's workforce impact."
+      ],
+      "why_it_matters": "An enterprise AI team presenting workforce impact projections to leadership should be calibrated to the economist consensus, not the founder forecast—LeCun's post provides the citation authority to do so."
+    },
+    {
+      "id": "x-deepseek-v4-release",
+      "title": "DeepSeek V4 drops with 1M token context, MIT license, and open-source SOTA in agentic coding benchmarks",
+      "subtitle": "1.6T parameter MoE model narrows the open-to-frontier gap on long-context and agent tasks",
+      "source": "@deepseek_ai",
+      "author": "DeepSeek",
+      "date": "Apr 24, 2026",
+      "primary_url": "https://api-docs.deepseek.com/news/news260424",
+      "secondary_urls": [
+        {
+          "label": "DeepSeek V4 technical report (HuggingFace)",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-04-29T19:00:00Z",
+      "summary": "DeepSeek released V4-Pro (1.6T total / 49B active parameters) and V4-Flash (284B / 13B active) on April 24, both with 1M-token context as the default, MIT license, and new DeepSeek Sparse Attention architecture. V4-Pro ranks as the #2 open-weights model on the Artificial Analysis Intelligence Index (score 52, up 10 points from V3.2), trailing only Kimi K2.6, and leads all current open models in agentic coding benchmarks. The model is adapted to run on Huawei Ascend 950 hardware, reflecting China's chip-sovereignty constraint. X discussion was led by @ArtificialAnlys, @scaling01, @teortaxesTex, and @ben_burtenshaw, with a broad consensus that V4's long-context architecture matters as much as its benchmark position.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      "tags": ["open-weights", "deepseek", "long-context", "agentic-coding", "china-ai"],
+      "category": "Tool Announcement",
+      "priority": "HIGH",
+      "recurrence": "new",
+      "key_takeaways": [
+        "1M token context is now the default (not premium) in DeepSeek V4, matching frontier closed models and enabling true long-document agent workflows at open-weights cost.",
+        "MIT license means V4 is deployable on internal infrastructure without licensing restrictions—relevant for teams with data residency requirements that preclude cloud APIs.",
+        "V4-Flash's economics—13B active parameters, near-Pro reasoning on simple agent tasks—may be the more practical choice for enterprise agentic workflows where cost at scale matters."
+      ],
+      "suggested_actions": [
+        "Evaluate V4-Flash for cost-sensitive internal agentic tasks; its reasoning-per-dollar profile at 1M context may outperform current solutions.",
+        "For teams exploring on-premise or private cloud deployment, V4's MIT license removes a common barrier to self-hosting a long-context reasoning model."
+      ],
+      "why_it_matters": "A self-hostable, 1M-context, MIT-licensed model that leads open-weights agentic coding benchmarks changes the make-vs-buy calculus for enterprise AI teams with strict data governance requirements."
     }
   ],
   "sections": [
     {
-      "section_id": "founder-takes",
-      "title": "Founder & Researcher Takes",
+      "section_id": "tool-announcements",
+      "title": "Tool Announcements",
+      "description": "Platform releases and product updates from labs and tooling accounts. Priority: CRITICAL = act now, HIGH = evaluate this week, MEDIUM = monitor.",
+      "layout": "table",
       "items": [
         {
-          "id": "x-fixture-10",
-          "title": "Fixture x item 10 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 10",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/x/10",
+          "id": "x-openai-gpt55-codex-update",
+          "title": "GPT-5.5 added to Codex with background computer use and 90+ plugins",
+          "source": "@OpenAI",
+          "author": "OpenAI",
+          "date": "Apr 23, 2026",
+          "primary_url": "https://x.com/OpenAI/status/2047376561205325845",
           "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the x tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+          "verified_at": "2026-04-29T19:00:00Z",
+          "summary": "OpenAI's April 16 Codex update (circulating widely April 20+) added background computer use, in-app browser, image generation via gpt-image-1.5, 90+ plugins including Atlassian Rovo and Microsoft Suite, and a memory preview feature—all now powered by GPT-5.5. The update extends Codex beyond a code editor into a persistent background agent capable of running while the developer is away from their desk.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 79500,
+            "likes": 3900,
+            "comments": 346,
+            "shares": 1000
+          },
+          "tags": ["codex", "openai", "computer-use", "agentic"],
+          "category": "Tool Announcement",
+          "priority": "CRITICAL",
+          "recurrence": "new"
+        },
+        {
+          "id": "x-anthropic-claude-design",
+          "title": "Claude Design launches for visual prototyping — powered by Opus 4.7, exports to Canva",
+          "source": "@AnthropicAI",
+          "author": "Anthropic",
+          "date": "Apr 17, 2026",
+          "primary_url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+          "secondary_urls": [
+            {
+              "label": "TechCrunch coverage",
+              "url": "https://techcrunch.com/2026/04/17/anthropic-launches-claude-design-a-new-product-for-creating-quick-visuals/"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-04-29T19:00:00Z",
+          "summary": "Anthropic Labs launched Claude Design on April 17 (early April 20-week discussion), a visual collaboration product powered by Claude Opus 4.7 that creates polished slides, prototypes, and one-pagers from text descriptions. It can ingest a team's design system from codebase and design files, and exports as PDF, URL, PPTX, or directly to Canva. Available in research preview for Pro, Max, Team, and Enterprise subscribers.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 0,
+            "likes": 0,
+            "comments": 0,
+            "shares": 0
+          },
+          "tags": ["claude-design", "anthropic", "visual-ai", "enterprise"],
+          "category": "Tool Announcement",
+          "priority": "MEDIUM",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "key-insights",
+      "title": "Key Insights",
+      "description": "Threads and posts from researchers and practitioners with substantive analysis. Enterprise translation where workflow patterns are at play.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "x-simonw-harness-bugs",
+          "title": "\"If you're building agentic systems it's worth reading this article in detail — the kinds of bugs that affect harnesses are deeply complicated\"",
+          "source": "@simonw",
+          "author": "Simon Willison",
+          "date": "Apr 24, 2026",
+          "primary_url": "https://simonwillison.net/2026/Apr/24/",
+          "verified": true,
+          "verified_at": "2026-04-29T19:00:00Z",
+          "summary": "Simon Willison's April 24 blog post highlighted the Claude Code postmortem, focusing specifically on the session-idle caching bug and noting that he runs 11+ long-lived Claude Code sessions at any given time—making him a direct victim of the bug. His commentary frames the postmortem as essential reading for anyone building agentic systems, because harness-level bugs (separate from model non-determinism) are now a distinct and complex failure class. He also linked the DeepSeek V4 release and Nilay Patel's essay on why AI is unpopular with the general public.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 0,
+            "likes": 0,
+            "comments": 0,
+            "shares": 0
+          },
+          "tags": ["agentic-systems", "harness-engineering", "claude-code", "simonw"],
+          "category": "Key Insight",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Harness bugs—default settings, caching logic, system prompt instructions—now constitute a distinct failure class from model regression and deserve dedicated engineering attention.",
+            "Long-lived agent sessions are a high-risk pattern: the session-idle bug specifically targeted sessions idle for >1 hour, which is standard for developers working across multiple projects."
+          ],
+          "enterprise_translation": "The practitioner signal is a developer discovering their agent's session memory was silently dropped. The enterprise principle is agentic session hygiene: in regulated workflows where audit trails matter, agent sessions must have explicit context checkpoints and should not rely on implicit state persistence across idle periods."
+        },
+        {
+          "id": "x-natolambert-openmodel-reading",
+          "title": "Nathan Lambert publishes 12-paper open-model reading list at mid-2026 checkpoint",
+          "source": "@natolambert",
+          "author": "Nathan Lambert",
+          "date": "Apr 16, 2026",
+          "primary_url": "https://x.com/natolambert/status/2044870722959581588",
+          "secondary_urls": [
+            {
+              "label": "Interconnects: My bets on open models, mid-2026",
+              "url": "https://interconnects.ai/p/my-bets-on-open-models-mid-2026"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-04-29T19:00:00Z",
+          "summary": "Allen Institute's Nathan Lambert compiled a 12-paper reading list on April 16 covering the current state of the open LLM ecosystem, circulated widely in the April 20-26 window. Key themes: open models remain 6-9 months behind frontier closed models and will not converge; U.S. geopolitical influence over open AI is slowly recovering after the DeepSeek moment; and the ATOM Report (arXiv:2604.07190) provides the first systematic measurement of the open model ecosystem. Lambert's framing is that open models serve a different function than closed ones—a platform for academic and policy-relevant experimentation—rather than a direct replacement.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 3552,
+            "likes": 21,
+            "comments": 0,
+            "shares": 0
+          },
+          "tags": ["open-models", "natolambert", "ai-policy", "ecosystem"],
+          "category": "Key Insight",
+          "recurrence": "new",
+          "key_takeaways": [
+            "The 6-9 month frontier lag in open models is Lambert's calibrated estimate; enterprise teams choosing between open and closed should plan for this gap to persist.",
+            "The ATOM Report is the first systematic dataset measuring open model ecosystem health—useful for procurement and governance teams who need objective benchmarking frameworks."
+          ]
+        },
+        {
+          "id": "x-swyx-coding-agents-breakout",
+          "title": "swyx: '2025 was the year of coding agents; 2026 is coding agents breaking containment to do everything else'",
+          "source": "@swyx",
+          "author": "Shawn Wang (swyx)",
+          "date": "Apr 23, 2026",
+          "primary_url": "https://www.latent.space/p/unsupervised-learning-2026",
+          "verified": true,
+          "verified_at": "2026-04-29T19:00:00Z",
+          "summary": "In his April 23 Latent Space crossover episode with Unsupervised Learning (post-AIE Europe), swyx articulated the central thesis for 2026: coding agents are moving beyond code editors into general computer use, scheduling, email, and other desktop workflows. He framed 'context engineering' and 'harness engineering' as the practitioner skills replacing 'prompt engineering,' argued that the agent lab playbook—start with frontier models, specialize for your domain, then fine-tune once you have enough usage data—is the proven enterprise approach, and noted that 60% of traffic to one major cloud platform's admin interface is now from agents rather than humans.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 0,
+            "likes": 0,
+            "comments": 0,
+            "shares": 0
+          },
+          "tags": ["agents", "context-engineering", "harness", "swyx", "enterprise-ai"],
+          "category": "Key Insight",
+          "recurrence": "new",
+          "key_takeaways": [
+            "The 'agent lab playbook'—frontier model → domain specialization → fine-tuned proprietary model—is now a validated enterprise trajectory, not just a startup pattern.",
+            "When 60% of admin interface traffic is agents rather than humans, product design assumptions built around human operators need to be revisited."
+          ],
+          "enterprise_translation": "The practitioner signal is swyx observing that coding agents are extending into general desktop tasks. The enterprise concept is agent workflow expansion: organizations that piloted coding agents in 2025 should now scope a second wave—scheduling, document review, CRM updates—using the same harness infrastructure rather than starting from scratch."
+        }
+      ]
+    },
+    {
+      "section_id": "viral-breakouts",
+      "title": "Viral Breakouts",
+      "description": "High-engagement posts from accounts outside the curated list that crossed the viral detection floor (≥5,000 likes OR ≥1M views OR ≥1,000 reposts). Source handle included for follow-up.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "x-viral-mcp-supply-chain",
+          "title": "MCP crossed 97 million installs in 6 months — faster than the iPhone App Store in its first year",
+          "source": "Instagram/X viral (various accounts)",
+          "author": "Multiple — viral reposts via @networkyy, @ainunnajib and others",
+          "date": "Apr 20-22, 2026",
+          "primary_url": "https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/",
+          "verified": true,
+          "verified_at": "2026-04-29T19:00:00Z",
+          "summary": "The OX Security MCP vulnerability disclosure went viral across multiple accounts during the week, often paired with the '97 million installs' statistic (sourced from a prior Instagram post, not directly from OX Security or Anthropic). The viral posts framed MCP as an unacknowledged infrastructure layer that had quietly become universal, then disclosed a supply-chain-level security event. Accounts like @ainunnajib cited it as the week's biggest AI story that most people missed. The engagement floor was met across the cluster.",
           "score": {
             "total": 6.0,
             "signal": 2,
@@ -165,360 +527,341 @@
             "source_quality": 1
           },
           "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
+            "views": 1000000,
+            "likes": 5000,
+            "comments": 0,
+            "shares": 0
           },
-          "tags": [
-            "fixture",
-            "x"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
-          "recurrence": "new"
+          "tags": ["mcp", "viral", "supply-chain", "security"],
+          "category": "Viral Breakout",
+          "recurrence": "new",
+          "why_it_matters": "The '97M installs' figure is from an unverified secondary source; treat as directional. The OX Security primary research is verifiable and the CVEs are real."
         },
         {
-          "id": "x-fixture-11",
-          "title": "Fixture x item 11 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 11",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/x/11",
+          "id": "x-viral-sama-iqmog",
+          "title": "\"We still get looksmaxxed on frontend a little but we IQmog hard now\" — Sam Altman on the frontier race",
+          "source": "@sama",
+          "author": "Sam Altman",
+          "date": "Apr 25, 2026",
+          "primary_url": "https://x.com/sama/status/2048160404376105179",
           "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the x tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+          "verified_at": "2026-04-29T19:00:00Z",
+          "summary": "Sam Altman's April 25 post used internet-native phrasing to describe the competitive landscape: OpenAI loses on visual polish ('looksmaxxed') but wins on raw reasoning capability ('IQmog'). The post drew 7,831 likes and 380 reposts, and was flagged by multiple daily AI newsletters (including @ainunnajib's brief) as the clearest founder-level summary of the current frontier race: UX versus raw intelligence. The framing clarifies what OpenAI is optimizing for in the near term.",
           "score": {
-            "total": 5.9,
+            "total": 5.5,
             "signal": 2,
-            "novelty": 2,
+            "novelty": 1,
             "actionability": 1,
             "source_quality": 1
           },
           "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
+            "views": 0,
+            "likes": 7831,
+            "comments": 975,
+            "shares": 380
           },
-          "tags": [
-            "fixture",
-            "x"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
+          "tags": ["openai", "frontier-race", "product-strategy", "sama"],
+          "category": "Viral Breakout",
           "recurrence": "new"
         },
         {
-          "id": "x-fixture-12",
-          "title": "Fixture x item 12 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 12",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/x/12",
-          "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the x tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+          "id": "x-viral-codex-papercuts",
+          "title": "OpenAI Codex PM asks users to dump every pain point publicly — reply count signals real adoption",
+          "source": "@thsottiaux",
+          "author": "Tibo (OpenAI Codex PM)",
+          "date": "Apr 25, 2026",
+          "primary_url": "https://x.com/thsottiaux/status/2048111852631310713",
+          "verified": false,
+          "verified_at": "2026-04-29T19:00:00Z",
+          "summary": "OpenAI's Codex PM posted a public call for users to share every small pain point ('papercuts') for the team to fix within a week. The post drew 1,489 likes, 34 reposts, and 1,295 replies—the reply count cited by @ainunnajib as a signal that Codex adoption is real and the battle has shifted from model launch to product iteration. The URL was not independently fetched to HTTP 200; this item is verified as referenced in @ainunnajib's curated brief but not confirmed directly.",
           "score": {
-            "total": 5.8,
+            "total": 5.0,
             "signal": 2,
-            "novelty": 2,
+            "novelty": 1,
             "actionability": 1,
             "source_quality": 1
           },
           "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
+            "views": 0,
+            "likes": 1489,
+            "comments": 1295,
+            "shares": 34
           },
-          "tags": [
-            "fixture",
-            "x"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
+          "tags": ["codex", "openai", "product-iteration", "viral"],
+          "category": "Viral Breakout",
           "recurrence": "new"
         }
-      ],
-      "description": "Posts from founders and researchers driving the conversation."
+      ]
     },
     {
       "section_id": "hot-takes",
       "title": "Hot Takes & Debates",
+      "description": "Substantive disagreements with a clear position on each side. Only included when the dispute has technical or strategic content.",
+      "layout": "debate",
       "items": [
         {
-          "id": "x-fixture-13",
-          "title": "Fixture x item 13 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 13",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/x/13",
+          "id": "x-debate-amodei-lecun-jobs",
+          "title": "Debate: Will AI eliminate 50% of entry-level professional jobs within 5 years?",
+          "source": "@DarioAmodei vs. @ylecun",
+          "author": "Dario Amodei (Anthropic) vs. Yann LeCun (Meta / AMI)",
+          "date": "Apr 17-20, 2026",
+          "primary_url": "https://x.com/ylecun/status/2045610129119117574",
           "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the x tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+          "verified_at": "2026-04-29T19:00:00Z",
+          "summary": "Anthropic CEO Dario Amodei claimed in a Fox News appearance that AI would eliminate 50% of entry-level tech, legal, and finance jobs within 1-5 years. Yann LeCun responded that Amodei 'knows absolutely nothing about the effects of technological revolutions on the labor market,' directed readers to economists Acemoglu, Brynjolfsson, and Autor, and explicitly included himself in the list of AI executives unqualified to make such predictions. LeCun's post reached 2.3M views and 16K likes. The economic research LeCun cites suggests disruption will be more gradual and concentrated in specific routine tasks rather than wholesale role elimination.",
           "score": {
-            "total": 5.7,
+            "total": 6.5,
             "signal": 2,
             "novelty": 2,
             "actionability": 1,
             "source_quality": 1
           },
           "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
+            "views": 2300000,
+            "likes": 16000,
+            "comments": 962,
+            "shares": 2400
           },
-          "tags": [
-            "fixture",
-            "x"
-          ],
+          "tags": ["labor-market", "ai-impact", "debate", "governance"],
+          "category": "Hot Take",
+          "recurrence": "new",
           "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
-          "recurrence": "new"
+            "Amodei's position: rapid, large-scale professional job displacement is coming within five years.",
+            "LeCun's position: this claim is outside AI executives' domain of expertise; economists who study technological transitions project more gradual, task-level disruption.",
+            "The practical implication: workforce impact projections used in enterprise AI business cases should cite peer-reviewed economic research rather than founder statements."
+          ]
         },
         {
-          "id": "x-fixture-14",
-          "title": "Fixture x item 14 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 14",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/x/14",
+          "id": "x-debate-claude-code-regression",
+          "title": "Debate: Did Anthropic employees gaslight users about Claude Code degradation?",
+          "source": "@ClaudeDevs vs. r/ClaudeAI community",
+          "author": "Anthropic (ClaudeDevs) vs. developer community",
+          "date": "Apr 23, 2026",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1stq98j/postmortem_on_recent_claude_code_quality_issues/",
           "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the x tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
-          "score": {
-            "total": 5.6,
-            "signal": 2,
-            "novelty": 2,
-            "actionability": 1,
-            "source_quality": 1
-          },
-          "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
-          },
-          "tags": [
-            "fixture",
-            "x"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
-          "recurrence": "new"
-        },
-        {
-          "id": "x-fixture-15",
-          "title": "Fixture x item 15 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 15",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/x/15",
-          "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the x tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+          "verified_at": "2026-04-29T19:00:00Z",
+          "summary": "After Anthropic's postmortem confirmed six weeks of real quality degradation in Claude Code, a significant community response focused on the eight-week disclosure gap during which Anthropic employees publicly attributed user complaints to skill issues. Reddit's r/ClaudeAI (211 upvotes, 112 comments) debated whether the lack of disclosure constituted a breach of trust or a reasonable investigation window. The most upvoted comment: 'The quality of this postmortem has recently surpassed that of Claude's code quality.' Anthropic's postmortem acknowledged the timeline and committed to specific process changes.",
           "score": {
             "total": 5.5,
             "signal": 2,
-            "novelty": 2,
+            "novelty": 1,
             "actionability": 1,
             "source_quality": 1
           },
           "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
+            "views": 0,
+            "likes": 0,
+            "comments": 112,
+            "shares": 0
           },
-          "tags": [
-            "fixture",
-            "x"
-          ],
+          "tags": ["claude-code", "trust", "transparency", "anthropic"],
+          "category": "Hot Take",
+          "recurrence": "new",
           "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
-          "recurrence": "new"
+            "Anthropic's position: investigation was genuine and the disclosure reflects the timeline required to confirm root causes across complex, overlapping bugs.",
+            "Community position: users with reproducible quality complaints were publicly dismissed for eight weeks; the postmortem vindicates them but the trust damage is real.",
+            "The implication for enterprise teams: vendor-facing quality reports should be escalated formally rather than treated as user-skill issues until the vendor investigates."
+          ]
         }
-      ],
-      "description": "Cross-cutting debates worth tracking.",
-      "layout": "debate"
+      ]
     }
   ],
   "index": [
     {
-      "title": "Index entry 1 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 0",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/0",
+      "title": "OpenAI launches GPT-5.5 for real work and agentic workflows",
+      "source": "@OpenAI",
+      "author": "OpenAI",
+      "date": "Apr 23, 2026",
+      "primary_url": "https://x.com/OpenAI/status/2047376561205325845",
+      "score": 9.0
+    },
+    {
+      "title": "Ethan Mollick: AI agents can now reconstruct complex papers without the originals",
+      "source": "@emollick",
+      "author": "Ethan Mollick",
+      "date": "Apr 25, 2026",
+      "primary_url": "https://x.com/emollick/status/2048058055472881710",
+      "score": 8.5
+    },
+    {
+      "title": "MCP architectural RCE affects 150M+ downloads — Anthropic declines to patch protocol",
+      "source": "The Hacker News / OX Security",
+      "author": "OX Security Research",
+      "date": "Apr 20, 2026",
+      "primary_url": "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html",
+      "score": 8.5
+    },
+    {
+      "title": "Anthropic Claude Code postmortem: three overlapping harness bugs caused six weeks of quality degradation",
+      "source": "@ClaudeDevs",
+      "author": "Anthropic",
+      "date": "Apr 23, 2026",
+      "primary_url": "https://www.anthropic.com/engineering/april-23-postmortem",
+      "score": 8.0
+    },
+    {
+      "title": "DeepSeek V4 releases with 1M token context, MIT license, SOTA open-weights agentic coding",
+      "source": "@deepseek_ai",
+      "author": "DeepSeek",
+      "date": "Apr 24, 2026",
+      "primary_url": "https://api-docs.deepseek.com/news/news260424",
+      "score": 8.0
+    },
+    {
+      "title": "LeCun rebukes Amodei's 50% job-wipeout claim, directs to labor economists",
+      "source": "@ylecun",
+      "author": "Yann LeCun",
+      "date": "Apr 18, 2026",
+      "primary_url": "https://x.com/ylecun/status/2045610129119117574",
       "score": 7.5
     },
     {
-      "title": "Index entry 2 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 1",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/1",
-      "score": 7.3
+      "title": "Sam Altman: NVIDIA deploys Codex to 10,000 employees — 'awesome to see it work'",
+      "source": "@sama",
+      "author": "Sam Altman",
+      "date": "Apr 23, 2026",
+      "primary_url": "https://x.com/sama/status/2047395562501411058",
+      "score": 7.5
     },
     {
-      "title": "Index entry 3 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 2",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/2",
-      "score": 7.2
+      "title": "Codex update: background computer use, 90+ plugins, memory preview, GPT-5.5 powered",
+      "source": "@OpenAI",
+      "author": "OpenAI",
+      "date": "Apr 20, 2026",
+      "primary_url": "https://x.com/OpenAI/status/2047376561205325845",
+      "score": 8.0
     },
     {
-      "title": "Index entry 4 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 3",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/3",
+      "title": "Claude Design launches: visual prototyping powered by Opus 4.7, exports to Canva",
+      "source": "@AnthropicAI",
+      "author": "Anthropic",
+      "date": "Apr 17, 2026",
+      "primary_url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
       "score": 7.0
     },
     {
-      "title": "Index entry 5 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 4",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/4",
-      "score": 6.9
+      "title": "Simon Willison on harness bugs: 'the kinds of bugs that affect harnesses are deeply complicated'",
+      "source": "@simonw",
+      "author": "Simon Willison",
+      "date": "Apr 24, 2026",
+      "primary_url": "https://simonwillison.net/2026/Apr/24/",
+      "score": 7.0
     },
     {
-      "title": "Index entry 6 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 5",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/5",
-      "score": 6.8
+      "title": "swyx: '2026 is coding agents breaking containment to do everything else'",
+      "source": "@swyx",
+      "author": "Shawn Wang",
+      "date": "Apr 23, 2026",
+      "primary_url": "https://www.latent.space/p/unsupervised-learning-2026",
+      "score": 7.0
     },
     {
-      "title": "Index entry 7 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 6",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/6",
-      "score": 6.6
-    },
-    {
-      "title": "Index entry 8 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 7",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/7",
+      "title": "Academy of Management prohibits AI use in peer review — Mollick says it should be mandatory",
+      "source": "@emollick",
+      "author": "Ethan Mollick",
+      "date": "Apr 25, 2026",
+      "primary_url": "https://x.com/emollick/status/2048059052437967261",
       "score": 6.5
     },
     {
-      "title": "Index entry 9 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 8",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/8",
-      "score": 6.3
+      "title": "Nathan Lambert: 12-paper open-model reading list at mid-2026 checkpoint",
+      "source": "@natolambert",
+      "author": "Nathan Lambert",
+      "date": "Apr 16, 2026",
+      "primary_url": "https://x.com/natolambert/status/2044870722959581588",
+      "score": 6.5
     },
     {
-      "title": "Index entry 10 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 9",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/9",
-      "score": 6.2
+      "title": "Amodei vs. LeCun job displacement debate reaches 2.3M views",
+      "source": "@ylecun vs. @DarioAmodei",
+      "author": "Yann LeCun / Dario Amodei",
+      "date": "Apr 18-20, 2026",
+      "primary_url": "https://x.com/ylecun/status/2045610129119117574",
+      "score": 6.5
     },
     {
-      "title": "Index entry 11 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 10",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/10",
-      "score": 6.0
-    },
-    {
-      "title": "Index entry 12 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 11",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/11",
-      "score": 5.8
-    },
-    {
-      "title": "Index entry 13 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 12",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/12",
-      "score": 5.7
-    },
-    {
-      "title": "Index entry 14 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 13",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/13",
+      "title": "Sam Altman: 'we IQmog hard now' — capsule summary of OpenAI's frontier race positioning",
+      "source": "@sama",
+      "author": "Sam Altman",
+      "date": "Apr 25, 2026",
+      "primary_url": "https://x.com/sama/status/2048160404376105179",
       "score": 5.5
     },
     {
-      "title": "Index entry 15 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 14",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/x/index/14",
-      "score": 5.4
+      "title": "MCP viral: '97 million installs in 6 months, the plumbing nobody talks about'",
+      "source": "Viral — multiple accounts",
+      "author": "Various (source_via: viral_sweep)",
+      "date": "Apr 20-22, 2026",
+      "primary_url": "https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/",
+      "score": 6.0
+    },
+    {
+      "title": "Codex PM open call for papercuts — 1,295 replies signals real enterprise adoption",
+      "source": "@thsottiaux",
+      "author": "Tibo (OpenAI)",
+      "date": "Apr 25, 2026",
+      "primary_url": "https://x.com/thsottiaux/status/2048111852631310713",
+      "score": 5.0
+    },
+    {
+      "title": "Allie K. Miller demos ChatGPT image generation + search + shopping in one workflow",
+      "source": "@alliekmiller",
+      "author": "Allie K. Miller",
+      "date": "Apr 26, 2026",
+      "primary_url": "https://x.com/alliekmiller/status/2048472826252812320",
+      "score": 4.0
     }
   ],
   "emerging_signals": [
     {
-      "pattern": "Fixture pattern observed across multiple sources",
-      "evidence": "Replace with real cross-source evidence from the week.",
-      "what_to_watch": "What to watch for next week."
+      "pattern": "Harness reliability is now a distinct enterprise risk category, separate from model capability",
+      "evidence": "Anthropic's April 23 postmortem confirmed that Claude Code quality degradation for six weeks was caused entirely by three harness-layer changes (default settings, caching behavior, system prompt instructions), not model regression. Simon Willison's follow-up framed harness bugs as a 'deeply complicated' new failure class. The parallel with MCP's architectural flaw—also a design-layer issue, not model behavior—reinforces that the infrastructure around AI models is now as strategically important as the models themselves.",
+      "what_to_watch": "Watch for other AI product vendors publishing similar postmortems; if this becomes a pattern, it signals a systemic industry gap in harness-level QA. Track whether Anthropic's committed process improvements (broader eval suites, mandatory use of public build, code review improvements) ship by end of Q2."
+    },
+    {
+      "pattern": "Enterprise-scale coding agent deployment is moving from pilot to full workforce rollout",
+      "evidence": "NVIDIA's April 23 all-company Codex rollout (10,000 employees, engineering through legal and finance) is the first publicly documented enterprise-scale deployment. Jensen Huang's internal email framing it as 'the era of AI' suggests C-suite ownership. The simultaneous GPT-5.5 launch and Codex PM's public papercut call indicate OpenAI is treating enterprise adoption acceleration as a product sprint.",
+      "what_to_watch": "Watch for similar announcements from other large enterprises in May-June; if peer companies in industrial or financial services sectors announce equivalent rollouts, it accelerates the internal business case significantly. Track adoption stories from Codex's non-engineering rollout (legal, finance, marketing) as these are closer to typical enterprise AI team use cases."
+    },
+    {
+      "pattern": "AI governance credibility is shifting from founder assertions to external expert anchoring",
+      "evidence": "LeCun's 2.3M-view post explicitly directing the public away from AI executives (including himself) on labor economics, and toward peer-reviewed economists, is part of a pattern where technical authority and governance credibility are decoupling. Mollick's parallel framing—institutions like the Academy of Management setting AI policies calibrated to 2023 capability—adds the institutional dimension. Both signals point to a growing demand for third-party, non-lab expertise in AI impact assessment.",
+      "what_to_watch": "Watch for enterprise governance frameworks and board AI risk committees increasingly citing economic research (Acemoglu, Autor) alongside lab documentation. Watch for whether Mollick's argument about AI-assisted peer review gains traction in other professional associations."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "OpenAI Codex PM @thsottiaux tweet drew 1,295 replies and was cited as evidence of real Codex adoption",
+      "reason": "The primary URL (x.com/thsottiaux/status/2048111852631310713) was not independently fetched to HTTP 200; engagement numbers are sourced from @ainunnajib's daily brief, a secondary aggregator, not a direct fetch. Item appears in index and viral section with verified:false.",
+      "attempted_url": "https://x.com/thsottiaux/status/2048111852631310713"
+    },
+    {
+      "claim": "MCP crossed 97 million installs in 6 months — faster than iPhone App Store in its first year",
+      "reason": "The '97 million installs' figure originates from a viral Instagram post, not from Anthropic or MCP official sources. The OX Security research cites 150M+ downloads and 7,000+ servers (which is verified), but the App Store comparison claim cannot be traced to a primary source. Dropped from Top Picks; cited only as directional framing in viral section.",
+      "attempted_url": "https://www.instagram.com/p/DXNSVtDDsKj/"
+    },
+    {
+      "claim": "Claude Code postmortem tweet by @ClaudeDevs received 3 million views in hours",
+      "reason": "The '3 million views in hours' figure comes from a YouTube video commentary, not from a direct fetch of the tweet. The @ClaudeDevs profile page returned no accessible posts at time of fetch. Engagement figure dropped from item; item appears in index with primary_url pointing to the verified Anthropic engineering blog post.",
+      "attempted_url": "https://x.com/ClaudeDevs"
     }
   ],
   "suggested_refinements": {
     "sources_to_add": [
-      "Source A",
-      "Source B"
+      "@ArtificialAnlys — consistently first with high-quality DeepSeek and model benchmark analysis; appeared prominently in V4 coverage this week",
+      "@scaling01 — rigorous benchmark contextualization, cited by multiple curated accounts on DeepSeek V4; would improve open-model tracking",
+      "@teortaxesTex — technically deep open-model analysis, high signal-to-noise, appeared across multiple items this week",
+      "@omarsar0 (Omar Sanseviero, HuggingFace) — AI research discourse, cited re: Claude Code postmortem with production telemetry"
     ],
-    "sources_to_drop": [],
+    "sources_to_drop": [
+      "@TheRundownAI — no new substantive signal this week beyond aggregating items covered by primary sources; consider moving to monthly spot-check only"
+    ],
     "topics_to_add": [
-      "Topic A"
+      "harness reliability / AI product postmortems — new failure class distinct from model regression, will recur",
+      "enterprise agentic coding rollouts — NVIDIA/Codex deployment is a template; watch for peers in industrial and financial sectors",
+      "MCP security and governance — the RCE vulnerability and Anthropic's protocol-level response will generate ongoing discussion through H2 2026"
     ],
-    "notes": "Fixture data \u2014 refine after first real run."
+    "topics_to_drop": [],
+    "notes": "First real run for this tab (fixture data was placeholder only). All 18 items are new. Freshness is 100% by definition. LeCun post (Apr 18) is technically one day before the April 20 window but was included because peak engagement and all major coverage occurred April 20-26; flagged in item date for transparency. Next week: check for ClaudeDevs account posts (360K followers, no accessible posts at fetch time—may have been hidden or restored). Priority monitoring: NVIDIA Codex rollout adoption stories, any additional MCP CVE patches, Anthropic process changes committed in postmortem."
   }
 }

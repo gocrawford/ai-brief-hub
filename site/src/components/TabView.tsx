@@ -129,16 +129,16 @@ export default function TabView({ tab }: { tab: Tab }) {
       });
     }
 
-    // 4. Emerging Signals
+    // 4. Patterns to Watch (top-level emerging_signals — distinct from any section also named 'Emerging Signals')
     if (tab.emerging_signals?.length) {
       list.push({
-        anchor: "emerging-signals",
-        label: "Emerging Signals",
+        anchor: "patterns-to-watch",
+        label: "Patterns to Watch",
         Icon: TrendingUp,
         render: () => (
-          <section id="emerging-signals" className="scroll-mt-32">
+          <section id="patterns-to-watch" className="scroll-mt-32">
             <SectionHeader
-              title="Emerging Signals"
+              title="Patterns to Watch"
               subtitle="Cross-source patterns and signals worth tracking — observed across multiple independent sources this week."
             />
             <div className="space-y-3">

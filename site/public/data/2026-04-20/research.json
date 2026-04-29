@@ -1,486 +1,718 @@
 {
   "tab_id": "research",
-  "tab_name": "Primary Sources",
+  "tab_name": "Research & Regulation",
   "subtitle": "Primary-Source Intelligence",
+  "icon": "FileText",
+  "min_items": 10,
   "freshness": {
-    "target_pct_new": 0.8,
+    "target_pct_new": 0.80,
     "pct_new": 1.0,
-    "items_total": 9,
-    "items_new": 9,
+    "items_total": 12,
+    "items_new": 12,
     "items_returning": 0
   },
-  "min_items": 10,
   "executive_summary": [
     {
-      "headline": "Headline 1 for Primary Sources",
-      "body": "This is a fixture executive summary bullet. Replace with real lead-with-the-answer content from the actual run.",
-      "primary_url": "https://example.com/research/exec/1"
+      "headline": "ICLR 2026 outstanding papers expose structural LLM limits with direct enterprise implications",
+      "body": "The ICLR 2026 conference (April 23–27, Rio de Janeiro) produced two outstanding paper awards with immediate operational relevance. 'LLMs Get Lost In Multi-Turn Conversation' documents a 39% average performance drop in multi-turn interactions across 15 frontier models — a finding that challenges the reliability of deployed conversational AI agents. 'Transformers are Inherently Succinct' proves that verifying transformer properties is EXPSPACE-complete, with formal implications for AI governance and auditability.",
+      "primary_url": "https://blog.iclr.cc/2026/04/23/announcing-the-iclr-2026-outstanding-papers/"
     },
     {
-      "headline": "Headline 2 for Primary Sources",
-      "body": "Second fixture bullet. Each bullet should link to a primary source.",
-      "primary_url": "https://example.com/research/exec/2"
+      "headline": "Anthropic's Project Deal demonstrates measurable economic stakes of agent model quality",
+      "body": "In a controlled marketplace experiment published April 24, Anthropic showed that users represented by a more capable AI model achieved statistically better deal outcomes — while those with weaker models did not notice the disadvantage. The finding reframes agent procurement as a structural economic variable, not just a performance preference.",
+      "primary_url": "https://www.anthropic.com/features/project-deal"
     },
     {
-      "headline": "Headline 3 for Primary Sources",
-      "body": "Third fixture bullet \u2014 keeps the layout honest at min length."
+      "headline": "Multi-agent architecture research confirms that MAS design — not backbone model — determines attack surface",
+      "body": "A paper submitted to arXiv on April 25 empirically demonstrates that multi-agent system architectures produce attack success rates up to 3.8× higher than standalone agents, even at equivalent task performance. No single architecture is universally safer. Enterprise teams building agent pipelines face a security tradeoff that capability benchmarks do not surface.",
+      "primary_url": "https://arxiv.org/abs/2604.23459"
+    },
+    {
+      "headline": "EU AI Act August 2 high-risk deadline approaching; harmonized standards eight months late",
+      "body": "The binding enforcement date for high-risk AI system obligations under the EU AI Act (Articles 9–17 for providers, Article 26 for deployers) is August 2, 2026. A November 2025 European Commission proposal to delay Annex III compliance to December 2027 has not been enacted; enterprises should treat August 2026 as operative. Over half of organizations still lack systematic AI inventories.",
+      "primary_url": "https://artificialintelligenceact.eu/implementation-timeline/"
+    },
+    {
+      "headline": "China's CAC issues draft AI digital-human labeling rules; enforcement posture tightening",
+      "body": "China's Cyberspace Administration published draft rules requiring explicit labeling of AI-generated avatars and documented consent workflows for creating digital replicas. The rules target a sector valued at 4.1 billion yuan in 2024, growing 85% year-on-year, with fines from 10,000 to 200,000 yuan for noncompliance.",
+      "primary_url": "https://letsdatascience.com/news/china-tightens-rules-on-ai-digital-humans-323e9a9c"
     }
   ],
   "top_picks": [
     {
-      "id": "research-fixture-0",
-      "title": "Fixture research item 0 \u2014 replace with real content",
-      "source": "example.com",
-      "author": "Sample Author 0",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/0",
+      "id": "tp-iclr-multiturn",
+      "title": "LLMs Get Lost In Multi-Turn Conversation — ICLR 2026 Outstanding Paper",
+      "subtitle": "39% average performance drop in multi-turn interactions confirmed across 15 frontier models",
+      "source": "ICLR 2026 / Microsoft Research / Salesforce Research",
+      "author": "Philippe Laban, Hiroaki Hayashi, Yingbo Zhou, Jennifer Neville",
+      "date": "2026-04-23",
+      "primary_url": "https://www.microsoft.com/en-us/research/publication/llms-get-lost-in-multi-turn-conversation/",
+      "secondary_urls": [
+        { "label": "arXiv preprint", "url": "https://arxiv.org/abs/2505.06120" },
+        { "label": "ICLR 2026 award announcement", "url": "https://blog.iclr.cc/2026/04/23/announcing-the-iclr-2026-outstanding-papers/" }
+      ],
       "verified": true,
-      "verified_at": "2026-04-29T18:00:00Z",
-      "summary": "This is fixture data for the research tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+      "verified_at": "2026-04-29T00:00:00Z",
+      "summary": "Across 200,000+ simulated conversations on six generation tasks, all 15 tested frontier LLMs perform 39% worse in multi-turn underspecified conversations than in single-turn equivalents. Degradation decomposes into a minor aptitude loss (–15%) and a large reliability increase (unreliability +112%). Models make early assumptions, propose premature final answers, and fail to course-correct — they get lost and do not recover. The effect appears at only two turns and affects every model family tested.",
       "score": {
-        "total": 8.5,
+        "total": 9.0,
         "signal": 3,
-        "novelty": 3,
-        "actionability": 1,
+        "novelty": 2,
+        "actionability": 2,
         "source_quality": 2
       },
-      "engagement": {
-        "views": 12500,
-        "likes": 340,
-        "comments": 87
-      },
-      "tags": [
-        "fixture",
-        "research"
-      ],
+      "tags": ["multi-turn", "reliability", "evaluation", "LLM", "conversational-AI"],
+      "category": "Research",
+      "priority": "HIGH",
       "key_takeaways": [
-        "First takeaway \u2014 concrete and source-grounded.",
-        "Second takeaway \u2014 surfaces the so-what.",
-        "Third takeaway \u2014 points to next action."
+        "39% performance drop from single-turn to multi-turn across all tested frontier models",
+        "Reliability degradation (+112% unreliability) is the dominant failure mode, not aptitude",
+        "Models prematurely attempt final answers and over-rely on incorrect prior turns",
+        "A simple 'recap' intervention (restating all prior shards at end) substantially recovers performance",
+        "Effect is universal — no model family is exempt"
       ],
       "suggested_actions": [
-        "Read the primary source within the next 48 hours.",
-        "Share with the AI working group for review."
+        "Audit any deployed conversational AI agent for multi-turn task completion accuracy, not just single-prompt accuracy",
+        "Add a 'recap' step to long-running agent conversations: have the model restate accumulated context before final synthesis",
+        "Re-evaluate SLA definitions for AI-assisted workflows that span multiple turns"
       ],
-      "recurrence": "new",
-      "why_it_matters": "This represents a meaningful shift in how leaders should think about AI investment for the quarter.",
-      "enterprise_adaptation": "Implementation pattern: Adopt the underlying approach via a sandboxed pilot with model-routing through an internal proxy. Caveats for regulated environments: enforce data residency by keeping all training and inference within approved cloud regions, route requests through a governed gateway with audit logging, and store secrets in the existing enterprise vault. 30-day experiment: stand up a small non-production deployment with synthetic data, measure latency and cost vs. the incumbent tool, and present findings to the AI council."
+      "enterprise_adaptation": "Implementation pattern: An enterprise AI team deploying conversational agents for internal helpdesk, procurement queries, or document workflows should benchmark those agents specifically in multi-turn underspecified scenarios, not just polished single-prompt benchmarks. The practical adaptation is to inject a structured context-recapitulation step into agent system prompts — after N turns, the agent restates all confirmed constraints before proceeding. This mirrors the paper's 'Recap' intervention, which recovered most of the performance gap.\n\nRegulated-environment caveats: Audit trail requirements in regulated environments (SOX, HIPAA-adjacent workflows) mean that conversation logs must be preserved and reviewable. If an agent drifts due to multi-turn confusion, the log must show why — teams should tag conversation sessions with model version and system prompt hash so reliability degradation can be isolated and reported. Do not rely on chat history summarization features that may silently drop early constraints.\n\n30-day experiment: Select a deployed conversational agent (internal IT helpdesk or procurement assistant). Build a test suite of 20–30 realistic multi-turn scenarios with underspecified first-turn instructions. Run each scenario in both single-turn (full instruction upfront) and multi-turn (incremental information disclosure) modes. Measure final answer accuracy. If the gap exceeds 20%, add a structured recap step to the system prompt and retest. Report results to AI governance stakeholder within 30 days.",
+      "recurrence": "new"
     },
     {
-      "id": "research-fixture-1",
-      "title": "Fixture research item 1 \u2014 replace with real content",
-      "source": "example.com",
-      "author": "Sample Author 1",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/1",
+      "id": "tp-anthropic-project-deal",
+      "title": "Project Deal: Anthropic's AI Marketplace Experiment — Agent Quality Determines Economic Outcomes",
+      "subtitle": "Stronger model achieved statistically better deals; participants did not detect their disadvantage",
+      "source": "Anthropic",
+      "author": "Anthropic Research Team",
+      "date": "2026-04-24",
+      "primary_url": "https://www.anthropic.com/features/project-deal",
+      "secondary_urls": [
+        { "label": "TechCrunch coverage", "url": "https://techcrunch.com/2026/04/25/anthropic-created-a-test-marketplace-for-agent-on-agent-commerce/" }
+      ],
       "verified": true,
-      "verified_at": "2026-04-29T18:00:00Z",
-      "summary": "This is fixture data for the research tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+      "verified_at": "2026-04-29T00:00:00Z",
+      "summary": "Anthropic ran a fully automated classified marketplace among 69 employees in December 2025 and published results April 24. Claude agents struck 186 deals totaling over $4,000 in real goods. In parallel runs comparing a frontier model (Opus 4.5) against a smaller model (Haiku 4.5), Opus users completed 2.07 more deals on average (p=0.001), items sold by Opus fetched $3.64 more per item (p=0.011), and Opus buyers paid $2.45 less per item (p=0.015). Critically, participants represented by Haiku did not perceive their disadvantage — satisfaction and fairness scores were statistically indistinguishable.",
       "score": {
         "total": 8.5,
         "signal": 3,
-        "novelty": 3,
-        "actionability": 1,
+        "novelty": 2,
+        "actionability": 2,
         "source_quality": 2
       },
-      "engagement": {
-        "views": 12500,
-        "likes": 340,
-        "comments": 87
-      },
-      "tags": [
-        "fixture",
-        "research"
-      ],
+      "tags": ["agents", "agentic-commerce", "model-quality", "economics", "procurement"],
+      "category": "Research",
+      "priority": "HIGH",
       "key_takeaways": [
-        "First takeaway \u2014 concrete and source-grounded.",
-        "Second takeaway \u2014 surfaces the so-what.",
-        "Third takeaway \u2014 points to next action."
+        "AI agents can fully represent humans in a real marketplace without human intervention",
+        "Frontier model quality produces measurable economic advantage: +$3.64 per item sold, –$2.45 per item bought",
+        "Participants with weaker models did not detect their economic disadvantage",
+        "Negotiation instruction style had no statistically significant effect on outcomes — model capability dominated",
+        "46% of participants indicated willingness to pay for a similar agent service"
       ],
       "suggested_actions": [
-        "Read the primary source within the next 48 hours.",
-        "Share with the AI working group for review."
+        "Treat model selection for procurement and negotiation agents as an economic variable with material impact, not just a cost variable",
+        "Run a controlled internal trial with two model tiers on a low-stakes procurement category to quantify the capability differential in your context",
+        "Design agentic procurement workflows with explicit approval checkpoints before irreversible commitments, given that weaker models may underperform without warning"
       ],
-      "recurrence": "new",
-      "why_it_matters": "This represents a meaningful shift in how leaders should think about AI investment for the quarter.",
-      "enterprise_adaptation": "Implementation pattern: Adopt the underlying approach via a sandboxed pilot with model-routing through an internal proxy. Caveats for regulated environments: enforce data residency by keeping all training and inference within approved cloud regions, route requests through a governed gateway with audit logging, and store secrets in the existing enterprise vault. 30-day experiment: stand up a small non-production deployment with synthetic data, measure latency and cost vs. the incumbent tool, and present findings to the AI council."
+      "enterprise_adaptation": "Implementation pattern: An enterprise AI team considering agent-assisted procurement, contract negotiation, or vendor selection should treat model capability tier as a direct economic lever, not a cost-optimization choice. The Project Deal findings indicate that deploying a suboptimal model tier may cost more in missed value than the model cost savings justify. The implementation pattern is to build a model evaluation harness specific to your negotiation workflows — structured prompts, known outcomes from past deals — and measure value capture by model tier before committing to a production tier.\n\nRegulated-environment caveats: In a public company, procurement commitments made by AI agents may trigger approval thresholds under internal authorization policies and potentially Sarbanes-Oxley controls on financial commitments. AI agents must not be granted authority to commit expenditures above defined thresholds without human sign-off. Audit logging of all agent actions, including negotiation positions taken, must be preserved. Data residency requirements apply if vendor pricing data or contract terms are processed through a third-party API.\n\n30-day experiment: Identify one repeatable internal procurement workflow (e.g., software license renewals, small-value services purchasing). Run the same workflow in parallel through two model tiers on 10 synthetic scenarios with documented historical outcomes. Measure value capture difference. If frontier tier outperforms by >5% on captured value, escalate the model-tier selection decision to the AI governance committee with the evidence.",
+      "recurrence": "new"
     },
     {
-      "id": "research-fixture-2",
-      "title": "Fixture research item 2 \u2014 replace with real content",
-      "source": "example.com",
-      "author": "Sample Author 2",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/2",
+      "id": "tp-mas-security-architecture",
+      "title": "Architecture Matters for Multi-Agent Security — Attack Success Rates Vary Up to 3.8× by Design",
+      "subtitle": "Empirical study across 13 MAS configurations finds no universally safe architecture",
+      "source": "arXiv cs.AI",
+      "author": "Ben Hagag, William L. Anderson, Christian Schroeder de Witt, Sarah Scheffler",
+      "date": "2026-04-25",
+      "primary_url": "https://arxiv.org/abs/2604.23459",
       "verified": true,
-      "verified_at": "2026-04-29T18:00:00Z",
-      "summary": "This is fixture data for the research tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+      "verified_at": "2026-04-29T00:00:00Z",
+      "summary": "Submitted to arXiv on April 25, this empirical study evaluates 13 multi-agent system (MAS) architectural configurations across browser, desktop, and code environments. Attack success rates vary by up to 3.8× across configurations at comparable or higher task accuracy. Three architectural choices determine vulnerability: role distribution (how authority is allocated), communication topology (how agents interact), and memory visibility (what state each agent can access). Multi-agent configurations are more vulnerable than standalone agents in the majority of tested setups.",
       "score": {
         "total": 8.5,
         "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "tags": ["multi-agent", "security", "agent-architecture", "attack-surface", "red-teaming"],
+      "category": "Research",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "MAS attack success rates vary up to 3.8× across architectural configurations at equivalent task performance",
+        "Role distribution, communication topology, and memory visibility independently affect vulnerability",
+        "No single architectural design is universally safer than alternatives",
+        "Multi-agent settings are more vulnerable than standalone agents in most configurations",
+        "Security tradeoffs are scenario- and model-dependent — architecture decisions cannot be generalized across task types"
+      ],
+      "suggested_actions": [
+        "Before deploying any multi-agent pipeline, document the role distribution, communication topology, and memory sharing model as security-relevant architectural decisions",
+        "Add MAS-specific attack scenarios (role injection, memory poisoning, topology-aware prompt injection) to red-team exercises",
+        "Do not evaluate multi-agent security solely by testing the backbone model — the deployment stack is a joint variable"
+      ],
+      "enterprise_adaptation": "Implementation pattern: An enterprise AI team building multi-agent pipelines (e.g., orchestrator-executor pairs for code review, data extraction, or process automation) should include a security architecture review as a formal step before production deployment. The review should document which agent roles carry execution authority, how information flows between agents, and whether shared memory introduces cross-task contamination risks. Use the three-axis framework from this paper — roles, topology, memory — as a review checklist.\n\nRegulated-environment caveats: In regulated environments (financial services, healthcare, government procurement), an agent that executes harmful actions without detection may trigger audit failures, incident-reporting obligations, and, in worst cases, regulatory sanctions. The paper shows that the strongest defense against Capability-targeted attacks still yields a 63.8% attack success rate — enterprises should not rely on any single defense layer. Layer access controls, approval gates, and logging at multiple pipeline stages. Secrets (API keys, credentials) must never appear in shared agent memory.\n\n30-day experiment: Take one existing or planned multi-agent workflow. Map it against the three dimensions: (1) which agent has execution authority, (2) is the topology a star, chain, or mesh, and (3) is memory shared or private. Design three synthetic attack scenarios targeting the most authority-bearing agent. Run sandboxed trials with a red-team member injecting adversarial instructions via the most trusted channel (skill files, trusted-sender emails, or internal knowledge base). Document attack success rate. Use findings to prioritize architectural changes before production rollout.",
+      "recurrence": "new"
+    },
+    {
+      "id": "tp-eu-ai-act-high-risk-aug2026",
+      "title": "EU AI Act August 2, 2026 High-Risk Enforcement Deadline: Enterprise Compliance Gap",
+      "subtitle": "Binding enforcement for Annex III high-risk AI systems; proposed delay not enacted into law",
+      "source": "EU AI Office / artificialintelligenceact.eu",
+      "author": "European Commission / EU AI Office",
+      "date": "2026-04-23",
+      "primary_url": "https://artificialintelligenceact.eu/implementation-timeline/",
+      "secondary_urls": [
+        { "label": "EU digital strategy official page", "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" },
+        { "label": "CSA enterprise readiness analysis", "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-high-risk-compliance-deadline-20/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-04-29T00:00:00Z",
+      "summary": "August 2, 2026 is the binding enforcement date for high-risk AI system obligations under the EU AI Act, covering Articles 9–17 (provider requirements) and Article 26 (deployer requirements). A November 2025 European Commission proposal in its Digital Omnibus package to delay Annex III compliance to December 2, 2027 has not been enacted into law; enterprises should treat August 2026 as operative. Harmonized technical standards arrived eight months late, compressing implementation timelines. Penalties reach up to €15 million or 3% of global annual turnover.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 1,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "tags": ["EU AI Act", "high-risk", "compliance", "regulation", "August-2026"],
+      "category": "Regulation — Global",
+      "priority": "CRITICAL",
+      "key_takeaways": [
+        "August 2, 2026 is the binding enforcement date for EU AI Act Annex III high-risk system obligations",
+        "The proposed Digital Omnibus delay to December 2027 has not been enacted — treat August 2026 as operative",
+        "Providers must complete: conformity assessment, EU AI database registration, quality management system, post-market monitoring",
+        "Deployers must implement human oversight, retain automated logs for 6+ months, conduct FRIAs where required",
+        "Compliance costs: large enterprises $8–15M initial, $1–5M annual; over half of organizations lack systematic AI inventories"
+      ],
+      "suggested_actions": [
+        "Complete an AI system inventory and run Annex III classification for each deployed system before June 2026",
+        "For any likely high-risk system, initiate Article 9 risk management and Article 17 quality management documentation now",
+        "Do not plan around the Digital Omnibus delay — it remains unenacted"
+      ],
+      "enterprise_adaptation": "Implementation pattern: An enterprise AI team with EU market exposure (including US-headquartered companies whose AI systems affect EU residents) must run three parallel tracks: (1) inventory and classify all AI systems against Annex III categories, (2) for identified high-risk systems, stand up Article 9 iterative risk management and Article 17 quality management documentation, and (3) for deployers of third-party AI tools, audit Article 26 obligations — automated log retention for 6 months, human oversight mechanisms, incident reporting procedures. The August 2026 window leaves fewer than 90 days from today.\n\nRegulated-environment caveats: Employment-related AI systems (performance monitoring, screening, scheduling) are explicitly listed under Annex III and carry the highest scrutiny. Any AI system affecting hiring, role assignment, or performance evaluation for EU-based employees or contractors requires a Fundamental Rights Impact Assessment (FRIA) under the deployer obligations. Data residency requirements under GDPR interact with the Act's logging requirements — log retention must comply with both. Public company disclosure obligations (SEC, for US issuers) may require discussion of EU AI Act compliance risk in upcoming 10-K filings.\n\n30-day experiment: Run a cross-functional workshop with Legal, HR, IT, and the AI team to produce a complete inventory of AI systems that affect EU-based individuals. For each: classify against Annex III, assign a compliance owner, and document the current state against Articles 9, 13, 14, and 17. Produce a gap report to executive leadership within 30 days. This single deliverable is the prerequisite for all subsequent compliance work.",
+      "recurrence": "returning_theme",
+      "recurrence_note": "EU AI Act high-risk deadline approaching August 2, 2026. This week the deadline is now under 100 days away and the Digital Omnibus delay proposal remains unenacted, increasing urgency."
+    },
+    {
+      "id": "tp-anthropic-economic-index-survey",
+      "title": "Anthropic Launches Economic Index Survey — Ongoing Measurement of AI's Labor Market Impact",
+      "subtitle": "Monthly survey of Claude users tracking task displacement, productivity, and hiring shifts",
+      "source": "Anthropic",
+      "author": "Anthropic Economic Research Team",
+      "date": "2026-04-22",
+      "primary_url": "https://www.anthropic.com/research/economic-index-survey-announcement",
+      "verified": true,
+      "verified_at": "2026-04-29T00:00:00Z",
+      "summary": "Anthropic launched the Anthropic Economic Index Survey on April 22, a monthly survey of randomly selected Claude users designed to capture qualitative data on AI's economic effects: which tasks are being handed off, what productivity gains are observed, and what hiring and role shifts users are experiencing. The survey builds on a companion report analyzing 81,000 qualitative responses collected in December 2025 — described as the largest and most multilingual study of its kind. Data is combined with Claude usage analytics in a privacy-preserving manner.",
+      "score": {
+        "total": 8.0,
+        "signal": 2,
         "novelty": 3,
         "actionability": 1,
         "source_quality": 2
       },
-      "engagement": {
-        "views": 12500,
-        "likes": 340,
-        "comments": 87
-      },
-      "tags": [
-        "fixture",
-        "research"
-      ],
+      "tags": ["economics", "labor-market", "AI-adoption", "workforce", "measurement"],
+      "category": "Research",
+      "priority": "HIGH",
       "key_takeaways": [
-        "First takeaway \u2014 concrete and source-grounded.",
-        "Second takeaway \u2014 surfaces the so-what.",
-        "Third takeaway \u2014 points to next action."
+        "Anthropic is establishing a recurring, primary-source data stream on AI's real-world labor market effects",
+        "Prior 81,000-person study is the largest qualitative AI economic survey conducted",
+        "Monthly cadence means organizations will have a public benchmark for AI-driven task displacement and productivity changes",
+        "Combines passive usage telemetry with active qualitative surveying — a methodological first for frontier labs",
+        "Findings will be published as Anthropic Economic Index reports, creating a compounding public reference point"
       ],
       "suggested_actions": [
-        "Read the primary source within the next 48 hours.",
-        "Share with the AI working group for review."
+        "Track Anthropic Economic Index reports for sector-specific task-displacement data that can inform enterprise workforce planning",
+        "Compare your organization's observed AI productivity gains against the index benchmarks as reports are published",
+        "Consider structuring internal AI ROI measurement to align with the index's task-level framework for comparability"
       ],
-      "recurrence": "new",
-      "why_it_matters": "This represents a meaningful shift in how leaders should think about AI investment for the quarter.",
-      "enterprise_adaptation": "Implementation pattern: Adopt the underlying approach via a sandboxed pilot with model-routing through an internal proxy. Caveats for regulated environments: enforce data residency by keeping all training and inference within approved cloud regions, route requests through a governed gateway with audit logging, and store secrets in the existing enterprise vault. 30-day experiment: stand up a small non-production deployment with synthetic data, measure latency and cost vs. the incumbent tool, and present findings to the AI council."
+      "enterprise_adaptation": "Implementation pattern: An enterprise AI team tracking the ROI of its AI investments should anchor internal measurement to the Anthropic Economic Index categories — which tasks are being automated or augmented, which roles are changing, and what productivity gains are documented. This creates an externally comparable baseline. When the index publishes sector-level data, the team can contextualize their performance against industry norms and identify where they are ahead of or behind peers.\n\nRegulated-environment caveats: AI-driven workforce changes at a public company may require disclosure in 10-K Human Capital sections if material. Any internal survey or measurement program that captures employee-level AI usage data must comply with applicable privacy regulations (GDPR for EU employees, CCPA for California employees) and may require works council or union notification in relevant jurisdictions. The Anthropic survey itself collects data only from individual Claude.ai users with two-week-old accounts — it does not capture enterprise deployment data, so enterprise teams should not conflate the index's consumer findings with their own deployment context.\n\n30-day experiment: Design a 10-question internal survey (modeled on Anthropic's question set: task handoff, productivity gains, role change expectations) and deploy to a sample of 50–100 employees who have been using AI tools for 3+ months. Compare results against the Anthropic Economic Index data when published. Identify the highest-displacement task categories and use them to prioritize the next automation use case.",
+      "recurrence": "new"
     }
   ],
   "sections": [
     {
       "section_id": "papers",
-      "title": "Research Papers",
+      "title": "arXiv & Lab Papers",
+      "description": "arXiv submissions and conference papers with practitioner traction from April 20–26, 2026.",
+      "layout": "cards",
       "items": [
         {
-          "id": "research-fixture-10",
-          "title": "Fixture research item 10 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 10",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/research/10",
+          "id": "paper-mas-security",
+          "title": "Architecture Matters for Multi-Agent Security",
+          "source": "arXiv cs.AI",
+          "author": "Ben Hagag, William L. Anderson, Christian Schroeder de Witt, Sarah Scheffler",
+          "date": "2026-04-25",
+          "primary_url": "https://arxiv.org/abs/2604.23459",
           "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the research tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "Empirical study of 13 multi-agent system architectural configurations across browser, desktop, and code environments finds attack success rates vary up to 3.8× by design choice at comparable task accuracy. Role distribution, communication topology, and memory visibility each independently drive vulnerability. No universal safe architecture exists.",
           "score": {
-            "total": 6.0,
-            "signal": 2,
+            "total": 8.5,
+            "signal": 3,
             "novelty": 2,
-            "actionability": 1,
-            "source_quality": 1
+            "actionability": 2,
+            "source_quality": 2
           },
-          "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
-          },
-          "tags": [
-            "fixture",
-            "research"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
+          "tags": ["multi-agent", "security", "architecture"],
+          "category": "Safety Research",
           "recurrence": "new"
         },
         {
-          "id": "research-fixture-11",
-          "title": "Fixture research item 11 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 11",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/research/11",
+          "id": "paper-iclr-multiturn",
+          "title": "LLMs Get Lost In Multi-Turn Conversation — ICLR 2026 Outstanding Paper",
+          "source": "ICLR 2026 / Microsoft Research / Salesforce Research",
+          "author": "Philippe Laban, Hiroaki Hayashi, Yingbo Zhou, Jennifer Neville",
+          "date": "2026-04-23",
+          "primary_url": "https://arxiv.org/abs/2505.06120",
+          "secondary_urls": [
+            { "label": "ICLR award announcement", "url": "https://blog.iclr.cc/2026/04/23/announcing-the-iclr-2026-outstanding-papers/" }
+          ],
           "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the research tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "ICLR 2026 Outstanding Paper (announced April 23). Across 200,000+ simulated conversations, all 15 tested frontier LLMs show 39% average performance drop in multi-turn underspecified settings versus single-turn. Unreliability increases 112%. Paper identifies four behavioral failure modes and an effective mitigation: restating accumulated context before final synthesis.",
           "score": {
-            "total": 5.9,
-            "signal": 2,
+            "total": 9.0,
+            "signal": 3,
             "novelty": 2,
-            "actionability": 1,
-            "source_quality": 1
+            "actionability": 2,
+            "source_quality": 2
           },
-          "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
-          },
-          "tags": [
-            "fixture",
-            "research"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
+          "tags": ["multi-turn", "reliability", "LLM", "evaluation", "ICLR"],
+          "category": "Evaluation Research",
           "recurrence": "new"
         },
         {
-          "id": "research-fixture-12",
-          "title": "Fixture research item 12 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 12",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/research/12",
+          "id": "paper-iclr-transformers-succinct",
+          "title": "Transformers are Inherently Succinct — ICLR 2026 Outstanding Paper",
+          "source": "ICLR 2026 / RPTU Kaiserslautern-Landau / ETH Zürich",
+          "author": "Pascal Bergsträßer, Ryan Cotterell, Anthony Widjaja Lin",
+          "date": "2026-04-23",
+          "primary_url": "https://arxiv.org/abs/2510.19315",
+          "secondary_urls": [
+            { "label": "ICLR award announcement", "url": "https://blog.iclr.cc/2026/04/23/announcing-the-iclr-2026-outstanding-papers/" }
+          ],
           "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the research tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "ICLR 2026 Outstanding Paper (announced April 23). Proves that fixed-precision transformers are exponentially more succinct than RNNs and LTL formulas, and doubly exponentially more succinct than finite automata. As a corollary, verifying basic properties of transformers (non-emptiness) is EXPSPACE-complete — with formal implications for AI auditability and interpretability claims.",
           "score": {
-            "total": 5.8,
+            "total": 7.0,
             "signal": 2,
+            "novelty": 3,
+            "actionability": 0,
+            "source_quality": 2
+          },
+          "tags": ["theoretical-ML", "transformers", "formal-verification", "expressivity"],
+          "category": "Theory Research",
+          "recurrence": "new"
+        },
+        {
+          "id": "paper-anthropic-automated-alignment",
+          "title": "Automated Alignment Researchers: AI Agents Close the Performance Gap Human Researchers Could Not",
+          "source": "Anthropic Alignment Science",
+          "author": "Anthropic Fellows",
+          "date": "2026-04-14",
+          "primary_url": "https://www.anthropic.com/research/automated-alignment-researchers",
+          "secondary_urls": [
+            { "label": "Alignment Science blog post", "url": "https://alignment.anthropic.com/2026/automated-w2s-researcher/" }
+          ],
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "Nine copies of Claude Opus 4.6 running as Automated Alignment Researchers (AARs) achieved a Performance Gap Recovery (PGR) of 0.97 on the weak-to-strong supervision problem after 800 cumulative hours — compared to a human baseline PGR of 0.23 over 7 days. Cost: $18,000 total, or $22 per AAR-hour. AARs also generalized to held-out math datasets (PGR 0.94). Reward hacking was detected and disqualified, confirming human oversight remains necessary.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
             "novelty": 2,
             "actionability": 1,
-            "source_quality": 1
+            "source_quality": 2
           },
-          "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
-          },
-          "tags": [
-            "fixture",
-            "research"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
+          "tags": ["alignment", "automated-research", "scalable-oversight", "safety"],
+          "category": "Safety Research",
           "recurrence": "new"
         }
-      ],
-      "description": "From arXiv, Papers with Code, and AI conferences."
+      ]
     },
     {
-      "section_id": "regulation",
-      "title": "Regulation & Policy",
+      "section_id": "model_cards",
+      "title": "Model Cards & System Cards",
+      "description": "New model and system card analyses from frontier labs. No new model releases with published model cards fell within April 20–26.",
+      "layout": "list",
       "items": [
         {
-          "id": "research-fixture-13",
-          "title": "Fixture research item 13 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 13",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/research/13",
+          "id": "model-card-empty",
+          "title": "No major new model card releases this week",
+          "source": "Frontier labs",
+          "author": "",
+          "date": "2026-04-26",
+          "primary_url": "https://www.anthropic.com/research",
           "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the research tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "No major new model card or system card was published by Anthropic, OpenAI, DeepMind, or Google between April 20–26, 2026. The ICLR conference period (April 23–27) concentrated lab attention on conference-track paper presentations.",
           "score": {
-            "total": 5.7,
-            "signal": 2,
-            "novelty": 2,
-            "actionability": 1,
-            "source_quality": 1
+            "total": 0,
+            "signal": 0,
+            "novelty": 0,
+            "actionability": 0,
+            "source_quality": 0
           },
-          "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
-          },
-          "tags": [
-            "fixture",
-            "research"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
-          "recurrence": "new"
-        },
-        {
-          "id": "research-fixture-14",
-          "title": "Fixture research item 14 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 14",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/research/14",
-          "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the research tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
-          "score": {
-            "total": 5.6,
-            "signal": 2,
-            "novelty": 2,
-            "actionability": 1,
-            "source_quality": 1
-          },
-          "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
-          },
-          "tags": [
-            "fixture",
-            "research"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
-          "recurrence": "new"
-        },
-        {
-          "id": "research-fixture-15",
-          "title": "Fixture research item 15 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 15",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/research/15",
-          "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the research tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
-          "score": {
-            "total": 5.5,
-            "signal": 2,
-            "novelty": 2,
-            "actionability": 1,
-            "source_quality": 1
-          },
-          "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
-          },
-          "tags": [
-            "fixture",
-            "research"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
+          "tags": ["model-card"],
+          "category": "Model Cards",
           "recurrence": "new"
         }
-      ],
-      "description": "From NIST, SEC, the EU AI Act tracker, and adjacent regulators."
+      ]
+    },
+    {
+      "section_id": "regulation_us",
+      "title": "US Regulatory Activity",
+      "description": "Federal and state AI regulatory actions, guidance, and framework updates.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "reg-nist-critical-infra",
+          "title": "NIST Launches AI RMF Profile for Trustworthy AI in Critical Infrastructure",
+          "source": "NIST ITL",
+          "author": "NIST Information Technology Laboratory",
+          "date": "2026-04-07",
+          "primary_url": "https://www.nist.gov/programs-projects/concept-note-ai-rmf-profile-trustworthy-ai-critical-infrastructure",
+          "secondary_urls": [
+            { "label": "NIST AI RMF main page", "url": "https://www.nist.gov/itl/ai-risk-management-framework" }
+          ],
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "Published April 7, NIST released a concept note initiating development of a dedicated AI RMF Profile for Trustworthy AI in Critical Infrastructure. The profile will address AI trustworthiness across IT, OT, and Industrial Control Systems, covering requirements for deterministic behavior, explainability, graceful degradation, fail-safe operation, and adversarial robustness. NIST opened a Community of Interest for stakeholder input. Surfaced with increased practitioner attention in the April 20–26 window as the first sector-specific AI RMF profile.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "tags": ["NIST", "AI-RMF", "critical-infrastructure", "OT", "governance"],
+          "category": "Regulation — US",
+          "recurrence": "new"
+        },
+        {
+          "id": "reg-ftc-ai-interoperability",
+          "title": "FTC Issues AI Interoperability Guidance Requiring Model Portability for Large Platforms",
+          "source": "FTC / FinancialContent",
+          "author": "Federal Trade Commission",
+          "date": "2026-04-08",
+          "primary_url": "https://markets.financialcontent.com/stocks/article/marketminute-2026-4-8-breaking-the-walled-garden-ftc-mandates-ai-interoperability-for-tech-giants",
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "On April 8, the FTC issued landmark guidance mandating AI interoperability and model portability, requiring large-cap AI platform providers to allow enterprise customers to move fine-tuned models, prompts, and associated data across competing cloud platforms without technical or financial penalty. The guidance specifically targets large AI platform providers. Enterprise implications: vendor lock-in for custom fine-tuned models on major platforms may be subject to portability obligations.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "tags": ["FTC", "AI-interoperability", "portability", "enterprise", "cloud"],
+          "category": "Regulation — US",
+          "recurrence": "new",
+          "why_it_matters": "Enterprise teams that have fine-tuned models on a single major cloud AI platform may gain new portability rights. In contract negotiations with AI platform vendors, this guidance provides leverage to negotiate migration clauses. However, the guidance is not yet a final rule — monitor for formal rulemaking."
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_global",
+      "title": "Global Regulatory Activity",
+      "description": "EU AI Act, UK AISI, China CAC, and international AI governance developments.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "reg-eu-high-risk-deadline",
+          "title": "EU AI Act August 2, 2026 High-Risk Enforcement Deadline: Under 100 Days",
+          "source": "EU AI Office / artificialintelligenceact.eu",
+          "author": "European Commission",
+          "date": "2026-04-23",
+          "primary_url": "https://artificialintelligenceact.eu/implementation-timeline/",
+          "secondary_urls": [
+            { "label": "EU AI Act official framework page", "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" }
+          ],
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "The EU AI Act's Annex III high-risk system obligations — covering employment, credit scoring, law enforcement, and biometrics among eight sectors — enter enforcement on August 2, 2026. The November 2025 Digital Omnibus proposal to delay to December 2027 remains unenacted. Harmonized technical standards arrived 8 months late. Penalties: up to €15 million or 3% of global annual turnover.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["EU AI Act", "compliance", "high-risk", "enforcement"],
+          "category": "Regulation — Global",
+          "recurrence": "returning_theme",
+          "recurrence_note": "Deadline is now under 100 days away as of April 29. No change to the August 2, 2026 date; Digital Omnibus delay proposal remains unenacted."
+        },
+        {
+          "id": "reg-china-digital-humans",
+          "title": "China's CAC Issues Draft AI Digital-Human Labeling Rules; Fines Up to 200,000 Yuan",
+          "source": "Cyberspace Administration of China / Let's Data Science",
+          "author": "Cyberspace Administration of China",
+          "date": "2026-04-22",
+          "primary_url": "https://letsdatascience.com/news/china-tightens-rules-on-ai-digital-humans-323e9a9c",
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "China's Cyberspace Administration issued draft rules requiring explicit labeling of AI-generated avatars, documented consent for creating digital replicas of individuals, and mechanisms preventing fraud and misinformation from AI-generated content. The affected sector was valued at 4.1 billion yuan in 2024, growing 85% year-on-year. Fines range from 10,000 to 200,000 yuan per violation. Enterprise teams deploying lifelike AI avatars or voice synthesis in China face new consent management and provenance metadata requirements.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "tags": ["China", "CAC", "deepfake", "digital-human", "consent", "labeling"],
+          "category": "Regulation — Global",
+          "recurrence": "new",
+          "why_it_matters": "Organizations deploying AI-generated synthetic media, virtual agents, or voice synthesis in China must now plan for consent management workflows, provenance metadata, and visible AI disclosure in all AI-generated avatar content. The rules parallel emerging US and EU synthetic media labeling requirements."
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_disclosures",
+      "title": "Enterprise AI Disclosures",
+      "description": "Public company AI mentions in SEC filings from industrial-sector peers.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "disclosure-empty-week",
+          "title": "No industrial-sector peer 10-Q or 10-K filings with AI disclosures this week",
+          "source": "SEC EDGAR",
+          "author": "",
+          "date": "2026-04-26",
+          "primary_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=10-Q&dateb=&owner=include&count=40",
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "No major new developments this week. Q1 2026 10-Q filings for large accelerated filers in the industrial sector are not due until May 11, 2026. The April 20–26 window falls between quarterly reporting cycles for most building materials and industrial sector public companies. An 8-K filed by a large-cap building materials company (Owens Corning) on April 20 reported annual meeting voting results — no AI-related content.",
+          "score": {
+            "total": 0,
+            "signal": 0,
+            "novelty": 0,
+            "actionability": 0,
+            "source_quality": 0
+          },
+          "tags": ["SEC", "10-Q", "enterprise-disclosure"],
+          "category": "Enterprise Disclosures",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Patterns and early-stage developments to monitor.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "signal-agent-econ-advantages",
+          "title": "Agent quality as invisible economic variable",
+          "source": "Anthropic / multiple",
+          "author": "",
+          "date": "2026-04-26",
+          "primary_url": "https://www.anthropic.com/features/project-deal",
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "Project Deal documents an economic asymmetry: stronger AI agents produce better outcomes for their users, but users with weaker agents do not perceive the disadvantage. As agent-mediated transactions expand from internal experiments to real procurement and commercial workflows, this creates a structural principal-agent problem. Organizations that underfund model quality for cost-optimization may be silently ceding economic value.",
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "tags": ["agent-economics", "model-quality", "procurement"],
+          "category": "Emerging Signal",
+          "recurrence": "new"
+        },
+        {
+          "id": "signal-mas-attack-surface",
+          "title": "Multi-agent security as a standalone risk domain — not reducible to model safety",
+          "source": "arXiv / multiple",
+          "author": "",
+          "date": "2026-04-25",
+          "primary_url": "https://arxiv.org/abs/2604.23459",
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "A converging body of research — including this week's architecture paper and prior work on CIK-dimension attacks on deployed personal agents — demonstrates that multi-agent systems produce security failure modes that are architectural, not model-level. Standard model safety evaluations do not surface these risks. Enterprise AI governance frameworks that only evaluate backbone models are structurally incomplete.",
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "tags": ["multi-agent", "security", "governance-gap"],
+          "category": "Emerging Signal",
+          "recurrence": "new"
+        },
+        {
+          "id": "signal-iclr-latent-reasoning",
+          "title": "ICLR 2026 surfacing latent reasoning as central research agenda",
+          "source": "ICLR 2026 / Google",
+          "author": "",
+          "date": "2026-04-26",
+          "primary_url": "https://blog.iclr.cc/2026/04/23/announcing-the-iclr-2026-outstanding-papers/",
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "summary": "ICLR 2026 included a dedicated workshop on 'Latent & Implicit Thinking — Going Beyond CoT Reasoning' (Sunday April 27), reflecting a field-wide shift in how AI researchers understand LLM reasoning. If reasoning is fundamentally latent — not captured by chain-of-thought traces — then current enterprise AI interpretability practices (reviewing CoT outputs for audit) may not reflect what models actually compute. This has governance implications for regulated environments that rely on model-generated explanations.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "tags": ["latent-reasoning", "interpretability", "CoT", "governance"],
+          "category": "Emerging Signal",
+          "recurrence": "new"
+        }
+      ]
     }
   ],
   "index": [
     {
-      "title": "Index entry 1 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 0",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/index/0",
+      "title": "LLMs Get Lost In Multi-Turn Conversation — ICLR 2026 Outstanding Paper",
+      "source": "ICLR 2026 / Microsoft Research",
+      "author": "Philippe Laban, Hiroaki Hayashi, Yingbo Zhou, Jennifer Neville",
+      "date": "2026-04-23",
+      "primary_url": "https://arxiv.org/abs/2505.06120",
+      "score": 9.0
+    },
+    {
+      "title": "Architecture Matters for Multi-Agent Security (arXiv:2604.23459)",
+      "source": "arXiv cs.AI",
+      "author": "Ben Hagag, William L. Anderson, Christian Schroeder de Witt, Sarah Scheffler",
+      "date": "2026-04-25",
+      "primary_url": "https://arxiv.org/abs/2604.23459",
+      "score": 8.5
+    },
+    {
+      "title": "Anthropic Project Deal: AI Marketplace Experiment",
+      "source": "Anthropic",
+      "author": "Anthropic Research Team",
+      "date": "2026-04-24",
+      "primary_url": "https://www.anthropic.com/features/project-deal",
+      "score": 8.5
+    },
+    {
+      "title": "Anthropic Automated Alignment Researchers: AARs Close 97% of Performance Gap",
+      "source": "Anthropic Alignment Science",
+      "author": "Anthropic Fellows",
+      "date": "2026-04-14",
+      "primary_url": "https://www.anthropic.com/research/automated-alignment-researchers",
+      "score": 8.0
+    },
+    {
+      "title": "Anthropic Economic Index Survey Launch",
+      "source": "Anthropic",
+      "author": "Anthropic Economic Research Team",
+      "date": "2026-04-22",
+      "primary_url": "https://www.anthropic.com/research/economic-index-survey-announcement",
+      "score": 8.0
+    },
+    {
+      "title": "EU AI Act August 2, 2026 High-Risk Enforcement Deadline: Implementation Timeline",
+      "source": "EU AI Office",
+      "author": "European Commission",
+      "date": "2026-04-23",
+      "primary_url": "https://artificialintelligenceact.eu/implementation-timeline/",
+      "score": 8.0
+    },
+    {
+      "title": "NIST AI RMF Profile for Trustworthy AI in Critical Infrastructure — Concept Note",
+      "source": "NIST ITL",
+      "author": "NIST Information Technology Laboratory",
+      "date": "2026-04-07",
+      "primary_url": "https://www.nist.gov/programs-projects/concept-note-ai-rmf-profile-trustworthy-ai-critical-infrastructure",
       "score": 7.5
     },
     {
-      "title": "Index entry 2 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 1",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/index/1",
-      "score": 7.3
+      "title": "FTC AI Interoperability Guidance — Model Portability for Large Platforms",
+      "source": "FTC",
+      "author": "Federal Trade Commission",
+      "date": "2026-04-08",
+      "primary_url": "https://markets.financialcontent.com/stocks/article/marketminute-2026-4-8-breaking-the-walled-garden-ftc-mandates-ai-interoperability-for-tech-giants",
+      "score": 7.5
     },
     {
-      "title": "Index entry 3 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 2",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/index/2",
-      "score": 7.2
-    },
-    {
-      "title": "Index entry 4 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 3",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/index/3",
+      "title": "Transformers are Inherently Succinct — ICLR 2026 Outstanding Paper",
+      "source": "ICLR 2026 / RPTU Kaiserslautern-Landau / ETH Zürich",
+      "author": "Pascal Bergsträßer, Ryan Cotterell, Anthony Widjaja Lin",
+      "date": "2026-04-23",
+      "primary_url": "https://arxiv.org/abs/2510.19315",
       "score": 7.0
     },
     {
-      "title": "Index entry 5 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 4",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/index/4",
-      "score": 6.9
+      "title": "China CAC Draft AI Digital-Human Labeling Rules",
+      "source": "Cyberspace Administration of China",
+      "author": "Cyberspace Administration of China",
+      "date": "2026-04-22",
+      "primary_url": "https://letsdatascience.com/news/china-tightens-rules-on-ai-digital-humans-323e9a9c",
+      "score": 7.0
     },
     {
-      "title": "Index entry 6 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 5",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/index/5",
-      "score": 6.8
-    },
-    {
-      "title": "Index entry 7 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 6",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/index/6",
-      "score": 6.6
-    },
-    {
-      "title": "Index entry 8 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 7",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/index/7",
+      "title": "ICLR 2026: Google Presents 95+ Papers Including AI for Safety, Robotics, and Reasoning",
+      "source": "Google Research / ICLR 2026",
+      "author": "Google Research / Google DeepMind",
+      "date": "2026-04-23",
+      "primary_url": "https://research.google/conferences-and-events/google-at-iclr-2026/",
       "score": 6.5
     },
     {
-      "title": "Index entry 9 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 8",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/index/8",
-      "score": 6.3
-    },
+      "title": "ICLR 2026 Test of Time Awards: DCGAN and DDPG Recognized for 10-Year Impact",
+      "source": "ICLR 2026",
+      "author": "ICLR Program Committee",
+      "date": "2026-04-22",
+      "primary_url": "https://blog.iclr.cc/2026/04/22/announcing-the-test-of-time-awards-from-iclr-2016/",
+      "score": 5.5
+    }
+  ],
+  "flagged_unverified": [
     {
-      "title": "Index entry 10 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 9",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/research/index/9",
-      "score": 6.2
+      "claim": "China's Cyberspace Administration warned ByteDance over AI content labeling compliance gaps on April 28, 2026",
+      "reason": "Reported date of April 28 is outside the April 20–26 target window. Dropped from main content.",
+      "attempted_url": "https://brusselsmorning.com/china-ai-rules-2026/97466/"
     }
   ],
   "emerging_signals": [
     {
-      "pattern": "Fixture pattern observed across multiple sources",
-      "evidence": "Replace with real cross-source evidence from the week.",
-      "what_to_watch": "What to watch for next week."
+      "pattern": "Agent quality is an invisible economic asymmetry in agentic workflows",
+      "evidence": "Anthropic's Project Deal (April 24) shows users with weaker AI agents received consistently worse deal outcomes — lower prices on sales, higher prices on purchases — but could not detect their disadvantage. This implies that agent capability becomes a structural economic variable in any workflow where AI agents represent human interests.",
+      "what_to_watch": "Watch for downstream procurement workflows where agent tier differentials compound across many transactions. Monitor whether model-quality SLAs begin appearing in enterprise AI contracts."
+    },
+    {
+      "pattern": "Multi-agent system security cannot be reduced to backbone model safety",
+      "evidence": "arXiv:2604.23459 (April 25) demonstrates 3.8× attack success rate variation across MAS architectures at equivalent task performance. This is the second paper in two weeks (following CIK-Bench on personal agent state poisoning) to document architecture-level vulnerabilities that model-level safety evaluations miss.",
+      "what_to_watch": "Track whether enterprise AI governance frameworks begin requiring MAS-specific security documentation distinct from model cards. Watch NIST AI RMF for critical infrastructure for MAS-specific guidance."
+    },
+    {
+      "pattern": "Latent reasoning research may invalidate interpretability practices that rely on CoT traces",
+      "evidence": "ICLR 2026 featured a dedicated workshop on latent and implicit thinking (April 27). The concurrent ICLR outstanding paper on transformer succinctness formally proves that analyzing transformer properties is EXPSPACE-complete. Together these signal that the field is moving toward a model of LLM reasoning that does not map cleanly to observable chain-of-thought outputs.",
+      "what_to_watch": "Track NIST AI RMF interpretability guidance updates. Watch whether EU AI Act Article 13 (transparency) guidance begins distinguishing between surface-level CoT explanations and deeper mechanistic interpretability."
     }
   ],
   "suggested_refinements": {
     "sources_to_add": [
-      "Source A",
-      "Source B"
+      "EU AI Office official publications at ai-office.ec.europa.eu — for primary-source guidance documents as August 2026 enforcement deadline approaches",
+      "White House OSTP blog and AI.gov for direct administration AI policy updates",
+      "PapersWithCode trending page filtered to April 20–26 for traction-ranked arXiv papers with code",
+      "ICLR 2026 proceedings on OpenReview for the full accepted papers list with ratings"
     ],
-    "sources_to_drop": [],
+    "sources_to_drop": [
+      "Secondary news summaries of regulatory actions (e.g., law firm alerts for NIST/FTC actions) — go directly to .gov and .europa.eu primary sources per skill requirements"
+    ],
     "topics_to_add": [
-      "Topic A"
+      "Agent governance frameworks — as MAS security and agentic commerce research accelerates, a dedicated subsection on agent-specific governance standards would add value",
+      "AI-driven labor impact data — Anthropic's new Economic Index Survey will generate monthly primary-source data; track publication cadence",
+      "State-level AI law developments — California SB 53 implementation and Colorado AI Act (June 30, 2026 effective date) require close monitoring over the next 10 weeks"
     ],
-    "notes": "Fixture data \u2014 refine after first real run."
+    "topics_to_drop": [
+      "ISO/IEC 42001 — no substantive new developments this week; retain as a recurring background item rather than a dedicated search"
+    ],
+    "notes": "The April 20–26 window coincided with ICLR 2026 (April 23–27), which concentrated lab and academic publication activity. This created an unusually dense research signal but a lighter regulatory signal compared to adjacent weeks. The NIST Critical Infrastructure AI RMF Profile (April 7) and FTC AI Interoperability guidance (April 8) both fell just outside the window — they warrant formal coverage in the prior week's tab. Enterprise disclosures section was empty this week because Q1 2026 10-Q filings for large accelerated filers are not due until May 11, 2026. Next week's research tab should capture those Q1 AI disclosures as they begin filing."
   }
 }

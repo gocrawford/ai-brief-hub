@@ -1,499 +1,596 @@
 {
   "tab_id": "youtube",
-  "tab_name": "YouTube Videos",
+  "tab_name": "YouTube",
   "subtitle": "Video Intelligence",
+  "icon": "Video",
+  "min_items": 12,
   "freshness": {
-    "target_pct_new": 0.8,
+    "target_pct_new": 0.80,
     "pct_new": 1.0,
-    "items_total": 9,
-    "items_new": 9,
+    "items_total": 15,
+    "items_new": 15,
     "items_returning": 0
   },
-  "min_items": 12,
   "executive_summary": [
     {
-      "headline": "Headline 1 for YouTube Videos",
-      "body": "This is a fixture executive summary bullet. Replace with real lead-with-the-answer content from the actual run.",
-      "primary_url": "https://example.com/youtube/exec/1"
+      "headline": "GPT-5.5 and DeepSeek V4 landed within 24 hours of each other, forcing an immediate model-stack rethink",
+      "body": "OpenAI shipped GPT-5.5 on April 23 and DeepSeek released V4 on April 24. Every major AI channel produced analysis in the same 48-hour window. The consistent signal across creators: GPT-5.5 closes the gap on autonomous long-running coding tasks, while DeepSeek V4's 1M-token context and sub-$2/M-token input price creates a viable open-weight option for bulk enterprise workloads at roughly one-tenth the cost of frontier closed models.",
+      "primary_url": "https://www.youtube.com/watch?v=jz0rNhfAKo8"
     },
     {
-      "headline": "Headline 2 for YouTube Videos",
-      "body": "Second fixture bullet. Each bullet should link to a primary source.",
-      "primary_url": "https://example.com/youtube/exec/2"
+      "headline": "Copilot Edit Mode went GA in Word, Excel, and PowerPoint — the enterprise agentic coding pattern is now in the productivity suite",
+      "body": "Microsoft's Copilot CommUnity stream on April 20 demonstrated Edit Mode going generally available across M365. The mode shifts Copilot from single-turn assistant to multi-step document collaborator inside existing enterprise tools. This is the first GA delivery of an agentic workflow pattern inside a standard enterprise license stack — no separate agent platform required.",
+      "primary_url": "https://www.youtube.com/watch?v=wA2UYR5l_q0"
     },
     {
-      "headline": "Headline 3 for YouTube Videos",
-      "body": "Third fixture bullet \u2014 keeps the layout honest at min length."
+      "headline": "Google DeepMind's agent-trap paper surfaced as the week's most-cited security signal",
+      "body": "A DeepMind paper on adversarial content embedded in web pages — invisible HTML, CSS metadata, and image pixels that redirect agent behavior — circulated across creator channels. The practical framing: the attack surface for deployed agents is the entire web, not just the model. Creator coverage pointed to 86% exploit success rates in testing, with memory poisoning persisting across sessions.",
+      "primary_url": "https://www.youtube.com/watch?v=IXIlqa06B5c"
     }
   ],
   "top_picks": [
     {
-      "id": "youtube-fixture-0",
-      "title": "Fixture youtube item 0 \u2014 replace with real content",
-      "source": "example.com",
-      "author": "Sample Author 0",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/0",
-      "verified": true,
-      "verified_at": "2026-04-29T18:00:00Z",
-      "summary": "This is fixture data for the youtube tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+      "id": "ai-explained-gpt55-deepseek-v4-2026-04-24",
+      "title": "GPT 5.5 Arrives, DeepSeek V4 Drops, and the Compute War Intensifies",
+      "source": "AI Explained",
+      "author": "AI Explained",
+      "date": "2026-04-24",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=jz0rNhfAKo8",
+      "summary": "GPT-5.5 leads on agentic terminal coding (82.7%) and spreadsheet tasks, but trails Claude Mythos by ~20% on SWE-bench Pro for agentic coding and underperforms Opus 4.7/Mythos on hallucination rate for wrong answers. DeepSeek V4 Pro delivers frontier-adjacent performance at roughly one-tenth the cost, with a 1M-token context window and open weights — the creator's verdict is that it sits 3–6 months behind frontier models while being well-suited for high-volume document processing. The video includes 50 non-headline data points, benchmark cross-references from third-party sources, and a live vibe-coded game demo using GPT Image 2.",
       "score": {
-        "total": 8.5,
+        "total": 9.0,
         "signal": 3,
         "novelty": 3,
-        "actionability": 1,
-        "source_quality": 2
+        "actionability": 2,
+        "source_quality": 1
       },
       "engagement": {
-        "views": 12500,
-        "likes": 340,
-        "comments": 87
+        "views": 0
       },
-      "tags": [
-        "fixture",
-        "youtube"
-      ],
+      "verified": true,
+      "verified_at": "2026-04-29T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["GPT-5.5", "DeepSeek V4", "benchmarks", "model comparison", "agentic coding"],
+      "category": "Model Analysis",
       "key_takeaways": [
-        "First takeaway \u2014 concrete and source-grounded.",
-        "Second takeaway \u2014 surfaces the so-what.",
-        "Third takeaway \u2014 points to next action."
+        "GPT-5.5 leads on agentic terminal coding (82.7% vs Mythos 82.0%) and is 25% cheaper than Opus 4.7, but hallucinates more confidently when wrong — hallucination rate on wrong answers is 86% vs Opus 4.7's 36%.",
+        "DeepSeek V4 Pro at ~$1.74/M input tokens ($3.48/M output) sits 3–6 months behind frontier closed models while matching or exceeding GPT-5.2/Gemini 3 Pro on reasoning and coding benchmarks — viable for bulk long-context workloads.",
+        "No publicly verifiable API access for GPT-5.5 at video publish time; all third-party benchmarks pending. DeepSeek service capacity is constrained due to hardware crunch (Bloomberg source cited)."
       ],
       "suggested_actions": [
-        "Read the primary source within the next 48 hours.",
-        "Share with the AI working group for review."
-      ],
-      "recurrence": "new",
-      "why_it_matters": "This represents a meaningful shift in how leaders should think about AI investment for the quarter."
+        "Run the team's internal document-processing and code-review workloads against DeepSeek V4 Flash API (once access stabilizes) to establish a cost-per-task baseline versus current Opus 4.7 usage.",
+        "Before routing any agentic coding task to GPT-5.5, define an explicit hallucination-check step — this model is confident when wrong more often than Opus 4.7.",
+        "Track the SWE-bench Pro leaderboard weekly; the gap between GPT-5.5 and Mythos on agentic coding is meaningful for software automation decisions."
+      ]
     },
     {
-      "id": "youtube-fixture-1",
-      "title": "Fixture youtube item 1 \u2014 replace with real content",
-      "source": "example.com",
-      "author": "Sample Author 1",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/1",
-      "verified": true,
-      "verified_at": "2026-04-29T18:00:00Z",
-      "summary": "This is fixture data for the youtube tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+      "id": "matt-wolfe-biggest-leap-2026-04-24",
+      "title": "AI News: The Biggest Leap We've Seen This Year!",
+      "source": "Matt Wolfe",
+      "author": "Matt Wolfe",
+      "date": "2026-04-24",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=jsP-eRriC0k",
+      "summary": "GPT-5.5 and ChatGPT Images 2.0 lead the week. Wolfe covers Claude Live Artifacts (real-time collaborative code artifacts), Copilot Agents going GA in Word, Excel, and PowerPoint, Google Gemini Deep Research Max, DeepSeek V4 and Qwen 3.6-Max, and Kimi K2.6. Also covers the Anthropic Mythos unauthorized-access incident. The 43-minute runtime makes this the most comprehensive single-video sweep of the week's launches across all major vendors.",
       "score": {
-        "total": 8.5,
-        "signal": 3,
-        "novelty": 3,
-        "actionability": 1,
+        "total": 8.0,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
         "source_quality": 2
       },
       "engagement": {
-        "views": 12500,
-        "likes": 340,
-        "comments": 87
+        "views": 111000
       },
-      "tags": [
-        "fixture",
-        "youtube"
-      ],
+      "verified": true,
+      "verified_at": "2026-04-29T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["weekly roundup", "GPT-5.5", "Claude", "Copilot", "DeepSeek V4", "ChatGPT Images 2.0"],
+      "category": "Weekly Intelligence",
       "key_takeaways": [
-        "First takeaway \u2014 concrete and source-grounded.",
-        "Second takeaway \u2014 surfaces the so-what.",
-        "Third takeaway \u2014 points to next action."
+        "Copilot agents in Word, Excel, and PowerPoint went GA on April 22 — the agentic pattern is now inside the standard Microsoft 365 license for enterprise customers with Copilot premium.",
+        "Claude Live Artifacts enables real-time multi-user code collaboration directly in the Claude interface — a workflow shift for teams already using Claude for rapid prototyping.",
+        "Anthropic confirmed unauthorized access to the Mythos model; Sam Altman described it as expected at the frontier, but the incident surfaces real governance questions for any team using Claude API in production."
       ],
       "suggested_actions": [
-        "Read the primary source within the next 48 hours.",
-        "Share with the AI working group for review."
-      ],
-      "recurrence": "new",
-      "why_it_matters": "This represents a meaningful shift in how leaders should think about AI investment for the quarter."
+        "Test Copilot Edit Mode in Excel against a real internal reporting workflow this week — GA status means IT approval path is clearer than for experimental tools.",
+        "Evaluate Claude Live Artifacts for team code-review or document-collaboration sessions where multiple reviewers currently work asynchronously.",
+        "Flag the Mythos unauthorized-access incident to IT/security: any team running Claude API in production should review their data-handling and API key scoping."
+      ]
     },
     {
-      "id": "youtube-fixture-2",
-      "title": "Fixture youtube item 2 \u2014 replace with real content",
-      "source": "example.com",
-      "author": "Sample Author 2",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/2",
-      "verified": true,
-      "verified_at": "2026-04-29T18:00:00Z",
-      "summary": "This is fixture data for the youtube tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+      "id": "every-gpt55-3week-test-2026-04-23",
+      "title": "We Tested GPT-5.5 for 3 Weeks. It's a Beast.",
+      "source": "Every",
+      "author": "Every",
+      "date": "2026-04-23",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=GROt1Nd4asY",
+      "summary": "After three weeks of internal testing at a team of technical product builders, GPT-5.5 scores 62.5/100 on Every's Senior Engineer Benchmark — a 30-point jump over Opus 4.7 (which scores in the low 30s). The model rewrites code from first principles rather than patching, executes long autonomous runs, and pairs best with a contract-style specification plan written by Opus 4.7. Opus 4.7 still wins on underspecified vibe coding, design aesthetics, and evaluation tasks. The video is based on real product work (one builder shipped a native iOS app and ran ~900M tokens for a product release), not curated demos.",
       "score": {
         "total": 8.5,
         "signal": 3,
-        "novelty": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "views": 0
+      },
+      "verified": true,
+      "verified_at": "2026-04-29T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["GPT-5.5", "agentic coding", "senior engineer benchmark", "model testing", "code execution"],
+      "category": "Model Testing",
+      "key_takeaways": [
+        "GPT-5.5 scored 62.5/100 on Every's Senior Engineer Benchmark, approximately 30 points above Opus 4.7 — but human senior engineers score 80–90, so the gap to full autonomy remains significant.",
+        "The model's strongest behavior pattern: rewriting code from first principles rather than patching, particularly when given a terse contract-style plan from Opus 4.7 specifying what to delete and file-count targets.",
+        "Opus 4.7 remains superior for underspecified vibe coding from blank prompts, aesthetic/design tasks, and evaluation of whether work meets requirements — the two models complement each other rather than GPT-5.5 replacing Opus."
+      ],
+      "suggested_actions": [
+        "Design a two-model workflow for non-trivial internal projects: Opus 4.7 writes the specification plan, GPT-5.5 executes the implementation — this pattern produced the highest benchmark scores in Every's testing.",
+        "Apply GPT-5.5 first to tech debt, flaky tests, and security backlog items — tasks with well-defined success criteria where its execution strength outweighs the need for aesthetic judgment.",
+        "Before committing to GPT-5.5 at scale, run the team's own analog of Every's Senior Engineer Benchmark against a real internal codebase to validate the benchmark translates to your context."
+      ]
+    },
+    {
+      "id": "matthew-berman-deepseek-v4-2026-04-25",
+      "title": "My Honest Thoughts about Deepseek",
+      "source": "Matthew Berman",
+      "author": "Matthew Berman",
+      "date": "2026-04-25",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=UV1WDNe4J5w",
+      "summary": "DeepSeek V4 Pro (1.6 trillion parameters, 49B active via MoE, 1M token context) matches Opus 4.7 and GPT-5.5 on several benchmarks while costing a small fraction per token. The video's central argument: export controls are partially effective — China is compute-constrained but innovates algorithmically. US enterprises may prefer DeepSeek's cheap/open stack for most workloads, but with meaningful security-dependency risks if AI infrastructure moves to Chinese-developed models. Distillation attacks (Moonshot/Kimi extracted 3.4M exchanges from Claude; MiniMax extracted 13M) are documented but don't fully explain DeepSeek's quality.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
         "actionability": 1,
         "source_quality": 2
       },
       "engagement": {
-        "views": 12500,
-        "likes": 340,
-        "comments": 87
+        "views": 192000
       },
-      "tags": [
-        "fixture",
-        "youtube"
-      ],
+      "verified": true,
+      "verified_at": "2026-04-29T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["DeepSeek V4", "open source", "geopolitics", "model economics", "enterprise AI"],
+      "category": "Model Analysis",
       "key_takeaways": [
-        "First takeaway \u2014 concrete and source-grounded.",
-        "Second takeaway \u2014 surfaces the so-what.",
-        "Third takeaway \u2014 points to next action."
+        "DeepSeek V4 Pro is MIT-licensed and available via API at a price point well below closed frontier models — the cost-performance position is legitimate, not marketing. V4 Flash is faster and cheaper for lower-stakes tasks.",
+        "The security risk is structural, not just theoretical: deploying a Chinese-developed model for sensitive enterprise workloads creates a data-residency and vendor-dependency exposure that IT and legal will need to address explicitly.",
+        "China's algorithmic efficiency innovations on constrained hardware are durable — export controls slow the pace but do not stop the capability progression."
       ],
       "suggested_actions": [
-        "Read the primary source within the next 48 hours.",
-        "Share with the AI working group for review."
-      ],
+        "Before using DeepSeek V4 for any production workload, classify the data involved: public/synthetic data is a reasonable candidate; anything involving internal business data, IP, or regulated information requires a formal data-residency review.",
+        "Use DeepSeek V4 Flash as a cost-efficient baseline for high-volume, low-sensitivity tasks (document classification, public-data summarization, prototype generation) where cost matters more than peak quality.",
+        "Monitor the distillation-attack story — if your team uses Claude or OpenAI APIs, review rate-limiting and usage monitoring to confirm you're not inadvertently contributing to training pipelines."
+      ]
+    },
+    {
+      "id": "copilot-community-edit-mode-2026-04-20",
+      "title": "Microsoft Copilot CommUnity April 2026 — Exploring the New Edit Mode in Word, Excel & PowerPoint",
+      "source": "Microsoft Copilot CommUnity Connection",
+      "author": "Chris Hinch",
+      "date": "2026-04-20",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=wA2UYR5l_q0",
+      "summary": "Edit Mode (formerly Agent Mode) went GA in Word, Excel, and PowerPoint on April 22. Requires Copilot premium license. The demo shows multi-step autonomous tasks inside existing documents: Excel builds a 12-month P&L from scratch with formulas, headers, and conditional formatting; Word rewrites meeting notes into executive summaries; PowerPoint redesigns slides with visuals and speaker notes. Edit Mode uses Work IQ grounding, respects sensitivity labels, and supports undo. Separate Copilot Agents (for users without premium) operate from blank-canvas prompts via the Copilot chat interface and save outputs to OneDrive.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "views": 0
+      },
+      "verified": true,
+      "verified_at": "2026-04-29T00:00:00Z",
       "recurrence": "new",
-      "why_it_matters": "This represents a meaningful shift in how leaders should think about AI investment for the quarter."
+      "tags": ["Microsoft Copilot", "Excel", "Word", "PowerPoint", "enterprise agents", "M365"],
+      "category": "Enterprise AI",
+      "key_takeaways": [
+        "Edit Mode (Copilot premium) performs multi-step agentic tasks inside existing documents — not single-turn suggestions. The Excel demo built a full 12-month P&L including formulas and conditional formatting in a live session.",
+        "The two-tier structure matters for enterprise rollout: Copilot Agents (basic license) work from scratch via chat; Edit Mode (premium license) operates on existing documents with Work IQ grounding and sensitivity-label enforcement.",
+        "Branding kits and company-defined templates are available (upload PDF guidelines), but Organizational Asset Library integration is not yet direct — manual upload required."
+      ],
+      "suggested_actions": [
+        "Identify 3–5 document workflows in the enterprise that currently require analyst time (weekly reporting, executive summaries, forecast models) and pilot Edit Mode on them this sprint — GA status removes the experimental-access barrier.",
+        "Confirm which user segments in the organization hold Copilot premium licenses before scoping the pilot; Edit Mode is locked behind premium while Agents are available on basic.",
+        "Design a human-in-the-loop checkpoint for any Edit Mode output before distribution — the demo shows the model takes independent formatting decisions that will need review in regulated or audit-sensitive contexts."
+      ]
     }
   ],
   "sections": [
     {
-      "section_id": "tutorials",
-      "title": "Tutorials & Walkthroughs",
+      "section_id": "tool_updates",
+      "title": "Tool & Model Updates",
+      "description": "Major launches and capability changes shown on YouTube this week",
+      "layout": "cards",
       "items": [
         {
-          "id": "youtube-fixture-10",
-          "title": "Fixture youtube item 10 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 10",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/youtube/10",
+          "id": "gpt-55-launch-berman-2026-04-23",
+          "title": "OpenAI just dropped GPT-5.5... (WOAH)",
+          "source": "Matthew Berman",
+          "author": "Matthew Berman",
+          "date": "2026-04-23",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=tNV9_I-zLO0",
+          "summary": "GPT-5.5 launches at $5/M input and $30/M output tokens. Berman's first-look covers the benchmark improvements (82.7% Terminal Bench vs Opus 4.7's 69.4%), the Codex desktop integration, and the model's claimed token efficiency — same intelligence as GPT-5.4 using fewer tokens, making effective cost per intelligent output lower despite higher per-token price.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 0
+          },
           "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the youtube tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+          "verified_at": "2026-04-29T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["GPT-5.5", "OpenAI", "Codex", "agentic coding", "model launch"],
+          "category": "Model Launch"
+        },
+        {
+          "id": "gpt-image-2-wes-roth-2026-04-21",
+          "title": "Introducing ChatGPT Images 2.0",
+          "source": "Wes Roth",
+          "author": "Wes Roth",
+          "date": "2026-04-21",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=i6WQdQsE0kc",
+          "summary": "GPT Image 2.0 launched April 21 with a thinking mode that handles web search, multi-image coherence, and QR code generation in a single prompt. Text rendering is the clearest improvement — multilingual typography, Japanese storefronts, and complex layouts hold across languages. Wes Roth streams the OpenAI launch demo live, including the 4K experimental API and the model's debut at 1512 ELO on the image arena leaderboard, ~240 points above its nearest competitor.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 0
+          },
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["GPT Image 2.0", "image generation", "OpenAI", "thinking mode", "text rendering"],
+          "category": "Model Launch"
+        },
+        {
+          "id": "deepseek-v4-analysis-science-revolution-2026-04-25",
+          "title": "New DeepSeek V4 Shocks The World: China Fires Back Hard",
+          "source": "AI Revolution",
+          "author": "AI Revolution",
+          "date": "2026-04-25",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=QhDzb16iFzs",
+          "summary": "DeepSeek V4 Pro (1.6T parameters, 49B active, MIT license) and Flash (284B total, 13B active) both support 1M token context. V4 Pro challenges GPT-5.5, Gemini, and Claude on price-adjusted coding performance. Pricing: V4 Pro at $1.74/M input, $3.48/M output. The video references WSJ and Reuters sources on NVIDIA/Huawei chip support and DeepSeek's hardware stack.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 0
+          },
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["DeepSeek V4", "open-weight model", "model economics", "China AI"],
+          "category": "Model Launch"
+        }
+      ]
+    },
+    {
+      "section_id": "tutorials",
+      "title": "Tutorials",
+      "description": "How-tos worth replicating, with key takeaways for technical teams",
+      "layout": "list",
+      "items": [
+        {
+          "id": "elie-steinbock-agentic-coding-bottleneck-2026-04-20",
+          "title": "How to Actually Be Productive with Claude Code (and Codex) in 2026",
+          "source": "Elie Steinbock",
+          "author": "Elie Steinbock",
+          "date": "2026-04-20",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=K4XSfHdk3S8",
+          "summary": "Review, not generation, is the bottleneck in agentic coding workflows. The video presents a layered stack for managing agent output at scale: automated code reviewers (Cubic, CodeRabbit), TDD and self-verification loops, emulated APIs for safe staging, a QA server layer, and AGENTS.md skill files for consistent agent behavior. Built from experience shipping an open-source product (Inbox Zero) using Claude Code and Codex in production.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 0
+          },
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Claude Code", "Codex", "agentic coding", "code review", "AGENTS.md", "TDD"],
+          "category": "Dev Workflow",
+          "key_takeaways": [
+            "The bottleneck in agentic coding is not code generation speed — it is the review cycle. Automated reviewers (Cubic, CodeRabbit) reduce the human review surface before humans touch the output.",
+            "AGENTS.md skill files define agent behavior consistently across runs — the equivalent of a style guide for autonomous agents in a codebase.",
+            "Emulated APIs allow agent execution against a realistic but sandboxed environment, preventing production side effects during development loops."
+          ]
+        },
+        {
+          "id": "latent-space-applied-intuition-physical-ai-2026-04-27",
+          "title": "The $15B Physical AI Company: Simulation, Autonomy OS, Neural Sim, & 1K Engineers — Applied Intuition",
+          "source": "Latent Space",
+          "author": "Latent Space",
+          "date": "2026-04-27",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=rv23_KcHt4s",
+          "summary": "Applied Intuition (valued at $15B) builds simulation, operating systems, and AI models for physical machines — not screen-based AI. The key practitioner signal for enterprise teams: the company runs Cursor and Claude Code internally with adoption leaderboards, finding that AI coding tools change engineering workflows even in safety-critical embedded-systems contexts. The founders' hard-won lesson: the deployment gap between demo and production is larger than any benchmark predicts.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 0
+          },
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["physical AI", "autonomy", "Claude Code", "enterprise adoption", "Latent Space", "Cursor"],
+          "category": "Practitioner Insight",
+          "key_takeaways": [
+            "Even in safety-critical embedded-systems engineering (automotive, defense, heavy equipment), Claude Code and Cursor have been adopted with internal leaderboards — the tools are not limited to web/software contexts.",
+            "The real deployment bottleneck for physical AI is not model intelligence but hardware constraints: real-time control, latency, memory management, and fail-safes that bricking an iPad does not require.",
+            "The founders' rule: they can look at a robotics demo and predict the next 20 production problems — demos optimized for single controlled scenarios rarely transfer to operational environments."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases",
+      "description": "Agents and automation in real workflows — with enterprise translations",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "matthew-berman-gpt-image2-livestream-2026-04-21",
+          "title": "GPT Image 2, AI Psychosis, and more",
+          "source": "Matthew Berman",
+          "author": "Matthew Berman",
+          "date": "2026-04-21",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=0yTL0LBjj-g",
+          "summary": "A 3-hour livestream covering the GPT Image 2 launch in real time, AI psychosis as a social pattern (obsessive AI capability excitement), and AI's environmental impact. Image 2 demos include thinking mode generating a newspaper about current events, QR codes embedded in images, multilingual text rendering, and the experimental 4K API. The model reached 1512 ELO on the arena leaderboard during the stream.",
           "score": {
             "total": 6.0,
             "signal": 2,
-            "novelty": 2,
+            "novelty": 1,
             "actionability": 1,
-            "source_quality": 1
+            "source_quality": 2
           },
           "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
+            "views": 0
           },
-          "tags": [
-            "fixture",
-            "youtube"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
-          "recurrence": "new"
+          "verified": true,
+          "verified_at": "2026-04-29T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["GPT Image 2.0", "image generation", "livestream", "thinking mode"],
+          "category": "Model Demo",
+          "enterprise_translation": "The thinking mode in GPT Image 2 — where the model web-searches context before generating — is a prototype of the broader pattern: AI that pulls live data into a visual artifact in one step. An enterprise team could apply this to automated report covers, compliance documentation headers, or training material visuals where the content must reflect current dates, product names, or regulatory language without manual editing."
         },
         {
-          "id": "youtube-fixture-11",
-          "title": "Fixture youtube item 11 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 11",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/youtube/11",
-          "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the youtube tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
+          "id": "deepmind-agent-traps-aim-2026-04-20",
+          "title": "Google DeepMind Warns — \"AI Agents Can Be Hijacked\"",
+          "source": "AIM Network",
+          "author": "AIM Network",
+          "date": "2026-04-20",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=IXIlqa06B5c",
+          "summary": "Reports on a Google DeepMind paper showing adversarial content embedded invisibly in web pages (hidden HTML, CSS metadata, image pixels) can redirect agent behavior with 86% exploit success rates in testing. The attack vector is the environment, not the model: instructions are injected into what the agent reads, not into the model weights. Memory poisoning persists across sessions. The current enterprise defenses are described as inadequate.",
           "score": {
-            "total": 5.9,
-            "signal": 2,
+            "total": 7.5,
+            "signal": 3,
             "novelty": 2,
             "actionability": 1,
             "source_quality": 1
           },
           "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
+            "views": 0
           },
-          "tags": [
-            "fixture",
-            "youtube"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
-          "recurrence": "new"
-        },
-        {
-          "id": "youtube-fixture-12",
-          "title": "Fixture youtube item 12 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 12",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/youtube/12",
           "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the youtube tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
-          "score": {
-            "total": 5.8,
-            "signal": 2,
-            "novelty": 2,
-            "actionability": 1,
-            "source_quality": 1
-          },
-          "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
-          },
-          "tags": [
-            "fixture",
-            "youtube"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
-          "recurrence": "new"
+          "verified_at": "2026-04-29T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["AI security", "agent vulnerabilities", "DeepMind", "prompt injection", "enterprise risk"],
+          "category": "Security",
+          "enterprise_translation": "Any enterprise agent that browses external web content — for market research, competitor monitoring, supplier lookup, or news summarization — is exposed to this attack surface. The mitigation is not model-side; it is architectural: agents that browse externally should run in sandboxed environments with no access to internal memory, credentials, or execution actions. The practical 30-day step is an audit of which deployed agents touch external URLs and whether their memory systems are isolated from internal datastores."
         }
-      ],
-      "description": "High-signal long-form video content from established creators."
+      ]
     },
     {
-      "section_id": "tool-reviews",
-      "title": "Tool Reviews & Comparisons",
-      "items": [
-        {
-          "id": "youtube-fixture-13",
-          "title": "Fixture youtube item 13 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 13",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/youtube/13",
-          "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the youtube tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
-          "score": {
-            "total": 5.7,
-            "signal": 2,
-            "novelty": 2,
-            "actionability": 1,
-            "source_quality": 1
-          },
-          "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
-          },
-          "tags": [
-            "fixture",
-            "youtube"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
-          "recurrence": "new"
-        },
-        {
-          "id": "youtube-fixture-14",
-          "title": "Fixture youtube item 14 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 14",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/youtube/14",
-          "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the youtube tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
-          "score": {
-            "total": 5.6,
-            "signal": 2,
-            "novelty": 2,
-            "actionability": 1,
-            "source_quality": 1
-          },
-          "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
-          },
-          "tags": [
-            "fixture",
-            "youtube"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
-          "recurrence": "new"
-        },
-        {
-          "id": "youtube-fixture-15",
-          "title": "Fixture youtube item 15 \u2014 replace with real content",
-          "source": "example.com",
-          "author": "Sample Author 15",
-          "date": "Apr 28, 2026",
-          "primary_url": "https://example.com/youtube/15",
-          "verified": true,
-          "verified_at": "2026-04-29T18:00:00Z",
-          "summary": "This is fixture data for the youtube tab. Replace with real research output for the week of Apr 27 \u2013 May 3, 2026. Each item is grounded in a primary source with a one to three sentence summary.",
-          "score": {
-            "total": 5.5,
-            "signal": 2,
-            "novelty": 2,
-            "actionability": 1,
-            "source_quality": 1
-          },
-          "engagement": {
-            "views": 12500,
-            "likes": 340,
-            "comments": 87
-          },
-          "tags": [
-            "fixture",
-            "youtube"
-          ],
-          "key_takeaways": [
-            "First takeaway \u2014 concrete and source-grounded.",
-            "Second takeaway \u2014 surfaces the so-what.",
-            "Third takeaway \u2014 points to next action."
-          ],
-          "suggested_actions": [
-            "Read the primary source within the next 48 hours.",
-            "Share with the AI working group for review."
-          ],
-          "recurrence": "new"
-        }
-      ],
-      "description": "Side-by-side benchmarks and hands-on demos."
-    }
-  ],
-  "index": [
-    {
-      "title": "Index entry 1 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 0",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/index/0",
-      "score": 7.5
-    },
-    {
-      "title": "Index entry 2 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 1",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/index/1",
-      "score": 7.3
-    },
-    {
-      "title": "Index entry 3 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 2",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/index/2",
-      "score": 7.2
-    },
-    {
-      "title": "Index entry 4 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 3",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/index/3",
-      "score": 7.0
-    },
-    {
-      "title": "Index entry 5 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 4",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/index/4",
-      "score": 6.9
-    },
-    {
-      "title": "Index entry 6 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 5",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/index/5",
-      "score": 6.8
-    },
-    {
-      "title": "Index entry 7 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 6",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/index/6",
-      "score": 6.6
-    },
-    {
-      "title": "Index entry 8 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 7",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/index/7",
-      "score": 6.5
-    },
-    {
-      "title": "Index entry 9 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 8",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/index/8",
-      "score": 6.3
-    },
-    {
-      "title": "Index entry 10 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 9",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/index/9",
-      "score": 6.2
-    },
-    {
-      "title": "Index entry 11 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 10",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/index/10",
-      "score": 6.0
-    },
-    {
-      "title": "Index entry 12 \u2014 fixture",
-      "source": "example.com",
-      "author": "Sample Author 11",
-      "date": "Apr 28, 2026",
-      "primary_url": "https://example.com/youtube/index/11",
-      "score": 5.8
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Patterns observed across multiple videos this week",
+      "layout": "list",
+      "items": []
     }
   ],
   "emerging_signals": [
     {
-      "pattern": "Fixture pattern observed across multiple sources",
-      "evidence": "Replace with real cross-source evidence from the week.",
-      "what_to_watch": "What to watch for next week."
+      "pattern": "Model stack specialization is replacing single-model reliance",
+      "evidence": "Multiple creators this week (Every, Julian Goldie SEO, Lev Selector) independently arrived at a 3-model stack: Opus 4.7 for planning/evaluation, GPT-5.5 for execution, DeepSeek V4 for bulk scale at low cost. This pattern surfaced across channels with no coordination.",
+      "what_to_watch": "Whether enterprise tooling (Copilot, Bedrock, Claude for Enterprise) begins offering model-routing at the API layer, removing the need for teams to manually select and switch models for different task types."
+    },
+    {
+      "pattern": "Agentic security is shifting from model-side to environment-side",
+      "evidence": "The DeepMind agent-trap paper circulated across nearly every creator channel this week. The consensus framing: the attack surface for deployed agents is the full internet, not the model. This is a distinct risk model from jailbreaking or prompt injection of the base model.",
+      "what_to_watch": "Whether enterprise agent platforms (Copilot, Claude for Enterprise, AWS Bedrock Agents) ship environment-isolation or content-filtering layers for web-browsing agents in the next quarter."
+    },
+    {
+      "pattern": "The consumer GPT Image 2.0 thinking mode previews enterprise document automation",
+      "evidence": "Multiple videos this week showed GPT Image 2.0 web-searching, synthesizing information, and generating a visual artifact with embedded QR codes in a single prompt. The pattern — live-data pull into a visual deliverable — is structurally identical to what an enterprise reporting team would need for automated slide or document generation.",
+      "what_to_watch": "When the GPT Image 2 API's thinking mode becomes reliably accessible and whether OpenAI adds enterprise data-grounding (similar to Claude's Work IQ integration) to image generation."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Wes Roth published a dedicated weekly AI news synthesis video covering GPT-5.5 and DeepSeek V4 in the April 20-26 window",
+      "reason": "Only found a Wes Roth ChatGPT Images 2.0 livestream (April 21) and a third-party reference to a weekly AI news video from Wes Roth dated in this window. Direct fetch of his channel page returned no video listing. The ChatGPT Images 2.0 livestream is included in the index; the separate weekly news video could not be independently verified with a direct URL.",
+      "attempted_url": "https://www.youtube.com/@WesRoth/videos"
+    },
+    {
+      "claim": "TheAIGRID published one or more videos covering GPT-5.5 and DeepSeek V4 in the April 20-26 window",
+      "reason": "vidIQ stats confirm TheAIGRID was active during this week (stats show subscriber counts on Apr 20-22). Channel video listing did not return specific video URLs dated April 20-26. No direct video URL for this window could be confirmed at fetch time.",
+      "attempted_url": "https://www.youtube.com/@TheAiGrid/videos"
+    }
+  ],
+  "index": [
+    {
+      "title": "GPT 5.5 Arrives, DeepSeek V4 Drops, and the Compute War Intensifies",
+      "source": "AI Explained",
+      "author": "AI Explained",
+      "date": "2026-04-24",
+      "primary_url": "https://www.youtube.com/watch?v=jz0rNhfAKo8",
+      "score": 9.0
+    },
+    {
+      "title": "We Tested GPT-5.5 for 3 Weeks. It's a Beast.",
+      "source": "Every",
+      "author": "Every",
+      "date": "2026-04-23",
+      "primary_url": "https://www.youtube.com/watch?v=GROt1Nd4asY",
+      "score": 8.5
+    },
+    {
+      "title": "AI News: The Biggest Leap We've Seen This Year!",
+      "source": "Matt Wolfe",
+      "author": "Matt Wolfe",
+      "date": "2026-04-24",
+      "primary_url": "https://www.youtube.com/watch?v=jsP-eRriC0k",
+      "score": 8.0
+    },
+    {
+      "title": "My Honest Thoughts about Deepseek",
+      "source": "Matthew Berman",
+      "author": "Matthew Berman",
+      "date": "2026-04-25",
+      "primary_url": "https://www.youtube.com/watch?v=UV1WDNe4J5w",
+      "score": 8.0
+    },
+    {
+      "title": "Microsoft Copilot CommUnity April 2026 — Exploring the New Edit Mode in Word, Excel & PowerPoint",
+      "source": "Microsoft Copilot CommUnity Connection",
+      "author": "Chris Hinch",
+      "date": "2026-04-20",
+      "primary_url": "https://www.youtube.com/watch?v=wA2UYR5l_q0",
+      "score": 8.0
+    },
+    {
+      "title": "Google DeepMind Warns — 'AI Agents Can Be Hijacked'",
+      "source": "AIM Network",
+      "author": "AIM Network",
+      "date": "2026-04-20",
+      "primary_url": "https://www.youtube.com/watch?v=IXIlqa06B5c",
+      "score": 7.5
+    },
+    {
+      "title": "How to Actually Be Productive with Claude Code (and Codex) in 2026",
+      "source": "Elie Steinbock",
+      "author": "Elie Steinbock",
+      "date": "2026-04-20",
+      "primary_url": "https://www.youtube.com/watch?v=K4XSfHdk3S8",
+      "score": 7.5
+    },
+    {
+      "title": "The $15B Physical AI Company: Simulation, Autonomy OS, Neural Sim, & 1K Engineers — Applied Intuition",
+      "source": "Latent Space",
+      "author": "Latent Space",
+      "date": "2026-04-27",
+      "primary_url": "https://www.youtube.com/watch?v=rv23_KcHt4s",
+      "score": 7.0
+    },
+    {
+      "title": "OpenAI just dropped GPT-5.5... (WOAH)",
+      "source": "Matthew Berman",
+      "author": "Matthew Berman",
+      "date": "2026-04-23",
+      "primary_url": "https://www.youtube.com/watch?v=tNV9_I-zLO0",
+      "score": 7.0
+    },
+    {
+      "title": "Introducing ChatGPT Images 2.0",
+      "source": "Wes Roth",
+      "author": "Wes Roth",
+      "date": "2026-04-21",
+      "primary_url": "https://www.youtube.com/watch?v=i6WQdQsE0kc",
+      "score": 7.0
+    },
+    {
+      "title": "New DeepSeek V4 Shocks The World: China Fires Back Hard",
+      "source": "AI Revolution",
+      "author": "AI Revolution",
+      "date": "2026-04-25",
+      "primary_url": "https://www.youtube.com/watch?v=QhDzb16iFzs",
+      "score": 6.5
+    },
+    {
+      "title": "GPT Image 2, AI Psychosis, and more",
+      "source": "Matthew Berman",
+      "author": "Matthew Berman",
+      "date": "2026-04-21",
+      "primary_url": "https://www.youtube.com/watch?v=0yTL0LBjj-g",
+      "score": 6.0
+    },
+    {
+      "title": "GPT 5.5 VS DeepSeek V4 VS Claude Opus 4.7: Who Wins?",
+      "source": "Julian Goldie SEO",
+      "author": "Julian Goldie",
+      "date": "2026-04-26",
+      "primary_url": "https://www.youtube.com/watch?v=wOTjVX65fmk",
+      "score": 5.5
+    },
+    {
+      "title": "Exciting AI Updates Weekly — April 24, 2026 — Part 1",
+      "source": "Lev Selector",
+      "author": "Lev Selector",
+      "date": "2026-04-24",
+      "primary_url": "https://www.youtube.com/watch?v=XDASSrE4348",
+      "score": 5.5
+    },
+    {
+      "title": "Build AI Agents from Scratch (Beginner to Advanced) — 4 Hours",
+      "source": "n8n community",
+      "author": "n8n community",
+      "date": "2026-04-26",
+      "primary_url": "https://www.youtube.com/watch?v=D2hL82o5FLA",
+      "score": 4.5
     }
   ],
   "suggested_refinements": {
     "sources_to_add": [
-      "Source A",
-      "Source B"
+      "Every (every.to YouTube channel) — their Senior Engineer Benchmark is an original, non-self-reported evaluation methodology that produced the most actionable GPT-5.5 signal this week. Add to Tier 2.",
+      "Bloomberg Technology (YouTube) — primary-source coverage of OpenAI/Microsoft exclusivity-deal announcement and Anthropic Opus 4.7 launch appeared here and was widely referenced by creator channels. Useful for primary-source grounding on deals/earnings.",
+      "Elie Steinbock — practitioner-level agentic coding workflow content with production evidence. Not a hobbyist channel; consider for Tier 2 or 3."
     ],
-    "sources_to_drop": [],
+    "sources_to_drop": [
+      "AI Revolution channel (science.revolution) — Tier-3-quality aggregator; descriptive but not analytical. Duplicates content already in AI Explained and Matthew Berman at lower quality."
+    ],
     "topics_to_add": [
-      "Topic A"
+      "Copilot agents in M365 — this week confirmed GA status; will generate significant enterprise practitioner content over the next 4–8 weeks as teams deploy in real environments.",
+      "Agent security and environment-side attacks — the DeepMind agent-trap paper signal is durable. Monitor for follow-on technical walkthroughs from practitioner channels (Sam Witteveen, Cole Medin).",
+      "Multi-model routing and orchestration — the emerging 3-model-stack pattern (planner / executor / scale) is worth tracking as a design pattern, not just a model comparison."
     ],
-    "notes": "Fixture data \u2014 refine after first real run."
+    "topics_to_drop": [],
+    "notes": "This week's index was built from first-week data (no prior week file to compare against), so all 15 items are classified as new. The freshness_pct_new of 1.0 reflects this, not a claim that all channels were fully swept. View count data was unavailable from YouTube page fetches at collection time — the platform does not expose these in static page content. Matt Wolfe's video had a search-snippet view count of 111K captured at research time; all others recorded as 0 due to extraction limits. Suggest the orchestrator add a YouTube Data API credential path for future runs to capture real-time engagement metrics."
   }
 }
