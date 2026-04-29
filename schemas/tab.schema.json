@@ -11,6 +11,23 @@
     "tab_name": { "type": "string" },
     "subtitle": { "type": "string", "description": "e.g. 'Video Intelligence'" },
     "icon": { "type": "string", "description": "Lucide icon name" },
+    "freshness": {
+      "type": "object",
+      "description": "Week-over-week freshness audit. Validation enforces that pct_new >= target_pct_new, otherwise the tab fails to ship.",
+      "required": ["target_pct_new", "pct_new", "items_total", "items_new", "items_returning"],
+      "properties": {
+        "target_pct_new": { "type": "number", "minimum": 0, "maximum": 1, "description": "Required new-content threshold for this tab (e.g. 0.80 for most tabs, 0.85 for Launches)." },
+        "pct_new": { "type": "number", "minimum": 0, "maximum": 1 },
+        "items_total": { "type": "integer", "minimum": 0 },
+        "items_new": { "type": "integer", "minimum": 0 },
+        "items_returning": { "type": "integer", "minimum": 0 },
+        "empty_week_note": { "type": "string", "description": "Use the verbatim line 'No major new developments this week.' when a section has nothing new — never fabricate filler." }
+      }
+    },
+    "min_items": {
+      "type": "integer",
+      "description": "Minimum items required in the index for this tab to be considered shippable. Set per-tab: youtube 12, x 15, reddit 20, builders 15, launches 20, social 15, research 10."
+    },
 
     "executive_summary": {
       "type": "array",
@@ -182,7 +199,23 @@
         "results": { "type": "string", "description": "Concrete measurable outcomes claimed (with verification)" },
 
         "thumbnail_url": { "type": "string", "format": "uri" },
-        "platform": { "type": "string", "description": "youtube, x, reddit, github, hackernews, n8n, producthunt, linkedin, instagram, tiktok, facebook, arxiv, etc." }
+        "platform": { "type": "string", "description": "youtube, x, reddit, github, hackernews, n8n, producthunt, linkedin, instagram, tiktok, facebook, arxiv, etc." },
+
+        "recurrence": {
+          "type": "string",
+          "enum": ["new", "returning", "returning_theme", "returning_trend", "returning_metric", "returning_pattern"],
+          "default": "new",
+          "description": "Whether this item is fresh or a continuation of last week. Direct duplicates must NOT appear at all — they're excluded entirely. Use 'returning' when the same tool/source resurfaces in a new context, 'returning_theme' when the topic carries forward via a new thread, 'returning_trend' for cross-week behavioral patterns, 'returning_metric'/'returning_pattern' for builder briefs where the implementation pattern repeats with new evidence. The site renders a small badge for any non-'new' value."
+        },
+        "recurrence_note": {
+          "type": "string",
+          "description": "One-line context for non-'new' items. Example: 'Cursor 1.0 went GA last week; this week Anysphere disclosed pricing.'"
+        },
+
+        "enterprise_adaptation": {
+          "type": "string",
+          "description": "Required on all Builders Top Picks and all Research Top Picks. How an AI & Innovation team at a public enterprise (regulated, often Microsoft-shop) would adapt this. Must include: (1) the implementation pattern in 1-2 sentences, (2) the regulated-environment caveats (data residency, model governance, secrets management, audit), (3) one concrete 30-day experiment scoped to a non-production environment."
+        }
       }
     }
   }

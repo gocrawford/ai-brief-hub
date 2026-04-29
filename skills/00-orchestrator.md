@@ -25,7 +25,16 @@ Runs every Sunday 8 PM ET. Produces a complete, validated, deduplicated week of 
 
 4. **Generate `meta.json`.** Sum source counts. Write the 5–7 bullet executive summary stitched from the tab summaries.
 
-5. **Validate.** Run `scripts/validate.mjs` (uses Ajv). If any file fails schema, **abort and notify** — do not commit a partial week.
+5. **Validate.** Run `scripts/validate.mjs` (uses Ajv). The validator enforces:
+   - JSON Schema conformance against `schemas/tab.schema.json`
+   - `freshness.pct_new >= freshness.target_pct_new` (per-tab target: 0.80 most tabs, 0.85 launches)
+   - `index.length >= min_items` (per-tab floor: youtube 12, x 15, reddit 20, builders 15, launches 20, social 15, research 10)
+   - All Top Picks have `verified: true` and a `verified_at` timestamp
+   - All Builders Top Picks and Research Top Picks have `enterprise_adaptation` populated
+   - All Social items have `enterprise_translation` populated
+   - No item has `recurrence` set when its `id` slug doesn't appear in last week's `index` (catches false-recurrence labels)
+
+   If any check fails, **abort and notify** with the specific tab + field. Do not commit a partial week.
 
 6. **Commit.** Branch `weekly/<week_start>`. Single commit: "Week of <week_label>". Push, open PR for the user to review, OR merge directly if `auto_merge: true`.
 

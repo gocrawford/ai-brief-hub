@@ -56,6 +56,15 @@ Futurepedia, Brain Project, Greg Isenberg, MattVidPro, Jeremy Orozco, Paul J Lip
 4. Watch transcript or read description carefully for top candidates. **Do NOT summarize from titles alone.**
 5. Score per `99-editorial-voice.md`. Top Picks ≥ 7.5.
 
+## Freshness & recurrence
+
+Set `freshness.target_pct_new = 0.80` and `min_items = 12`. Against last week's `data/<prev_week>/youtube.json`:
+
+- **Same video** — exclude entirely.
+- **Same creator covering the same model/tool** — `recurrence: "returning"` if it was a Top Pick last week, with a `recurrence_note` describing what's new in this video.
+- **Same trend across multiple creators** — fold into `emerging_signals` rather than re-listing.
+- Empty section line: `"No major new developments this week."`
+
 ## Output structure (`youtube.json`)
 
 `tab_id: "youtube"`, `subtitle: "Video Intelligence"`, `icon: "Video"`.
@@ -67,7 +76,7 @@ Futurepedia, Brain Project, Greg Isenberg, MattVidPro, Jeremy Orozco, Paul J Lip
 4. `tutorials` — How-tos worth replicating, with `key_takeaways`
 5. `use_cases` — Demos of agents/automation in real workflows. Each gets `enterprise_translation`.
 6. `emerging_signals` — Patterns observed across multiple videos
-7. `index` — All ≥ 15 videos considered (sortable table)
+7. `index` — All videos considered, **min 12 rows** (`min_items: 12`) (sortable table)
 8. `suggested_refinements`
 
 ## Per-item required fields

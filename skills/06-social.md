@@ -8,21 +8,31 @@ The reader's framing: "We can't always install the new tool on managed laptops, 
 
 ## Source list
 
-**LinkedIn:**
-- AI thought leaders: Allie K. Miller, Andrew Ng, Andrej Karpathy (cross-post), Ethan Mollick, Cassie Kozyrkov, Aleksandra Przegalinska, Bernard Marr, Sam Witteveen
-- Major AI companies' LinkedIn pages for posts
+**LinkedIn (primary — enterprise AI signals):**
+- Tier 1 voices: **Ethan Mollick** (Wharton, AI research / education), **Allie K. Miller** (enterprise AI strategy), Andrew Ng, Andrej Karpathy (cross-post), Cassie Kozyrkov, Aleksandra Przegalinska, Bernard Marr, Sam Witteveen
+- Tier 2 voices: Bikash Jain, Mark Hinkle, Quang Anh Tran, Benjamin Tannenbaum
+- Major AI companies' LinkedIn pages: Anthropic, OpenAI, Microsoft, Google DeepMind, Perplexity, NVIDIA, Hugging Face
 - Posts with > 500 reactions on AI topics
 
-**Instagram:**
-- AI/tech educators: @airevolution.ai, @ai.learnings, @futuretools.io, @themarketingmillennials (when AI), @noco.ai (no-code AI)
-- AI tool walkthroughs (Reels) with > 50K views
+**TikTok (primary — highest signal for emerging consumer-AI sentiment):**
+- Creator watch list: **@rpn** (Roberto Nickson — AI tools), @nocode.joshua (no-code AI), @marcinteodoru (AI workflows), @nessalazne, @digitalsamaritan (AI education), @aiwithjames (AI tutorials)
+- Hashtag sweep: #ClaudeCode, #AITools, #VibeCoding, #AIAgents, #AgenticAI, #AIAutomation, #Cursor, #PerplexityAI
+- Filter to videos > 50K views, < 3 minutes, from accounts that produce repeatable technical content (not pure entertainment)
 
-**TikTok:**
-- Creators teaching specific tools: search hashtags #ClaudeCode #AIagent #Cursor #PerplexityAI #AIautomation
-- Filter to videos > 50K views and < 3 minutes from accounts that produce repeatable, technical content (not pure entertainment)
+**Instagram (secondary — practitioner workflows):**
+- Creator watch list: **@danmartell** (AI business), **@alliekmiller** (AI strategy, cross-post from LinkedIn), @openyourais, @yusushica
+- Tech educators: @airevolution.ai, @ai.learnings, @futuretools.io, @noco.ai
+- Hashtag sweep: #AITools2026, #AIWorkflow, #AIBusiness
+- Reels with > 50K views
 
-**Facebook:**
-- Generally lowest-signal — include only if a substantial post breaks here first (rare). Mostly use for reshare patterns.
+**Facebook (secondary — community signals):**
+- Groups: DeepNet Group, AI Philosophy, AI for Business
+- Pages: Meta AI official, Nas Daily (when AI content)
+- Generally lowest-signal — fine to ship empty if there's nothing.
+
+**Other:**
+- YouTube Shorts — cross-reference viral AI shorts surfacing on TikTok / Instagram
+- Threads (Meta) — emerging discussions
 
 ## Method
 
@@ -33,6 +43,16 @@ The reader's framing: "We can't always install the new tool on managed laptops, 
    - The enterprise pattern that principle maps to (internal agent project, internal RAG, agent-as-coworker)
    - One concrete experiment a public-company innovation team could run within 30 days
 4. Tools Trending: count cross-platform mentions of the week's hot tools.
+
+## Freshness & recurrence
+
+Set `freshness.target_pct_new = 0.80` and `min_items = 15`. Against last week's `data/<prev_week>/social.json`:
+
+- **Direct duplicate** — exclude entirely.
+- **Same creator, new content** — `recurrence: "new"` (no badge — creators repeating themselves is normal here).
+- **Same tool, new coverage** — `recurrence: "returning"` if the tool was a Top Pick last week.
+- **Same trend, new evidence** — `recurrence: "returning_trend"` with `recurrence_note`.
+- Empty section line per platform: `"No significant AI content this week on [platform]."`
 
 ## Output structure (`social.json`)
 
@@ -47,7 +67,7 @@ The reader's framing: "We can't always install the new tool on managed laptops, 
 6. `facebook` — 0–3 posts (often empty — that's fine)
 7. `tools_trending` — Top 8 list of tools mentioned across platforms
 8. `emerging_signals` — Cross-platform behavioral patterns
-9. `index` — All considered
+9. `index` — All considered, **min 15 rows** (`min_items: 15`)
 10. `suggested_refinements`
 
 ## Per-item required fields

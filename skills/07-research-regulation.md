@@ -41,6 +41,16 @@ This tab exists because hype cycles obscure the slower-moving but higher-impact 
 2. **Model cards:** when a frontier lab releases, read the actual card, not the press release. Capture capability claims, safety eval results, and what the card *doesn't* address.
 3. **Regulation:** read the primary document, not the news summary. Capture the specific clause/section that changed.
 4. **SEC:** EDGAR full-text search for "artificial intelligence" in 10-K/10-Q/8-K filed during the week, scoped to industrial sector. Summarize what the filing says, with the exact filing URL on EDGAR.
+5. Every Top Pick must populate `enterprise_adaptation` per the schema definition (implementation pattern + regulated-environment caveats + 30-day experiment) — Research Top Picks earn the same actionability bar as Builders.
+
+## Freshness & recurrence
+
+Set `freshness.target_pct_new = 0.80` and `min_items = 10`. Against last week's `data/<prev_week>/research.json`:
+
+- **Same paper / same regulatory document** — exclude entirely.
+- **Multi-week regulatory rollout** (e.g., EU AI Act phased deadlines) — `recurrence: "returning"` with a `recurrence_note` capturing what changed this week.
+- **Recurring research theme** (e.g., the agent-evals literature compounding) — `recurrence: "returning_theme"` with a note linking to last week's anchor item.
+- Empty section line: `"No major new developments this week."`
 
 ## Output structure (`research.json`)
 
@@ -62,6 +72,8 @@ This tab exists because hype cycles obscure the slower-moving but higher-impact 
 
 - `title`, `source` (arXiv / NIST / EU AI Office / SEC / lab name), `author`, `date`, `primary_url` (must be primary — arxiv.org, nist.gov, sec.gov, lab domain), `summary`, `score`, `verified`, `verified_at`
 - Source quality on this tab is almost always 2/2 (primary). If you're tempted to give 1/2, you probably shouldn't include the item.
+- Top Picks: **`enterprise_adaptation`** (required — same definition as Builders)
+- Index requires **min 10 rows** (`min_items: 10`)
 
 ## Specific anti-patterns
 
