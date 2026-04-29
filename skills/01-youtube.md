@@ -81,7 +81,8 @@ Set `freshness.target_pct_new = 0.80` and `min_items = 12`. Against last week's 
 
 ## Per-item required fields
 
-- `title`, `source` (channel), `author`, `date`, `primary_url` (canonical YouTube URL), `summary`, `score`, `engagement.views`, `verified`, `verified_at`
+- `title`, `source` (channel), `author`, `date`, `primary_url` (canonical YouTube URL), `summary`, `score`, `verified`, `verified_at`
+- `engagement.views` is OPTIONAL but strongly preferred. Capture the actual view count from the YouTube watch page (the number shown next to "views" under the title, e.g. `111,000` → `111000`). NEVER write `0` as a placeholder when you cannot fetch the real number — omit the `engagement` object entirely. The UI treats `0` as missing and will hide it, but a missing `engagement` block is the canonical signal that the number wasn't captured.
 - Top Picks add: `key_takeaways` (3 bullets), `suggested_actions` (2–3 bullets)
 
 ## What to drop

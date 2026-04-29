@@ -27,8 +27,10 @@ function ScoreBar({ score }: { score?: number }) {
 export default function ItemCard({ item }: { item: Item }) {
   const recurrence = recurrenceLabel(item.recurrence);
   const engagement = item.engagement ?? {};
+  // Filter out unknown/missing engagement values. A 0 means the research agent
+  // couldn't fetch a real number — show nothing rather than a misleading "0".
   const engagementEntries = Object.entries(engagement).filter(
-    ([, v]) => v !== undefined && v !== null,
+    ([, v]) => v !== undefined && v !== null && v !== 0,
   );
 
   return (
