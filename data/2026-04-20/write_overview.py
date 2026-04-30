@@ -1,4 +1,7 @@
-{
+import json
+from datetime import datetime
+
+overview = {
   "week_start": "2026-04-20",
   "generated_at": "2026-04-29T12:00:00Z",
   "headline": "GPT-5.5 and DeepSeek V4 land within 24 hours as enterprise agent platforms consolidate, agent security flaws emerge, and open-weight models close the frontier gap.",
@@ -6,25 +9,25 @@
     {
       "theme_id": "frontier-model-race",
       "headline": "GPT-5.5 and DeepSeek V4 ship within 24 hours, forcing an immediate model-stack rethink",
-      "summary": "OpenAI released GPT-5.5 ('Spud') on April 23 \u2014 the first full base retrain since GPT-4.5, scoring 88.7% on SWE-bench Verified with a claimed 60% hallucination reduction \u2014 and DeepSeek dropped V4 Pro (1.6T params, 49B active, MIT license, 1M-token context) at roughly one-tenth the frontier closed-model price on April 24. YouTube analysis, X discussion, and Launches coverage converged on the same signal: GPT-5.5 leads on autonomous long-running coding but hallucinates confidently when wrong (86% rate vs Opus 4.7's 36%), while DeepSeek V4 is a legitimate bulk-workload option at ~$1.74/M input tokens. Multiple practitioners independently arrived at a three-model stack: Opus 4.7 for planning, GPT-5.5 for execution, DeepSeek V4 for scale.",
+      "summary": "OpenAI released GPT-5.5 ('Spud') on April 23 — the first full base retrain since GPT-4.5, scoring 88.7% on SWE-bench Verified with a claimed 60% hallucination reduction — and DeepSeek dropped V4 Pro (1.6T params, 49B active, MIT license, 1M-token context) at roughly one-tenth the frontier closed-model price on April 24. YouTube analysis, X discussion, and Launches coverage converged on the same signal: GPT-5.5 leads on autonomous long-running coding but hallucinates confidently when wrong (86% rate vs Opus 4.7's 36%), while DeepSeek V4 is a legitimate bulk-workload option at ~$1.74/M input tokens. Multiple practitioners independently arrived at a three-model stack: Opus 4.7 for planning, GPT-5.5 for execution, DeepSeek V4 for scale.",
       "implication": "An enterprise AI team should immediately benchmark DeepSeek V4 Flash against current Opus 4.7 usage for high-volume, low-sensitivity tasks, and define explicit hallucination-check steps before routing agentic coding to GPT-5.5.",
       "citations": [
         {
           "tab_id": "youtube",
           "item_id": "ai-explained-gpt55-deepseek-v4-2026-04-24",
-          "label": "AI Explained: GPT-5.5 and DeepSeek V4 \u2014 50 data points, benchmark cross-references",
+          "label": "AI Explained: GPT-5.5 and DeepSeek V4 — 50 data points, benchmark cross-references",
           "primary_url": "https://www.youtube.com/watch?v=jz0rNhfAKo8"
         },
         {
           "tab_id": "launches",
           "item_id": "gpt-5-5-openai-apr23",
-          "label": "GPT-5.5 ('Spud') launch \u2014 88.7% SWE-bench Verified, $5/$30 per M tokens",
+          "label": "GPT-5.5 ('Spud') launch — 88.7% SWE-bench Verified, $5/$30 per M tokens",
           "primary_url": "https://www.cnbc.com/2026/04/23/openai-announces-latest-artificial-intelligence-model.html"
         },
         {
           "tab_id": "launches",
           "item_id": "deepseek-v4-apr24",
-          "label": "DeepSeek V4 Pro/Flash \u2014 1M token context, MIT license, $1.74/M input",
+          "label": "DeepSeek V4 Pro/Flash — 1M token context, MIT license, $1.74/M input",
           "primary_url": "https://api-docs.deepseek.com/news/news260424"
         },
         {
@@ -36,13 +39,13 @@
         {
           "tab_id": "x",
           "item_id": "x-deepseek-v4-release",
-          "label": "DeepSeek V4 \u2014 open-source SOTA with 1M context, MIT license",
+          "label": "DeepSeek V4 — open-source SOTA with 1M context, MIT license",
           "primary_url": "https://api-docs.deepseek.com/news/news260424"
         },
         {
           "tab_id": "social",
           "item_id": "tp-mollick-gpt55-substack-apr23",
-          "label": "Ethan Mollick: 'Sign of the future \u2014 GPT-5.5'",
+          "label": "Ethan Mollick: 'Sign of the future — GPT-5.5'",
           "primary_url": "https://www.oneusefulthing.org/p/sign-of-the-future-gpt-55"
         }
       ],
@@ -50,38 +53,32 @@
         "status": "new",
         "weeks_count": 1,
         "first_seen_week": "2026-04-20",
-        "note": "First week \u2014 no prior comparison available. GPT-5.5 and DeepSeek V4 both launched this week."
+        "note": "First week — no prior comparison available. GPT-5.5 and DeepSeek V4 both launched this week."
       },
-      "tags": [
-        "frontier-models",
-        "GPT-5.5",
-        "DeepSeek-V4",
-        "model-economics",
-        "agentic-coding"
-      ]
+      "tags": ["frontier-models", "GPT-5.5", "DeepSeek-V4", "model-economics", "agentic-coding"]
     },
     {
       "theme_id": "enterprise-agent-platform-consolidation",
       "headline": "OpenAI and Google launch competing enterprise agent platforms on the same day; Microsoft goes GA in M365",
-      "summary": "April 22 saw three simultaneous enterprise agent moves: OpenAI launched Workspace Agents (Codex-powered, integrating Slack, Salesforce, Google Drive, Notion, and Atlassian), Google unveiled the Gemini Enterprise Agent Platform at Cloud Next '26, and Microsoft's Copilot Edit Mode went GA across Word, Excel, and PowerPoint. The shared architectural pattern \u2014 background-executing, permission-scoped, team-shared agents with no custom engineering required \u2014 was covered across Launches, Social, and YouTube. Reddit community discussion flagged that managing agents at enterprise scale is now the immediate operational problem, not whether to deploy them.",
+      "summary": "April 22 saw three simultaneous enterprise agent moves: OpenAI launched Workspace Agents (Codex-powered, integrating Slack, Salesforce, Google Drive, Notion, and Atlassian), Google unveiled the Gemini Enterprise Agent Platform at Cloud Next '26, and Microsoft's Copilot Edit Mode went GA across Word, Excel, and PowerPoint. The shared architectural pattern — background-executing, permission-scoped, team-shared agents with no custom engineering required — was covered across Launches, Social, and YouTube. Reddit community discussion flagged that managing agents at enterprise scale is now the immediate operational problem, not whether to deploy them.",
       "implication": "An enterprise AI team should map its existing SaaS footprint against the OpenAI Workspace Agents integration list (Slack, Salesforce, Notion, Atlassian) and Copilot Edit Mode's M365 GA status to identify which agent automation requires zero new licensing.",
       "citations": [
         {
           "tab_id": "launches",
           "item_id": "openai-workspace-agents-apr22",
-          "label": "OpenAI Workspace Agents \u2014 Codex-powered, Slack/Salesforce/Notion integrations",
+          "label": "OpenAI Workspace Agents — Codex-powered, Slack/Salesforce/Notion integrations",
           "primary_url": "https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more"
         },
         {
           "tab_id": "launches",
           "item_id": "google-cloud-next-gemini-enterprise-agent-platform-apr22",
-          "label": "Google Gemini Enterprise Agent Platform \u2014 Cloud Next '26 launch",
+          "label": "Google Gemini Enterprise Agent Platform — Cloud Next '26 launch",
           "primary_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/"
         },
         {
           "tab_id": "youtube",
           "item_id": "copilot-community-edit-mode-2026-04-20",
-          "label": "Copilot Edit Mode goes GA in Word, Excel, PowerPoint \u2014 multi-step agentic tasks",
+          "label": "Copilot Edit Mode goes GA in Word, Excel, PowerPoint — multi-step agentic tasks",
           "primary_url": "https://www.youtube.com/watch?v=wA2UYR5l_q0"
         },
         {
@@ -101,26 +98,20 @@
         "status": "new",
         "weeks_count": 1,
         "first_seen_week": "2026-04-20",
-        "note": "First week \u2014 no prior comparison available. All three platforms launched this week simultaneously."
+        "note": "First week — no prior comparison available. All three platforms launched this week simultaneously."
       },
-      "tags": [
-        "enterprise-agents",
-        "platform-consolidation",
-        "copilot",
-        "workspace-agents",
-        "M365"
-      ]
+      "tags": ["enterprise-agents", "platform-consolidation", "copilot", "workspace-agents", "M365"]
     },
     {
       "theme_id": "agent-security-environment-attacks",
       "headline": "MCP's RCE flaw, DeepMind's agent-trap paper, and three independent security repos expose agent security as the week's defining infrastructure risk",
-      "summary": "Three independent security signals converged this week: OX Security documented a by-design RCE path in MCP's STDIO interface (97M+ installs), circulated across X and Hacker News; Google DeepMind published a paper showing adversarial web content hijacks agents at 86% success rates via hidden HTML and image pixels; and the open-source community shipped Agent Vault (credential proxy), SuperHQ (microVM sandboxing), and Broccoli (isolated container pipeline) within 72 hours of each other. Research confirmed that multi-agent system architecture \u2014 not the backbone model \u2014 determines attack surface. The consensus framing across YouTube, X, Reddit, and the Builders tab: the threat model is the environment, not the model.",
+      "summary": "Three independent security signals converged this week: OX Security documented a by-design RCE path in MCP's STDIO interface (97M+ installs), circulated across X and Hacker News; Google DeepMind published a paper showing adversarial web content hijacks agents at 86% success rates via hidden HTML and image pixels; and the open-source community shipped Agent Vault (credential proxy), SuperHQ (microVM sandboxing), and Broccoli (isolated container pipeline) within 72 hours of each other. Research confirmed that multi-agent system architecture — not the backbone model — determines attack surface. The consensus framing across YouTube, X, Reddit, and the Builders tab: the threat model is the environment, not the model.",
       "implication": "An enterprise AI team should audit which deployed agents interact with external URLs or use MCP-connected tools, then enforce environment isolation (sandboxed containers, no internal memory access) before expanding agent scope.",
       "citations": [
         {
           "tab_id": "x",
           "item_id": "x-mcp-rce-vulnerability",
-          "label": "MCP STDIO RCE flaw \u2014 arbitrary code execution across 150M+ downloads",
+          "label": "MCP STDIO RCE flaw — arbitrary code execution across 150M+ downloads",
           "primary_url": "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html"
         },
         {
@@ -132,25 +123,25 @@
         {
           "tab_id": "builders",
           "item_id": "repo-infisical-agent-vault",
-          "label": "Agent Vault \u2014 open-source credential proxy and vault for agents",
+          "label": "Agent Vault — open-source credential proxy and vault for agents",
           "primary_url": "https://github.com/Infisical/agent-vault"
         },
         {
           "tab_id": "builders",
           "item_id": "pattern-agent-security-convergence",
-          "label": "Builder pattern: agent security solved bottom-up \u2014 credential proxy, microVM, isolated containers",
+          "label": "Builder pattern: agent security solved bottom-up — credential proxy, microVM, isolated containers",
           "primary_url": "https://github.com/Infisical/agent-vault"
         },
         {
           "tab_id": "research",
           "item_id": "tp-mas-security-architecture",
-          "label": "Architecture Matters for MAS Security \u2014 attack success rates vary by system design",
+          "label": "Architecture Matters for MAS Security — attack success rates vary by system design",
           "primary_url": "https://arxiv.org/abs/2604.23459"
         },
         {
           "tab_id": "x",
           "item_id": "x-viral-mcp-supply-chain",
-          "label": "MCP crossed 97M installs \u2014 faster than iPhone App Store's first-year pace",
+          "label": "MCP crossed 97M installs — faster than iPhone App Store's first-year pace",
           "primary_url": "https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/"
         }
       ],
@@ -158,50 +149,44 @@
         "status": "new",
         "weeks_count": 1,
         "first_seen_week": "2026-04-20",
-        "note": "First week \u2014 no prior comparison available. MCP vulnerability and agent-trap papers both surfaced this week."
+        "note": "First week — no prior comparison available. MCP vulnerability and agent-trap papers both surfaced this week."
       },
-      "tags": [
-        "agent-security",
-        "MCP",
-        "prompt-injection",
-        "supply-chain",
-        "open-source"
-      ]
+      "tags": ["agent-security", "MCP", "prompt-injection", "supply-chain", "open-source"]
     },
     {
       "theme_id": "open-weight-model-frontier-parity",
       "headline": "Kimi K2.6, DeepSeek V4, and Llama 4 Maverick collectively close the open-weight gap to within one model generation of frontier",
-      "summary": "Three open-weight releases this week \u2014 Kimi K2.6 (1.1T params, r/LocalLLaMA top post with 1,231 upvotes, community-endorsed as an Opus 4.7 substitute), DeepSeek V4 Pro (MIT, 1.6T params, $1.74/M input), and Meta Llama 4 Scout & Maverick (Apache 2.0, multimodal, LlamaCon-launched) \u2014 together shift the community signal from 'open weights can't match frontier' to 'open weights are now a viable production choice for most tasks.' Builders responded immediately: AgenticSeek (fully local autonomous agent, no external API calls) trended on HN, and Nathan Lambert's 12-paper open-model reading list on X surfaced as the week's most-shared technical reading.",
+      "summary": "Three open-weight releases this week — Kimi K2.6 (1.1T params, r/LocalLLaMA top post with 1,231 upvotes, community-endorsed as an Opus 4.7 substitute), DeepSeek V4 Pro (MIT, 1.6T params, $1.74/M input), and Meta Llama 4 Scout & Maverick (Apache 2.0, multimodal, LlamaCon-launched) — together shift the community signal from 'open weights can't match frontier' to 'open weights are now a viable production choice for most tasks.' Builders responded immediately: AgenticSeek (fully local autonomous agent, no external API calls) trended on HN, and Nathan Lambert's 12-paper open-model reading list on X surfaced as the week's most-shared technical reading.",
       "implication": "An enterprise AI team with data-residency requirements or cost constraints should run Kimi K2.6 and Llama 4 Maverick against current Opus 4.7 workloads before the next procurement cycle; the cost-performance gap has narrowed enough to justify a structured evaluation.",
       "citations": [
         {
           "tab_id": "reddit",
           "item_id": "localllama-kimi-k26-opus-replacement-2026-04-21",
-          "label": "r/LocalLLaMA: 'Kimi K2.6 is a legit Opus 4.7 replacement' \u2014 1,231 upvotes",
+          "label": "r/LocalLLaMA: 'Kimi K2.6 is a legit Opus 4.7 replacement' — 1,231 upvotes",
           "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1sr8p49/kimi_k26_is_a_legit_opus_47_replacement/"
         },
         {
           "tab_id": "launches",
           "item_id": "deepseek-v4-open-weights",
-          "label": "DeepSeek V4 Open Weights (MIT) \u2014 HuggingFace collections",
+          "label": "DeepSeek V4 Open Weights (MIT) — HuggingFace collections",
           "primary_url": "https://huggingface.co/collections/deepseek-ai/deepseek-v4"
         },
         {
           "tab_id": "launches",
           "item_id": "llama4-scout-maverick-open-weights",
-          "label": "Meta Llama 4 Scout & Maverick Open Weights (Apache 2.0) \u2014 multimodal",
+          "label": "Meta Llama 4 Scout & Maverick Open Weights (Apache 2.0) — multimodal",
           "primary_url": "https://aiautomationglobal.com/blog/meta-llama-4-scout-maverick-open-source-multimodal-2026"
         },
         {
           "tab_id": "builders",
           "item_id": "impl-agenticeseek-local",
-          "label": "AgenticSeek: fully local autonomous agent \u2014 no external API required",
+          "label": "AgenticSeek: fully local autonomous agent — no external API required",
           "primary_url": "https://github.com/Fosowl/agenticSeek"
         },
         {
           "tab_id": "x",
           "item_id": "x-natolambert-openmodel-reading",
-          "label": "Nathan Lambert's 12-paper open-model reading list \u2014 mid-2026 checkpoint",
+          "label": "Nathan Lambert's 12-paper open-model reading list — mid-2026 checkpoint",
           "primary_url": "https://x.com/natolambert/status/2044870722959581588"
         }
       ],
@@ -209,38 +194,32 @@
         "status": "new",
         "weeks_count": 1,
         "first_seen_week": "2026-04-20",
-        "note": "First week \u2014 no prior comparison available. Kimi K2.6, DeepSeek V4, and Llama 4 all released or community-validated this week."
+        "note": "First week — no prior comparison available. Kimi K2.6, DeepSeek V4, and Llama 4 all released or community-validated this week."
       },
-      "tags": [
-        "open-weight-models",
-        "frontier-parity",
-        "Kimi-K2.6",
-        "Llama-4",
-        "cost-performance"
-      ]
+      "tags": ["open-weight-models", "frontier-parity", "Kimi-K2.6", "Llama-4", "cost-performance"]
     },
     {
       "theme_id": "ai-reliability-trust-infrastructure",
       "headline": "Anthropic's Claude Code postmortem and the harness-bug disclosure reframe AI product reliability as a scaffold problem, not a model problem",
-      "summary": "Anthropic's April 23 postmortem confirmed six weeks of Claude Code quality regression stemmed from three harness bugs \u2014 a reasoning-effort downgrade, a caching regression, and a verbosity-prompt error \u2014 not model degradation. The post generated 3M+ X views within hours, dominated Reddit's r/ClaudeAI, and spread across TikTok and Instagram with notably positive community sentiment about the transparency. Simon Willison's analysis (7.0 score on X) framed the signal for the builder community: agentic system reliability now depends as much on the runtime scaffold as on the underlying model. ICLR 2026's outstanding paper, 'LLMs Get Lost In Multi-Turn Conversation,' added a research anchor: a 39% average performance drop across 15 frontier models in multi-turn interactions.",
-      "implication": "An enterprise AI team running Claude Code or any agentic scaffold in production should treat the harness layer as a first-class reliability surface \u2014 add monitoring, versioning, and regression testing to the scaffold, not only to model outputs.",
+      "summary": "Anthropic's April 23 postmortem confirmed six weeks of Claude Code quality regression stemmed from three harness bugs — a reasoning-effort downgrade, a caching regression, and a verbosity-prompt error — not model degradation. The post generated 3M+ X views within hours, dominated Reddit's r/ClaudeAI, and spread across TikTok and Instagram with notably positive community sentiment about the transparency. Simon Willison's analysis (7.0 score on X) framed the signal for the builder community: agentic system reliability now depends as much on the runtime scaffold as on the underlying model. ICLR 2026's outstanding paper, 'LLMs Get Lost In Multi-Turn Conversation,' added a research anchor: a 39% average performance drop across 15 frontier models in multi-turn interactions.",
+      "implication": "An enterprise AI team running Claude Code or any agentic scaffold in production should treat the harness layer as a first-class reliability surface — add monitoring, versioning, and regression testing to the scaffold, not only to model outputs.",
       "citations": [
         {
           "tab_id": "x",
           "item_id": "x-anthropic-claude-code-postmortem",
-          "label": "Anthropic: Claude Code quality regression \u2014 three harness bugs, not model regression",
+          "label": "Anthropic: Claude Code quality regression — three harness bugs, not model regression",
           "primary_url": "https://www.anthropic.com/engineering/april-23-postmortem"
         },
         {
           "tab_id": "social",
           "item_id": "tp-anthropic-postmortem-apr23",
-          "label": "Anthropic postmortem spreads on TikTok, Instagram, Reddit \u2014 community trust signal",
+          "label": "Anthropic postmortem spreads on TikTok, Instagram, Reddit — community trust signal",
           "primary_url": "https://www.anthropic.com/engineering/april-23-postmortem"
         },
         {
           "tab_id": "research",
           "item_id": "tp-iclr-multiturn",
-          "label": "ICLR 2026: LLMs Get Lost In Multi-Turn \u2014 39% performance drop across 15 frontier models",
+          "label": "ICLR 2026: LLMs Get Lost In Multi-Turn — 39% performance drop across 15 frontier models",
           "primary_url": "https://www.microsoft.com/en-us/research/publication/llms-get-lost-in-multi-turn-conversation/"
         },
         {
@@ -252,7 +231,7 @@
         {
           "tab_id": "reddit",
           "item_id": "claudeai-opus47-vs-opus46-benchmark-2026-04-17",
-          "label": "r/ClaudeAI: Opus 4.7 vs 4.6 on 28 Zod tasks \u2014 community benchmark data",
+          "label": "r/ClaudeAI: Opus 4.7 vs 4.6 on 28 Zod tasks — community benchmark data",
           "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1so9q6q/i_ran_opus_47_vs_old_opus_46_vs_new_opus_46_on_28/"
         }
       ],
@@ -260,21 +239,15 @@
         "status": "new",
         "weeks_count": 1,
         "first_seen_week": "2026-04-20",
-        "note": "First week \u2014 no prior comparison available. Anthropic postmortem published April 23."
+        "note": "First week — no prior comparison available. Anthropic postmortem published April 23."
       },
-      "tags": [
-        "reliability",
-        "harness-bugs",
-        "Claude-Code",
-        "agentic-systems",
-        "trust"
-      ]
+      "tags": ["reliability", "harness-bugs", "Claude-Code", "agentic-systems", "trust"]
     },
     {
       "theme_id": "ai-labor-economics-debate",
-      "headline": "A CEO productivity survey, Uber's blown AI budget, and the LeCun\u2013Amodei jobs debate expose the ROI gap between AI spend and measured enterprise impact",
+      "headline": "A CEO productivity survey, Uber's blown AI budget, and the LeCun–Amodei jobs debate expose the ROI gap between AI spend and measured enterprise impact",
       "summary": "Three signals collided across Reddit, social platforms, and X: a survey of 6,000 executives showing 90% reported zero AI productivity or employment impact after three years; Uber's CTO disclosing the company burned through its full-year AI budget by April; and Yann LeCun publicly rebutting Dario Amodei's claim that AI will displace 50% of entry-level professionals within five years. Anthropic's Economic Index Survey launch added a research anchor: ongoing measurement of AI's actual labor market effects. The community debate on r/ArtificialInteligence and r/singularity was substantive, explicitly invoking Solow's productivity paradox. Meta's announcement of 8,000 layoffs (10% of workforce) explicitly tied to AI investment was circulated in parallel on LinkedIn.",
-      "implication": "An enterprise AI team should establish a cost-per-task baseline for current AI deployments before expanding spend \u2014 Uber's budget shock illustrates that uncontrolled token consumption is a real operational risk, and a productivity measurement framework is now table stakes for justifying further investment.",
+      "implication": "An enterprise AI team should establish a cost-per-task baseline for current AI deployments before expanding spend — Uber's budget shock illustrates that uncontrolled token consumption is a real operational risk, and a productivity measurement framework is now table stakes for justifying further investment.",
       "citations": [
         {
           "tab_id": "reddit",
@@ -285,7 +258,7 @@
         {
           "tab_id": "reddit",
           "item_id": "singularity-uber-claude-code-budget-2026-04-22",
-          "label": "r/singularity: Uber burns full-year AI budget by April \u2014 uncontrolled token consumption",
+          "label": "r/singularity: Uber burns full-year AI budget by April — uncontrolled token consumption",
           "primary_url": "https://www.reddit.com/r/singularity/comments/1ssp3bw/uber_blows_through_its_it_budget_for_ai_for_2026/"
         },
         {
@@ -303,7 +276,7 @@
         {
           "tab_id": "research",
           "item_id": "tp-anthropic-economic-index-survey",
-          "label": "Anthropic Economic Index Survey \u2014 ongoing measurement of AI's labor market effects",
+          "label": "Anthropic Economic Index Survey — ongoing measurement of AI's labor market effects",
           "primary_url": "https://www.anthropic.com/research/economic-index-survey-announcement"
         }
       ],
@@ -311,32 +284,26 @@
         "status": "new",
         "weeks_count": 1,
         "first_seen_week": "2026-04-20",
-        "note": "First week \u2014 no prior comparison available. ROI gap and budget debates surfaced this week across multiple platforms."
+        "note": "First week — no prior comparison available. ROI gap and budget debates surfaced this week across multiple platforms."
       },
-      "tags": [
-        "AI-economics",
-        "ROI",
-        "labor-market",
-        "enterprise-spend",
-        "productivity-paradox"
-      ]
+      "tags": ["AI-economics", "ROI", "labor-market", "enterprise-spend", "productivity-paradox"]
     },
     {
       "theme_id": "agentic-coding-workflow-patterns",
       "headline": "Agentic coding workflows mature from single-model to multi-model stacks with review, sandboxing, and memory layers",
-      "summary": "This week's builder signal is about orchestration over generation: Elie Steinbock's YouTube tutorial on Claude Code and Codex bottlenecks (review, not generation, is the constraint) was matched by Show HN launches for browser-harness (8,400+ stars, self-healing DOM automation), Broccoli (ticket-to-PR pipeline with isolated containers), and Mastra's framework releases adding background tasks and browser automation. The swyx signal on X \u2014 '2026 is coding agents breaking containment' \u2014 was borne out by builders shipping production stacks with TDD loops, emulated APIs, and AGENTS.md skill files. Applied Intuition's Latent Space interview confirmed even safety-critical embedded-systems teams have adopted Cursor and Claude Code with internal leaderboards.",
+      "summary": "This week's builder signal is about orchestration over generation: Elie Steinbock's YouTube tutorial on Claude Code and Codex bottlenecks (review, not generation, is the constraint) was matched by Show HN launches for browser-harness (8,400+ stars, self-healing DOM automation), Broccoli (ticket-to-PR pipeline with isolated containers), and Mastra's framework releases adding background tasks and browser automation. The swyx signal on X — '2026 is coding agents breaking containment' — was borne out by builders shipping production stacks with TDD loops, emulated APIs, and AGENTS.md skill files. Applied Intuition's Latent Space interview confirmed even safety-critical embedded-systems teams have adopted Cursor and Claude Code with internal leaderboards.",
       "implication": "An enterprise AI team running coding agents should add three layers now: automated code reviewers (Cubic, CodeRabbit) to reduce human review surface, TDD/self-verification loops, and AGENTS.md skill files to enforce consistent agent behavior across runs.",
       "citations": [
         {
           "tab_id": "youtube",
           "item_id": "elie-steinbock-agentic-coding-bottleneck-2026-04-20",
-          "label": "Elie Steinbock: review is the bottleneck \u2014 layered stack for agentic coding at scale",
+          "label": "Elie Steinbock: review is the bottleneck — layered stack for agentic coding at scale",
           "primary_url": "https://www.youtube.com/watch?v=K4XSfHdk3S8"
         },
         {
           "tab_id": "builders",
           "item_id": "repo-browser-use-browser-harness",
-          "label": "browser-harness: 8,400+ stars \u2014 self-healing DOM automation for LLM agents",
+          "label": "browser-harness: 8,400+ stars — self-healing DOM automation for LLM agents",
           "primary_url": "https://github.com/browser-use/browser-harness"
         },
         {
@@ -354,7 +321,7 @@
         {
           "tab_id": "builders",
           "item_id": "fw-mastra-apr22-24",
-          "label": "Mastra: background tasks, browser automation \u2014 three releases in one week",
+          "label": "Mastra: background tasks, browser automation — three releases in one week",
           "primary_url": "https://github.com/mastra-ai/mastra"
         },
         {
@@ -368,15 +335,9 @@
         "status": "new",
         "weeks_count": 1,
         "first_seen_week": "2026-04-20",
-        "note": "First week \u2014 no prior comparison available."
+        "note": "First week — no prior comparison available."
       },
-      "tags": [
-        "agentic-coding",
-        "developer-tools",
-        "orchestration",
-        "browser-automation",
-        "workflow-patterns"
-      ]
+      "tags": ["agentic-coding", "developer-tools", "orchestration", "browser-automation", "workflow-patterns"]
     }
   ],
   "ninety_second_brief": [
@@ -401,8 +362,8 @@
     {
       "tab_id": "research",
       "item_id": "tp-iclr-multiturn",
-      "title": "LLMs Get Lost In Multi-Turn Conversation \u2014 ICLR 2026 Outstanding Paper",
-      "one_line": "Deployed conversational agents lose an average 39% of performance across multi-turn interactions \u2014 a finding that challenges reliability assumptions for any production chatbot or agent.",
+      "title": "LLMs Get Lost In Multi-Turn Conversation — ICLR 2026 Outstanding Paper",
+      "one_line": "Deployed conversational agents lose an average 39% of performance across multi-turn interactions — a finding that challenges reliability assumptions for any production chatbot or agent.",
       "primary_url": "https://www.microsoft.com/en-us/research/publication/llms-get-lost-in-multi-turn-conversation/",
       "score": 9.0,
       "source_label": "Research"
@@ -411,7 +372,7 @@
       "tab_id": "launches",
       "item_id": "gpt-5-5-openai-apr23",
       "title": "GPT-5.5 ('Spud')",
-      "one_line": "First full GPT base retrain since 4.5 \u2014 88.7% SWE-bench Verified, 60% claimed hallucination reduction, ChatGPT Plus/Pro/Business/Enterprise; API pricing unconfirmed at launch.",
+      "one_line": "First full GPT base retrain since 4.5 — 88.7% SWE-bench Verified, 60% claimed hallucination reduction, ChatGPT Plus/Pro/Business/Enterprise; API pricing unconfirmed at launch.",
       "primary_url": "https://www.cnbc.com/2026/04/23/openai-announces-latest-artificial-intelligence-model.html",
       "score": 9.0,
       "source_label": "Launches"
@@ -420,7 +381,7 @@
       "tab_id": "x",
       "item_id": "x-mcp-rce-vulnerability",
       "title": "MCP's STDIO interface enables arbitrary code execution across 150M+ downloads",
-      "one_line": "MCP's by-design STDIO execution path is an RCE vulnerability across every MCP-connected agent installation \u2014 audit all MCP tool usage before next sprint.",
+      "one_line": "MCP's by-design STDIO execution path is an RCE vulnerability across every MCP-connected agent installation — audit all MCP tool usage before next sprint.",
       "primary_url": "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html",
       "score": 8.5,
       "source_label": "X.com"
@@ -429,7 +390,7 @@
       "tab_id": "reddit",
       "item_id": "localllama-kimi-k26-opus-replacement-2026-04-21",
       "title": "Kimi K2.6 is a legit Opus 4.7 replacement",
-      "one_line": "Community consensus (1,231 upvotes) that Kimi K2.6 at 1.1T params matches Opus 4.7 on most tasks \u2014 the open-weight frontier gap has closed for a large category of enterprise workloads.",
+      "one_line": "Community consensus (1,231 upvotes) that Kimi K2.6 at 1.1T params matches Opus 4.7 on most tasks — the open-weight frontier gap has closed for a large category of enterprise workloads.",
       "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1sr8p49/kimi_k26_is_a_legit_opus_47_replacement/",
       "score": 8.5,
       "source_label": "Reddit"
@@ -438,7 +399,7 @@
       "tab_id": "social",
       "item_id": "tp-anthropic-postmortem-apr23",
       "title": "Anthropic publishes Claude Code postmortem: three bugs explained, usage limits restored",
-      "one_line": "Six weeks of perceived Claude Code degradation traced to three harness bugs, not model regression \u2014 the reliability surface for agentic systems is the scaffold layer.",
+      "one_line": "Six weeks of perceived Claude Code degradation traced to three harness bugs, not model regression — the reliability surface for agentic systems is the scaffold layer.",
       "primary_url": "https://www.anthropic.com/engineering/april-23-postmortem",
       "score": 9.0,
       "source_label": "Social"
@@ -447,7 +408,7 @@
       "tab_id": "builders",
       "item_id": "repo-infisical-agent-vault",
       "title": "Infisical/agent-vault",
-      "one_line": "Agent Vault intercepts and rewrites credential requests from agents \u2014 the week's most-starred open-source response to the agent security gap.",
+      "one_line": "Agent Vault intercepts and rewrites credential requests from agents — the week's most-starred open-source response to the agent security gap.",
       "primary_url": "https://github.com/Infisical/agent-vault",
       "score": 9.0,
       "source_label": "Builders"
@@ -455,8 +416,8 @@
     {
       "tab_id": "research",
       "item_id": "tp-anthropic-project-deal",
-      "title": "Project Deal: Anthropic's AI Marketplace Experiment \u2014 Agent Quality Determines Economic Outcomes",
-      "one_line": "In controlled tests, users with a stronger AI model achieved better deal outcomes while those with weaker models didn't notice the disadvantage \u2014 agent quality is now a hidden economic variable.",
+      "title": "Project Deal: Anthropic's AI Marketplace Experiment — Agent Quality Determines Economic Outcomes",
+      "one_line": "In controlled tests, users with a stronger AI model achieved better deal outcomes while those with weaker models didn't notice the disadvantage — agent quality is now a hidden economic variable.",
       "primary_url": "https://www.anthropic.com/features/project-deal",
       "score": 8.5,
       "source_label": "Research"
@@ -465,7 +426,7 @@
       "tab_id": "reddit",
       "item_id": "singularity-uber-claude-code-budget-2026-04-22",
       "title": "Uber blows through its IT budget for AI for 2026 and it's only April",
-      "one_line": "Uber exhausted its full-year AI budget by April \u2014 uncontrolled token consumption is a real enterprise budget risk requiring cost-per-task governance before scaling.",
+      "one_line": "Uber exhausted its full-year AI budget by April — uncontrolled token consumption is a real enterprise budget risk requiring cost-per-task governance before scaling.",
       "primary_url": "https://www.reddit.com/r/singularity/comments/1ssp3bw/uber_blows_through_its_it_budget_for_ai_for_2026/",
       "score": 8.0,
       "source_label": "Reddit"
@@ -483,7 +444,14 @@
     ],
     "themes_dropped_off": [],
     "themes_intensifying": [],
-    "note": "First week \u2014 no prior comparison available. All 7 themes are new. This overview is the baseline for recurrence tracking in future weeks. The week's dominant signals: dual frontier model launches (GPT-5.5 + DeepSeek V4), simultaneous enterprise agent platform consolidation from three major vendors, and a convergent agent security signal across MCP vulnerability, DeepMind research, and open-source tooling."
+    "note": "First week — no prior comparison available. All 7 themes are new. This overview is the baseline for recurrence tracking in future weeks. The week's dominant signals: dual frontier model launches (GPT-5.5 + DeepSeek V4), simultaneous enterprise agent platform consolidation from three major vendors, and a convergent agent security signal across MCP vulnerability, DeepMind research, and open-source tooling."
   },
   "theme_tracker": []
 }
+
+with open('/home/user/workspace/ai-brief-hub/data/2026-04-20/overview.json', 'w') as f:
+    json.dump(overview, f, indent=2)
+
+print("overview.json written successfully")
+print(f"Themes: {len(overview['themes'])}")
+print(f"Brief items: {len(overview['ninety_second_brief'])}")
