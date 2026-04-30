@@ -3,8 +3,6 @@
   "tab_name": "Builders",
   "subtitle": "Builder Intelligence",
   "icon": "Hammer",
-  "week_start": "2026-04-20",
-  "week_end": "2026-04-26",
   "min_items": 15,
   "freshness": {
     "target_pct_new": 0.85,
@@ -44,7 +42,10 @@
       "date": "2026-04-24",
       "primary_url": "https://github.com/browser-use/browser-harness",
       "secondary_urls": [
-        { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47890841" }
+        {
+          "label": "HN discussion",
+          "url": "https://news.ycombinator.com/item?id=47890841"
+        }
       ],
       "summary": "Browser Harness wraps Playwright with a self-healing DOM selector layer that uses LLM reasoning to recover from UI changes, replacing brittle XPath selectors with intent-based locators. Released April 17, it reached 8,464 total stars and 132 HN points by April 24, making it the fastest-growing agent infrastructure repo of the week. Engineers report it eliminates 70-80% of selector maintenance work in browser automation pipelines.",
       "key_takeaways": [
@@ -54,9 +55,25 @@
       ],
       "results": "Repo reached 8,464 stars and 756 forks within one week of receiving major Show HN attention (132 upvotes, 65 comments on April 24). Self-healing selector design claims 70-80% reduction in selector maintenance based on community-reported benchmarks in the HN thread.",
       "enterprise_adaptation": "Implementation pattern: Deploy Browser Harness inside a containerized CI/CD step that runs regression tests against internal web portals; the LLM-based selector recovery means the test suite survives quarterly UI refreshes without manual triage. Route LLM calls to an on-premises Ollama instance running Qwen3-Coder to keep DOM screenshots and page HTML off external networks. | Regulated-environment caveats: Browser sessions may capture screenshots containing PII or authentication tokens — ensure the harness is configured to redact sensitive fields before any LLM call, and run sessions in an isolated network segment with no internet egress. The harness inherits whatever credentials the browser session holds, so use short-lived tokens and rotate them per session. | 30-day experiment: In a non-production environment, replace one existing Selenium-based regression suite with Browser Harness. Measure selector breakage rate before and after across three UI deploys. Report time-to-green for the test suite as the primary metric.",
-      "score": { "total": 9.0, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 },
-      "engagement": { "stars": 3200, "upvotes": 132, "comments": 65 },
-      "tags": ["Browser Automation", "Agent Infrastructure", "Self-healing", "Python", "Playwright"],
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 3200,
+        "upvotes": 132,
+        "comments": 65
+      },
+      "tags": [
+        "Browser Automation",
+        "Agent Infrastructure",
+        "Self-healing",
+        "Python",
+        "Playwright"
+      ],
       "category": "Agent Framework",
       "platform": "github",
       "verified": true,
@@ -71,7 +88,10 @@
       "date": "2026-04-25",
       "primary_url": "https://github.com/nex-crm/wuphf",
       "secondary_urls": [
-        { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47899844" }
+        {
+          "label": "HN discussion",
+          "url": "https://news.ycombinator.com/item?id=47899844"
+        }
       ],
       "summary": "WUPHF is a Go-based multi-agent framework where Claude Code, Codex, and local LLM agents share a persistent, Git-backed knowledge graph. Each agent reads from and writes to the shared graph, accumulating context across sessions without manual handoff. The April 25 Show HN earned 258 points and 114 comments, with discussion focused on the 'Karpathy-style LLM wiki' framing — a knowledge base that agents actively maintain rather than passively query.",
       "key_takeaways": [
@@ -81,9 +101,25 @@
       ],
       "results": "258 HN points, 114 comments, 769 total GitHub stars as of April 29. Community reports successful use across codebases of up to 200k lines where persistent context reduced re-work time by approximately 40% versus stateless agent runs.",
       "enterprise_adaptation": "Implementation pattern: Deploy WUPHF on an internal Git server (GitLab or Azure DevOps) with a dedicated repo per product team; agents write structured Markdown files in a defined schema so the knowledge graph is human-readable and searchable alongside code. Use local LLMs via Ollama for all agent reasoning to keep IP and proprietary context on-premises. | Regulated-environment caveats: The shared knowledge graph may accumulate competitive, financial, or PII-adjacent context over time — implement repo-level access controls, enable secret scanning to catch tokens committed by agents, and establish a quarterly graph-hygiene review to prune stale or sensitive entries. | 30-day experiment: Assign one agent team to a non-production codebase migration task; have them use WUPHF's shared graph for three weeks and measure lines-of-context re-supplied to the agent per session versus a stateless baseline. Report whether agent re-work rate declines.",
-      "score": { "total": 8.5, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 2 },
-      "engagement": { "stars": 300, "upvotes": 258, "comments": 114 },
-      "tags": ["Multi-agent", "Knowledge Graph", "Go", "Context Persistence", "Claude Code"],
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 300,
+        "upvotes": 258,
+        "comments": 114
+      },
+      "tags": [
+        "Multi-agent",
+        "Knowledge Graph",
+        "Go",
+        "Context Persistence",
+        "Claude Code"
+      ],
       "category": "Agent Framework",
       "platform": "github",
       "verified": true,
@@ -98,7 +134,10 @@
       "date": "2026-04-22",
       "primary_url": "https://github.com/Infisical/agent-vault",
       "secondary_urls": [
-        { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47865822" }
+        {
+          "label": "HN discussion",
+          "url": "https://news.ycombinator.com/item?id=47865822"
+        }
       ],
       "summary": "Agent Vault is an open-source Go service that sits between AI agents and external APIs, intercepting credential requests and rewriting them with short-lived scoped tokens from a central vault. Agents never hold long-lived secrets directly — they request credentials for specific tools at runtime and the vault enforces policy. The April 22 Show HN earned 156 points and 56 comments, with significant discussion about prompt injection risks when agents can access production credentials.",
       "key_takeaways": [
@@ -108,9 +147,25 @@
       ],
       "results": "156 HN upvotes, 56 comments. 813 total GitHub stars. The policy engine blocks credential escalation attempts at the proxy layer without requiring changes to agent code — reviewers in the HN thread confirmed the architecture cleanly separates agent capability from credential scope.",
       "enterprise_adaptation": "Implementation pattern: Deploy Agent Vault as a sidecar in the same Kubernetes namespace as agent workloads; configure policy rules that mirror existing IAM roles so agents inherit least-privilege access consistent with human users doing the same task. Integrate with Azure Key Vault or HashiCorp Vault as the backend secret store. | Regulated-environment caveats: Audit log completeness is critical for compliance — verify Agent Vault's access logs capture enough context (agent ID, tool name, timestamp, request hash) to satisfy SOX or SOC 2 evidence requirements. Ensure vault backend has HSM-backed key storage for regulated environments. Secret rotation cadence for agent-specific tokens should be shorter (minutes to hours) than human credentials. | 30-day experiment: Deploy Agent Vault in a sandbox environment alongside one existing agent workflow that currently embeds API keys in environment variables. Migrate keys to the vault, run the workflow for three weeks, and compare the blast radius of a simulated key compromise: does the proxied version limit access to only the tools the agent actually used?",
-      "score": { "total": 9.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
-      "engagement": { "stars": 400, "upvotes": 156, "comments": 56 },
-      "tags": ["Agent Security", "Credential Proxy", "Go", "Secrets Management", "MCP"],
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 400,
+        "upvotes": 156,
+        "comments": 56
+      },
+      "tags": [
+        "Agent Security",
+        "Credential Proxy",
+        "Go",
+        "Secrets Management",
+        "MCP"
+      ],
       "category": "Dev Tool",
       "platform": "github",
       "verified": true,
@@ -125,7 +180,10 @@
       "date": "2026-04-22",
       "primary_url": "https://github.com/besimple-oss/broccoli",
       "secondary_urls": [
-        { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47865642" }
+        {
+          "label": "HN discussion",
+          "url": "https://news.ycombinator.com/item?id=47865642"
+        }
       ],
       "summary": "Broccoli watches a Linear project, picks up assigned tickets, and runs Claude or Codex inside a disposable Google Cloud Run or Blaxel container to produce a pull request. The agent has read/write access only within its ephemeral workspace — it cannot touch production systems, cannot persist credentials between runs, and produces a PR that a human reviews before merge. The April 22 Show HN earned 82 points and 49 comments.",
       "key_takeaways": [
@@ -135,9 +193,26 @@
       ],
       "results": "82 HN points, 49 comments. 270 GitHub stars. Community members report Broccoli successfully closed simple refactor tickets and dependency update PRs without human intervention in early testing — higher-complexity tickets still require human review of agent-proposed approaches before the agent is allowed to start coding.",
       "enterprise_adaptation": "Implementation pattern: Configure Broccoli to target only a 'bot-eligible' ticket label in Linear, so a human must explicitly opt a ticket into automated handling. Run all agent containers inside a VPC with no internet egress except to the model API endpoint and the Git host, to prevent exfiltration. | Regulated-environment caveats: Automated PRs must pass the same required reviewer count as human PRs — do not create exceptions to merge-gate policies for bot-authored code. Log the full agent reasoning trace alongside the PR for audit purposes. Review model terms of service to confirm code generated by Claude/Codex is licensable under your IP policy. | 30-day experiment: Identify 10 low-complexity maintenance tickets (dependency bumps, docstring updates, linting fixes) in a non-production service. Run Broccoli against them and measure PR acceptance rate, review time saved, and defect rate on merged agent PRs versus equivalent human PRs.",
-      "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
-      "engagement": { "stars": 270, "upvotes": 82, "comments": 49 },
-      "tags": ["Coding Agent", "Linear", "Claude", "Codex", "Cloud Run", "Python"],
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 270,
+        "upvotes": 82,
+        "comments": 49
+      },
+      "tags": [
+        "Coding Agent",
+        "Linear",
+        "Claude",
+        "Codex",
+        "Cloud Run",
+        "Python"
+      ],
       "category": "Agent Framework",
       "platform": "github",
       "verified": true,
@@ -152,7 +227,10 @@
       "date": "2026-04-26",
       "primary_url": "https://github.com/sachitrafa/YourMemory",
       "secondary_urls": [
-        { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47914367" }
+        {
+          "label": "HN discussion",
+          "url": "https://news.ycombinator.com/item?id=47914367"
+        }
       ],
       "summary": "YourMemory implements a biologically-inspired memory system for AI agents using an Ebbinghaus forgetting curve: memories decay in salience over time but are strengthened each time the agent retrieves and uses them. The April 26 Show HN earned 97 points and 52 comments. The repo claims a 16 percentage point recall improvement over Mem0 on the LoCoMo long-context memory benchmark, achieved by scheduling memory consolidation during agent idle periods rather than at each query.",
       "key_takeaways": [
@@ -162,9 +240,25 @@
       ],
       "results": "97 HN points, 52 comments, 203 GitHub stars. Self-reported: +16 percentage points better recall than Mem0 on LoCoMo benchmark, validated on the public dataset. Independent verification by the HN community is ongoing; two commenters replicated the benchmark results within the HN thread.",
       "enterprise_adaptation": "Implementation pattern: Integrate YourMemory as the memory layer in an internal knowledge assistant that handles multi-session employee queries; the forgetting curve keeps historical context relevant without unbounded growth of the retrieval index. Run the embedding model on-premises using a sentence-transformers model to avoid sending conversation history to an external embedding API. | Regulated-environment caveats: Employee conversation history stored in the memory graph may constitute personal data under GDPR/CCPA — implement a deletion endpoint that removes all memories attributable to a specific user and ensure retention schedules align with your records management policy. Log all memory writes and deletions for audit. | 30-day experiment: Deploy YourMemory alongside an existing RAG-based assistant in a non-production environment with synthetic but realistic multi-session queries. Compare 10-session recall accuracy against the baseline RAG system and measure retrieval latency growth rate as the memory store scales from 100 to 10,000 entries.",
-      "score": { "total": 8.0, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 },
-      "engagement": { "stars": 203, "upvotes": 97, "comments": 52 },
-      "tags": ["Agent Memory", "Python", "Ebbinghaus", "RAG", "Long-context"],
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 203,
+        "upvotes": 97,
+        "comments": 52
+      },
+      "tags": [
+        "Agent Memory",
+        "Python",
+        "Ebbinghaus",
+        "RAG",
+        "Long-context"
+      ],
       "category": "Agent Framework",
       "platform": "github",
       "verified": true,
@@ -186,9 +280,22 @@
           "date": "2026-04-24",
           "primary_url": "https://github.com/browser-use/browser-harness",
           "summary": "Self-healing browser automation harness that uses LLM reasoning to recover from broken DOM selectors, enabling robust browser agents that survive UI updates without manual maintenance. Created April 17, reached 8,464 total stars in one week — the highest velocity browser-agent repo of the week.",
-          "score": { "total": 9.0, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 },
-          "engagement": { "stars": 3200 },
-          "tags": ["Browser Automation", "Python", "Playwright", "Agent Infrastructure"],
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 3200
+          },
+          "tags": [
+            "Browser Automation",
+            "Python",
+            "Playwright",
+            "Agent Infrastructure"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -202,9 +309,22 @@
           "date": "2026-04-26",
           "primary_url": "https://github.com/Fosowl/agenticSeek",
           "summary": "Fully local, self-hosted alternative to cloud AI tools — no API keys, no per-token billing. Runs autonomous agent workflows using local models via Ollama. 26,148 total stars with sustained weekly growth; earned 122 HN points in its April 26 Show HN post.",
-          "score": { "total": 8.5, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
-          "engagement": { "stars": 1800 },
-          "tags": ["Self-hosted", "Local AI", "Python", "Autonomous Agent"],
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 1800
+          },
+          "tags": [
+            "Self-hosted",
+            "Local AI",
+            "Python",
+            "Autonomous Agent"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -219,9 +339,22 @@
           "date": "2026-04-22",
           "primary_url": "https://github.com/rowboatlabs/rowboat",
           "summary": "Open-source IDE for designing, testing, and deploying multi-agent systems, with built-in agent memory and a visual agent-graph editor. 13,184 total stars; the April 22 Show HN earned 161 points and 51 comments focused on its memory persistence model.",
-          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
-          "engagement": { "stars": 1100 },
-          "tags": ["Multi-agent IDE", "TypeScript", "Agent Memory", "Visual Editor"],
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 1100
+          },
+          "tags": [
+            "Multi-agent IDE",
+            "TypeScript",
+            "Agent Memory",
+            "Visual Editor"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -235,9 +368,22 @@
           "date": "2026-04-24",
           "primary_url": "https://github.com/mastra-ai/mastra",
           "summary": "TypeScript-native agent framework with Observational Memory (4-10x token cost reduction) and background task dispatch. Shipped three releases during the week: background async tool execution (Apr 22), CLI-driven browser automation (Apr 23), and Modal cloud sandbox support (Apr 24). Approximately 21k total stars.",
-          "score": { "total": 8.5, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
-          "engagement": { "stars": 900 },
-          "tags": ["TypeScript", "Agent Framework", "Memory", "Background Tasks"],
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "stars": 900
+          },
+          "tags": [
+            "TypeScript",
+            "Agent Framework",
+            "Memory",
+            "Background Tasks"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -251,9 +397,23 @@
           "date": "2026-04-25",
           "primary_url": "https://github.com/nex-crm/wuphf",
           "summary": "Collaborative office of AI employees that build and maintain a shared Git-backed knowledge graph. Agents using Claude Code, Codex, or local LLMs via OpenCode write structured Markdown into a shared repo, creating persistent context across all agent roles. 769 total stars; 258 HN points on April 25.",
-          "score": { "total": 8.5, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 2 },
-          "engagement": { "stars": 500 },
-          "tags": ["Multi-agent", "Knowledge Graph", "Go", "Claude Code", "Persistent Context"],
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "stars": 500
+          },
+          "tags": [
+            "Multi-agent",
+            "Knowledge Graph",
+            "Go",
+            "Claude Code",
+            "Persistent Context"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -267,9 +427,22 @@
           "date": "2026-04-22",
           "primary_url": "https://github.com/Infisical/agent-vault",
           "summary": "HTTP credential proxy and vault for AI agents — agents request short-lived, scoped tokens at runtime rather than holding long-lived secrets directly. Integrates with Infisical, HashiCorp Vault, and Azure Key Vault as secret backends. 813 total stars; 156 HN points on April 22.",
-          "score": { "total": 9.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
-          "engagement": { "stars": 600 },
-          "tags": ["Agent Security", "Credential Proxy", "Go", "Secrets Management"],
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "stars": 600
+          },
+          "tags": [
+            "Agent Security",
+            "Credential Proxy",
+            "Go",
+            "Secrets Management"
+          ],
           "category": "Dev Tool",
           "platform": "github",
           "verified": true,
@@ -283,9 +456,23 @@
           "date": "2026-04-21",
           "primary_url": "https://github.com/ENTERPILOT/GOModel",
           "summary": "Lightweight AI gateway written in Go exposing a unified OpenAI-compatible API across OpenAI, Anthropic, Gemini, Groq, xAI, and Ollama. Includes observability, guardrails, cost tracking, and streaming. Positioned as a LiteLLM alternative with a smaller binary footprint. 744 total stars; 217 HN points on April 21.",
-          "score": { "total": 8.0, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
-          "engagement": { "stars": 500 },
-          "tags": ["AI Gateway", "Go", "OpenAI-compatible", "Observability", "Multi-provider"],
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "stars": 500
+          },
+          "tags": [
+            "AI Gateway",
+            "Go",
+            "OpenAI-compatible",
+            "Observability",
+            "Multi-provider"
+          ],
           "category": "Dev Tool",
           "platform": "github",
           "verified": true,
@@ -299,9 +486,23 @@
           "date": "2026-04-26",
           "primary_url": "https://github.com/sachitrafa/YourMemory",
           "summary": "Agentic AI memory system using Ebbinghaus forgetting curve decay — memories fade unless retrieved, and consolidation during idle periods compresses history into summaries. Claims +16pp recall improvement over Mem0 on the LoCoMo benchmark. 203 total stars; 97 HN points on April 26.",
-          "score": { "total": 8.0, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 1 },
-          "engagement": { "stars": 200 },
-          "tags": ["Agent Memory", "Python", "Long-context", "Ebbinghaus", "Benchmark"],
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 200
+          },
+          "tags": [
+            "Agent Memory",
+            "Python",
+            "Long-context",
+            "Ebbinghaus",
+            "Benchmark"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -315,9 +516,22 @@
           "date": "2026-04-23",
           "primary_url": "https://github.com/lmnr-ai/index",
           "summary": "State-of-the-art open-source browser agent for autonomously completing complex tasks on the web — not just navigation but multi-step task execution with planning and recovery. Built on Laminar's tracing infrastructure, providing observability for agent actions. 2,348 total stars; 98 HN points on April 23.",
-          "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
-          "engagement": { "stars": 400 },
-          "tags": ["Browser Agent", "Python", "Observability", "Web Automation"],
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 400
+          },
+          "tags": [
+            "Browser Agent",
+            "Python",
+            "Observability",
+            "Web Automation"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -331,9 +545,23 @@
           "date": "2026-04-23",
           "primary_url": "https://github.com/superhq-ai/superhq",
           "summary": "Sandboxed AI agent orchestration platform written in Rust that runs each coding agent in an isolated microVM, preventing host machine access. 228 total stars; 63 HN points on April 23. Addresses the security concern that coding agents with broad filesystem access can read secrets and modify system files.",
-          "score": { "total": 7.5, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 1 },
-          "engagement": { "stars": 228 },
-          "tags": ["Agent Sandboxing", "Rust", "microVM", "Security", "Isolation"],
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 228
+          },
+          "tags": [
+            "Agent Sandboxing",
+            "Rust",
+            "microVM",
+            "Security",
+            "Isolation"
+          ],
           "category": "Dev Tool",
           "platform": "github",
           "verified": true,
@@ -356,13 +584,35 @@
           "date": "2026-04-24",
           "primary_url": "https://github.com/vantage-sh/vantage-mcp-server",
           "secondary_urls": [
-            { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47794120" },
-            { "label": "Demo video", "url": "https://www.youtube.com/watch?v=n0VP2NlUvRU" }
+            {
+              "label": "HN discussion",
+              "url": "https://news.ycombinator.com/item?id=47794120"
+            },
+            {
+              "label": "Demo video",
+              "url": "https://www.youtube.com/watch?v=n0VP2NlUvRU"
+            }
           ],
           "summary": "MCP server that connects LLMs to Vantage FinOps data (20+ cloud providers including AWS, Datadog, Mongo), enabling natural-language queries against cost and usage data. Use cases shown in the HN post: ad-hoc cost questions, unallocated spend action plans, and multi-tool workflows combining Vantage cost data with GitHub PR merge timing to correlate engineering changes with cost spikes. 80 total stars; 119 HN points.",
-          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
-          "engagement": { "stars": 80, "upvotes": 119, "comments": 23 },
-          "tags": ["MCP Server", "FinOps", "AWS", "TypeScript", "Cost Management"],
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 80,
+            "upvotes": 119,
+            "comments": 23
+          },
+          "tags": [
+            "MCP Server",
+            "FinOps",
+            "AWS",
+            "TypeScript",
+            "Cost Management"
+          ],
           "category": "MCP Server",
           "platform": "github",
           "verified": true,
@@ -377,12 +627,31 @@
           "date": "2026-04-20",
           "primary_url": "https://github.com/dchu917/ctx",
           "secondary_urls": [
-            { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47836740" }
+            {
+              "label": "HN discussion",
+              "url": "https://news.ycombinator.com/item?id=47836740"
+            }
           ],
           "summary": "ctx is a local context manager and /resume equivalent that works across Claude Code and Codex — it stores workstream state, transcript bins, and in-progress summaries locally so agents can resume tasks across sessions without re-supplying context. 114 total stars; 72 HN points on April 20. Addresses the most common pain point in multi-session agentic coding: losing context between sessions.",
-          "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
-          "engagement": { "stars": 114, "upvotes": 72, "comments": 28 },
-          "tags": ["Agent Skill", "Context Management", "Claude Code", "Codex", "Python"],
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 114,
+            "upvotes": 72,
+            "comments": 28
+          },
+          "tags": [
+            "Agent Skill",
+            "Context Management",
+            "Claude Code",
+            "Codex",
+            "Python"
+          ],
           "category": "Agent Skill",
           "platform": "github",
           "verified": true,
@@ -397,12 +666,31 @@
           "date": "2026-04-21",
           "primary_url": "https://github.com/ENTERPILOT/GOModel",
           "secondary_urls": [
-            { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47849097" }
+            {
+              "label": "HN discussion",
+              "url": "https://news.ycombinator.com/item?id=47849097"
+            }
           ],
           "summary": "Go-based AI gateway that presents a unified OpenAI-compatible API across six providers (OpenAI, Anthropic, Gemini, Groq, xAI, Ollama) with built-in guardrails, streaming, cost tracking, and usage observability. Acts as a lightweight LiteLLM alternative with a single-binary deployment model. 744 stars; 217 HN points on April 21.",
-          "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
-          "engagement": { "stars": 744, "upvotes": 217, "comments": 75 },
-          "tags": ["AI Gateway", "Go", "Guardrails", "Observability", "Multi-provider"],
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "stars": 744,
+            "upvotes": 217,
+            "comments": 75
+          },
+          "tags": [
+            "AI Gateway",
+            "Go",
+            "Guardrails",
+            "Observability",
+            "Multi-provider"
+          ],
           "category": "Dev Tool",
           "platform": "github",
           "verified": true,
@@ -417,12 +705,29 @@
           "date": "2026-04-22",
           "primary_url": "https://github.com/morphik-org/morphik-core",
           "secondary_urls": [
-            { "label": "HN discussion (2025 original)", "url": "https://news.ycombinator.com/item?id=43763814" }
+            {
+              "label": "HN discussion (2025 original)",
+              "url": "https://news.ycombinator.com/item?id=43763814"
+            }
           ],
           "summary": "Morphik is an open-source RAG engine that parses PDF images, diagrams, and mixed-content documents without losing structural context — a gap in most text-extraction-only pipelines. Runs fully locally. 3,586 total stars with continued weekly growth. Ranked by the community as a preferred alternative to cloud-hosted document intelligence APIs for privacy-sensitive use cases.",
-          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
-          "engagement": { "stars": 800 },
-          "tags": ["RAG", "PDF Intelligence", "Python", "Local AI", "Document AI"],
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 800
+          },
+          "tags": [
+            "RAG",
+            "PDF Intelligence",
+            "Python",
+            "Local AI",
+            "Document AI"
+          ],
           "category": "RAG",
           "platform": "github",
           "verified": true,
@@ -438,12 +743,30 @@
           "date": "2026-04-22",
           "primary_url": "https://github.com/rowboatlabs/rowboat",
           "secondary_urls": [
-            { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47863967" }
+            {
+              "label": "HN discussion",
+              "url": "https://news.ycombinator.com/item?id=47863967"
+            }
           ],
           "summary": "Rowboat is an open-source IDE for designing multi-agent systems with a visual agent-graph editor, built-in memory persistence, and agent-to-agent communication tooling. 13,184 total stars; 161 HN points on April 22. New this week: enhanced memory APIs that let agents query their own conversation history in structured form.",
-          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
-          "engagement": { "stars": 1100, "upvotes": 161, "comments": 51 },
-          "tags": ["Multi-agent IDE", "TypeScript", "Agent Memory", "Visual Editor"],
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 1100,
+            "upvotes": 161,
+            "comments": 51
+          },
+          "tags": [
+            "Multi-agent IDE",
+            "TypeScript",
+            "Agent Memory",
+            "Visual Editor"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -458,12 +781,29 @@
           "date": "2026-04-21",
           "primary_url": "https://github.com/codingmoh/open-codex",
           "secondary_urls": [
-            { "label": "HN discussion (2025)", "url": "https://news.ycombinator.com/item?id=43754620" }
+            {
+              "label": "HN discussion (2025)",
+              "url": "https://news.ycombinator.com/item?id=43754620"
+            }
           ],
           "summary": "Open Codex rebuilds OpenAI's Codex CLI interface to work with any OpenAI-compatible LLM — Ollama, DeepSeek, Qwen, Gemma, and others. Enables the same natural-language code-execution UX as Codex but without dependency on OpenAI APIs. 678 total stars; 106 HN points in its original post, with weekly star growth continuing in the Apr 20-26 window.",
-          "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
-          "engagement": { "stars": 678 },
-          "tags": ["Coding Agent", "Python", "Open-source LLM", "CLI", "Codex alternative"],
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 678
+          },
+          "tags": [
+            "Coding Agent",
+            "Python",
+            "Open-source LLM",
+            "CLI",
+            "Codex alternative"
+          ],
           "category": "Code Tool",
           "platform": "github",
           "verified": true,
@@ -486,12 +826,30 @@
           "date": "2026-04-25",
           "primary_url": "https://github.com/nex-crm/wuphf",
           "secondary_urls": [
-            { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47899844" }
+            {
+              "label": "HN discussion",
+              "url": "https://news.ycombinator.com/item?id=47899844"
+            }
           ],
           "summary": "WUPHF positions itself as a 'Karpathy-style LLM wiki' — a Markdown-and-Git knowledge base that AI employees build and maintain autonomously. The HN framing resonated: 258 points and 114 comments, with thread discussion about how persistent agent knowledge bases compare to vector stores, and whether Git as a memory substrate is over-engineered or perfectly suited for developer environments.",
-          "score": { "total": 8.5, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 2 },
-          "engagement": { "upvotes": 258, "comments": 114 },
-          "tags": ["Multi-agent", "Knowledge Base", "Go", "Git", "Persistent Memory"],
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 258,
+            "comments": 114
+          },
+          "tags": [
+            "Multi-agent",
+            "Knowledge Base",
+            "Go",
+            "Git",
+            "Persistent Memory"
+          ],
           "category": "Agent Framework",
           "platform": "hackernews",
           "verified": true,
@@ -505,12 +863,30 @@
           "date": "2026-04-22",
           "primary_url": "https://github.com/Infisical/agent-vault",
           "secondary_urls": [
-            { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47865822" }
+            {
+              "label": "HN discussion",
+              "url": "https://news.ycombinator.com/item?id=47865822"
+            }
           ],
           "summary": "156 HN points and 56 comments — the security-focused thread discussed prompt injection as a vector for credential theft, with detailed discussion of how a proxy architecture prevents agents from accumulating permanent access rights. Consensus in the thread: the proxy model is architecturally correct, and the open-source implementation is sufficient for development environments; production deployments should pair it with network-level egress controls.",
-          "score": { "total": 9.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
-          "engagement": { "upvotes": 156, "comments": 56 },
-          "tags": ["Agent Security", "Credentials", "Go", "Infisical", "Secrets"],
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 156,
+            "comments": 56
+          },
+          "tags": [
+            "Agent Security",
+            "Credentials",
+            "Go",
+            "Infisical",
+            "Secrets"
+          ],
           "category": "Dev Tool",
           "platform": "hackernews",
           "verified": true,
@@ -524,12 +900,29 @@
           "date": "2026-04-24",
           "primary_url": "https://github.com/browser-use/browser-harness",
           "secondary_urls": [
-            { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47890841" }
+            {
+              "label": "HN discussion",
+              "url": "https://news.ycombinator.com/item?id=47890841"
+            }
           ],
           "summary": "132 HN points and 65 comments. The thread split between engineers who had been burned by fragile Selenium selectors and were enthusiastic about self-healing, and skeptics who questioned whether LLM-based selector recovery adds latency that breaks time-sensitive automation. The maintainer responded with benchmark data showing sub-100ms overhead for the recovery step on local models.",
-          "score": { "total": 9.0, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 },
-          "engagement": { "upvotes": 132, "comments": 65 },
-          "tags": ["Browser Automation", "Python", "Self-healing", "LLM Agent"],
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 132,
+            "comments": 65
+          },
+          "tags": [
+            "Browser Automation",
+            "Python",
+            "Self-healing",
+            "LLM Agent"
+          ],
           "category": "Agent Framework",
           "platform": "hackernews",
           "verified": true,
@@ -543,12 +936,29 @@
           "date": "2026-04-21",
           "primary_url": "https://github.com/ENTERPILOT/GOModel",
           "secondary_urls": [
-            { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47849097" }
+            {
+              "label": "HN discussion",
+              "url": "https://news.ycombinator.com/item?id=47849097"
+            }
           ],
           "summary": "217 HN points and 75 comments — the second-highest point total among AI builder posts this week. Discussion focused on GOModel as a self-hostable LiteLLM alternative with a much smaller operational footprint. Several commenters noted that deploying a single Go binary is significantly simpler than managing a Python-based proxy service in production. Thread highlighted the guardrails feature as the most differentiated capability.",
-          "score": { "total": 8.0, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
-          "engagement": { "upvotes": 217, "comments": 75 },
-          "tags": ["AI Gateway", "Go", "Self-hosted", "LiteLLM alternative"],
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 217,
+            "comments": 75
+          },
+          "tags": [
+            "AI Gateway",
+            "Go",
+            "Self-hosted",
+            "LiteLLM alternative"
+          ],
           "category": "Dev Tool",
           "platform": "hackernews",
           "verified": true,
@@ -562,12 +972,29 @@
           "date": "2026-04-26",
           "primary_url": "https://github.com/sachitrafa/YourMemory",
           "secondary_urls": [
-            { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47914367" }
+            {
+              "label": "HN discussion",
+              "url": "https://news.ycombinator.com/item?id=47914367"
+            }
           ],
           "summary": "97 HN points and 52 comments on the last day of the window. The headline '52% recall' refers to the LoCoMo benchmark score for baseline memory systems; YourMemory claims 68% on the same benchmark, a +16pp improvement. Discussion included detailed comparison with Mem0, debate about whether the forgetting curve is a feature or a bug for assistant use cases, and analysis of the memory consolidation algorithm.",
-          "score": { "total": 8.0, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 1 },
-          "engagement": { "upvotes": 97, "comments": 52 },
-          "tags": ["Agent Memory", "Python", "Ebbinghaus", "Benchmark"],
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 97,
+            "comments": 52
+          },
+          "tags": [
+            "Agent Memory",
+            "Python",
+            "Ebbinghaus",
+            "Benchmark"
+          ],
           "category": "Agent Framework",
           "platform": "hackernews",
           "verified": true,
@@ -589,9 +1016,24 @@
           "date": "2026-04-22",
           "primary_url": "https://github.com/morphik-org/morphik-core",
           "summary": "Morphik addresses the gap in standard RAG pipelines where PDF tables, figures, and diagrams are lost during text extraction. The system uses vision models to parse document images alongside text, then indexes both modalities in a unified retrieval layer. Runs fully locally with Ollama model support. 3,586 total stars with sustained weekly growth. The architecture is notable for its rule-based chunking strategy that preserves cross-page table continuity — a persistent failure mode in competing RAG implementations.",
-          "score": { "total": 8.5, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
-          "engagement": { "stars": 800 },
-          "tags": ["RAG", "Multimodal", "PDF", "Python", "Local AI", "Vision"],
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 800
+          },
+          "tags": [
+            "RAG",
+            "Multimodal",
+            "PDF",
+            "Python",
+            "Local AI",
+            "Vision"
+          ],
           "category": "RAG",
           "platform": "github",
           "verified": true,
@@ -606,12 +1048,32 @@
           "date": "2026-04-22",
           "primary_url": "https://github.com/besimple-oss/broccoli",
           "secondary_urls": [
-            { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47865642" }
+            {
+              "label": "HN discussion",
+              "url": "https://news.ycombinator.com/item?id=47865642"
+            }
           ],
           "summary": "Broccoli implements a production-shaped agentic coding loop: it reads a Linear ticket, plans the implementation using Claude or Codex, executes the coding task inside a disposable container (Google Cloud Run or Blaxel), and raises a PR with a structured description linking back to the ticket. The container isolation pattern is the key architectural decision — it prevents the agent from accumulating state, reading unrelated files, or making changes outside the scope of the assigned ticket. Community reports successful automated closure of dependency update and refactoring tickets.",
-          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
-          "engagement": { "stars": 270, "upvotes": 82, "comments": 49 },
-          "tags": ["Coding Agent", "Container Isolation", "Linear", "Claude", "Codex", "PR Automation"],
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 270,
+            "upvotes": 82,
+            "comments": 49
+          },
+          "tags": [
+            "Coding Agent",
+            "Container Isolation",
+            "Linear",
+            "Claude",
+            "Codex",
+            "PR Automation"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -626,12 +1088,31 @@
           "date": "2026-04-26",
           "primary_url": "https://github.com/Fosowl/agenticSeek",
           "secondary_urls": [
-            { "label": "HN discussion", "url": "https://news.ycombinator.com/item?id=47905457" }
+            {
+              "label": "HN discussion",
+              "url": "https://news.ycombinator.com/item?id=47905457"
+            }
           ],
           "summary": "AgenticSeek demonstrates a complete autonomous agent stack running entirely on local hardware — browser automation, code execution, file management, and web search — without any cloud API calls. The architecture uses Ollama for model serving and a custom tool-routing layer. The April 26 Show HN earned 122 points and 18 comments focused on the surprising quality of local model performance for agentic tasks. 26,148 total stars makes it one of the most-starred fully-local agent implementations on GitHub.",
-          "score": { "total": 8.5, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
-          "engagement": { "stars": 1800, "upvotes": 122, "comments": 18 },
-          "tags": ["Local AI", "Autonomous Agent", "Python", "Ollama", "Self-hosted"],
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "stars": 1800,
+            "upvotes": 122,
+            "comments": 18
+          },
+          "tags": [
+            "Local AI",
+            "Autonomous Agent",
+            "Python",
+            "Ollama",
+            "Self-hosted"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -654,11 +1135,26 @@
           "date": "2026-04-22",
           "primary_url": "https://community.n8n.io/t/april-2026-creator-recap-10-workflow-templates-100-downloads-and-what-im-building-next/292354",
           "secondary_urls": [
-            { "label": "Detailed write-up", "url": "https://dev.to/nova_gg/n8n-review-2026-i-used-it-for-8-months-to-build-ai-agents-honest-verdict-kif" }
+            {
+              "label": "Detailed write-up",
+              "url": "https://dev.to/nova_gg/n8n-review-2026-i-used-it-for-8-months-to-build-ai-agents-honest-verdict-kif"
+            }
           ],
           "summary": "A 23-node n8n workflow processes inbound email invoices using OpenAI's vision model to extract structured data from PDFs, validates against a Google Sheets inventory database, creates purchase orders in an ERP system, and sends Slack notifications. Deployed for a Dubai-based client with 40-50 invoices per week. 90% of invoices now process without human intervention, saving 8-10 hours per week versus manual processing. Build time was 3 days, including edge case handling for corrupted PDFs and ERP downtime.",
-          "score": { "total": 7.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 },
-          "tags": ["n8n", "Invoice Processing", "OpenAI Vision", "Automation", "ERP"],
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "n8n",
+            "Invoice Processing",
+            "OpenAI Vision",
+            "Automation",
+            "ERP"
+          ],
           "category": "Automation",
           "platform": "n8n",
           "verified": true,
@@ -673,8 +1169,19 @@
           "date": "2026-04-22",
           "primary_url": "https://dev.to/nova_gg/n8n-ai-workflow-automation-guide-build-smart-workflows-in-2026-28cg",
           "summary": "Community forum moderation workflow using GPT-4 sentiment analysis and keyword extraction, routing posts to auto-delete, human review queue, or publish-immediately based on confidence scores. Deployed on a developer community forum. Reduced moderator workload by 78% while maintaining a 95% spam detection rate. Setup took 23 minutes for the base workflow; edge-case tuning added another hour.",
-          "score": { "total": 7.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
-          "tags": ["n8n", "Content Moderation", "GPT-4", "Workflow Automation"],
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "tags": [
+            "n8n",
+            "Content Moderation",
+            "GPT-4",
+            "Workflow Automation"
+          ],
           "category": "Automation",
           "platform": "n8n",
           "verified": true,
@@ -689,8 +1196,20 @@
           "date": "2026-04-22",
           "primary_url": "https://dev.to/clawlabs/makecom-vs-n8n-for-ai-automation-in-2026-what-i-actually-use-and-why-51jn",
           "summary": "Side-by-side head-to-head of Make.com and n8n run in parallel for one week across six identical AI automation scenarios. Make delivered a working scenario in under 20 minutes versus 60+ minutes for n8n self-hosting setup. At 2,800 operations per month across 6 scenarios, Make's Core plan (£9/month) is cost-effective; the crossover to n8n self-hosted being cheaper occurs around £50/month in Make costs (approximately 16,000 operations/month).",
-          "score": { "total": 7.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
-          "tags": ["Make.com", "n8n", "AI Automation", "Cost Analysis", "Comparison"],
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "tags": [
+            "Make.com",
+            "n8n",
+            "AI Automation",
+            "Cost Analysis",
+            "Comparison"
+          ],
           "category": "Automation",
           "platform": "n8n",
           "verified": true,
@@ -713,9 +1232,22 @@
           "date": "2026-04-24",
           "primary_url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.3",
           "summary": "CrewAI 1.14.3 (April 24) adds lifecycle events for checkpoint operations (enabling pause/resume of long-running crews), e2b sandbox integration for isolated code execution, Azure credential fallback using DefaultAzureCredential, and Bedrock v4 support. The Daytona sandbox tools addition is particularly significant — it gives CrewAI the same isolated execution capability as Broccoli's container pattern but within the CrewAI framework's orchestration model.",
-          "score": { "total": 8.0, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
           "engagement": {},
-          "tags": ["CrewAI", "Python", "e2b", "Sandbox", "Azure", "Checkpoint"],
+          "tags": [
+            "CrewAI",
+            "Python",
+            "e2b",
+            "Sandbox",
+            "Azure",
+            "Checkpoint"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -729,9 +1261,22 @@
           "date": "2026-04-24",
           "primary_url": "https://github.com/mastra-ai/mastra",
           "summary": "Mastra shipped three substantive releases between April 22 and April 24. Apr 22: agents can dispatch slow tool calls as background tasks while the main conversation keeps streaming, with new API endpoints for monitoring background task status via SSE. Apr 23: CLI-driven browser automation via Playwright with remote debugging and screencast capture. Apr 24: Modal-backed cloud sandbox provider (@mastra/modal) for isolated remote execution with pause/resume support. The three releases together make Mastra the most active TypeScript agent framework of the week.",
-          "score": { "total": 8.5, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 2 },
+          "score": {
+            "total": 8.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
           "engagement": {},
-          "tags": ["Mastra", "TypeScript", "Background Tasks", "Browser Automation", "Modal", "Cloud Sandbox"],
+          "tags": [
+            "Mastra",
+            "TypeScript",
+            "Background Tasks",
+            "Browser Automation",
+            "Modal",
+            "Cloud Sandbox"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -745,9 +1290,21 @@
           "date": "2026-04-27",
           "primary_url": "https://github.com/langchain-ai/langgraph/releases/tag/langgraph%3D%3D1.1.10",
           "summary": "LangGraph shipped three releases during the window (1.1.9 on April 21, langgraph-prebuilt 1.0.11 on April 24, and 1.1.10 on April 27). The most significant change: langgraph-prebuilt 1.0.11 fixes ToolNode state hydration from channels via pregel helpers — a bug that caused ToolNode to lose state context in multi-step agent loops. The 1.1.9 release also fixes ReplayState propagation to subgraphs on plain resume, addressing a common failure mode in human-in-the-loop workflows.",
-          "score": { "total": 7.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
           "engagement": {},
-          "tags": ["LangGraph", "Python", "ToolNode", "State Management", "Bug Fix"],
+          "tags": [
+            "LangGraph",
+            "Python",
+            "ToolNode",
+            "State Management",
+            "Bug Fix"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -762,9 +1319,21 @@
           "date": "2026-04-21",
           "primary_url": "https://github.com/run-llama/llama_index/releases/tag/v0.14.21",
           "summary": "llama_index v0.14.21 (April 21) is primarily a maintenance release adding HoneyHive callback support (llama-index-callbacks-honeyhive 0.5.0) and dependency updates. Not a major capability release, but notable as a signal that the llama_index observability ecosystem continues to expand — HoneyHive integration joins existing Langfuse, Arize, and LangSmith callbacks for production monitoring.",
-          "score": { "total": 6.5, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "score": {
+            "total": 6.5,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
           "engagement": {},
-          "tags": ["llama_index", "Python", "Observability", "HoneyHive", "Callbacks"],
+          "tags": [
+            "llama_index",
+            "Python",
+            "Observability",
+            "HoneyHive",
+            "Callbacks"
+          ],
           "category": "Agent Framework",
           "platform": "github",
           "verified": true,
@@ -786,15 +1355,26 @@
           "date": "2026-04-26",
           "primary_url": "https://github.com/Infisical/agent-vault",
           "summary": "Three independent Show HN posts this week each solved a different layer of the agent security problem without coordination: Agent Vault handles credential isolation (agents never hold long-lived secrets), SuperHQ handles execution isolation (agents run in microVM sandboxes with no host access), and Broccoli handles scope isolation (agents can only touch files within their disposable container). Together they form a complete agent security stack. This convergence suggests the open-source community has identified the three-layer security problem and is solving it in parallel — before any single vendor has shipped a comprehensive solution.",
-          "score": { "total": 8.5, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 2 },
-          "tags": ["Pattern", "Agent Security", "Credential Isolation", "Sandbox", "Scope Control"],
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "Pattern",
+            "Agent Security",
+            "Credential Isolation",
+            "Sandbox",
+            "Scope Control"
+          ],
           "category": "Emerging Pattern",
           "platform": "github",
           "verified": true,
           "verified_at": "2026-04-29T00:00:00Z",
           "recurrence": "new",
-          "why_it_matters": "Enterprise teams building agentic systems can now compose these three open-source layers into a security posture that satisfies most internal security review requirements — without waiting for a single vendor to ship a comprehensive solution.",
-          "what_to_watch": "Whether these three projects merge, integrate with each other, or inspire a unified 'agent security runtime' framework in the next 60 days."
+          "why_it_matters": "Enterprise teams building agentic systems can now compose these three open-source layers into a security posture that satisfies most internal security review requirements — without waiting for a single vendor to ship a comprehensive solution."
         },
         {
           "id": "pattern-git-as-agent-memory",
@@ -803,15 +1383,26 @@
           "date": "2026-04-26",
           "primary_url": "https://github.com/nex-crm/wuphf",
           "summary": "WUPHF (258 HN points), dchu917/ctx (72 HN points), and the broader discussion of 'Karpathy-style LLM wikis' all point to the same architectural preference: Git as the persistence layer for agent memory and context. The pattern has three advantages over vector stores: human-readable history, full diff and rollback capability, and native integration with existing code review and access control workflows. The HN thread on WUPHF generated 114 comments debating whether this is over-engineering or the right abstraction — the community consensus landed on 'right abstraction for developer environments'.",
-          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
-          "tags": ["Pattern", "Agent Memory", "Git", "Context Persistence", "Multi-agent"],
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "Pattern",
+            "Agent Memory",
+            "Git",
+            "Context Persistence",
+            "Multi-agent"
+          ],
           "category": "Emerging Pattern",
           "platform": "hackernews",
           "verified": true,
           "verified_at": "2026-04-29T00:00:00Z",
           "recurrence": "new",
-          "why_it_matters": "Teams that adopt Git-backed agent memory inherit the full access control, audit, and collaboration infrastructure of their existing code management platform — no new tooling required for compliance review.",
-          "what_to_watch": "Whether Git-backed memory gets adopted by mainstream frameworks (LangGraph, Mastra, CrewAI) as a first-class storage backend, or remains an indie/community pattern."
+          "why_it_matters": "Teams that adopt Git-backed agent memory inherit the full access control, audit, and collaboration infrastructure of their existing code management platform — no new tooling required for compliance review."
         },
         {
           "id": "pattern-self-healing-selectors",
@@ -820,57 +1411,327 @@
           "date": "2026-04-26",
           "primary_url": "https://github.com/browser-use/browser-harness",
           "summary": "Browser Harness (8,464 stars in one week) and lmnr-ai/index (98 HN points) both implement LLM-based selector recovery as a core feature rather than a fallback. The pattern is migrating from the test engineering domain (where self-healing tests have been discussed for years) into production agent infrastructure — where the stakes are higher but the economic case is stronger. Engineers running browser agents against third-party web UIs report that self-healing reduces maintenance overhead by 70-80%, making browser-based agent workflows economically viable at scale for the first time.",
-          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
-          "tags": ["Pattern", "Self-healing", "Browser Automation", "LLM Agent", "Production"],
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "tags": [
+            "Pattern",
+            "Self-healing",
+            "Browser Automation",
+            "LLM Agent",
+            "Production"
+          ],
           "category": "Emerging Pattern",
           "platform": "github",
           "verified": true,
           "verified_at": "2026-04-29T00:00:00Z",
           "recurrence": "new",
-          "why_it_matters": "Self-healing browser agents make it viable to automate workflows against portals and SaaS tools that lack APIs — a large category for enterprise teams working with legacy ERP systems, insurance portals, and government interfaces.",
-          "what_to_watch": "Whether the self-healing approach achieves production reliability with local models (which adds latency but removes API cost and data egress concerns) versus requiring frontier models for recovery quality."
+          "why_it_matters": "Self-healing browser agents make it viable to automate workflows against portals and SaaS tools that lack APIs — a large category for enterprise teams working with legacy ERP systems, insurance portals, and government interfaces."
         }
       ]
     }
   ],
   "index": [
-    { "title": "browser-use/browser-harness — Self-healing browser harness", "source": "GitHub", "primary_url": "https://github.com/browser-use/browser-harness", "date": "2026-04-24", "score": 9.0, "category": "Agent Framework" },
-    { "title": "nex-crm/wuphf — Collaborative AI knowledge graph", "source": "GitHub / Show HN", "primary_url": "https://github.com/nex-crm/wuphf", "date": "2026-04-25", "score": 8.5, "category": "Agent Framework" },
-    { "title": "Infisical/agent-vault — HTTP credential proxy for agents", "source": "GitHub / Show HN", "primary_url": "https://github.com/Infisical/agent-vault", "date": "2026-04-22", "score": 9.0, "category": "Dev Tool" },
-    { "title": "besimple-oss/broccoli — Linear ticket to shipped PR agent", "source": "GitHub / Show HN", "primary_url": "https://github.com/besimple-oss/broccoli", "date": "2026-04-22", "score": 8.0, "category": "Agent Framework" },
-    { "title": "sachitrafa/YourMemory — Ebbinghaus forgetting curve agent memory", "source": "GitHub / Show HN", "primary_url": "https://github.com/sachitrafa/YourMemory", "date": "2026-04-26", "score": 8.0, "category": "Agent Framework" },
-    { "title": "Fosowl/agenticSeek — Fully local autonomous agent", "source": "GitHub / Show HN", "primary_url": "https://github.com/Fosowl/agenticSeek", "date": "2026-04-26", "score": 8.5, "category": "Agent Framework" },
-    { "title": "rowboatlabs/rowboat — Open-source multi-agent IDE", "source": "GitHub / Show HN", "primary_url": "https://github.com/rowboatlabs/rowboat", "date": "2026-04-22", "score": 8.0, "category": "Agent Framework" },
-    { "title": "mastra-ai/mastra — Background tasks, browser automation, Modal sandbox", "source": "GitHub", "primary_url": "https://github.com/mastra-ai/mastra", "date": "2026-04-24", "score": 8.5, "category": "Agent Framework" },
-    { "title": "ENTERPILOT/GOModel — Go AI gateway with guardrails", "source": "GitHub / Show HN", "primary_url": "https://github.com/ENTERPILOT/GOModel", "date": "2026-04-21", "score": 8.0, "category": "Dev Tool" },
-    { "title": "lmnr-ai/index — Open-source browser agent", "source": "GitHub / Show HN", "primary_url": "https://github.com/lmnr-ai/index", "date": "2026-04-23", "score": 7.5, "category": "Agent Framework" },
-    { "title": "superhq-ai/superhq — microVM-sandboxed agent orchestration", "source": "GitHub / Show HN", "primary_url": "https://github.com/superhq-ai/superhq", "date": "2026-04-23", "score": 7.5, "category": "Dev Tool" },
-    { "title": "vantage-sh/vantage-mcp-server — MCP server for AWS cost understanding", "source": "GitHub / Show HN", "primary_url": "https://github.com/vantage-sh/vantage-mcp-server", "date": "2026-04-24", "score": 8.0, "category": "MCP Server" },
-    { "title": "dchu917/ctx — Cross-agent context manager for Claude Code and Codex", "source": "GitHub / Show HN", "primary_url": "https://github.com/dchu917/ctx", "date": "2026-04-20", "score": 7.5, "category": "Agent Skill" },
-    { "title": "morphik-org/morphik-core — Multimodal RAG with PDF image understanding", "source": "GitHub", "primary_url": "https://github.com/morphik-org/morphik-core", "date": "2026-04-22", "score": 8.5, "category": "RAG" },
-    { "title": "codingmoh/open-codex — Codex CLI for open-source LLMs", "source": "GitHub", "primary_url": "https://github.com/codingmoh/open-codex", "date": "2026-04-21", "score": 7.5, "category": "Code Tool" },
-    { "title": "CrewAI 1.14.3 — e2b sandbox, Bedrock v4, lifecycle events", "source": "GitHub / crewAIInc", "primary_url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.3", "date": "2026-04-24", "score": 8.0, "category": "Agent Framework" },
-    { "title": "Mastra Apr 22-24 — Background tasks, browser automation, Modal sandbox", "source": "GitHub / mastra-ai", "primary_url": "https://github.com/mastra-ai/mastra", "date": "2026-04-24", "score": 8.5, "category": "Agent Framework" },
-    { "title": "LangGraph 1.1.9-1.1.10 — ToolNode state fix, ReplayState propagation fix", "source": "GitHub / langchain-ai", "primary_url": "https://github.com/langchain-ai/langgraph/releases/tag/langgraph%3D%3D1.1.10", "date": "2026-04-27", "score": 7.5, "category": "Agent Framework" },
-    { "title": "llama_index v0.14.21 — HoneyHive callback integration", "source": "GitHub / run-llama", "primary_url": "https://github.com/run-llama/llama_index/releases/tag/v0.14.21", "date": "2026-04-21", "score": 6.5, "category": "Agent Framework" },
-    { "title": "n8n invoice processing: 90% automation rate, 8-10 hrs/week saved", "source": "n8n community / DEV Community", "primary_url": "https://community.n8n.io/t/april-2026-creator-recap-10-workflow-templates-100-downloads-and-what-im-building-next/292354", "date": "2026-04-22", "score": 7.5, "category": "Automation" },
-    { "title": "n8n content moderation: 78% workload reduction, 95% spam catch rate", "source": "DEV Community", "primary_url": "https://dev.to/nova_gg/n8n-ai-workflow-automation-guide-build-smart-workflows-in-2026-28cg", "date": "2026-04-22", "score": 7.5, "category": "Automation" },
-    { "title": "Make.com vs n8n cost crossover: real numbers from 6 live scenarios", "source": "DEV Community / Claw Labs", "primary_url": "https://dev.to/clawlabs/makecom-vs-n8n-for-ai-automation-in-2026-what-i-actually-use-and-why-51jn", "date": "2026-04-22", "score": 7.5, "category": "Automation" },
-    { "title": "Pattern: Agent security converging on three-layer model (credential, execution, scope isolation)", "source": "Cross-source synthesis", "primary_url": "https://github.com/Infisical/agent-vault", "date": "2026-04-26", "score": 8.5, "category": "Emerging Pattern" },
-    { "title": "Pattern: Git-backed persistence as preferred multi-agent memory substrate", "source": "Cross-source synthesis", "primary_url": "https://github.com/nex-crm/wuphf", "date": "2026-04-26", "score": 8.0, "category": "Emerging Pattern" },
-    { "title": "Pattern: Self-healing automation moving from test tooling to production agent infrastructure", "source": "Cross-source synthesis", "primary_url": "https://github.com/browser-use/browser-harness", "date": "2026-04-26", "score": 8.0, "category": "Emerging Pattern" },
-    { "title": "Show HN: Agent Vault (156 pts) — credential proxy for agents", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47865822", "date": "2026-04-22", "score": 9.0, "category": "Dev Tool" },
-    { "title": "Show HN: Wuphf Karpathy-style LLM wiki (258 pts) — agent-maintained knowledge base", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47899844", "date": "2026-04-25", "score": 8.5, "category": "Agent Framework" },
-    { "title": "Show HN: GoModel AI Gateway (217 pts) — Go-based multi-provider AI gateway", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47849097", "date": "2026-04-21", "score": 8.0, "category": "Dev Tool" },
-    { "title": "Show HN: Browser Harness (132 pts) — self-healing browser automation", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47890841", "date": "2026-04-24", "score": 9.0, "category": "Agent Framework" },
-    { "title": "Show HN: YourMemory (97 pts) — Ebbinghaus decay agent memory with +16pp recall", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47914367", "date": "2026-04-26", "score": 8.0, "category": "Agent Framework" },
-    { "title": "Show HN: Broccoli (82 pts) — Linear tickets to shipped PRs via isolated containers", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47865642", "date": "2026-04-22", "score": 8.0, "category": "Agent Framework" },
-    { "title": "Show HN: SuperHQ (63 pts) — microVM sandbox for coding agents", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47877726", "date": "2026-04-23", "score": 7.5, "category": "Dev Tool" },
-    { "title": "Show HN: ctx (72 pts) — cross-agent context manager for Claude Code and Codex", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47836740", "date": "2026-04-20", "score": 7.5, "category": "Agent Skill" },
-    { "title": "Show HN: MCP server for AWS costs (119 pts) — natural language FinOps queries", "source": "Hacker News", "primary_url": "https://github.com/vantage-sh/vantage-mcp-server", "date": "2026-04-24", "score": 8.0, "category": "MCP Server" },
-    { "title": "AgenticSeek — Production RAG implementation for fully local agent stack", "source": "GitHub", "primary_url": "https://github.com/Fosowl/agenticSeek", "date": "2026-04-26", "score": 8.5, "category": "Agent Framework" },
-    { "title": "Morphik — Production multimodal RAG with PDF image parsing", "source": "GitHub", "primary_url": "https://github.com/morphik-org/morphik-core", "date": "2026-04-22", "score": 8.5, "category": "RAG" },
-    { "title": "Show HN: Daemons — pivoted from building agents to cleaning up after them", "source": "Hacker News", "primary_url": "https://charlielabs.ai/", "date": "2026-04-21", "score": 7.0, "category": "Agent Framework" }
+    {
+      "title": "browser-use/browser-harness — Self-healing browser harness",
+      "source": "GitHub",
+      "primary_url": "https://github.com/browser-use/browser-harness",
+      "date": "2026-04-24",
+      "score": 9,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "nex-crm/wuphf — Collaborative AI knowledge graph",
+      "source": "GitHub / Show HN",
+      "primary_url": "https://github.com/nex-crm/wuphf",
+      "date": "2026-04-25",
+      "score": 8.5,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "Infisical/agent-vault — HTTP credential proxy for agents",
+      "source": "GitHub / Show HN",
+      "primary_url": "https://github.com/Infisical/agent-vault",
+      "date": "2026-04-22",
+      "score": 9,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "besimple-oss/broccoli — Linear ticket to shipped PR agent",
+      "source": "GitHub / Show HN",
+      "primary_url": "https://github.com/besimple-oss/broccoli",
+      "date": "2026-04-22",
+      "score": 8,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "sachitrafa/YourMemory — Ebbinghaus forgetting curve agent memory",
+      "source": "GitHub / Show HN",
+      "primary_url": "https://github.com/sachitrafa/YourMemory",
+      "date": "2026-04-26",
+      "score": 8,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "Fosowl/agenticSeek — Fully local autonomous agent",
+      "source": "GitHub / Show HN",
+      "primary_url": "https://github.com/Fosowl/agenticSeek",
+      "date": "2026-04-26",
+      "score": 8.5,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "rowboatlabs/rowboat — Open-source multi-agent IDE",
+      "source": "GitHub / Show HN",
+      "primary_url": "https://github.com/rowboatlabs/rowboat",
+      "date": "2026-04-22",
+      "score": 8,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "mastra-ai/mastra — Background tasks, browser automation, Modal sandbox",
+      "source": "GitHub",
+      "primary_url": "https://github.com/mastra-ai/mastra",
+      "date": "2026-04-24",
+      "score": 8.5,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "ENTERPILOT/GOModel — Go AI gateway with guardrails",
+      "source": "GitHub / Show HN",
+      "primary_url": "https://github.com/ENTERPILOT/GOModel",
+      "date": "2026-04-21",
+      "score": 8,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "lmnr-ai/index — Open-source browser agent",
+      "source": "GitHub / Show HN",
+      "primary_url": "https://github.com/lmnr-ai/index",
+      "date": "2026-04-23",
+      "score": 7.5,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "superhq-ai/superhq — microVM-sandboxed agent orchestration",
+      "source": "GitHub / Show HN",
+      "primary_url": "https://github.com/superhq-ai/superhq",
+      "date": "2026-04-23",
+      "score": 7.5,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "vantage-sh/vantage-mcp-server — MCP server for AWS cost understanding",
+      "source": "GitHub / Show HN",
+      "primary_url": "https://github.com/vantage-sh/vantage-mcp-server",
+      "date": "2026-04-24",
+      "score": 8,
+      "category": "MCP Server"
+    },
+    {
+      "title": "dchu917/ctx — Cross-agent context manager for Claude Code and Codex",
+      "source": "GitHub / Show HN",
+      "primary_url": "https://github.com/dchu917/ctx",
+      "date": "2026-04-20",
+      "score": 7.5,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "morphik-org/morphik-core — Multimodal RAG with PDF image understanding",
+      "source": "GitHub",
+      "primary_url": "https://github.com/morphik-org/morphik-core",
+      "date": "2026-04-22",
+      "score": 8.5,
+      "category": "RAG"
+    },
+    {
+      "title": "codingmoh/open-codex — Codex CLI for open-source LLMs",
+      "source": "GitHub",
+      "primary_url": "https://github.com/codingmoh/open-codex",
+      "date": "2026-04-21",
+      "score": 7.5,
+      "category": "Code Tool"
+    },
+    {
+      "title": "CrewAI 1.14.3 — e2b sandbox, Bedrock v4, lifecycle events",
+      "source": "GitHub / crewAIInc",
+      "primary_url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.3",
+      "date": "2026-04-24",
+      "score": 8,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "Mastra Apr 22-24 — Background tasks, browser automation, Modal sandbox",
+      "source": "GitHub / mastra-ai",
+      "primary_url": "https://github.com/mastra-ai/mastra",
+      "date": "2026-04-24",
+      "score": 8.5,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "LangGraph 1.1.9-1.1.10 — ToolNode state fix, ReplayState propagation fix",
+      "source": "GitHub / langchain-ai",
+      "primary_url": "https://github.com/langchain-ai/langgraph/releases/tag/langgraph%3D%3D1.1.10",
+      "date": "2026-04-27",
+      "score": 7.5,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "llama_index v0.14.21 — HoneyHive callback integration",
+      "source": "GitHub / run-llama",
+      "primary_url": "https://github.com/run-llama/llama_index/releases/tag/v0.14.21",
+      "date": "2026-04-21",
+      "score": 6.5,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "n8n invoice processing: 90% automation rate, 8-10 hrs/week saved",
+      "source": "n8n community / DEV Community",
+      "primary_url": "https://community.n8n.io/t/april-2026-creator-recap-10-workflow-templates-100-downloads-and-what-im-building-next/292354",
+      "date": "2026-04-22",
+      "score": 7.5,
+      "category": "Automation"
+    },
+    {
+      "title": "n8n content moderation: 78% workload reduction, 95% spam catch rate",
+      "source": "DEV Community",
+      "primary_url": "https://dev.to/nova_gg/n8n-ai-workflow-automation-guide-build-smart-workflows-in-2026-28cg",
+      "date": "2026-04-22",
+      "score": 7.5,
+      "category": "Automation"
+    },
+    {
+      "title": "Make.com vs n8n cost crossover: real numbers from 6 live scenarios",
+      "source": "DEV Community / Claw Labs",
+      "primary_url": "https://dev.to/clawlabs/makecom-vs-n8n-for-ai-automation-in-2026-what-i-actually-use-and-why-51jn",
+      "date": "2026-04-22",
+      "score": 7.5,
+      "category": "Automation"
+    },
+    {
+      "title": "Pattern: Agent security converging on three-layer model (credential, execution, scope isolation)",
+      "source": "Cross-source synthesis",
+      "primary_url": "https://github.com/Infisical/agent-vault",
+      "date": "2026-04-26",
+      "score": 8.5,
+      "category": "Emerging Pattern"
+    },
+    {
+      "title": "Pattern: Git-backed persistence as preferred multi-agent memory substrate",
+      "source": "Cross-source synthesis",
+      "primary_url": "https://github.com/nex-crm/wuphf",
+      "date": "2026-04-26",
+      "score": 8,
+      "category": "Emerging Pattern"
+    },
+    {
+      "title": "Pattern: Self-healing automation moving from test tooling to production agent infrastructure",
+      "source": "Cross-source synthesis",
+      "primary_url": "https://github.com/browser-use/browser-harness",
+      "date": "2026-04-26",
+      "score": 8,
+      "category": "Emerging Pattern"
+    },
+    {
+      "title": "Show HN: Agent Vault (156 pts) — credential proxy for agents",
+      "source": "Hacker News",
+      "primary_url": "https://news.ycombinator.com/item?id=47865822",
+      "date": "2026-04-22",
+      "score": 9,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "Show HN: Wuphf Karpathy-style LLM wiki (258 pts) — agent-maintained knowledge base",
+      "source": "Hacker News",
+      "primary_url": "https://news.ycombinator.com/item?id=47899844",
+      "date": "2026-04-25",
+      "score": 8.5,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "Show HN: GoModel AI Gateway (217 pts) — Go-based multi-provider AI gateway",
+      "source": "Hacker News",
+      "primary_url": "https://news.ycombinator.com/item?id=47849097",
+      "date": "2026-04-21",
+      "score": 8,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "Show HN: Browser Harness (132 pts) — self-healing browser automation",
+      "source": "Hacker News",
+      "primary_url": "https://news.ycombinator.com/item?id=47890841",
+      "date": "2026-04-24",
+      "score": 9,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "Show HN: YourMemory (97 pts) — Ebbinghaus decay agent memory with +16pp recall",
+      "source": "Hacker News",
+      "primary_url": "https://news.ycombinator.com/item?id=47914367",
+      "date": "2026-04-26",
+      "score": 8,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "Show HN: Broccoli (82 pts) — Linear tickets to shipped PRs via isolated containers",
+      "source": "Hacker News",
+      "primary_url": "https://news.ycombinator.com/item?id=47865642",
+      "date": "2026-04-22",
+      "score": 8,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "Show HN: SuperHQ (63 pts) — microVM sandbox for coding agents",
+      "source": "Hacker News",
+      "primary_url": "https://news.ycombinator.com/item?id=47877726",
+      "date": "2026-04-23",
+      "score": 7.5,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "Show HN: ctx (72 pts) — cross-agent context manager for Claude Code and Codex",
+      "source": "Hacker News",
+      "primary_url": "https://news.ycombinator.com/item?id=47836740",
+      "date": "2026-04-20",
+      "score": 7.5,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "Show HN: MCP server for AWS costs (119 pts) — natural language FinOps queries",
+      "source": "Hacker News",
+      "primary_url": "https://github.com/vantage-sh/vantage-mcp-server",
+      "date": "2026-04-24",
+      "score": 8,
+      "category": "MCP Server"
+    },
+    {
+      "title": "AgenticSeek — Production RAG implementation for fully local agent stack",
+      "source": "GitHub",
+      "primary_url": "https://github.com/Fosowl/agenticSeek",
+      "date": "2026-04-26",
+      "score": 8.5,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "Morphik — Production multimodal RAG with PDF image parsing",
+      "source": "GitHub",
+      "primary_url": "https://github.com/morphik-org/morphik-core",
+      "date": "2026-04-22",
+      "score": 8.5,
+      "category": "RAG"
+    },
+    {
+      "title": "Show HN: Daemons — pivoted from building agents to cleaning up after them",
+      "source": "Hacker News",
+      "primary_url": "https://charlielabs.ai/",
+      "date": "2026-04-21",
+      "score": 7,
+      "category": "Agent Framework"
+    }
   ],
   "suggested_refinements": {
     "sources_to_add": [
