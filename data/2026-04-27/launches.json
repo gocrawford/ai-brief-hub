@@ -1,0 +1,1322 @@
+{
+  "tab_id": "launches",
+  "tab_name": "Launches",
+  "subtitle": "Launch Intelligence",
+  "icon": "Rocket",
+  "min_items": 20,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.96,
+    "items_total": 28,
+    "items_new": 27,
+    "items_returning": 1
+  },
+  "executive_summary": [
+    {
+      "headline": "OpenAI and AWS launch GPT-5.5, Codex, and Managed Agents on Amazon Bedrock",
+      "body": "On April 28, OpenAI and AWS expanded their partnership to make GPT-5.5, Codex, and Amazon Bedrock Managed Agents powered by OpenAI available in limited preview. Enterprise customers can now build with OpenAI's frontier models inside AWS security controls, compliance workflows, and procurement processes, without establishing a separate cloud relationship with OpenAI. This is the first major practical outcome of OpenAI's post-Microsoft-exclusivity era.",
+      "primary_url": "https://openai.com/index/openai-on-aws/"
+    },
+    {
+      "headline": "Mistral launches Workflows, a Temporal-powered enterprise orchestration engine already in production",
+      "body": "Mistral AI launched Workflows in public preview on April 28 — a durable, fault-tolerant orchestration layer built on Temporal for running multi-step AI pipelines in regulated enterprise environments. The product was already processing millions of daily executions at launch across logistics, KYC, and compliance use cases. Mistral frames this as the missing infrastructure layer between AI proof-of-concept and production, completing its three-tier platform: Forge (model training), Workflows (orchestration), Vibe (end-user interface).",
+      "primary_url": "https://venturebeat.com/technology/mistral-ai-launches-workflows-a-temporal-powered-orchestration-engine-already-running-millions-of-daily-executions"
+    },
+    {
+      "headline": "NVIDIA Nemotron 3 Nano Omni ships: 9x throughput, 30B parameters, runs on 25 GB RAM",
+      "body": "NVIDIA released Nemotron 3 Nano Omni on April 28 — a 30B hybrid MoE model (3B active per token) unifying text, image, video, and audio in a single architecture. It claims 9x higher throughput than other open omni models and runs on consumer-grade hardware with 25 GB RAM. Available immediately on Hugging Face, OpenRouter, and NVIDIA NIM as a microservice.",
+      "primary_url": "https://www.buildfastwithai.com/blogs/nvidia-nemotron-3-nano-omni-2026"
+    },
+    {
+      "headline": "Zed 1.0 ships: Rust-built, AI-native editor reaches production milestone",
+      "body": "Zed reached version 1.0 on April 29. The Rust-built editor now supports parallel AI agents across codebases, the Agent Client Protocol (ACP) for integration with Claude Agent, Codex, and Cursor, edit predictions at keystroke granularity, and a 'disable all AI features' toggle for teams that want a pure code editor. Available on macOS, Windows, and Linux.",
+      "primary_url": "https://zed.dev/blog/zed-1-0"
+    },
+    {
+      "headline": "OpenAI announces GPT-5.5-Cyber for vetted security defenders; Google signs Pentagon AI contract after Anthropic's refusal",
+      "body": "On April 30, Sam Altman announced GPT-5.5-Cyber — a restricted-access cybersecurity model rolling out to vetted 'critical cyber defenders' via OpenAI's Trusted Access for Cyber (TAC) program. Separately, on April 28, Google signed a Pentagon contract to deploy Gemini for classified uses, filling the gap left by Anthropic's public refusal to allow DoD access for domestic mass surveillance and autonomous weapons.",
+      "primary_url": "https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "openai-aws-bedrock-apr28",
+      "title": "OpenAI on AWS: GPT-5.5, Codex, and Bedrock Managed Agents",
+      "subtitle": "OpenAI frontier capabilities available inside AWS environments for the first time",
+      "source": "OpenAI / AWS",
+      "date": "2026-04-28",
+      "primary_url": "https://openai.com/index/openai-on-aws/",
+      "secondary_urls": [
+        {
+          "label": "AWS What's New",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/04/bedrock-openai-models-codex-managed-agents/"
+        },
+        {
+          "label": "EdTech Innovation Hub coverage",
+          "url": "https://www.edtechinnovationhub.com/news/openai-brings-gpt-55-codex-and-managed-agents-to-aws-as-expanded-amazon-partnership-goes-live"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-03T00:00:00Z",
+      "summary": "OpenAI and AWS launched three capabilities in limited preview on April 28: GPT-5.5 and other OpenAI models on Amazon Bedrock, Codex on Bedrock (accessible via CLI, desktop app, and VS Code extension), and Amazon Bedrock Managed Agents powered by OpenAI. Enterprises can now use OpenAI's frontier models within existing AWS identity, security, and compliance controls without a separate OpenAI cloud contract. This is the first major practical outcome of OpenAI's post-Microsoft-exclusivity era.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Directly challenges Microsoft Azure AI Foundry's position as the default enterprise OpenAI delivery channel. AWS enterprise customers can now access GPT-5.5 without routing through Azure. Competes with Anthropic on Bedrock (already in production), Google Gemini on Vertex, and the growing portfolio of open-weight models on Bedrock. For enterprises already committed to AWS, this eliminates a primary reason to maintain a separate OpenAI or Azure relationship.",
+      "pricing": "Amazon Bedrock standard pricing applies. Limited preview — request access via Bedrock console. Codex on Bedrock available via Bedrock API. Full pricing not yet disclosed at launch.",
+      "key_takeaways": [
+        "Enterprise teams on AWS can now call GPT-5.5 via Bedrock API without leaving their AWS security perimeter.",
+        "Codex on Bedrock enables agentic coding workflows with OpenAI models, accessible through the same Bedrock API surface teams already use.",
+        "Bedrock Managed Agents powered by OpenAI supports multi-step, stateful workflows with native AWS compliance controls.",
+        "Limited preview only — production availability timeline not confirmed; register interest via AWS.",
+        "This launch effectively ends Microsoft's exclusive claim on OpenAI enterprise distribution."
+      ],
+      "tags": ["enterprise-ai", "openai", "aws", "bedrock", "agents"],
+      "recurrence": "new",
+      "platform": "openai"
+    },
+    {
+      "id": "mistral-workflows-apr28",
+      "title": "Mistral AI Workflows",
+      "subtitle": "Production-grade orchestration engine built on Temporal for enterprise AI pipelines",
+      "source": "Mistral AI / VentureBeat",
+      "date": "2026-04-28",
+      "primary_url": "https://venturebeat.com/technology/mistral-ai-launches-workflows-a-temporal-powered-orchestration-engine-already-running-millions-of-daily-executions",
+      "secondary_urls": [
+        {
+          "label": "InfoQ coverage",
+          "url": "https://www.infoq.com/news/2026/04/mistral-ai-workflows/"
+        },
+        {
+          "label": "Mistral AI (Studio platform)",
+          "url": "https://mistral.ai"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-03T00:00:00Z",
+      "summary": "Mistral AI launched Workflows in public preview on April 28 — an orchestration engine built on Temporal's durable execution engine, extended for AI workloads with streaming, payload handling, multi-tenancy, and OpenTelemetry observability. Customers define workflows in Python via an SDK (v3.0), connect to enterprise systems via built-in connectors, and run execution in their own VPC while Mistral manages the control plane. At launch, customers were already running millions of daily executions across cargo release automation, KYC reviews, and logistics. Python SDK available immediately; Mistral's inaugural AI Now Summit is May 27–28 in Paris.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Competes directly with LangChain, n8n, and Temporal's own hosted offering for AI workflow orchestration. The split control-plane/data-plane architecture is a direct response to enterprise data residency requirements that competitors handle less cleanly. Mistral's vertical integration — Forge (custom models) → Workflows (orchestration) → Vibe (end-user interface) — positions it as a full-stack alternative to OpenAI + Azure AI Foundry for regulated European and global enterprises. The Temporal backing (customers include OpenAI, JPMorgan Chase, Netflix) provides credibility for production reliability claims.",
+      "pricing": "Public preview. Python SDK (v3.0) available via pip. Mistral Studio platform; pricing not disclosed at launch. Enterprise contracts available.",
+      "key_takeaways": [
+        "Temporal-based durability means automatic retries, state persistence, and fault tolerance without custom engineering — a key gap in most AI orchestration tools.",
+        "Data-plane runs in customer's own infrastructure, addressing regulated-industry data residency requirements.",
+        "Already processing millions of executions daily at launch — not a concept product.",
+        "MCP server support built in, enabling agents to use external tools within workflows.",
+        "Mistral's 20x revenue growth in one year (to $400M ARR) provides financial runway to sustain this platform investment."
+      ],
+      "tags": ["orchestration", "enterprise-ai", "mistral", "temporal", "agents"],
+      "recurrence": "new",
+      "platform": "mistral"
+    },
+    {
+      "id": "nvidia-nemotron3-nano-omni-apr28",
+      "title": "NVIDIA Nemotron 3 Nano Omni",
+      "subtitle": "Open multimodal 30B hybrid MoE model — 9x throughput, runs on 25 GB RAM",
+      "source": "NVIDIA / Build Fast with AI",
+      "date": "2026-04-28",
+      "primary_url": "https://www.buildfastwithai.com/blogs/nvidia-nemotron-3-nano-omni-2026",
+      "secondary_urls": [
+        {
+          "label": "Wedbush / Barchart investor note",
+          "url": "https://investor.wedbush.com/wedbush/article/barchart-2026-4-29-as-nvidia-launches-nemotron-3-nano-omni-model-should-you-buy-sell-or-hold-nvda-stock"
+        },
+        {
+          "label": "Hugging Face model page",
+          "url": "https://huggingface.co/nvidia/Nemotron-3-Nano-Omni"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-03T00:00:00Z",
+      "summary": "NVIDIA released Nemotron 3 Nano Omni on April 28 — a 30B hybrid MoE model activating only 3B parameters per token, capable of processing text, image, video, and audio in a single architecture. It claims 9x higher throughput than comparable open omni models on video and document workloads. The model runs on 25 GB RAM, fits on a single consumer GPU, and is available on Hugging Face, OpenRouter (free tier), and NVIDIA NIM as a microservice. Nemotron 3 Super and Ultra variants are planned but not yet released as of May 3.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Open Source",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "The 25 GB RAM requirement means this model runs on a single consumer-grade GPU or a single-rack enterprise inference server, making it the most hardware-accessible open omni model. Competes with Llama 4 Scout (10M context, single H100) and Qwen VL series for open multimodal inference. The NIM microservice packaging enables enterprise-grade deployment with NVIDIA's support infrastructure, differentiating it from raw Hugging Face weights.",
+      "pricing": "Open weights on Hugging Face (license terms apply). OpenRouter: free tier. NVIDIA NIM microservice: available on NVIDIA API Catalog; pricing based on compute.",
+      "key_takeaways": [
+        "25 GB VRAM requirement is within range of a single consumer 3090/4090 or a single enterprise A100-40GB — lowest entry bar for open omni models.",
+        "9x throughput claim versus other open omni models is NVIDIA-reported; independent benchmark replication pending.",
+        "NIM packaging enables API-compatible deployment with enterprise SLA backing, unlike bare Hugging Face weights.",
+        "Nemotron 3 Super and Ultra (higher capability tiers) remain pending — evaluate Nano Omni now for low-resource inference use cases.",
+        "Video and document workloads specifically cited as the performance delta — relevant for operations teams doing document extraction or video QA."
+      ],
+      "tags": ["open-source", "nvidia", "multimodal", "inference", "agents"],
+      "recurrence": "new",
+      "platform": "nvidia"
+    },
+    {
+      "id": "zed-1-0-apr29",
+      "title": "Zed 1.0",
+      "subtitle": "Rust-built AI-native code editor reaches production milestone with parallel agents and ACP",
+      "source": "Zed / The Register",
+      "date": "2026-04-29",
+      "primary_url": "https://zed.dev/blog/zed-1-0",
+      "secondary_urls": [
+        {
+          "label": "The Register coverage",
+          "url": "https://www.theregister.com/2026/04/30/zed_team_releases_version_10/"
+        },
+        {
+          "label": "Zed download",
+          "url": "https://zed.dev/download"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-03T00:00:00Z",
+      "summary": "Zed reached 1.0 on April 29. The editor, built from scratch in Rust, now ships with parallel agent execution across codebases, Agent Client Protocol (ACP) support for Claude Agent, Codex, OpenCode, and Cursor, edit predictions powered by the open-weight Zeta2 model, a native debugger on the Debug Adapter Protocol, and a 'disable all AI features' setting. Available for macOS, Windows, and Linux. Originally an Atom-team spinout, Zed began building AI capabilities in 2024 with Anthropic and added a parallel agents feature earlier in April 2026.",
+      "score": {
+        "total": 8.0,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Dev Tools",
+      "evaluation": "ADD TO WATCHLIST",
+      "competitive_context": "Competes with Cursor, VS Code + Copilot, and JetBrains AI for developer-facing code editing with integrated agents. Key differentiators: written in Rust (raw performance), native ACP support (agents from multiple labs work inside one editor), and a principled 'disable AI' escape hatch. Cursor recently entered talks to raise at $50B, signaling the scale of market interest in AI coding tools. Zed is open source with a commercial trajectory, making it viable for enterprises that prefer self-hostable dev tooling.",
+      "pricing": "Open source (GitHub). Zed's own Zeta2 edit prediction model is open-weight. Third-party AI features (Claude, Codex, etc.) billed via the respective provider's API.",
+      "key_takeaways": [
+        "ACP support means one editor connects to Claude Agent, Codex, Cursor, and OpenCode without separate plugin installs.",
+        "Rust architecture delivers latency and CPU/GPU efficiency that is architecturally difficult for Electron-based editors to match.",
+        "Open-source model with open-weight Zeta2 edit predictions reduces vendor lock-in risk for enterprise IT.",
+        "The 'disable all AI features' toggle is notable — it signals Zed is positioning for developer teams with strict AI governance policies.",
+        "No enterprise security audit trail yet at 1.0 — teams requiring compliance logging should evaluate Cursor or Copilot first."
+      ],
+      "tags": ["dev-tools", "open-source", "agents", "coding", "rust"],
+      "recurrence": "new",
+      "platform": "github"
+    },
+    {
+      "id": "parallel-web-systems-series-b-apr29",
+      "title": "Parallel Web Systems — $100M Series B at $2B Valuation",
+      "subtitle": "Parag Agrawal's AI agent-tool startup raises at 2.7x valuation in five months",
+      "source": "TechCrunch / Parallel Web Systems",
+      "date": "2026-04-29",
+      "primary_url": "https://techcrunch.com/2026/04/29/parallel-web-systems-hits-2b-valuation-five-months-after-its-last-big-raise/",
+      "secondary_urls": [
+        {
+          "label": "IndexBox summary",
+          "url": "https://www.indexbox.io/blog/parag-agrawals-parallel-web-systems-secures-100m-series-b-at-2b-valuation/"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-03T00:00:00Z",
+      "summary": "Parallel Web Systems, the AI agent-tool startup founded by former Twitter CEO Parag Agrawal, raised a $100M Series B at a $2B valuation, led by Sequoia with participation from Kleiner Perkins, Index Ventures, Khosla Ventures, First Round Capital, Spark Capital, and Terrain Capital. The round brings total capital to $230M. This comes just five months after a $100M Series A at a $740M valuation — a 2.7x valuation step-up in one quarter, without disclosing revenue figures.",
+      "score": {
+        "total": 7.5,
+        "signal": 3,
+        "novelty": 1,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "category": "Funding",
+      "evaluation": "MONITOR",
+      "competitive_context": "Parallel Web Systems builds tooling for AI agents — a category that has seen Sequoia, Kleiner, and Index all place multiple bets. The 2.7x valuation step-up in five months is a signal of strong investor conviction but the product has not been publicly described in sufficient detail to evaluate against competitors. Monitor for product announcement in Q2 2026.",
+      "pricing": "Product not yet in public availability.",
+      "key_takeaways": [
+        "$230M total raised; valuation step-up from $740M to $2B in five months is above-average even in the current AI funding climate.",
+        "Led by Sequoia — consistent with their pattern of backing agent infrastructure plays (Cursor, Harvey, etc.).",
+        "Parag Agrawal's credibility and network are the known quantity; the product specifics remain largely undisclosed.",
+        "Keep watching for a product announcement or beta access in Q2 2026.",
+        "The capital intensity of AI agent tooling (infrastructure, inference, compliance) justifies repeated large rounds at this stage."
+      ],
+      "tags": ["funding", "agents", "infrastructure", "sequoia"],
+      "recurrence": "new",
+      "platform": "techcrunch"
+    },
+    {
+      "id": "aidoc-series-e-apr29",
+      "title": "Aidoc — $150M Series E Led by Goldman Sachs",
+      "subtitle": "Clinical AI platform for medical imaging and diagnostic automation raises $500M+ lifetime",
+      "source": "Aidoc / PR Newswire",
+      "date": "2026-04-29",
+      "primary_url": "https://www.aidoc.com/about/news/aidoc-raises-150-million-series-e-led-by-goldman-sachs-to-scale-clinical-ai-for-earlier-safer-diagnoses/",
+      "secondary_urls": [
+        {
+          "label": "PR Newswire official release",
+          "url": "https://www.prnewswire.com/news-releases/aidoc-raises-150-million-series-e-led-by-goldman-sachs-to-scale-clinical-ai-for-earlier-safer-diagnoses-302757181.html"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-03T00:00:00Z",
+      "summary": "Aidoc raised $150M in Series E funding led by Goldman Sachs Growth Equity, with General Catalyst, SoftBank Investment Advisors, and NVentures (NVIDIA's VC arm) participating. Total lifetime funding exceeds $500M. Aidoc's CARE foundation model is FDA-cleared for diagnostic tasks across 11 disease indicators and deployed in nearly 2,000 hospitals processing data on more than 60 million patients annually. The round will fund expansion of CARE, automated imaging draft-report creation, and broader international deployment of the aiOS enterprise platform.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 1,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "category": "Funding",
+      "evaluation": "MONITOR",
+      "competitive_context": "Aidoc competes with Viz.ai, Nuance (now Microsoft), and a growing set of radiology AI vendors. FDA clearance across 11 indicators, 2,000 hospital deployments, and Goldman Sachs lead (not a typical AI VC) signals this is a genuine regulated-market company, not a demo-stage startup. NVIDIA's NVentures participation connects Aidoc to the Hopper/Blackwell inference stack, suggesting future co-optimization for GPU-accelerated clinical AI.",
+      "pricing": "Enterprise SaaS licensing; pricing not publicly disclosed. aiOS is sold as a platform to health systems.",
+      "key_takeaways": [
+        "Goldman Sachs Growth Equity as lead (not Sequoia/a16z/NEA) signals this is a late-stage, revenue-generating company in a regulated market.",
+        "FDA clearance across 11 disease indicators is a verifiable commercial moat — competitors need equivalent clearances to displace Aidoc.",
+        "60M patients processed annually at 2,000 hospitals provides the scale of clinical data needed to improve CARE beyond what smaller competitors can access.",
+        "Automated imaging draft-report creation is the next revenue expansion: billing for AI-assisted radiology reports is a well-documented reimbursement pathway.",
+        "NVIDIA's NVentures involvement suggests planned co-engineering on inference optimization — watch for future announcements about CARE running on NIM."
+      ],
+      "tags": ["funding", "clinical-ai", "healthtech", "regulated", "goldman-sachs"],
+      "recurrence": "new",
+      "platform": "techcrunch"
+    },
+    {
+      "id": "microsoft-copilot-april-2026-apr30",
+      "title": "Microsoft 365 Copilot — April 2026 Wave (41 Updates)",
+      "subtitle": "Claude model in Word, BYOM GA in Foundry Agent Service, new agents for PowerPoint, Excel, Planner",
+      "source": "Microsoft / TechCommunity",
+      "date": "2026-04-30",
+      "primary_url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935",
+      "secondary_urls": [
+        {
+          "label": "Microsoft Foundry BYOM GA announcement",
+          "url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/bring-your-own-model-to-foundry-agent-service-is-now-generally-available/4515133"
+        },
+        {
+          "label": "A Guide to Cloud & AI detailed breakdown",
+          "url": "https://www.aguidetocloud.com/blog/microsoft-365-copilot-april-2026-updates/"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-03T00:00:00Z",
+      "summary": "Microsoft released 41 Copilot updates in April 2026. Notable for enterprise teams: Claude model available in Copilot for Word (rolling out); Plan mode and Python support in Excel Copilot; BYOM (Bring Your Own Model) for Foundry Agent Service went GA on April 27, enabling teams to route agent requests through their own API gateways; Power Users insights in Copilot Dashboard for adoption tracking; MCP connector support for admins; and Copilot Notebooks expansion. Six new agents launched (PowerPoint, Excel, Word, Planner, SharePoint List, Interpreter). 'Hey Copilot' wake word for hands-free access also in this wave.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "The Claude-in-Word feature is the most strategically significant: Microsoft is multi-sourcing models inside M365 Copilot, directly reflecting competitive pressure from Google Workspace AI and standalone Claude/ChatGPT for document work. BYOM in Foundry Agent Service is important for enterprises with existing API gateways (APIM, Kong, AWS API GW) — they can now route all Foundry agent calls through their governance stack.",
+      "pricing": "M365 Copilot included in existing M365 Business Premium, E3+Copilot, and E5+Copilot licenses. Foundry Agent Service BYOM is GA with standard Azure Foundry pricing.",
+      "key_takeaways": [
+        "Claude in Copilot for Word is rolling out — Microsoft is the first major productivity suite to offer multi-provider AI writing models in the same interface.",
+        "BYOM GA in Foundry Agent Service (April 27) lets enterprises route agent model calls through existing APIM or third-party gateways — key for audit and rate-limit governance.",
+        "Plan mode in Excel Copilot shows the change before executing it — materially reduces risk of spreadsheet errors from AI edits.",
+        "Copilot export by day (rolling to Public Preview in May) will enable data-driven license optimization decisions.",
+        "41 updates in one month signals faster Microsoft cadence than most enterprises can track; establish a monthly Copilot review cadence for IT and AI teams."
+      ],
+      "tags": ["enterprise-ai", "microsoft", "copilot", "m365", "agents"],
+      "recurrence": "new",
+      "platform": "microsoft"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "product_hunt",
+      "title": "Product Hunt: Top AI Launches",
+      "description": "Top AI launches from Product Hunt daily leaderboards, April 27 – May 3, 2026, sorted by approximate weekly rank. Maker websites used as primary_url per resolution rules; PH product pages in secondary_urls.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "ph-plurai-apr29",
+          "title": "Plurai",
+          "subtitle": "Vibe-train evals and guardrails for AI agents — #1 for the week",
+          "source": "Product Hunt",
+          "date": "2026-04-29",
+          "primary_url": "https://app.plurai.ai",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Plurai launched April 29 as #1 for the week of April 27. The platform lets teams define what an AI agent should and should not do in plain language — it generates training data, validates it, and deploys a custom evaluation model in minutes. Built on BARRED research; small language models deliver sub-100ms latency, 8x lower cost than GPT-as-judge, and over 43% fewer failures. Always-on evaluation, not sampled.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["evals", "guardrails", "agents", "developer-tools"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [
+            {
+              "url": "https://www.producthunt.com/products/plurai",
+              "label": "View on Product Hunt"
+            }
+          ]
+        },
+        {
+          "id": "ph-clera-apr28",
+          "title": "Clera",
+          "subtitle": "AI agent matching candidates to roles via iMessage and WhatsApp — #2 for the week",
+          "source": "Product Hunt",
+          "date": "2026-04-28",
+          "primary_url": "https://www.getclera.com",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Clera launched #1 on April 28 (ranked #2 for the week). An AI talent agent that communicates with candidates via iMessage, WhatsApp, or email to surface roles and make direct introductions to hiring managers at VC-backed startups. Announced a $3M pre-seed alongside the launch. Free for candidates; companies pay on hire. Competes with traditional recruiting platforms by eliminating job-board browsing in favor of conversational matching.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "tags": ["hiring", "agents", "recruiting"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [
+            {
+              "url": "https://www.producthunt.com/products/clera",
+              "label": "View on Product Hunt"
+            }
+          ]
+        },
+        {
+          "id": "ph-open-wearables-apr29",
+          "title": "Open Wearables",
+          "subtitle": "Open infrastructure for wearable-powered health products — #3 for the week",
+          "source": "Product Hunt",
+          "date": "2026-04-29",
+          "primary_url": "https://www.openwearables.org",
+          "verified": false,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Open Wearables launched #2 on April 29 (ranked #3 for the week). An open-source infrastructure layer for building health products that integrate wearable sensor data. Positioned for developers building on top of consumer wearables. The specific maker website URL was not directly confirmed in research; openwearables.org is the best available URL pending verification.",
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "category": "Open Source",
+          "evaluation": "MONITOR",
+          "tags": ["open-source", "wearables", "health", "developer-tools"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [
+            {
+              "url": "https://www.producthunt.com/products/open-wearables",
+              "label": "View on Product Hunt"
+            }
+          ]
+        },
+        {
+          "id": "ph-orange-slice-apr27",
+          "title": "Orange Slice",
+          "subtitle": "Natural-language GTM workflow builder for sales prospecting — #1 on April 27",
+          "source": "Product Hunt",
+          "date": "2026-04-27",
+          "primary_url": "https://orangeslice.ai",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Orange Slice launched #1 on Product Hunt April 27 with 426 upvotes. A go-to-market workflow builder where users describe their ideal customer in plain English and the platform prospects, enriches, qualifies, and automates GTM execution including Reddit signal monitoring and Slack alerts on qualified inbound. YC-backed. Second launch from the team.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 426
+          },
+          "category": "Vertical SaaS",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["sales", "gtm", "agents", "lead-generation"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [
+            {
+              "url": "https://www.producthunt.com/products/orange-slice",
+              "label": "View on Product Hunt"
+            }
+          ]
+        },
+        {
+          "id": "ph-hera-launch-apr30",
+          "title": "Hera Launch",
+          "subtitle": "AI-generated studio-quality product launch videos from a prompt — #1 on April 30",
+          "source": "Product Hunt",
+          "date": "2026-04-30",
+          "primary_url": "https://hera.video",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Hera Launch launched #1 on Product Hunt April 30. An extension of the Hera AI motion design tool that creates code-based launch videos from a single text prompt. The system applies opinionated choices on pacing, typography, and motion curves; users describe scenes, paste a website URL, and Hera extracts brand colors and fonts. YC-backed (S25). Targets product teams that need a finished launch video in 10 minutes.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "tags": ["video-generation", "design", "launch-tools"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [
+            {
+              "url": "https://www.producthunt.com/products/hera-6",
+              "label": "View on Product Hunt"
+            }
+          ]
+        },
+        {
+          "id": "ph-jet-ai-agents-apr27",
+          "title": "Jet AI Agents",
+          "subtitle": "No-code business AI agents on top of 200+ data sources — #2 on April 27",
+          "source": "Product Hunt",
+          "date": "2026-04-27",
+          "primary_url": "https://www.jetadmin.io",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Jet AI Agents launched #2 on Product Hunt April 27 with 304 upvotes. A no-code builder for business AI agents that connects to 200+ data sources (databases, APIs, MCPs, CRMs). Teams describe what they need in natural language and Jet generates a working agent with connected data and logic. Also supports dashboards, workflows, and an in-app AI assistant. Competes with Microsoft Copilot Studio and Retool for no-code enterprise agent building.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 304
+          },
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "tags": ["no-code", "agents", "enterprise", "data-integration"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [
+            {
+              "url": "https://www.producthunt.com/products/jet-admin",
+              "label": "View on Product Hunt"
+            }
+          ]
+        },
+        {
+          "id": "ph-mintlify-editor-apr29",
+          "title": "Mintlify Editor",
+          "subtitle": "AI-native collaborative editor for documentation with agent support — trending in week",
+          "source": "Product Hunt",
+          "date": "2026-04-29",
+          "primary_url": "https://www.mintlify.com/blog/editor",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Mintlify launched its collaborative editor during the week of April 27, with a Product Hunt presence across multiple days. The editor brings live collaboration, git sync, and WYSIWYG editing to documentation workflows. MCP support lets teams bring any AI to collaborate in real time on documentation content. Agents can read codebases, support tickets, and changelogs to auto-update docs. Also launched the Mintlify Help Center Starter Kit on May 1.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "tags": ["documentation", "collaboration", "agents", "developer-tools"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [
+            {
+              "url": "https://www.producthunt.com/products/mintlify",
+              "label": "View on Product Hunt"
+            }
+          ]
+        },
+        {
+          "id": "ph-schol-e-may1",
+          "title": "Scholé",
+          "subtitle": "AI-native personalized learning platform for enterprise workforce upskilling — #1 on May 2",
+          "source": "Product Hunt",
+          "date": "2026-05-02",
+          "primary_url": "https://app.schole.ai",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Scholé launched #1 on Product Hunt May 2. Founded by AI researchers from EPFL, Berkeley, and Microsoft, Scholé delivers short AI-native lessons that adapt in real time to an employee's role and tasks. It targets training employees to build and manage their own AI agents, not just use AI tools. Raised $3M and operates from Lausanne and San Francisco.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "tags": ["enterprise-learning", "agents", "upskilling", "workforce"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [
+            {
+              "url": "https://www.producthunt.com/products/schole",
+              "label": "View on Product Hunt"
+            }
+          ]
+        },
+        {
+          "id": "ph-cloud-computer-manus-apr30",
+          "title": "Cloud Computer by Manus",
+          "subtitle": "Persistent always-on cloud machine for bots and automations — #2 on May 2",
+          "source": "Product Hunt",
+          "date": "2026-04-30",
+          "primary_url": "https://manus.im",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Manus launched Cloud Computer on April 30 (launched #2 on May 2 Product Hunt leaderboard). A persistent Ubuntu-based cloud machine that runs bots, Python scripts, databases, and scheduled jobs 24/7 — accessible via SSH or web terminal, no coding or server setup required. Users describe what they want to run and Manus builds and deploys it. Available on Basic, Standard, and Advanced plans by workload. Competes with Replit, Railway, and Render for no-code cloud deployment.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["cloud-compute", "agents", "automation", "no-code"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [
+            {
+              "url": "https://www.producthunt.com/products/manus",
+              "label": "View on Product Hunt"
+            }
+          ]
+        },
+        {
+          "id": "ph-huddle01-vms-may3",
+          "title": "Huddle01 VMs",
+          "subtitle": "MCP-native virtual machines for AI agents — #1 on May 3",
+          "source": "Product Hunt",
+          "date": "2026-05-03",
+          "primary_url": "https://huddle01.com",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Huddle01 VMs launched #1 on Product Hunt May 3 with 400 upvotes. The first VM provider with native MCP support — users spin up AMD EPYC vCPU instances via their Claude Code, Cursor, or Antigravity chat interface using a single-line MCP server install. Includes unlimited ingress, per-second billing, and unthrottled NVMe storage. Claimed to be ~70% cheaper than hyperscalers. Targeted at agents that need to auto-deploy infrastructure.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 400
+          },
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["infrastructure", "mcp", "agents", "developer-tools", "cloud"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [
+            {
+              "url": "https://www.producthunt.com/products/huddle01-cloud-2",
+              "label": "View on Product Hunt"
+            }
+          ]
+        },
+        {
+          "id": "ph-pandaprobe-may3",
+          "title": "PandaProbe",
+          "subtitle": "Open-source agent engineering platform with deep LLM observability — #2 on May 3",
+          "source": "Product Hunt",
+          "date": "2026-05-03",
+          "primary_url": "https://pandaprobe.io",
+          "verified": false,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "PandaProbe launched #2 on Product Hunt May 3 with 368 upvotes. An open-source (Apache 2.0) agent engineering platform for tracing, evaluating, monitoring, and debugging LLM workflows. Self-hostable with full data residency control. Cloud tier starts at $0 (100 traces/month), Pro at $29/month, Startup at $299/month. The pandaprobe.io domain is the best available URL pending direct verification.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 368
+          },
+          "category": "Open Source",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["open-source", "observability", "agents", "llm", "developer-tools"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [
+            {
+              "url": "https://www.producthunt.com/products/pandaprobe-2",
+              "label": "View on Product Hunt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "frontier_models",
+      "title": "Frontier Models",
+      "description": "New model releases from major labs during the week of April 27 – May 3, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "nvidia-nemotron3-nano-omni-model-apr28",
+          "title": "NVIDIA Nemotron 3 Nano Omni",
+          "subtitle": "30B hybrid MoE — text, image, video, audio in one model, 25 GB RAM",
+          "source": "NVIDIA",
+          "date": "2026-04-28",
+          "primary_url": "https://www.buildfastwithai.com/blogs/nvidia-nemotron-3-nano-omni-2026",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "NVIDIA released Nemotron 3 Nano Omni on April 28 — a 30B hybrid MoE model (3B active per token) for text, image, video, and audio understanding in a single architecture. Claims 9x higher throughput than other open omni models on video and document workloads. Runs on 25 GB RAM. Available on Hugging Face, OpenRouter (free), and NVIDIA NIM as a microservice. Nemotron 3 Super and Ultra remain forthcoming.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "category": "Frontier Model",
+          "evaluation": "EVALUATE NOW",
+          "tags": ["frontier-model", "nvidia", "multimodal", "open-source"],
+          "recurrence": "new",
+          "platform": "nvidia"
+        },
+        {
+          "id": "gpt-5-5-cyber-apr30",
+          "title": "GPT-5.5-Cyber (Restricted Rollout)",
+          "subtitle": "Cybersecurity-specialized GPT-5.5 variant for vetted defenders — Trusted Access for Cyber program",
+          "source": "OpenAI / TechCrunch",
+          "date": "2026-04-30",
+          "primary_url": "https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/",
+          "secondary_urls": [
+            {
+              "label": "Techzine coverage",
+              "url": "https://www.techzine.eu/news/security/140927/openai-prepares-gpt-5-5-cyber-for-trusted-security-researchers/"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Sam Altman announced on April 30 that GPT-5.5-Cyber — a restricted-access variant of GPT-5.5 optimized for cybersecurity defense tasks — would begin rolling out 'in the next few days' to vetted critical cyber defenders via OpenAI's Trusted Access for Cyber (TAC) program. Access requires an application at chatgpt.com/cyber. No public technical specs released; the prior GPT-5.4-Cyber reached thousands of security specialists. This is not a new base model — it is a deployment-restricted variant of GPT-5.5.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "tags": ["frontier-model", "openai", "cybersecurity", "government"],
+          "recurrence": "returning",
+          "recurrence_note": "GPT-5.5-Cyber is a cyber-specialized deployment of GPT-5.5 (launched April 23). This week's news is the restricted rollout announcement and TAC program expansion."
+        }
+      ]
+    },
+    {
+      "section_id": "yc_and_startups",
+      "title": "YC and Startups",
+      "description": "Notable YC-backed and early-stage AI company launches during the week of April 27 – May 3, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "clera-pre-seed-apr28",
+          "title": "Clera — $3M Pre-Seed",
+          "subtitle": "AI talent agent for startup hiring via iMessage and WhatsApp",
+          "source": "Clera / Product Hunt",
+          "date": "2026-04-28",
+          "primary_url": "https://www.getclera.com",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Clera, an AI talent agent that matches candidates to startup roles via conversational iMessage and WhatsApp interactions, announced a $3M pre-seed round alongside its Product Hunt launch on April 28. The platform makes warm introductions directly to hiring managers at 600+ VC-backed startups. Free for candidates; companies pay on successful hire. Founded by Alexander Farr, Sebastian Scott, and Daniel Wintermeyer.",
+          "score": {
+            "total": 5.5,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "tags": ["hiring", "startup", "agents", "pre-seed"],
+          "recurrence": "new",
+          "platform": "producthunt"
+        },
+        {
+          "id": "schol-e-ai-workforce-may2",
+          "title": "Scholé AI — Enterprise AI Upskilling Platform",
+          "subtitle": "Role-specific AI learning platform from EPFL/Berkeley/Microsoft researchers",
+          "source": "Scholé AI / Le Figaro",
+          "date": "2026-05-02",
+          "primary_url": "https://app.schole.ai",
+          "secondary_urls": [
+            {
+              "label": "Le Figaro coverage",
+              "url": "https://www.lefigaro.fr/economie/learning-in-the-age-of-ai-how-schole-is-rethinking-workplace-education-20260430"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Scholé AI, founded by EPFL and Berkeley AI researchers Dr. Vinitra Swamy and Dr. Paola Mejia, delivers personalized AI-native learning that trains employees to build and manage AI agents specific to their roles. The platform won #1 on Product Hunt May 2. Previously raised $3M; based in Lausanne and San Francisco.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "tags": ["enterprise-learning", "workforce", "agents"],
+          "recurrence": "new",
+          "platform": "producthunt"
+        },
+        {
+          "id": "netlify-database-ga-apr28",
+          "title": "Netlify Database — General Availability",
+          "subtitle": "Serverless Postgres with per-agent-run branching, native to Netlify deployments",
+          "source": "Netlify",
+          "date": "2026-04-28",
+          "primary_url": "https://www.netlify.com/changelog/2026-04-28-netlify-database/",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Netlify launched its Database product in general availability on April 28 — a serverless Postgres database deeply integrated into the Netlify platform. Every agent run and every deploy preview automatically gets its own isolated database branch seeded from production, with migrations version-controlled as files. Production data is unreachable until a deliberate publish action. Available on Credit-based plans; database storage is free until July 1, 2026.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "tags": ["developer-tools", "database", "serverless", "agents"],
+          "recurrence": "new",
+          "platform": "netlify"
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_ai",
+      "title": "Enterprise AI",
+      "description": "Enterprise platform and cloud AI announcements during the week of April 27 – May 3, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "microsoft-foundry-byom-ga-apr27",
+          "title": "Microsoft Foundry Agent Service: BYOM Goes GA",
+          "subtitle": "Route agent model traffic through your own API gateway — Azure API Management or third-party",
+          "source": "Microsoft / Azure AI Foundry Blog",
+          "date": "2026-04-27",
+          "primary_url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/bring-your-own-model-to-foundry-agent-service-is-now-generally-available/4515133",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Microsoft announced general availability of Bring Your Own Model (BYOM) for Foundry Agent Service on April 27. Enterprises can now connect Foundry agents to models hosted behind Azure API Management or any third-party AI model gateway that implements the OpenAI Chat Completions API. This enables organizations to route all agent model requests through their existing governance, compliance, and rate-limit infrastructure — adding BYOM requires no re-architecture of existing agents.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "category": "Enterprise AI",
+          "evaluation": "EVALUATE NOW",
+          "tags": ["enterprise-ai", "microsoft", "foundry", "governance", "agents"],
+          "recurrence": "new",
+          "platform": "microsoft"
+        },
+        {
+          "id": "google-pentagon-gemini-apr28",
+          "title": "Google Signs Pentagon AI Contract for Classified Uses",
+          "subtitle": "Gemini expanded to DoD classified networks after Anthropic refusal; 950 Google employees objected",
+          "source": "TechCrunch / CNBC",
+          "date": "2026-04-28",
+          "primary_url": "https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/",
+          "secondary_urls": [
+            {
+              "label": "CNBC Pentagon AI chief confirmation",
+              "url": "https://www.cnbc.com/2026/04/28/pentagon-ai-chief-confirms-work-with-google-after-anthropic-blacklist.html"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "On April 28, Google signed a contract with the U.S. Department of Defense to deploy Gemini for classified network use, following Anthropic's public refusal to allow DoD use cases including domestic mass surveillance and autonomous weapons. The Pentagon's AI chief confirmed the deal to CNBC and cited thousands of man-hours saved weekly. 950 Google employees signed an open letter objecting to the deal. OpenAI and xAI had previously signed similar DoD agreements. Anthropic's DoD 'supply-chain risk' designation is the subject of ongoing litigation.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "category": "Enterprise AI",
+          "evaluation": "MONITOR",
+          "tags": ["government-ai", "google", "defense", "policy", "anthropic"],
+          "recurrence": "new",
+          "platform": "google"
+        }
+      ]
+    },
+    {
+      "section_id": "funding",
+      "title": "Funding",
+      "description": "Notable AI funding rounds announced or confirmed during the week of April 27 – May 3, 2026. All figures cross-checked against company primary sources.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "parallel-web-series-b-fund-apr29",
+          "title": "Parallel Web Systems — $100M Series B",
+          "subtitle": "$2B valuation, led by Sequoia; agent-tool infrastructure",
+          "source": "TechCrunch",
+          "date": "2026-04-29",
+          "primary_url": "https://techcrunch.com/2026/04/29/parallel-web-systems-hits-2b-valuation-five-months-after-its-last-big-raise/",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Parallel Web Systems raised $100M Series B at $2B valuation, led by Sequoia. Total: $230M. Parag Agrawal (ex-Twitter CEO) founded. Builds tooling for AI agents. Raised $100M Series A at $740M just five months prior.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "category": "Funding",
+          "evaluation": "MONITOR",
+          "tags": ["funding", "agents", "sequoia"],
+          "recurrence": "new",
+          "platform": "techcrunch"
+        },
+        {
+          "id": "aidoc-series-e-fund-apr29",
+          "title": "Aidoc — $150M Series E",
+          "subtitle": "$500M+ lifetime; clinical AI imaging platform, Goldman Sachs lead",
+          "source": "Aidoc / PR Newswire",
+          "date": "2026-04-29",
+          "primary_url": "https://www.prnewswire.com/news-releases/aidoc-raises-150-million-series-e-led-by-goldman-sachs-to-scale-clinical-ai-for-earlier-safer-diagnoses-302757181.html",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Aidoc raised $150M Series E led by Goldman Sachs Growth Equity. Participants: General Catalyst, SoftBank, NVentures. Total funding: $500M+. Deployed in ~2,000 hospitals, 60M patients/year. CARE foundation model FDA-cleared across 11 disease indicators.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "category": "Funding",
+          "evaluation": "MONITOR",
+          "tags": ["funding", "clinical-ai", "healthtech", "regulated"],
+          "recurrence": "new",
+          "platform": "prnewswire"
+        }
+      ]
+    },
+    {
+      "section_id": "open_source",
+      "title": "Open Source",
+      "description": "Notable open-source and developer tool releases during the week of April 27 – May 3, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "zed-1-0-oss-apr29",
+          "title": "Zed 1.0",
+          "subtitle": "Rust-built AI-native code editor with ACP support — macOS, Windows, Linux",
+          "source": "Zed",
+          "date": "2026-04-29",
+          "primary_url": "https://zed.dev/blog/zed-1-0",
+          "secondary_urls": [
+            {
+              "label": "Zed download",
+              "url": "https://zed.dev/download"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Zed 1.0 ships on April 29. Open-source, Rust-built code editor with parallel agents, ACP (Agent Client Protocol) support for Claude Agent / Codex / OpenCode / Cursor, Zeta2 open-weight edit prediction, native debugger, and a 'disable all AI features' toggle. Available for macOS, Windows, Linux. See Top Picks for full coverage.",
+          "score": {
+            "total": 8.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["open-source", "dev-tools", "rust", "agents"],
+          "recurrence": "new",
+          "platform": "github"
+        },
+        {
+          "id": "pandaprobe-oss-may3",
+          "title": "PandaProbe",
+          "subtitle": "Open-source (Apache 2.0) LLM agent observability and engineering platform",
+          "source": "PandaProbe / Product Hunt",
+          "date": "2026-05-03",
+          "primary_url": "https://pandaprobe.io",
+          "secondary_urls": [
+            {
+              "label": "ProductCool listing",
+              "url": "https://www.productcool.com/product/pandaprobe-2"
+            }
+          ],
+          "verified": false,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "PandaProbe launched May 3 (368 PH upvotes). An open-source, Apache 2.0 agent engineering platform for deep observability across LLM workflows: tracing, evaluation, monitoring, debugging. Self-hostable with full data residency; cloud tier from $0 to $299/month. URL pandaprobe.io requires direct confirmation.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "category": "Open Source",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["open-source", "observability", "llm", "agents", "developer-tools"],
+          "recurrence": "new",
+          "platform": "producthunt"
+        },
+        {
+          "id": "netlify-db-ga-oss-apr28",
+          "title": "Netlify Database GA",
+          "subtitle": "Serverless Postgres with automatic per-agent-run database branching",
+          "source": "Netlify",
+          "date": "2026-04-28",
+          "primary_url": "https://www.netlify.com/changelog/2026-04-28-netlify-database/",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Netlify Database reached general availability April 28. Every agent run and every preview deployment automatically branches off production Postgres data, isolated from production until explicitly published. Migrations are version-controlled files. Storage free until July 1, 2026; compute billed on credit-based plans. Built on Neon Postgres.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "tags": ["developer-tools", "database", "serverless", "postgres"],
+          "recurrence": "new",
+          "platform": "netlify"
+        }
+      ]
+    },
+    {
+      "section_id": "to_watch",
+      "title": "To Watch",
+      "description": "Early-stage products and emerging signals with high potential. Not yet verified enough for Top Picks.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "claude-sonnet-4-8-expected-may",
+          "title": "Claude Sonnet 4.8 — Expected May 2026",
+          "subtitle": "Leaked in Claude Code source; historically ships 1-4 weeks after Opus",
+          "source": "NxCode / YouTube AI roundup",
+          "date": "2026-05-02",
+          "primary_url": "https://www.nxcode.io/resources/news/claude-sonnet-4-8-release-date-features-what-to-expect-2026",
+          "verified": false,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Claude Sonnet 4.8 — confirmed by code references leaked in Claude Code source — is expected in May 2026, historically 1–4 weeks after Opus 4.7 (April 16). The codename 'Cardinal' also appeared in a May 2 YouTube roundup alongside a new Gemini Flash model spotted in LM Arena. No public release date from Anthropic. Monitor Anthropic's developer blog.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "category": "Frontier Model",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["frontier-model", "anthropic", "claude"],
+          "recurrence": "new",
+          "platform": "anthropic"
+        },
+        {
+          "id": "mistral-ai-now-summit-may27",
+          "title": "Mistral AI Now Summit — May 27–28, Paris",
+          "subtitle": "Inaugural event; expect Workflows roadmap, Forge updates, and model announcements",
+          "source": "Mistral AI / VentureBeat",
+          "date": "2026-04-28",
+          "primary_url": "https://mistral.ai",
+          "verified": false,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Mistral announced its inaugural AI Now Summit, scheduled for May 27–28 in Paris, at the Workflows launch on April 28. The company is expected to detail its full platform roadmap — Forge (custom models), Workflows (orchestration), and Vibe (end-user interface) — and potentially announce new model releases. Monitor for registration and agenda details.",
+          "score": {
+            "total": 5.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "category": "Enterprise AI",
+          "evaluation": "MONITOR",
+          "tags": ["mistral", "conference", "enterprise-ai"],
+          "recurrence": "new",
+          "platform": "mistral"
+        },
+        {
+          "id": "cursor-50b-valuation-talks",
+          "title": "Cursor in Talks to Raise $2B at $50B Valuation",
+          "subtitle": "Thrive, a16z, Nvidia expected to lead; Battery Ventures new investor",
+          "source": "TechCrunch / CNBC",
+          "date": "2026-04-17",
+          "primary_url": "https://techcrunch.com/2026/04/17/sources-cursor-in-talks-to-raise-2b-at-50b-valuation-as-enterprise-growth-surges/",
+          "verified": true,
+          "verified_at": "2026-05-03T00:00:00Z",
+          "summary": "Cursor (Anysphere) is in advanced talks to raise at least $2B at a $50B pre-money valuation — roughly double its November 2025 $29.3B valuation. Thrive Capital and a16z expected to co-lead; Nvidia and Battery Ventures may also participate. Round is reportedly oversubscribed. Cursor forecasts $6B+ ARR by end of 2026. Reported April 17–20, within this period's reference horizon.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "category": "Funding",
+          "evaluation": "MONITOR",
+          "tags": ["funding", "dev-tools", "coding", "cursor"],
+          "recurrence": "new",
+          "platform": "techcrunch"
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "OpenAI on AWS: GPT-5.5, Codex, and Bedrock Managed Agents",
+      "source": "OpenAI / AWS",
+      "date": "2026-04-28",
+      "primary_url": "https://openai.com/index/openai-on-aws/",
+      "score": 9.0
+    },
+    {
+      "title": "Mistral AI Workflows (Temporal-powered orchestration engine)",
+      "source": "Mistral AI / VentureBeat",
+      "date": "2026-04-28",
+      "primary_url": "https://venturebeat.com/technology/mistral-ai-launches-workflows-a-temporal-powered-orchestration-engine-already-running-millions-of-daily-executions",
+      "score": 9.0
+    },
+    {
+      "title": "Microsoft 365 Copilot — April 2026 Wave (41 Updates, Claude in Word, BYOM GA)",
+      "source": "Microsoft",
+      "date": "2026-04-30",
+      "primary_url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what%E2%80%99s-new-in-microsoft-365-copilot--april-2026/4510935",
+      "score": 8.0
+    },
+    {
+      "title": "Microsoft Foundry Agent Service: BYOM Generally Available",
+      "source": "Microsoft Azure AI Foundry",
+      "date": "2026-04-27",
+      "primary_url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/bring-your-own-model-to-foundry-agent-service-is-now-generally-available/4515133",
+      "score": 8.0
+    },
+    {
+      "title": "NVIDIA Nemotron 3 Nano Omni",
+      "source": "NVIDIA",
+      "date": "2026-04-28",
+      "primary_url": "https://www.buildfastwithai.com/blogs/nvidia-nemotron-3-nano-omni-2026",
+      "score": 8.5
+    },
+    {
+      "title": "Zed 1.0",
+      "source": "Zed",
+      "date": "2026-04-29",
+      "primary_url": "https://zed.dev/blog/zed-1-0",
+      "score": 8.0
+    },
+    {
+      "title": "Parallel Web Systems — $100M Series B ($2B valuation)",
+      "source": "TechCrunch",
+      "date": "2026-04-29",
+      "primary_url": "https://techcrunch.com/2026/04/29/parallel-web-systems-hits-2b-valuation-five-months-after-its-last-big-raise/",
+      "score": 7.5
+    },
+    {
+      "title": "Aidoc — $150M Series E (Goldman Sachs lead, clinical AI)",
+      "source": "Aidoc / PR Newswire",
+      "date": "2026-04-29",
+      "primary_url": "https://www.prnewswire.com/news-releases/aidoc-raises-150-million-series-e-led-by-goldman-sachs-to-scale-clinical-ai-for-earlier-safer-diagnoses-302757181.html",
+      "score": 8.0
+    },
+    {
+      "title": "Google Signs Pentagon AI Contract for Classified Uses",
+      "source": "TechCrunch / CNBC",
+      "date": "2026-04-28",
+      "primary_url": "https://techcrunch.com/2026/04/28/google-expands-pentagons-access-to-its-ai-after-anthropics-refusal/",
+      "score": 7.5
+    },
+    {
+      "title": "GPT-5.5-Cyber Restricted Rollout Announced",
+      "source": "OpenAI / TechCrunch",
+      "date": "2026-04-30",
+      "primary_url": "https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/",
+      "score": 7.5
+    },
+    {
+      "title": "Plurai — AI eval and guardrail platform (#1 PH week)",
+      "source": "Product Hunt",
+      "date": "2026-04-29",
+      "primary_url": "https://app.plurai.ai",
+      "score": 7.0
+    },
+    {
+      "title": "Huddle01 VMs — MCP-native virtual machines for agents (#1 May 3)",
+      "source": "Product Hunt",
+      "date": "2026-05-03",
+      "primary_url": "https://huddle01.com",
+      "score": 7.0
+    },
+    {
+      "title": "PandaProbe — Open-source agent observability platform (#2 May 3)",
+      "source": "Product Hunt",
+      "date": "2026-05-03",
+      "primary_url": "https://pandaprobe.io",
+      "score": 7.0
+    },
+    {
+      "title": "Cursor in Talks to Raise $2B at $50B Valuation",
+      "source": "TechCrunch / CNBC",
+      "date": "2026-04-17",
+      "primary_url": "https://techcrunch.com/2026/04/17/sources-cursor-in-talks-to-raise-2b-at-50b-valuation-as-enterprise-growth-surges/",
+      "score": 7.0
+    },
+    {
+      "title": "Orange Slice — Natural-language GTM workflow builder (#1 Apr 27, 426 upvotes)",
+      "source": "Product Hunt",
+      "date": "2026-04-27",
+      "primary_url": "https://orangeslice.ai",
+      "score": 6.5
+    },
+    {
+      "title": "Jet AI Agents — No-code business agent builder (#2 Apr 27, 304 upvotes)",
+      "source": "Product Hunt",
+      "date": "2026-04-27",
+      "primary_url": "https://www.jetadmin.io",
+      "score": 6.5
+    },
+    {
+      "title": "Mintlify Editor — AI-native collaborative documentation editor",
+      "source": "Mintlify / Product Hunt",
+      "date": "2026-04-29",
+      "primary_url": "https://www.mintlify.com/blog/editor",
+      "score": 6.5
+    },
+    {
+      "title": "Manus Cloud Computer — Persistent always-on cloud machine for bots",
+      "source": "Manus AI / Product Hunt",
+      "date": "2026-04-30",
+      "primary_url": "https://manus.im",
+      "score": 6.5
+    },
+    {
+      "title": "Netlify Database — Serverless Postgres GA with automatic agent branching",
+      "source": "Netlify",
+      "date": "2026-04-28",
+      "primary_url": "https://www.netlify.com/changelog/2026-04-28-netlify-database/",
+      "score": 6.5
+    },
+    {
+      "title": "Hera Launch — AI-generated studio-quality launch videos (#1 Apr 30)",
+      "source": "Product Hunt",
+      "date": "2026-04-30",
+      "primary_url": "https://hera.video",
+      "score": 6.0
+    },
+    {
+      "title": "Clera — AI talent agent for startup hiring; $3M pre-seed (#1 Apr 28)",
+      "source": "Product Hunt / Clera",
+      "date": "2026-04-28",
+      "primary_url": "https://www.getclera.com",
+      "score": 6.0
+    },
+    {
+      "title": "Scholé AI — Enterprise workforce AI upskilling platform (#1 May 2)",
+      "source": "Product Hunt / Le Figaro",
+      "date": "2026-05-02",
+      "primary_url": "https://app.schole.ai",
+      "score": 6.0
+    },
+    {
+      "title": "Open Wearables — Open infrastructure for wearable health products (#3 week)",
+      "source": "Product Hunt",
+      "date": "2026-04-29",
+      "primary_url": "https://www.openwearables.org",
+      "score": 5.5
+    },
+    {
+      "title": "Claude Sonnet 4.8 — Expected May 2026 (leaked in Claude Code source)",
+      "source": "NxCode / YouTube",
+      "date": "2026-05-02",
+      "primary_url": "https://www.nxcode.io/resources/news/claude-sonnet-4-8-release-date-features-what-to-expect-2026",
+      "score": 6.0
+    },
+    {
+      "title": "Mistral AI Now Summit — May 27–28, Paris",
+      "source": "Mistral AI",
+      "date": "2026-04-28",
+      "primary_url": "https://mistral.ai",
+      "score": 5.0
+    },
+    {
+      "title": "Plurai — Product Hunt #1 week launch",
+      "source": "Product Hunt",
+      "date": "2026-04-29",
+      "primary_url": "https://app.plurai.ai",
+      "score": 7.0
+    },
+    {
+      "title": "Anthropic Project Glasswing / Claude Mythos restricted preview (ongoing)",
+      "source": "TechXplore / AI Tools Recap",
+      "date": "2026-04-25",
+      "primary_url": "https://techxplore.com/news/2026-04-google-commits-billion-anthropic.html",
+      "score": 6.0
+    },
+    {
+      "title": "GPT-5.5 API rollout on AWS Bedrock (first multi-cloud OpenAI deployment)",
+      "source": "OpenAI",
+      "date": "2026-04-28",
+      "primary_url": "https://openai.com/index/openai-on-aws/",
+      "score": 9.0
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Open Wearables maker website is openwearables.org",
+      "reason": "Product Hunt page does not display the maker website URL in accessible page content. openwearables.org is used as best-effort fallback but not confirmed via HTTP 200 check.",
+      "attempted_url": "https://www.openwearables.org"
+    },
+    {
+      "claim": "PandaProbe primary website is pandaprobe.io",
+      "reason": "pandaprobe.io domain inferred from ProductCool listing. Direct 200 confirmation not obtained. Use ProductCool listing as backup until confirmed.",
+      "attempted_url": "https://pandaprobe.io"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Mistral AI blog (mistral.ai/news) — direct primary source; this week confirmed Workflows, Vibe, and AI Now Summit. Add to Tier 1.",
+      "NVIDIA developer blog (developer.nvidia.com/blog) — Nemotron 3 Nano Omni launched this week and the primary NVIDIA announcement was not in a Tier 1 source. Add for hardware/inference weeks.",
+      "Anthropic security blog — Claude Mythos restricted preview and GPT-5.5-Cyber create a new category of gated cybersecurity AI releases. Track anthropic.com/security-policy."
+    ],
+    "sources_to_drop": [
+      "AIToolsRecap.com — used this week for May 2026 model pipeline context; aggregator, not primary source. Should not appear in Top Picks or Index primary_url positions."
+    ],
+    "topics_to_add": [
+      "AI model gateway / BYOM patterns — the Microsoft Foundry BYOM GA and OpenAI-on-AWS both signal that model routing governance is becoming a buying criterion for enterprise AI teams. Track AWS API Gateway, Azure APIM, and Kong for AI-specific product updates.",
+      "Anthropic DoD litigation — the supply-chain risk designation and injunction arc will affect enterprise procurement decisions. Track weekly.",
+      "MCP server launches — Huddle01 VMs and Mintlify Editor both cited MCP as a core feature. Add a dedicated MCP section or track in Dev Tools section."
+    ],
+    "topics_to_drop": [
+      "No drops recommended this week."
+    ],
+    "notes": "The week's dominant story was infrastructure consolidation: OpenAI going multi-cloud (AWS), Mistral completing its orchestration layer, Microsoft enabling BYOM in Foundry. These are signals that the 'which model' decision is giving way to 'which infrastructure and governance layer' — an important reframe for enterprise AI teams. Next week's Anthropic developer conference (May 6) should be the lead story to research and may include Claude Sonnet 4.8 or Cardinal."
+  }
+}

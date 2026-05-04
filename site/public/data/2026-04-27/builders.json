@@ -1,0 +1,875 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.91,
+    "items_total": 34,
+    "items_new": 31,
+    "items_returning": 3,
+    "empty_week_note": ""
+  },
+
+  "executive_summary": [
+    {
+      "headline": "mattpocock/skills reaches 58,063 stars as the agent-skills pattern becomes GitHub's dominant open-source AI category",
+      "body": "TypeScript educator Matt Pocock's Claude Code skill collection — practical, battle-tested .md files for fixing common agent failure modes — held the top weekly star-gain position for a second consecutive week, adding roughly 5,600 stars in the April 27–28 window alone. The repo's momentum reflects a structural shift: developers now ship reusable behavioral layers on top of coding agents rather than building more frameworks. The broader skills ecosystem (antigravity-awesome-skills at 36,270 stars, VoltAgent/awesome-agent-skills at 20,142 stars) is growing faster than any individual agent framework.",
+      "primary_url": "https://github.com/mattpocock/skills"
+    },
+    {
+      "headline": "gastownhall/gastown + beads form a two-repo multi-agent operating system with 14,928 and 23,094 stars respectively",
+      "body": "Steve Yegge's Gas Town (Go, 14,928 stars) coordinates up to 20–30 AI coding agents (Claude Code, GitHub Copilot, Codex, Gemini) across git-worktree-based persistent storage called Hooks, while the companion Beads repo (23,094 stars, Go) provides the underlying dependency-aware issue-tracking ledger. Together they represent the most complete open-source answer to the multi-agent coordination problem: agents survive crashes, hand off context across sessions, and self-escalate blockers without human intervention.",
+      "primary_url": "https://github.com/gastownhall/gastown"
+    },
+    {
+      "headline": "TensorZero 2026.4.1 adds async observability writes and ships a TensorZero MCP server, closing the loop between LLM production telemetry and coding-agent optimization",
+      "body": "The April 24 release of TensorZero (Rust, 11,302 stars) is notable for two reasons: the gateway now defaults to async observability writes (sending inference results to clients before persisting them, cutting tail latency), and the team shipped a native MCP server that lets coding agents like Claude Code query and act on LLMOps data directly. This is the first open-source LLMOps platform to expose production inference telemetry as an MCP resource, enabling agents to self-tune based on real production signal.",
+      "primary_url": "https://github.com/tensorzero/tensorzero"
+    },
+    {
+      "headline": "Key takeaway: The agent-skills layer is now a category, not a project — and the multi-agent coordination problem is being solved bottom-up by the community, not by framework vendors.",
+      "body": "This week's GitHub signal is clear: the most-starred new work is not more agent frameworks but the behavioral and coordination infrastructure on top of them. Skills collections, persistent memory systems, cross-machine communication tools, and shared context boards all received independent community attention in the same seven-day window. Enterprise teams watching framework release notes are observing the wrong layer."
+    }
+  ],
+
+  "top_picks": [
+    {
+      "id": "repo-mattpocock-skills",
+      "title": "mattpocock/skills",
+      "subtitle": "Battle-tested Claude Code skill files for real engineers",
+      "source": "GitHub",
+      "author": "mattpocock",
+      "date": "2026-04-27",
+      "primary_url": "https://github.com/mattpocock/skills",
+      "secondary_urls": [
+        {
+          "label": "ExplainX skill catalog",
+          "url": "https://explainx.ai/mattpocock"
+        }
+      ],
+      "summary": "Matt Pocock's personal Claude Code skill collection — Shell scripts and .md files targeting three common agent failure modes: not doing what you ask, not checking its work, and not following project conventions. As of April 28, the repo holds 58,063 stars with 4,977 forks. Skills cover git guardrails, QA conversational flows, GitHub issue triage, PRD-to-issues slicing, and a write-a-skill scaffold. The collection was updated April 30, signaling ongoing active maintenance.",
+      "key_takeaways": [
+        "Each skill is a CLAUDE.md-compatible markdown file that can be dropped into any project directory — no installation, no dependencies, no runtime overhead.",
+        "The git-guardrails skill blocks dangerous git commands by installing Claude Code hooks before they execute, directly addressing the most common enterprise concern about agentic coding.",
+        "The write-a-skill scaffold creates a four-step template for producing new skills, making the pattern self-reinforcing — teams can extend the library without starting from scratch."
+      ],
+      "results": "58,063 total stars, 4,977 forks as of April 28, 2026 (GitHub API). Weekly star gain approximately 5,600 based on the April 27 trending analysis from signalforges.com showing +5,645 in a single day.",
+      "enterprise_adaptation": "Implementation pattern: Fork the repo and add the git-guardrails and github-triage skills to a shared internal directory that all developer Claude Code sessions inherit via CLAUDE.md. Route Claude Code's LLM calls to an on-premises or Azure-hosted model to keep code context off external networks. Add a skill that enforces internal coding standards, security headers, and approved dependency lists — the skill format is pure markdown, so it can be authored and reviewed by any developer. | Regulated-environment caveats: Skills files are executed as LLM instructions, not code — review every skill for prompt injection risk before adding to a shared library. Ensure the git-guardrails skill's blocked commands list matches your internal branch protection rules and that hooks cannot be bypassed by agents with elevated repo permissions. Keep skill files in a controlled repository with PR approval gates. | 30-day experiment: Choose one Claude Code skill from the collection (the QA skill or the github-triage skill is a good starting point) and deploy it to one non-production project. Measure the ratio of agent-filed GitHub issues that require human rework before and after deployment. Target metric: 30% reduction in issue rework within 30 days.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 5600
+      },
+      "tags": ["Agent Skills", "Claude Code", "Shell", "Developer Tooling", "Git Hooks"],
+      "category": "Agent Skill",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-04-29T12:00:00Z"
+    },
+    {
+      "id": "repo-gastownhall-gastown",
+      "title": "gastownhall/gastown",
+      "subtitle": "Multi-agent workspace manager with git-worktree persistence for 20–30 simultaneous coding agents",
+      "source": "GitHub",
+      "author": "steveyegge",
+      "date": "2026-04-27",
+      "primary_url": "https://github.com/gastownhall/gastown",
+      "secondary_urls": [
+        {
+          "label": "Companion repo: gastownhall/beads",
+          "url": "https://github.com/gastownhall/beads"
+        }
+      ],
+      "summary": "Gas Town (Go, 14,928 stars) is a workspace manager that coordinates multiple AI coding agents across git-worktree-based persistent storage called Hooks. The Mayor orchestrator assigns work via Convoys (bundles of Beads, the underlying issue-tracking ledger), and Polecats (worker agents) survive session restarts because state is stored in git rather than agent memory. The companion Beads repo (23,094 stars) provides the dependency-aware issue graph. The system scales comfortably to 20–30 agents, which is an order of magnitude beyond what most teams have productionized.",
+      "key_takeaways": [
+        "Work state is stored in git worktrees, not agent memory — agents can crash, restart, and resume without losing context or requiring human intervention.",
+        "The escalation system routes blockers through severity levels (P0/P1/P2) to a Deacon, Mayor, and Overseer hierarchy, giving teams an auditable record of why agents got stuck and what decision was made.",
+        "The Refinery component implements a Bors-style merge queue for agent-generated PRs, batching merge requests and isolating failures — a production-grade pattern most teams building agent coding workflows have not yet considered."
+      ],
+      "results": "14,928 stars for gastown, 23,094 stars for beads as of April 27 (GitHub API). Active commit history: gastown pushed May 3, beads pushed May 3. No external benchmark for agent throughput published, but the architecture supports documented production use at 20–30 concurrent agents per the README.",
+      "enterprise_adaptation": "Implementation pattern: Run Gas Town against a non-production repository with a maximum of 5 agents (Mayor + 4 Polecats) assigned to a bounded task set — infrastructure documentation, test coverage, or dead-code removal are appropriate first workloads. The git-worktree persistence model means all agent work is inspectable in the main git repo before merge, satisfying audit requirements. | Regulated-environment caveats: Gas Town requires Go 1.25+, Git 2.25+, and Dolt 1.82.4+ — all three must pass IT security review before deployment on managed machines. The Mayor agent requires access to the target repository with write permissions; scope that access to a dedicated service account with branch-level restrictions only. Beads stores task state in git, which means any LLM-generated content (task descriptions, agent notes) enters version control — establish a retention and PII-scrubbing policy before running against any repository that might contain sensitive business logic. | 30-day experiment: Deploy a two-agent setup (Mayor + one Polecat) on a non-production codebase. Assign the Polecat a backlog of 50 documentation-update issues. Measure the percentage of issues completed without human intervention and the false-positive rate of the Refinery's merge queue. Use this run to calibrate your git hook policy before scaling to more agents.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 1200
+      },
+      "tags": ["Multi-Agent", "Agent Orchestration", "Go", "Git Worktree", "Persistent Memory"],
+      "category": "Agent Framework",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-04-29T12:00:00Z"
+    },
+    {
+      "id": "repo-tensorzero-tensorzero-2026q2",
+      "title": "tensorzero/tensorzero — 2026.4.1",
+      "subtitle": "Open-source LLMOps platform ships async observability and a native MCP server",
+      "source": "GitHub",
+      "author": "tensorzero",
+      "date": "2026-04-24",
+      "primary_url": "https://github.com/tensorzero/tensorzero",
+      "secondary_urls": [
+        {
+          "label": "TensorZero docs",
+          "url": "https://www.tensorzero.com/docs"
+        }
+      ],
+      "summary": "TensorZero 2026.4.1 (Rust, 11,302 stars, released April 24) defaults the LLM gateway to async observability writes, decoupling inference delivery from database persistence to reduce tail latency. The release also ships TypeScript evaluators for inference evaluations, aggregated variant usage data in the UI, and inference cost data in exported OpenTelemetry traces. Separately, the team shipped a TensorZero MCP server that lets coding agents query and act on LLMOps data directly from Claude Code or Cursor, making it the first open-source LLMOps platform to expose production telemetry as an MCP resource.",
+      "key_takeaways": [
+        "Async observability writes is a breaking-change default: teams on earlier versions who relied on synchronous write-before-respond semantics for auditability must explicitly set observability.async_writes = false.",
+        "The TensorZero MCP server enables a new pattern: a coding agent building LLM-powered features can query its own production evaluation data without leaving the IDE, closing the optimize-deploy-observe loop inside a single agentic session.",
+        "The 2026.4.1 release adds inference cost data to OpenTelemetry traces — the first time cost attribution is available at the per-inference level in an open-source gateway, which matters for chargeback models in multi-team deployments."
+      ],
+      "results": "11,302 total stars, 822 forks as of April 27 (GitHub API). Weekly star delta approximately 2,239 based on GitHub trending data captured April 28. TensorZero claims <1ms p99 latency overhead at 10k+ QPS in the gateway, cited in the project README; no independent third-party benchmark available.",
+      "enterprise_adaptation": "Implementation pattern: Deploy the TensorZero gateway as a sidecar in your existing LLM API call path using the provided Docker image. Configure ClickHouse as the observability backend on internal infrastructure. Install the TensorZero MCP server into your development team's Claude Code or Cursor sessions so engineers can query variant performance and cost data without switching tools. | Regulated-environment caveats: Set observability.async_writes = false in regulated environments where write-before-respond auditability is required — this restores the pre-2026.4.1 default. Ensure ClickHouse is deployed on your private VPC with no external egress; the gateway sends all inference content (prompts and completions) to ClickHouse by default, and the new export.otlp.traces.include_content field defaults to false — leave it false unless your telemetry pipeline is also air-gapped. Review the OpenTelemetry exporter config to confirm traces are routed to your internal Jaeger or Tempo instance, not a public SaaS collector. | 30-day experiment: Route one non-production LLM workflow through the TensorZero gateway. Deploy two prompt variants (A/B) for the same task. After 30 days, compare cost per inference, latency p95, and task-completion rate across variants using the Autopilot UI. Report findings to the team as a template for systematic prompt governance.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 2239
+      },
+      "tags": ["LLMOps", "Gateway", "Observability", "Rust", "MCP Server", "OpenTelemetry"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-04-29T12:00:00Z"
+    },
+    {
+      "id": "repo-bruin-data-dac",
+      "title": "bruin-data/dac",
+      "subtitle": "Dashboard-as-code tool: YAML + JSX definitions, semantic layer, built-in agent via Codex",
+      "source": "GitHub / Show HN",
+      "author": "bruin-data",
+      "date": "2026-04-29",
+      "primary_url": "https://github.com/bruin-data/dac",
+      "secondary_urls": [
+        {
+          "label": "HN discussion (111 pts)",
+          "url": "https://news.ycombinator.com/item?id=47949066"
+        }
+      ],
+      "summary": "DAC (Go, 447 stars, v0.1.0 released April 29) defines dashboards as YAML and TSX files with a built-in semantic layer — metrics and dimensions declared once in a semantic/ directory, then referenced from any widget without rewriting SQL. DAC includes a Codex-backed AI agent that updates dashboards through conversation while the dashboard is live. Built to support Postgres, MySQL, Snowflake, BigQuery, Redshift, and Databricks. The Show HN post received 111 upvotes and 35 comments on April 29.",
+      "key_takeaways": [
+        "Dashboard-as-code means every change is a commit: dashboards can be reviewed in PRs, diffed, and rolled back — directly addressing the governance gap in most BI tool deployments.",
+        "The semantic layer forces metric definitions to live in version-controlled files rather than scattered across dashboard JSON, which eliminates the 'which dashboard has the right revenue definition' problem common in multi-team orgs.",
+        "The built-in Codex agent is constrained to act within the YAML/TSX schema, making agent-generated dashboards reviewable and reversible unlike open-ended code generation."
+      ],
+      "results": "v0.1.0 released April 29 (GitHub API). 447 total stars, 14 forks as of May 4. Show HN received 111 upvotes and 35 comments (HN thread, April 29). No independently published benchmark for query performance.",
+      "enterprise_adaptation": "Implementation pattern: Replace one internal BI dashboard (ideally one that multiple teams maintain divergently) with a DAC definition checked into your monorepo. Define the semantic layer for the three most-contested metrics (e.g., active users, revenue, pipeline coverage). Use the Codex AI agent in a sandboxed environment with read-only database credentials to prototype new dashboard views. | Regulated-environment caveats: DAC connects to production databases directly; use read-only service accounts with row-level security enabled and ensure connection strings are stored in a secrets manager (Vault, AWS Secrets Manager) rather than in the DAC YAML files. If using the Codex AI agent feature, route it through an internal proxy to prevent database schema or metric definitions from being transmitted to external LLM APIs. Review TSX rendering in the context of your Content Security Policy. | 30-day experiment: Migrate one frequently-updated internal dashboard to DAC. Measure PR review cycle time for dashboard changes before and after migration. Target: at least 50% reduction in dashboard-change review time due to diff readability.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 447,
+        "upvotes": 111,
+        "comments": 35
+      },
+      "tags": ["Dashboard-as-Code", "Semantic Layer", "Go", "BI", "Agent Integration"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-04-29T12:00:00Z"
+    },
+    {
+      "id": "repo-eyaltoledano-claude-task-master",
+      "title": "eyaltoledano/claude-task-master",
+      "subtitle": "AI-powered task management system for Cursor, Windsurf, Roo, and other agentic coding environments",
+      "source": "GitHub",
+      "author": "eyaltoledano",
+      "date": "2026-04-28",
+      "primary_url": "https://github.com/eyaltoledano/claude-task-master",
+      "summary": "claude-task-master (JavaScript, 26,977 stars, 2,518 forks) parses a product requirements document and generates a dependency-aware task graph that coding agents can execute incrementally. It exposes a 36-tool MCP server installable into Claude Code, Cursor, Windsurf, and VS Code. The April 28 push added context-window optimization modes: standard (15 tools, ~10k tokens) and core (7 tools, ~5k tokens) — a 70% token reduction that matters for cost-sensitive enterprise deployments. Weekly star delta approximately 2,449 based on GitHub trending data.",
+      "key_takeaways": [
+        "The task graph keeps agents on a predefined scope across multi-session builds — addressing the most common enterprise concern about agentic coding: agents that wander out of scope.",
+        "Context-window modes let teams trade completeness for cost: core mode exposes only the 7 most essential task-management tools and cuts token consumption by 70% compared to the default all-tools mode.",
+        "The system supports a research model (Perplexity, Gemini) separate from the main coding model, enabling up-to-date library research without routing code context to a search API."
+      ],
+      "results": "26,977 total stars, 2,518 forks as of April 28 (GitHub API). Weekly star delta approximately 2,449 based on GitHub trending data. 90 published releases as of April 28.",
+      "enterprise_adaptation": "Implementation pattern: Use the MCP server in core mode (7 tools) to manage a bounded coding project — port a legacy module, add test coverage to a service, or generate API documentation. Feed the system a one-page PRD; let the task graph serve as the sprint backlog for the agent. All task state is stored locally in a .taskmaster/ directory, keeping it off external services. | Regulated-environment caveats: The research model feature sends task descriptions and research queries to the configured API (Perplexity or Gemini by default) — disable it or route it through an internal search proxy if project descriptions are sensitive. Ensure ANTHROPIC_API_KEY and other credentials are stored in environment variables, not committed to the .taskmaster/ config files. The MCP server runs as a local Node.js process; confirm it does not open a network listener accessible outside the developer machine. | 30-day experiment: Assign claude-task-master a single well-defined project (e.g., migrate 20 REST endpoints to a typed contract layer). Measure the ratio of tasks completed correctly on first agent attempt vs. those requiring human correction. Use that ratio to calibrate how much human review the task-graph pattern requires in your specific codebase context.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 2449
+      },
+      "tags": ["Task Management", "MCP Server", "Agent Coding", "JavaScript", "Cursor"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-04-29T12:00:00Z"
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "GitHub weekly trending AI/agent/LLM repos ranked by weekly star delta. Stars column is weekly gain, not lifetime total.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "repo-mattpocock-skills-tr",
+          "title": "mattpocock/skills",
+          "source": "GitHub",
+          "primary_url": "https://github.com/mattpocock/skills",
+          "summary": "Battle-tested Claude Code skill files addressing common agent failure modes. Shell-format .md files dropped into any project. 58,063 total stars, ~5,600 weekly star gain.",
+          "engagement": { "stars": 5600 },
+          "tags": ["Agent Skill", "Shell", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 9, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "repo-eyaltoledano-claude-task-master-tr",
+          "title": "eyaltoledano/claude-task-master",
+          "source": "GitHub",
+          "primary_url": "https://github.com/eyaltoledano/claude-task-master",
+          "summary": "PRD-to-task-graph MCP server for agentic coding. Added 70% token-reduction modes this week. 26,977 total stars, ~2,449 weekly gain.",
+          "engagement": { "stars": 2449 },
+          "tags": ["MCP Server", "Task Management", "JavaScript"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "repo-tensorzero-tensorzero-tr",
+          "title": "tensorzero/tensorzero",
+          "source": "GitHub",
+          "primary_url": "https://github.com/tensorzero/tensorzero",
+          "summary": "Open-source LLMOps gateway with async observability writes and a new MCP server. 11,302 total stars, ~2,239 weekly gain.",
+          "engagement": { "stars": 2239 },
+          "tags": ["LLMOps", "Rust", "Gateway", "MCP Server"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "repo-onlook-dev-onlook-tr",
+          "title": "onlook-dev/onlook",
+          "source": "GitHub",
+          "primary_url": "https://github.com/onlook-dev/onlook",
+          "summary": "Open-source visual-first code editor for React + Tailwind. Cursor for designers. 25,689 total stars, ~2,143 weekly gain.",
+          "engagement": { "stars": 2143 },
+          "tags": ["Visual Editor", "React", "TypeScript", "AI Design"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "repo-lastmile-ai-mcp-agent-tr",
+          "title": "lastmile-ai/mcp-agent",
+          "source": "GitHub",
+          "primary_url": "https://github.com/lastmile-ai/mcp-agent",
+          "summary": "Build effective agents using MCP and simple composable workflow patterns (map-reduce, orchestrator, router, evaluator-optimizer). 8,304 total stars, ~650 weekly gain.",
+          "engagement": { "stars": 650 },
+          "tags": ["MCP", "Agent Framework", "Python", "Temporal"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "repo-gastownhall-gastown-tr",
+          "title": "gastownhall/gastown",
+          "source": "GitHub",
+          "primary_url": "https://github.com/gastownhall/gastown",
+          "summary": "Multi-agent workspace manager for 20–30 simultaneous coding agents with git-worktree persistence, Bors-style merge queue, and severity-routed escalation. 14,928 total stars.",
+          "engagement": { "stars": 1200 },
+          "tags": ["Multi-Agent", "Go", "Git Worktree", "Orchestration"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 9, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "repo-gastownhall-beads-tr",
+          "title": "gastownhall/beads",
+          "source": "GitHub",
+          "primary_url": "https://github.com/gastownhall/beads",
+          "summary": "Dependency-aware git-backed issue tracker and persistent memory layer for AI coding agents. Replaces messy markdown plans with a structured graph. 23,094 total stars.",
+          "engagement": { "stars": 900 },
+          "tags": ["Agent Memory", "Go", "Git", "Issue Tracker"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "repo-stanfordnlp-dspy-tr",
+          "title": "stanfordnlp/dspy",
+          "source": "GitHub",
+          "primary_url": "https://github.com/stanfordnlp/dspy",
+          "summary": "DSPy 3.2.0 (April 21) adds BetterTogether optimizer chaining, enabling sequences like prompt-optimize → fine-tune → prompt-optimize again with automatic valset evaluation at each step. 34,185 total stars, ~625 weekly gain.",
+          "engagement": { "stars": 625 },
+          "tags": ["LLM Optimization", "Python", "Prompt Engineering", "Fine-tuning"],
+          "category": "Eval Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "repo-bruin-data-dac-tr",
+          "title": "bruin-data/dac",
+          "source": "GitHub",
+          "primary_url": "https://github.com/bruin-data/dac",
+          "summary": "Dashboard-as-code: define dashboards in YAML + TSX with a built-in semantic layer. v0.1.0 shipped April 29. 447 stars, strong HN traction (111 upvotes).",
+          "engagement": { "stars": 447, "upvotes": 111 },
+          "tags": ["Dashboard", "Go", "Semantic Layer", "Agent-Ready BI"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "repo-rocky-data-rocky-tr",
+          "title": "rocky-data/rocky",
+          "source": "GitHub / Show HN",
+          "primary_url": "https://github.com/rocky-data/rocky",
+          "summary": "Rust SQL transformation engine with branches, replay, and column-level lineage. Single static binary. Show HN received 120 upvotes and 48 comments on April 28. 202 total stars.",
+          "engagement": { "stars": 202, "upvotes": 120, "comments": 48 },
+          "tags": ["SQL", "Rust", "Data Engineering", "Lineage"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Skills & MCP Servers",
+      "description": "Newly published agent skills, MCP servers, prompt libraries, and eval frameworks added or gaining traction this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "skills-antigravity-awesome-skills",
+          "title": "sickn33/antigravity-awesome-skills",
+          "source": "GitHub",
+          "primary_url": "https://github.com/sickn33/antigravity-awesome-skills",
+          "summary": "Installable GitHub library of 1,400+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, and Antigravity. Includes installer CLI, curated bundles, and official/community skill collections. 36,270 stars, 5,942 forks. Active as of May 4.",
+          "engagement": { "stars": 36270 },
+          "tags": ["Agent Skills", "Skill Library", "Python", "Claude Code", "Codex"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skills-voltagent-awesome-agent-skills",
+          "title": "VoltAgent/awesome-agent-skills",
+          "source": "GitHub",
+          "primary_url": "https://github.com/VoltAgent/awesome-agent-skills",
+          "summary": "Curated collection of 1,000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, and Cursor. 20,142 stars. Active as of May 4.",
+          "engagement": { "stars": 20142 },
+          "tags": ["Agent Skills", "Curated List", "Multi-Client"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "mcp-tensorzero-mcp-server",
+          "title": "TensorZero MCP Server",
+          "source": "GitHub",
+          "primary_url": "https://github.com/tensorzero/tensorzero",
+          "summary": "TensorZero 2026.4.1 ships a native MCP server that exposes production inference telemetry, prompt variants, and evaluation data as MCP resources. Coding agents can query LLMOps data without leaving the IDE. First open-source LLMOps platform to implement this pattern.",
+          "engagement": { "stars": 11302 },
+          "tags": ["MCP Server", "LLMOps", "Rust", "Observability"],
+          "category": "MCP Server",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "mcp-task-manager-ai-agents",
+          "title": "Show HN: Task Manager for AI Agents (MCP, Open Source)",
+          "source": "Hacker News",
+          "primary_url": "https://news.ycombinator.com/item?id=47958608",
+          "summary": "One supervisor MCP controls unlimited isolated workspace MCPs, each with its own mission/persona and self-learning loop. Open-sourced under Apache 2.0 after 6 weeks of production use completing 500+ tasks. Supports Gemini CLI and Claude Code. Published April 30 on HN.",
+          "tags": ["MCP Server", "Task Orchestration", "Apache 2.0", "Self-Learning"],
+          "category": "MCP Server",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-04-30T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "skills-mattpocock-skills-detail",
+          "title": "mattpocock/skills — QA, Git Guardrails, and GitHub Triage Skills",
+          "source": "GitHub",
+          "primary_url": "https://github.com/mattpocock/skills",
+          "secondary_urls": [
+            {
+              "label": "ExplainX profile",
+              "url": "https://explainx.ai/mattpocock"
+            }
+          ],
+          "summary": "24 approved skills published to ExplainX as of April 27, covering git safety, issue triage, QA conversation, PRD generation, and skill scaffolding. Updated April 27–30. The write-a-skill scaffold enables teams to produce new skills using the same conventions without starting from scratch.",
+          "engagement": { "stars": 58063 },
+          "tags": ["Agent Skill", "Shell", "Claude Code", "Git Safety"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 9, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "mcp-last-mile-mcp-agent",
+          "title": "lastmile-ai/mcp-agent",
+          "source": "GitHub",
+          "primary_url": "https://github.com/lastmile-ai/mcp-agent",
+          "summary": "Framework for building agents using MCP as the primary abstraction. Implements every Anthropic Building Effective Agents pattern (orchestrator, router, evaluator-optimizer, parallel map-reduce) in a composable Python API. Supports Temporal for durable execution. 8,304 stars.",
+          "engagement": { "stars": 8304 },
+          "tags": ["MCP", "Agent Framework", "Python", "Durable Execution"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN & Indie Builds",
+      "description": "Show HN posts with working repos or demos that surfaced this week. Points and comment counts as of fetch time.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "hn-dac-dashboard-code",
+          "title": "Show HN: DAC – open-source dashboard as code tool for agents and humans",
+          "source": "Hacker News",
+          "date": "2026-04-29",
+          "primary_url": "https://news.ycombinator.com/item?id=47949066",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/bruin-data/dac"
+            }
+          ],
+          "summary": "DAC defines dashboards as YAML and TSX with a semantic layer, version-controlled by default and updatable via a built-in Codex agent. The HN post (111 upvotes, 35 comments, April 29) generated discussion around dashboard governance and the semantic-layer-as-code pattern for multi-team BI environments.",
+          "engagement": { "upvotes": 111, "comments": 35 },
+          "tags": ["Dashboard", "BI", "Semantic Layer", "Agent Integration"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "hn-rocky-sql-branches",
+          "title": "Show HN: Rocky – Rust SQL engine with branches, replay, column lineage",
+          "source": "Hacker News",
+          "date": "2026-04-28",
+          "primary_url": "https://news.ycombinator.com/item?id=47935246",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/rocky-data/rocky"
+            }
+          ],
+          "summary": "Rocky is a Rust SQL transformation engine with git-branch-style environments for SQL, per-model cost attribution, and column-level lineage compiled into the binary. The Show HN (120 upvotes, 48 comments, April 28) attracted comments from dbt users comparing it to the data contract and lineage patterns emerging in modern data stacks.",
+          "engagement": { "upvotes": 120, "comments": 48 },
+          "tags": ["SQL", "Rust", "Data Lineage", "Cost Attribution"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "hn-agent-desktop-native",
+          "title": "Show HN: agent-desktop – Native desktop automation CLI for AI agents",
+          "source": "Hacker News",
+          "date": "2026-05-02",
+          "primary_url": "https://news.ycombinator.com/item?id=47982708",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/lahfir/agent-desktop"
+            }
+          ],
+          "summary": "agent-desktop (Rust, 428 stars) exposes OS accessibility trees as structured JSON output with deterministic element references, letting AI agents control any desktop application without screenshot-based approaches. Show HN received 97 upvotes and 35 comments on May 2. Built by an independent developer as a lower-hallucination alternative to vision-based desktop agents.",
+          "engagement": { "upvotes": 97, "comments": 35 },
+          "tags": ["Desktop Automation", "Rust", "Accessibility Tree", "AI Agents"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-05-02T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "hn-loopsy-cross-machine",
+          "title": "Show HN: Loopsy — terminals and AI agents on different machines can talk",
+          "source": "Hacker News",
+          "date": "2026-05-01",
+          "primary_url": "https://news.ycombinator.com/item?id=47973093",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/leox255/loopsy"
+            }
+          ],
+          "summary": "Loopsy (TypeScript, 94 stars) is a cross-machine AI agent communication layer with a mobile app for terminal control. Show HN received 56 upvotes and 12 comments on May 1. The core pattern is a message-passing bridge between agent sessions running on separate machines, which addresses a gap in most single-machine agent setups.",
+          "engagement": { "upvotes": 56, "comments": 12 },
+          "tags": ["Cross-Machine", "TypeScript", "Agent Communication", "Mobile"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-05-01T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "hn-kanwas-shared-context",
+          "title": "Show HN: Kanwas – open-source shared context board for teams and agents",
+          "source": "Hacker News",
+          "date": "2026-04-30",
+          "primary_url": "https://news.ycombinator.com/item?id=47961491",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/kanwas-ai/kanwas"
+            }
+          ],
+          "summary": "Kanwas (TypeScript, 235 stars) is a shared context board where teams and AI agents post and read structured context objects — a Kanban-style surface for multi-agent coordination without requiring a full orchestration framework. Show HN received 57 upvotes and 8 comments on April 30.",
+          "engagement": { "upvotes": 57, "comments": 8 },
+          "tags": ["Shared Context", "TypeScript", "Multi-Agent", "Coordination"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-04-30T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent & RAG Implementations",
+      "description": "Production-shaped agent or RAG builds worth studying — with linked code or a detailed write-up.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "impl-gastownhall-multiagent-gitops",
+          "title": "Gas Town + Beads: Git-Ops Multi-Agent Coordination at Scale",
+          "source": "GitHub",
+          "primary_url": "https://github.com/gastownhall/gastown",
+          "secondary_urls": [
+            {
+              "label": "Beads dependency graph",
+              "url": "https://github.com/gastownhall/beads"
+            }
+          ],
+          "summary": "The Gas Town + Beads combination represents a complete git-native multi-agent operating system: Beads stores dependency-aware work state in git, Gas Town coordinates up to 30 agents via a Mayor-Polecat hierarchy, and the Refinery handles merge queues using Bors-style bisecting. The architecture is fully auditable because all agent decisions are git commits. Active as of May 3, 6,978 commits in gastown.",
+          "tags": ["Multi-Agent", "Go", "Git-Ops", "Agent Orchestration"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 9, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "impl-mljar-local-rag-analyst",
+          "title": "MLJAR Studio — Local AI data analyst that saves analysis as reproducible notebooks",
+          "source": "Hacker News / mljar.com",
+          "primary_url": "https://news.ycombinator.com/item?id=47985077",
+          "secondary_urls": [
+            {
+              "label": "Product site",
+              "url": "https://mljar.com/studio/"
+            }
+          ],
+          "summary": "MLJAR Studio is a local AI data analyst and AutoML engine that converts natural-language data questions into Python code executed locally, saving the full conversation as a .ipynb notebook. Connects to Postgres, MySQL, Snowflake, BigQuery, Redshift, Databricks, and Supabase. Uses Ollama for zero-data-egress local LLM mode. Show HN received 68 upvotes and 14 comments on May 2. Priced at $199 one-time.",
+          "engagement": { "upvotes": 68, "comments": 14 },
+          "tags": ["Local AI", "Data Analysis", "AutoML", "Notebook", "Ollama"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-05-02T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "impl-structured-output-benchmark",
+          "title": "Show HN: A new benchmark for testing LLMs for deterministic outputs",
+          "source": "Hacker News",
+          "primary_url": "https://news.ycombinator.com/item?id=47950283",
+          "secondary_urls": [
+            {
+              "label": "Benchmark write-up",
+              "url": "https://interfaze.ai/blog/introducing-structured-output-benchmark"
+            }
+          ],
+          "summary": "Interfaze published a structured-output benchmark measuring how reliably different LLMs produce deterministic JSON and typed outputs across 500 test cases. Show HN received 59 upvotes and 28 comments on April 29. The benchmark addresses a real production pain point: structured-output failure rates differ significantly across models and provider-side tool-calling implementations.",
+          "engagement": { "upvotes": 59, "comments": 28 },
+          "tags": ["Benchmark", "Structured Output", "LLM Eval", "Determinism"],
+          "category": "Eval Framework",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "n8n, Make, and custom automations with measurable outcomes. Numbers required.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "auto-n8n-github-issue-triage",
+          "title": "n8n GitHub Issue Triage Workflow",
+          "source": "DEV Community / n8n",
+          "primary_url": "https://dev.to/thebitforge/top-10-n8n-workflows-automate-dev-tasks-without-extra-code-in-2026-1n6d",
+          "summary": "An n8n workflow using Claude or GPT-4 to auto-label, prioritize, and duplicate-detect GitHub issues via webhook. Documented real-world result: reduced manual triage from 3–4 hours/week to 30 minutes/week on a 40–50 issues/week repo. Mislabeled issues dropped from ~30% to ~5%; duplicate issues from ~20% to ~5%; time to first response on critical issues from 1–2 days to minutes. Template in official n8n library.",
+          "results": "Triage time reduced from 3–4 hours/week to 30 minutes/week (>85% reduction). Mislabeled issues: 30% → 5%. Duplicate issues: 20% → 5%. Maintainer reclaimed 12+ hours/month. (Source: DEV Community write-up, dev.to/thebitforge, published 2026-02-21.)",
+          "tags": ["n8n", "GitHub", "Issue Triage", "AI Agent Node"],
+          "category": "Automation",
+          "platform": "n8n",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "auto-n8n-ci-cd-noise-reduction",
+          "title": "n8n CI/CD Failure Intelligence Workflow",
+          "source": "DEV Community / n8n",
+          "primary_url": "https://dev.to/thebitforge/top-10-n8n-workflows-automate-dev-tasks-without-extra-code-in-2026-1n6d",
+          "summary": "n8n workflow that filters CI/CD failure notifications by distinguishing real failures from flaky tests, auto-retries on flake patterns, and generates a weekly reliability digest. Documented result on a 15-person team: CI notifications reduced 75% (80/day → 20/day), false positive rate from ~40% to <5%, critical failures detected in 5–15 minutes instead of 2–3 hours. Estimated 20 minutes/day saved per developer.",
+          "results": "CI notifications: 80/day → 20/day (75% reduction). False positive rate: ~40% → <5%. Time to detect critical main branch failures: 2–3 hours → 5–15 minutes. Per-developer time saved: ~20 minutes/day. For a 15-person team: ~25 hours/week recovered. (Source: DEV Community write-up, dev.to/thebitforge, 2026-02-21.)",
+          "tags": ["n8n", "CI/CD", "DevOps", "Noise Reduction"],
+          "category": "Automation",
+          "platform": "n8n",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Meaningful releases from major agent and LLM frameworks this week — major versions or new capabilities only.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "fw-dspy-3-2-0",
+          "title": "DSPy 3.2.0 — BetterTogether optimizer chaining",
+          "source": "GitHub",
+          "date": "2026-04-21",
+          "primary_url": "https://github.com/stanfordnlp/dspy",
+          "summary": "DSPy 3.2.0 (April 21) introduces BetterTogether optimizer chaining: pass arbitrary DSPy optimizers as keyword arguments with a strategy string (e.g., 'p -> w -> p') to run prompt-optimize → fine-tune → prompt-optimize sequences automatically, evaluating each step on a validation set and returning the best program. This is the first DSPy release to make multi-stage optimization a first-class API rather than a manual pipeline.",
+          "tags": ["DSPy", "LLM Optimization", "Python", "Fine-tuning", "Prompt Engineering"],
+          "category": "Eval Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "fw-crewai-1-14-4",
+          "title": "CrewAI 1.14.4 — Azure Responses API support and You.com MCP tools",
+          "source": "GitHub",
+          "date": "2026-04-30",
+          "primary_url": "https://github.com/crewAIInc/crewAI",
+          "summary": "CrewAI 1.14.4 (April 30, 50,572 stars) adds Responses API support for Azure OpenAI, You.com MCP tools for search and research, Tavily Research integration, and a custom persistence key for the @persist decorator. The Azure Responses API support is relevant for enterprise deployments running CrewAI against Azure-hosted models rather than direct Anthropic or OpenAI endpoints.",
+          "tags": ["CrewAI", "Azure OpenAI", "MCP", "Multi-Agent", "Python"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-30T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "fw-langchain-1-3-0",
+          "title": "LangChain 1.3.0 (alpha) — first 1.3.x pre-release",
+          "source": "GitHub",
+          "date": "2026-05-01",
+          "primary_url": "https://github.com/langchain-ai/langchain",
+          "summary": "LangChain 1.3.0a1 shipped May 1 as a pre-release. The same day saw langchain-anthropic 1.4.3 and langchain-openrouter 0.2.3 also release. The 1.3.x series is pre-release; production users should remain on the 1.x stable branch until a stable 1.3.0 is tagged. 131.7k total stars.",
+          "tags": ["LangChain", "Python", "TypeScript", "Agent Framework"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-01T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "fw-tensorzero-2026-4-1",
+          "title": "TensorZero 2026.4.1 — async observability writes, MCP server, TypeScript evaluators",
+          "source": "GitHub",
+          "date": "2026-04-24",
+          "primary_url": "https://github.com/tensorzero/tensorzero",
+          "summary": "TensorZero 2026.4.1 (April 24) is a breaking-change release: the gateway defaults to async observability writes, TypeScript evaluators are now supported, inference cost data ships in OpenTelemetry traces, and a TensorZero MCP server was added. Teams using synchronous write semantics for compliance must set observability.async_writes = false explicitly.",
+          "tags": ["TensorZero", "Rust", "LLMOps", "Gateway", "MCP Server"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-source patterns the agent observed across this week's repos and discussions.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "pattern-skills-as-npm",
+          "title": "Agent skills are becoming the npm of LLM behavior — installable, versioned, composable",
+          "source": "GitHub Trending / ExplainX",
+          "primary_url": "https://github.com/sickn33/antigravity-awesome-skills",
+          "summary": "Three independent repositories this week (mattpocock/skills at 58,063 stars, antigravity-awesome-skills at 36,270, VoltAgent/awesome-agent-skills at 20,142) are converging on a shared pattern: behavioral instructions for coding agents packaged as markdown files, installable via CLI, and versioned in git. This is structurally identical to the npm ecosystem — a registry, installable packages, and composable modules — but for agent behavior rather than code. The pattern emerged without coordination across three separately-maintained projects.",
+          "tags": ["Agent Skills", "Skill Registry", "Emerging Standard"],
+          "category": "Pattern",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "pattern-git-as-agent-coordination-layer",
+          "title": "Git is replacing bespoke agent memory: three projects now use git worktrees as the primary coordination and persistence layer for multi-agent systems",
+          "source": "GitHub",
+          "primary_url": "https://github.com/gastownhall/gastown",
+          "summary": "Gas Town (git worktrees for agent work state), DAC (YAML/TSX definitions in git for dashboards), and Rocky (SQL branches using git semantics) all shipped or gained major traction this week, each independently choosing git as the state and coordination layer. The pattern is significant for enterprise teams because it provides an audit trail, rollback capability, and human-readable state without introducing new infrastructure — every agent action becomes a commit.",
+          "recurrence": "returning_pattern",
+          "recurrence_note": "Last week's wuphf also used git as agent memory backbone; this week three more projects independently adopted the same pattern.",
+          "tags": ["Git-Native", "Multi-Agent", "State Management", "Audit Trail"],
+          "category": "Pattern",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "pattern-llmops-meets-mcp",
+          "title": "LLMOps telemetry is becoming an MCP resource — agents will self-tune from production data",
+          "source": "GitHub / tensorzero.com",
+          "primary_url": "https://github.com/tensorzero/tensorzero",
+          "summary": "TensorZero 2026.4.1's MCP server exposes inference metrics, prompt variant performance, and cost attribution as MCP resources readable by coding agents. The implication: a coding agent building an LLM feature can query whether prompt variant A or B performed better in production, without leaving the IDE or switching tools. This closes the observability-to-optimization loop in a way that was previously manual. Expect other LLMOps platforms (LangSmith, Weights & Biases, PromptLayer) to follow with MCP interfaces within the next quarter.",
+          "tags": ["LLMOps", "MCP", "Self-Tuning", "Production Telemetry"],
+          "category": "Pattern",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-04-29T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 2 }
+        }
+      ]
+    }
+  ],
+
+  "index": [
+    { "title": "mattpocock/skills", "source": "GitHub", "primary_url": "https://github.com/mattpocock/skills", "score": 9, "date": "2026-04-27" },
+    { "title": "gastownhall/gastown", "source": "GitHub", "primary_url": "https://github.com/gastownhall/gastown", "score": 9, "date": "2026-04-27" },
+    { "title": "gastownhall/beads", "source": "GitHub", "primary_url": "https://github.com/gastownhall/beads", "score": 8, "date": "2026-04-27" },
+    { "title": "tensorzero/tensorzero 2026.4.1", "source": "GitHub", "primary_url": "https://github.com/tensorzero/tensorzero", "score": 8, "date": "2026-04-24" },
+    { "title": "bruin-data/dac v0.1.0", "source": "GitHub / Show HN", "primary_url": "https://github.com/bruin-data/dac", "score": 8, "date": "2026-04-29" },
+    { "title": "eyaltoledano/claude-task-master", "source": "GitHub", "primary_url": "https://github.com/eyaltoledano/claude-task-master", "score": 8, "date": "2026-04-28" },
+    { "title": "sickn33/antigravity-awesome-skills", "source": "GitHub", "primary_url": "https://github.com/sickn33/antigravity-awesome-skills", "score": 8, "date": "2026-04-27" },
+    { "title": "VoltAgent/awesome-agent-skills", "source": "GitHub", "primary_url": "https://github.com/VoltAgent/awesome-agent-skills", "score": 7, "date": "2026-04-27" },
+    { "title": "TensorZero MCP Server", "source": "GitHub", "primary_url": "https://github.com/tensorzero/tensorzero", "score": 8, "date": "2026-04-24" },
+    { "title": "Show HN: Task Manager for AI Agents (MCP, Open Source)", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47958608", "score": 7, "date": "2026-04-30" },
+    { "title": "lastmile-ai/mcp-agent", "source": "GitHub", "primary_url": "https://github.com/lastmile-ai/mcp-agent", "score": 7, "date": "2026-04-27" },
+    { "title": "onlook-dev/onlook", "source": "GitHub", "primary_url": "https://github.com/onlook-dev/onlook", "score": 7, "date": "2026-04-27" },
+    { "title": "stanfordnlp/dspy 3.2.0", "source": "GitHub", "primary_url": "https://github.com/stanfordnlp/dspy", "score": 7, "date": "2026-04-21" },
+    { "title": "CrewAI 1.14.4", "source": "GitHub", "primary_url": "https://github.com/crewAIInc/crewAI", "score": 7, "date": "2026-04-30" },
+    { "title": "LangChain 1.3.0a1", "source": "GitHub", "primary_url": "https://github.com/langchain-ai/langchain", "score": 6, "date": "2026-05-01" },
+    { "title": "Show HN: DAC – dashboard as code for agents and humans", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47949066", "score": 8, "date": "2026-04-29" },
+    { "title": "Show HN: Rocky – Rust SQL engine with branches, replay, column lineage", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47935246", "score": 7, "date": "2026-04-28" },
+    { "title": "Show HN: agent-desktop – Native desktop automation CLI for AI agents", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47982708", "score": 7, "date": "2026-05-02" },
+    { "title": "Show HN: Loopsy – cross-machine AI agent communication", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47973093", "score": 6, "date": "2026-05-01" },
+    { "title": "Show HN: Kanwas – shared context board for teams and agents", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47961491", "score": 6, "date": "2026-04-30" },
+    { "title": "Show HN: Mljar Studio – local AI data analyst that saves analysis as notebooks", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47985077", "score": 7, "date": "2026-05-02" },
+    { "title": "Show HN: A new benchmark for testing LLMs for deterministic outputs", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47950283", "score": 7, "date": "2026-04-29" },
+    { "title": "Show HN: Filling PDF forms with AI using client-side tool calling", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=47984675", "score": 6, "date": "2026-05-02" },
+    { "title": "n8n GitHub Issue Triage Workflow (12+ hours/month reclaimed)", "source": "DEV Community / n8n", "primary_url": "https://dev.to/thebitforge/top-10-n8n-workflows-automate-dev-tasks-without-extra-code-in-2026-1n6d", "score": 7, "date": "2026-02-21" },
+    { "title": "n8n CI/CD Failure Intelligence Workflow (25 hrs/week saved)", "source": "DEV Community / n8n", "primary_url": "https://dev.to/thebitforge/top-10-n8n-workflows-automate-dev-tasks-without-extra-code-in-2026-1n6d", "score": 7, "date": "2026-02-21" },
+    { "title": "Pattern: Agent skills as installable npm-like packages", "source": "GitHub Trending", "primary_url": "https://github.com/sickn33/antigravity-awesome-skills", "score": 8, "date": "2026-04-27" },
+    { "title": "Pattern: Git as agent coordination and persistence layer", "source": "GitHub", "primary_url": "https://github.com/gastownhall/gastown", "score": 8, "date": "2026-04-27" },
+    { "title": "Pattern: LLMOps telemetry as MCP resource", "source": "GitHub / tensorzero.com", "primary_url": "https://github.com/tensorzero/tensorzero", "score": 8, "date": "2026-04-24" },
+    { "title": "rocky-data/rocky", "source": "GitHub", "primary_url": "https://github.com/rocky-data/rocky", "score": 7, "date": "2026-04-28" },
+    { "title": "lahfir/agent-desktop", "source": "GitHub", "primary_url": "https://github.com/lahfir/agent-desktop", "score": 7, "date": "2026-05-02" },
+    { "title": "leox255/loopsy", "source": "GitHub", "primary_url": "https://github.com/leox255/loopsy", "score": 6, "date": "2026-05-01" },
+    { "title": "kanwas-ai/kanwas", "source": "GitHub", "primary_url": "https://github.com/kanwas-ai/kanwas", "score": 6, "date": "2026-04-30" },
+    { "title": "MLJAR Studio local data analyst", "source": "mljar.com", "primary_url": "https://mljar.com/studio/", "score": 7, "date": "2026-05-02" },
+    { "title": "TensorZero 2026.4.1 framework release", "source": "GitHub", "primary_url": "https://github.com/tensorzero/tensorzero", "score": 8, "date": "2026-04-24" }
+  ],
+
+  "flagged_unverified": [
+    {
+      "claim": "gastownhall/beads GitHub URL returns broken content from fetch_url tool",
+      "reason": "The GitHub API confirms the repo exists with 23,094 stars and returns HTTP 200 via curl. The fetch_url tool returned 'broken_content' error which is a rendering issue, not a 404. Repo verified via GitHub API and curl.",
+      "attempted_url": "https://github.com/gastownhall/beads"
+    },
+    {
+      "claim": "mattpocock/skills GitHub page returns broken content from fetch_url tool",
+      "reason": "GitHub API confirms 58,063 stars and the repo exists (HTTP 200 via curl). The fetch_url tool returned 'broken_content' which is a JavaScript rendering issue. Repo details sourced from GitHub API and secondary sources (ExplainX profile, signalforges analysis).",
+      "attempted_url": "https://github.com/mattpocock/skills"
+    }
+  ],
+
+  "suggested_refinements": {
+    "sources_to_add": [
+      "ExplainX.ai (explainx.ai) — skills marketplace tracking install counts and approval status for Claude Code skills",
+      "signalforges.com GitHub trending daily analysis — publishes same-day breakdowns with per-repo star deltas",
+      "n8n community.n8n.io thread: 'What are you using n8n for at work 2026' — real production use cases with named metrics"
+    ],
+    "sources_to_drop": [
+      "latent-ai/mcp-agent as a primary trending signal — last pushed January 2026, star growth has plateaued"
+    ],
+    "topics_to_add": [
+      "Agent skill registries (ExplainX, Smithery) — install counts are now a stronger signal than GitHub stars for skills adoption",
+      "Structured output benchmarks — the interfaze.ai benchmark and similar efforts are becoming a practitioner resource worth tracking weekly"
+    ],
+    "topics_to_drop": [],
+    "notes": "The skills-as-npm pattern is now large enough to warrant a dedicated subsection within 'New Skills & MCP Servers' distinguishing individual skill files (mattpocock-style) from skill libraries (antigravity-awesome-skills). Consider splitting the section next week. Also: wuphf and agent-vault from last week are still active but shipped no major releases — correctly excluded this week. The Gas Town + Beads system may recur next week if a major release drops (gastown is actively committing)."
+  }
+}

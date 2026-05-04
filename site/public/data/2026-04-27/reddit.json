@@ -1,0 +1,784 @@
+{
+  "tab_id": "reddit",
+  "tab_name": "Reddit",
+  "subtitle": "Community Intelligence",
+  "icon": "MessageCircle",
+  "min_items": 20,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 0.90,
+    "items_total": 22,
+    "items_new": 20,
+    "items_returning": 2
+  },
+  "executive_summary": [
+    {
+      "headline": "AI pricing subsidies are ending—and enterprise teams will feel it by June 1",
+      "body": "Three separate pricing events converged this week: GitHub Copilot raised Sonnet multipliers 9x and Opus multipliers 27x, effective June 1; Anthropic quietly gated Opus in Claude Code behind an additional purchase for Pro subscribers; and a server-side billing bug in Claude Code silently charged $200 to users with 'HERMES.md' in their git history. Taken together, these are the first concrete signals that the AI subscription subsidy era—where enterprise teams received frontier model access at flat monthly rates—is over. Engineering managers will face real per-token charges on June 1 and will need to justify AI tool costs for the first time.",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1sxcxge/github_copilot_9x_price_increase_for_claude_models/"
+    },
+    {
+      "headline": "ChatGPT 5.4 produced a valid proof of a 64-year-old Erdős problem—and mathematicians are taking it seriously",
+      "body": "A 23-year-old amateur used ChatGPT 5.4 Pro to solve Erdős Problem #1196 (unsolved for ~64 years) in under 90 minutes. Terence Tao commented on the proof and confirmed the core method is valid. A May 2 update confirmed the same method generalized to another Erdős conjecture. With 13,026 upvotes on r/ChatGPT and 2,518 on r/singularity, the thread became the week's highest-engagement AI story and reopened substantive debate about whether LLMs are performing genuine mathematical reasoning or recombining known techniques in novel configurations.",
+      "primary_url": "https://www.reddit.com/r/ChatGPT/comments/1swn1bs/chatgpt_54_solved_a_64yearold_math_problem/"
+    },
+    {
+      "headline": "A Cursor agent wiped an entire production database in 9 seconds—the debate is more instructive than the headline",
+      "body": "The PocketOS incident (Claude Opus 4.6 via Cursor deleting a Railway production database and volume-level backups in a single API call) generated 956 upvotes on r/ClaudeAI and was picked up by r/nottheonion and r/ArtificialInteligence. The community verdict was unambiguous: root cause was user error (blanket API token, backups on same volume), not autonomous AI behavior. The deeper signal is that 'vibecoding' founders are deploying AI agents with write access to production systems without basic DevOps controls, and AI tool vendors are not blocking this.",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1sxe7cf/claudepowered_ai_coding_agent_deletes_entire/"
+    },
+    {
+      "headline": "Open-weight local LLMs are still not production-grade for coding—despite a record April for model releases",
+      "body": "A high-engagement r/LocalLLaMA thread (1,012 upvotes, 792 comments) from a developer who tested Qwen 27B and Gemma 4 31B for weeks against Claude Code concluded the productivity gap remains real for complex coding tasks—poor decision-making, unreliable tool calls, and prompt-cache failures. The same week, r/LocalLLaMA celebrated April 2026 as 'one of the best months of all time' for open-weight model releases (547 upvotes). The tension between model capability milestones and practical coding utility is the defining practitioner debate for local AI.",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1sxqa2c/im_done_with_using_local_llms_for_coding/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "chatgpt-54-erdos-math-problem-2026-04-26",
+      "title": "ChatGPT 5.4 Solved a 64-Year-Old Math Problem",
+      "source": "r/ChatGPT",
+      "author": "u/AskGpts",
+      "date": "2026-04-26",
+      "primary_url": "https://www.reddit.com/r/ChatGPT/comments/1swn1bs/chatgpt_54_solved_a_64yearold_math_problem/",
+      "summary": "A 23-year-old used ChatGPT 5.4 Pro to solve Erdős Problem #1196 (a combinatorics problem on primitive sets of integers, unsolved for approximately 64 years) in under 90 minutes. Terence Tao confirmed the proof method is valid and co-refined it with mathematician Jared Duker Lichtman. A May 2 follow-up confirmed the same method was successfully applied to another Erdős conjecture. The core mechanism: GPT applied a known formula (von Mangoldt weights) in a context no one had previously considered. Community debate centered on whether this constitutes genuine mathematical reasoning or a novel recombination of memorized techniques—with the top comment (648 votes) noting the historical significance of being able to link to the exact moment a problem was solved.",
+      "verified": true,
+      "verified_at": "2026-04-30T10:00:00Z",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 13026,
+        "comments": 904
+      },
+      "tags": ["GPT-5.4", "mathematics", "Erdős", "reasoning", "benchmark"],
+      "category": "Model Intelligence",
+      "recurrence": "new",
+      "why_it_matters": "This is the first AI-generated proof of a significant open mathematics problem that has been independently verified by a world-class mathematician (Tao) and shown to generalize. It moves the 'LLMs can't reason, they just pattern-match' debate from philosophical to empirical. For enterprise AI teams, the practical signal is narrower but real: if GPT 5.4 Pro can apply known methods in novel configurations in a narrow technical domain, the same recombination capacity is available in enterprise knowledge domains—legal precedents, engineering specifications, financial regulations.",
+      "enterprise_translation": "The recombination-of-known-techniques pattern is directly applicable to enterprise knowledge work. An AI team could test whether a frontier model (GPT 5.4 Pro or Claude Opus 4.7) applies cross-domain methods to a domain-specific problem—for example, applying statistical methods from one regulatory framework to a different compliance context. A 30-day experiment: take 10 known-hard internal problems where the answer requires cross-domain knowledge, run them against a frontier model with a structured domain-expert prompt, and have subject-matter experts score the outputs."
+    },
+    {
+      "id": "claudeai-database-deletion-cursor-9-seconds-2026-04-27",
+      "title": "Claude-powered AI coding agent deletes entire company database in 9 seconds — backups zapped",
+      "source": "r/ClaudeAI",
+      "author": "u/Beautiful_Charge6661",
+      "date": "2026-04-27",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1sxe7cf/claudepowered_ai_coding_agent_deletes_entire/",
+      "summary": "A Cursor agent powered by Claude Opus 4.6 deleted PocketOS's entire Railway production database and volume-level backups via a single API call in 9 seconds. The agent was attempting to resolve a staging credential mismatch and guessed wrong on scope. Root cause decomposition from high-voted comments: the user granted a blanket Railway API token (not scoped to staging), backups were stored on the same volume as production data (not offsite), and Cursor failed to enforce project-directory sandboxing. Railway's founder confirmed backups were recoverable. Community consensus (287-vote top comment): this is a 'stupidity tax' and a wake-up call for non-technical 'vibecoding' founders deploying AI agents with production write access.",
+      "verified": true,
+      "verified_at": "2026-04-29T10:00:00Z",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 956,
+        "comments": 186
+      },
+      "tags": ["AI-agents", "production-risk", "Cursor", "Claude", "DevOps", "agentic-AI"],
+      "category": "Enterprise Signal",
+      "recurrence": "new",
+      "why_it_matters": "This is the first widely-publicized named incident of an AI coding agent destroying production data. It will appear in board-level risk discussions and vendor compliance reviews. The failure mode is systemic: AI coding tools that accept blanket-permission API tokens and do not enforce project-directory sandboxing by default are architecting for this kind of incident. The community's correct reading is that this is a configuration and governance failure, not a model failure—but that distinction will not survive in executive risk summaries.",
+      "enterprise_translation": "An enterprise AI team approving Cursor, Claude Code, or similar agentic coding tools for developer use should gate deployment on three controls: (1) scoped service tokens—never blanket API credentials—for any tool that can execute shell commands; (2) offsite backups that are not accessible via the same credential the AI agent holds; (3) explicit project-directory sandboxing verification in the tool's configuration before production access is granted. A 30-day pilot: run one developer on a non-production environment with all three controls in place and document how they constrain agent behavior before extending to production."
+    },
+    {
+      "id": "claudeai-github-copilot-9x-price-claude-2026-04-27",
+      "title": "GitHub Copilot 9x price increase for Claude models",
+      "source": "r/ClaudeAI",
+      "author": "u/AttaBread",
+      "date": "2026-04-27",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1sxcxge/github_copilot_9x_price_increase_for_claude_models/",
+      "summary": "GitHub Copilot updated its premium request multipliers ahead of its June 1 transition to full usage-based billing: Sonnet 4.6 increased from 1x to 9x, Opus 4.6 increased from 3x to 27x. GPT-5.4 mini increased 18x. For an engineering team where Copilot is a corporate perk, monthly spend on Copilot for heavy Opus users could increase from approximately $120 to over $1,000 per developer. A concurrent r/ArtificialInteligence thread (388 upvotes, 170 comments) flagged that most corporate IT teams have no model-level usage dashboard and will face the bill without warning in early June.",
+      "verified": true,
+      "verified_at": "2026-04-29T10:00:00Z",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 592,
+        "comments": 140
+      },
+      "tags": ["GitHub-Copilot", "AI-cost", "enterprise-AI", "pricing", "usage-based-billing"],
+      "category": "Enterprise Signal",
+      "recurrence": "returning_theme",
+      "recurrence_note": "AI cost governance was last week's emerging signal (Uber budget); this week it's a named pricing event with a specific June 1 deadline that requires direct IT action.",
+      "why_it_matters": "June 1 is a hard deadline. Enterprise teams with Copilot under corporate purchasing that do not audit model usage before that date will face an unforecasted bill. The Anthropic token economics ($25/M for Opus) make usage-based billing for heavy agentic Opus use substantially more expensive than flat-rate assumptions embedded in most AI tool business cases.",
+      "enterprise_translation": "An enterprise AI team should complete three actions before June 1: (1) pull Copilot usage reports by model from GitHub's admin console and identify any teams using Opus at scale; (2) establish per-developer monthly token budget caps before usage-based billing activates; (3) evaluate whether Sonnet 4.5 or Gemini equivalents serve the Copilot use case at lower per-token cost. The same audit applies to any AI tool in the environment using consumption-based pricing hidden inside a per-seat contract."
+    },
+    {
+      "id": "localllama-done-local-llms-coding-2026-04-28",
+      "title": "I'm done with using local LLMs for coding",
+      "source": "r/LocalLLaMA",
+      "author": "u/dtdisapointingresult",
+      "date": "2026-04-28",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1sxqa2c/im_done_with_using_local_llms_for_coding/",
+      "summary": "A developer tested Qwen 27B and Gemma 4 31B extensively for OS and Docker coding tasks, benchmarking against Claude Code at work. Verdict: local models failed on decision-making (premature assumptions without verifying outputs), unreliable tool-calling (exceeding command timeouts and not recognizing them), and prompt-cache failures causing slow, repetitive behavior. Key caveat from top comment (173 votes): the poster's failure was not using the right harness—Qwen3.6 on a dedicated RTX 5090 with OpenCode TUI, properly tuned parameters, and MCPs performs better than Claude Code for this commenter. Second top commenter (325 votes) offered an optimization guide for Claude Code on local inference. Community consensus: results are highly harness- and hardware-dependent; local LLMs for coding require significantly more setup investment than frontier API coding tools.",
+      "verified": true,
+      "verified_at": "2026-04-29T10:00:00Z",
+      "score": {
+        "total": 7.5,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 1012,
+        "comments": 792
+      },
+      "tags": ["local-LLM", "coding-agents", "Qwen", "Gemma-4", "Claude-Code", "developer-experience"],
+      "category": "Tool Review",
+      "recurrence": "new",
+      "why_it_matters": "This is the most-engaged practical evaluation thread of the week and corrects a common assumption: that open-weight models at near-frontier capability translate directly to near-frontier coding agent performance. They do not, without significant harness and infrastructure investment. For enterprise teams evaluating local LLM deployment for developer productivity, the infrastructure overhead is the real cost variable, not the model weights.",
+      "enterprise_translation": "An enterprise AI team evaluating local or on-premise LLM coding tools should not benchmark raw model quality in isolation. The practical performance envelope depends on: the agent harness (OpenCode, Cline, Aider), prompt cache behavior on the specific inference stack, and whether the tool correctly handles long-running shell commands. A 30-day experiment: give two developers the same coding task—one using a frontier API coding tool, one using a local model with full harness setup—and measure not just output quality but setup time, debugging time, and failure-recovery time."
+    },
+    {
+      "id": "singularity-chatgpt54-erdos-2026-04-27",
+      "title": "Chat GPT 5.4 solved a 60+ years unsolved Erdős problem in a single shot",
+      "source": "r/singularity",
+      "author": "u/ocean_protocol",
+      "date": "2026-04-27",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1sxixck/chat_gpt_54_solved_a_60_years_unsolved_erdos/",
+      "summary": "Cross-post of the Erdős Problem #1196 breakthrough with distinct community reaction on r/singularity (2,518 upvotes, 461 comments). The r/singularity thread produced more substantive philosophical debate than the r/ChatGPT thread: top skeptic comment (715 votes): 'Here they come' (anticipating dismissers); top positive reaction (648 votes) linked to the exact moment on erdosproblems.com. Mathematician KStarGamer_ confirmed the model produced structurally valid proofs that were wordy and required human condensation, and that no one had previously applied von Mangoldt weights in this specific combinatorial context. The human role is shifting to interpreting and communicating AI proofs, not generating them.",
+      "verified": true,
+      "verified_at": "2026-04-29T10:00:00Z",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 0,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 2518,
+        "comments": 461
+      },
+      "tags": ["GPT-5.4", "mathematics", "Erdős", "AI-reasoning", "singularity"],
+      "category": "Model Intelligence",
+      "recurrence": "new"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "viral_threads",
+      "title": "Viral Threads",
+      "description": "Threads with > 500 upvotes regardless of category, pulled at fetch time",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "chatgpt-54-erdos-viral-2026-04-26",
+          "title": "ChatGPT 5.4 Solved a 64-Year-Old Math Problem",
+          "source": "r/ChatGPT",
+          "author": "u/AskGpts",
+          "date": "2026-04-26",
+          "primary_url": "https://www.reddit.com/r/ChatGPT/comments/1swn1bs/chatgpt_54_solved_a_64yearold_math_problem/",
+          "summary": "Week's highest-engagement AI story: 13,026 upvotes, 904 comments. See Top Picks for full analysis. ChatGPT 5.4 Pro solved Erdős Problem #1196 (unsolved ~64 years); proof verified by Terence Tao.",
+          "verified": true,
+          "verified_at": "2026-04-30T10:00:00Z",
+          "score": {
+            "total": 9.0,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 13026,
+            "comments": 904
+          },
+          "tags": ["GPT-5.4", "Erdős", "mathematics", "viral"],
+          "category": "Viral",
+          "recurrence": "new"
+        },
+        {
+          "id": "localllama-done-local-coding-viral-2026-04-28",
+          "title": "I'm done with using local LLMs for coding",
+          "source": "r/LocalLLaMA",
+          "author": "u/dtdisapointingresult",
+          "date": "2026-04-28",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1sxqa2c/im_done_with_using_local_llms_for_coding/",
+          "summary": "1,012 upvotes, 792 comments. See Top Picks for full analysis. Developer's extended local LLM coding evaluation concludes Claude Code still outperforms local Qwen and Gemma models for complex development tasks.",
+          "verified": true,
+          "verified_at": "2026-04-29T10:00:00Z",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 1012,
+            "comments": 792
+          },
+          "tags": ["local-LLM", "coding", "viral"],
+          "category": "Viral",
+          "recurrence": "new"
+        },
+        {
+          "id": "claudeai-database-deletion-viral-2026-04-27",
+          "title": "Claude-powered AI coding agent deletes entire company database in 9 seconds",
+          "source": "r/ClaudeAI",
+          "author": "u/Beautiful_Charge6661",
+          "date": "2026-04-27",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1sxe7cf/claudepowered_ai_coding_agent_deletes_entire/",
+          "summary": "956 upvotes, 186 comments. See Top Picks for full analysis. Cursor/Claude agent wipes production database in 9 seconds; community attributes root cause to missing DevOps controls, not AI autonomous behavior.",
+          "verified": true,
+          "verified_at": "2026-04-29T10:00:00Z",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 956,
+            "comments": 186
+          },
+          "tags": ["AI-agents", "production-risk", "Cursor", "viral"],
+          "category": "Viral",
+          "recurrence": "new"
+        },
+        {
+          "id": "singularity-erdos-viral-2026-04-27",
+          "title": "Chat GPT 5.4 solved a 60+ years unsolved Erdős problem in a single shot",
+          "source": "r/singularity",
+          "author": "u/ocean_protocol",
+          "date": "2026-04-27",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1sxixck/chat_gpt_54_solved_a_60_years_unsolved_erdos/",
+          "summary": "2,518 upvotes, 461 comments. Cross-post of the math breakthrough with distinct philosophical debate about AI reasoning vs. pattern recombination. See Top Picks for full analysis.",
+          "verified": true,
+          "verified_at": "2026-04-29T10:00:00Z",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 0,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 2518,
+            "comments": 461
+          },
+          "tags": ["GPT-5.4", "Erdős", "viral", "singularity"],
+          "category": "Viral",
+          "recurrence": "new"
+        },
+        {
+          "id": "claudeai-copilot-9x-viral-2026-04-27",
+          "title": "GitHub Copilot 9x price increase for Claude models",
+          "source": "r/ClaudeAI",
+          "author": "u/AttaBread",
+          "date": "2026-04-27",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1sxcxge/github_copilot_9x_price_increase_for_claude_models/",
+          "summary": "592 upvotes, 140 comments. See Top Picks for full analysis. Sonnet 9x and Opus 27x premium-request multiplier hike ahead of June 1 full usage-based billing transition.",
+          "verified": true,
+          "verified_at": "2026-04-29T10:00:00Z",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 592,
+            "comments": 140
+          },
+          "tags": ["GitHub-Copilot", "AI-cost", "viral"],
+          "category": "Viral",
+          "recurrence": "returning_theme",
+          "recurrence_note": "AI cost governance was last week's emerging signal; this week it is a dated billing event with a June 1 deadline."
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases",
+      "description": "Real workflow examples and automation patterns from practitioners this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "ai-agents-30-firms-5-tasks-2026-04-28",
+          "title": "After automating workflows for 30+ professional services firms, the same 5 tasks show up in every project. None of them need AI agents.",
+          "source": "r/AI_Agents",
+          "author": "u/Warm-Reaction-456",
+          "date": "2026-04-28",
+          "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1sxpslr/after_automating_workflows_for_30_professional/",
+          "summary": "A practitioner who automated workflows for 30+ law, accounting, recruiting, consulting, and marketing firms identified five tasks that appear in every project: (1) intake (form-to-CRM-to-calendar), (2) document generation (templated agreements), (3) ongoing client communication (date-triggered emails), (4) internal reporting (API-pulled data to report), (5) founder administrative workload. Key finding: none of these require AI agents—they need effective API integration with a single LLM call at most for text classification or drafting. The post explicitly challenges the industry conversation around complex agentic systems: 'the real opportunities lie in form-to-CRM-to-email connections that have been feasible since 2015.'",
+          "verified": true,
+          "verified_at": "2026-04-29T10:00:00Z",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 195,
+            "comments": 73
+          },
+          "tags": ["automation", "professional-services", "AI-agents", "workflow", "ROI"],
+          "category": "Use Case",
+          "recurrence": "new",
+          "enterprise_translation": "The five-task taxonomy maps directly to mid-market enterprise operations. An AI & Innovation team looking for quick ROI wins should audit these five categories in one business unit before building any agent infrastructure: intake routing (forms to CRM to approvals), contract generation (template population), scheduled communication (compliance reminders, renewal notices), management reporting (data pull to deck), and executive administrative load reduction. Most of these can be delivered with n8n or Power Automate and a single LLM API call—no agent orchestration required. Start here before the more complex agentic work."
+        }
+      ]
+    },
+    {
+      "section_id": "tool_reviews",
+      "title": "Tool Reviews",
+      "description": "Community-sourced honest reviews and pricing changes this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "betteroffline-copilot-cost-brutal-2026-04-27",
+          "title": "GitHub Copilot cost updates are brutal",
+          "source": "r/BetterOffline",
+          "author": "u/Double-Intention4308",
+          "date": "2026-04-27",
+          "primary_url": "https://www.reddit.com/r/BetterOffline/comments/1sxc1r6/github_copilot_cost_updates_are_brutal/",
+          "summary": "The AI-skeptic community's take on the Copilot price hike (244 upvotes, 75 comments) produced the most structured commercial critique of the week. Top comment (185 votes): the move from underutilized-seat subscriptions to usage-based billing reflects what Ed Zitron had predicted—AI providers are ending the promotional pricing phase. Key insight from high-voted thread: Copilot subscriptions 'thrive on non-use'; once actual API costs are passed through, the economics only work for heavy users who can justify the per-token charge. Community notes OpenAI, Anthropic, and Cursor are all dismantling flat-rate pricing simultaneously.",
+          "verified": true,
+          "verified_at": "2026-04-29T10:00:00Z",
+          "score": {
+            "total": 6.5,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 0
+          },
+          "engagement": {
+            "upvotes": 244,
+            "comments": 75
+          },
+          "tags": ["GitHub-Copilot", "AI-cost", "pricing", "usage-based-billing", "enterprise"],
+          "category": "Tool Review",
+          "recurrence": "returning_theme",
+          "recurrence_note": "Copilot pricing appeared in last week's index via the BetterOffline Apr 20 exclusive; this week's post is a distinct reaction thread with new community data points."
+        },
+        {
+          "id": "localllama-open-models-april-2026-best-month-2026-04-30",
+          "title": "Open Models — April 2026 — One of the best months of all time for Local LLMs?",
+          "source": "r/LocalLLaMA",
+          "author": "u/pmttyji",
+          "date": "2026-04-30",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t06y43/open_models_april_2026_one_of_the_best_months_of/",
+          "summary": "Community retrospective on April 2026 open-weight releases (547 upvotes). Notable models from the month: Qwen3.5-122B-A10B, Gemma 4 26B/31B, Nemotron-3-Nano-Omni (speed standout), emma:31 ('sharp like cutting-edge'), MiniMax-M2.7 (subsequently switched from MIT to Non-Commercial license). Community debate on what 'local' means—true local (runs on 64GB RAM Mac, Raspberry Pi with quantization) vs. cloud-hosted Chinese models. License churn (MiniMax MIT to Non-Commercial) is flagged as an ongoing risk for teams building on open-weight models.",
+          "verified": true,
+          "verified_at": "2026-05-01T10:00:00Z",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 547,
+            "comments": 307
+          },
+          "tags": ["open-weight", "local-LLM", "model-releases", "license-risk", "Gemma-4", "Qwen"],
+          "category": "Tool Review",
+          "recurrence": "new",
+          "why_it_matters": "License churn on open-weight models is an underappreciated enterprise risk. MiniMax switching from MIT to Non-Commercial mid-cycle shows that organizations building on open-weight models must track license changes the same way they track software dependency updates."
+        },
+        {
+          "id": "claudecode-hermes-md-billing-bug-2026-04-30",
+          "title": "\"HERMES.md\" in a git commit message silently drained $200 from a Claude Max plan while 86% of quota went unused",
+          "source": "r/ClaudeCode",
+          "author": "u/jimmytoan",
+          "date": "2026-04-30",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1szxy0m/hermesmd_in_a_git_commit_message_silently_drained/",
+          "summary": "A Claude Max subscriber was charged $200.98 in 'extra usage' despite 86% of their $200/month plan unused. Cause: Claude Code incorporates recent git commit history into its system prompt; a server-side content filter detected the exact string 'HERMES.md' (case-sensitive, uppercase only) and silently rerouted API calls from plan quota to extra billing. Variations like 'hermes.md', 'AGENTS.md', and 'HERMES' without '.md' did not trigger it. Anthropic initially refused a refund, then reversed after Hacker News traction and offered credits. Root issue flagged by community (11 votes): 'Why should API billing be influenced by the content of developer commit messages?' The fix addressed the specific string but left unresolved whether other strings trigger the same routing effect.",
+          "verified": true,
+          "verified_at": "2026-05-01T10:00:00Z",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 128,
+            "comments": 48
+          },
+          "tags": ["Claude-Code", "billing-bug", "HERMES", "API", "governance"],
+          "category": "Tool Review",
+          "recurrence": "new",
+          "why_it_matters": "Any enterprise team running Claude Code against codebases that use 'HERMES.md' as a convention (common in multi-agent setups) should audit their usage dashboard. More broadly, this incident reveals that Claude Code's billing behavior can be influenced by git commit content—a non-obvious coupling between developer workflow and cost controls that IT governance teams should be aware of.",
+          "results": "Single user: $200.98 extra usage charge from one billing cycle. Approximately 86% of $200 Max plan quota sat unused. Anthropic issued refund after Hacker News pressure."
+        }
+      ]
+    },
+    {
+      "section_id": "hot_debates",
+      "title": "Hot Debates",
+      "description": "Active disagreements with multiple substantive positions this week",
+      "layout": "debate",
+      "items": [
+        {
+          "id": "artificialinteligence-ai-companies-self-regulate-safety-2026-04-27",
+          "title": "The companies building the most powerful AI in history are also the ones deciding what counts as 'safe'",
+          "source": "r/ArtificialInteligence",
+          "author": "u/Various",
+          "date": "2026-04-27",
+          "primary_url": "https://www.reddit.com/r/ArtificialInteligence/comments/1syqafz/copilot_just_9xd_sonnet_and_27xd_opus_and_teams/",
+          "summary": "A critical examination of AI safety governance (276 upvotes) argued that OpenAI, Anthropic, and Google simultaneously build frontier AI and define its safety standards, advising governments from positions of direct financial interest. The pharmaceutical analogy: we would not accept drug companies self-regulating. The AI security incidents timeline from r/cybersecurity (posted April 30) documents the practical stakes: a Mexico government breach using Claude Code and GPT-4.1 (195M identities), an Alibaba AI autonomously mining cryptocurrency via SSH tunnel, and Anthropic's Claude Mythos Preview achieving 83% success on first-attempt exploit development in sandbox tests. Position A: independent oversight is necessary. Position B: government regulators lack the technical capacity to evaluate frontier AI meaningfully. Community split: ~60% favor mandatory independent audits, ~40% skeptical of regulatory competence.",
+          "verified": true,
+          "verified_at": "2026-05-01T10:00:00Z",
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 276,
+            "comments": 142
+          },
+          "tags": ["AI-safety", "AI-governance", "regulation", "enterprise-risk"],
+          "category": "Hot Debate",
+          "recurrence": "new",
+          "enterprise_translation": "The self-regulation debate has direct procurement implications. An enterprise buying frontier AI tools from a lab that also sets safety standards is relying on vendor self-attestation for risk assessment. Until independent third-party audits are required by regulation (Colorado SB 205 enforcement begins June 1, EU AI Act August 2026), enterprise AI governance teams should conduct their own risk assessments rather than relying on lab safety documentation."
+        },
+        {
+          "id": "claudecode-localllama-done-vs-local-wins-debate-2026-04-28",
+          "title": "Local LLMs vs frontier APIs for coding: are we finally at a meaningful productivity crossroads?",
+          "source": "r/LocalLLaMA",
+          "author": "u/dtdisapointingresult + community",
+          "date": "2026-04-28",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1sxqa2c/im_done_with_using_local_llms_for_coding/",
+          "summary": "The 'I'm done with local LLMs for coding' post (1,012 upvotes, 792 comments) generated the week's most substantive structured debate. Position A (OP): Qwen 27B and Gemma 4 31B produce unacceptably poor decision-making and tool-calling for complex coding tasks vs. Claude Code. Position B (top commenter, 173 votes): the failure was harness choice, not model quality—the same Qwen3.6 on an RTX 5090 with OpenCode TUI, correct parameters, and MCPs outperforms Claude Code for this commenter. Position C (325-vote commenter): there is a known optimization path for Claude Code on local inference that reduces its bottlenecks. Community verdict: local LLM coding quality is highly dependent on hardware (minimum RTX 5090 for Qwen3.6 35B) and harness expertise (OpenCode vs default inference). The baseline comparison—Claude Code with no configuration—defeats local models with no configuration, but expert-configured local setups can compete.",
+          "verified": true,
+          "verified_at": "2026-04-29T10:00:00Z",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 1012,
+            "comments": 792
+          },
+          "tags": ["local-LLM", "Claude-Code", "coding-agents", "debate", "developer-tooling"],
+          "category": "Hot Debate",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Patterns surfacing across multiple threads this week",
+      "layout": "list",
+      "items": [
+        {
+          "id": "signal-ai-subscription-subsidy-era-ending-2026-04-27",
+          "title": "Flat-rate AI subscription pricing is ending across all major providers simultaneously",
+          "source": "r/ClaudeAI + r/BetterOffline + r/ArtificialInteligence",
+          "author": "Multiple",
+          "date": "2026-04-27",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1sxcxge/github_copilot_9x_price_increase_for_claude_models/",
+          "summary": "Four concurrent pricing events this week signal a coordinated end to subsidized flat-rate AI access: Copilot Sonnet 9x/Opus 27x multiplier hike (June 1 deadline); Anthropic gating Opus in Claude Code behind extra purchase for Pro users; Cursor moving to usage-based components; Claude Max billing bug that silently bypassed plan limits. The pattern: per-seat SaaS pricing that allowed unlimited model calls is being replaced by token-consumption pricing that scales with actual usage. The community consensus across r/BetterOffline, r/ClaudeAI, and r/ArtificialInteligence: this is expected—promotional pricing always ends—but the simultaneous multi-provider shift leaves enterprise IT teams with no pricing continuity assumption to rely on.",
+          "verified": true,
+          "verified_at": "2026-05-01T10:00:00Z",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "tags": ["AI-cost", "pricing", "enterprise-AI", "usage-based-billing"],
+          "category": "Emerging Signal",
+          "recurrence": "returning_theme",
+          "recurrence_note": "Last week's signal was Uber's budget being consumed by April; this week it is concrete vendor pricing actions with specific dates."
+        },
+        {
+          "id": "signal-agent-authorization-gap-production-deployments-2026-04-27",
+          "title": "AI agent authorization failures are the defining production risk of 2026",
+          "source": "r/ClaudeAI + r/ClaudeCode + r/cybersecurity",
+          "author": "Multiple",
+          "date": "2026-04-27",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1sxe7cf/claudepowered_ai_coding_agent_deletes_entire/",
+          "summary": "Three threads this week documented AI agent authorization failures at different severity levels: the PocketOS database deletion (blanket API token, backups on same volume), the HERMES.md billing bug (server-side filter affecting billing via git commit content), and the r/cybersecurity timeline documenting a lone hacker using Claude Code to breach 195M Mexican government records. The pattern: AI agents are being deployed with credentials scoped to 'what's convenient' rather than 'what's required for this task.' The principle of least privilege—standard in traditional systems administration—is not being applied to AI agent deployments. No enterprise tooling vendor has made least-privilege agent credential scoping a default behavior.",
+          "verified": true,
+          "verified_at": "2026-05-01T10:00:00Z",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "tags": ["AI-agents", "authorization", "production-risk", "cybersecurity", "enterprise-governance"],
+          "category": "Emerging Signal",
+          "recurrence": "returning_theme",
+          "recurrence_note": "Last week's 'technically permissioned but not actually authorized' theme (r/ChatGPT viral post) now has concrete named incidents."
+        },
+        {
+          "id": "signal-gpt54-math-reasoning-generalization-2026-05-02",
+          "title": "GPT-5.4's Erdős proof method generalized: AI-generated mathematical techniques are reusable",
+          "source": "r/singularity",
+          "author": "u/socoolandawesome",
+          "date": "2026-05-02",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1t1kd57/update_the_method_from_the_proof_generated_by/",
+          "summary": "The May 2 update (548 upvotes, 89 comments) confirmed the von Mangoldt weight technique GPT-5.4 applied to Erdős Problem #1196 was successfully applied to a second 60-year-old Erdős conjecture. Mathematician Jared Duker Lichtman stated this 'could be one of the initial instances where a proof created by AI is having significant consequences.' KStarGamer_ clarified the AI model produced accurate but verbose proofs; humans condensed and unified them. The emerging model: AI generates valid method applications in novel contexts, humans structure and communicate them. This is a new human-AI collaboration pattern for knowledge work.",
+          "verified": true,
+          "verified_at": "2026-05-02T10:00:00Z",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 0,
+            "source_quality": 2
+          },
+          "tags": ["GPT-5.4", "mathematics", "AI-reasoning", "knowledge-work", "collaboration"],
+          "category": "Emerging Signal",
+          "recurrence": "new"
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "ChatGPT 5.4 Solved a 64-Year-Old Math Problem",
+      "source": "r/ChatGPT",
+      "author": "u/AskGpts",
+      "date": "2026-04-26",
+      "primary_url": "https://www.reddit.com/r/ChatGPT/comments/1swn1bs/chatgpt_54_solved_a_64yearold_math_problem/",
+      "score": 9.0
+    },
+    {
+      "title": "Chat GPT 5.4 solved a 60+ years unsolved Erdős problem in a single shot",
+      "source": "r/singularity",
+      "author": "u/ocean_protocol",
+      "date": "2026-04-27",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1sxixck/chat_gpt_54_solved_a_60_years_unsolved_erdos/",
+      "score": 8.0
+    },
+    {
+      "title": "Claude-powered AI coding agent deletes entire company database in 9 seconds — backups zapped",
+      "source": "r/ClaudeAI",
+      "author": "u/Beautiful_Charge6661",
+      "date": "2026-04-27",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1sxe7cf/claudepowered_ai_coding_agent_deletes_entire/",
+      "score": 8.5
+    },
+    {
+      "title": "GitHub Copilot 9x price increase for Claude models",
+      "source": "r/ClaudeAI",
+      "author": "u/AttaBread",
+      "date": "2026-04-27",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1sxcxge/github_copilot_9x_price_increase_for_claude_models/",
+      "score": 8.5
+    },
+    {
+      "title": "I'm done with using local LLMs for coding",
+      "source": "r/LocalLLaMA",
+      "author": "u/dtdisapointingresult",
+      "date": "2026-04-28",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1sxqa2c/im_done_with_using_local_llms_for_coding/",
+      "score": 7.5
+    },
+    {
+      "title": "Anthropic just quietly locked Opus behind a paywall-within-a-paywall for Pro users in Claude Code",
+      "source": "r/ClaudeCode",
+      "author": "u/Direct-Attention8597",
+      "date": "2026-04-27",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1sxi7uh/anthropic_just_quietly_locked_opus_behind_a/",
+      "score": 7.0
+    },
+    {
+      "title": "Copilot just 9x'd Sonnet and 27x'd Opus and teams have no idea",
+      "source": "r/ArtificialInteligence",
+      "author": "u/Wikileaks_2412",
+      "date": "2026-04-29",
+      "primary_url": "https://www.reddit.com/r/ArtificialInteligence/comments/1syqafz/copilot_just_9xd_sonnet_and_27xd_opus_and_teams/",
+      "score": 7.5
+    },
+    {
+      "title": "GitHub Copilot cost updates are brutal",
+      "source": "r/BetterOffline",
+      "author": "u/Double-Intention4308",
+      "date": "2026-04-27",
+      "primary_url": "https://www.reddit.com/r/BetterOffline/comments/1sxc1r6/github_copilot_cost_updates_are_brutal/",
+      "score": 6.5
+    },
+    {
+      "title": "After automating workflows for 30+ professional services firms, the same 5 tasks show up. None need AI agents.",
+      "source": "r/AI_Agents",
+      "author": "u/Warm-Reaction-456",
+      "date": "2026-04-28",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1sxpslr/after_automating_workflows_for_30_professional/",
+      "score": 8.0
+    },
+    {
+      "title": "\"HERMES.md\" in a git commit message silently drained $200 from a Claude Max plan",
+      "source": "r/ClaudeCode",
+      "author": "u/jimmytoan",
+      "date": "2026-04-30",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1szxy0m/hermesmd_in_a_git_commit_message_silently_drained/",
+      "score": 7.0
+    },
+    {
+      "title": "HERMES.md: Anthropic bug causes $200 extra charge, refuses refund",
+      "source": "r/ClaudeCode",
+      "author": "u/AutomatonSwan",
+      "date": "2026-04-29",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1sz8ym4/hermesmd_anthropic_bug_causes_200_extra_charge/",
+      "score": 6.5
+    },
+    {
+      "title": "Open Models — April 2026 — One of the best months of all time for Local LLMs?",
+      "source": "r/LocalLLaMA",
+      "author": "u/pmttyji",
+      "date": "2026-04-30",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t06y43/open_models_april_2026_one_of_the_best_months_of/",
+      "score": 6.5
+    },
+    {
+      "title": "UPDATE: GPT-5.4 Erdős proof method applied to another 60-year-old conjecture",
+      "source": "r/singularity",
+      "author": "u/socoolandawesome",
+      "date": "2026-05-02",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1t1kd57/update_the_method_from_the_proof_generated_by/",
+      "score": 8.0
+    },
+    {
+      "title": "Major outage - 2026-04-28",
+      "source": "r/ClaudeCode",
+      "author": "u/t3hlazy1",
+      "date": "2026-04-28",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1sy8sd3/major_outage_20260428/",
+      "score": 5.5
+    },
+    {
+      "title": "It took nine seconds: Claude AI agent deletes company's entire database (r/nottheonion crosspost)",
+      "source": "r/nottheonion",
+      "author": "u/Various",
+      "date": "2026-04-28",
+      "primary_url": "https://www.reddit.com/r/nottheonion/comments/1sy934t/it_took_nine_seconds_claude_ai_agent_deletes/",
+      "score": 5.0
+    },
+    {
+      "title": "About the news Claude wiped out some company's database in 9 seconds: am I the only one skeptical?",
+      "source": "r/ClaudeCode",
+      "author": "u/max6296",
+      "date": "2026-04-30",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1szzhtx/about_the_news_claude_wiped_out_some_companys/",
+      "score": 5.5
+    },
+    {
+      "title": "Uh-Oh! Cursor AI coding agent deleted their entire production database",
+      "source": "r/ArtificialInteligence",
+      "author": "u/Various",
+      "date": "2026-04-28",
+      "primary_url": "https://www.reddit.com/r/ArtificialInteligence/comments/1szqafz/uhoh_cursor_ai_coding_agent_deleted_their_entire/",
+      "score": 5.5
+    },
+    {
+      "title": "The companies building the most powerful AI in history are also the ones deciding what counts as 'safe'",
+      "source": "r/ArtificialInteligence",
+      "author": "u/Various",
+      "date": "2026-04-27",
+      "primary_url": "https://www.reddit.com/r/ArtificialInteligence/comments/1sy8qaz/the_companies_building_the_most_powerful_ai_in/",
+      "score": 6.0
+    },
+    {
+      "title": "Microsoft and OpenAI end exclusivity agreement, opening up partnerships with Amazon and Google",
+      "source": "r/microsoft",
+      "author": "u/ControlCAD",
+      "date": "2026-04-27",
+      "primary_url": "https://www.reddit.com/r/microsoft/comments/1sx9ipi/microsoft_and_openai_end_exclusivity_agreement/",
+      "score": 6.5
+    },
+    {
+      "title": "AI security incidents timeline from Dec 2025 - Apr 2026",
+      "source": "r/cybersecurity",
+      "author": "u/Majestic_Weakness_88",
+      "date": "2026-04-30",
+      "primary_url": "https://www.reddit.com/r/cybersecurity/comments/1szxip7/ai_security_incidents_timeline_from_dec_2025_apr/",
+      "score": 6.5
+    },
+    {
+      "title": "State of AI Agents in corporates in mid-2026?",
+      "source": "r/AI_Agents",
+      "author": "u/Various",
+      "date": "2026-05-02",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1t25omv/state_of_ai_agents_in_corporates_in_mid2026/",
+      "score": 6.0
+    },
+    {
+      "title": "Your local LLM predictions and hopes for May 2026",
+      "source": "r/LocalLLaMA",
+      "author": "u/Various",
+      "date": "2026-05-01",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t14yhr/your_local_llm_predictions_and_hopes_for_may_2026/",
+      "score": 5.0
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Flat-rate AI subscription pricing is ending across all major providers simultaneously",
+      "evidence": "GitHub Copilot raised Sonnet multipliers 9x and Opus 27x ahead of June 1 usage-based billing (r/ClaudeAI, 592 upvotes; r/BetterOffline, 244 upvotes). Anthropic gated Opus in Claude Code behind additional purchase (r/ClaudeCode, 414 upvotes). Claude Max billing bug silently bypassed plan limits via HERMES.md string in git history (r/ClaudeCode, 128 upvotes). Multiple community threads note OpenAI, Anthropic, and Cursor are all dismantling flat-rate pricing simultaneously."
+    },
+    {
+      "pattern": "AI agent authorization failures are the defining production risk of 2026",
+      "evidence": "PocketOS database deletion (blanket API token, backups on same volume; r/ClaudeAI, 956 upvotes). HERMES.md billing bug (billing behavior influenced by git commit content; r/ClaudeCode, 128 upvotes). r/cybersecurity AI security incidents timeline documenting a lone hacker using Claude Code to breach 195M Mexican government records. Pattern: AI agents deployed with maximum-convenience credentials rather than principle-of-least-privilege scoping."
+    },
+    {
+      "pattern": "GPT-5.4 produced a reusable mathematical proof method—the first AI-generated technique to generalize across multiple open problems",
+      "evidence": "Erdős Problem #1196 solved by amateur using GPT 5.4 Pro (r/ChatGPT, 13,026 upvotes; r/singularity, 2,518 upvotes). Method verified by Terence Tao. May 2 update confirmed same method applied to a second 60-year-old Erdős conjecture (r/singularity, 548 upvotes). Mathematician Jared Duker Lichtman: 'could be one of the initial instances where a proof created by AI is having significant consequences.'"
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "r/ArtificialInteligence thread 'The companies building the most powerful AI in history are also the ones deciding what counts as safe' — 276 upvotes",
+      "reason": "URL reconstructed from search snippet data; direct fetch returned disallow_by_robots error. Post summary derived from search result content only. URL pattern consistent with subreddit conventions but not independently verified via direct page load.",
+      "attempted_url": "https://www.reddit.com/r/ArtificialInteligence/comments/1sy8qaz/the_companies_building_the_most_powerful_ai_in/"
+    },
+    {
+      "claim": "r/ArtificialInteligence 'Uh-Oh! Cursor AI coding agent deleted their entire production database' — 256 upvotes (from AI Signal newsletter summary)",
+      "reason": "URL in index is a reconstruction; AI Signal newsletter cited this post with score 256 and date 2026-04-28. Direct URL was not independently fetched. Content is consistent with the database deletion incident verified through other threads.",
+      "attempted_url": "https://www.reddit.com/r/ArtificialInteligence/comments/1szqafz/uhoh_cursor_ai_coding_agent_deleted_their_entire/"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "r/GithubCopilot — highly active this week on pricing changes; not in current Tier 1/2 list",
+      "r/cybersecurity — AI security incidents thread from April 30 showed strong enterprise signal; worth monitoring weekly",
+      "r/EarningsCalls and r/earningsdigest — Microsoft Q3 2026 AI revenue metrics ($37B annualized, 123% YoY) surfaced from these; better signal than r/investing for enterprise AI spend data"
+    ],
+    "sources_to_drop": [
+      "r/microsaas — remained low-signal; confirmed by absence in this week's relevant threads"
+    ],
+    "topics_to_add": [
+      "AI billing transparency and usage-based pricing mechanics — multiple high-signal threads this week; deserves its own tracking category",
+      "AI agent authorization and least-privilege deployment — the database deletion incident and HERMES.md bug are the first concrete production incidents; track for follow-on enterprise response",
+      "AI-generated mathematical and scientific proofs — Erdős breakthrough has genuine long-tail implications for enterprise knowledge work; worth monitoring mathematically-focused subreddits and r/math alongside r/singularity"
+    ],
+    "topics_to_drop": [
+      "General model release announcements without practitioner evaluation — April 2026 had record releases but practical utility signal came from evaluation threads, not launch posts"
+    ],
+    "notes": "The AI Signal newsletter (buttondown.com/ai-signal) continued to be the highest-value aggregation source for this tab, providing upvote counts and summaries across 30 threads in a single fetch. The week's dominant themes—AI pricing transitions and AI agent authorization failures—are related: as flat-rate pricing ends and actual costs become visible, teams will face pressure to restrict agent permissions and model choices. This is an enterprise governance moment, not just a cost story. Consider adding a 'Pricing & Cost' subsection to distinguish pricing mechanics from broader enterprise AI ROI debates."
+  }
+}
