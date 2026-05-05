@@ -101,7 +101,7 @@ export default function PodcastPlayer({ episode }: { episode: PodcastEpisode }) 
               <Headphones className="w-3 h-3" />
               <span>Listen · {fmt(duration)}</span>
             </div>
-            <div className="text-white text-sm md:text-base font-medium leading-tight mt-0.5 truncate">
+            <div className="text-white text-sm md:text-base font-medium leading-tight mt-0.5">
               {episode.title}
             </div>
           </div>
@@ -109,7 +109,7 @@ export default function PodcastPlayer({ episode }: { episode: PodcastEpisode }) 
 
         {/* Scrubber + controls (full width on mobile, fills remaining on desktop) */}
         <div className="flex-1 flex items-center gap-3 min-w-0">
-          <span className="font-mono text-[11px] text-slate-400 tabular-nums w-10 text-right hidden sm:inline">{fmt(current)}</span>
+          <span className="font-mono text-xs text-slate-300 tabular-nums w-12 text-right hidden sm:inline">{fmt(current)}</span>
 
           <div className="relative flex-1 h-9 flex items-center group">
             {/* Track background */}
@@ -142,7 +142,7 @@ export default function PodcastPlayer({ episode }: { episode: PodcastEpisode }) 
             />
           </div>
 
-          <span className="font-mono text-[11px] text-slate-400 tabular-nums w-10 hidden sm:inline">{fmt(duration - current)}</span>
+          <span className="font-mono text-xs text-slate-300 tabular-nums w-12 hidden sm:inline">{fmt(duration - current)}</span>
 
           <div className="flex items-center gap-1">
             <button
@@ -186,13 +186,13 @@ export default function PodcastPlayer({ episode }: { episode: PodcastEpisode }) 
       </div>
 
       {/* Mobile time row */}
-      <div className="sm:hidden mt-2 flex items-center justify-between font-mono text-[11px] text-slate-400 tabular-nums">
+      <div className="sm:hidden mt-2 flex items-center justify-between font-mono text-xs text-slate-300 tabular-nums">
         <span>{fmt(current)}</span>
         <span>{fmt(duration)}</span>
       </div>
 
       {episode.music_credit && (
-        <div className="mt-3 text-[10px] text-slate-500 font-mono leading-snug">
+        <div className="mt-3 text-[11px] text-slate-400 font-mono leading-snug">
           {episode.music_credit}
         </div>
       )}
