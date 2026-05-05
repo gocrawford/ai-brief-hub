@@ -214,3 +214,20 @@ export interface Overview {
   deltas_vs_prior_week?: OverviewDeltas;
   theme_tracker?: ThemeTrackerEntry[];
 }
+
+// ---- Podcast ----
+
+export interface PodcastEpisode {
+  week_start: string;
+  week_end: string;
+  title: string;
+  headline?: string;
+  audio_url: string;
+  duration_seconds: number;
+  size_bytes: number;
+  bitrate_kbps?: number;
+  cast?: Array<{ role: string; character: string }>;
+  music_credit?: string;
+  generated_at?: string;
+}
+

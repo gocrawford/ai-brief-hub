@@ -1,6 +1,7 @@
 import { Shield, Zap, Calendar } from "lucide-react";
-import type { Meta, WeekIndexEntry } from "../types";
+import type { Meta, WeekIndexEntry, PodcastEpisode } from "../types";
 import Logo from "./Logo";
+import PodcastPlayer from "./PodcastPlayer";
 
 const TAB_LABELS: Record<string, string> = {
   youtube: "YouTube Videos",
@@ -17,11 +18,13 @@ export default function Hero({
   weeks,
   activeWeek,
   onSelectWeek,
+  podcast,
 }: {
   meta: Meta;
   weeks: WeekIndexEntry[];
   activeWeek: string;
   onSelectWeek: (weekStart: string) => void;
+  podcast: PodcastEpisode | null;
 }) {
   return (
     <header className="hero-bg border-b border-white/5">
@@ -74,6 +77,9 @@ export default function Hero({
               </span>
             ))}
           </div>
+
+          {/* Podcast player — only renders when this week has an episode */}
+          {podcast && <PodcastPlayer episode={podcast} />}
         </div>
 
         {/* Week archive */}

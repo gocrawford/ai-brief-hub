@@ -3,8 +3,8 @@ import Hero from "./components/Hero";
 import TabNav, { type View } from "./components/TabNav";
 import TabView from "./components/TabView";
 import OverviewView from "./components/OverviewView";
-import { fetchWeekIndex, fetchMeta, fetchTab, fetchOverview } from "./lib/data";
-import type { Meta, Tab, TabId, WeekIndexEntry, Overview } from "./types";
+import { fetchWeekIndex, fetchMeta, fetchTab, fetchOverview, fetchPodcast } from "./lib/data";
+import type { Meta, Tab, TabId, WeekIndexEntry, Overview, PodcastEpisode } from "./types";
 
 const DEFAULT_VIEW: View = "overview";
 
@@ -39,6 +39,7 @@ export default function App() {
 
   const [tabData, setTabData] = useState<Tab | null>(null);
   const [overview, setOverview] = useState<Overview | null>(null);
+  const [podcast, setPodcast] = useState<PodcastEpisode | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -54,13 +55,16 @@ export default function App() {
       .catch((e) => setError(e.message));
   }, []);
 
-  // 2. Load meta when activeWeek changes
+  // 2. Load meta + podcast when activeWeek changes
   useEffect(() => {
     if (!activeWeek) return;
     setMeta(null);
+    setPodcast(null);
     fetchMeta(activeWeek)
       .then(setMeta)
       .catch((e) => setError(e.message));
+    // Podcast is optional — swallow errors so a missing episode doesn't break the page
+    fetchPodcast(activeWeek).then(setPodcast).catch(() => setPodcast(null));
   }, [activeWeek]);
 
   // 3. Load active view data when (activeWeek, activeView) changes
@@ -148,7 +152,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-ink-900">
-      <Hero meta={meta} weeks={weeks} activeWeek={activeWeek} onSelectWeek={setActiveWeek} />
+      <Hero meta={meta} weeks={weeks} activeWeek={activeWeek} onSelectWeek={setActiveWeek} podcast={podcast} />
       <TabNav active={activeView} onChange={handleSelectView} />
       <main>
         {loading ? (
