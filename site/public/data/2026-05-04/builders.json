@@ -1,0 +1,971 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.91,
+    "items_total": 34,
+    "items_new": 31,
+    "items_returning": 3,
+    "empty_week_note": ""
+  },
+
+  "executive_summary": [
+    {
+      "headline": "Vertical agents dominate GitHub trending: TradingAgents (+3,315 stars/day), Dexter, and TaxHacker signal a structural shift from horizontal frameworks to domain-specific agent stacks",
+      "body": "The clearest signal from GitHub this week is that the vertical-agent pattern has overtaken the horizontal-framework era. TauricResearch/TradingAgents (64.7k stars, +3,315 stars in a single day) models a multi-agent trading desk with specialized fundamental, sentiment, and technical analyst agents that debate and vote before committing a position. virattt/dexter (9.4k stars) does the same for financial research: self-validating, self-reflecting, plan-first execution. vas3k/TaxHacker (5.5k stars) runs the full accounts-payable loop locally. None of these are built on LangChain, CrewAI, or AutoGen. The moat is now domain depth and evaluation harness, not framework choice.",
+      "primary_url": "https://github.com/TauricResearch/TradingAgents"
+    },
+    {
+      "headline": "Three new projects address agent auditability directly: regent-vcs/re_gent tracks every tool call at the prompt level; tilde.run makes every agent run a reversible transaction; Agent-skills-eval measures whether agent skills are actually followed",
+      "body": "This week produced a cohort of infrastructure tools aimed squarely at the auditability gap in agentic systems. regent-vcs/re_gent (Show HN, 114 pts, 65 comments) is a version control system built for AI coding agents that records which prompt wrote each line of code and enables bisect-style debugging across compacted contexts. tilde.run (Show HN, 199 pts, 132 comments) makes every agent run a transactional commit: agents can write to a versioned filesystem spanning GitHub, S3, and Drive, and any run can be rolled back atomically. Agent-skills-eval (Show HN, 76 pts, 36 comments) provides a testing harness that verifies whether agents actually follow skill instructions — filling a gap that has been absent from the skills ecosystem since the category emerged.",
+      "primary_url": "https://github.com/regent-vcs/re_gent"
+    },
+    {
+      "headline": "huggingface/smolagents v1.15.0 ships streaming outputs; CrewAI releases four versions in one week; smolagents' WebSearchTool replaces DuckDuckGoSearchTool in the default stack",
+      "body": "Framework activity was dense this week. Hugging Face's smolagents v1.15.0 (May 7) adds streaming agent outputs via a single stream_outputs=True flag, a LiteLLM Router model for multi-provider load balancing, and a new WebSearchTool that replaces the deprecated DuckDuckGoSearchTool. CrewAI shipped four alpha releases (v1.14.5a1 through v1.14.5a4) between May 1 and May 9, adding state restoration via restore_from_state_id, better async batch handling, and a standalone crewai-cli package extracted from the main library. None of these change the fundamental CrewAI API; teams already on 1.14.x should review the async path fixes before upgrading.",
+      "primary_url": "https://github.com/huggingface/smolagents"
+    },
+    {
+      "headline": "Key takeaway: The infra layer for agentic systems is fragmenting into four distinct stacks — domain-specific agent logic, agent auditability tooling, agent skill management, and agent sandbox infrastructure — each now with multiple competing implementations.",
+      "body": "Last week's signal was the skills-as-npm pattern. This week the picture widened: domain-specific agents, auditability tooling (re_gent, tilde.run), skill evaluation (agent-skills-eval), and sandboxed execution (tilde.run, ml-intern) each have new independent implementations. The community is building the missing infrastructure for production agent deployments bottom-up, and the incumbents (LangChain, CrewAI, AutoGen) are not the source of this innovation. Enterprise teams evaluating agent platforms should assess each of these four layers independently."
+    }
+  ],
+
+  "top_picks": [
+    {
+      "id": "repo-tauric-tradingagents",
+      "title": "TauricResearch/TradingAgents",
+      "subtitle": "Multi-agent LLM trading framework that mirrors a real trading desk — fundamental, sentiment, technical analysts debate before committing a position",
+      "source": "GitHub",
+      "author": "TauricResearch",
+      "date": "2026-05-03",
+      "primary_url": "https://github.com/TauricResearch/TradingAgents",
+      "secondary_urls": [
+        {
+          "label": "AgentConn vertical agents analysis (May 3)",
+          "url": "https://agentconn.com/blog/vertical-agent-wave-tradingagents-maigret-taxhacker-dexter-may-2026/"
+        }
+      ],
+      "summary": "TradingAgents (Python, Apache-2.0, 64.7k stars as of May 3) is a multi-agent financial trading framework in which each agent plays a specific role — fundamentals analyst, sentiment analyst, technical analyst, risk manager, trader — and agents debate and vote through a dynamic discussion before committing a position. The architecture mirrors how a human investment committee operates, with structured deliberation built in. It ships with backtesting, Sharpe ratio, and max drawdown evaluation as first-class features. Per AgentConn analysis, the repo gained +3,315 stars in a single day during the week of May 3. It does not build on LangChain, CrewAI, or AutoGen.",
+      "key_takeaways": [
+        "The debate-and-vote architecture prevents any single agent from committing a position unilaterally — a pattern directly applicable to any high-stakes enterprise decision loop where a multi-perspective review is required before an action is taken.",
+        "Built-in backtesting and Sharpe/drawdown evaluation means the framework ships with a domain-specific eval harness from day one — the pattern most general-purpose frameworks lack.",
+        "The repo explicitly avoids horizontal orchestration frameworks, building its own agent loop. This is the defining characteristic of the vertical-agent trend: the domain logic is the moat, not the framework wrapper."
+      ],
+      "results": "64.7k total stars as of May 3, 2026 (AgentConn). +3,315 stars in a single 24-hour window during week of May 3 (AgentConn). v0.2.0 released February 4, 2026 — most recent tagged release. Python 100%.",
+      "enterprise_adaptation": "Implementation pattern: Deploy TradingAgents as a read-only research layer feeding an internal investment research workflow. The multi-agent debate pattern — where specialized subagents independently evaluate a topic before a coordinator synthesizes — can be adopted for any high-stakes analytical task: regulatory risk assessment, supplier evaluation, M&A diligence screening. Strip the trading execution layer and use only the analyst agents feeding a summary agent that generates a briefing document for human review. | Regulated-environment caveats: TradingAgents connects to financial data APIs (Yahoo Finance, news feeds, filings) by default. Route all external API calls through a corporate proxy logged for compliance. Do not connect the framework to any live trading system or brokerage API without explicit sign-off from legal and risk — the framework's architecture does not include pre-trade compliance checks. All LLM calls should route to an internally-hosted or Azure-hosted model endpoint, not directly to Anthropic or OpenAI. | 30-day experiment: Adapt one analyst agent (e.g., the sentiment analyst) to evaluate internal project proposals rather than trade signals. Feed it a fixed set of internal sources (past project outcomes, risk register entries). Have the agent produce a structured risk-and-opportunity memo for one real proposal. Measure the quality of the memo against a human analyst's assessment of the same proposal.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 3315
+      },
+      "tags": ["Multi-Agent", "Finance", "Python", "Vertical Agent", "Eval Harness"],
+      "category": "Agent Framework",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "repo-tilde-run-agent-sandbox",
+      "title": "tilde.run",
+      "subtitle": "Agent sandbox with a transactional, versioned filesystem — every agent run is a commit you can roll back",
+      "source": "Hacker News / tilde.run",
+      "author": "ozkatz",
+      "date": "2026-05-06",
+      "primary_url": "https://tilde.run",
+      "secondary_urls": [
+        {
+          "label": "HN discussion (199 pts, 132 comments)",
+          "url": "https://news.ycombinator.com/item?id=48037724"
+        },
+        {
+          "label": "Tilde Agent Skill for Claude Code",
+          "url": "https://docs.tilde.run/agent-skill/"
+        }
+      ],
+      "summary": "tilde.run turns every agent run into a transactional commit: code from GitHub, data from S3, and documents from Drive appear as a single ~/sandbox filesystem; agents read and write files as usual; on clean exit the changes commit atomically; on failure nothing changes. Every outbound network call is policy-checked and logged. The system supports per-agent RBAC, time-travel debugging, and instant rollback. Built on lakeFS under the hood for atomic snapshotting. The Show HN (199 upvotes, 132 comments, May 6) generated substantive discussion around agent safety in production data environments and drew comparisons to btrfs snapshotting and Unity-style asset versioning.",
+      "key_takeaways": [
+        "The transactional-commit model means a misbehaving agent cannot partially corrupt a dataset — either the whole run succeeds and commits, or nothing changes. This is the production safety property most agent deployments currently lack.",
+        "Composing GitHub, S3, and Drive as a single filesystem removes the need for agents to manage multiple authentication flows and data-movement steps, which is where most agent failures occur in practice.",
+        "The Agent Skill for Claude Code allows developers to manage tilde sandboxes through conversational commands in their coding agent, closing the loop between development and sandboxed execution without switching tools."
+      ],
+      "results": "Show HN received 199 upvotes and 132 comments on May 6–7, 2026 (Hacker News). Oz Katz (founder, LinkedIn post May 6) confirmed the product is live and accepting signups. Built on lakeFS for atomic commits — lakeFS is a production-proven open-source system. No independent benchmark for rollback latency published.",
+      "enterprise_adaptation": "Implementation pattern: Use tilde.run's sandboxed execution model for agents that must read or modify production data — data transformation pipelines, compliance document generation, or content moderation workflows where correctness is required before any write reaches the source system. Mount the relevant S3 bucket or GitHub repo as a tilde repository, configure outbound network policies to block egress to unauthorized hosts, and run the agent in the sandbox. Only merge the changes to production after human review of the diff. | Regulated-environment caveats: tilde.run is a hosted service; confirm data residency requirements before mounting any production data — ask the vendor for a data processing agreement and confirm where the lakeFS metadata and audit logs are stored. The outbound network isolation feature is a control you configure, not a guarantee — review the default allowlist. Do not run agents with write access to production systems until the rollback path has been tested end-to-end in a staging environment. | 30-day experiment: Identify one agent workflow that currently runs directly against a production database or S3 bucket. Re-run it through tilde with the same agent and data, using the transactional commit model. Measure: (1) the number of agent runs that complete cleanly versus fail and roll back automatically, (2) the time to detect and reverse a failed run compared to the current approach.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 199,
+        "comments": 132
+      },
+      "tags": ["Agent Sandbox", "Transactional Filesystem", "Versioning", "Rollback", "Production Safety"],
+      "category": "AI Infrastructure",
+      "platform": "hackernews",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "repo-regent-vcs-re-gent",
+      "title": "regent-vcs/re_gent",
+      "subtitle": "Version control system built for AI coding agents — tracks every tool call at the prompt level, enables bisect-style debugging across sessions",
+      "source": "GitHub / Hacker News",
+      "author": "doshay",
+      "date": "2026-05-08",
+      "primary_url": "https://github.com/regent-vcs/re_gent",
+      "secondary_urls": [
+        {
+          "label": "HN discussion (114 pts, 65 comments)",
+          "url": "https://news.ycombinator.com/item?id=48063548"
+        }
+      ],
+      "summary": "re_gent is an open-source version control system written in Go, built specifically for AI coding agent workflows. It tracks every tool call made by agents like Claude Code, recording which prompt wrote each line of code, the full conversation context, and workspace snapshots. The core problem it solves: when an agent deletes a folder or makes an unexpected decision, there is no way to answer 'why did it do that?' or rewind to before it happened. re_gent enables bisect-style debugging across compacted contexts and prompt-level diffs. The Show HN (114 pts, 65 comments, May 8) drew extensive discussion comparing it to jujutsu, Cloudflare Artifacts Git for Agents, and pintire.",
+      "key_takeaways": [
+        "Prompt-level tracking fills the auditability gap between git commits: multiple prompts accumulate before a commit, and re_gent surfaces the intermediate states — enabling debugging at the step level rather than the commit level.",
+        "The project is in active development (~7.8k LOC) with core features complete but not yet at v1.0 — a signal that this is a genuine engineering effort, not a weekend project.",
+        "HN commenters surfaced Cloudflare's Artifacts Git for Agents beta as a similar enterprise-grade approach, confirming that the problem space is attracting serious infrastructure investment."
+      ],
+      "results": "Show HN received 114 upvotes and 65 comments on May 8, 2026 (Hacker News). Repo described as ~7.8k LOC with core features complete per daily.dev post. Core features: prompt tracking, workspace snapshots, bisect debugging. Language: Go. No star count stated in fetched content.",
+      "enterprise_adaptation": "Implementation pattern: Integrate re_gent as the version control backend for any Claude Code or Codex deployment running against internal codebases. The prompt-level audit trail satisfies the 'who did what and why' requirement from IT security and audit — every agent decision is traceable to the specific prompt that triggered it, not just the resulting commit. | Regulated-environment caveats: re_gent records full conversation context as part of the audit trail — ensure that this log storage is scoped to an internal system and that conversation content (which may include source code, data schema, or business logic) is not stored on any external service. The tool is pre-v1.0; run it only in non-production environments and test the rollback path thoroughly before using it alongside any agent that has write access to production repositories. | 30-day experiment: Run re_gent alongside one existing Claude Code workflow on a test repository. After 30 days, use the prompt-level history to answer three specific questions: (1) what was the exact prompt that introduced a specific change, (2) can you revert to the state before a given prompt's changes, (3) can you identify the pattern of prompts that leads to incorrect behavior? Report findings to your security and audit team as evidence of agent auditability.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 114,
+        "comments": 65
+      },
+      "tags": ["Version Control", "Agent Auditability", "Go", "Debugging", "Prompt Tracking"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "repo-huggingface-ml-intern",
+      "title": "huggingface/ml-intern",
+      "subtitle": "Autonomous ML engineer agent — reads papers, finds datasets, trains models, ships code using the Hugging Face ecosystem",
+      "source": "GitHub",
+      "author": "huggingface",
+      "date": "2026-04-25",
+      "primary_url": "https://github.com/huggingface/ml-intern",
+      "secondary_urls": [
+        {
+          "label": "jimmysong.io ml-intern writeup",
+          "url": "https://jimmysong.io/ai/ml-intern/"
+        }
+      ],
+      "summary": "ml-intern (Python, 8.1k stars per askglitch.com May 2026 weekly analysis) is an open-source autonomous ML engineer agent built by Hugging Face that automates the full post-training research loop: reading papers, traversing citations, finding datasets on the Hub, writing training scripts, launching jobs via Hugging Face Jobs, evaluating results, and iterating. It operates in two modes — interactive chat and single-prompt headless execution — and runs up to 300 iterations with human approval gates for sensitive operations. Supports Claude, GPT, and HF Router models. All training traces are uploaded to a private HF dataset, making the research process reproducible.",
+      "key_takeaways": [
+        "Hugging Face is open-sourcing the workflow, not just the tools: Transformers gave the models, Datasets gave the data, and ml-intern is the first serious packaging of the research process itself as an agentic loop.",
+        "The 300-iteration loop with human approval gates is a production-ready pattern for long-horizon research tasks — the approval gate prevents runaway execution while keeping the agent autonomous for routine steps.",
+        "Multi-model support (Claude, GPT, HF Router including MiniMax, Kimi, GLM, DeepSeek) means the loop can be adapted to whatever model contract an enterprise has in place."
+      ],
+      "results": "8.1k total stars as of early May 2026 (askglitch.com Week 18 analysis). Reddit r/AgentsOfAI post April 25 confirmed open-source release and described the full workflow. LinkedIn post by Akshay Pachaar April 24 confirmed release. No independent benchmark for training quality compared to a human researcher.",
+      "enterprise_adaptation": "Implementation pattern: Use ml-intern as the backbone for an internal automated research and fine-tuning pipeline. Scope it to a specific, bounded task — for example, fine-tuning a document-classification model on a labeled internal dataset. Point it at internal documentation rather than public papers. Run it in headless single-prompt mode for reproducibility, with approval gates on the training launch step. | Regulated-environment caveats: By default ml-intern uploads training traces to a Hugging Face dataset — configure it to upload to an internal object store instead. Disable public HF Hub access and replace with an internal model registry if your model governance policy requires it. The Hugging Face Jobs integration uses external compute; use Docker or an internal compute cluster for training if data sovereignty is required. | 30-day experiment: Run ml-intern on one bounded fine-tuning task — for example, fine-tuning a text-classification model to categorize internal support tickets. Measure: (1) time from task description to trained model, (2) model accuracy vs. the current rule-based or manual approach, (3) reproducibility — can a second run from the same prompt produce a model within 2% of the first?",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 8100
+      },
+      "tags": ["Autonomous Agent", "ML Engineering", "Python", "Fine-tuning", "Hugging Face"],
+      "category": "Agent Framework",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "repo-badlogic-pi-mono",
+      "title": "badlogic/pi-mono",
+      "subtitle": "AI agent toolkit monorepo: coding agent CLI, unified LLM API, TUI/web UI libraries, Slack bot, vLLM pods, and real-world OSS session data",
+      "source": "GitHub",
+      "author": "badlogic",
+      "date": "2026-05-01",
+      "primary_url": "https://github.com/badlogic/pi-mono",
+      "secondary_urls": [
+        {
+          "label": "pi.dev",
+          "url": "https://pi.dev"
+        },
+        {
+          "label": "AgentConn vertical agents analysis",
+          "url": "https://agentconn.com/blog/vertical-agent-wave-tradingagents-maigret-taxhacker-dexter-may-2026/"
+        }
+      ],
+      "summary": "pi-mono (43.9k stars per askglitch.com May 2026 weekly analysis) is a single MIT-licensed repo containing every component of a production coding agent: a CLI coding agent, a unified LLM API that abstracts Anthropic, OpenAI, Google, and Groq, TUI and web UI libraries, a Slack bot, and vLLM pod configurations. Crucially, it ships real-world OSS coding session data to train coding agents beyond toy benchmarks. Built by Mario Zechner (badlogic), the Libgdx creator. The repo is not coupled to any specific LLM provider and supports local models via Ollama.",
+      "key_takeaways": [
+        "The real-world OSS session data is the differentiator: most coding agent benchmarks use synthetic problems; pi-mono's training data comes from actual recorded coding sessions on OSS codebases, which produces agents that handle realistic messy codebases better.",
+        "The unified LLM API is provider-agnostic and Ollama-compatible, making the stack usable in air-gapped or restricted network environments without modification.",
+        "As a monorepo, pi-mono makes it practical to assemble a complete agent development environment from a single dependency rather than wiring together six separate libraries."
+      ],
+      "results": "43.9k total stars as of early May 2026 (askglitch.com Week 18 analysis). MIT license. Active development confirmed per AgentConn May 3 analysis. Ollama and vLLM support confirmed in repo description. No independent coding benchmark published.",
+      "enterprise_adaptation": "Implementation pattern: Use pi-mono's unified LLM API layer as the foundation for an internal coding agent deployment, swapping the default Anthropic/OpenAI endpoints for an Azure OpenAI or internally-hosted model endpoint. Deploy the coding agent CLI against a non-production codebase. Use the Slack bot integration for human-in-the-loop approval flows — the bot can surface agent-proposed changes for review before they are committed. | Regulated-environment caveats: The vLLM pods component assumes access to GPU compute — coordinate with infrastructure to provision this within your private cloud before deployment. The real-world session data is derived from public OSS repos; do not substitute internal code as training data without a legal review of whether that creates IP or confidentiality obligations. The unified LLM API passes prompts to whichever provider is configured — ensure the configured endpoint is your internal proxy, not a direct external API. | 30-day experiment: Deploy pi-mono's coding agent CLI on a non-production internal codebase for one team. Configure it to use an internally-hosted model via the unified LLM API. Assign it a backlog of 20 bounded tasks (documentation updates, test generation, or dead-code removal). Measure task completion rate, human revision rate, and latency per task compared to the team's current approach.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 43900
+      },
+      "tags": ["Agent Toolkit", "Coding Agent", "Unified LLM API", "TypeScript", "Provider-Agnostic"],
+      "category": "Agent Framework",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "repo-virattt-dexter",
+      "title": "virattt/dexter",
+      "subtitle": "Autonomous financial research agent — self-validating, plan-first, real-time data, built specifically for financial questions",
+      "source": "GitHub",
+      "author": "virattt",
+      "date": "2026-05-03",
+      "primary_url": "https://github.com/virattt/dexter",
+      "secondary_urls": [
+        {
+          "label": "AgentConn vertical agents analysis",
+          "url": "https://agentconn.com/blog/vertical-agent-wave-tradingagents-maigret-taxhacker-dexter-may-2026/"
+        }
+      ],
+      "summary": "Dexter (TypeScript, 9.4k stars, 22.5k stars per AgentConn May 3 analysis — see note) is an autonomous financial research agent that decomposes complex financial questions into step-by-step research plans, executes each step using live market data (income statements, balance sheets, cash flows), then self-validates and refines until a confident, data-backed answer is produced. Built-in loop detection and step limits prevent runaway execution. Positioned as 'Claude Code but for financial research.' No LangChain or CrewAI dependency. TypeScript 99.5%.",
+      "key_takeaways": [
+        "The self-validation loop — where the agent checks its own work before returning an answer — is the critical architectural choice that distinguishes Dexter from a simple data-retrieval agent. It catches hallucinated financial figures before they reach the output.",
+        "Built-in step limits and loop detection are production-safety properties included from v0.1 — most general-purpose agent frameworks add these only after production incidents.",
+        "The TypeScript implementation makes it compatible with enterprise front-end and API stacks without a Python runtime dependency."
+      ],
+      "results": "9.4k total stars per fresh GitHub fetch May 2026. AgentConn May 3 analysis reports 22,537 stars — discrepancy likely reflects the rapid growth during the week (the AgentConn figure post-dates the GitHub cached data). +446 stars in a single day per AgentConn. TypeScript 99.5%, JavaScript 0.5%. No releases published (active development from main branch). No independent financial benchmark published.",
+      "enterprise_adaptation": "Implementation pattern: Deploy Dexter in read-only mode as a first-pass research assistant for internal financial analysts. Feed it earnings transcripts and SEC filing text from an internal document store rather than live market APIs. Use the step-by-step plan output as an auditable record of the research methodology for compliance documentation. | Regulated-environment caveats: The default Dexter configuration calls the Financial Datasets API and Exa/Tavily search APIs — both are external services that receive financial query context. Replace with internal data APIs or configure a proxy that filters queries containing MNPI (material non-public information) before they reach any external endpoint. API keys must be stored in environment variables, not in the .env file committed to the repo. The Bun runtime requires a security review before installation on managed developer machines. | 30-day experiment: Task Dexter with analyzing one publicly-filed financial document (a 10-K or earnings transcript) relevant to a vendor or competitor your team tracks. Compare the agent's output memo with a manually produced analyst note on the same document. Identify the three categories of error the agent makes most often — these are the areas for targeted improvement via fine-tuning or prompt constraint.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 446
+      },
+      "tags": ["Financial Research", "Autonomous Agent", "TypeScript", "Self-Validation", "Vertical Agent"],
+      "category": "Agent Framework",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-09T12:00:00Z"
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "GitHub weekly trending AI/agent/LLM repos ranked by weekly star delta. Stars column is weekly gain, not lifetime total.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "tr-tauric-tradingagents",
+          "title": "TauricResearch/TradingAgents",
+          "source": "GitHub",
+          "primary_url": "https://github.com/TauricResearch/TradingAgents",
+          "summary": "Multi-agent LLM financial trading framework with specialized analyst agents that debate and vote before committing a position. 64.7k total stars, +3,315 stars in a single day (May 3). Python, Apache-2.0.",
+          "engagement": { "stars": 3315 },
+          "tags": ["Multi-Agent", "Finance", "Python", "Vertical Agent"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 9, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "tr-aidc-pixelle-video",
+          "title": "AIDC-AI/Pixelle-Video",
+          "source": "GitHub",
+          "primary_url": "https://github.com/AIDC-AI/Pixelle-Video",
+          "summary": "Fully automated end-to-end video generation pipeline: topic in, finished video out. Orchestrates script writing, AI-generated visuals, voice synthesis, background music, and final composition. 14.3k stars, +2.1k weekly. Python, Apache-2.0.",
+          "engagement": { "stars": 2100 },
+          "tags": ["Video Generation", "Multi-Model Pipeline", "Python", "Automation"],
+          "category": "AI Infrastructure",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "tr-zilliz-claude-context",
+          "title": "zilliztech/claude-context",
+          "source": "GitHub",
+          "primary_url": "https://github.com/zilliztech/claude-context",
+          "summary": "Semantic code search MCP server: indexes an entire codebase into a vector database (Milvus/Zilliz) and uses hybrid BM25 + dense vector retrieval to surface relevant code for any MCP-compatible coding agent. 10.6k stars. MIT.",
+          "engagement": { "stars": 10600 },
+          "tags": ["MCP Server", "Code Search", "Vector DB", "Semantic Search"],
+          "category": "MCP Server",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "tr-badlogic-pi-mono",
+          "title": "badlogic/pi-mono",
+          "source": "GitHub",
+          "primary_url": "https://github.com/badlogic/pi-mono",
+          "summary": "Everything-monorepo for building agents: coding agent CLI, unified LLM API (Anthropic, OpenAI, Google, Groq, Ollama), TUI/web UI libraries, Slack bot, vLLM pods. Ships real-world OSS coding session data. 43.9k stars. MIT.",
+          "engagement": { "stars": 43900 },
+          "tags": ["Agent Toolkit", "Monorepo", "TypeScript", "Provider-Agnostic"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "tr-huggingface-ml-intern",
+          "title": "huggingface/ml-intern",
+          "source": "GitHub",
+          "primary_url": "https://github.com/huggingface/ml-intern",
+          "summary": "Autonomous ML engineer agent: reads papers, finds HF datasets, fine-tunes models, ships code. 300-iteration loop with approval gates. Supports Claude, GPT, HF Router. 8.1k stars.",
+          "engagement": { "stars": 8100 },
+          "tags": ["Autonomous Agent", "ML Engineering", "Python", "Fine-tuning"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "tr-virattt-dexter",
+          "title": "virattt/dexter",
+          "source": "GitHub",
+          "primary_url": "https://github.com/virattt/dexter",
+          "summary": "Autonomous financial research agent. Self-validating plan-first execution against real-time market data. +446 stars/day (AgentConn). 9.4k–22.5k stars (source variance — see flagged). TypeScript.",
+          "engagement": { "stars": 446 },
+          "tags": ["Financial Research", "TypeScript", "Autonomous Agent", "Self-Validation"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "tr-anomalyco-opencode",
+          "title": "anomalyco/opencode",
+          "source": "GitHub",
+          "primary_url": "https://github.com/anomalyco/opencode",
+          "summary": "Open-source coding agent with provider-agnostic model support (Claude, OpenAI, Google, local), built/plan dual-agent modes, LSP support, and a client/server TUI architecture. 125k total stars, +929 weekly (OSSInsight 28-day top mover). TypeScript.",
+          "engagement": { "stars": 929 },
+          "tags": ["Coding Agent", "TypeScript", "Open Source", "Provider-Agnostic"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "tr-vas3k-taxhacker",
+          "title": "vas3k/TaxHacker",
+          "source": "GitHub",
+          "primary_url": "https://github.com/vas3k/TaxHacker",
+          "summary": "Self-hosted AI accounting app: AI receipt/invoice parsing, automatic categorization, multi-currency conversion (including crypto), custom LLM prompts, Docker-native. Supports OpenAI, Gemini, Mistral. 5.5k stars (AgentConn May 3). TypeScript, MIT.",
+          "engagement": { "stars": 106 },
+          "tags": ["Self-Hosted", "Accounting", "TypeScript", "Local AI", "Privacy"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "tr-tensorzero-returning",
+          "title": "tensorzero/tensorzero",
+          "source": "GitHub",
+          "primary_url": "https://github.com/tensorzero/tensorzero",
+          "summary": "Open-source LLMOps gateway still trending this week. 10.4k total stars. No new May release confirmed — returning from April 24 (2026.4.1) momentum. Rust.",
+          "engagement": { "stars": 10400 },
+          "tags": ["LLMOps", "Gateway", "Rust", "Observability"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "TensorZero 2026.4.1 was a Top Pick last week. Continuing to trend this week; no new major release confirmed for May 4-10.",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "tr-eyaltoledano-ctm-returning",
+          "title": "eyaltoledano/claude-task-master",
+          "source": "GitHub",
+          "primary_url": "https://github.com/eyaltoledano/claude-task-master",
+          "summary": "PRD-to-task-graph MCP server for agentic coding. 25.3k total stars. Still in GitHub trending this week based on OSSInsight data, but no new release in May 2026 — latest release was Jan 15, 2026 (task-master-ai@0.42.0). JavaScript.",
+          "engagement": { "stars": 25300 },
+          "tags": ["MCP Server", "Task Management", "JavaScript"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "Was Top Pick last week (Apr 27). No new May release — still in trending based on sustained momentum.",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Skills & MCP Servers",
+      "description": "Newly published agent skills, MCP servers, and eval frameworks gaining traction this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "mcp-zilliz-claude-context",
+          "title": "zilliztech/claude-context — Semantic codebase MCP server",
+          "source": "GitHub / askglitch.com",
+          "primary_url": "https://github.com/zilliztech/claude-context",
+          "summary": "A one-line MCP server that indexes an entire codebase into a Milvus or Zilliz vector database and exposes it as a context source for any MCP-compatible client (Claude Code, Cursor, Windsurf, Cline, Codex CLI, Gemini CLI). Uses hybrid BM25 + dense vector retrieval. Designed for repos over ~50k lines where full-directory loading is prohibitively expensive. 10.6k stars. MIT.",
+          "engagement": { "stars": 10600 },
+          "tags": ["MCP Server", "Semantic Search", "Vector DB", "Code Context"],
+          "category": "MCP Server",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skills-microsoftdocs-agent-skills",
+          "title": "MicrosoftDocs/Agent-Skills — Curated Azure agent skills for AI coding assistants",
+          "source": "GitHub / Microsoft Learn",
+          "primary_url": "https://github.com/MicrosoftDocs/Agent-Skills",
+          "secondary_urls": [
+            {
+              "label": "Microsoft Learn Azure Agent Skills",
+              "url": "https://learn.microsoft.com/en-us/training/support/agent-skills"
+            }
+          ],
+          "summary": "MicrosoftDocs/Agent-Skills is a curated repo of agent skills for AI coding assistants giving them structured expertise from Microsoft Learn documentation. Each skill provides the knowledge index (what to look up and when) while fetching the latest content from Learn at query time via the Learn MCP Server, keeping skills current without manual updates. Compatible with GitHub Copilot, Claude Code, Cursor, Codex, and Gemini CLI. Published May 8, 2026. Contributions welcome.",
+          "tags": ["Agent Skills", "Azure", "Microsoft", "Documentation", "MCP"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skills-github-secret-scanning-mcp",
+          "title": "GitHub MCP Server — Secret scanning now GA",
+          "source": "GitHub Blog",
+          "primary_url": "https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/",
+          "secondary_urls": [
+            {
+              "label": "Dependency scanning in public preview",
+              "url": "https://github.blog/changelog/2026-05-05-dependency-scanning-with-github-mcp-server-is-in-public-preview/"
+            }
+          ],
+          "summary": "Two new capabilities shipped to the GitHub MCP Server on May 5: secret scanning tools are now generally available (after a March 2026 public preview), and dependency scanning for vulnerable dependencies entered public preview. Both tools can be invoked from any MCP-compatible coding agent to scan code changes before commit. Secret scanning honors existing push protection customization. Available for repos with GitHub Secret Protection or Dependabot alerts enabled.",
+          "tags": ["MCP Server", "Security", "Secret Scanning", "GitHub", "Dependency Scanning"],
+          "category": "MCP Server",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skills-harvey-lab-benchmark",
+          "title": "Harvey Legal Agent Benchmark (LAB) — Open-source eval for legal agents",
+          "source": "Harvey / Artificial Lawyer",
+          "primary_url": "https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark",
+          "secondary_urls": [
+            {
+              "label": "Artificial Lawyer coverage",
+              "url": "https://www.artificiallawyer.com/2026/05/06/harvey-launches-legal-agent-bench/"
+            }
+          ],
+          "summary": "Harvey published the Legal Agent Benchmark (LAB) on May 6, 2026: 1,200+ agent tasks across 24 legal practice areas, evaluated by 75,000+ expert-written rubric criteria. Each task mirrors how work is assigned at a law firm — instruction, client matter, required work product. All-pass grading: a task is complete only if every criterion passes. The benchmark is open-source and designed for use by law firms, AI labs, and legal technologists to measure agent performance on real-world legal work.",
+          "tags": ["Eval Benchmark", "Legal", "Agent Evaluation", "Open Source"],
+          "category": "Eval Framework",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "skills-agent-evals-claude-skill",
+          "title": "Show HN: Agent-evals — Claude skill that builds your own evaluation suite",
+          "source": "Hacker News",
+          "date": "2026-05-04",
+          "primary_url": "https://news.ycombinator.com/item?id=48013746",
+          "summary": "A Claude Skill that, when invoked, sets up a baseline evaluation suite directly in the user's codebase. The pattern: tell Claude you need evals and it writes evaluation code following established patterns, producing a summary of what the agent does well and where it fails. Built by johnjudeh to address the gap where teams lack systematic evaluation processes or data science backgrounds. Published May 4, 2026.",
+          "tags": ["Agent Eval", "Claude Skill", "Testing", "QA"],
+          "category": "Agent Skill",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skills-tilde-agent-skill",
+          "title": "Tilde Agent Skill for Claude Code",
+          "source": "Tilde Docs",
+          "primary_url": "https://docs.tilde.run/agent-skill/",
+          "summary": "A Claude Code skill that teaches Claude how to work with Tilde repositories directly from the terminal — running sandboxed commands, launching interactive shells, and managing sandbox lifecycle through natural conversation. Ships alongside the tilde.run product launch. Represents the pattern of infrastructure products shipping companion agent skills as first-class installation artifacts.",
+          "tags": ["Agent Skill", "Claude Code", "Sandbox", "Infrastructure"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN & Indie Builds",
+      "description": "Show HN posts with working repos or demos from the week of May 4–10. Points and comment counts as of fetch time.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "hn-tilde-run-sandbox",
+          "title": "Show HN: Tilde.run — Agent sandbox with a transactional, versioned filesystem",
+          "source": "Hacker News",
+          "date": "2026-05-06",
+          "primary_url": "https://news.ycombinator.com/item?id=48037724",
+          "secondary_urls": [
+            {
+              "label": "tilde.run product site",
+              "url": "https://tilde.run"
+            }
+          ],
+          "summary": "tilde.run makes every agent run a transactional commit to a versioned filesystem that composes GitHub, S3, and Google Drive as a single local directory. Every outbound call is policy-checked. On failure, nothing is committed. The HN discussion (199 upvotes, 132 comments) drew comparisons to btrfs snapshotting and Unity asset versioning and generated extensive debate about pricing, atomic conflict handling, and whether the abstraction is the right level for agent isolation.",
+          "engagement": { "upvotes": 199, "comments": 132 },
+          "tags": ["Agent Sandbox", "Transactional", "Versioning", "Production Safety"],
+          "category": "AI Infrastructure",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "hn-airbyte-agents",
+          "title": "Show HN: Airbyte Agents — context layer for agents across multiple data sources",
+          "source": "Hacker News",
+          "date": "2026-05-05",
+          "primary_url": "https://news.ycombinator.com/item?id=48023496",
+          "secondary_urls": [
+            {
+              "label": "Airbyte Agents blog post",
+              "url": "https://airbyte.com/blog/airbyte-agents"
+            }
+          ],
+          "summary": "Airbyte Agents is a Context Store — a data index optimized for agentic search — that gives production agents a structured view of operational data from Slack, Salesforce, Linear, Gong, Zendesk, and 300+ other sources before the agent needs to make live API calls. Agents discover relevant entities first, then fetch fresh state from the source when ready to act, reducing token consumption compared to direct vendor MCPs. Show HN received 149 upvotes and 47 comments on May 5–6.",
+          "engagement": { "upvotes": 149, "comments": 47 },
+          "tags": ["Data Context", "Agent Infrastructure", "Connectors", "Context Store"],
+          "category": "AI Infrastructure",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "hn-regent-vcs-git-agents",
+          "title": "Show HN: Git for AI Agents",
+          "source": "Hacker News",
+          "date": "2026-05-08",
+          "primary_url": "https://news.ycombinator.com/item?id=48063548",
+          "secondary_urls": [
+            {
+              "label": "regent-vcs/re_gent on GitHub",
+              "url": "https://github.com/regent-vcs/re_gent"
+            }
+          ],
+          "summary": "regent-vcs/re_gent is a VCS built for AI coding agents that tracks every tool call at the prompt level, not just at commit level. The Show HN (114 pts, 65 comments, May 8) generated debate comparing it to jujutsu, Cloudflare Artifacts Git for Agents beta, and triblespace-rs. Key use case: answering 'why did the agent delete that folder?' across compacted context windows where conventional git history is insufficient.",
+          "engagement": { "upvotes": 114, "comments": 65 },
+          "tags": ["Version Control", "Agent Auditability", "Go", "Debugging"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "hn-agent-skills-eval",
+          "title": "Show HN: Agent-skills-eval — Test whether agent skills improve outputs",
+          "source": "Hacker News",
+          "date": "2026-05-07",
+          "primary_url": "https://news.ycombinator.com/item?id=48046023",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo (github.com/darkrishabh)",
+              "url": "https://github.com/darkrishabh"
+            }
+          ],
+          "summary": "agent-skills-eval is a testing harness that evaluates whether agents actually follow SKILL.md or CLAUDE.md instructions by using tool-call assertions — objective compliance measurements rather than LLM-as-judge scoring. The Show HN (76 pts, 36 comments, May 7) surfaced a real failure pattern: agents defaulting to familiar bash patterns even when CLAUDE.md specifies a different tool. Comments proposed a self-reflection pass that produces skill change recommendations as a follow-up feature.",
+          "engagement": { "upvotes": 76, "comments": 36 },
+          "tags": ["Agent Eval", "Skill Testing", "Compliance", "Tool Call Assertions"],
+          "category": "Eval Framework",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "hn-vas3k-taxhacker",
+          "title": "vas3k/TaxHacker — Self-hosted AI accountant for freelancers",
+          "source": "GitHub / AgentConn",
+          "date": "2026-05-03",
+          "primary_url": "https://github.com/vas3k/TaxHacker",
+          "secondary_urls": [
+            {
+              "label": "AgentConn analysis (May 3)",
+              "url": "https://agentconn.com/blog/vertical-agent-wave-tradingagents-maigret-taxhacker-dexter-may-2026/"
+            }
+          ],
+          "summary": "TaxHacker is a self-hosted AI accounting app that uploads photos of receipts or invoice PDFs and automatically extracts accounting data using OpenAI, Gemini, or Mistral. Supports multi-currency conversion (including crypto) at historical exchange rates, customizable LLM prompts per category, and Docker-native deployment. 5.5k stars per AgentConn May 3 analysis (note: GitHub cached data from 2025 shows 409 stars — the 5.5k figure reflects growth during 2026). TypeScript, MIT.",
+          "engagement": { "stars": 5490 },
+          "tags": ["Self-Hosted", "Accounting", "TypeScript", "Local AI", "Privacy"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent & RAG Implementations",
+      "description": "Production-shaped agent or RAG builds worth studying — with linked code or a detailed write-up.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "impl-airbyte-agents-context-store",
+          "title": "Airbyte Agents: Context Store pattern for production agent data access",
+          "source": "Airbyte Blog",
+          "primary_url": "https://airbyte.com/blog/airbyte-agents",
+          "secondary_urls": [
+            {
+              "label": "Benchmark repo",
+              "url": "https://github.com/airbytehq/airbyte-agents-benchmarks"
+            }
+          ],
+          "summary": "Airbyte Agents introduces the Context Store pattern: rather than having agents make live API calls at reasoning time (slow, expensive, auth-complex), the Context Store pre-replicates operational data into a queryable index optimized for agentic search. Agents search the Context Store for relevant entities first, then fetch fresh state from the source system only when they're ready to act. Benchmarked against vendor MCPs with published results in the airbyte-agents-benchmarks repo. Launched May 5, 2026.",
+          "tags": ["RAG", "Context Store", "Data Access", "Agent Architecture"],
+          "category": "AI Infrastructure",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "impl-tradingagents-deliberative-loop",
+          "title": "TradingAgents deliberative multi-agent loop — architecture study",
+          "source": "GitHub / agentconn.com",
+          "primary_url": "https://github.com/TauricResearch/TradingAgents",
+          "secondary_urls": [
+            {
+              "label": "TradingAgents paper (arXiv)",
+              "url": "https://arxiv.org/abs/2412.20138"
+            }
+          ],
+          "summary": "The TradingAgents architecture is a reference implementation of a deliberative multi-agent loop: agents with distinct domain expertise debate through a structured discussion, vote, and produce a collective decision. The design applies the principle that high-stakes decisions benefit from structured disagreement between specialized perspectives. The arXiv paper (abs/2412.20138) provides the theoretical grounding. This pattern is applicable to any enterprise decision loop where multiple stakeholder perspectives should be formally captured before a conclusion is committed.",
+          "tags": ["Multi-Agent", "Deliberative Loop", "Debate Architecture", "Decision Making"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "impl-tilde-transactional-agent",
+          "title": "tilde.run transactional agent pattern — architecture study",
+          "source": "tilde.run",
+          "primary_url": "https://tilde.run",
+          "secondary_urls": [
+            {
+              "label": "HN discussion",
+              "url": "https://news.ycombinator.com/item?id=48037724"
+            }
+          ],
+          "summary": "tilde.run's architecture (backed by lakeFS atomic commits) provides a reference implementation of the transactional agent pattern: every agent run is a transaction that either commits atomically on success or leaves no trace on failure. The filesystem composition layer (GitHub + S3 + Drive as ~/sandbox) is the practical enabler — it removes the data-movement scaffolding that most agent implementations require before they can touch real data. The HN discussion surfaced the key implementation detail: lakeFS uses optimistic concurrency, which means concurrent agent runs on the same dataset need a conflict resolution strategy.",
+          "tags": ["Transactional Agent", "Sandboxing", "lakeFS", "Atomic Commits"],
+          "category": "AI Infrastructure",
+          "platform": "hackernews",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "n8n, Make, and custom automations with measurable outcomes. Numbers required.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "auto-n8n-document-review-legal",
+          "title": "n8n AI document review automation — 83% review time reduction",
+          "source": "Versich / n8n",
+          "primary_url": "https://versich.com/blog/the-top-15-n8n-use-cases-revolutionizing-workflow-automation-in-2026/",
+          "summary": "An n8n workflow for AI-powered legal document review was deployed at a legal services firm and measured against the previous manual process. The workflow uses LLM agents to summarize content, answer complex queries, and extract compliance obligations, then matches them against internal policy and flags gaps automatically. A full compliance analyst day was reduced to under three minutes per report.",
+          "results": "83% reduction in document review time. 27% improvement in accuracy. Per-report review time reduced from a full compliance analyst day to under 3 minutes. (Source: Versich case study, versich.com, published May 8, 2026.)",
+          "tags": ["n8n", "Document Review", "Legal", "Compliance", "AI Agent"],
+          "category": "Automation",
+          "platform": "n8n",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "auto-n8n-hr-onboarding",
+          "title": "n8n HR onboarding automation — 3 days to 3 hours, 40% satisfaction increase",
+          "source": "Versich / n8n",
+          "primary_url": "https://versich.com/blog/the-top-15-n8n-use-cases-revolutionizing-workflow-automation-in-2026/",
+          "summary": "An n8n-based HR onboarding automation deployed across multiple regulated-industry clients handles document collection, compliance training assignment, completion tracking, automated reminders, and escalation if required tasks are overdue. The workflow removed HR managers from the manual follow-up loop entirely. XIBIX Solutions separately cut HR questions by 50% using a companion n8n AI workflow.",
+          "results": "HR onboarding reduced from 3 days of HR work to under 3 hours. Employee satisfaction scores increased 40% in the first 90 days. 100% documentation compliance on every new hire. HR questions cut 50% at XIBIX Solutions. (Source: Versich case study, versich.com, published May 8, 2026.)",
+          "tags": ["n8n", "HR", "Onboarding", "Automation", "Compliance"],
+          "category": "Automation",
+          "platform": "n8n",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "auto-n8n-invoice-processing",
+          "title": "n8n invoice processing automation — 2 hrs/day to 90% automated, 8-10 hrs/week saved",
+          "source": "DEV Community / n8n",
+          "primary_url": "https://dev.to/nova_gg/n8n-review-2026-i-used-it-for-8-months-to-build-ai-agents-honest-verdict-kif",
+          "summary": "A client with 40–50 invoices per week (taking 2 hours of manual processing daily) automated 90% of invoices through an n8n workflow with LLM-powered validation. The operations manager was trained to modify the workflow herself in about 2 hours. The contractor reports consistent results across 12 client projects over 8 months using n8n.",
+          "results": "40–50 invoices/week: 90% now processed automatically. Manual processing reduced from 2 hours/day to approximately 12 minutes. Saved 8–10 hours/week. Operations manager trained to modify workflow in ~2 hours. (Source: DEV Community review, dev.to/nova_gg, April 2026.)",
+          "tags": ["n8n", "Invoice Processing", "AI Validation", "Finance Ops"],
+          "category": "Automation",
+          "platform": "n8n",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Meaningful releases from major agent and LLM frameworks this week — major versions or new capabilities only.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "fw-smolagents-1-15-0",
+          "title": "smolagents v1.15.0 — Streaming outputs, LiteLLM Router, WebSearchTool",
+          "source": "GitHub",
+          "date": "2026-05-07",
+          "primary_url": "https://github.com/huggingface/smolagents",
+          "secondary_urls": [
+            {
+              "label": "v1.15.0 release notes",
+              "url": "https://github.com/huggingface/smolagents/releases/tag/v1.15.0"
+            }
+          ],
+          "summary": "smolagents v1.15.0 (May 7) adds three capabilities: (1) streaming model outputs via stream_outputs=True on CodeAgent initialization, with working streaming Gradio chatbot integration; (2) a LiteLLM Router model for multi-provider load balancing and failover; (3) a new WebSearchTool that replaces the deprecated DuckDuckGoSearchTool in the default stack. The streaming addition makes long agentic task outputs visible in real time without waiting for the full completion, which is significant for user-facing deployments.",
+          "tags": ["smolagents", "Streaming", "Hugging Face", "Python", "LiteLLM"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "fw-crewai-1-14-5-may",
+          "title": "CrewAI v1.14.5 alpha series — state restoration, async fixes, standalone CLI package",
+          "source": "GitHub / CrewAI Docs",
+          "date": "2026-05-09",
+          "primary_url": "https://github.com/crewAIInc/crewAI",
+          "secondary_urls": [
+            {
+              "label": "CrewAI changelog",
+              "url": "https://docs.crewai.com/en/changelog"
+            }
+          ],
+          "summary": "CrewAI shipped four alpha releases between May 1 and May 9 (v1.14.5a1–a4). The most significant additions: restore_from_state_id kickoff parameter for resuming a crew run from a saved state checkpoint; async batch flush fixes that preserve task outputs across batched async executions; the crewai-cli extracted as a standalone package for lighter installs; and gitpython bumped to >=3.1.47 for a security compliance fix. Teams on CrewAI 1.14.4 should review the async path fixes before upgrading production workloads.",
+          "tags": ["CrewAI", "Python", "Multi-Agent", "State Restoration", "Async"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "fw-langchain-1-0-1",
+          "title": "LangChain 1.0.1 stable — ToolRuntime injection, ShellToolMiddleware, ClaudeBashToolMiddleware",
+          "source": "GitHub",
+          "date": "2026-05-10",
+          "primary_url": "https://github.com/langchain-ai/langchain",
+          "secondary_urls": [
+            {
+              "label": "Releases page",
+              "url": "https://github.com/langchain-ai/langchain/releases"
+            }
+          ],
+          "summary": "LangChain 1.0.1 (confirmed in the releases feed by May 10) is the first stable 1.0.x patch release. Key additions in the 1.0.x series since the RC: ToolRuntime injection for passing runtime context into tools without threading it through agent state; ShellToolMiddleware and ClaudeBashToolMiddleware for intercepting and auditing shell command execution; file-search middleware; and fixes to conditional edge routing from tools to end in graph-based flows. The 1.3.x pre-release series continues in parallel but is not production-ready.",
+          "tags": ["LangChain", "Python", "ToolRuntime", "Middleware", "Agent Framework"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-source patterns the agent observed across this week's repos and discussions.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "pattern-vertical-agents-replace-horizontal-frameworks",
+          "title": "Vertical-specific agents are displacing horizontal frameworks as the unit of value — domain depth is now the moat",
+          "source": "GitHub Trending / AgentConn",
+          "primary_url": "https://agentconn.com/blog/vertical-agent-wave-tradingagents-maigret-taxhacker-dexter-may-2026/",
+          "summary": "Five of this week's top-trending repos (TradingAgents, Dexter, TaxHacker, ml-intern, Pixelle-Video) are vertical-specific agent stacks that do not build on LangChain, CrewAI, or AutoGen. Each ships a domain-specific tool suite, evaluation harness, and failure-recovery logic that no horizontal framework can generalize. The pattern: MCP standardized tool integration, coding-agent CLIs standardized the execution loop, and the remaining moat is domain knowledge and eval rigor. The consequence for enterprise teams: selecting a framework is less important than building domain-specific evaluation harnesses for your own use cases.",
+          "tags": ["Vertical AI", "Domain-Specific", "Emerging Pattern", "Framework Displacement"],
+          "category": "Pattern",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 9, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "pattern-agent-auditability-infrastructure-cohort",
+          "title": "A cohort of agent auditability tools emerged independently in a single week: VCS at the prompt level, transactional sandboxes, and skill compliance evals",
+          "source": "GitHub / Hacker News",
+          "primary_url": "https://news.ycombinator.com/item?id=48063548",
+          "summary": "Three independent projects launched this week, each addressing a different layer of agent auditability: regent-vcs/re_gent tracks every tool call at the prompt level for debugging; tilde.run makes every agent run transactionally reversible; agent-skills-eval verifies whether agents follow skill instructions at all. This is structurally identical to the testing-pyramid pattern that matured in software engineering: unit tests (skill compliance eval), integration safety (transactional sandbox), and full audit trail (prompt-level VCS). The pattern emerging suggests a growing enterprise demand signal for agent systems that can be audited, debugged, and rolled back.",
+          "recurrence": "returning_pattern",
+          "recurrence_note": "The git-as-agent-coordination-layer pattern from last week continues: regent-vcs/re_gent and tilde.run both independently chose git or git-like semantics as the audit and rollback substrate.",
+          "tags": ["Agent Auditability", "Debugging", "Compliance", "Infrastructure Pattern"],
+          "category": "Pattern",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "pattern-infra-products-ship-agent-skills",
+          "title": "Infrastructure products are shipping agent skills as first-class installation artifacts — the skill is becoming the integration interface",
+          "source": "Tilde Docs / MicrosoftDocs",
+          "primary_url": "https://docs.tilde.run/agent-skill/",
+          "summary": "Two infrastructure products launched companion agent skills this week: tilde.run ships a Claude Code skill that lets developers manage sandboxes through conversational commands, and MicrosoftDocs/Agent-Skills provides curated skills for every Azure service so coding agents can query the Microsoft Learn MCP Server for up-to-date docs. The pattern is new: previously, products shipped MCP servers or SDK adapters as the integration interface. Agent skills as the primary integration artifact means adoption happens through a SKILL.md install rather than an npm package or Docker image, lowering the barrier to entry significantly.",
+          "tags": ["Agent Skills", "Integration Pattern", "Infrastructure", "Emerging Standard"],
+          "category": "Pattern",
+          "platform": "github",
+          "verified": true,
+          "verified_at": "2026-05-09T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 2 }
+        }
+      ]
+    }
+  ],
+
+  "index": [
+    { "title": "TauricResearch/TradingAgents", "source": "GitHub", "primary_url": "https://github.com/TauricResearch/TradingAgents", "score": 9, "date": "2026-05-03" },
+    { "title": "tilde.run — Agent sandbox with transactional filesystem", "source": "Hacker News / tilde.run", "primary_url": "https://tilde.run", "score": 8, "date": "2026-05-06" },
+    { "title": "regent-vcs/re_gent — Git for AI Agents", "source": "GitHub / Hacker News", "primary_url": "https://github.com/regent-vcs/re_gent", "score": 8, "date": "2026-05-08" },
+    { "title": "huggingface/ml-intern", "source": "GitHub", "primary_url": "https://github.com/huggingface/ml-intern", "score": 8, "date": "2026-04-25" },
+    { "title": "badlogic/pi-mono", "source": "GitHub", "primary_url": "https://github.com/badlogic/pi-mono", "score": 8, "date": "2026-05-01" },
+    { "title": "virattt/dexter", "source": "GitHub", "primary_url": "https://github.com/virattt/dexter", "score": 8, "date": "2026-05-03" },
+    { "title": "AIDC-AI/Pixelle-Video", "source": "GitHub", "primary_url": "https://github.com/AIDC-AI/Pixelle-Video", "score": 7, "date": "2026-05-05" },
+    { "title": "zilliztech/claude-context MCP server", "source": "GitHub", "primary_url": "https://github.com/zilliztech/claude-context", "score": 8, "date": "2026-05-01" },
+    { "title": "MicrosoftDocs/Agent-Skills", "source": "GitHub", "primary_url": "https://github.com/MicrosoftDocs/Agent-Skills", "score": 7, "date": "2026-05-08" },
+    { "title": "GitHub MCP Server — secret scanning GA", "source": "GitHub Blog", "primary_url": "https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available/", "score": 7, "date": "2026-05-05" },
+    { "title": "Harvey Legal Agent Benchmark (LAB)", "source": "Harvey", "primary_url": "https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark", "score": 7, "date": "2026-05-06" },
+    { "title": "Show HN: Agent-evals — Claude skill for evals", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48013746", "score": 6, "date": "2026-05-04" },
+    { "title": "Show HN: Agent-skills-eval — test skill compliance", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48046023", "score": 7, "date": "2026-05-07" },
+    { "title": "Tilde Agent Skill for Claude Code", "source": "Tilde Docs", "primary_url": "https://docs.tilde.run/agent-skill/", "score": 6, "date": "2026-05-06" },
+    { "title": "Show HN: Tilde.run — transactional agent sandbox", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48037724", "score": 8, "date": "2026-05-06" },
+    { "title": "Show HN: Airbyte Agents — context for agents across data sources", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48023496", "score": 7, "date": "2026-05-05" },
+    { "title": "Show HN: Git for AI Agents (regent-vcs/re_gent)", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48063548", "score": 8, "date": "2026-05-08" },
+    { "title": "vas3k/TaxHacker — self-hosted AI accountant", "source": "GitHub", "primary_url": "https://github.com/vas3k/TaxHacker", "score": 7, "date": "2026-05-03" },
+    { "title": "anomalyco/opencode — open source coding agent", "source": "GitHub", "primary_url": "https://github.com/anomalyco/opencode", "score": 7, "date": "2026-05-01" },
+    { "title": "Airbyte Agents context store pattern", "source": "Airbyte Blog", "primary_url": "https://airbyte.com/blog/airbyte-agents", "score": 8, "date": "2026-05-05" },
+    { "title": "TradingAgents deliberative multi-agent loop (architecture study)", "source": "GitHub / arXiv", "primary_url": "https://arxiv.org/abs/2412.20138", "score": 8, "date": "2026-05-03" },
+    { "title": "tilde.run transactional agent pattern (architecture study)", "source": "tilde.run / HN", "primary_url": "https://tilde.run", "score": 7, "date": "2026-05-06" },
+    { "title": "n8n AI document review — 83% review time reduction", "source": "Versich / n8n", "primary_url": "https://versich.com/blog/the-top-15-n8n-use-cases-revolutionizing-workflow-automation-in-2026/", "score": 7, "date": "2026-05-08" },
+    { "title": "n8n HR onboarding automation — 3 days to 3 hours", "source": "Versich / n8n", "primary_url": "https://versich.com/blog/the-top-15-n8n-use-cases-revolutionizing-workflow-automation-in-2026/", "score": 7, "date": "2026-05-08" },
+    { "title": "n8n invoice processing automation — 90% automated", "source": "DEV Community / n8n", "primary_url": "https://dev.to/nova_gg/n8n-review-2026-i-used-it-for-8-months-to-build-ai-agents-honest-verdict-kif", "score": 7, "date": "2026-04-01" },
+    { "title": "smolagents v1.15.0 — streaming outputs", "source": "GitHub", "primary_url": "https://github.com/huggingface/smolagents/releases/tag/v1.15.0", "score": 7, "date": "2026-05-07" },
+    { "title": "CrewAI v1.14.5 alpha series — state restoration, async fixes", "source": "GitHub", "primary_url": "https://github.com/crewAIInc/crewAI", "score": 6, "date": "2026-05-09" },
+    { "title": "LangChain 1.0.1 stable — ToolRuntime, ShellToolMiddleware", "source": "GitHub", "primary_url": "https://github.com/langchain-ai/langchain", "score": 6, "date": "2026-05-10" },
+    { "title": "Pattern: Vertical agents displacing horizontal frameworks", "source": "GitHub Trending / AgentConn", "primary_url": "https://agentconn.com/blog/vertical-agent-wave-tradingagents-maigret-taxhacker-dexter-may-2026/", "score": 9, "date": "2026-05-03" },
+    { "title": "Pattern: Agent auditability infrastructure cohort", "source": "GitHub / Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48063548", "score": 8, "date": "2026-05-08" },
+    { "title": "Pattern: Infra products shipping agent skills as integration interface", "source": "Tilde Docs / MicrosoftDocs", "primary_url": "https://docs.tilde.run/agent-skill/", "score": 8, "date": "2026-05-08" },
+    { "title": "tensorzero/tensorzero (returning — no new May release)", "source": "GitHub", "primary_url": "https://github.com/tensorzero/tensorzero", "score": 7, "date": "2026-05-05" },
+    { "title": "eyaltoledano/claude-task-master (returning — no new release)", "source": "GitHub", "primary_url": "https://github.com/eyaltoledano/claude-task-master", "score": 6, "date": "2026-05-05" },
+    { "title": "GitHub MCP Server — dependency scanning in public preview", "source": "GitHub Blog", "primary_url": "https://github.blog/changelog/2026-05-05-dependency-scanning-with-github-mcp-server-is-in-public-preview/", "score": 7, "date": "2026-05-05" }
+  ],
+
+  "flagged_unverified": [
+    {
+      "claim": "virattt/dexter star count discrepancy: AgentConn (May 3, 2026) reports 22,537 stars; GitHub fresh fetch returns 9.4k stars",
+      "reason": "The AgentConn article reports rapid star growth (+446/day on May 3). GitHub cached data (from the fetch) may be stale. Both sources agree the repo is trending heavily. Items use the 9.4k figure from the GitHub fetch as the more conservative estimate, with AgentConn delta cited for velocity.",
+      "attempted_url": "https://github.com/virattt/dexter"
+    },
+    {
+      "claim": "vas3k/TaxHacker star count discrepancy: AgentConn (May 3, 2026) reports 5,490 stars; GitHub cached data returns 409 stars",
+      "reason": "The GitHub cached data is from a 2025 snapshot. AgentConn's May 3, 2026 analysis is more recent and consistent with the growth trajectory described. The 5,490 figure is used as the primary reference with source noted.",
+      "attempted_url": "https://github.com/vas3k/TaxHacker"
+    },
+    {
+      "claim": "regent-vcs/re_gent GitHub direct fetch failed with broken_content_ip_and_js error",
+      "reason": "Repo existence and description confirmed via daily.dev post, HN thread (48063548), and HN show page listing. Description, language (Go), and ~7.8k LOC verified via secondary sources. No star count could be extracted.",
+      "attempted_url": "https://github.com/regent-vcs/re_gent"
+    },
+    {
+      "claim": "huggingface/ml-intern GitHub direct fetch failed with broken_content_js_required error",
+      "reason": "Repo existence confirmed via Reddit r/AgentsOfAI (April 25), LinkedIn (April 24), jimmysong.io writeup (May 6), and X post (May 8). Star count (8.1k) from askglitch.com Week 18 analysis.",
+      "attempted_url": "https://github.com/huggingface/ml-intern"
+    }
+  ],
+
+  "suggested_refinements": {
+    "sources_to_add": [
+      "agentconn.com weekly vertical agent analysis — publishes same-day star deltas and vertical-agent trend analysis that is faster than GitHub Trending page fetches",
+      "trendshift.io — provides weekly star gain data for specific repos when GitHub trending page is unavailable due to JS rendering",
+      "daily.dev — surfaces pre-HN posts about new repos, useful for catching Show HN items before the thread builds",
+      "askglitch.com weekly AI repo digest — curates top 5 trending AI repos with descriptions and star counts in a scrapeable format"
+    ],
+    "sources_to_drop": [
+      "Direct GitHub trending page fetch (github.com/trending) — consistently blocked by JavaScript rendering; use secondary aggregators (trendshift.io, agentconn.com, askglitch.com) instead"
+    ],
+    "topics_to_add": [
+      "Agent auditability tooling — regent-vcs/re_gent, tilde.run, and agent-skills-eval all launched this week; this is now a standalone category worth tracking",
+      "Vertical agent frameworks by domain — finance (TradingAgents, Dexter), legal (Harvey LAB), ML engineering (ml-intern), accounting (TaxHacker) each have dedicated repos; track by domain",
+      "Context Store / data access layer for agents — Airbyte Agents introduced a new architectural pattern this week that deserves tracking as a category"
+    ],
+    "topics_to_drop": [
+      "Generic 'Show HN AI' posts below 75 HN points — the signal-to-noise ratio improves significantly above this threshold"
+    ],
+    "notes": "This week the vertical-agent trend became the dominant story, displacing the skills-as-npm pattern from last week. The auditability cohort (re_gent, tilde.run, agent-skills-eval) is a new category that does not fit cleanly into existing sections — consider adding an 'Agent Infra' section next week if this cohort continues to grow. The gas-town/beads system from last week attracted a negative HN comment (May 5) citing a malware report (getbluntai.com); this should be investigated before any future reappearance in the tab. The CrewAI vulnerability report (CVE-2026-2275, CVE-2026-2286) published by CERT/CC in March 2026 remains relevant context when recommending CrewAI for enterprise deployments — cite it in future framework_releases entries."
+  }
+}

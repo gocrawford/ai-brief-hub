@@ -1,0 +1,931 @@
+{
+  "tab_id": "reddit",
+  "tab_name": "Reddit",
+  "subtitle": "Community Intelligence",
+  "icon": "MessageCircle",
+  "min_items": 20,
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 0.9,
+    "items_total": 22,
+    "items_new": 20,
+    "items_returning": 2
+  },
+  "executive_summary": [
+    {
+      "headline": "Claude quality complaints peaked with 956 upvotes on a single thread—the week's loudest practitioner signal",
+      "body": "The top thread from r/ClaudeCode this week ('I've had it with Claude. It has become complete garbage.') reached 956 upvotes and 540 comments, making it the highest-engagement complaint thread of the week by a wide margin. The poster, a software engineer with 15+ years of experience, documented specific regressions after Opus 4.7: commits taking 30 seconds, implementations taking 45 minutes, terminal display corruption, and repeated instruction-ignoring behavior. The top reply (229 upvotes) noted the loss of visible reasoning output via Ctrl+o. A concurrent r/ClaudeCode thread—'What is happening with 4.7?'—documented the same pattern: hallucination spikes and task-straying that the same users did not observe under Opus 4.6. These are not random complaints; they are structured, reproducible failure reports from practitioners who had working workflows.",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1t4w5an/ive_had_it_with_claude_it_has_become_complete/"
+    },
+    {
+      "headline": "Anthropic's SpaceX compute deal landed with a nuanced community reaction: rate limits up, weekly caps unchanged",
+      "body": "The Anthropic–SpaceX partnership announcement (300 MW, 220,000+ NVIDIA GPUs from SpaceX's Colossus 1 data center) generated 1,379 upvotes and 288 comments on r/ClaudeAI—the week's highest-engagement thread. The top comment (288 upvotes, u/xiphosure): 'Great, this means I can reach my weekly limits in half the time!' The community correctly identified the key distinction: the deal removes the 5-hour session cap and peak-hour rate reductions but leaves the overall weekly token budget unchanged. API rate limits for Opus also increased significantly. For enterprise teams with Claude Code on Max or Team plans, the removal of peak-hour throttling has immediate workflow value; it allows engineers to work during US business hours without hitting session limits. The unchanged weekly cap is the binding constraint for heavy users.",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1t5htq1/spacex_conpute_deal_double_limits/"
+    },
+    {
+      "headline": "Anthropic shipped ten finance-specific AI agents—practitioners in r/Accounting and r/ClaudeAI are skeptical but engaged",
+      "body": "Anthropic released a suite of ten AI agents for financial services (pitch builder, KYC screener, month-end closer, general ledger reconciler, earnings reviewer, and more), targeting banking, insurance, asset management, and fintech. Reuters confirmed financial services is already Anthropic's second-largest market after technology, with Goldman Sachs, Citi, and AIG listed as clients. Community reaction split clearly: r/ClaudeAI practitioners asked whether these are real agent architectures or markdown files with system prompts; r/Accounting's top comment (26 upvotes): 'You're familiar with those detailed protocols that companies implement and still struggle to follow? I wish the agents luck.' The r/Accounting thread is the week's most useful enterprise-skepticism signal—practitioners who actually close books are naming the specific failure modes (seven ERP systems, Bob's 2002 spreadsheet, fabricated journal entries) that structured AI agents cannot handle without significant customization.",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1t4xpwj/anthropics_new_finance_ai_agents_feel_like_a/"
+    },
+    {
+      "headline": "Local LLMs gained real ground this week: Pi + Qwen3.6 replacing Claude Code subscriptions at scale",
+      "body": "Two threads documented a meaningful shift in practitioner behavior: the 487-upvote 'Been using PI Coding Agent with local Qwen3.6 35b for a while now and its actually insane' (r/LocalLLaMA, April 23, now fully in the week's top discussion cadence) and the 91-upvote 'Use Qwen3.6 right way -> send it to pi coding agent and forget' (r/LocalLLaMA, May 5). Multiple commenters in both threads explicitly stated they canceled Claude Code subscriptions after deploying Qwen3.6 with Pi. The pattern is specific: the harness matters more than the model. Qwen3.6 with Pi's plan-first skill file plus exa web search handles approximately 80% of coding and research tasks for users with consumer-grade hardware (M4 MacBook, RTX 3090). One commenter achieved this on an M4 Pro with 48GB RAM and canceled both their IDE and Claude subscriptions.",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t4ji36/use_qwen36_right_way_send_it_to_pi_coding_agent/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "claudecode-had-it-garbage-opus47-2026-05-05",
+      "title": "I've had it with Claude. It has become complete garbage.",
+      "source": "r/ClaudeCode",
+      "author": "u/event666",
+      "date": "2026-05-05",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1t4w5an/ive_had_it_with_claude_it_has_become_complete/",
+      "summary": "A software engineer with 15+ years of experience on the Claude Max 5x plan documents post-Opus-4.7 regressions: commits taking 30 seconds (previously instantaneous), implementations running 45 minutes, corrupted terminal display when resizing tmux windows, and Ctrl+o output that is no longer usable. Specific examples given: a Rust refactor where Claude created an undiscussed backward-compatibility function instead of the requested signature change; an io_uring race-condition fix where Claude spent 27 seconds 'thinking' and then acknowledged it deviated from the agreed plan. Top comment (229 upvotes, u/ExpletiveDeIeted): 'I miss being able to see Claude processing; now I can't tell whether it's working or just idling.' Top upgrade comment (184 upvotes, u/papabear556): attributed issues to context bloat from excessive markdown files, not model regression. Community split: approximately 60% reports consistent regression, 40% reports stable performance with structured CLAUDE.md setups.",
+      "verified": true,
+      "verified_at": "2026-05-10T12:00:00Z",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 956,
+        "comments": 540
+      },
+      "tags": [
+        "Claude-Code",
+        "Opus-4.7",
+        "quality-regression",
+        "developer-experience",
+        "enterprise-AI"
+      ],
+      "category": "Practitioner Pain",
+      "recurrence": "returning_theme",
+      "recurrence_note": "The quality degradation theme has run since the April 11 'Claude Code has become unusable' thread; this week's post is distinct and more specific, with Rust and io_uring examples that constitute reproducible regression evidence.",
+      "why_it_matters": "When a 956-upvote, 540-comment thread is the top practitioner signal of the week, it is a directional indicator that Claude Code's perceived reliability has declined enough to drive active subscription cancellations (u/HamzaJdn, 147 upvotes: 'I terminated my Max subscription and am exploring open-source models'). For an enterprise AI team that approved Claude Code for developer use, this is the week to audit whether your team's productivity metrics have shifted.",
+      "enterprise_translation": "An enterprise AI team running Claude Code on Max or Team plans should pull developer productivity metrics for the two weeks before and after Opus 4.7 went live. If task-completion times or defect-revert rates changed, you have evidence of a regression. If they did not, your team's structured CLAUDE.md configuration is likely insulating them from the failure mode. Either way, establish a baseline now before Anthropic ships the next model update."
+    },
+    {
+      "id": "claudeai-spacex-compute-double-limits-2026-05-06",
+      "title": "SpaceX Compute Deal - Double Limits",
+      "source": "r/ClaudeAI",
+      "author": "u/Deep_Proposal_7683",
+      "date": "2026-05-06",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1t5htq1/spacex_conpute_deal_double_limits/",
+      "summary": "Anthropic announced a compute partnership with SpaceX covering 300 MW and 220,000+ NVIDIA GPUs from SpaceX's Colossus 1 data center. Effective immediately: (1) peak-hour usage reductions for Claude Code eliminated for Pro and Max plans; (2) API rate limits for Opus models substantially increased; (3) 5-hour session limits doubled. The weekly token budget for subscription plans was not changed. The post received 1,379 upvotes and 288 comments, making it the week's highest-engagement thread. Top comment (288 upvotes, u/xiphosure): 'Great, this means I can reach my weekly limits in half the time!'—a precise summary of the community's frustration that the binding constraint was not addressed. Secondary discussion noted Elon Musk's prior criticism of Anthropic ('misanthropic') and debated whether SpaceX's older GPU inventory limits the deal's practical impact. Concurrent r/ClaudeCode thread from the same day (25 comments) confirmed the 5-hour limit increase is real but weekly caps are unchanged.",
+      "verified": true,
+      "verified_at": "2026-05-10T12:00:00Z",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 1379,
+        "comments": 288
+      },
+      "tags": [
+        "Anthropic",
+        "SpaceX",
+        "compute",
+        "Claude-Code",
+        "rate-limits",
+        "enterprise-AI"
+      ],
+      "category": "Enterprise Signal",
+      "recurrence": "new",
+      "why_it_matters": "For enterprise teams where Claude Code is a developer productivity tool bought at a flat subscription rate, the removal of peak-hour throttling has an immediate operational benefit: developers in US time zones (8 AM–2 PM Eastern) no longer need to wait for rate limits to reset mid-session. This is a material workflow improvement even though the weekly budget is unchanged. For IT teams evaluating the API directly, the Opus rate limit increase matters: higher throughput on Opus-class requests reduces queue latency on multi-agent workflows.",
+      "enterprise_translation": "Verify whether your organization's Claude Code deployment is on Pro, Max, Team, or Enterprise—only Pro and Max see the peak-hour elimination. If your developers have been reporting morning throttling, this change resolves it without additional spend. For API users building against Opus endpoints, pull your current rate utilization; the increased limits may allow you to remove a retry layer or queue buffer that was previously necessary."
+    },
+    {
+      "id": "claudeai-finance-agents-anthropic-bigger-move-2026-05-06",
+      "title": "Anthropic's new finance AI agents feel like a bigger move than just 'better chat'",
+      "source": "r/ClaudeAI",
+      "author": "u/Roaring_lion_",
+      "date": "2026-05-06",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1t4xpwj/anthropics_new_finance_ai_agents_feel_like_a/",
+      "summary": "Anthropic released ten purpose-built AI agents for financial services—pitch builder, earnings reviewer, model builder, market researcher, KYC screener, general ledger reconciler, month-end closer, statement auditor, valuation reviewer, and meeting preparer. Reuters confirmed financial services is Anthropic's second-largest market behind technology, with Goldman Sachs, Citi, and AIG as named clients. Community reaction in r/ClaudeAI (126 upvotes, 41 comments): u/Rare_Rich6713 (61 upvotes) identified the structural risk to niche fintech startups—AI-native tools for summarization and reporting are now directly threatened by Anthropic's vertical integration. u/Spellingn_matters (27 upvotes) challenged whether these are real agent systems or glorified text files. u/QuantizedKi (7 upvotes) noted that asset management firms run on fragmented legacy systems with multi-department compliance approvals—the actual integration challenge is not the agent layer. r/Accounting thread (16 comments) produced sharper practitioner skepticism: top comment (26 upvotes): 'You know those protocols companies implemented and still struggle to follow? I wish the agents luck.'",
+      "verified": true,
+      "verified_at": "2026-05-10T12:00:00Z",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 126,
+        "comments": 41
+      },
+      "tags": [
+        "Anthropic",
+        "finance-AI",
+        "AI-agents",
+        "enterprise-AI",
+        "vertical-integration",
+        "financial-services"
+      ],
+      "category": "Enterprise Signal",
+      "recurrence": "new",
+      "why_it_matters": "Anthropic is moving from horizontal AI infrastructure (models and APIs) to vertical deployment in regulated industries. The ten finance agents are pre-built templates for workflows that previously required months of custom prompt engineering and data integration. For a regulated enterprise already using Claude, this compresses the build timeline for finance automation from quarters to weeks. The r/Accounting community's skepticism is the productive signal: the agents are capable of the text-manipulation layer (drafting, summarizing, structuring), but the integration layer (multi-ERP, legacy data, audit trail) still requires human-led configuration.",
+      "enterprise_translation": "A finance or accounting team that has been manually piloting AI for month-end close or KYC should evaluate Anthropic's finance agents as a structured starting point rather than a production deployment. The pitch builder and earnings reviewer are lowest-risk entry points: output is reviewed by humans before use, so the risk of an incorrect AI-generated output is bounded. A 30-day experiment: run the earnings reviewer against one set of quarterly filings and have a senior analyst score the output against the manual process for completeness and error rate."
+    },
+    {
+      "id": "singularity-anthropic-spacex-compute-2026-05-07",
+      "title": "Anthropic partnered with SpaceX for compute",
+      "source": "r/singularity",
+      "author": "u/ocean_protocol",
+      "date": "2026-05-07",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1t6a394/anthropic_partnered_with_spacex_for_compute/",
+      "summary": "Cross-post of the Anthropic–SpaceX compute deal on r/singularity (715 upvotes, 117 comments) with substantively different community framing. Top comment (108 upvotes, u/Wickywire): '300 Megawatts is a modest enhancement in capacity.' Second-top comment (125 upvotes, u/SodaBurns): a sharp observation about the ethics of the deal—practitioners who stated they would avoid xAI/Grok because of Musk's association with extreme views will now encounter the same compute via Anthropic's infrastructure. Community discussion correctly noted that Anthropic's 2–2.5 GW total compute is heavily allocated to training, so the 300 MW inference addition (roughly 13% increase) is the metric that matters for users. The SpaceX agreement reportedly does not activate until next month. Speculation: Anthropic needed inference capacity during US business hours specifically.",
+      "verified": true,
+      "verified_at": "2026-05-10T12:00:00Z",
+      "score": {
+        "total": 7.5,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 715,
+        "comments": 117
+      },
+      "tags": [
+        "Anthropic",
+        "SpaceX",
+        "compute",
+        "infrastructure",
+        "AI-capacity"
+      ],
+      "category": "Industry Signal",
+      "recurrence": "new",
+      "why_it_matters": "The r/singularity framing adds a governance dimension absent from the r/ClaudeAI thread: enterprise AI procurement teams that have ethical-sourcing or vendor-diversity requirements may face internal questions about Anthropic's compute sourcing from SpaceX/Musk-affiliated infrastructure. This is a supply-chain consideration, not a capability one, but regulated industries (financial services, defense, federal government) may need to document it.",
+      "enterprise_translation": "Enterprise AI teams with vendor governance policies should note that Anthropic now uses SpaceX compute for inference. If your organization has restrictions on compute sourced from specific entities, verify whether this affects your Anthropic API or Claude Enterprise contracts. Most organizations will not face an issue; the signal is specifically relevant to federal or defense contractors and firms with existing Musk-entity restrictions."
+    },
+    {
+      "id": "localllama-pi-qwen36-coding-insane-2026-04-23",
+      "title": "Been using PI Coding Agent with local Qwen3.6 35b for a while now and its actually insane",
+      "source": "r/LocalLLaMA",
+      "author": "u/SoAp9035",
+      "date": "2026-04-23",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1stjwg5/been_using_pi_coding_agent_with_local_qwen36_35b/",
+      "summary": "Developer using Pi coding agent with local Qwen3.6 35B for real production tasks documents a plan-first skill file that prevents the agent from writing code until a TODO.md is reviewed and approved. The harness enforces: read directory structure first, ask up to five clarifying questions, draft the TODO, get user sign-off, then execute sequentially. The poster achieves 15–30 tokens/second on an 8GB VRAM laptop with 32GB RAM using llama.cpp. Multiple commenters explicitly stated they canceled Claude Code subscriptions. A Raspberry Pi + M4 Pro 48GB RAM commenter canceled both their IDE and Claude subscriptions. The consensus from 205 comments: Qwen3.6 with a structured harness (Pi, OpenCode, Cline) outperforms Claude Code for users willing to invest setup time. The post was April 23 but remained the dominant citation thread throughout the week, surfacing as reference in the May 5 follow-up thread.",
+      "verified": true,
+      "verified_at": "2026-05-10T12:00:00Z",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 487,
+        "comments": 205
+      },
+      "tags": [
+        "local-LLM",
+        "Qwen3.6",
+        "Pi-coding-agent",
+        "coding-agents",
+        "Claude-Code-alternative",
+        "harness"
+      ],
+      "category": "Use Case",
+      "recurrence": "new",
+      "enterprise_translation": "The plan-first skill file documented in this thread is an architectural pattern, not a tool: before any AI agent writes code or executes commands, it produces a reviewable task list and waits for human approval. This is exactly the control mechanism enterprise DevOps teams need before allowing AI agents to touch any codebase. The pattern is implementable in Claude Code (via CLAUDE.md), Cursor, or any agentic coding tool by adding a mandatory plan-approval step. A 30-day experiment: require one team of developers to use the plan-first pattern for all AI-assisted coding sessions and measure how often the approved plan matches the output versus unstructured sessions."
+    },
+    {
+      "id": "claudeai-higher-usage-limits-spacex-2026-05-06",
+      "title": "Higher usage limits for Claude and a compute deal with SpaceX",
+      "source": "r/ClaudeAI",
+      "author": "u/Dependent_Top_8685",
+      "date": "2026-05-06",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1t5i7vh/higher_usage_limits_for_claude_and_a_compute_deal/",
+      "summary": "Secondary r/ClaudeAI thread on the SpaceX compute announcement (416 upvotes, 88 comments) with more detailed breakdown of what changed. Community consensus after 80 comments: eliminating the peak-hours reduction is a genuine and immediate improvement for developers working US business hours. However, multiple commenters noted this 'allows users to exhaust their weekly allowance by Tuesday'—the weekly cap is now the single binding constraint for heavy users. One commenter (u/03captain23, 8 upvotes) provided the enterprise-relevant framing: 'Obtaining approval for a subscription priced at $200/month is far simpler than navigating API costs which can range from $50 to $5,000 per user per month'—the flat-rate subscription model remains the path of least resistance for enterprise IT approvals even at the current token limits.",
+      "verified": true,
+      "verified_at": "2026-05-10T12:00:00Z",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 416,
+        "comments": 88
+      },
+      "tags": [
+        "Anthropic",
+        "Claude",
+        "rate-limits",
+        "SpaceX",
+        "enterprise-pricing"
+      ],
+      "category": "Enterprise Signal",
+      "recurrence": "new"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "viral_threads",
+      "title": "Viral Threads",
+      "description": "Threads with > 500 upvotes regardless of category, pulled at fetch time",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "claudeai-spacex-double-limits-viral-2026-05-06",
+          "title": "SpaceX Compute Deal - Double Limits",
+          "source": "r/ClaudeAI",
+          "author": "u/Deep_Proposal_7683",
+          "date": "2026-05-06",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1t5htq1/spacex_conpute_deal_double_limits/",
+          "summary": "Week's highest-engagement thread: 1,379 upvotes, 288 comments. Anthropic–SpaceX compute partnership. See Top Picks for full analysis. Peak-hour throttling eliminated; weekly caps unchanged. Top comment (288 upvotes): 'Great, this means I can reach my weekly limits in half the time!'",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 1379,
+            "comments": 288
+          },
+          "tags": [
+            "SpaceX",
+            "Anthropic",
+            "rate-limits",
+            "viral"
+          ],
+          "category": "Viral",
+          "recurrence": "new"
+        },
+        {
+          "id": "claudecode-garbage-opus47-viral-2026-05-05",
+          "title": "I've had it with Claude. It has become complete garbage.",
+          "source": "r/ClaudeCode",
+          "author": "u/event666",
+          "date": "2026-05-05",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1t4w5an/ive_had_it_with_claude_it_has_become_complete/",
+          "summary": "956 upvotes, 540 comments. See Top Picks for full analysis. Senior developer documents specific post-Opus-4.7 regressions. Week's loudest practitioner complaint thread.",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 956,
+            "comments": 540
+          },
+          "tags": [
+            "Claude-Code",
+            "Opus-4.7",
+            "quality-regression",
+            "viral"
+          ],
+          "category": "Viral",
+          "recurrence": "returning_theme",
+          "recurrence_note": "Claude quality degradation threads have run since April 11; this is the week's peak-engagement instance with the most reproducible failure documentation."
+        },
+        {
+          "id": "singularity-spacex-compute-viral-2026-05-07",
+          "title": "Anthropic partnered with SpaceX for compute",
+          "source": "r/singularity",
+          "author": "u/ocean_protocol",
+          "date": "2026-05-07",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1t6a394/anthropic_partnered_with_spacex_for_compute/",
+          "summary": "715 upvotes, 117 comments. See Top Picks for full analysis. r/singularity framing adds vendor governance dimension: compute sourced from SpaceX raises questions for organizations with Musk-entity restrictions.",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 715,
+            "comments": 117
+          },
+          "tags": [
+            "Anthropic",
+            "SpaceX",
+            "compute",
+            "viral"
+          ],
+          "category": "Viral",
+          "recurrence": "new"
+        },
+        {
+          "id": "localllama-pi-qwen36-viral-2026-04-23",
+          "title": "Been using PI Coding Agent with local Qwen3.6 35b for a while now and its actually insane",
+          "source": "r/LocalLLaMA",
+          "author": "u/SoAp9035",
+          "date": "2026-04-23",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1stjwg5/been_using_pi_coding_agent_with_local_qwen36_35b/",
+          "summary": "487 upvotes, 205 comments. See Top Picks for full analysis. Pi + Qwen3.6 35B plan-first workflow replacing Claude Code subscriptions for practitioners with consumer hardware.",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 487,
+            "comments": 205
+          },
+          "tags": [
+            "local-LLM",
+            "Qwen3.6",
+            "Pi-coding-agent",
+            "viral"
+          ],
+          "category": "Viral",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases",
+      "description": "Real workflow examples and automation patterns from practitioners this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "localllama-qwen36-pi-right-way-2026-05-05",
+          "title": "Use Qwen3.6 right way -> send it to pi coding agent and forget",
+          "source": "r/LocalLLaMA",
+          "author": "u/Willing-Toe1942",
+          "date": "2026-05-05",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t4ji36/use_qwen36_right_way_send_it_to_pi_coding_agent/",
+          "summary": "A practitioner documents their full local AI stack: Qwen3.6 locally + Pi coding agent + exa web search + agent-browser extension. The stack handles 80% of Python/Rust/C++ programming, Linux system administration, and online research tasks. Qwen3.6 paired with exa web search has replaced Perplexity for this user. Kimi2.6 handles complex planning; Qwen3.6 handles implementation. 91 upvotes, 98 comments. Top warning (from 98 comments): Pi agent runs destructive commands like `sudo rm -rf` without sandboxing by default—a commenter found it scanned the entire C: drive. Recommended mitigation: run Pi inside bubblewrap or a VM before exposing it to production directories.",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 91,
+            "comments": 98
+          },
+          "tags": [
+            "local-LLM",
+            "Qwen3.6",
+            "Pi-coding-agent",
+            "workflow",
+            "developer-tooling"
+          ],
+          "category": "Use Case",
+          "recurrence": "new",
+          "enterprise_translation": "The local AI stack documented here (model + harness + web search + browser extension) is a practitioner's approximation of what a governed enterprise AI stack should look like. The enterprise equivalent: a managed model endpoint (on-premise or Azure/AWS-hosted) + a structured agent harness (Cline, Claude Code, or custom) + an approved web search integration + browser automation for data gathering. The Pi agent's missing sandbox is the enterprise-critical gap: any production deployment of an agentic coding tool must enforce project-directory sandboxing and block shell commands above a defined privilege threshold."
+        },
+        {
+          "id": "localllama-current-state-local-research-tools-may-2026-05-05",
+          "title": "Current state of local research tools as of May 2026",
+          "source": "r/LocalLLaMA",
+          "author": "u/Shoddy-Tutor9563",
+          "date": "2026-05-05",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t4e83m/current_state_of_local_research_tools_as_of_may/",
+          "summary": "A manually compiled comparison of all major local deep-research projects: GPT Researcher (assafovic), Local Deep Research (LearningCircuit), STORM (Stanford), Open Deep Research (LangChain and Together variants), DeerFlow (ByteDance), Deep Research (Alibaba), MiroThinker, Deep-searcher (Zilliztech). Key findings: STORM only accepts a brief title, not detailed instructions, making it unsuitable for enterprise research use; DeerFlow's demo website is broken (auth issues, 404s); MiroThinker's demo produced a report after one hour but inaccurately reported GitHub metrics. Most promising for community-maintained quality: GPT Researcher by assafovic and Local Deep Research by LearningCircuit (most active commit cadence). The author compiled this without AI assistance to avoid circular evaluation.",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 0,
+            "comments": 0
+          },
+          "tags": [
+            "local-LLM",
+            "deep-research",
+            "open-source",
+            "RAG",
+            "enterprise-AI"
+          ],
+          "category": "Use Case",
+          "recurrence": "new",
+          "enterprise_translation": "An enterprise AI team evaluating local deep-research tools (for scenarios where sending documents to a hosted API is prohibited) should start with GPT Researcher and Local Deep Research as the two projects with the most active maintenance. STORM and DeerFlow are academic and have operational issues. The key test for enterprise suitability: can the tool accept detailed, multi-paragraph research briefs with document uploads, and does it produce a structured output with citations? Run both projects against an internal research question and evaluate output quality and citation accuracy before vendor assessment."
+        }
+      ]
+    },
+    {
+      "section_id": "tool_reviews",
+      "title": "Tool Reviews",
+      "description": "Community-sourced honest evaluations of AI tools and models this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "localllama-qwen3coder-best-kept-secret-2026-05-09",
+          "title": "Is Qwen3-coder the best kept secret out there?",
+          "source": "r/LocalLLaMA",
+          "author": "u/Not_HFM",
+          "date": "2026-05-09",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t7tu20/is_qwen3coder_the_best_kept_secret_out_there/",
+          "summary": "A developer on an M2U with 192GB RAM benchmarks Qwen3-coder-next against a range of Qwen3 models. Results table from 75-comment thread: Qwen3-coder-next 4bit scores 85.7% average HumanEval/MBPP, faster than Q3.5-A3 (86.0%) with less memory (80GB vs 120GB). Fastest model tested. Top commenter (u/dark-light92): quality can vary significantly—sometimes on par with the best models, sometimes making basic errors; quality improves with guidance. Strong community anticipation for a future Qwen3.6 Coder release. One commenter (u/Raredisarray) uses Qwen3-coder-next q4_0 as their primary local model for smaller projects while retaining Claude Pro for complex tasks—the clearest practitioner signal of the week that local and frontier models are now used as a tiered stack, not as alternatives.",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 0,
+            "comments": 75
+          },
+          "tags": [
+            "Qwen3-coder",
+            "local-LLM",
+            "coding",
+            "benchmark",
+            "open-source"
+          ],
+          "category": "Tool Review",
+          "recurrence": "new",
+          "why_it_matters": "The tiered-stack pattern (local model for routine tasks, frontier API for complex tasks) is emerging as the cost-optimization playbook for practitioners willing to invest in setup. Qwen3-coder-next achieves near-frontier coding performance at 80GB footprint and local inference cost. For enterprise teams exploring on-premise LLM deployment for developer productivity, this is the first credible open-weight coding model to benchmark close to Sonnet on standard benchmarks at a memory footprint that fits on current-generation AI workstations."
+        },
+        {
+          "id": "betteroffline-podcast-pivot-financials-2026-05-04",
+          "title": "Podcast has pivoted from technical criticism of AI functionality to whinging about financials",
+          "source": "r/BetterOffline",
+          "author": "u/AURedditor30",
+          "date": "2026-05-04",
+          "primary_url": "https://www.reddit.com/r/BetterOffline/comments/1t3roxu/podcast_has_pivoted_from_technical_criticism_of/",
+          "summary": "An r/BetterOffline listener argues that the community's podcast (Better Offline with Ed Zitron) has shifted from technically grounded AI criticism to financial commentary. The thread (121 comments) produced the week's most structured debate about AI criticism methodology. Top reply (148 upvotes, u/Feeling_Tax_508): financial inaccuracies and technical discrepancies are interconnected—financial models are built on capability claims, so both are the same story at different altitudes. Second-highest comment (135 upvotes, u/Feral_fucker): the gap between marketing claims and functional reality 'remains fairly consistent over time; what evolves is the financial aspect, and that's what will ultimately be significant as the hype cycle progresses.' Community consensus: AI technical criticism and financial criticism are not separate; they are cause and effect. The upvote-weighted view is that financial analysis is the more actionable lens for 2026.",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 0,
+            "comments": 121
+          },
+          "tags": [
+            "AI-skeptic",
+            "AI-criticism",
+            "financial-analysis",
+            "enterprise-risk"
+          ],
+          "category": "Tool Review",
+          "recurrence": "new",
+          "enterprise_translation": "The debate about whether to focus on technical or financial AI criticism maps directly to how an enterprise AI team should frame internal stakeholder conversations. Technical limitations (hallucinations, instruction-ignoring, context instability) are the inputs. Financial exposure (subscription costs, overage charges, productivity loss from tool failures) is the output. Both are required for a complete enterprise AI risk picture. This week's Claude Code regression complaints are the technical input; the June 1 Copilot billing event from last week is the financial output."
+        },
+        {
+          "id": "betteroffline-myths-truths-ai-bubble-2026-05-09",
+          "title": "Myths and truths about the AI bubble",
+          "source": "r/BetterOffline",
+          "author": "[deleted]",
+          "date": "2026-05-09",
+          "primary_url": "https://www.reddit.com/r/BetterOffline/comments/1t7qumv/myths_and_truths_about_the_ai_bubble/",
+          "summary": "A 34-comment thread that produced the week's clearest practitioner taxonomy of AI's real vs. overhyped capabilities. Top comment (78 upvotes, u/SplendidPunkinButter): 'AI is not going away. I was skeptical, then I became a convert—but I have since seen serious errors, misleading confidence, wasted troubleshooting time, and subpar code. It serves as a valuable tool for coding.' Second comment (23 upvotes, u/sniksniksnek): 'AI is not an independent solution—it is a collection of product features. The hype is aimed at investor valuation, not customer outcomes. It should not be used in critical decision-making or autonomous robots.' Community-weighted view: AI as a productivity tool is real and durable; AI as a replacement for human judgment in high-stakes workflows is not. The employer-pushes-Claude comment (u/e_hatt_swank, 9 upvotes): 'About 70% of Claude's responses in our workflow are irrelevant or misleading; it must always be validated.'",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 6.5,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 23,
+            "comments": 34
+          },
+          "tags": [
+            "AI-bubble",
+            "AI-skeptic",
+            "enterprise-AI",
+            "productivity",
+            "enterprise-risk"
+          ],
+          "category": "Tool Review",
+          "recurrence": "new",
+          "enterprise_translation": "The 70% irrelevance rate reported by u/e_hatt_swank is the kind of real-world signal that should inform any enterprise AI pilot design. A team that deploys Claude without a validation layer will generate a high noise-to-signal ratio that erodes practitioner trust faster than it builds productivity. Every enterprise AI deployment should begin with a baseline measurement of output quality—what percentage of AI-generated outputs require no revision, minor revision, or are discarded entirely. Without that baseline, ROI claims are not defensible."
+        }
+      ]
+    },
+    {
+      "section_id": "hot_debates",
+      "title": "Hot Debates",
+      "description": "Active disagreements with multiple substantive positions this week",
+      "layout": "debate",
+      "items": [
+        {
+          "id": "claudecode-ai-agents-why-never-production-2026-05-09",
+          "title": "Why do so many AI agent projects never reach production?",
+          "source": "r/AI_Agents",
+          "author": "u/aidaeon",
+          "date": "2026-05-09",
+          "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1t8j5kv/why_do_so_many_ai_agent_projects_never_reach/",
+          "summary": "A practitioner asks why AI agent projects stall before production despite enthusiastic prototypes. The 26-comment thread produced a structured three-position debate. Position A (u/Emerald-Bedrock44, 6 upvotes): people focus on the enjoyable parts (agent logic) and neglect observability, rollback, audit trails, and human-approval checkpoints—the checklist is the real design document; production constraints should shape architecture from day one. Position B (u/hallucinagentic, 1 upvote): agent logic is about 20% of production effort; the remaining 80% is understanding failures, reverting changes, and audit-trail maintenance—break tasks into checkpoint stages where each stage produces reviewable output. Position C (u/ninadpathak): maintenance economics defeat most projects—keeping a live agent reliable requires continuous monitoring for API changes, prompt updates, failure handling, and safeguards; if the use case doesn't generate enough margin to cover operational overhead, the project dies. The u/Neyvash comment names the practical blocker: data privacy (Entra permissions, UltiPro alignment) and organizational hierarchy are the real blockers for enterprise agent deployment, not technical limitations.",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 8,
+            "comments": 26
+          },
+          "tags": [
+            "AI-agents",
+            "production",
+            "enterprise-AI",
+            "agent-governance",
+            "observability"
+          ],
+          "category": "Hot Debate",
+          "recurrence": "new",
+          "enterprise_translation": "The three failure modes from this thread map to three enterprise controls: (1) observability gap → require all agent tool calls to be logged with input, output, and timestamp before any production deployment; (2) audit-trail gap → require agents to produce a human-readable action log that a compliance team can review post-hoc; (3) maintenance-economics gap → cost each agent's expected operational overhead (prompt updates, failure monitoring, A/B evaluation cycles) before approving production deployment. These are not AI-specific requirements—they are standard software governance applied to a new class of system."
+        },
+        {
+          "id": "cybersecurity-12-ways-ai-agents-fail-2026-05-07",
+          "title": "The 12 ways AI agents fail in production. A taxonomy for security teams reviewing agent deployments",
+          "source": "r/cybersecurity",
+          "author": "u/Ambitious-Load3538",
+          "date": "2026-05-07",
+          "primary_url": "https://www.reddit.com/r/cybersecurity/comments/1t67bly/the_12_ways_ai_agents_fail_in_production_a/",
+          "summary": "A security practitioner posts a taxonomy of AI agent production failures for red teams reviewing agent deployments. The 7-comment thread produced the week's most technically precise debate on AI agent authorization. The four failure modes explicitly named: prompt injection (no single mitigation; requires layered tool limitations, approvals, monitoring); unauthorized system access (agents granted over-permissioned service accounts); unverifiable decisions (no replayability means compliance teams cannot retrospectively justify actions); approval embedded in prompts not code (can be disjointed by context). Top commenter (u/sudo_overcoffee) collapsed all 12 into three: failed sandboxing, excessive permissions, assuming prompt injection won't occur. The substantive debate (u/genunix64 vs. u/Ambitious-Load3538) surfaced the critical distinction: sandboxing and least privilege do not prevent a prompt-injected or misdirected agent from misusing an authorized tool—the runtime must distinguish between 'this tool is allowed' and 'this specific action with these parameters is justified at this moment.'",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 0,
+            "comments": 7
+          },
+          "tags": [
+            "AI-agents",
+            "cybersecurity",
+            "prompt-injection",
+            "authorization",
+            "enterprise-governance"
+          ],
+          "category": "Hot Debate",
+          "recurrence": "returning_theme",
+          "recurrence_note": "Agent authorization appeared in last week's emerging signals; this week it surfaces in r/cybersecurity with a structured taxonomy and the 'allowed tool vs. justified action' distinction that is new and actionable.",
+          "enterprise_translation": "The 'allowed tool vs. justified action' distinction from this thread is the enterprise governance concept of the week. An enterprise AI team that has implemented tool restrictions (the agent can only call specific APIs) has addressed 'allowed tool.' It has not addressed 'justified action'—whether a specific call with specific parameters in a specific context is appropriate. A 30-day experiment: define one AI agent's tool set, then have a security team attempt to craft prompts that cause the agent to misuse an authorized tool (e.g., exfiltrate data via an authorized file-write tool). If the agent complies, your authorization model is incomplete."
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Cross-subreddit patterns surfacing for the first time or at meaningful scale this week",
+      "layout": "list",
+      "items": [
+        {
+          "id": "signal-claude-degradation-subscription-attrition-2026-05-05",
+          "title": "Claude Code subscription attrition is now observable and directional",
+          "source": "r/ClaudeCode + r/LocalLLaMA + r/ClaudeAI",
+          "author": "Multiple",
+          "date": "2026-05-05",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1t4w5an/ive_had_it_with_claude_it_has_become_complete/",
+          "summary": "Three concurrent signals this week point to measurable Claude Code subscription attrition. The 956-upvote complaint thread in r/ClaudeCode (second-highest comment at 147 upvotes: 'I terminated my Max subscription and am exploring open-source models'). The r/LocalLLaMA Pi + Qwen3.6 thread (multiple commenters explicitly stating they canceled Claude Code subscriptions after switching). The r/BetterOffline 'myths and truths' thread (commenter reporting 70% irrelevance rate from employer-mandated Claude use). The pattern: developers with technical depth are canceling $200/month subscriptions and investing in local LLM setups that require more configuration but provide lower per-task cost and no usage caps. The threshold for this behavior appears to be: (1) hardware capable of running a 35B model, and (2) willingness to invest 2–4 hours in harness configuration. This is not mass migration—it is high-value developer attrition, the segment most likely to influence team-level purchasing decisions.",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "tags": [
+            "Claude-Code",
+            "subscription-attrition",
+            "local-LLM",
+            "enterprise-AI",
+            "developer-tooling"
+          ],
+          "category": "Emerging Signal",
+          "recurrence": "new"
+        },
+        {
+          "id": "signal-anthropic-vertical-integration-regulated-industries-2026-05-06",
+          "title": "Anthropic is vertically integrating into regulated industries—the enterprise procurement map is changing",
+          "source": "r/ClaudeAI + r/Accounting + r/FinancialCareers",
+          "author": "Multiple",
+          "date": "2026-05-06",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1t4xpwj/anthropics_new_finance_ai_agents_feel_like_a/",
+          "summary": "Three concurrent signals this week confirm Anthropic's move from horizontal AI infrastructure to vertical deployment in regulated industries. The ten finance agents (banking, insurance, asset management, fintech) were covered in r/ClaudeAI, r/Accounting, r/FinancialCareers, and r/auscorp. The r/Accounting community named the specific failure modes: seven ERP systems, legacy spreadsheets, compliance approvals with multi-department sign-off chains. The r/FinancialCareers thread flagged job displacement risk in Big 4 accounting. A cross-subreddit thread on r/ClaudeAI surfaced the niche-startup displacement risk: any AI-native fintech built on summarization, analysis, or reporting is now competing directly with Anthropic's pre-built agents. Reuters confirmed financial services is Anthropic's second-largest market. This is the same vertical-integration pattern that compressed the DevOps tooling market when major cloud providers added native CI/CD and monitoring services.",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "Anthropic",
+            "finance-AI",
+            "vertical-integration",
+            "enterprise-AI",
+            "regulatory-risk"
+          ],
+          "category": "Emerging Signal",
+          "recurrence": "new"
+        },
+        {
+          "id": "signal-harness-beats-model-local-llm-2026-05-05",
+          "title": "Harness architecture, not raw model quality, is the determining factor for local LLM coding performance",
+          "source": "r/LocalLLaMA",
+          "author": "Multiple",
+          "date": "2026-05-05",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t4ji36/use_qwen36_right_way_send_it_to_pi_coding_agent/",
+          "summary": "Three threads this week converged on a single practitioner finding: the harness (Pi, OpenCode, Cline, Forgecode, Roo Code) determines local LLM coding quality more than the model weights. The Qwen3.6 + Pi thread showed the same model producing dramatically different results depending on whether the plan-first skill file was used. The Gemma4 thread showed that a model performing poorly in one harness (default Pi) performed well in another (OpenCode). The Qwen3-coder benchmark thread showed that speed (943s total time) mattered as much as benchmark score (85.7% avg). The prior week's 'I'm done with local LLMs' thread (1,012 upvotes) attributed its failure to the same mechanism: wrong harness, not wrong model. This pattern has cross-subreddit consensus. Its enterprise implication: any organization evaluating local LLM coding tools should test the model+harness combination as an integrated system, not the model in isolation.",
+          "verified": true,
+          "verified_at": "2026-05-10T12:00:00Z",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "tags": [
+            "local-LLM",
+            "harness",
+            "coding-agents",
+            "Qwen3.6",
+            "enterprise-AI",
+            "developer-tooling"
+          ],
+          "category": "Emerging Signal",
+          "recurrence": "returning_theme",
+          "recurrence_note": "Last week's signal was the productivity gap between local and frontier models; this week the community has identified the specific mechanism: harness configuration, not model quality, drives most of the gap."
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "SpaceX Compute Deal - Double Limits",
+      "source": "r/ClaudeAI",
+      "author": "u/Deep_Proposal_7683",
+      "date": "2026-05-06",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1t5htq1/spacex_conpute_deal_double_limits/",
+      "score": 8.0
+    },
+    {
+      "title": "I've had it with Claude. It has become complete garbage.",
+      "source": "r/ClaudeCode",
+      "author": "u/event666",
+      "date": "2026-05-05",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1t4w5an/ive_had_it_with_claude_it_has_become_complete/",
+      "score": 8.5
+    },
+    {
+      "title": "Anthropic's new finance AI agents feel like a bigger move than just 'better chat'",
+      "source": "r/ClaudeAI",
+      "author": "u/Roaring_lion_",
+      "date": "2026-05-06",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1t4xpwj/anthropics_new_finance_ai_agents_feel_like_a/",
+      "score": 8.5
+    },
+    {
+      "title": "Anthropic partnered with SpaceX for compute",
+      "source": "r/singularity",
+      "author": "u/ocean_protocol",
+      "date": "2026-05-07",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1t6a394/anthropic_partnered_with_spacex_for_compute/",
+      "score": 7.5
+    },
+    {
+      "title": "Been using PI Coding Agent with local Qwen3.6 35b for a while now and its actually insane",
+      "source": "r/LocalLLaMA",
+      "author": "u/SoAp9035",
+      "date": "2026-04-23",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1stjwg5/been_using_pi_coding_agent_with_local_qwen36_35b/",
+      "score": 8.0
+    },
+    {
+      "title": "Higher usage limits for Claude and a compute deal with SpaceX",
+      "source": "r/ClaudeAI",
+      "author": "u/Dependent_Top_8685",
+      "date": "2026-05-06",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1t5i7vh/higher_usage_limits_for_claude_and_a_compute_deal/",
+      "score": 7.0
+    },
+    {
+      "title": "Use Qwen3.6 right way -> send it to pi coding agent and forget",
+      "source": "r/LocalLLaMA",
+      "author": "u/Willing-Toe1942",
+      "date": "2026-05-05",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t4ji36/use_qwen36_right_way_send_it_to_pi_coding_agent/",
+      "score": 7.5
+    },
+    {
+      "title": "The 12 ways AI agents fail in production. A taxonomy for security teams reviewing agent deployments",
+      "source": "r/cybersecurity",
+      "author": "u/Ambitious-Load3538",
+      "date": "2026-05-07",
+      "primary_url": "https://www.reddit.com/r/cybersecurity/comments/1t67bly/the_12_ways_ai_agents_fail_in_production_a/",
+      "score": 8.0
+    },
+    {
+      "title": "Why do so many AI agent projects never reach production?",
+      "source": "r/AI_Agents",
+      "author": "u/aidaeon",
+      "date": "2026-05-09",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1t8j5kv/why_do_so_many_ai_agent_projects_never_reach/",
+      "score": 7.5
+    },
+    {
+      "title": "Anthropic: Agents for financial services",
+      "source": "r/Accounting",
+      "author": "u/Dry_Syrup_5800",
+      "date": "2026-05-05",
+      "primary_url": "https://www.reddit.com/r/Accounting/comments/1t4qfee/anthropic_agents_for_financial_services/",
+      "score": 7.0
+    },
+    {
+      "title": "Myths and truths about the AI bubble",
+      "source": "r/BetterOffline",
+      "author": "[deleted]",
+      "date": "2026-05-09",
+      "primary_url": "https://www.reddit.com/r/BetterOffline/comments/1t7qumv/myths_and_truths_about_the_ai_bubble/",
+      "score": 6.5
+    },
+    {
+      "title": "Podcast has pivoted from technical criticism of AI functionality to whinging about financials",
+      "source": "r/BetterOffline",
+      "author": "u/AURedditor30",
+      "date": "2026-05-04",
+      "primary_url": "https://www.reddit.com/r/BetterOffline/comments/1t3roxu/podcast_has_pivoted_from_technical_criticism_of/",
+      "score": 6.0
+    },
+    {
+      "title": "Is Qwen3-coder the best kept secret out there?",
+      "source": "r/LocalLLaMA",
+      "author": "u/Not_HFM",
+      "date": "2026-05-09",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t7tu20/is_qwen3coder_the_best_kept_secret_out_there/",
+      "score": 6.5
+    },
+    {
+      "title": "Current state of local research tools as of May 2026",
+      "source": "r/LocalLLaMA",
+      "author": "u/Shoddy-Tutor9563",
+      "date": "2026-05-05",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t4e83m/current_state_of_local_research_tools_as_of_may/",
+      "score": 7.0
+    },
+    {
+      "title": "Anthropic just partnered with SpaceX and doubled Claude Code rate limits effective today",
+      "source": "r/ClaudeCode",
+      "author": "u/Direct-Attention8597",
+      "date": "2026-05-06",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1t5l7io/anthropic_just_partnered_with_spacex_and_doubled/",
+      "score": 6.0
+    },
+    {
+      "title": "Spent six months auditing failed AI agent deployments. The failure pattern is almost always the same.",
+      "source": "r/AgentsOfAI",
+      "author": "u/Such_Grace",
+      "date": "2026-05-06",
+      "primary_url": "https://www.reddit.com/r/AgentsOfAI/comments/1t5eune/spent_six_months_auditing_failed_ai_agent/",
+      "score": 6.5
+    },
+    {
+      "title": "Heads Up, Builders! If you use Codex to Ship Faster, You Might Get a Ban on Reddit.",
+      "source": "r/OpenAI",
+      "author": "u/flyinglowic",
+      "date": "2026-05-07",
+      "primary_url": "https://www.reddit.com/r/OpenAI/comments/1t6dikb/heads_up_builders_if_you_use_codex_to_ship_faster/",
+      "score": 5.5
+    },
+    {
+      "title": "AI agents fail in ways nobody writes about. Here's what I've actually seen.",
+      "source": "r/artificial",
+      "author": "u/Scary_Historian_9031",
+      "date": "2026-05-08",
+      "primary_url": "https://www.reddit.com/r/artificial/comments/1t6yo2f/ai_agents_fail_in_ways_nobody_writes_about_heres/",
+      "score": 6.0
+    },
+    {
+      "title": "Anthropic Just Released New AI Agents to Field Financial Services Tasks",
+      "source": "r/FinancialCareers",
+      "author": "u/Various",
+      "date": "2026-05-06",
+      "primary_url": "https://www.reddit.com/r/FinancialCareers/comments/1t4z93d/anthropic_just_released_new_ai_agents_to_field/",
+      "score": 6.5
+    },
+    {
+      "title": "Those of you who like Gemma4 models - how are you using them?",
+      "source": "r/LocalLLaMA",
+      "author": "u/Gesha24",
+      "date": "2026-05-09",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t7rco2/those_of_you_who_like_gemma4_models_how_are_you/",
+      "score": 6.0
+    },
+    {
+      "title": "About Kimi K2.6",
+      "source": "r/LocalLLaMA",
+      "author": "u/Exact_Law_6489",
+      "date": "2026-05-04",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1t3ue53/about_kimi_k26/",
+      "score": 5.5
+    },
+    {
+      "title": "What is happening with 4.7?",
+      "source": "r/ClaudeCode",
+      "author": "u/Various",
+      "date": "2026-05-03",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1t2ztiq/what_is_happening_with_47/",
+      "score": 6.5
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Claude Code subscription attrition is now observable and directional among high-value developer practitioners",
+      "evidence": "956-upvote complaint thread in r/ClaudeCode with second-highest comment (147 upvotes) documenting a Max plan cancellation for open-source alternatives. r/LocalLLaMA Pi + Qwen3.6 threads with multiple commenters explicitly stating canceled Claude subscriptions. r/BetterOffline 'myths and truths' thread citing 70% irrelevance rate. The common profile of the defector: technically capable developer with hardware capable of running 35B models, willing to invest 2–4 hours in harness configuration.",
+      "what_to_watch": "Track r/ClaudeCode subscription cancellation sentiment in week 2 after Opus 4.7. If the same complaint thread structure appears again with similar upvote counts, the attrition signal is durable. Watch for Anthropic to ship a model update or rollback—any announcement in that direction would confirm the regression reports are internally validated."
+    },
+    {
+      "pattern": "Anthropic's vertical integration into regulated industries compresses the niche AI startup market in finance",
+      "evidence": "Ten Anthropic finance agents announced May 6, covering pitchbooks, KYC, month-end close, earnings review, and general ledger reconciliation. Reuters confirms financial services is Anthropic's second-largest market. r/ClaudeAI community (61-upvote comment): niche startups in summarization, analysis, and reporting are directly at risk from Anthropic's vertical integration. r/Accounting top comment names the real blockers: legacy ERPs, manual override conventions, and compliance sign-off chains.",
+      "what_to_watch": "Whether Anthropic's finance agents are adopted by large institutions that already have Anthropic enterprise contracts (Goldman, Citi, AIG), or whether they displace niche fintech vendors. Track announcements from Rogo, Visible Alpha, and other AI-native finance research tools for competitive response."
+    },
+    {
+      "pattern": "AI agent production failures cluster around three root causes—not model quality—and security teams are now building taxonomies",
+      "evidence": "r/cybersecurity 12-failure-modes taxonomy (May 7). r/AI_Agents 'why projects never reach production' thread (May 9). r/AgentsOfAI six-month audit post (May 6). r/artificial 'fail in ways nobody writes about' post (May 8). Cross-thread consensus: the root causes are (1) failed sandboxing, (2) excessive permissions, and (3) the 'allowed tool vs. justified action' distinction that sandboxing alone does not address.",
+      "what_to_watch": "Whether enterprise AI governance frameworks (NIST AI RMF, EU AI Act, Colorado SB 205) adopt the 'allowed tool vs. justified action' distinction as a compliance requirement. If they do, enterprises will need runtime authorization systems, not just tool restriction lists."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "r/ClaudeCode 'Something doesn't add up...' — 351 upvotes, May 5, 2026 (from AI Agents on Reddit dev.to roundup)",
+      "reason": "The dev.to roundup listed this thread as 351 upvotes from r/ClaudeCode on May 5, 2026, but no URL was provided and direct search did not surface the permalink. Content described as challenging an Anthropic billing or usage claim. Excluded from index without verified URL.",
+      "attempted_url": "https://www.reddit.com/r/ClaudeCode/"
+    },
+    {
+      "claim": "r/LocalLLaMA 'New rules 1 week check-in' — 122 upvotes, May 1, 2026 (from AI Agents on Reddit dev.to roundup)",
+      "reason": "Listed in dev.to roundup as 122-upvote r/LocalLLaMA thread from May 1. Likely a mod announcement about subreddit rule changes for open-source content. No URL provided; direct search returned the March 2026 LocalLLaMA 2026 meta thread but not this specific post. Excluded without verified URL.",
+      "attempted_url": "https://www.reddit.com/r/LocalLLaMA/"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "r/AgentsOfAI — appeared this week with a signal-rich audit post that r/AI_Agents did not surface; worth monitoring weekly for practitioner post-mortems",
+      "r/Accounting — produced the sharpest practitioner skepticism on Anthropic's finance agents this week; highly relevant for enterprise financial services AI evaluation",
+      "r/FinancialCareers — surfaced the job-displacement discussion around Anthropic's finance agents; useful for gauging regulated-industry reaction velocity"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Claude Code quality regression tracking — the 956-upvote thread and 'What is happening with 4.7?' thread warrant a dedicated subsection for the coming weeks; if Anthropic ships a model update, the community reaction will be high-signal",
+      "Harness architecture comparison (Pi vs. OpenCode vs. Cline vs. Forgecode) — three threads converged on harness as the key variable; a dedicated tracking category for harness-level benchmarks would surface actionable developer guidance",
+      "AI agent authorization and runtime control (allowed tool vs. justified action) — the cybersecurity taxonomy thread introduced a concept that is new to the enterprise AI conversation and has direct compliance implications"
+    ],
+    "topics_to_drop": [
+      "General 'AI bubble' opinion threads without novel evidence — the r/BetterOffline debate thread is worth tracking for community sentiment, but generic AI-skeptic posts without new data points generate noise"
+    ],
+    "notes": "This week's dominant theme is reliability and trust: Claude Code regression complaints, Anthropic SpaceX deal that didn't address the binding constraint (weekly caps), and finance agents that practitioners immediately identified as inadequate for real-world complexity. The contrast with last week's themes (pricing events and agent authorization failures) is that this week is about execution credibility—whether the tools that enterprises are being asked to pay more for are actually improving. The harness-beats-model signal from r/LocalLLaMA is the most strategically underappreciated finding: it implies that enterprise AI tool evaluation frameworks should score harness architecture, observability, and authorization design as heavily as raw model benchmark performance."
+  }
+}

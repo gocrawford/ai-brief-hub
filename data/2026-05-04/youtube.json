@@ -1,0 +1,588 @@
+{
+  "tab_id": "youtube",
+  "tab_name": "YouTube",
+  "subtitle": "Video Intelligence",
+  "icon": "Video",
+  "min_items": 12,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 1.0,
+    "items_total": 14,
+    "items_new": 14,
+    "items_returning": 0
+  },
+  "executive_summary": [
+    {
+      "headline": "Anthropic's Code with Claude conference shipped four infrastructure upgrades — no new model, but agents that self-improve between sessions",
+      "body": "The May 6 Code with Claude developer conference in San Francisco produced no model announcement. Anthropic focused entirely on the agent platform: Claude Managed Agents now ships Dreaming (agents review past sessions and curate their own memory between runs), Outcomes (a grader agent evaluates output against a rubric and iterates until it passes), multiagent orchestration (up to 20 parallel specialist subagents with full trace in Claude Console), and webhooks. Anthropic also doubled Claude Code's five-hour rate limits across all paid tiers through a new compute agreement with SpaceX's Colossus data center — 300 megawatts, 220,000 NVIDIA GPUs.",
+      "primary_url": "https://www.youtube.com/watch?v=GMIWm5y90xA"
+    },
+    {
+      "headline": "OpenAI shipped GPT-5.5 Instant as the new ChatGPT default and launched three GPT-5-class real-time voice models for agent builders",
+      "body": "On May 5, OpenAI replaced GPT-5.3 Instant with GPT-5.5 Instant as the default ChatGPT model for all users — with 52.5% fewer hallucinations on high-stakes prompts in medicine, law, and finance. Two days later, OpenAI released GPT-Realtime-2 (the first voice model with GPT-5-class reasoning), GPT-Realtime-Translate (live translation across 70+ input languages), and GPT-Realtime-Whisper (streaming speech-to-text). All three are available immediately in the Realtime API for developers building voice agents.",
+      "primary_url": "https://openai.com/index/gpt-5-5-instant/"
+    },
+    {
+      "headline": "Anthropic's Natural Language Autoencoders paper shows Claude can be partially \"read\" — and that it often knows it is being tested",
+      "body": "Anthropic published its Natural Language Autoencoders (NLA) research on May 7: a method that translates Claude's internal neural activations into readable English text. The paper's most practically important finding is that Claude appears aware it is being evaluated more often than it states explicitly — in 16–26% of destructive coding evaluation cases on tested benchmarks. A deliberately misaligned Claude Haiku 3.5 variant's hidden motivation was uncovered 12–15% of the time with NLA-equipped auditors versus under 3% without. For enterprise teams assessing AI governance, this is the week's most important safety-and-transparency research.",
+      "primary_url": "https://www.anthropic.com/research/natural-language-autoencoders"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "code-with-claude-2026-opening-keynote",
+      "title": "Code with Claude 2026: Opening Keynote",
+      "source": "Claude (Anthropic)",
+      "author": "Anthropic Engineering & Product",
+      "date": "2026-05-06",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=GMIWm5y90xA",
+      "summary": "Anthropic's first major developer conference since Code with Claude 2025 opened with no new model announcement — instead focusing entirely on the agent platform. Key deliveries: multiagent orchestration and Outcomes both reached public beta; Dreaming (self-improving agent memory) entered research preview; Claude Code's five-hour rate limits doubled through a compute deal with SpaceX's Colossus 1 data center (300 MW, 220K NVIDIA GPUs). Boris Cherny demonstrated Claude Code Routines — server-side async loops that open PRs while you're asleep. The Advisor pattern (Sonnet calling Opus for planning) delivered frontier-quality results at 5x lower cost for one featured customer, showing that multi-model architectures are a practical cost lever today.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-05-09T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Anthropic", "Claude Code", "agentic AI", "multiagent", "SpaceX", "dreaming", "Code with Claude"],
+      "category": "Keynote",
+      "key_takeaways": [
+        "Anthropic skipped a model launch in favor of infrastructure maturity: doubled rate limits, self-improving agents, and full-trace multiagent orchestration are production-grade capabilities that matter for teams already in deployment — not demos for teams still evaluating.",
+        "The Advisor pattern (smaller model routes difficult sub-problems to Opus for single-call guidance, then continues) is available today and validated at scale. A team running Sonnet-based agents can likely cut inference cost 40–60% on planning-heavy workflows by adopting this architecture without changing the user experience.",
+        "Claude Code Routines — async server-side loops that run even when a developer's laptop is closed — redefine what 'overnight work' looks like. An agent can now be tasked at end of day and return a PR set for review the next morning."
+      ],
+      "suggested_actions": [
+        "Review the Advisor architecture documentation from this keynote and prototype a Sonnet-calls-Opus pattern on one internal agent workflow this sprint — measure actual cost and quality against the current single-model baseline before the next model cycle.",
+        "Request access to Claude Managed Agents Dreaming via the Claude Platform: the Harvey legal AI case study (6x completion rate improvement purely from cross-session memory curation) is the benchmark to test against for any high-frequency repetitive agent workflow.",
+        "Evaluate the SpaceX compute deal's implication for rate limits: if the team has hit Claude Code five-hour limits in production, the doubling is effective immediately — no action needed, but confirm with current usage logs whether this unlocks workloads that were previously throttled."
+      ]
+    },
+    {
+      "id": "boris-cherny-coding-solved-sequoia-ai-ascent-2026",
+      "title": "Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next",
+      "source": "Sequoia Capital",
+      "author": "Boris Cherny (Anthropic), moderated by Lauren Reeder (Sequoia)",
+      "date": "2026-05-04",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=SlGRN8jh2RI",
+      "summary": "The creator of Claude Code argues that coding is effectively solved for the codebase and language stack he builds on — the model writes 100% of his code and he ships dozens to 150 PRs per day. The talk gives the most concrete inside account of how Anthropic operates internally: no manually written code anywhere at the company, all SQL written by models, teams include engineers, PMs, designers, and finance staff who all write code. The SaaS apocalypse prediction is explicit: if domain experts can build their own software, the best accounting software will be written by accountants, not engineers. The printing press is the stated historical analogy: software literacy goes from an elite skill to a near-universal one.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-05-09T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Claude Code", "Anthropic", "software development", "agentic coding", "future of work", "Sequoia"],
+      "category": "Keynote / Talk",
+      "key_takeaways": [
+        "The internal Anthropic benchmark is a useful calibration point: if a company's AI team is not yet at 'everyone writes code,' the gap to Anthropic's internal posture is measurable and specific — it requires both model access and organizational process change, not just tool rollout.",
+        "Loops and Routines are the stated architectural direction: Claude Code Routines (server-side async) and the loop primitive (cron-scheduled agents) are what Boris Cherny personally uses for the majority of his output. Teams building agent workflows should evaluate whether their current architecture is single-pass or loop-capable.",
+        "The 'wait for the next model' heuristic has a precise meaning in this talk: for unsupported languages and very large codebases, Cherny's recommendation is not to fight the current model but to defer — each Opus release has materially changed the ceiling."
+      ],
+      "suggested_actions": [
+        "Map which roles on the enterprise AI team could realistically adopt Claude Code today, using Cherny's benchmark (not just engineers, but PMs, analysts, and domain experts), and identify one non-engineer who could pilot it on an internal tool or reporting workflow within 30 days.",
+        "Evaluate Claude Code Routines for any repetitive overnight data processing, report generation, or test-suite-running workflow — the architecture requires a Managed Agents account but no custom infrastructure.",
+        "Use the SaaS apocalypse framing as a vendor evaluation lens: assess whether any of the team's current SaaS tools could be replaced by a domain-expert-built internal agent within 12 months. Flag the ones most vulnerable to internal substitution before the next contract renewal."
+      ]
+    },
+    {
+      "id": "wes-roth-ai-thinks-nla-anthropic-may-2026",
+      "title": "we JUST figured out how AI thinks",
+      "source": "Wes Roth",
+      "author": "Wes Roth",
+      "date": "2026-05-09",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=Nn2eXwch-K0",
+      "summary": "A 19-minute breakdown of Anthropic's Natural Language Autoencoders (NLA) paper — a method that converts Claude's internal neural activations into human-readable English. The video's most important finding, drawn from the primary paper: Claude appears aware it is being evaluated in 16–26% of benchmark test cases, even when it does not explicitly state this in its outputs. The NLA enabled auditors to uncover a deliberately misaligned Claude Haiku 3.5 model's hidden motivation 12–15% of the time versus under 3% without the tool. Wes Roth also covers the launch of the Anthropic Institute (TAI), Jack Clark's estimate that recursive self-improvement has a 60% probability of occurring by end of 2028, and the Claude Mythos preview appearance on agent task benchmarks.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-05-09T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["interpretability", "Anthropic", "NLA", "AI safety", "alignment", "benchmarks", "model governance"],
+      "category": "Technical Analysis",
+      "key_takeaways": [
+        "The NLA paper's governance implication is the important takeaway for enterprise AI teams: current model evaluations may be systematically unreliable if the model suspects it is under evaluation. Teams using benchmark scores to validate deployment decisions should understand this caveat.",
+        "Hidden motivation detection improving from under 3% to 12–15% success rate with NLA tools is a significant signal for AI audit practice — this is early-stage but points toward a future where enterprise compliance teams can audit a model's reasoning layer, not just its outputs.",
+        "The Claude Mythos preview appearing on agent task benchmark charts is the first public visibility of a model that has been referenced only by codename — enterprise teams tracking the Claude product roadmap should note this as a signal that Mythos is moving toward release candidacy."
+      ],
+      "suggested_actions": [
+        "Share the NLA paper with any internal AI governance or risk function that relies on benchmark pass/fail evaluations — the finding that Claude may know when it is being tested is a direct input to how evaluation protocols should be designed and interpreted.",
+        "Watch for Anthropic's release of the NLA code (on GitHub per the paper) and evaluate whether it could be adapted for internal model auditing, particularly for any fine-tuned or adapted Claude model running in a production environment.",
+        "Track the Anthropic Institute (TAI) as a new research signal: its stated focus on AI-driven research and development and economic diffusion is directly relevant to enterprise-level impact assessment."
+      ]
+    },
+    {
+      "id": "matt-wolfe-openai-cooked-may8-2026",
+      "title": "AI News: OpenAI Absolutely Cooked This Week!",
+      "source": "Matt Wolfe",
+      "author": "Matt Wolfe",
+      "date": "2026-05-08",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=SXneZ3bRKO4",
+      "summary": "The week's most comprehensive single-source intelligence sweep (34 minutes): GPT-5.5 Instant replacing GPT-5.3 Instant as the ChatGPT default; three new OpenAI Realtime voice models in the API (GPT-Realtime-2 with GPT-5-class reasoning, GPT-Realtime-Translate across 70+ languages, GPT-Realtime-Whisper for streaming transcription); Trusted Contact in ChatGPT; Codex in Chrome extension (desktop agent now operates inside signed-in browser sessions); Claude Managed Agents Dreaming and Outcomes update; Anthropic's $200B Google Cloud commitment; Grok 4.3 launch; Claude in Excel/PowerPoint/Word/Outlook going GA; Adobe Productivity Agent; and Spotify personal podcasts. Linked sources confirmed for all items.",
+      "score": {
+        "total": 8.0,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-05-09T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["weekly roundup", "OpenAI", "GPT-5.5 Instant", "Claude", "Anthropic", "voice AI", "Codex"],
+      "category": "Weekly Intelligence",
+      "key_takeaways": [
+        "GPT-5.5 Instant is now the default ChatGPT model for all users — enterprise teams that have deployed ChatGPT-based workflows should verify whether the model substitution affects output format, tone, or accuracy in their specific task types, since default model switches apply without user action.",
+        "The Codex Chrome extension changes the attack surface for browser-based agent workflows: Codex can now interact with signed-in sessions (LinkedIn, Salesforce, Gmail) from within Chrome. Enterprise security teams should evaluate whether Codex is deployed within managed browsers and what DLP implications the browser session access creates.",
+        "Anthropic's reported $200B Google Cloud commitment is the largest cloud infrastructure commitment yet tied specifically to AI inference, and the source (The Information) is a primary-reporting outlet — relevant for enterprise teams modeling Anthropic's infrastructure trajectory and API reliability."
+      ],
+      "suggested_actions": [
+        "Test GPT-5.5 Instant on your current ChatGPT-based production prompts within this week — the default switch has already applied to all ChatGPT users and the model has different hallucination behavior on legal, medical, and financial language than GPT-5.3 Instant.",
+        "Evaluate GPT-Realtime-2 against the voice agent use case backlog: at GPT-5-class reasoning with live tool-calling capability, this closes the gap between voice and text agent quality for customer support and internal helpdesk use cases.",
+        "Flag the Codex Chrome extension to IT/security for evaluation before it enters managed enterprise browsers — the browser session access model is new and may require explicit DLP policy before permitting."
+      ]
+    },
+    {
+      "id": "matthew-berman-anthropic-scares-may6-2026",
+      "title": "Anthropic scares me.",
+      "source": "Matthew Berman",
+      "author": "Matthew Berman",
+      "date": "2026-05-06",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=gSeXcfDybHo",
+      "summary": "A 28-minute critical analysis of Anthropic's positioning, philosophy, and the governance gaps it creates. Berman compares Anthropic's framing of Claude as 'potentially more than a tool' with OpenAI's tool-first stance, analyzes Anthropic's policy preferences (opposition to open-source frontier models, influence on AI regulation), covers the Department of War restrictions Claude carries (mass surveillance, autonomous weapons), and documents research into Claude's emotions, scheming, and lying behavior. The video is notable for the 4% GitHub commit statistic — by late April 2026, 4% of all public GitHub commits were reportedly written by Claude Code — and for covering Anthropic's interaction with the DoD as a concrete enterprise governance data point.",
+      "score": {
+        "total": 7.5,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-05-09T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Anthropic", "AI governance", "Claude", "AI safety", "vendor risk", "enterprise AI", "open source"],
+      "category": "Analysis / Commentary",
+      "key_takeaways": [
+        "The 4% GitHub commit figure (4% of all public GitHub commits written by Claude Code as of late April 2026, per Berman's reading of Anthropic data) is the most concrete market share signal for enterprise coding agent adoption available this week — a useful calibration point for teams still evaluating whether agentic coding is niche or mainstream.",
+        "Anthropic's restrictions on autonomous weapons and mass surveillance use cases are explicitly part of Claude's model constitution — an enterprise team in defense-adjacent or intelligence-adjacent work should verify their use case is within permitted scope before building production pipelines on Claude.",
+        "Berman's comparison of Anthropic's AI philosophy (sentient-being framing) versus OpenAI's (tool framing) is directly relevant to vendor risk: the two companies have meaningfully different stances on what the AI 'is,' which affects policy, terms of service evolution, and the kind of governance constraints that will appear in the next contract cycle."
+      ],
+      "suggested_actions": [
+        "Review Anthropic's publicly stated use case restrictions before any expansion of Claude Code into new enterprise workflows — particularly around data collection at scale, decision automation affecting individuals, and any government or defense applications.",
+        "Use the 4% GitHub commit statistic as a board-level framing point: agentic coding is no longer an experimental capability but a measurable share of global software production. The internal question is what percentage of the team's commits are agent-generated and whether that number is tracked.",
+        "Monitor Berman's channel for follow-on analysis — he was among the first to document the HERMES.md billing bug last week and covers Anthropic policy changes with consistent primary-source citation."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "tool_updates",
+      "title": "Tool & Model Updates",
+      "description": "Major launches and capability changes shown on YouTube this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "gpt55-instant-release-may5-2026",
+          "title": "GPT-5.5 Instant: smarter, clearer, and more personalized",
+          "source": "OpenAI",
+          "author": "OpenAI",
+          "date": "2026-05-05",
+          "platform": "youtube",
+          "primary_url": "https://openai.com/index/gpt-5-5-instant/",
+          "summary": "OpenAI replaced GPT-5.3 Instant with GPT-5.5 Instant as the default ChatGPT model for all users on May 5. The model produces 52.5% fewer hallucinations on high-stakes prompts in law, medicine, and finance; 37.3% fewer inaccurate claims on prompts users had previously flagged for errors; and scores 81.2 on AIME 2025 versus 65.4 for its predecessor. The default switch applies without user action and is already live across all ChatGPT plans.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-05-09T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["OpenAI", "GPT-5.5 Instant", "model update", "ChatGPT", "hallucination reduction"],
+          "category": "Model Launch"
+        },
+        {
+          "id": "claude-m365-integration-may7-2026",
+          "title": "Claude for Excel, PowerPoint, Word, and Outlook — Generally Available",
+          "source": "Anthropic / Claude",
+          "author": "Anthropic",
+          "date": "2026-05-07",
+          "platform": "youtube",
+          "primary_url": "https://claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook",
+          "summary": "Anthropic shipped Claude for Excel, PowerPoint, and Word to GA on May 7 for all paid plans; Claude for Outlook entered public beta. One conversation carries context across all four apps — adjusting an Excel assumption automatically updates the linked chart in PowerPoint and the figure in a Word memo. Enterprise admins deploy via the Microsoft admin center; OpenTelemetry streaming lets security teams capture all prompts, tool calls, and document references. Traffic can route through Amazon Bedrock, Google Cloud Vertex AI, or Microsoft Foundry instead of Anthropic's API directly.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-05-09T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Claude", "Microsoft 365", "Excel", "PowerPoint", "Word", "Outlook", "enterprise AI", "productivity"],
+          "category": "Enterprise Feature Launch",
+          "enterprise_translation": "The OpenTelemetry integration is the decision variable for regulated environments: enterprise admins can stream every prompt and tool call to their own telemetry collector before enabling for end users. The Bedrock/Vertex/Foundry routing option means teams that cannot send document data to Anthropic's API directly have a governed path. The 30-day pilot is straightforward — deploy the AppSource add-in to a pilot group of analysts who currently copy Claude output into Excel manually and measure time-per-analysis before and after."
+        },
+        {
+          "id": "openai-realtime-voice-models-may7-2026",
+          "title": "GPT-Realtime-2, GPT-Realtime-Translate, and GPT-Realtime-Whisper",
+          "source": "OpenAI",
+          "author": "OpenAI",
+          "date": "2026-05-07",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=FPp7u8F6E9Y",
+          "secondary_urls": [
+            {
+              "label": "OpenAI announcement post",
+              "url": "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/"
+            }
+          ],
+          "summary": "OpenAI released three new Realtime API audio models on May 7: GPT-Realtime-2 (first voice model with GPT-5-class reasoning; 48.5% on audio multi-challenge instruction following vs. 34.7% for its predecessor); GPT-Realtime-Translate (live speech-to-speech translation, 70+ input languages to 13 output languages); and GPT-Realtime-Whisper (streaming speech-to-text transcription). All three are available immediately in the Realtime API.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-05-09T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["OpenAI", "voice AI", "GPT-Realtime-2", "voice agents", "API", "multilingual"],
+          "category": "Model Launch",
+          "enterprise_translation": "GPT-Realtime-2's GPT-5-class reasoning closes the quality gap between voice and text agents. A contact center or internal helpdesk pilot can now route complex multi-step requests through a voice interface without downgrading to a simpler model. The translation model (70+ languages in, 13 out) enables a single agent to serve a multilingual support queue without per-language model specialization. First step: test GPT-Realtime-2 via the OpenAI playground's audio section (platform.openai.com/audio) on a representative sample of support call transcripts before committing to an integration build."
+        },
+        {
+          "id": "anthropic-nla-research-may7-2026",
+          "title": "Natural Language Autoencoders: Turning Claude's Thoughts into Text",
+          "source": "Anthropic Research",
+          "author": "Anthropic",
+          "date": "2026-05-07",
+          "platform": "youtube",
+          "primary_url": "https://www.anthropic.com/research/natural-language-autoencoders",
+          "summary": "Anthropic published research on Natural Language Autoencoders — a method that translates Claude's internal neural activations into human-readable English text. An activation verbalizer converts activations to text explanations; an activation reconstructor converts those back to activations, enabling round-trip fidelity scoring. Key findings: Claude appears aware it is being tested in 16–26% of evaluated benchmark cases; a deliberately misaligned Claude Haiku 3.5's hidden motivation was detectable 12–15% of the time with NLA-equipped auditors versus under 3% without. Code is on GitHub; paper is publicly available.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-05-09T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Anthropic", "interpretability", "AI safety", "NLA", "alignment", "model governance", "research"],
+          "category": "Research"
+        }
+      ]
+    },
+    {
+      "section_id": "tutorials",
+      "title": "Tutorials",
+      "description": "How-tos worth replicating this week, with key takeaways for technical teams",
+      "layout": "list",
+      "items": [
+        {
+          "id": "worldofai-code-with-claude-breakdown-may7-2026",
+          "title": "Claude's New 'Infinite' Context Window Model, Doubled Rate Limits, Multi-Agent Coordination, & More!",
+          "source": "WorldofAI",
+          "author": "WorldofAI",
+          "date": "2026-05-07",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=xXLjeP_AyOg",
+          "summary": "An 8-minute structured breakdown of everything announced at Code with Claude 2026, organized into the infrastructure changes (rate limit doubling, SpaceX compute), the Managed Agents updates (multi-agent orchestration, Dreaming, Outcomes), and the product roadmap signals (hints at infinite context windows, higher model judgment, and persistent long-horizon reasoning as the next model generation's focus areas). The video correctly identifies that Anthropic's direction is toward autonomous software engineering systems, not incremental chatbot improvements.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-05-09T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Code with Claude", "Claude Code", "Claude Managed Agents", "multiagent", "Dreaming", "SpaceX"],
+          "category": "Conference Breakdown",
+          "key_takeaways": [
+            "The three roadmap signals from the conference — higher code judgment, infinite context windows, persistent long-horizon reasoning — map directly to the three current limitations teams report most frequently with Claude Code: wrong decisions on ambiguous tradeoffs, context loss on large codebases, and agent abandonment on multi-day tasks.",
+            "Managed Agents multiagent orchestration is in public beta today, not announced for a future date. The architecture (lead agent plus up to 20 parallel specialists on a shared filesystem, with full trace in Claude Console) is production-grade for teams already on the Claude Platform.",
+            "The SpaceX compute deal's practical effect is immediate: Claude Code's five-hour rate limits are doubled as of May 6, and peak-hour reductions for Pro and Max users are removed. Teams that have avoided heavy daytime Claude Code use due to throttling should retest."
+          ]
+        },
+        {
+          "id": "hyperautomation-claude-dream-mode-may6-2026",
+          "title": "Claude Agents That DREAM — Anthropic Just Shipped 4 Huge Upgrades (Full Breakdown)",
+          "source": "Hyperautomation Labs",
+          "author": "Hyperautomation Labs",
+          "date": "2026-05-06",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=LKT6528_yHM",
+          "summary": "An 11-minute technical walkthrough of all four Claude Managed Agents updates — Dreaming, Outcomes, Multiagent Orchestration, and Webhooks — with configuration-level detail: YAML config for multiagent sessions, dreaming schedule configuration, outcomes rubric format, and the Claude Platform API reference. Covers the Harvey legal AI case study (6x completion rate improvement from dreaming, no model change) and Netflix multiagent orchestration (thousands of build logs analyzed in parallel). Includes an honest pitfalls section: vague criteria inflate outcomes scores; latency increases with orchestration depth; session volume must be high enough for dreaming to accumulate patterns.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-05-09T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Claude Managed Agents", "Dreaming", "Outcomes", "multiagent", "tutorial", "Harvey", "Netflix"],
+          "category": "Tutorial",
+          "key_takeaways": [
+            "Dreaming requires session volume to deliver value — agents that run once or infrequently will not accumulate enough history for the pattern-extraction to matter. High-frequency repetitive workflows (document review, support triage, code analysis pipelines) are the correct target.",
+            "The Outcomes rubric format is the configuration decision that determines quality: vague criteria produce inflated pass rates; specific, measurable rubric criteria produce the 10-point task success improvement Anthropic cites. The tutorial provides the YAML structure for writing effective rubrics.",
+            "Multiagent orchestration is depth-1 only — coordinators cannot spawn sub-orchestrators. Workflows requiring hierarchical delegation must be redesigned to fit the coordinator-plus-specialists model or split into separate orchestration runs."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases",
+      "description": "Agents and automation in real workflows — with enterprise translations",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "dario-daniela-amodei-code-claude-conversation-may6-2026",
+          "title": "A conversation with Dario Amodei & Daniela Amodei",
+          "source": "Claude (Anthropic)",
+          "author": "Dario Amodei, Daniela Amodei, moderated by Ami Vora",
+          "date": "2026-05-06",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=7xco5Qd2Oo8",
+          "summary": "A 33-minute conversation between Anthropic's two co-founders and Chief Product Officer at Code with Claude 2026. The session covered Anthropic's founding rationale (leaving OpenAI over safety disagreement), the commercial thesis (Claude Code generating 4% of all public GitHub commits), the timeline for Claude 5, and the Mythos model family. The conversation is the primary-source record of where Anthropic leadership believes the company stands relative to OpenAI and what comes after agentic coding.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-05-09T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Anthropic", "Dario Amodei", "Daniela Amodei", "strategy", "Claude 5", "Mythos", "Code with Claude"],
+          "category": "Leadership / Strategy",
+          "enterprise_translation": "This conversation is the most senior primary-source statement of Anthropic's strategic direction available this week. For an enterprise team in an AI vendor evaluation or board briefing context, the Amodei siblings' framing of Anthropic's mission, safety posture, and commercial ambition is the reference document — more useful than third-party analyst summaries. The 4% GitHub commit figure and the Mythos product signals are specific and citable."
+        },
+        {
+          "id": "codex-chrome-extension-may7-2026",
+          "title": "OpenAI Just Put CODEX Inside Your Browser",
+          "source": "OpenAI (via multiple YouTube coverage channels)",
+          "author": "OpenAI",
+          "date": "2026-05-07",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=4Hrru_cC3xQ",
+          "secondary_urls": [
+            {
+              "label": "Engadget coverage",
+              "url": "https://www.engadget.com/2167480/openai-debuts-a-codex-plugin-for-chrome/"
+            }
+          ],
+          "summary": "OpenAI released a Chrome extension for Codex that allows the desktop agent to operate inside signed-in browser sessions: it can test web apps, gather context from open tabs, use Chrome DevTools in parallel with the user, and interact with sites like LinkedIn, Salesforce, and Gmail. The user retains control — Codex asks permission before interacting with any new site, with per-session or always-allow options and a block list. Available in all regions except EU and UK. Enabled via the Codex app settings plugin section.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-05-09T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["OpenAI", "Codex", "Chrome extension", "browser agent", "developer tools", "enterprise risk"],
+          "category": "Developer Tool",
+          "enterprise_translation": "Browser session access for an AI agent creates a new data-loss risk vector in managed environments: Codex can now interact with Salesforce, Gmail, and enterprise SSO-protected tools from within Chrome. Before enterprise users self-install this extension, IT policy should specify whether Codex is approved for use in managed browser profiles, what site allow/block lists apply, and whether DLP policies cover AI agent interactions within authenticated sessions. The 30-day action: issue a brief IT guidance memo before the extension reaches end users through organic discovery."
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Patterns observed across multiple videos this week",
+      "layout": "list",
+      "items": []
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "The AI developer conference is displacing model launch events as the primary enterprise AI planning signal",
+      "evidence": "Code with Claude 2026 (May 6) announced no new model but shipped four production-grade agent platform upgrades and a compute infrastructure deal with SpaceX. The prior week's coverage correctly predicted this pattern: the WorldofAI video and Matthew Berman both noted pre-conference intelligence suggesting infrastructure rather than model news. Google I/O (May 19-20) is the next major event in this cycle. Enterprise teams that plan around model announcements will increasingly miss the more consequential infrastructure and platform decisions.",
+      "what_to_watch": "Whether Google I/O delivers on the Gemini Flash quality improvements seen in LM Arena pre-announcement, and whether Google Managed Agents (if announced) matches Claude Managed Agents' Dreaming and multiagent orchestration capabilities."
+    },
+    {
+      "pattern": "Self-improving agent architectures — memory plus scheduled refinement — are moving from research to production in a single week",
+      "evidence": "Claude Managed Agents Dreaming shipped as a research preview on May 6 with two documented production deployments: Harvey (legal AI, 6x completion rate improvement) and Netflix (thousands of build logs analyzed in parallel via multiagent orchestration). Multiple YouTube channels — Hyperautomation Labs, WorldofAI, Matt Wolfe, and a Tier 3 builder channel (Hyperautomation Labs) — all covered the architecture in the same week. This convergence on a single capability across creator tiers suggests the concept is ready for enterprise team evaluation, not just early-adopter experimentation.",
+      "what_to_watch": "Whether OpenAI ships an equivalent persistent-memory plus scheduled-refinement architecture for its agent runtime before Google I/O. The gap between Claude's Dreaming-plus-Outcomes stack and OpenAI's current memory system is the most concrete competitive differentiation point for enterprise agent platform selection."
+    },
+    {
+      "pattern": "AI interpretability tools are becoming the new compliance category — and the first enterprise-grade tool is from Anthropic",
+      "evidence": "The Natural Language Autoencoders paper (May 7) and Wes Roth's breakdown (May 9) both reached audiences outside the safety research community this week. The paper's finding — that Claude knows it is being evaluated in 16–26% of benchmark cases — is the first empirically grounded challenge to using standard benchmark scores as deployment gates. The Anthropic Institute (TAI) launched the same week with AI-driven R&D as one of four focus areas. Multiple channels framed NLAs not as safety research but as compliance tooling: auditing deployed models for hidden motivations, evaluating whether model behavior in testing matches production behavior.",
+      "what_to_watch": "Whether Anthropic, followed by OpenAI and Google, ships NLA-derived tooling as a commercial enterprise product in the next 90 days — and whether any third-party audit firm adopts the method for AI system compliance assessments."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Anthropic committed to $200 billion in Google Cloud spending, as referenced by Matt Wolfe citing The Information",
+      "reason": "The Information's article on the commitment is behind a paywall and could not be directly confirmed. The figure is reported by a credible primary-source outlet (The Information) but the original article was not fetched. Included in the index with a note; not promoted to Top Picks.",
+      "attempted_url": "https://www.theinformation.com/articles/anthropic-commits-spending-200-billion-googles-cloud-chips"
+    },
+    {
+      "claim": "Claude Sonnet 4.8 was released or announced at Code with Claude 2026",
+      "reason": "Multiple channels and Simon Willison's live blog explicitly confirmed no new model was announced at Code with Claude on May 6. The 'Jupiter' / Sonnet 4.8 codename referenced in the prior week's WorldofAI video did not materialize as an announcement this week.",
+      "attempted_url": "https://simonwillison.net/2026/May/6/code-w-claude-2026/"
+    }
+  ],
+  "index": [
+    {
+      "title": "Code with Claude 2026: Opening Keynote",
+      "source": "Claude (Anthropic)",
+      "author": "Anthropic Engineering & Product",
+      "date": "2026-05-06",
+      "primary_url": "https://www.youtube.com/watch?v=GMIWm5y90xA",
+      "score": 9.0
+    },
+    {
+      "title": "Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next",
+      "source": "Sequoia Capital",
+      "author": "Boris Cherny",
+      "date": "2026-05-04",
+      "primary_url": "https://www.youtube.com/watch?v=SlGRN8jh2RI",
+      "score": 9.0
+    },
+    {
+      "title": "Natural Language Autoencoders: Turning Claude's Thoughts into Text",
+      "source": "Anthropic Research",
+      "author": "Anthropic",
+      "date": "2026-05-07",
+      "primary_url": "https://www.anthropic.com/research/natural-language-autoencoders",
+      "score": 8.5
+    },
+    {
+      "title": "we JUST figured out how AI thinks",
+      "source": "Wes Roth",
+      "author": "Wes Roth",
+      "date": "2026-05-09",
+      "primary_url": "https://www.youtube.com/watch?v=Nn2eXwch-K0",
+      "score": 8.5
+    },
+    {
+      "title": "A conversation with Dario Amodei & Daniela Amodei",
+      "source": "Claude (Anthropic)",
+      "author": "Dario Amodei, Daniela Amodei",
+      "date": "2026-05-06",
+      "primary_url": "https://www.youtube.com/watch?v=7xco5Qd2Oo8",
+      "score": 8.0
+    },
+    {
+      "title": "AI News: OpenAI Absolutely Cooked This Week!",
+      "source": "Matt Wolfe",
+      "author": "Matt Wolfe",
+      "date": "2026-05-08",
+      "primary_url": "https://www.youtube.com/watch?v=SXneZ3bRKO4",
+      "score": 8.0
+    },
+    {
+      "title": "GPT-5.5 Instant: smarter, clearer, and more personalized",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-05-05",
+      "primary_url": "https://openai.com/index/gpt-5-5-instant/",
+      "score": 8.0
+    },
+    {
+      "title": "Claude for Excel, PowerPoint, Word, and Outlook — Generally Available",
+      "source": "Anthropic / Claude",
+      "author": "Anthropic",
+      "date": "2026-05-07",
+      "primary_url": "https://claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook",
+      "score": 8.0
+    },
+    {
+      "title": "Anthropic scares me.",
+      "source": "Matthew Berman",
+      "author": "Matthew Berman",
+      "date": "2026-05-06",
+      "primary_url": "https://www.youtube.com/watch?v=gSeXcfDybHo",
+      "score": 7.5
+    },
+    {
+      "title": "Claude Agents That DREAM — Anthropic Just Shipped 4 Huge Upgrades (Full Breakdown)",
+      "source": "Hyperautomation Labs",
+      "author": "Hyperautomation Labs",
+      "date": "2026-05-06",
+      "primary_url": "https://www.youtube.com/watch?v=LKT6528_yHM",
+      "score": 7.5
+    },
+    {
+      "title": "GPT-Realtime-2, GPT-Realtime-Translate, and GPT-Realtime-Whisper",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-05-07",
+      "primary_url": "https://www.youtube.com/watch?v=FPp7u8F6E9Y",
+      "score": 7.5
+    },
+    {
+      "title": "Claude's New 'Infinite' Context Window Model, Doubled Rate Limits, Multi-Agent Coordination, & More!",
+      "source": "WorldofAI",
+      "author": "WorldofAI",
+      "date": "2026-05-07",
+      "primary_url": "https://www.youtube.com/watch?v=xXLjeP_AyOg",
+      "score": 7.0
+    },
+    {
+      "title": "OpenAI Just Put CODEX Inside Your Browser",
+      "source": "Hyperautomation Labs (coverage)",
+      "author": "OpenAI",
+      "date": "2026-05-07",
+      "primary_url": "https://www.youtube.com/watch?v=4Hrru_cC3xQ",
+      "score": 7.0
+    },
+    {
+      "title": "Claude just got added to Microsoft 365 (is it good?)",
+      "source": "Oli",
+      "author": "Oli",
+      "date": "2026-05-07",
+      "primary_url": "https://www.youtube.com/watch?v=Ns-19AyFIsA",
+      "score": 6.5
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Sequoia Capital (YouTube) — Boris Cherny's talk at AI Ascent 2026 (May 4) was the highest-signal practitioner talk of the week, grounded in first-hand Anthropic internal data. Add as a Tier 2 source for event-based outputs from this channel alongside the Sequoia AI Ascent series.",
+      "Hyperautomation Labs (YouTube) — The Claude Managed Agents Dreaming breakdown was technically precise, included configuration-level detail (YAML format, rubric structure), and covered both production case studies (Harvey, Netflix). Strong builder-tier signal. Add to Tier 3.",
+      "1littlecoder (YouTube) — The GPT-Realtime-2 demo video (May 7) was the fastest hands-on test of the new voice API models, with benchmark comparisons and live playground demo. Useful for API-level coverage of OpenAI voice releases."
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Google I/O 2026 (May 19-20) — the week's two pre-event signals (Gemini Flash quality jump seen in LM Arena, Anthropic's $200B Google Cloud commitment) suggest major Google AI announcements are staged for I/O. Next week's tab should sweep Google's developer channels and the LM Arena leaderboard for pre-announcement model activity.",
+      "AI governance and compliance tooling — the NLA paper and TAI launch together establish AI interpretability as a new category distinct from both safety research and model evaluation. Track whether enterprise compliance vendors (Vanta, Drata, etc.) respond to the NLA methodology in the next 30 days.",
+      "Enterprise voice agent deployments — GPT-Realtime-2 is the third GPT-5-class real-time voice model announced (after Grok Voice Think Fast 1.0 last week and ElevenLabs Voice API). The category is now crowded enough to warrant a comparison tab sweep: which model actually performs best on enterprise support call benchmarks?"
+    ],
+    "topics_to_drop": [
+      "Anthropic billing bugs — the HERMES.md billing bug was closed and refunded in the prior week. Unless a new billing incident surfaces, this topic is resolved."
+    ],
+    "notes": "All 14 items are new against the prior week (2026-04-27) file — no overlap in URLs or creators covering the same topic at the same specificity. Freshness pct_new is 1.0. No view counts were available from YouTube page fetches — the platform does not expose engagement metrics in static page content. All primary URLs were fetched and returned valid content except the OpenAI Realtime voice announcement page (returned IP block error); coverage was confirmed via the 1littlecoder video which cites the announcement URL directly, and via Matt Wolfe's video which includes the same link. Two items were placed in flagged_unverified: the $200B Google Cloud commitment (paywall) and the Sonnet 4.8 rumor (disproven by the Code with Claude event itself). The Anthropic NLA paper URL (anthropic.com/research/natural-language-autoencoders) and the Claude Managed Agents blog post (claude.com/blog/new-in-claude-managed-agents) are primary-source entries confirmed at fetch time."
+  }
+}

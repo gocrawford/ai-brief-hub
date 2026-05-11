@@ -1,0 +1,1068 @@
+{
+  "tab_id": "launches",
+  "tab_name": "Launches",
+  "subtitle": "Launch Intelligence",
+  "icon": "Rocket",
+  "min_items": 20,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.96,
+    "items_total": 27,
+    "items_new": 26,
+    "items_returning": 1
+  },
+  "executive_summary": [
+    {
+      "headline": "Anthropic's Code with Claude conference centers on agent infrastructure, not a new model",
+      "body": "At its second annual Code with Claude developer event on May 6, Anthropic announced no new base model. Instead, it shipped three major platform additions to Claude Managed Agents: Dreaming (research preview) — a scheduled process that reviews past agent sessions, extracts cross-session patterns, and curates memories without modifying model weights; Outcomes (public beta) — rubric-driven self-evaluation using a separate grader agent; and Multiagent Orchestration (public beta) — a lead agent that delegates to parallel specialist agents. Early production results: Harvey saw ~6x task completion rate improvement with Dreaming; Wisedocs cut document review time 50% with Outcomes; Mercado Libre has 23,000 engineers on Claude Code targeting 90% autonomous coding by Q3. The conference's lead business announcement was an Anthropic/SpaceX compute deal giving Anthropic access to all of Colossus 1's 220,000 NVIDIA GPUs and 300 MW of new capacity within the month.",
+      "primary_url": "https://claude.com/blog/new-in-claude-managed-agents"
+    },
+    {
+      "headline": "Anthropic launches Claude for Microsoft 365 (GA) and a $1.5B PE-backed enterprise services firm",
+      "body": "Claude for Excel, Word, and PowerPoint reached general availability on May 7, with Claude for Outlook entering public beta for all paid plans. Admins can deploy via Microsoft AppSource; enterprise teams can stream telemetry to their own OpenTelemetry collectors and route model calls through existing LLM gateways (Bedrock, Vertex, Foundry). Separately, on May 4, Anthropic announced the formation of a new AI services firm backed by Blackstone, Hellman & Friedman, Goldman Sachs, General Atlantic, Apollo, and Sequoia, with CNBC reporting $1.5B in committed capital. The firm will embed Applied AI engineers directly within mid-sized enterprises across healthcare, manufacturing, financial services, retail, and real estate.",
+      "primary_url": "https://www.anthropic.com/news/enterprise-ai-services-company"
+    },
+    {
+      "headline": "OpenAI ships GPT-5.5 Instant as default ChatGPT model; ChatGPT Workspace Agents move to paid",
+      "body": "On May 5, OpenAI replaced GPT-5.3 Instant with GPT-5.5 Instant as the default ChatGPT model for all users. The new model reduces hallucinated claims by 52.5% on high-stakes prompts (medicine, law, finance) versus GPT-5.3 Instant and cuts inaccurate claims by 37.3% on flagged conversations. Available in the API as chat-latest. Separately, ChatGPT Workspace Agents — which allow enterprise teams to build, schedule, and share agents across ChatGPT and Slack — moved from free research preview to credit-based pricing for Business/Enterprise/Edu plans on May 6.",
+      "primary_url": "https://openai.com/index/gpt-5-5-instant/"
+    },
+    {
+      "headline": "Sierra raises $950M at $15B+ valuation; Anthropic financial services agents and Claude Opus 4.7 launch",
+      "body": "Sierra (Bret Taylor's enterprise customer experience AI platform) raised $950M led by Tiger Global and GV, pushing its post-money valuation above $15B. The platform handles mortgage refinancing, insurance claims, returns management, and nonprofit fundraising for more than 40% of the Fortune 50; ARR reached $150M in early February. Separately, Anthropic launched ten pre-built financial services agents built on Claude Opus 4.7 — which leads the Vals AI Finance Agent benchmark at 64.4% — on May 5, with connectors to FactSet, Moody's (600M+ company ratings), PitchBook, and eight new providers.",
+      "primary_url": "https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/"
+    },
+    {
+      "headline": "Product Hunt's week: Kilo Code v7 (#1) launches parallel agents for VS Code; Pay.sh enables agent-native API payments via Solana stablecoins",
+      "body": "Kilo Code v7 for VS Code — rebuilt on the OpenCode open-source core — topped Product Hunt's weekly leaderboard (May 4–10) with parallel subagent execution, built-in diff review, multi-model comparison across 500+ models, and cross-platform session continuity. Free and open source, SOC 2 Type I certified. Separately, Google Cloud and the Solana Foundation launched Pay.sh on May 5 — a gateway that lets AI agents discover, access, and pay for 75+ APIs (including Gemini, BigQuery, and Vertex AI) using Solana stablecoins per request, with no accounts or subscriptions required. Four lines of code connect an agent to a paid endpoint.",
+      "primary_url": "https://kilo.ai/landing/vs-code"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "anthropic-managed-agents-dreaming-may6",
+      "title": "Claude Managed Agents: Dreaming, Outcomes, Multiagent Orchestration",
+      "subtitle": "Self-improving agent memory, rubric-driven self-evaluation, and parallel specialist agents — all in one platform",
+      "source": "Anthropic",
+      "date": "2026-05-06",
+      "primary_url": "https://claude.com/blog/new-in-claude-managed-agents",
+      "secondary_urls": [
+        {
+          "label": "VentureBeat deep-dive",
+          "url": "https://venturebeat.com/technology/anthropic-introduces-dreaming-a-system-that-lets-ai-agents-learn-from-their-own-mistakes"
+        },
+        {
+          "label": "Anthropic Developer Platform changelog (May 6)",
+          "url": "https://releasebot.io/updates/anthropic"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-10T00:00:00Z",
+      "summary": "Anthropic shipped three additions to Claude Managed Agents at Code with Claude 2026: (1) Dreaming — a scheduled background process that reviews past agent sessions, extracts patterns, and writes plain-text playbooks and notes without modifying model weights; in Harvey's production deployment, task completion rates rose ~6x. (2) Outcomes — rubric-driven quality gates where a separate grader agent evaluates output and the working agent iterates until the rubric is met; improved file-generation task success by +8.4% (docx) and +10.1% (pptx) in internal benchmarks, and improved task success by up to 10 points over a standard prompting loop. (3) Multiagent Orchestration — a lead agent delegates to parallel specialists, each with its own model, prompt, tools, and context window; every step is traceable in the Claude Console. Dreaming is in research preview; Outcomes and Multiagent Orchestration are in public beta.",
+      "score": {
+        "total": 9.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Directly competes with LangGraph, CrewAI, and LangChain for AI agent orchestration, and with external evaluation frameworks (LangSmith, PromptFoo) for quality gates. The Dreaming capability — agents systematically reviewing their own histories to extract cross-session reusable knowledge — goes further than any comparable production feature currently available in competing platforms. The Outcomes grader-in-separate-context-window architecture is a direct design response to the conflation of execution and evaluation in single-agent loops. Microsoft's AutoGen and Google's Agent Development Kit are the nearest structural competitors but lack the integrated memory + dreaming lifecycle.",
+      "pricing": "Dreaming: research preview, access by application. Outcomes, Multiagent Orchestration: public beta, available to all developers on the Claude Platform under the managed-agents-2026-04-01 beta header. Managed Agents pricing is consumption-based on top of standard Claude API rates.",
+      "key_takeaways": [
+        "Dreaming does not retrain the model — it writes auditable plain-text playbooks that future sessions can read, making the entire improvement loop human-reviewable.",
+        "Outcomes moves quality evaluation out of the main agent context into a grader agent with a fresh context window, reducing evaluation bias from accumulated session state.",
+        "Multiagent Orchestration traces every delegation step in the Claude Console — critical for regulated teams that need full audit trails on AI-assisted work.",
+        "Harvey's ~6x completion rate and Wisedocs's 50% time reduction are customer-reported production figures, not lab benchmarks.",
+        "Teams can start with Managed Agents without rebuilding agent infrastructure — the platform handles memory, tool integration, credential vaults, and action handling."
+      ],
+      "tags": ["enterprise-ai", "agents", "anthropic", "orchestration", "memory", "evals"],
+      "recurrence": "new",
+      "platform": "anthropic"
+    },
+    {
+      "id": "anthropic-spacex-compute-deal-may6",
+      "title": "Anthropic–SpaceX Colossus 1 Compute Agreement",
+      "subtitle": "220,000 NVIDIA GPUs and 300 MW of capacity online within the month — plus interest in orbital compute",
+      "source": "Anthropic",
+      "date": "2026-05-06",
+      "primary_url": "https://www.anthropic.com/news/higher-limits-spacex",
+      "secondary_urls": [
+        {
+          "label": "CNBC reporting",
+          "url": "https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html"
+        },
+        {
+          "label": "StorageReview technical detail",
+          "url": "https://www.storagereview.com/news/anthropic-signs-spacex-colossus-1-deal-for-major-claude-compute-expansion"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-10T00:00:00Z",
+      "summary": "On May 6, Anthropic announced an agreement with SpaceX to use all compute capacity at SpaceX's Colossus 1 data center in Memphis, Tennessee — more than 220,000 NVIDIA GPUs and 300 MW of new capacity coming online within the month. The deal is a direct consequence of Anthropic's revenue reaching a run-rate exceeding $30B (up from $9B at end of 2025), with CEO Dario Amodei disclosing at the conference that actual usage grew 80x where Anthropic had planned for 10x. Immediate benefit: doubled Claude Code rate limits for Pro, Max, Team, and seat-based Enterprise plans, and higher API rate limits for Claude Opus models. Anthropic also expressed interest in partnering with SpaceX to develop orbital AI compute capacity.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Directly addresses Claude Code capacity constraints that have been the primary friction point for enterprise adoption. Anthropic now has compute agreements totaling: SpaceX Colossus 1 (300 MW), Amazon (5 GW agreement, ~1 GW new by end of 2026), Google/Broadcom (5 GW, 2027 onset), Microsoft/NVIDIA ($30B Azure capacity), and Fluidstack ($50B). The 80x vs 10x-planned growth figure explains the historical rate limits and signals that enterprise Claude Code deployments — like Mercado Libre's 23,000-engineer rollout — should now face fewer throughput constraints.",
+      "pricing": "Doubled Claude Code 5-hour rate limits effective immediately for Pro, Max, Team, and seat-based Enterprise plans. Peak-hours limit reduction removed for Pro and Max accounts. API rate limits for Opus models raised considerably.",
+      "key_takeaways": [
+        "Doubled Claude Code rate limits remove the primary adoption blocker for enterprise teams scaling beyond individual developer use.",
+        "The 300 MW Colossus 1 capacity comes online within the month — not a future promise.",
+        "Anthropic's compute agreements now span five major providers, reducing single-vendor infrastructure risk for enterprise customers.",
+        "Orbital compute interest is speculative and should be treated as long-term directional signal only.",
+        "Run-rate revenue exceeding $30B at 80x growth versus plan indicates demand Anthropic could not have operationally predicted — enterprise procurement should budget for ongoing capacity improvement."
+      ],
+      "tags": ["enterprise-ai", "anthropic", "infrastructure", "compute", "claude-code"],
+      "recurrence": "new",
+      "platform": "anthropic"
+    },
+    {
+      "id": "openai-gpt-5-5-instant-may5",
+      "title": "GPT-5.5 Instant — New Default ChatGPT Model",
+      "subtitle": "52.5% fewer hallucinated claims vs GPT-5.3 Instant on high-stakes prompts; rolls out to all ChatGPT users",
+      "source": "OpenAI",
+      "date": "2026-05-05",
+      "primary_url": "https://openai.com/index/gpt-5-5-instant/",
+      "secondary_urls": [
+        {
+          "label": "TechCrunch coverage",
+          "url": "https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/"
+        },
+        {
+          "label": "OpenAI Help Center release notes",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-10T00:00:00Z",
+      "summary": "OpenAI replaced GPT-5.3 Instant with GPT-5.5 Instant as the default model for all ChatGPT users on May 5, and released it in the API as chat-latest. Internal evaluations show 52.5% fewer hallucinated claims on high-stakes prompts covering medicine, law, and finance; 37.3% fewer inaccurate claims on conversations flagged for factual errors. The update also introduces memory sources — visible attribution of which past chats, saved memories, or connected files shaped a personalized response, with per-source deletion controls. GPT-5.3 Instant remains available to paid users for three months through model configuration settings before retirement.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Frontier Model",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "The hallucination reduction claim — 52.5% on high-stakes prompts — directly targets regulated enterprise use cases (compliance, legal, financial analysis) where Anthropic's Claude has historically had an accuracy advantage. OpenAI is using this launch to close that gap for ChatGPT's mass-market user base rather than just API customers. The memory sources feature (visible attribution for personalized responses) is a direct response to enterprise concern about auditability of personalized AI outputs.",
+      "pricing": "chat-latest in the API (same pricing as GPT-5.5). All ChatGPT tiers. GPT-5.3 Instant deprecated for paid users in three months.",
+      "key_takeaways": [
+        "A 52.5% hallucination reduction claim on medicine, law, and finance prompts is significant if independently replicable — enterprise teams should test against their own high-stakes workflows before trusting the internal benchmark.",
+        "Memory sources add an audit trail to personalized responses — a feature regulated enterprises need before enabling user-level personalization in enterprise ChatGPT deployments.",
+        "chat-latest alias in the API auto-upgrades to GPT-5.5 Instant — teams that want stable behavior should pin to a specific model version.",
+        "Enhanced personalization from past chats and Gmail is rolling out to Plus/Pro first, then Business/Enterprise — enterprise admins should review privacy implications before the feature reaches their tenants.",
+        "GPT-5.3 Instant retirement in three months is a hard API migration deadline for teams using chat-latest."
+      ],
+      "tags": ["frontier-model", "openai", "chatgpt", "hallucination", "personalization"],
+      "recurrence": "new",
+      "platform": "openai"
+    },
+    {
+      "id": "sierra-950m-series-funding-may4",
+      "title": "Sierra — $950M Funding Round at $15B+ Valuation",
+      "subtitle": "Bret Taylor's enterprise customer AI platform serves 40%+ of Fortune 50; ARR hit $150M in February",
+      "source": "Sierra / TechCrunch",
+      "date": "2026-05-04",
+      "primary_url": "https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/",
+      "secondary_urls": [
+        {
+          "label": "Sierra Ghostwriter blog post",
+          "url": "https://sierra.ai/blog/agents-as-a-service"
+        },
+        {
+          "label": "Cyber News Centre coverage",
+          "url": "https://www.cybernewscentre.com/ai-startup-sierra-raises-950m/"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-10T00:00:00Z",
+      "summary": "Sierra raised $950M in a round led by Tiger Global and GV (Google Ventures), pushing its post-money valuation above $15B. Existing investors Benchmark, Sequoia, and Greenoaks participated. The company started with four design partners and now counts more than 40% of the Fortune 50 as customers, with agents handling billions of interactions including mortgage refinancing, insurance claim processing, and returns management. ARR hit $150M in early February 2026. In April, Sierra launched Ghostwriter — an agent-for-building-agents tool that converts SOPs, meeting transcripts, and process documentation into production-ready customer experience agents in voice, chat, email, and 30+ languages without manual journey editing.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Funding",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Sierra competes with Salesforce Einstein, Zendesk AI, Intercom Fin, and Microsoft Copilot for Customer Service for enterprise AI customer experience. The 40%+ Fortune 50 penetration and $150M ARR make Sierra one of the most commercially validated enterprise AI platforms at scale. Ghostwriter's agent-as-a-service model (describe what you want, get a production agent) competes directly with Microsoft Copilot Studio and Salesforce AgentBuilder. Tiger Global and GV as co-leads signal confidence in Sierra's ability to sustain enterprise contract velocity despite pricing pressure from cloud-native competitors.",
+      "pricing": "Enterprise SaaS licensing; pricing not publicly disclosed. Ghostwriter is part of the Sierra platform, not separately priced.",
+      "key_takeaways": [
+        "40%+ of Fortune 50 as paying customers is a verified commercial milestone that places Sierra well beyond pilot-stage enterprise AI.",
+        "Ghostwriter removes the no-code agent building barrier — product managers and operations teams can define agent behavior without AI engineer involvement.",
+        "The $950M raise at $15B valuation reflects customer concentration risk: if Sierra loses one or two major Fortune 50 contracts, valuation pressure follows.",
+        "ARR of $150M vs $15B valuation is a 100x revenue multiple — investors are pricing in years of expansion, not current performance.",
+        "GV participation signals Google sees Sierra as a strategic complement or competitive threat to Google Cloud's own agentic products."
+      ],
+      "tags": ["funding", "enterprise-ai", "customer-experience", "agents", "voice-ai"],
+      "recurrence": "new",
+      "platform": "techcrunch"
+    },
+    {
+      "id": "anthropic-ms365-add-ins-ga-may7",
+      "title": "Claude for Microsoft 365 — General Availability",
+      "subtitle": "Claude in Excel, Word, PowerPoint (GA) and Outlook (beta); admin-deployable via Microsoft AppSource",
+      "source": "Anthropic",
+      "date": "2026-05-07",
+      "primary_url": "https://releasebot.io/updates/anthropic",
+      "secondary_urls": [
+        {
+          "label": "VentureBeat: Anthropic vs Microsoft orchestration",
+          "url": "https://venturebeat.com/orchestration/anthropic-wants-to-own-your-agents-memory-evals-and-orchestration-and-that-should-make-enterprises-nervous"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-10T00:00:00Z",
+      "summary": "Anthropic released Claude for Excel, Word, and PowerPoint as generally available add-ins on May 7 for Mac and Windows users on all paid plans; Claude for Outlook entered public beta simultaneously. The add-ins carry context across apps automatically (a Claude conversation in Excel can reference what was just done in Word) and sync edits between open files. Enterprise admins can deploy through Microsoft AppSource or the Microsoft admin center and configure OpenTelemetry to stream prompts, tool calls, and document references to their own collector. Teams can route traffic through existing LLM gateways (Bedrock, Vertex, Foundry) rather than directly to Claude.ai. An Analytics API breaks down activity per user, per app, per day. Microsoft 365 Copilot customers can also work with Claude models directly within Excel and PowerPoint.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Claude for M365 is a direct complement and indirect competitor to Microsoft's own M365 Copilot. Enterprises now have a first-party option to use Claude's writing and reasoning capabilities inside the exact same Microsoft surfaces where Copilot operates. The LLM gateway routing option (Bedrock/Vertex/Foundry) means enterprise IT can maintain their existing model governance infrastructure without creating a new Claude.ai procurement relationship. OpenTelemetry streaming and the Analytics API provide the per-user, per-app audit trail that security teams require before approving any AI tool in regulated environments.",
+      "pricing": "Available on all Claude paid plans (Pro, Max, Team, Enterprise). Admins can enable via Microsoft AppSource at no separate charge beyond existing Claude subscription.",
+      "key_takeaways": [
+        "OpenTelemetry streaming of prompts, tool calls, and document references to enterprise-controlled collectors is the governance feature that security teams need before approving the add-in in regulated environments.",
+        "Routing through Bedrock/Vertex/Foundry gateways means existing model governance policies (rate limits, content filters, audit logging) apply automatically to Claude M365 traffic.",
+        "Cross-app context is built-in — users do not need to manually re-share context when switching between Excel and Word within the same Claude conversation.",
+        "The Analytics API (per-user, per-app, per-day) gives IT visibility into adoption before committing to enterprise license counts.",
+        "Microsoft 365 Copilot customers can access Claude models within Excel and PowerPoint — this is additive access, not a replacement for Copilot."
+      ],
+      "tags": ["enterprise-ai", "anthropic", "microsoft", "m365", "productivity"],
+      "recurrence": "new",
+      "platform": "anthropic"
+    },
+    {
+      "id": "anthropic-enterprise-ai-services-firm-may4",
+      "title": "Anthropic Enterprise AI Services Firm — Blackstone / H&F / Goldman Sachs",
+      "subtitle": "New PE-backed firm embeds Applied AI engineers at mid-sized enterprises; $1.5B committed capital (CNBC)",
+      "source": "Anthropic / Blackstone",
+      "date": "2026-05-04",
+      "primary_url": "https://www.anthropic.com/news/enterprise-ai-services-company",
+      "secondary_urls": [
+        {
+          "label": "Blackstone press release",
+          "url": "https://www.blackstone.com/news/press/anthropic-partners-with-blackstone-hellman-friedman-and-goldman-sachs-to-launch-enterprise-ai-services-firm/"
+        },
+        {
+          "label": "CNBC reporting on $1.5B figure",
+          "url": "https://www.cnbc.com/2026/05/04/anthropic-goldman-blackstone-ai-venture.html"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-10T00:00:00Z",
+      "summary": "Anthropic, Blackstone, Hellman & Friedman, Goldman Sachs, General Atlantic, Leonard Green, Apollo Global Management, GIC, and Sequoia announced a new standalone AI services firm on May 4. CNBC reported $1.5B in committed capital; Anthropic's own announcement does not state a funding figure. The firm will place Applied AI engineers from Anthropic alongside the firm's own engineering team to identify opportunities, build tailored Claude-powered systems, and provide long-term customer support. Initial targets: community banks, mid-sized manufacturers, regional health systems. Starting workflow for healthcare: documentation, medical coding, prior authorizations, and compliance reviews. The firm joins the Claude Partner Network alongside Accenture, Deloitte, and PwC.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "This model directly competes with Accenture's AI practice, McKinsey QuantumBlack, and the emerging wave of AI system integrators. The PE backing (Blackstone, Goldman, Apollo) gives the firm immediate access to hundreds of portfolio companies as a captive first-customer base — a customer acquisition advantage that independent SIs lack. The embedded Anthropic engineers model is analogous to hyperscaler professional services teams (AWS ProServe, Google PSO) but with model-provider equity alignment rather than just a vendor relationship.",
+      "pricing": "Service firm; pricing not publicly disclosed. Enterprise engagements are project-based; initial customer base includes Blackstone, H&F, and Goldman portfolio companies.",
+      "key_takeaways": [
+        "The $1.5B commitment (CNBC figure; unconfirmed by Anthropic directly) funds the embedded engineering model, not product development — this is a services play, not an R&D company.",
+        "PE portfolio companies are the first-mover customer base — mid-sized firms that are Blackstone or Apollo portfolio companies should expect outreach.",
+        "Embedded Anthropic Applied AI engineers means customers get privileged access to Anthropic's internal knowledge of Claude's capabilities and limitations.",
+        "Healthcare, manufacturing, and financial services are the stated initial sectors — regulated industries where AI ROI is clearer but deployment complexity is highest.",
+        "Enterprises without in-house AI engineering capacity gain a faster onramp to production Claude deployments than building with standard partner SIs."
+      ],
+      "tags": ["enterprise-ai", "anthropic", "private-equity", "services", "blackstone"],
+      "recurrence": "new",
+      "platform": "anthropic"
+    },
+    {
+      "id": "kilo-code-v7-may5",
+      "title": "Kilo Code v7 for VS Code",
+      "subtitle": "#1 Product Hunt week of May 4 — parallel agents, diff reviewer, 500+ models, SOC 2 Type I",
+      "source": "Kilo AI / Product Hunt",
+      "date": "2026-05-05",
+      "primary_url": "https://kilo.ai/landing/vs-code",
+      "secondary_urls": [
+        {
+          "label": "View on Product Hunt",
+          "url": "https://www.producthunt.com/products/kilo-code"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-10T00:00:00Z",
+      "summary": "Kilo Code v7 for VS Code — the week's #1 Product Hunt launch — is a complete rebuild of the VS Code extension on the open-source OpenCode server core. It adds parallel subagent execution (implementation, tests, and docs in separate specialist agents), built-in diff reviewer with line-level PR-style comments that feed back into the agent chat, multi-model comparison (run Claude, GPT, Gemini on the same task and compare outputs), and cross-platform session continuity (start in CLI over SSH, continue in VS Code). Supports 500+ models, BYOK or local models. Free and open-source; SOC 2 Type I certified with enterprise SLAs, audit logs, and model governance frameworks.",
+      "score": {
+        "total": 8.0,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Dev Tools",
+      "evaluation": "ADD TO WATCHLIST",
+      "competitive_context": "Competes directly with Cursor, GitHub Copilot, and JetBrains AI for the enterprise coding assistant position. Key differentiators: open-source foundation (lower vendor lock-in), 500+ model flexibility with BYOK (avoids single-provider pricing), SOC 2 Type I (enterprise IT requirement), and the parallel subagent architecture that Cursor and Copilot do not yet natively replicate in VS Code. The diff reviewer with PR-style line comments closes a gap that has required Cursor or GitHub PR review as a separate step.",
+      "pricing": "Free and open-source (GitHub). Enterprise SLAs, audit logs, and model governance available at enterprise tier pricing (not publicly disclosed).",
+      "key_takeaways": [
+        "SOC 2 Type I certification is the baseline enterprise IT requirement — Kilo Code clears this bar where many open-source alternatives do not.",
+        "500+ model flexibility with BYOK means teams can route to their existing Azure OpenAI, Bedrock, or Vertex deployments without creating a new AI vendor relationship.",
+        "Multi-model comparison on the same task is a genuine evaluation accelerator — teams can benchmark Claude vs GPT vs Gemini on real internal tasks rather than public benchmarks.",
+        "Parallel subagents for implementation/tests/docs decompose a coding task in the same way Anthropic's Managed Agents decompose business workflows — the architectural pattern is converging.",
+        "The open-source OpenCode core means enterprise teams can inspect and audit the extension codebase — relevant for IT security review."
+      ],
+      "tags": ["dev-tools", "open-source", "coding", "agents", "vs-code"],
+      "recurrence": "new",
+      "platform": "producthunt"
+    },
+    {
+      "id": "anthropic-financial-services-agents-may5",
+      "title": "Claude Agents for Financial Services — 10 Templates on Claude Opus 4.7",
+      "subtitle": "Pitchbooks, KYC, month-end close, and earnings review agents; Moody's MCP app with 600M company ratings",
+      "source": "Anthropic",
+      "date": "2026-05-05",
+      "primary_url": "https://www.anthropic.com/events/the-briefing-financial-services-virtual-event",
+      "secondary_urls": [
+        {
+          "label": "Fortune reporting",
+          "url": "https://fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon/"
+        },
+        {
+          "label": "WSJ coverage",
+          "url": "https://www.wsj.com/tech/ai/anthropic-releases-new-ai-agents-for-financial-services-firms-e2829b37"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-05-10T00:00:00Z",
+      "summary": "At its Financial Services Briefing event in New York on May 5, Anthropic launched ten pre-built agent templates for financial services: Pitch Builder, Meeting Preparer, Earnings Reviewer, Model Builder, Market Researcher, Valuation Reviewer, General Ledger Reconciler, Month-End Closer, Statement Auditor, and KYC Screener. Each template is deployable as a plugin in Claude Cowork or Claude Code, or as a Claude Managed Agents cookbook for programmatic use. New connectors: Dun & Bradstreet, Fiscal AI, Financial Modeling Prep, Guidepoint, IBISWorld, SS&C IntraLinks, Third Bridge, and Verisk. Moody's launched an MCP app providing credit ratings and risk data for 600M+ companies. All agents run on Claude Opus 4.7 (launched April 16), which leads the Vals AI Finance Agent benchmark at 64.4% and tops the GDPval-AA evaluation for economically valuable knowledge work. JPMorganChase CEO Jamie Dimon appeared on stage alongside Dario Amodei.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "category": "Vertical SaaS",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Competes directly with OpenAI's ChatGPT Enterprise + FactSet/MSCI integrations and Bloomberg Terminal AI workflows for financial services analyst automation. The Moody's MCP integration (600M+ company dataset) is a data moat — Bloomberg and FactSet have similar datasets but neither has shipped an MCP-native integration for AI agent consumption. Existing Claude financial services customers include JPMorganChase, Goldman Sachs, Citi, AIG, and Visa. The Jamie Dimon on-stage appearance is a credibility signal for enterprise sales cycles, not just technology.",
+      "pricing": "Agent templates available on all paid Claude plans as plugins in Claude Cowork or Claude Code. Managed Agents cookbook access available in public beta. Moody's MCP app available to joint customers on paid plans. Specific template pricing not disclosed.",
+      "key_takeaways": [
+        "Moody's MCP integration is the most strategically significant data partnership — credit ratings and risk data for 600M+ companies accessible without leaving the Claude interface.",
+        "Month-End Closer and KYC Screener target the highest-cost manual workflows in finance — demonstrated ROI for a pilot is fast to calculate.",
+        "Claude Opus 4.7's 64.4% Finance Agent benchmark score is state-of-the-art among generally available models at release, though Claude Mythos Preview leads at a higher but restricted score.",
+        "The templates are designed for Anthropic's new PE-backed services firm to deploy — firms that are Blackstone, Goldman, or Apollo portfolio companies should expect them to arrive pre-configured.",
+        "The SS&C IntraLinks connector enables private equity document workflows — a market segment largely underserved by consumer-grade AI tools."
+      ],
+      "tags": ["vertical-saas", "enterprise-ai", "financial-services", "anthropic", "agents"],
+      "recurrence": "new",
+      "platform": "anthropic"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "product_hunt",
+      "title": "Product Hunt: Top AI Launches",
+      "description": "Top AI and developer tool launches from Product Hunt daily leaderboards, May 4–10, 2026. Maker websites used as primary_url per resolution rules; PH product pages in secondary_urls.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "ph-kilo-code-v7-may5",
+          "title": "Kilo Code v7 for VS Code",
+          "subtitle": "Parallel agents, diff reviewer, 500+ models — #1 for the week",
+          "source": "Product Hunt",
+          "date": "2026-05-05",
+          "primary_url": "https://kilo.ai/landing/vs-code",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Kilo Code v7 topped the weekly Product Hunt leaderboard (week of May 4). Built on the open-source OpenCode server core, it adds parallel subagent execution, line-level diff review comments that feed back into agent chat, and multi-model comparison across 500+ models. Free and open source. SOC 2 Type I certified. See Top Picks for full analysis.",
+          "score": { "total": 8.0, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 2 },
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["dev-tools", "open-source", "coding", "agents"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/kilo-code" }]
+        },
+        {
+          "id": "ph-shadow-2-0-may6",
+          "title": "Shadow 2.0",
+          "subtitle": "Completes meeting action items during the call — #4 for the week, #1 on May 6",
+          "source": "Product Hunt",
+          "date": "2026-05-06",
+          "primary_url": "https://www.product.com/products/shadow-6",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Shadow 2.0 is a native desktop AI that detects meetings automatically, listens without joining as a bot, and prepares draft outputs — follow-up emails, calendar invites, docs — for user review and approval before the call ends. The product is built around execution during the call rather than post-meeting summarization. 2.0 moves from browser app to native desktop with auto-detection. The user reviews and approves all outputs before anything is sent. Won Product Hunt Launch of the Day May 6.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "category": "Vertical SaaS",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["productivity", "meetings", "agents"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/shadow-6" }]
+        },
+        {
+          "id": "ph-flowmarket-may7",
+          "title": "FlowMarket",
+          "subtitle": "Social network of AI agents generating B2B deals — #1 on May 7, #6 for the week",
+          "source": "Product Hunt",
+          "date": "2026-05-07",
+          "primary_url": "https://www.flowmarket.io",
+          "verified": false,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "FlowMarket is a B2B marketplace where companies create AI agents that automatically discover, match, and qualify deals with other agents. A company creates an agent describing its product and target customers; agents exchange information with other agents in the network and surface high-fit opportunities to the human user. No advertising or large sales teams required. Currently free. Won #1 Product Hunt May 7.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "tags": ["sales", "agents", "b2b", "lead-generation"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/flowmarket-2" }]
+        },
+        {
+          "id": "ph-claude-agents-financial-may7",
+          "title": "Claude Agents for Financial Services",
+          "subtitle": "Finance agent templates for pitches, KYC, and closing books — #2 on May 7",
+          "source": "Anthropic / Product Hunt",
+          "date": "2026-05-07",
+          "primary_url": "https://www.anthropic.com/events/the-briefing-financial-services-virtual-event",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Anthropic's ten financial services agent templates launched on Product Hunt as #2 on May 7. See the Top Picks section for full analysis of the pitchbook, KYC, month-end close, and earnings review agents built on Claude Opus 4.7.",
+          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "category": "Vertical SaaS",
+          "evaluation": "EVALUATE NOW",
+          "tags": ["financial-services", "agents", "anthropic"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/claude-agents-for-financial-services" }]
+        },
+        {
+          "id": "ph-gpt-5-5-instant-may7",
+          "title": "GPT-5.5 Instant",
+          "subtitle": "Smarter, more personal answers as ChatGPT's new default — #5 on May 7",
+          "source": "OpenAI / Product Hunt",
+          "date": "2026-05-07",
+          "primary_url": "https://openai.com/index/gpt-5-5-instant/",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "GPT-5.5 Instant launched on Product Hunt May 7 at #5. The new default ChatGPT model for all users reduces hallucinated claims by 52.5% on high-stakes prompts and adds memory sources for audit visibility. See Top Picks for full analysis.",
+          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "category": "Frontier Model",
+          "evaluation": "EVALUATE NOW",
+          "tags": ["frontier-model", "openai", "chatgpt"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/gpt-5-5-instant" }]
+        },
+        {
+          "id": "ph-monid-2-0-may8",
+          "title": "Monid 2.0",
+          "subtitle": "OpenRouter for agent tools — #2 on May 8, #7 for the week",
+          "source": "Product Hunt",
+          "date": "2026-05-08",
+          "primary_url": "https://monid.io",
+          "verified": false,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Monid 2.0 is a unified marketplace and routing layer for AI agent tools — agents can discover, compare, and pay for 200+ APIs (social scrapers, blockchain data, people enrichment, lead generation, search APIs) with a single balance and per-request billing. No per-service subscriptions or API keys. Since the team's prior launch 15 days earlier, agents had made 3,000+ purchases through the platform. Described as 'OpenRouter for agent tools.' #2 on May 8 Product Hunt.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["developer-tools", "agents", "api", "marketplace"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/monid" }]
+        },
+        {
+          "id": "ph-superset-2-0-may8",
+          "title": "Superset 2.0",
+          "subtitle": "Run 100s of coding agents on any machine from anywhere — #8 for the week",
+          "source": "Product Hunt",
+          "date": "2026-05-06",
+          "primary_url": "https://superset.sh",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Superset 2.0 is a turbocharged IDE for orchestrating parallel coding agents across isolated sandboxes. Teams can run feature development, bug fixes, and refactoring in parallel via git worktrees with no context-switching overhead. Agents run on any machine from anywhere; users monitor all agents from one dashboard and review changes with a built-in diff viewer before applying. Supports any coding agent.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["developer-tools", "coding", "agents", "parallel"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/superset-5" }]
+        },
+        {
+          "id": "ph-kanwas-may6",
+          "title": "Kanwas",
+          "subtitle": "Open-source shared context brain for teams and their AI agents — #5 for the week",
+          "source": "Product Hunt",
+          "date": "2026-05-06",
+          "primary_url": "https://kanwas.ai",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Kanwas is an open-source shared context layer for teams and their AI agents — a living knowledge board that stores critical know-how, research, decisions, and data in a format workable for both humans and agents. Unlike static documentation, Kanwas updates with every agent run so subsequent runs start with better context. Works alongside Claude, Codex, and other agents without requiring a migration from existing tools.",
+          "score": { "total": 6.0, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "tags": ["open-source", "knowledge-management", "agents", "developer-tools"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/kanwas" }]
+        },
+        {
+          "id": "ph-mindra-may4",
+          "title": "Mindra",
+          "subtitle": "Agent teams you can actually delegate to — #1 on May 4, #10 for the week",
+          "source": "Product Hunt",
+          "date": "2026-05-04",
+          "primary_url": "https://mindra.ai",
+          "verified": false,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Mindra launched #1 on Product Hunt May 4. The platform provides pre-built teams of AI agents that users can delegate marketing, productivity, and coordination tasks to — without building agent pipelines themselves. Targeted at business users and marketing teams. Domain mindra.ai is the best available URL pending direct confirmation.",
+          "score": { "total": 5.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "tags": ["productivity", "marketing", "agents"],
+          "recurrence": "new",
+          "platform": "producthunt",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/mindra" }]
+        }
+      ]
+    },
+    {
+      "section_id": "frontier_models",
+      "title": "Frontier Models",
+      "description": "New model releases and model-tier updates from major labs during the week of May 4–10, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "openai-gpt-5-5-instant-model-may5",
+          "title": "GPT-5.5 Instant",
+          "subtitle": "New default ChatGPT model for all users — 52.5% fewer hallucinations on high-stakes prompts",
+          "source": "OpenAI",
+          "date": "2026-05-05",
+          "primary_url": "https://openai.com/index/gpt-5-5-instant/",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "GPT-5.5 Instant became the default ChatGPT model for all users on May 5. It replaces GPT-5.3 Instant in the API as chat-latest. Key improvements: 52.5% fewer hallucinated claims on medicine, law, and finance prompts versus GPT-5.3 Instant; 37.3% fewer inaccurate claims on flagged conversations. Adds memory sources — visible attribution of what past chats, files, or Gmail context shaped personalized responses, with per-source deletion controls. GPT-5.3 Instant remains accessible to paid users via model configuration for three months.",
+          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "category": "Frontier Model",
+          "evaluation": "EVALUATE NOW",
+          "tags": ["frontier-model", "openai", "chatgpt", "hallucination"],
+          "recurrence": "new",
+          "platform": "openai"
+        },
+        {
+          "id": "openai-chatgpt-workspace-agents-paid-may6",
+          "title": "ChatGPT Workspace Agents — Credit-Based Pricing GA",
+          "subtitle": "Enterprise teams can now build, schedule, and share agents across ChatGPT and Slack",
+          "source": "OpenAI",
+          "date": "2026-05-06",
+          "primary_url": "https://openai.com/index/introducing-workspace-agents-in-chatgpt/",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "ChatGPT Workspace Agents transitioned from free research preview to credit-based pricing for Business, Enterprise, and Edu plans on May 6. Agents can be built from templates or from scratch, connected to custom MCP servers, scheduled for recurring runs, and shared within a workspace. Enterprise Key Management (EKM) workspaces can also use agents in connected Slack channels. A new Analytics area in the global admin console shows adoption trends, active users, agent details, and tool interaction drilldowns. Admins can trace agent version history.",
+          "score": { "total": 7.5, "signal": 3, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "category": "Enterprise AI",
+          "evaluation": "EVALUATE NOW",
+          "tags": ["enterprise-ai", "openai", "agents", "chatgpt"],
+          "recurrence": "returning",
+          "recurrence_note": "Workspace Agents launched in research preview April 22. This week's news is the transition to paid credit-based pricing and expanded Analytics in the admin console."
+        }
+      ]
+    },
+    {
+      "section_id": "yc_and_startups",
+      "title": "YC and Startups",
+      "description": "Notable YC-backed and early-stage AI launches during the week of May 4–10, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "flowmarket-b2b-agent-network-may7",
+          "title": "FlowMarket — B2B Agent Deal Network",
+          "subtitle": "Companies create AI agents that discover and negotiate B2B deals with other agents",
+          "source": "FlowMarket / Product Hunt",
+          "date": "2026-05-07",
+          "primary_url": "https://www.flowmarket.io",
+          "verified": false,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "FlowMarket launched May 7 at #1 on Product Hunt. It is a B2B marketplace where companies create AI agents describing their offerings and target customers; agents then discover, match, and qualify deals with other agents in the network. Companies review surfaced opportunities and decide whether to continue the conversation. Currently free. No advertising budget or sales team required to participate in deal flow. Best compared to a cold-email SDR tool, but agent-to-agent rather than human-to-human.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "tags": ["b2b", "sales", "agents", "lead-generation"],
+          "recurrence": "new",
+          "platform": "producthunt"
+        },
+        {
+          "id": "pay-sh-solana-google-cloud-may5",
+          "title": "Pay.sh — Agent-Native API Payments via Solana Stablecoins",
+          "subtitle": "Google Cloud + Solana Foundation launch per-request payment gateway for AI agents; 75+ APIs",
+          "source": "Google Cloud / Solana Foundation",
+          "date": "2026-05-05",
+          "primary_url": "https://pay.sh",
+          "verified": false,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Google Cloud and the Solana Foundation launched Pay.sh on May 5 — a payment gateway that lets AI agents discover, access, and pay for APIs using Solana stablecoins per request. Agents use a Solana wallet as their identity; settling payments in seconds gives them access to Google Cloud services (Gemini, BigQuery, Vertex AI) and 75+ third-party APIs without accounts, subscriptions, or API keys. Four lines of code connect an agent to a paid endpoint via the x402 protocol. Works as a CLI tool native to Claude Code, Gemini, Codex, and other LLM environments.",
+          "score": { "total": 7.0, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 },
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["developer-tools", "payments", "agents", "blockchain", "google-cloud"],
+          "recurrence": "new",
+          "platform": "google",
+          "secondary_urls": [{ "label": "Coinfomania coverage", "url": "https://coinfomania.com/google-cloud-and-solana-launch-pay-sh-for-ai-agent-payments/" }]
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_ai",
+      "title": "Enterprise AI",
+      "description": "Enterprise platform and cloud AI announcements during the week of May 4–10, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "aws-workspaces-ai-agent-desktop-may5",
+          "title": "Amazon WorkSpaces AI Agent Desktop (Public Preview)",
+          "subtitle": "AI agents get their own virtual desktop with IAM auth, MCP support, and computer vision for legacy apps",
+          "source": "AWS",
+          "date": "2026-05-05",
+          "primary_url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-whats-next-with-aws-2026-amazon-quick-openai-partnership-and-more-may-4-2026/",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "AWS launched a public preview on May 5 of a capability that provisions dedicated Amazon WorkSpaces virtual desktop instances for AI agents. Each agent authenticates through AWS IAM (not shared human credentials), operates a Windows or Linux environment using computer vision to navigate GUIs, and supports the Model Context Protocol (MCP) for structured tool use. This enables agents to interact with legacy desktop applications without APIs or software modernization. AWS follows its typical 3–6 month preview-to-GA timeline, suggesting general availability in Q3–Q4 2026.",
+          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["enterprise-ai", "aws", "agents", "legacy-automation", "infrastructure"],
+          "recurrence": "new",
+          "platform": "aws"
+        },
+        {
+          "id": "aws-bedrock-agentcore-optimization-may4",
+          "title": "Amazon Bedrock AgentCore — Optimization in Preview",
+          "subtitle": "Recommendations, batch evaluations, and A/B tests for agents in production",
+          "source": "AWS",
+          "date": "2026-05-04",
+          "primary_url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-whats-next-with-aws-2026-amazon-quick-openai-partnership-and-more-may-4-2026/",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Amazon Bedrock AgentCore added optimization capabilities in preview during the week of May 4. The new features complete an observe-evaluate-improve loop for agents in production: Recommendations analyze production traces and evaluation outputs and propose optimized system prompts and tool descriptions; Batch Evaluations validate recommendations against pre-defined test cases; A/B Tests compare recommendations against live traffic. Every recommendation requires human approval before shipping. Complements the existing AgentCore tracing and monitoring capabilities.",
+          "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["enterprise-ai", "aws", "bedrock", "agents", "evals"],
+          "recurrence": "new",
+          "platform": "aws"
+        },
+        {
+          "id": "google-health-fitbit-rename-may7",
+          "title": "Google Health App Launch (Fitbit Rebrand)",
+          "subtitle": "Gemini-powered AI Health Coach at $9.99/month; rolls out May 19 alongside Fitbit Air hardware",
+          "source": "Google / TechCrunch",
+          "date": "2026-05-07",
+          "primary_url": "https://techcrunch.com/2026/05/07/googles-9-99-per-month-ai-health-coach-launches-may-19/",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "On May 7, Google announced it is replacing the Fitbit app with Google Health on May 19 — the same date as Google I/O and the launch of the Fitbit Air hardware (a screenless Whoop-style band). The new app includes an AI Health Coach powered by Gemini models, offering health record summaries, customized weekly fitness plans, and multimodal logging (text, voice, or photo). Google Health Premium is $9.99/month or $99.99/year; bundled free with Google AI Pro and AI Ultra subscriptions. Available in 200+ countries.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 },
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "tags": ["consumer-ai", "google", "health", "gemini"],
+          "recurrence": "new",
+          "platform": "google"
+        }
+      ]
+    },
+    {
+      "section_id": "funding",
+      "title": "Funding",
+      "description": "Notable AI funding rounds announced or confirmed during the week of May 4–10, 2026. All figures cross-checked against company or primary news sources.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "sierra-950m-tiger-global-may4",
+          "title": "Sierra — $950M (Tiger Global, GV)",
+          "subtitle": "$15B+ valuation; 40%+ Fortune 50 customers; $150M ARR",
+          "source": "TechCrunch / Sierra",
+          "date": "2026-05-04",
+          "primary_url": "https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Sierra raised $950M led by Tiger Global and GV. Post-money valuation above $15B. Existing investors Benchmark, Sequoia, and Greenoaks participated. The company has 40%+ of Fortune 50 as customers, handles billions of interactions, and reached $150M ARR in February 2026. See Top Picks for full analysis.",
+          "score": { "total": 8.5, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "category": "Funding",
+          "evaluation": "EVALUATE NOW",
+          "tags": ["funding", "enterprise-ai", "agents", "customer-experience"],
+          "recurrence": "new",
+          "platform": "techcrunch"
+        },
+        {
+          "id": "anthropic-blackstone-1-5b-enterprise-may4",
+          "title": "Anthropic Enterprise Services Firm — $1.5B (Blackstone, Goldman, H&F + consortium)",
+          "subtitle": "Standalone AI services firm; embeds Anthropic engineers at mid-market companies",
+          "source": "Anthropic / CNBC / Blackstone",
+          "date": "2026-05-04",
+          "primary_url": "https://www.blackstone.com/news/press/anthropic-partners-with-blackstone-hellman-friedman-and-goldman-sachs-to-launch-enterprise-ai-services-firm/",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Anthropic, Blackstone, Hellman & Friedman, and Goldman Sachs formed a new standalone enterprise AI services firm with CNBC reporting $1.5B in committed capital from the consortium (General Atlantic, Leonard Green, Apollo, GIC, Sequoia also participating). Anthropic's own announcement does not state the funding figure. The firm will place Anthropic Applied AI engineers at mid-sized enterprises across healthcare, manufacturing, financial services, retail, and real estate. See Top Picks for full analysis.",
+          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "category": "Funding",
+          "evaluation": "EVALUATE NOW",
+          "tags": ["funding", "enterprise-ai", "anthropic", "private-equity"],
+          "recurrence": "new",
+          "platform": "prnewswire"
+        }
+      ]
+    },
+    {
+      "section_id": "open_source",
+      "title": "Open Source",
+      "description": "Notable open-source and developer tool releases during the week of May 4–10, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "kilo-code-v7-oss-may5",
+          "title": "Kilo Code v7 — Open Source VS Code Agent",
+          "subtitle": "Rebuilt on OpenCode server core; 500+ models, parallel subagents, SOC 2 Type I",
+          "source": "Kilo AI",
+          "date": "2026-05-05",
+          "primary_url": "https://kilo.ai/landing/vs-code",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Kilo Code v7 for VS Code is a complete open-source rebuild on the OpenCode server foundation. Parallel subagents, line-level diff review, multi-model comparison, and cross-platform session continuity with the Kilo CLI. Free; 500+ models; BYOK; SOC 2 Type I. See Top Picks for full analysis.",
+          "score": { "total": 8.0, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 2 },
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "tags": ["open-source", "dev-tools", "coding", "agents"],
+          "recurrence": "new",
+          "platform": "github"
+        },
+        {
+          "id": "kanwas-open-source-context-may6",
+          "title": "Kanwas — Open-Source Team Context Brain",
+          "subtitle": "Shared knowledge board for teams and agents; updates with every agent run",
+          "source": "Kanwas / Product Hunt",
+          "date": "2026-05-06",
+          "primary_url": "https://kanwas.ai",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Kanwas is an open-source shared context layer for teams and their AI agents. Rather than dead documentation storage, it is a living board that stores critical know-how, research, decisions, and data in a format workable for both humans and agents, and compounds context with each agent run. Works alongside existing tools (Claude, Codex, VS Code, Git). Product Hunt #5 for the week. Free.",
+          "score": { "total": 6.0, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "tags": ["open-source", "knowledge-management", "agents"],
+          "recurrence": "new",
+          "platform": "producthunt"
+        }
+      ]
+    },
+    {
+      "section_id": "to_watch",
+      "title": "To Watch",
+      "description": "Early-stage signals with high potential, or confirmed events expected to produce launches next week.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "google-io-2026-may19",
+          "title": "Google I/O 2026 — May 19–20",
+          "subtitle": "Expected: new Gemini model, Aluminium OS debut, Android XR hardware, agentic Android features",
+          "source": "Google / Android Authority",
+          "date": "2026-05-08",
+          "primary_url": "https://io.google/2026/explore/pa-keynote-1",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Google I/O runs May 19–20 in Mountain View. Confirmed pre-I/O signals: a new Gemini version (generational upgrade or major 3.x update), Aluminium OS (Android-based PC OS with Sameer Samat confirming 2026 launch), Android XR hardware (Samsung Galaxy XR headset and possible Galaxy Glasses), and deeper agentic Android capabilities. Google Health and Fitbit Air also formally launch May 19. Monitor io.google for session schedule and keynote stream.",
+          "score": { "total": 7.5, "signal": 3, "novelty": 1, "actionability": 1, "source_quality": 2 },
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "tags": ["google", "gemini", "conference", "android"],
+          "recurrence": "new",
+          "platform": "google"
+        },
+        {
+          "id": "cognition-devin-25b-raise",
+          "title": "Cognition AI (Devin) — Talks to Raise Hundreds of Millions at $25B",
+          "subtitle": "In advanced investor conversations as of late April; round not closed as of May 10",
+          "source": "Bloomberg / Techzine",
+          "date": "2026-04-23",
+          "primary_url": "https://www.bloomberg.com/news/articles/2026-04-23/ai-coding-firm-cognition-in-funding-talks-at-25-billion-value",
+          "verified": true,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Cognition AI — maker of Devin, the AI software engineer — is in early talks to raise hundreds of millions of dollars or more at a $25B valuation, per Bloomberg (April 23) and Forbes. This would more than double Cognition's previous $10.2B valuation from its $400M raise. Devin usage doubled every two months throughout 2025, achieving ~65x adoption growth over 13 months. No announcement as of May 10. The $25B target is roughly double the Cursor valuation in talks ($50B is for Cursor; Cognition targets $25B).",
+          "score": { "total": 7.0, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 },
+          "category": "Funding",
+          "evaluation": "MONITOR",
+          "tags": ["funding", "agents", "coding", "dev-tools"],
+          "recurrence": "new",
+          "platform": "bloomberg"
+        },
+        {
+          "id": "claude-sonnet-4-8-expected",
+          "title": "Claude Sonnet 4.8 — Expected Mid-May 2026",
+          "subtitle": "Codename 'Cardinal'; referenced in Claude Code source; no Anthropic announcement yet",
+          "source": "NxCode / prior week signal",
+          "date": "2026-05-04",
+          "primary_url": "https://www.nxcode.io/resources/news/claude-sonnet-4-8-release-date-features-what-to-expect-2026",
+          "verified": false,
+          "verified_at": "2026-05-10T00:00:00Z",
+          "summary": "Claude Sonnet 4.8 (codename 'Cardinal') was referenced in Claude Code source code as of late April. Anthropic confirmed no new model at Code with Claude 2026 on May 6 — 'Today is about how we are making our products work better for you.' Historically, Sonnet follows Opus by 1–4 weeks; Opus 4.7 shipped April 16, making a late May or early June Sonnet window plausible. Monitor anthropic.com/news for confirmation.",
+          "score": { "total": 5.5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "tags": ["frontier-model", "anthropic", "claude"],
+          "recurrence": "returning",
+          "recurrence_note": "First appeared in the prior week (Apr 27) launches tab as a To Watch item. Anthropic's May 6 conference confirmed no model launch this week; signal carries forward."
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "Claude Managed Agents: Dreaming, Outcomes, Multiagent Orchestration",
+      "source": "Anthropic",
+      "date": "2026-05-06",
+      "primary_url": "https://claude.com/blog/new-in-claude-managed-agents",
+      "score": 9.5
+    },
+    {
+      "title": "Anthropic–SpaceX Colossus 1 Compute Agreement (300 MW, 220K GPUs)",
+      "source": "Anthropic",
+      "date": "2026-05-06",
+      "primary_url": "https://www.anthropic.com/news/higher-limits-spacex",
+      "score": 8.5
+    },
+    {
+      "title": "Sierra — $950M at $15B+ valuation (Tiger Global, GV)",
+      "source": "TechCrunch / Sierra",
+      "date": "2026-05-04",
+      "primary_url": "https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/",
+      "score": 8.5
+    },
+    {
+      "title": "Claude for Microsoft 365 — Excel, Word, PowerPoint GA; Outlook beta",
+      "source": "Anthropic",
+      "date": "2026-05-07",
+      "primary_url": "https://releasebot.io/updates/anthropic",
+      "score": 8.5
+    },
+    {
+      "title": "Claude Agents for Financial Services — 10 templates on Claude Opus 4.7; Moody's MCP",
+      "source": "Anthropic",
+      "date": "2026-05-05",
+      "primary_url": "https://www.anthropic.com/events/the-briefing-financial-services-virtual-event",
+      "score": 8.0
+    },
+    {
+      "title": "Anthropic Enterprise AI Services Firm (Blackstone / H&F / Goldman Sachs / $1.5B)",
+      "source": "Anthropic / Blackstone",
+      "date": "2026-05-04",
+      "primary_url": "https://www.anthropic.com/news/enterprise-ai-services-company",
+      "score": 8.0
+    },
+    {
+      "title": "GPT-5.5 Instant — New default ChatGPT model; 52.5% fewer hallucinations",
+      "source": "OpenAI",
+      "date": "2026-05-05",
+      "primary_url": "https://openai.com/index/gpt-5-5-instant/",
+      "score": 8.0
+    },
+    {
+      "title": "ChatGPT Workspace Agents — credit-based pricing GA; Analytics in admin console",
+      "source": "OpenAI",
+      "date": "2026-05-06",
+      "primary_url": "https://openai.com/index/introducing-workspace-agents-in-chatgpt/",
+      "score": 7.5
+    },
+    {
+      "title": "Amazon WorkSpaces AI Agent Desktop — public preview (IAM auth, MCP, computer vision)",
+      "source": "AWS",
+      "date": "2026-05-05",
+      "primary_url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-whats-next-with-aws-2026-amazon-quick-openai-partnership-and-more-may-4-2026/",
+      "score": 8.0
+    },
+    {
+      "title": "Kilo Code v7 for VS Code — parallel agents, diff reviewer, 500+ models (#1 PH week)",
+      "source": "Kilo AI / Product Hunt",
+      "date": "2026-05-05",
+      "primary_url": "https://kilo.ai/landing/vs-code",
+      "score": 8.0
+    },
+    {
+      "title": "Amazon Bedrock AgentCore Optimization — recommendations, batch evals, A/B tests",
+      "source": "AWS",
+      "date": "2026-05-04",
+      "primary_url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-whats-next-with-aws-2026-amazon-quick-openai-partnership-and-more-may-4-2026/",
+      "score": 7.5
+    },
+    {
+      "title": "Pay.sh — Google Cloud + Solana Foundation agent-native API payments via stablecoins",
+      "source": "Google Cloud / Solana Foundation",
+      "date": "2026-05-05",
+      "primary_url": "https://pay.sh",
+      "score": 7.0
+    },
+    {
+      "title": "Google I/O 2026 — May 19–20; expected Gemini upgrade, Aluminium OS, Android XR",
+      "source": "Google",
+      "date": "2026-05-08",
+      "primary_url": "https://io.google/2026/explore/pa-keynote-1",
+      "score": 7.5
+    },
+    {
+      "title": "Shadow 2.0 — Real-time meeting action completion (#4 PH week, #1 May 6)",
+      "source": "Product Hunt",
+      "date": "2026-05-06",
+      "primary_url": "https://www.product.com/products/shadow-6",
+      "score": 6.5
+    },
+    {
+      "title": "FlowMarket — B2B AI agent deal network (#1 May 7, #6 week)",
+      "source": "Product Hunt",
+      "date": "2026-05-07",
+      "primary_url": "https://www.flowmarket.io",
+      "score": 6.5
+    },
+    {
+      "title": "Monid 2.0 — OpenRouter for agent tools; 200+ APIs; 3K+ agent purchases since launch (#2 May 8)",
+      "source": "Product Hunt",
+      "date": "2026-05-08",
+      "primary_url": "https://monid.io",
+      "score": 6.5
+    },
+    {
+      "title": "Superset 2.0 — Run 100s of coding agents in parallel from anywhere (#8 PH week)",
+      "source": "Product Hunt",
+      "date": "2026-05-06",
+      "primary_url": "https://superset.sh",
+      "score": 6.5
+    },
+    {
+      "title": "Google Health App — Fitbit rebrand; Gemini AI Health Coach at $9.99/month; launches May 19",
+      "source": "Google / TechCrunch",
+      "date": "2026-05-07",
+      "primary_url": "https://techcrunch.com/2026/05/07/googles-9-99-per-month-ai-health-coach-launches-may-19/",
+      "score": 6.5
+    },
+    {
+      "title": "Kanwas — Open-source shared context brain for teams and agents (#5 PH week)",
+      "source": "Kanwas / Product Hunt",
+      "date": "2026-05-06",
+      "primary_url": "https://kanwas.ai",
+      "score": 6.0
+    },
+    {
+      "title": "Mindra — Agent teams for productivity and marketing delegation (#1 May 4)",
+      "source": "Product Hunt",
+      "date": "2026-05-04",
+      "primary_url": "https://mindra.ai",
+      "score": 5.5
+    },
+    {
+      "title": "Cognition AI (Devin) — in talks to raise at $25B valuation",
+      "source": "Bloomberg / Forbes",
+      "date": "2026-04-23",
+      "primary_url": "https://www.bloomberg.com/news/articles/2026-04-23/ai-coding-firm-cognition-in-funding-talks-at-25-billion-value",
+      "score": 7.0
+    },
+    {
+      "title": "Claude Sonnet 4.8 — expected mid-May; no announcement at Code with Claude 2026",
+      "source": "NxCode",
+      "date": "2026-05-04",
+      "primary_url": "https://www.nxcode.io/resources/news/claude-sonnet-4-8-release-date-features-what-to-expect-2026",
+      "score": 5.5
+    },
+    {
+      "title": "Anthropic agents for financial services — Moody's MCP, 10 templates, Opus 4.7 benchmark lead",
+      "source": "Anthropic / Fortune",
+      "date": "2026-05-05",
+      "primary_url": "https://fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon/",
+      "score": 8.0
+    },
+    {
+      "title": "Amazon Connect Health — agentic patient verification and ambient documentation",
+      "source": "AWS",
+      "date": "2026-04-28",
+      "primary_url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-whats-next-with-aws-2026-amazon-quick-openai-partnership-and-more-may-4-2026/",
+      "score": 7.0
+    },
+    {
+      "title": "Amazon Connect Talent — AI-led interviews and science-backed candidate assessment (preview)",
+      "source": "AWS",
+      "date": "2026-04-28",
+      "primary_url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-whats-next-with-aws-2026-amazon-quick-openai-partnership-and-more-may-4-2026/",
+      "score": 6.5
+    },
+    {
+      "title": "Claude Managed Agents: dreaming outcomes multiagent orchestration (public beta)",
+      "source": "Anthropic",
+      "date": "2026-05-06",
+      "primary_url": "https://claude.com/blog/new-in-claude-managed-agents",
+      "score": 9.5
+    },
+    {
+      "title": "Code with Claude 2026 — Dario Amodei confirms 80x demand vs 10x plan; agent platform thesis",
+      "source": "Every / VentureBeat",
+      "date": "2026-05-06",
+      "primary_url": "https://every.to/chain-of-thought/inside-anthropic-s-2026-developer-conference",
+      "score": 7.5
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "FlowMarket primary website is flowmarket.io",
+      "reason": "Domain inferred from product name and ChatGate.ai coverage. Direct 200 confirmation not obtained. Product Hunt page at producthunt.com/products/flowmarket-2 is verified; use as backup.",
+      "attempted_url": "https://www.flowmarket.io"
+    },
+    {
+      "claim": "Mindra primary website is mindra.ai",
+      "reason": "Product Hunt daily leaderboard only; maker website URL not confirmed via direct fetch. Domain mindra.ai is best-effort inference.",
+      "attempted_url": "https://mindra.ai"
+    },
+    {
+      "claim": "Monid 2.0 primary website is monid.io",
+      "reason": "Multiple secondary sources reference Monid as 'OpenRouter for agent tools' but domain monid.io has not been confirmed via direct HTTP 200 check.",
+      "attempted_url": "https://monid.io"
+    },
+    {
+      "claim": "Pay.sh primary website is pay.sh",
+      "reason": "Launch announced by Google Cloud and Solana Foundation; pay.sh is the product name and expected domain. Multiple coverage sources cite it but direct 200 check not obtained. Use the coinfomania.com article as backup source.",
+      "attempted_url": "https://pay.sh"
+    },
+    {
+      "claim": "Claude Sonnet 4.8 is launching May 6 (Anthropic developer event)",
+      "reason": "Rumor from prior week was not confirmed at Code with Claude 2026. Anthropic explicitly stated 'No new model today' at the event. Sonnet 4.8 remains unannounced as of May 10.",
+      "attempted_url": "https://www.anthropic.com/news"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "claude.com/blog — Anthropic now uses claude.com as a distinct blog surface for Managed Agents product announcements (vs anthropic.com/news for company/research posts). Add claude.com/blog to Tier 1 source list.",
+      "Amazon WorkSpaces AI blog (aws.amazon.com/blogs/aws) — the desktop-for-agents launch this week was the highest-impact enterprise infrastructure announcement outside Anthropic. Add to enterprise AI source rotation.",
+      "Solana Foundation blog (solana.com/news) — Pay.sh with Google Cloud is the first significant web3-x-enterprise-AI crossover launch worth tracking. Add as secondary source for agent infrastructure launches."
+    ],
+    "sources_to_drop": [
+      "No drops recommended this week."
+    ],
+    "topics_to_add": [
+      "Agent-native payments infrastructure — Pay.sh demonstrates that autonomous agents need machine-native payment rails (per-request, stablecoin, no accounts). This will be a recurring theme as agent autonomy increases. Track x402 protocol, Stripe agent APIs, and similar launches.",
+      "Memory and dreaming architectures — Anthropic's Dreaming is the first production implementation of cross-session agent memory distillation. Competing implementations from LangChain, LlamaIndex, and Microsoft will follow. Add as a tracked topic.",
+      "Google I/O pre-announcements (next week) — Google is expected to pre-release product announcements in the days before I/O (May 19–20). Establish early coverage capture for the May 11–17 week.",
+      "Enterprise AI services firms — the Anthropic/Blackstone model (PE-backed, embedded engineers, mid-market focus) will be replicated by competitors. Track for OpenAI, Google, or Microsoft equivalents in this format."
+    ],
+    "topics_to_drop": [
+      "No drops recommended this week."
+    ],
+    "notes": "This week's dominant signal was Anthropic executing a three-track enterprise strategy simultaneously: (1) Platform — Managed Agents with Dreaming/Outcomes/Multiagent makes Claude a full agent operating system, not just a model API. (2) Distribution — Claude for Microsoft 365 GA, financial services agent templates, and the PE-backed services firm expand beyond developer channels into the productivity and professional services markets. (3) Infrastructure — the SpaceX compute deal eliminates the rate limit constraint that was the single largest enterprise adoption blocker for Claude Code. OpenAI answered with GPT-5.5 Instant's hallucination reductions and the Workspace Agents transition to paid — both moves targeting the same regulated enterprise customer. The week's structural story: the frontier model race is maturing into a platform and distribution race. Which lab controls the daily workflow of enterprise employees — through M365 add-ins, CX agents, or coding tools — will matter more than raw benchmark leadership in the next 12 months."
+  }
+}
