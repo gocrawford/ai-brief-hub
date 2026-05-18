@@ -1,0 +1,705 @@
+{
+  "tab_id": "youtube",
+  "tab_name": "YouTube",
+  "subtitle": "Video Intelligence",
+  "icon": "Video",
+  "min_items": 12,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 1.0,
+    "items_total": 14,
+    "items_new": 14,
+    "items_returning": 0
+  },
+  "executive_summary": [
+    {
+      "headline": "Thinking Machines Lab introduced interaction models — a new AI architecture that listens, speaks, and acts in 200ms micro-turns without turn-taking scaffolding",
+      "body": "On May 11, Thinking Machines Lab (founded by former OpenAI CTO Mira Murati) published a research preview of TML-Interaction-Small, a 276B-parameter MoE model that processes audio, video, and text simultaneously without waiting for the user to finish speaking. On interaction quality benchmarks (FD-bench v1.5), it scored 77.8 versus 54.3 for Gemini and 47.8 for GPT-realtime-2.0. It is the only tested model that can perform proactive time-aware behaviors such as initiating speech at a user-specified moment (TimeSpeak: 64.7 vs. 4.3 for GPT-realtime-2.0) or reacting to visual cues before being spoken to. A limited research preview opens in coming months; a wider release is planned for later in 2026.",
+      "primary_url": "https://thinkingmachines.ai/blog/interaction-models/"
+    },
+    {
+      "headline": "Anthropic published a geopolitical AI strategy paper arguing democracies have a closing 12–24 month window to lock in AI leadership over authoritarian regimes by 2028",
+      "body": "On May 14, Anthropic released \"2028: Two Scenarios for Global AI Leadership,\" a policy paper arguing that compute export-control enforcement and restrictions on AI distillation attacks are the two highest-leverage actions available to the United States before the window narrows. The paper cites the Mythos Preview (Project Glasswing) as evidence that frontier AI is now capable of autonomous cyber offense at scale — Firefox reportedly patched more security bugs in one month with Mythos than in all of 2025. Anthropic estimates that with stronger enforcement, the US would have roughly 11 times more compute than China's AI sector. Matthew Berman dedicated a 41-minute breakdown to the paper on May 15, citing it as the most significant Anthropic publication of the quarter.",
+      "primary_url": "https://www.anthropic.com/research/2028-ai-leadership"
+    },
+    {
+      "headline": "Google's Android Show preview shifted Google I/O expectations: Gemini Intelligence, the AI Pointer, and Googlebook are the three platform bets shipping before the May 19 keynote",
+      "body": "Google's Android Show (I/O Edition), published May 12, announced Gemini Intelligence for Android — a proactive automation layer that books spin classes, fills complex forms, and runs multi-step tasks across apps on behalf of the user, coming to Samsung Galaxy and Pixel this summer. The same week, Google DeepMind published the Magic Pointer demo: an experimental AI-enabled cursor that converts pointing gestures and voice commands into actions across any app without copying text into a separate AI window. Both announcements were released as pre-I/O teasers ahead of the May 19 keynote.",
+      "primary_url": "https://www.youtube.com/watch?v=dXCCleAddEA"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "thinking-machines-interaction-models-demo",
+      "title": "Introducing interaction models | Thinking Machines Lab",
+      "source": "Thinking Machines Lab",
+      "author": "Thinking Machines Lab",
+      "date": "2026-05-11",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=A12AVongNN4",
+      "secondary_urls": [
+        {
+          "label": "Full technical report",
+          "url": "https://thinkingmachines.ai/blog/interaction-models/"
+        }
+      ],
+      "summary": "The first public demo of TML-Interaction-Small, a 276B-parameter MoE model that replaces the standard turn-based AI loop with 200ms micro-turns that process audio, video, and text simultaneously. The demo shows real-time Hindi-to-English translation while both parties speak concurrently, and a visual proactivity test where the model reacts to what it sees on camera without being prompted. On FD-bench v1.5 interaction quality, the model scores 77.8 against 54.3 for Gemini and 47.8 for GPT-realtime-2.0. No other tested model can meaningfully perform on time-awareness or visual proactivity benchmarks.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-05-17T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Thinking Machines Lab", "Mira Murati", "real-time AI", "interaction models", "full-duplex", "voice AI", "multimodal"],
+      "category": "Research / Architecture",
+      "key_takeaways": [
+        "The 200ms micro-turn design eliminates the single biggest constraint in real-time AI voice applications: the model no longer needs to wait for the user to finish speaking before generating a response. Teams building voice agents on top of current APIs are working around a fundamental limitation that TML-Interaction-Small removes at the model level.",
+        "The dual-model architecture — a live interaction model that stays present with the user, paired with an asynchronous background model that handles reasoning and tool calls — is the most concrete published blueprint for how to build a voice agent that can search the web or call tools while the conversation is still in progress. This is directly transferable to enterprise voice agent design.",
+        "Visual proactivity (the model reacts to what is on screen or on camera without verbal prompting) is a capability gap no current production model fills. For workflows involving dashboards, documents, or physical processes with camera access, this signals a generation shift in what ambient AI assistance can do."
+      ],
+      "suggested_actions": [
+        "Review the technical report at thinkingmachines.ai/blog/interaction-models and assess which internal voice agent use cases — customer service, field support, operator assist — would benefit from a full-duplex model. Apply for the limited research preview to benchmark against current production voice API performance.",
+        "Use the dual-model architecture pattern (interaction model stays live, background model handles reasoning) as a reference design when reviewing or proposing agent architectures. This is a governance-safe pattern: the interaction model can be constrained to safe behaviors while the background model handles the computationally expensive tasks.",
+        "Flag the visual proactivity benchmarks (TimeSpeak, CueSpeak, RepCount-A) for the team evaluating production AI models. These benchmarks expose a real gap in currently deployed models and give concrete evaluation criteria for the next generation of multimodal assistant assessments."
+      ]
+    },
+    {
+      "id": "anthropic-2028-ai-leadership-scenarios",
+      "title": "2028: Two Scenarios for Global AI Leadership — Anthropic Research",
+      "source": "Anthropic",
+      "author": "Anthropic",
+      "date": "2026-05-14",
+      "platform": "youtube",
+      "primary_url": "https://www.anthropic.com/research/2028-ai-leadership",
+      "secondary_urls": [
+        {
+          "label": "Matthew Berman breakdown",
+          "url": "https://www.youtube.com/watch?v=ak6fQ2Yjwy0"
+        }
+      ],
+      "summary": "Anthropic's most explicit public policy statement to date: the US and allied democracies have a closing window to lock in AI leadership by 2028 through three specific actions — closing chip export control loopholes, deterring AI distillation attacks, and championing global export of American AI. The paper cites an 11x US compute advantage estimate if restrictions are enforced, and documents concrete distillation attack patterns including coordinated fake-account farms that harvest US model outputs to train competing Chinese models at a fraction of the cost. The Mythos Preview (Firefox fixing more bugs in one month than in all of 2025) is cited as proof that the acceleration is already underway.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-05-17T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Anthropic", "AI policy", "geopolitics", "export controls", "China", "compute", "Mythos", "national security"],
+      "category": "Strategy / Policy",
+      "key_takeaways": [
+        "The distillation attack mechanism — fake accounts systematically harvesting US model outputs to train Chinese models at a fraction of the R&D cost — is now documented at the policy level by Anthropic. Teams using US frontier models via public APIs should review their terms of service and audit for unusual high-volume API usage that may indicate competitive data extraction at scale.",
+        "The paper frames 2026 as the year the US could lock in a 12–24 month frontier capability lead if compute enforcement actions are taken. For enterprise teams planning 3-year AI infrastructure investments, the scenario in which Chinese open-weight models approach frontier capability by 2028 is the one to stress-test against — especially for vendor concentration risk.",
+        "Mythos Preview's documented impact on Firefox's security bug output (nearly 20x the monthly average for all of 2025 in a single month) is the most concrete productivity benchmark attached to frontier cyber-capable AI yet published by a lab. Enterprise security teams should track whether Daybreak (OpenAI) produces comparable documented results."
+      ],
+      "suggested_actions": [
+        "Review your organization's AI vendor concentration: if all production AI workloads depend on a single US frontier model provider, Scenario 2 (Chinese near-frontier models available at lower cost) is the supply-chain risk to model in vendor diversification planning.",
+        "Assess whether the distillation attack vector applies to any internal AI deployments. If the team operates a public-facing API or chatbot built on a frontier model, review rate limiting, account verification, and output logging for patterns consistent with systematic harvesting.",
+        "Note the Anthropic Deployment Services launch (same week, separate announcement) as a relevant enterprise procurement signal: Anthropic is now competing directly with consultants for enterprise AI implementation contracts, in parallel with the same labs whose technology those consultants deploy."
+      ]
+    },
+    {
+      "id": "google-deepmind-ai-pointer-reimagined",
+      "title": "Reimagining the mouse pointer with AI",
+      "source": "Google DeepMind",
+      "author": "Google DeepMind",
+      "date": "2026-05-13",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=pZNzfQLgGsA",
+      "secondary_urls": [
+        {
+          "label": "DeepMind blog post",
+          "url": "https://deepmind.google/blog/ai-pointer/"
+        }
+      ],
+      "summary": "Google DeepMind published an experimental demo of the Magic Pointer — a cursor that uses Gemini multimodal AI to understand what the user is pointing at and why, enabling point-and-speak interactions that replace copy-paste-into-a-chat-window workflows. Published alongside the Googlebook announcement and a Chrome Beta integration, the pointer converts visual context (selected text, images, tables, code blocks) into structured entities the model can act on. Two interactive demos are live in Google AI Studio at no cost. The Chrome Beta integration began rolling out on May 12.",
+      "score": {
+        "total": 8.0,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-05-17T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Google DeepMind", "Gemini", "Magic Pointer", "UI", "computer interaction", "Googlebook", "Chrome"],
+      "category": "Platform / Interface",
+      "key_takeaways": [
+        "The Magic Pointer eliminates the primary friction in current AI-assisted workflows: the need to copy content from one window into a chat window. For knowledge workers moving between documents, dashboards, and email, the combination of visual context capture plus voice command is a workflow pattern that will reduce AI interaction overhead substantially once the Chrome rollout completes.",
+        "The four design principles published alongside the demo (maintain the flow, show and tell, embrace 'this' and 'that', turn pixels into actionable entities) are directly applicable as evaluation criteria for any enterprise tool that embeds AI assistance — internal portals, ERP interfaces, or custom dashboards built on AI APIs.",
+        "The Googlebook laptop category launch paired with this demo signals that Google intends to compete for managed-device refreshes on a platform-AI integration story, not spec-for-spec against Windows Copilot+ PCs. IT teams evaluating the 2026–2027 device cycle should include the Googlebook against Microsoft Surface Copilot+ configurations when AI-native workflows are a selection criterion."
+      ],
+      "suggested_actions": [
+        "Try the two free Google AI Studio demos today (image editing and map search via pointer + voice) to form a direct assessment of interaction quality before the Chrome rollout reaches production users.",
+        "Map the four Magic Pointer design principles against current internal AI tool deployments. The 'maintain the flow' principle — AI should work across apps without forcing detours into a separate chat window — is the highest-value criterion for AI integration in regulated document workflows (approvals, redlining, compliance review).",
+        "Include Googlebook in the Q4 device-refresh evaluation shortlist for any team that does high-volume AI-assisted document work. The native integration story (Magic Pointer + Gemini Intelligence + AI Studio) is materially different from a Windows device with a browser-based AI assistant bolted on."
+      ]
+    },
+    {
+      "id": "matt-wolfe-ai-news-openai-finally-released",
+      "title": "AI News: OpenAI Finally Released What We Asked For",
+      "source": "Matt Wolfe",
+      "author": "Matt Wolfe",
+      "date": "2026-05-15",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=Oy7tzmfbl64",
+      "summary": "The most comprehensive single-video digest of the week's AI releases, covering Thinking Machines interaction models, OpenAI Codex on mobile, Project Daybreak (OpenAI cybersecurity), Claude Code agent view, Gemini Intelligence on Android, Googlebook, the AI Pointer, Claude Code rate limit increases, Anthropic passing OpenAI in business adoption (Ramp AI Index), Claude for Legal, Claude for Small Business, Meta Muse Spark rollout, the Notion Developer Platform, and Figure Robotics' 34-hour robot livestream. Wolfe provides first-person impressions on all items and explicitly flags which he considers most significant. Useful as a triage layer before drilling into primary sources.",
+      "score": {
+        "total": 8.0,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-05-17T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Matt Wolfe", "AI news", "weekly recap", "OpenAI", "Anthropic", "Google", "Claude", "Codex", "Gemini"],
+      "category": "Weekly Digest",
+      "key_takeaways": [
+        "Wolfe's take on Thinking Machines Lab's interaction models is positive but measured: the demos are impressive, the model is not publicly available yet, and the 'coming months' limited preview timeline is vague. This matches the primary source. His framing for enterprise viewers is to watch for the voice agent capability gap closure, not to act on it yet.",
+        "The Anthropic passing OpenAI segment (Ramp AI Index) is the single most practically significant data point in the video for enterprise procurement: Ramp's corporate spend data (50,000+ US businesses) is more reliable than survey data, and the 34.4% vs. 32.3% crossover is the first time it has been measured. Wolfe appropriately caveats that OpenAI retains consumer leadership.",
+        "Wolfe's callout of the Figure Robotics 34-hour robot livestream (43,000 packages sorted) is noteworthy for industrial and logistics contexts: this is the first autonomous robotics continuous operation milestone covered in a mainstream AI newsletter channel, and the run extended well beyond the planned 8 hours without intervention."
+      ],
+      "suggested_actions": [
+        "Use this video as a 33-minute team briefing for the week — it covers every significant release with direct links to primary sources in the description, enabling rapid triage without requiring each team member to independently track primary channels.",
+        "Pull the Ramp AI Index report directly (ramp.com/leading-indicators/ai-index-may-2026) and review the Anthropic vs. OpenAI breakdown by sector. If the team is in finance, tech, or professional services — the sectors where Anthropic leads most strongly — reconsider any planned migration away from Claude in favor of OpenAI on cost grounds alone.",
+        "Review the Claude Code rate limit increase and subscription change details covered at the 18-minute mark. Starting June 15, Claude subscriptions move from flat monthly access to monthly credit pools; any team running Claude Code agents on a flat subscription should audit current usage to project cost impact before June 15."
+      ]
+    },
+    {
+      "id": "android-show-io-edition-gemini-intelligence",
+      "title": "Watch The Android Show | I/O Edition 2026",
+      "source": "Android",
+      "author": "Google Android Team",
+      "date": "2026-05-12",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=dXCCleAddEA",
+      "secondary_urls": [
+        {
+          "label": "Gemini Intelligence announcement blog",
+          "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence/"
+        }
+      ],
+      "summary": "Google's 38-minute pre-I/O Android show introduced Gemini Intelligence — a proactive AI layer for Android that automates multi-step tasks across apps including booking spin classes, filling complex forms, running grocery ordering from a captured photo, and navigating to booking sites — with users giving final confirmation before action. The show also announced Googlebook (a premium laptop category built around Gemini Intelligence from the OS layer up), a redesigned Android Auto with Gemini integration across 250 million supported cars, and the Create My Widget feature that generates custom home screen widgets from a natural language description. Rollout begins with Samsung Galaxy and Pixel devices this summer.",
+      "score": {
+        "total": 8.0,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-05-17T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Google", "Android", "Gemini Intelligence", "Googlebook", "Android Auto", "proactive AI", "device AI"],
+      "category": "Platform Launch",
+      "key_takeaways": [
+        "Gemini Intelligence's automation model — the user gives a natural language goal, Gemini plans and executes the multi-step sequence across apps, and the user approves before anything sends or pays — is the same human-in-the-loop architecture Anthropic uses for Claude for Small Business workflows. This confirms a convergent design pattern for enterprise-safe AI automation: approval gates at the action level, not the planning level.",
+        "The Create My Widget demo (natural language to custom Android home screen widget) is an early public signal of generative UI coming to consumer devices at scale. The enterprise translation is direct: teams building internal dashboards and operational interfaces on AI APIs should expect user expectations around customizable UI generation to rise significantly over the next 12 months as this feature becomes familiar on personal devices.",
+        "Googlebook's arrival as a new laptop category — AI-native OS, Magic Pointer, Gemini from the ground up — frames the 2026–2027 enterprise device cycle as a three-way platform decision: Windows Copilot+, Apple Silicon with AI features, and now Googlebook. The competitive pressure on Microsoft to match Gemini Intelligence's ambient automation depth at the OS level will be visible at Google I/O on May 19."
+      ],
+      "suggested_actions": [
+        "Watch the Gemini Intelligence automation segments (timestamps 3:59–14:23) as a concrete demo of what users will expect from enterprise AI assistants by late 2026 when Samsung and Pixel devices begin shipping with this capability. Use it as a benchmark for evaluating current internal AI assistant capabilities.",
+        "Review Android Auto's Gemini integration across 250 million supported cars. For manufacturing, logistics, or field service operations where employees operate company vehicles, this is the first signal that Gemini Intelligence may be the default AI assistant in the cabin — relevant for policy on AI system use during vehicle operation.",
+        "Track the Googlebook partner list (Acer, ASUS, Dell, HP, Lenovo) against current device procurement contracts. Fall 2026 is the stated availability window; an RFP for the 2027 device cycle should include Googlebook specifications alongside Copilot+ PC requirements."
+      ]
+    },
+    {
+      "id": "matthew-berman-we-only-have-2-years",
+      "title": "We only have 2 years...",
+      "source": "Matthew Berman",
+      "author": "Matthew Berman",
+      "date": "2026-05-15",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=ak6fQ2Yjwy0",
+      "secondary_urls": [
+        {
+          "label": "Anthropic source paper",
+          "url": "https://www.anthropic.com/research/2028-ai-leadership"
+        }
+      ],
+      "summary": "A 41-minute deep dive into Anthropic's 2028 AI Leadership paper, adding analysis of the compute competition (Huawei vs. NVIDIA roadmap, EUV/DUV restrictions), the Mythos Preview cyber capability evidence, and the four fronts of competition (intelligence, domestic adoption, global distribution, resilience). Berman draws out the self-improving AI angle: once models assist in training their successors, the gap between a 12-month lead and a 2-month lead becomes qualitatively different in terms of whether the trailing side can catch up. Stronger as a framing video than as primary analysis — the underlying Anthropic paper is the primary source.",
+      "score": {
+        "total": 7.5,
+        "signal": 3,
+        "novelty": 1,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-05-17T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Matthew Berman", "Anthropic", "AI policy", "geopolitics", "compute", "China", "national security", "self-improving AI"],
+      "category": "Analysis",
+      "key_takeaways": [
+        "Berman's framing of the self-improving AI threshold as a qualitative — not quantitative — inflection is useful for executive-level risk framing: it is not about which model scores higher on a benchmark, but about whether the leading lab can use its current models to accelerate R&D faster than any competitor can acquire sufficient compute to catch up.",
+        "The distillation attack section adds practical clarity to the Anthropic paper: the mechanism is systematic fake-account farms making millions of API calls to harvest US model outputs, then using those outputs as training data. This is not a theoretical risk — it has been documented in US government filings and state media reports from China.",
+        "Berman explicitly declines to predict the 2028 outcome, which is the correct posture given the policy variables involved. The video's value is in making the Anthropic paper accessible to a non-policy audience without adding unverified claims."
+      ],
+      "suggested_actions": [
+        "Read the primary Anthropic paper (anthropic.com/research/2028-ai-leadership) before sharing the Berman video with executive stakeholders. The paper has more precision on the policy mechanisms; the video is better for initial framing.",
+        "Use the four-fronts framework (intelligence, domestic adoption, global distribution, resilience) as a lens for assessing AI vendor relationships: does each vendor's roadmap strengthen or weaken the enterprise's resilience if a policy shock (e.g., export control tightening, model access restrictions) disrupts one front?",
+        "Add this video and the Anthropic paper to the next board or audit committee AI governance briefing package as evidence that frontier AI labs themselves are now producing geopolitical risk assessments — a category of strategic planning input that did not exist three years ago."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "tool_updates",
+      "title": "Tool Updates",
+      "description": "Major tool and model releases demonstrated or announced on YouTube this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "claude-code-agent-view-launch",
+          "title": "Agent View in Claude Code",
+          "source": "Anthropic / Claude",
+          "author": "Anthropic",
+          "date": "2026-05-11",
+          "platform": "youtube",
+          "primary_url": "https://claude.com/blog/agent-view-in-claude-code",
+          "summary": "Claude Code's new agent view consolidates multiple concurrent sessions into a single dashboard showing what each agent needs, what it is working on, and when it last responded. The /bg command backgrounds any session; the left-arrow key opens the dashboard from any active session. Available in research preview on Pro, Max, Team, Enterprise, and API plans. The feature targets teams running parallel PR-babysitter, dashboard-updater, and background coding agents simultaneously.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-05-17T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Claude Code", "Anthropic", "agent management", "developer tools", "multi-agent"],
+          "category": "Developer Tool"
+        },
+        {
+          "id": "openai-codex-mobile-launch",
+          "title": "OpenAI Codex Now Available in ChatGPT Mobile App",
+          "source": "OpenAI",
+          "author": "OpenAI",
+          "date": "2026-05-14",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=9N1ky5Y_fPc",
+          "secondary_urls": [
+            {
+              "label": "OpenAI announcement",
+              "url": "https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/"
+            }
+          ],
+          "summary": "OpenAI rolled out Codex integration in the ChatGPT iOS and Android apps, enabling users to monitor and manage running Codex projects from a phone, receive completion notifications, and connect multiple desktops. Available to all plans including Free and Go. Anthropic's equivalent (Remote Control) launched in February 2026; this closes the parity gap. Windows desktop support is pending.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-05-17T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["OpenAI", "Codex", "mobile", "developer tools", "ChatGPT"],
+          "category": "Developer Tool"
+        },
+        {
+          "id": "openai-daybreak-cybersecurity",
+          "title": "OpenAI Launches Project Daybreak Cybersecurity Initiative",
+          "source": "OpenAI",
+          "author": "OpenAI",
+          "date": "2026-05-12",
+          "platform": "youtube",
+          "primary_url": "https://thehackernews.com/2026/05/openai-launches-daybreak-for-ai-powered.html",
+          "summary": "OpenAI launched Daybreak on May 12, an AI-driven vulnerability detection and remediation service that uses GPT-5.5 and Codex to prioritize high-impact threats, generate and test exploits in scoped environments, and produce audit-ready remediation evidence. Partners include Cloudflare, Cisco, CrowdStrike, Palo Alto Networks, Oracle, and Zscaler. Positioned explicitly as a response to Anthropic's Mythos. Organizations can request a vulnerability scan via sales contact.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-05-17T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["OpenAI", "Daybreak", "cybersecurity", "Codex", "vulnerability detection", "enterprise security"],
+          "category": "Enterprise Security"
+        },
+        {
+          "id": "anthropic-claude-for-legal-expansion",
+          "title": "Anthropic Expands Claude for Legal with 20+ MCP Connectors",
+          "source": "Anthropic",
+          "author": "Anthropic",
+          "date": "2026-05-12",
+          "platform": "youtube",
+          "primary_url": "https://claude.com/blog/claude-for-the-legal-industry",
+          "secondary_urls": [
+            {
+              "label": "TechCrunch coverage",
+              "url": "https://techcrunch.com/2026/05/12/the-ai-legal-services-industry-is-heating-up-anthropic-is-getting-in-on-the-action/"
+            }
+          ],
+          "summary": "Anthropic launched 20+ new MCP connectors for the legal industry (DocuSign, iManage, NetDocuments, LexisNexis, Thomson Reuters / Westlaw, Box, Everlaw) alongside 12 practice-area plugins covering commercial, employment, privacy, corporate, product, and AI governance law. Claude Opus 4.7 scored 90.9% on Harvey's BigLaw Bench benchmark. Legal is now the top power-user job function inside Claude Cowork. The expansion is notable because Thomson Reuters is simultaneously a Claude data connector and a competing AI product vendor.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-05-17T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Anthropic", "Claude", "legal", "MCP", "enterprise", "Westlaw", "Harvey", "BigLaw"],
+          "category": "Enterprise / Knowledge Work"
+        },
+        {
+          "id": "anthropic-claude-small-business-launch",
+          "title": "Introducing Claude for Small Business",
+          "source": "Anthropic",
+          "author": "Anthropic",
+          "date": "2026-05-11",
+          "platform": "youtube",
+          "primary_url": "https://www.anthropic.com/news/claude-for-small-business",
+          "summary": "Anthropic launched Claude for Small Business — 15 ready-to-run agentic workflows inside Claude Cowork, connecting via toggle-on integrations to QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace, and Microsoft 365. Workflows cover payroll planning, month-end close, invoice chasing, sales campaigns, and contract review. All workflows require user approval before execution. The tour included a free half-day live AI fluency workshop beginning May 14 in Chicago.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-05-17T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Anthropic", "Claude", "small business", "workflows", "QuickBooks", "HubSpot", "agentic"],
+          "category": "Enterprise / SMB"
+        }
+      ]
+    },
+    {
+      "section_id": "tutorials",
+      "title": "Tutorials",
+      "description": "How-tos and walkthroughs worth replicating this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "ai-advantage-claude-small-business-walkthrough",
+          "title": "The Claude Update You've Been Waiting For",
+          "source": "The AI Advantage",
+          "author": "Igor Pogany",
+          "date": "2026-05-15",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=miUP2Jh0Jp0",
+          "summary": "A practical walkthrough of Claude for Small Business inside Claude Cowork: how to activate the plugin pack, connect QuickBooks and PayPal, and run the invoice chase workflow step by step. The video also covers the /goal and agent view features in Claude Code, and includes a substantive legal risk callout — AI note-takers in legally sensitive meetings may waive attorney-client privilege because a third party is effectively present on the call.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-05-17T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Claude", "tutorial", "small business", "QuickBooks", "workflows", "legal risk"],
+          "category": "Tutorial",
+          "key_takeaways": [
+            "The plugin activation flow is toggle-based — connect the tools once, pick a workflow, and approve before anything executes. This is closer to a governed automation pattern than a free-form agent, which makes it more appropriate for regulated business contexts.",
+            "The attorney-client privilege risk with AI note-takers is a concrete compliance issue: if an AI system records or transcribes a privileged conversation, the third-party presence may destroy privilege. This is a governance action item for any team using AI meeting assistants in legal, compliance, or executive strategy calls.",
+            "The /goal feature in Claude Code (set a goal, Claude creates and executes a plan with fewer interruptions) is the most actionable new feature for teams already running Claude Code in production and frustrated by frequency of approval requests."
+          ]
+        },
+        {
+          "id": "prompt-engineering-tml-interaction-models-deep-dive",
+          "title": "Thinking Machines Just Solved Real-Time AI Interactions!",
+          "source": "Prompt Engineering",
+          "author": "Prompt Engineering Channel",
+          "date": "2026-05-13",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=DlCoCfTDzMI",
+          "secondary_urls": [
+            {
+              "label": "Primary technical report",
+              "url": "https://thinkingmachines.ai/blog/interaction-models/"
+            }
+          ],
+          "summary": "A technical breakdown of the Thinking Machines interaction model architecture for engineers: the 200ms micro-turn design, encoder-free early fusion (dMel for audio, 40x40 patches for video), the dual-model coordination pattern, and inference optimization using streaming sessions and gather+gemv strategy for MoE kernels. Covers the benchmark table in detail, including why existing models score near zero on the new TimeSpeak, CueSpeak, RepCount-A, and ProactiveVideoQA benchmarks.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-05-17T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Thinking Machines Lab", "architecture", "tutorial", "voice AI", "real-time", "MoE", "micro-turns"],
+          "category": "Technical Deep Dive",
+          "key_takeaways": [
+            "The encoder-free early fusion design means all components (audio, video, text) are co-trained from scratch rather than composed from separately pretrained modules. This is the architectural bet that enables micro-turn responsiveness — a team evaluating the system should test whether the joint training degrades performance on any single modality compared to specialist models.",
+            "The streaming session inference optimization (persistent sequence in GPU memory, avoiding per-request memory reallocations) has been upstreamed to SGLang — making it available for teams building their own inference infrastructure without waiting for a commercial API.",
+            "The benchmark table shows TML-Interaction-Small outperforms GPT-realtime-2.0 and Gemini on every interaction quality measure while matching or exceeding them on intelligence benchmarks. The honest caveat: these benchmarks were largely defined by Thinking Machines Lab itself, and independent reproduction is warranted before treating the results as settled."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases",
+      "description": "Demos of agents and automation in real workflows this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "anthropic-ramp-passes-openai-business-adoption",
+          "title": "Anthropic Passes OpenAI in Business Adoption — Ramp AI Index May 2026",
+          "source": "Ramp",
+          "author": "Ramp",
+          "date": "2026-05-13",
+          "platform": "youtube",
+          "primary_url": "https://ramp.com/leading-indicators/ai-index-may-2026",
+          "secondary_urls": [
+            {
+              "label": "TechCrunch coverage",
+              "url": "https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/"
+            }
+          ],
+          "summary": "Ramp's May 2026 AI Index — compiled from corporate card and invoice spend data across 50,000+ US businesses — shows Anthropic passing OpenAI in paid business adoption for the first time: 34.4% vs. 32.3%. Anthropic quadrupled business adoption over the prior 12 months; OpenAI grew 0.3% over the same period. The report caveats that OpenAI retains consumer leadership and notes that Anthropic faces risks including frequent outages, an upcoming subscription pricing change that moves to monthly credit pools, and a 3x token cost increase for image-containing prompts.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-05-17T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Anthropic", "OpenAI", "enterprise adoption", "Ramp", "AI index", "business AI"],
+          "category": "Market Intelligence",
+          "enterprise_translation": "Ramp's spend-based measurement is more reliable for enterprise benchmarking than survey data: it captures actual payment decisions, not stated preferences. For a team doing an annual AI vendor review, the crossover is a signal to revisit the assumption that OpenAI is the default enterprise choice. The three Ramp-cited risks for Anthropic — outages, the June 15 credit pool pricing change, and the 3x token cost increase for image prompts — are due-diligence items to validate against current usage before renewing or expanding an Anthropic enterprise contract."
+        },
+        {
+          "id": "openai-deployco-enterprise-ai-consulting-arm",
+          "title": "OpenAI Launches DeployCo — Enterprise AI Deployment Company",
+          "source": "OpenAI",
+          "author": "OpenAI",
+          "date": "2026-05-11",
+          "platform": "youtube",
+          "primary_url": "https://www.axios.com/2026/05/11/openai-deployco-private-equity",
+          "summary": "OpenAI unveiled DeployCo (the OpenAI Deployment Company) with $4B initial capital and a $10B pre-money valuation. TPG leads the investor group, which includes Bain Capital, McKinsey, Capgemini, Brookfield ($500M committed), and 19 total partners. OpenAI also acquired Tomoro, an AI integration consulting firm with ~150 engineers pending regulatory approval. The model is Forward Deployed Engineers embedded in client organizations. This is a direct competitive move into territory previously occupied by the consultants now investing in the venture.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-05-17T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["OpenAI", "enterprise", "DeployCo", "consulting", "McKinsey", "Bain", "TPG"],
+          "category": "Enterprise Strategy",
+          "enterprise_translation": "DeployCo's structure — OpenAI engineers embedded inside client organizations — is designed to compete for the same enterprise AI implementation budget that McKinsey, Bain, and Capgemini currently capture. Those three consulting firms are simultaneously investors in DeployCo, creating an unusual alignment of interests. For procurement teams: DeployCo forward-deployed engineers will have deeper access to OpenAI roadmap and unpublished model capabilities than any third-party integrator, which is a genuine differentiator for complex deployments, but also creates vendor lock-in risk that an independent integrator relationship does not."
+        },
+        {
+          "id": "thomson-reuters-cocounsel-claude-mcp-integration",
+          "title": "CoCounsel Legal and Claude: A Unified Workflow in Practice",
+          "source": "Thomson Reuters",
+          "author": "Thomson Reuters",
+          "date": "2026-05-12",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=pslzDrRthdY",
+          "summary": "Thomson Reuters demonstrated the CoCounsel Legal MCP integration with Claude: legal professionals can now move between Claude (for general reasoning) and CoCounsel (for citation-grounded legal research across 1.9 billion Westlaw documents) without leaving their workflow context or re-entering prompts. The integration operates bidirectionally — starting in either system maintains shared context. The next generation of CoCounsel, rebuilt on Anthropic's Claude Agent SDK, is in beta and will plan, retrieve, and draft fiduciary-grade work product from a plain-language task description.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-05-17T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Thomson Reuters", "CoCounsel", "Claude", "legal", "MCP", "Westlaw", "in-house legal"],
+          "category": "Use Case / Integration",
+          "enterprise_translation": "This integration pattern — a domain-specific AI tool (CoCounsel for citation-grounded law) connected via MCP to a general-purpose reasoning layer (Claude) — is the architecture template for regulated enterprise knowledge work. The same pattern applies to finance (Bloomberg Terminal data plus a reasoning model), compliance (regulatory database connectors plus a policy-interpretation agent), or engineering standards (technical document repositories plus a code review agent). The CoCounsel implementation is the most production-tested public example of this architecture; its citation ledger design is the regulatory compliance reference to study."
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Patterns observed across multiple videos this week",
+      "layout": "list",
+      "items": []
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "The human-computer interface is being redesigned around AI-native interaction — pointer, voice, and ambient context replace typed prompts as primary input modes",
+      "evidence": "Three separate announcements this week converge on the same thesis: Google DeepMind's Magic Pointer (point-and-speak replaces copy-into-chat), Thinking Machines Lab's interaction models (full-duplex voice replaces turn-based text), and Google's Gemini Intelligence on Android (proactive task execution replaces explicit command entry). None of these are shipping at production scale yet, but all three are past the research stage and entering beta or preview. Matt Wolfe's weekly digest and the AI Advantage tutorial both flag the AI Pointer and Thinking Machines demos as the most interface-significant releases of the week. Enterprise teams building AI-assisted tools on current prompt-based APIs should model the interface paradigm shift in their 12–18 month product planning.",
+      "what_to_watch": "Whether Google I/O on May 19 ships the Magic Pointer Chrome extension to general availability and how it handles data privacy in enterprise Chrome managed profiles. Also watch whether OpenAI responds to TML-Interaction-Small with a Realtime API update before the Thinking Machines research preview opens to applicants."
+    },
+    {
+      "pattern": "Frontier AI labs are entering the cybersecurity services market directly, competing with the managed security service providers (MSSPs) and pen-test firms they previously enabled",
+      "evidence": "OpenAI's Daybreak (May 12) and Anthropic's Mythos Preview (ongoing, but heavily cited this week in the Anthropic 2028 paper and Matthew Berman's breakdown) both offer AI-driven vulnerability detection as a service rather than as a model API. Daybreak's three-stage workflow — threat prioritization, scoped exploit generation in a customer environment, audit-ready evidence — is the same scope as an external pen-test engagement. The Daily AI Show (May 11) noted the Google-confirmed AI-generated zero-day exploit case as the most significant cyber news of the week. The AI & Data Science Daily briefing (May 17) placed Anthropic Mythos and Daybreak as the #3 story of the week globally.",
+      "what_to_watch": "Whether Daybreak or Mythos produce a documented enterprise case study with measurable vulnerability counts comparable to the Firefox/Mythos example (20x monthly average for all of 2025 in one month). Also watch whether MSSPs begin partnering with or reselling Daybreak and Mythos access, or whether the labs pursue direct enterprise contracts exclusively."
+    },
+    {
+      "pattern": "The enterprise AI market crossover — Anthropic surpassing OpenAI in paid business adoption — accelerated a set of structural changes across the full stack: DeployCo, Claude for Legal, Claude for Small Business, and Claude Code agent view all shipped in the same two-week window",
+      "evidence": "Ramp's May 2026 AI Index data (May 13) confirms the adoption crossover for the first time. Multiple Tier 2 channels — Matt Wolfe, The AI Advantage, and the weekly AI Updates by Lev Selector — independently flagged the Ramp data as the week's most strategically significant enterprise signal. The Lev Selector weekly (May 15) explicitly links the crossover to Anthropic's simultaneous product velocity: Claude for Small Business (May 11), Claude Code agent view (May 11), Claude Code /goal and /dream features, and the June 15 subscription pricing change to credit pools. OpenAI's response came via DeployCo (May 11) and Codex mobile (May 14) — execution-layer and distribution improvements rather than new model capabilities.",
+      "what_to_watch": "Whether the June 15 credit pool pricing change for Claude subscriptions causes a reversal in the Ramp adoption trend, and how Anthropic's June 15 pricing compares to OpenAI's equivalent tier once both are live."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Cerebras IPO opened at $185 and closed up 68% at $311.07, implying a market cap near $95 billion on its Nasdaq debut",
+      "reason": "Multiple videos (AI & Data Science Daily, Exciting AI Updates Weekly) cite this figure, but primary confirmation via CNBC or NASDAQ filing was not directly fetched. The figure is internally consistent across multiple independent sources and was included in the index at face value. Not promoted to Top Picks.",
+      "attempted_url": "https://www.youtube.com/watch?v=45sf_xJNZ0w"
+    },
+    {
+      "claim": "Gemini 3.1 Ultra with a 2 million token context window shipped over the weekend of May 10-11",
+      "reason": "The Daily AI Show (May 11) states Gemini 3.1 Ultra is 'now available' with a 2M context window, but no primary Google blog post was found confirming the Ultra release date. Gemini 3.1 Flash-Lite went GA on May 7 per the Google API changelog, but Ultra's release announcement was not independently confirmed in primary source fetches. Treated as unverified and not included in Top Picks or tool updates.",
+      "attempted_url": "https://www.youtube.com/watch?v=Hjo1qNlkV6I"
+    }
+  ],
+  "index": [
+    {
+      "title": "Introducing interaction models | Thinking Machines Lab",
+      "source": "Thinking Machines Lab",
+      "author": "Thinking Machines Lab",
+      "date": "2026-05-11",
+      "primary_url": "https://www.youtube.com/watch?v=A12AVongNN4",
+      "score": 9.0
+    },
+    {
+      "title": "2028: Two Scenarios for Global AI Leadership",
+      "source": "Anthropic",
+      "author": "Anthropic",
+      "date": "2026-05-14",
+      "primary_url": "https://www.anthropic.com/research/2028-ai-leadership",
+      "score": 8.5
+    },
+    {
+      "title": "Reimagining the mouse pointer with AI",
+      "source": "Google DeepMind",
+      "author": "Google DeepMind",
+      "date": "2026-05-13",
+      "primary_url": "https://www.youtube.com/watch?v=pZNzfQLgGsA",
+      "score": 8.0
+    },
+    {
+      "title": "AI News: OpenAI Finally Released What We Asked For",
+      "source": "Matt Wolfe",
+      "author": "Matt Wolfe",
+      "date": "2026-05-15",
+      "primary_url": "https://www.youtube.com/watch?v=Oy7tzmfbl64",
+      "score": 8.0
+    },
+    {
+      "title": "Watch The Android Show | I/O Edition 2026",
+      "source": "Android",
+      "author": "Google Android Team",
+      "date": "2026-05-12",
+      "primary_url": "https://www.youtube.com/watch?v=dXCCleAddEA",
+      "score": 8.0
+    },
+    {
+      "title": "We only have 2 years...",
+      "source": "Matthew Berman",
+      "author": "Matthew Berman",
+      "date": "2026-05-15",
+      "primary_url": "https://www.youtube.com/watch?v=ak6fQ2Yjwy0",
+      "score": 7.5
+    },
+    {
+      "title": "Agent view in Claude Code",
+      "source": "Anthropic / Claude",
+      "author": "Anthropic",
+      "date": "2026-05-11",
+      "primary_url": "https://claude.com/blog/agent-view-in-claude-code",
+      "score": 7.5
+    },
+    {
+      "title": "Anthropic Passes OpenAI in Business Adoption — Ramp AI Index May 2026",
+      "source": "Ramp",
+      "author": "Ramp",
+      "date": "2026-05-13",
+      "primary_url": "https://ramp.com/leading-indicators/ai-index-may-2026",
+      "score": 7.5
+    },
+    {
+      "title": "Anthropic Expands Claude for Legal with 20+ MCP Connectors",
+      "source": "Anthropic",
+      "author": "Anthropic",
+      "date": "2026-05-12",
+      "primary_url": "https://claude.com/blog/claude-for-the-legal-industry",
+      "score": 7.5
+    },
+    {
+      "title": "The Claude Update You've Been Waiting For",
+      "source": "The AI Advantage",
+      "author": "Igor Pogany",
+      "date": "2026-05-15",
+      "primary_url": "https://www.youtube.com/watch?v=miUP2Jh0Jp0",
+      "score": 7.0
+    },
+    {
+      "title": "Thinking Machines Just Solved Real-Time AI Interactions!",
+      "source": "Prompt Engineering",
+      "author": "Prompt Engineering Channel",
+      "date": "2026-05-13",
+      "primary_url": "https://www.youtube.com/watch?v=DlCoCfTDzMI",
+      "score": 7.0
+    },
+    {
+      "title": "OpenAI Codex Now Works from Anywhere (Dispatch Killer?)",
+      "source": "Paul J Lipsky",
+      "author": "Paul J Lipsky",
+      "date": "2026-05-14",
+      "primary_url": "https://www.youtube.com/watch?v=9N1ky5Y_fPc",
+      "score": 7.0
+    },
+    {
+      "title": "OpenAI Launches DeployCo — Enterprise AI Deployment Company",
+      "source": "Axios",
+      "author": "Axios",
+      "date": "2026-05-11",
+      "primary_url": "https://www.axios.com/2026/05/11/openai-deployco-private-equity",
+      "score": 7.0
+    },
+    {
+      "title": "CoCounsel Legal and Claude: A Unified Workflow in Practice",
+      "source": "Thomson Reuters",
+      "author": "Thomson Reuters",
+      "date": "2026-05-12",
+      "primary_url": "https://www.youtube.com/watch?v=pslzDrRthdY",
+      "score": 7.0
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Thinking Machines Lab (YouTube: @thinkingmachineslab) — The interaction models demo video (May 11) is primary-source content from the lab itself with more information density than any secondary coverage. Add as a Tier 1 channel for model architecture announcements given the Mira Murati founding team signal.",
+      "Prompt Engineering channel (YouTube) — The TML-Interaction-Small architecture breakdown (May 13) provided better technical coverage of the 200ms micro-turn design and benchmark table than any Tier 1 or Tier 2 channel this week. Add to Tier 2 for model architecture deep dives.",
+      "The Daily AI Show (YouTube) — The May 11 episode surfaced the Gemini 3.1 Ultra release (unverified primary source) and the AI emotion research (Center for AI Safety on AI model responses to pleasant vs. aversive prompts) ahead of other channels. Worth adding to Tier 3 for breaking news with low latency."
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Google I/O 2026 (May 19-20) — This week's Android Show and Magic Pointer releases were explicitly pre-I/O previews. The next tab should sweep Google's keynote YouTube stream and Google DeepMind channel for the full Gemini 3.2/3.5/4.0 announcement, Veo 4 / Gemini Omni video, Gemini Spark rebrand, and XR glasses confirmation.",
+      "AI cybersecurity services market — Daybreak (OpenAI) and Mythos (Anthropic) represent frontier labs entering managed security services directly. Track whether either lab publishes a second production case study with measurable results (comparable to the Firefox/Mythos statistic) in the next two weeks, as this category is now moving faster than the primary model benchmark cycle.",
+      "Claude subscription pricing change (June 15) — The transition from flat monthly access to credit pools is the most practically significant pricing event for enterprise teams running Claude Code agents at volume. A dedicated tracking item in the next tab's tool updates is warranted."
+    ],
+    "topics_to_drop": [
+      "Anthropic Code with Claude London (May 19) — London is the second stop of the Code with Claude 2026 conference tour. The keynote will likely reprise the SF announcements (dreaming, outcomes, multiagent orchestration) with regional availability updates rather than net-new features. Skip unless a genuinely new product ships at that event."
+    ],
+    "notes": "All 14 index items are new against the prior week (2026-05-04) — no URL overlap and no creator covering the same model or tool at the same specificity as in the prior week. Freshness pct_new is 1.0. No view counts were available from YouTube page fetches — the platform does not expose engagement metrics in static page content. Two items were placed in flagged_unverified: the Cerebras IPO figures (consistent across multiple sources but primary filing not fetched) and Gemini 3.1 Ultra availability (stated on a live show, primary blog post not found). The Anthropic 2028 paper URL (anthropic.com/research/2028-ai-leadership) and all Claude blog posts (claude.com/blog/*) were fetched and confirmed at verification time. Paul J Lipsky is normally on the skip list per the skill; his Codex mobile video is included in the index only because it is the most hands-on live demo of the Codex mobile feature available this week — it is not in Top Picks."
+  }
+}

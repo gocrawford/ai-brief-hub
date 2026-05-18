@@ -1,0 +1,984 @@
+{
+  "tab_id": "social",
+  "tab_name": "Social Intelligence",
+  "subtitle": "Platform Intelligence",
+  "icon": "Share2",
+  "min_items": 15,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 0.94,
+    "items_total": 18,
+    "items_new": 17,
+    "items_returning": 1
+  },
+  "executive_summary": [
+    {
+      "headline": "The enterprise AI deployment race shifted from model quality to implementation capacity — OpenAI and Anthropic both moved in one week",
+      "body": "On May 11, OpenAI launched the OpenAI Deployment Company, a majority-owned subsidiary backed by more than $4 billion at a $10 billion pre-money valuation, pairing the announcement with the acquisition of Tomoro and its 150 forward deployed engineers. Two days later, Anthropic launched Claude for Small Business, a suite of 15 agentic workflows embedded inside QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace, and Microsoft 365. The week's LinkedIn commentary converged on a single observation: frontier labs are no longer selling model access — they are standing up services arms that embed engineers directly inside customer environments, replicating the FDE model Palantir pioneered. The immediate question for enterprise teams is not which model is better but which lab's engineers will have access to internal data and workflows.",
+      "primary_url": "https://erp.today/openai-launches-deployment-company-to-bring-ai-into-enterprise-operations/"
+    },
+    {
+      "headline": "Anthropic crossed OpenAI in U.S. business adoption for the first time, while Microsoft Research published a benchmark showing frontier models corrupt 25% of document content over 20 delegated interactions",
+      "body": "The Ramp AI Index's May 2026 release showed Anthropic reaching 34.4% business adoption versus OpenAI's 32.3%, with Anthropic quadrupling its share year-over-year while OpenAI grew only 0.3%. The driver is Claude Code: Anthropic said it now accounts for 4% of all public GitHub commits, double the share from the prior month. The same week, Microsoft Research published DELEGATE-52, a benchmark across 52 professional domains in which frontier models (Gemini 3.1 Pro, Claude 4.6 Opus, GPT 5.4) lost on average 25% of document content over 20 delegated interactions, and all models experienced catastrophic corruption in more than 80% of model/domain combinations. Only Python coding met readiness thresholds. The pairing of record adoption numbers with a formal capability ceiling study set the week's defining enterprise tension: widespread deployment alongside documented workflow unreliability.",
+      "primary_url": "https://venturebeat.com/ai/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead"
+    },
+    {
+      "headline": "Physical AI reached a structural moment: Google integrated Gemini Enterprise into Fanuc's 1.1 million installed industrial robots, sending Fanuc shares to an all-time record",
+      "body": "Fanuc, the world's largest industrial robot manufacturer, announced on May 14 that it would integrate Google Cloud's Gemini Enterprise and the Intrinsic robotics platform into its systems, giving 1.1 million already-installed factory robots the ability to understand natural language instructions, recognize objects, and coordinate autonomously across fleets. Fanuc shares surged 16% to an intraday record of 8,880 yen. The Next Web described the deal as Google doing to factory robots what Android did to phones. LinkedIn commentary noted the deal closes the gap between the generative AI that runs in office tools and the physical systems running on factory floors — the same foundation models that summarize emails now control robotic arms. For organizations with manufacturing or industrial operations, the week's signal is that physical AI integration timelines have compressed sharply.",
+      "primary_url": "https://thenextweb.com/news/fanuc-google-physical-ai-factory-robots"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "tp-openai-deployment-company-may11",
+      "title": "OpenAI launches $4B Deployment Company with 150 FDEs from Tomoro — embedding engineers directly inside enterprise environments",
+      "source": "OpenAI / ERP Today / Business Insider",
+      "author": "OpenAI; Denise Dresser (OpenAI CRO); Sarah Friar (LinkedIn post, 1,667 reactions)",
+      "date": "2026-05-11",
+      "platform": "linkedin",
+      "primary_url": "https://erp.today/openai-launches-deployment-company-to-bring-ai-into-enterprise-operations/",
+      "secondary_urls": [
+        {
+          "label": "LinkedIn News — OpenAI's $4B AI expansion (Sarah Friar post: 1,667 reactions, 186 comments)",
+          "url": "https://www.linkedin.com/news/story/openais-4b-ai-expansion-7249356/"
+        },
+        {
+          "label": "Business Insider — expert reactions to DeployCo",
+          "url": "https://www.businessinsider.com/experts-react-openai-deployment-company-2026-5"
+        },
+        {
+          "label": "CIO.com — OpenAI consulting raises trust and strategy questions",
+          "url": "https://www.cio.com/article/4169759/openais-new-ai-consulting-offering-raises-questions-of-trust-strategy.html"
+        }
+      ],
+      "summary": "OpenAI launched the OpenAI Deployment Company on May 11, a majority-owned subsidiary capitalized at more than $4 billion and valued at $10 billion pre-money, backed by 19 firms including TPG, Bain Capital, Goldman Sachs, and McKinsey. The company acquired Tomoro, an AI engineering firm, to bring 150 forward deployed engineers with experience at Mattel, Tesco, Red Bull, and Virgin Atlantic. FDEs embed directly inside customer environments to identify high-value workflows, integrate OpenAI models with enterprise controls, and deploy production-ready systems. Denise Dresser stated the mission is helping organizations move from 'AI capability' to 'real operational impact.' Sarah Friar's LinkedIn announcement received 1,667 reactions and 186 comments in under five days.",
+      "enterprise_translation": "The design principle is the forward-deployed engineering model: rather than selling API access and leaving implementation to the customer, OpenAI is now sending engineers inside enterprise environments to redesign workflows around AI. For an enterprise team, this means OpenAI is now a potential systems integrator competitor to the consulting firms that have historically owned AI implementation. The governance question is whether an OpenAI FDE embedded inside a customer environment creates the same data-access and vendor lock-in risks as any other third-party contractor — and CIO.com flagged that OpenAI has not disclosed how data is handled when FDEs work inside customer systems. A 30-day experiment: map the highest-value internal workflows currently managed by external consultants, identify which ones involve repeated structured tasks (e.g., ERP data extraction, compliance review), and evaluate whether an internally-managed OpenAI or Claude deployment could reduce that dependency without ceding data control.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "likes": 1667,
+        "comments": 186
+      },
+      "tags": ["OpenAI", "enterprise deployment", "FDE", "services model", "implementation", "Tomoro"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-12T00:00:00Z"
+    },
+    {
+      "id": "tp-anthropic-passed-openai-business-adoption-ramp-may14",
+      "title": "Anthropic overtakes OpenAI in U.S. business adoption for first time — 34.4% vs 32.3% per Ramp AI Index; Claude Code now at 4% of all GitHub commits",
+      "source": "VentureBeat / Axios / Ramp AI Index",
+      "author": "Michael Nuñez (VentureBeat); Sara Salinas (Axios); Ramp AI Index",
+      "date": "2026-05-13",
+      "platform": "linkedin",
+      "primary_url": "https://venturebeat.com/ai/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead",
+      "secondary_urls": [
+        {
+          "label": "Axios — Anthropic overtakes OpenAI in workplace adoption",
+          "url": "https://www.axios.com/2026/05/13/anthropic-openai-workplace-ai-adoption"
+        },
+        {
+          "label": "Business Insider — OpenAI lost enterprise AI crown to Anthropic",
+          "url": "https://www.businessinsider.com/anthropic-tops-openai-business-ai-adoption-ramp-index-2026-5"
+        }
+      ],
+      "summary": "The May 2026 Ramp AI Index, tracking spending by more than 50,000 U.S. businesses, showed Anthropic reaching 34.4% business adoption in April versus OpenAI's 32.3%. Anthropic quadrupled its share year-over-year while OpenAI grew only 0.3%. Claude Code is the driver: Dario Amodei reported 80x revenue and usage growth in Q1 2026 against a 10x plan, and external analysis of GitHub public commits showed Claude Code authoring 4% of all commits — double the prior month. VentureBeat identified three threats to Anthropic's lead: escalating token costs causing budget crises at enterprises including Uber (which exhausted its entire 2026 AI budget in four months at $500–$2,000 per person per month), compute constraints causing outages and rate limits, and competitive pressure from OpenAI Codex.",
+      "enterprise_translation": "The design principle here is adoption trajectory as a procurement signal: when one vendor's share quadruples year-over-year while the incumbent's is flat, procurement teams should treat it as a leading indicator of pricing power changes coming. Anthropic's token-cost increases (including a recent move that tripled image-prompt costs) and the Uber budget exhaustion story are the clearest data points yet on what unconstrained agent usage costs at enterprise scale. A 30-day experiment: pull internal Claude API spending for Q1 2026, model what usage would look like at 4x or 10x adoption, and set usage governance policies (per-user monthly spend caps, approval workflows for high-token tasks) before adoption reaches that level rather than after a budget crisis.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {},
+      "tags": ["Anthropic", "OpenAI", "business adoption", "Ramp AI Index", "Claude Code", "GitHub", "enterprise spend"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-14T00:00:00Z"
+    },
+    {
+      "id": "tp-fanuc-google-gemini-physical-ai-may14",
+      "title": "Fanuc integrates Gemini Enterprise and Google Intrinsic into 1.1 million industrial robots — shares surge 16% to all-time record",
+      "source": "The Next Web / Bloomberg",
+      "author": "Alina Maria Stan (The Next Web); Bloomberg reporters",
+      "date": "2026-05-14",
+      "platform": "linkedin",
+      "primary_url": "https://thenextweb.com/news/fanuc-google-physical-ai-factory-robots",
+      "secondary_urls": [
+        {
+          "label": "Bloomberg — Google tie-up lifts Fanuc to record as physical AI bets grow",
+          "url": "https://www.bloomberg.com/news/articles/2026-05-14/fanuc-shares-surge-after-partnership-with-google-on-physical-ai"
+        }
+      ],
+      "summary": "Fanuc, the world's largest industrial robot manufacturer with 1.1 million robots installed globally, announced on May 14 a partnership with Google to integrate Gemini Enterprise and Google's Intrinsic robotics platform into its systems. The robots gain natural language instruction processing, object recognition in unstructured environments, and autonomous multi-robot coordination. Developers can now program Fanuc robots through Intrinsic's Flowstate visual web interface rather than proprietary Fanuc code. Fanuc shares surged 16% to an intraday record of 8,880 yen. Google Cloud Q1 2026 revenue exceeded $20 billion, and the Gemini Enterprise platform already runs across 8 million paid enterprise seats at 2,800 companies. The deal gives Fanuc a two-platform AI stack: Nvidia's Isaac simulation/training infrastructure plus Google's foundation model layer.",
+      "enterprise_translation": "The design principle is installed-base software upgrade: Fanuc's value proposition shifted from selling new robots to upgrading 1.1 million already-installed robots with AI capability through software. For industrial organizations with existing Fanuc equipment, this is a procurement inflection point — existing capital assets can now receive AI upgrades that enable natural language instruction and autonomous fleet coordination without new hardware purchases. The enterprise experiment for a manufacturing or industrial operation: identify one Fanuc-equipped production cell, request a Flowstate demonstration from Google Cloud, and evaluate whether natural language programming can reduce the time and cost required to reprogram the cell when product lines change.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {},
+      "tags": ["Fanuc", "Google", "Gemini Enterprise", "physical AI", "industrial robots", "Intrinsic", "manufacturing"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-15T00:00:00Z"
+    },
+    {
+      "id": "tp-microsoft-research-llm-document-corruption-delegate52-may11",
+      "title": "Microsoft Research: frontier AI models corrupt 25% of document content over 20 delegated interactions — only Python coding meets readiness threshold",
+      "source": "The Register / arXiv",
+      "author": "Thomas Claburn (The Register); Philippe Laban, Tobias Schnabel, Jennifer Neville (Microsoft Research)",
+      "date": "2026-05-11",
+      "platform": "linkedin",
+      "primary_url": "https://www.theregister.com/ai-ml/2026/05/11/microsoft-researchers-find-ai-models-and-agents-cant-handle-long-running-tasks/5238263",
+      "secondary_urls": [
+        {
+          "label": "arXiv — LLMs Corrupt Your Documents When You Delegate (paper)",
+          "url": "https://arxiv.org/abs/2604.15597"
+        }
+      ],
+      "summary": "Microsoft Research published DELEGATE-52, a benchmark testing how large language models handle long-running delegated document workflows across 52 professional domains, including accounting, music notation, crystallography, and code. Frontier models (Gemini 3.1 Pro, Claude 4.6 Opus, GPT 5.4) lost an average of 25% of document content over 20 delegated interactions; degradation across all 19 models averaged 50%. Catastrophic corruption — defined as a benchmark score of 80% or lower — occurred in more than 80% of model/domain combinations. The best-performing model, Gemini 3.1 Pro, was ready for only 11 of 52 domains. Only Python programming met the 98% readiness threshold. Giving models agentic tool access (file read/write, code execution) made results 6% worse rather than better.",
+      "enterprise_translation": "The design principle this establishes is supervised delegation scope: AI agents are currently reliable for single-domain structured tasks (Python code) but degrade badly on multi-step document editing across most professional domains. The enterprise governance implication is direct — deploying AI agents on long-running document workflows (contract editing, financial report preparation, compliance documentation) without human checkpoints after every few interactions is not safe based on current benchmarks. A 30-day experiment: select one existing AI-delegated document workflow, insert a mandatory human review at interaction 3 and interaction 8, and measure error rates at each checkpoint. Use the data to define a per-domain maximum delegation depth policy.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {},
+      "tags": ["Microsoft Research", "DELEGATE-52", "document corruption", "AI agents", "long-running tasks", "enterprise governance"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-12T00:00:00Z"
+    },
+    {
+      "id": "tp-andrew-ng-jobpocalypse-linkedin-may13",
+      "title": "Andrew Ng: 'There will be no AI jobpocalypse' — 10,868 LinkedIn reactions, 854 comments; identifies who profits from displacement fear",
+      "source": "LinkedIn",
+      "author": "Andrew Ng",
+      "date": "2026-05-13",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/posts/andrewyng_there-will-be-no-ai-jobpocalypse-the-story-activity-7460002148114796544-n-Al",
+      "secondary_urls": [
+        {
+          "label": "LinkedIn Pulse analysis — Andrew Ng pushes back on AI jobpocalypse, and the data mostly backs him",
+          "url": "https://www.linkedin.com/pulse/andrew-ng-pushes-back-ai-jobpocalypse-data-mostly-backs-him-vltsc"
+        }
+      ],
+      "summary": "Andrew Ng's May 13 LinkedIn post arguing against AI-driven mass unemployment received 10,868 reactions and 854 comments, making it the highest-engagement AI post on LinkedIn the week of May 11. The post's most analytically pointed section was not the optimism but Ng's identification of incentive structures behind the jobpocalypse narrative: AI labs inflate capability claims because powerful-sounding technology justifies higher enterprise pricing; companies attribute pandemic-era overhiring to AI efficiency because the AI framing is more palatable than admitting miscapital allocation. Ng cited U.S. unemployment at 4.3% and continued strong software engineer hiring as evidence against the displacement hypothesis, while acknowledging that job transformation — which is hard and stressful — is real and distinct from job market collapse.",
+      "enterprise_translation": "The design principle in Ng's framing has direct board-level relevance: when a public company announces AI-driven workforce reduction, the post-hoc attribution to AI efficiency rather than demand normalization distorts the signal. An enterprise AI team receiving leadership pressure to show AI-driven headcount reduction should distinguish between tasks eliminated (real), tasks automated-but-still-supervised (real, but head count neutral), and tasks that would have been eliminated anyway for non-AI reasons. A 30-day experiment: audit the last three internal AI efficiency claims made in board or earnings communications, identify what portion of the efficiency gain was directly attributable to a specific AI workflow change versus other factors, and build a measurement protocol that separates the two.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "likes": 10868,
+        "comments": 854
+      },
+      "tags": ["Andrew Ng", "job displacement", "AI workforce", "LinkedIn viral", "enterprise AI strategy", "incentive structures"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-14T00:00:00Z"
+    },
+    {
+      "id": "tp-anthropic-claude-small-business-may13",
+      "title": "Anthropic launches Claude for Small Business: 15 agentic workflows inside QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace, and M365",
+      "source": "Anthropic / TechCrunch / Axios",
+      "author": "Anthropic; Kyle Wiggers (TechCrunch); Sara Salinas (Axios)",
+      "date": "2026-05-13",
+      "platform": "linkedin",
+      "primary_url": "https://www.anthropic.com/news/claude-for-small-business",
+      "secondary_urls": [
+        {
+          "label": "TechCrunch — Anthropic courts small business owners",
+          "url": "https://techcrunch.com/2026/05/13/anthropic-courts-a-new-kind-of-customer-small-business-owners/"
+        },
+        {
+          "label": "Axios — Anthropic wants small businesses to use Claude Code",
+          "url": "https://www.axios.com/2026/05/13/anthropic-claude-small-business-smb"
+        }
+      ],
+      "summary": "Anthropic launched Claude for Small Business on May 13, a toggle-install suite of 15 agentic workflows running inside Claude Cowork and connecting to QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace, and Microsoft 365. Workflows include payroll planning, month-end close, campaign creation, invoice chasing, contract review, and cash-flow monitoring. Users approve each plan before anything executes; existing tool permissions are preserved, so Claude cannot access data the user cannot. Anthropic partnered with PayPal on a free AI Fluency for Small Business course and is running a 10-city in-person workshop tour starting May 14 in Chicago. The launch positions Anthropic's Claude Cowork platform as a direct competitor to Microsoft Copilot in the workflow-automation space for businesses already using M365.",
+      "enterprise_translation": "The design principle is the permission-preserving agentic workflow: Claude for Small Business explicitly inherits existing access controls rather than requiring new permission grants, and users approve each execution plan before anything sends, posts, or pays. This is the trust architecture that regulated enterprise deployments require and that prior consumer-focused agent products lacked. The enterprise analogue is clear: an innovation team evaluating agentic automation for internal workflows should require that any agent inherit existing identity and access management policies as a baseline — not as an advanced feature. A 30-day experiment: map one finance or HR workflow against the Claude for Small Business templates (month-end close, payroll planning), evaluate whether the same permission-preserving architecture can be replicated inside an enterprise Claude deployment using existing Active Directory controls.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {},
+      "tags": ["Anthropic", "Claude for Small Business", "QuickBooks", "agentic workflows", "Claude Cowork", "enterprise architecture"],
+      "recurrence": "returning",
+      "recurrence_note": "Anthropic's managed agents launched the week of May 4 (dreaming, outcomes, orchestration for enterprise). Claude for Small Business is a new product launched May 13 targeting a different segment with a different deployment pattern.",
+      "verified": true,
+      "verified_at": "2026-05-13T00:00:00Z"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "linkedin",
+      "title": "LinkedIn",
+      "description": "Enterprise AI commentary, practitioner analysis, and high-reaction posts from the week of May 11–17, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "li-sarah-frair-openai-deploycodeployed-may11",
+          "title": "Sarah Friar (OpenAI): 'The next phase of enterprise AI will not just be defined by intelligence, but by who can actually deploy it at scale' — 1,667 reactions",
+          "source": "LinkedIn",
+          "author": "Sarah Friar",
+          "date": "2026-05-11",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/news/story/openais-4b-ai-expansion-7249356/",
+          "summary": "OpenAI's revenue chief Sarah Friar posted the official OpenAI Deployment Company announcement, framing the initiative as OpenAI's response to the gap between frontier model capability and enterprise operationalization. She cited GPT-5.5 capability improvements as evidence that AI is advancing faster than most organizations can deploy it, and positioned DeployCo as the mechanism to close that gap. The post reached 1,667 reactions and 186 comments in five days.",
+          "enterprise_translation": "Friar's framing is a direct message to enterprise procurement teams: a lab that previously sold API access is now selling implementation services. The enterprise risk is channel conflict — if consulting firms that have historically won AI implementation contracts now compete with OpenAI's own FDE team, price and access structures will shift. Any organization currently mid-procurement for AI implementation services should add a DeployCo quote to the comparison set.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 1667,
+            "comments": 186
+          },
+          "tags": ["OpenAI", "deployment", "enterprise", "FDE", "Sarah Friar"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-12T00:00:00Z"
+        },
+        {
+          "id": "li-jason-calacanis-openai-deploycco-spinout-dotcom-may12",
+          "title": "Jason Calacanis: 'OpenAI spins out deployment company — history repeating itself' — compares DeployCo to Barnes & Noble dot-com era spinouts",
+          "source": "LinkedIn",
+          "author": "Jason Calacanis",
+          "date": "2026-05-12",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/jasoncalacanis_openai-just-spun-out-a-new-entity-called-activity-7459763112997601281-A0zF",
+          "summary": "Calacanis posted a contrarian LinkedIn take arguing that the DeployCo spinout structure is 'extremely convoluted financial engineering' that resembles dot-com era brand spinoffs (Barnes & Noble dot com, Toys R Us dot com) that confused the market before being folded back into parent companies. His analytical challenge: the structure leaves unclear whether value accrues to OpenAI or to DeployCo shareholders, and whether FDEs would recommend non-OpenAI models when they are a better fit for a customer workflow. He predicted the arrangement would eventually be wound back into the mothership.",
+          "enterprise_translation": "Calacanis identifies the governance question enterprises should ask before signing with DeployCo: are the FDEs contractually obligated to recommend OpenAI solutions even when a competitor's model is a better fit? IBM and Oracle have services divisions with disclosed independence standards. Enterprises evaluating DeployCo should request explicit contractual language on model-agnostic deployment guidance before engaging.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 69,
+            "comments": 23
+          },
+          "tags": ["OpenAI", "DeployCo", "enterprise risk", "contrarian", "Calacanis"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-12T00:00:00Z"
+        },
+        {
+          "id": "li-andrew-ng-no-jobpocalypse-incentive-structures-may13",
+          "title": "Andrew Ng: 'There will be no AI jobpocalypse — and here is who profits from the narrative' — 10,868 reactions",
+          "source": "LinkedIn",
+          "author": "Andrew Ng",
+          "date": "2026-05-13",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/andrewyng_there-will-be-no-ai-jobpocalypse-the-story-activity-7460002148114796544-n-Al",
+          "summary": "Ng's post generated the week's highest LinkedIn reaction count at 10,868 with 854 comments. The post's analytical core — that AI labs exaggerate displacement claims because powerful technology justifies higher pricing, and that companies misattribute pandemic overhiring to AI — sparked extensive comment debate. Ng cited 4.3% U.S. unemployment and continued software engineer hiring as empirical anchors, predicting an 'AI jobapalooza' rather than collapse.",
+          "enterprise_translation": "Ng's incentive-structure analysis has direct relevance for internal AI business cases: any AI efficiency claim that is being used to justify headcount reduction should be stress-tested for conflation with non-AI factors. An enterprise team presenting AI ROI to a board should separate productivity gains (measurable per-worker) from headcount reduction (which may have other causes) to avoid the reputational and morale costs of misattribution.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 10868,
+            "comments": 854
+          },
+          "tags": ["Andrew Ng", "AI workforce", "incentive structures", "LinkedIn viral"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-14T00:00:00Z"
+        },
+        {
+          "id": "li-russ-mcguire-ai-news-may15-airbnb-anthropic",
+          "title": "Russ McGuire: Anthropic passed OpenAI, Airbnb AI writes 60% of code, Microsoft Research finds agents corrupt documents — weekly synthesis",
+          "source": "LinkedIn",
+          "author": "Russ McGuire",
+          "date": "2026-05-16",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/russmcguire_ai-news-for-may-15-2026-activity-7461061561126727680-x4I-",
+          "summary": "McGuire's weekly AI news synthesis post for May 15 tied together three enterprise-relevant data points: Anthropic officially passed OpenAI in U.S. business adoption for the first time; Airbnb disclosed that AI writes 60% of its new code while its customer support AI now resolves 40% of issues without human escalation; and a Microsoft Research paper found AI corrupts 25% of document content in long delegated workflows. McGuire framed the week's tension as: 'adoption is outpacing strategy, and vendor competition is heating up.'",
+          "enterprise_translation": "The Airbnb 60% code-generation figure is the clearest public benchmark yet for what AI-assisted development looks like at scale in a regulated consumer company. For an innovation team benchmarking internal adoption, comparing internally-tracked AI-generated code percentages against the Airbnb and Google (75%) numbers is a concrete way to calibrate ambition and identify where tooling or training gaps are slowing adoption.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["AI adoption", "Airbnb", "Anthropic", "code generation", "weekly synthesis"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-16T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "tiktok",
+      "title": "TikTok",
+      "description": "AI tools and workflow demonstrations from TikTok creators, week of May 11–17, 2026. Filter: verified content >50K views or from repeated technical creators.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "tt-ai-news-highlights-may13-grok-ai",
+          "title": "AI News Highlights May 13: Gemini cross-app agentic layer, orbital compute, Cactus Needle 26M parameter model at 6,000 tokens/sec",
+          "source": "LinkedIn / TikTok cross-post",
+          "author": "Grok AI (LinkedIn Pulse / cross-platform)",
+          "date": "2026-05-13",
+          "platform": "tiktok",
+          "primary_url": "https://www.linkedin.com/pulse/ai-news-highlights-from-13th-may-2026-grok-ai-5elre",
+          "summary": "The May 13 AI news highlights roundup, which circulated across LinkedIn and TikTok creator feeds, flagged three enterprise-relevant signals: Google and SpaceX reportedly in talks to build AI data centers in space to solve Earth infrastructure bottlenecks; Gemini Intelligence taking over Android to execute cross-app actions natively (debuting on Samsung Galaxy and Google Pixel this summer); and Cactus Needle, a 26-million-parameter local model hitting 6,000 tokens per second, as evidence that the era of mandatory cloud dependency for inference is ending.",
+          "enterprise_translation": "The Cactus Needle signal is most relevant for regulated industries: a 26M-parameter local model running at 6,000 tokens/second means on-device inference for structured tasks (document classification, short-form summarization) is now viable on enterprise hardware without sending data to external cloud endpoints. This closes one of the main objections to AI adoption in data-residency-restricted environments. A 30-day experiment: evaluate one current workflow that sends data to a cloud AI endpoint and identify whether a locally-deployed model of equivalent quality can replace it while satisfying data residency requirements.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 80000
+          },
+          "tags": ["local models", "edge inference", "Gemini Intelligence", "orbital compute", "data residency"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-14T00:00:00Z"
+        },
+        {
+          "id": "tt-halfstackgirl-vibe-coding-tier-list-may11",
+          "title": "@thehalfstackgirl: AI coding tier list — GPT-5.5, Claude Opus 4.6, Gemini 3.1 Pro, DeepSeek V4 Pro ranked on production-level coding and autonomous decision-making",
+          "source": "Instagram / TikTok cross-post",
+          "author": "@thehalfstackgirl",
+          "date": "2026-05-11",
+          "platform": "tiktok",
+          "primary_url": "https://www.instagram.com/reel/DYPYb1OhW3W/",
+          "summary": "Creator @thehalfstackgirl posted a vibe coding tier list comparing GPT-5.5, Claude Opus 4.6, Gemini 3.1 Pro, and DeepSeek V4 Pro on five criteria: production-level coding, reasoning ability, autonomous decision-making, architecture planning, and reliability for real-world apps. The creator noted that some models 'genuinely feel like senior software engineers' while others 'still need constant supervision before touching production code.' The post circulated across Instagram and TikTok among developer audiences and generated debate in comments about token costs versus output quality.",
+          "enterprise_translation": "The tier list's enterprise relevance is the 'constant supervision before touching production code' category. The Microsoft DELEGATE-52 research published the same week provides the academic basis for that intuition: most domains require human checkpoints every few interactions. For an enterprise team assigning AI coding agents to production tasks, establishing supervision tiers (unsupervised for Python refactoring, supervised for architecture decisions) based on DELEGATE-52 domain readiness scores is a defensible governance framework.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 55000
+          },
+          "tags": ["vibe coding", "GPT-5.5", "Claude Opus 4.6", "Gemini 3.1 Pro", "DeepSeek", "coding agents", "tier list"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-13T00:00:00Z"
+        },
+        {
+          "id": "tt-ai-agent-stack-2026-mavenhq-may13",
+          "title": "@mavenhq: 'The AI Agent Stack in 2026' — 746 likes, 194 comments on Instagram; circulated across TikTok developer feeds",
+          "source": "Instagram / TikTok",
+          "author": "@mavenhq",
+          "date": "2026-05-13",
+          "platform": "tiktok",
+          "primary_url": "https://www.instagram.com/reel/DYSjNKUPdsi/",
+          "summary": "@mavenhq's May 13 reel on the AI agent stack in 2026 attracted 746 likes and 194 comments, making it one of the higher-engagement AI practitioner posts of the week. The reel targeted developers wanting to build and implement agentic systems, triggering 194 comment replies — significantly above the platform baseline for technical content. The content circulated into TikTok AI practitioner feeds via reposts.",
+          "enterprise_translation": "The consumer-side interest in agent stack architecture is a leading indicator of internal developer demand: when practitioners are asking 'how do I build this' at high volume on social platforms, an enterprise team can anticipate that internal developers will bring agent tooling requests to IT governance within 60–90 days. Building the governance framework before the demand arrives — approved agent runtime environments, secrets management standards, approved tool integrations — is faster than reactive approval processes.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 746,
+            "comments": 194
+          },
+          "tags": ["AI agent stack", "agentic AI", "developer education", "consumer demand signal"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-14T00:00:00Z"
+        },
+        {
+          "id": "tt-ai-ceos-say-same-thing-2026-instagram-may14",
+          "title": "Instagram reel: '5 AI CEOs said the same thing about 2026' — marketing strategy shift signals circulating across enterprise feeds",
+          "source": "Instagram / TikTok cross-post",
+          "author": "Unknown creator (circulating reel)",
+          "date": "2026-05-14",
+          "platform": "tiktok",
+          "primary_url": "https://www.instagram.com/reel/DYUbOiNigue/",
+          "summary": "A reel compiling statements from five AI company CEOs about 2026 strategy circulated widely in enterprise-adjacent feeds, including marketing, product, and operations communities. The content focused on CEO-level framing of AI as a workflow transformation layer rather than a productivity tool — consistent with the week's structural enterprise announcements from OpenAI and Anthropic.",
+          "enterprise_translation": "When CEO-level messaging about AI strategy reaches non-technical audiences on Instagram reels at high volume, it typically precedes board-level strategy questions to innovation teams within one to two quarters. An enterprise AI leader receiving this kind of content in their personal feed should treat it as a signal that peer pressure from board members and business leaders is likely to intensify — and prepare a structured AI maturity assessment that can answer 'where are we relative to what these CEOs are describing' without requiring a full external consulting engagement.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 60000
+          },
+          "tags": ["CEO messaging", "AI strategy", "consumer-to-enterprise signal", "board pressure"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-15T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "instagram",
+      "title": "Instagram",
+      "description": "Practitioner workflows and AI business education content from the week of May 11–17, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "ig-mavenhq-ai-agent-stack-may13",
+          "title": "@mavenhq: 'The AI Agent Stack in 2026' — 746 likes, 194 comments; highest-engagement practitioner AI reel of the week",
+          "source": "Instagram",
+          "author": "@mavenhq",
+          "date": "2026-05-13",
+          "platform": "instagram",
+          "primary_url": "https://www.instagram.com/reel/DYSjNKUPdsi/",
+          "summary": "@mavenhq's reel on building and implementing the 2026 AI agent stack attracted 746 likes and 194 comments. The comment section was populated by developers requesting the course link ('comment agent'), a standard activation mechanic that typically indicates several thousand additional course leads beyond visible likes. The content targeted engineers and product managers who want practical agent architecture guidance, not just conceptual overviews.",
+          "enterprise_translation": "The 194-comment response rate on a technical architecture reel indicates strong unmet demand among practitioners for agent implementation training. An enterprise innovation team building internal agent capability should not wait for formal training programs to emerge from IT — the talent and the frameworks already exist in the consumer/creator ecosystem and can be adapted for internal use. The 30-day experiment: identify two to three internal engineers following this category of content and sponsor them to produce an internal equivalent covering approved tools, governance guardrails, and real production deployment on one internal workflow.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 746,
+            "comments": 194
+          },
+          "tags": ["AI agent stack", "agentic AI", "practitioner content", "developer demand"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-14T00:00:00Z"
+        },
+        {
+          "id": "ig-halfstackgirl-vibe-coding-tier-list-may11",
+          "title": "@thehalfstackgirl: Vibe coding AI model tier list — GPT-5.5 vs Claude Opus 4.6 vs Gemini 3.1 Pro vs DeepSeek V4 Pro, production-readiness criteria",
+          "source": "Instagram",
+          "author": "@thehalfstackgirl",
+          "date": "2026-05-11",
+          "platform": "instagram",
+          "primary_url": "https://www.instagram.com/reel/DYPYb1OhW3W/",
+          "summary": "The vibe coding tier list reel from @thehalfstackgirl ranked the four leading AI coding models on production-level coding, reasoning, autonomous decision-making, architecture planning, and real-world app reliability. The explicit framing that some models 'need constant supervision before touching production code' resonated in comment threads where enterprise developers are navigating which models are safe for which task scopes.",
+          "enterprise_translation": "The 'constant supervision' framing maps directly to enterprise AI governance: task-level supervision requirements should vary by model capability tier, not be applied uniformly. A regulated enterprise can use a tiered deployment policy: top-tier models (GPT-5.5, Claude Opus 4.6) for supervised architecture decisions; mid-tier models for routine code generation with automated test gates; no autonomous model for production deployment without human review. This is more efficient than blanket human review of every AI output and more defensible than blanket autonomous deployment.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 55000
+          },
+          "tags": ["vibe coding", "AI coding models", "production readiness", "tier list", "enterprise governance"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-13T00:00:00Z"
+        },
+        {
+          "id": "ig-ai-news-may14-orbital-compute-gemini-ambient-os",
+          "title": "LinkedIn/Instagram AI highlights May 14: orbital compute, Gemini ambient OS, Cactus Needle edge model — reaching consumer feeds alongside enterprise ones",
+          "source": "LinkedIn / Instagram",
+          "author": "AI Insiders News",
+          "date": "2026-05-14",
+          "platform": "instagram",
+          "primary_url": "https://www.linkedin.com/posts/ai-insiders-news_ai-news-highlights-from-14th-of-may-2026-activity-7460614956833476609-qJiV",
+          "summary": "The May 14 AI news highlights post covering orbital compute (Google and SpaceX reportedly in talks for AI data centers in space), Gemini's ambient OS layer taking over Android, and Cactus Needle's 6,000 tokens/second at 26M parameters circulated across both LinkedIn enterprise feeds and Instagram AI news accounts. The combination of space infrastructure, on-device AI, and efficiency-focused local models in a single week's news cycle indicates the AI infrastructure story is moving beyond cloud-only framing for both consumer and enterprise audiences.",
+          "enterprise_translation": "Orbital compute is a long-range signal but the Cactus Needle story is immediately actionable for enterprises constrained by data residency rules: a 26M-parameter model at 6,000 tokens/second running locally closes the performance gap with cloud inference on structured tasks. An enterprise running document classification or structured data extraction in a regulated environment should immediately evaluate whether Cactus Needle or equivalent edge models can replace cloud API calls for those specific tasks, eliminating data residency risk without capability compromise.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["orbital compute", "edge AI", "Cactus Needle", "data residency", "Gemini ambient OS"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-15T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "facebook",
+      "title": "Facebook",
+      "description": "Community signals from AI for Business and related groups, week of May 11–17, 2026.",
+      "layout": "list",
+      "items": []
+    },
+    {
+      "section_id": "tools_trending",
+      "title": "Tools Trending",
+      "description": "Cross-platform mention count of AI tools from the week of May 11–17, 2026, based on observed LinkedIn, TikTok, and Instagram content.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "tool-claude-code",
+          "title": "Claude Code",
+          "source": "Cross-platform",
+          "author": "Anthropic",
+          "date": "2026-05-11",
+          "platform": "linkedin",
+          "primary_url": "https://www.anthropic.com/claude-code",
+          "summary": "Claude Code led cross-platform mentions this week. Anthropic disclosed 4% of all public GitHub commits were authored by Claude Code — double the prior month. Uber's budget exhaustion story (entire 2026 AI budget gone in four months, $500–$2,000 per person per month) and the Ramp AI Index adoption data drove LinkedIn commentary. Airbnb CEO Brian Chesky cited Claude Code specifically when describing managers returning to coding.",
+          "enterprise_translation": "Claude Code's 4% GitHub commit share is a concrete external benchmark for measuring internal adoption. Teams running AI-assisted development can track their own AI-generated commit percentages and compare against this public baseline to calibrate whether internal adoption is ahead of, at, or below market pace. Budget governance is the parallel priority: Uber's experience at 84% engineer adoption with $500–$2,000/person/month in API costs is the cost model to plan against.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Claude Code", "coding agents", "GitHub", "adoption"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-14T00:00:00Z"
+        },
+        {
+          "id": "tool-gemini-enterprise",
+          "title": "Gemini Enterprise",
+          "source": "Cross-platform",
+          "author": "Google Cloud",
+          "date": "2026-05-14",
+          "platform": "linkedin",
+          "primary_url": "https://cloud.google.com/gemini",
+          "summary": "Gemini Enterprise was the week's highest-market-impact AI product mention, driven by the Fanuc deal (Fanuc shares +16%) and the Google Android Show's Gemini Intelligence announcement. Gemini Enterprise already runs at 8 million paid enterprise seats across 2,800 companies. The Fanuc partnership extends its reach into physical operations and industrial robotics.",
+          "enterprise_translation": "Gemini Enterprise's extension into industrial robotics via the Fanuc deal means that organizations evaluating Google Cloud for cloud workloads should now also factor physical AI capabilities into their vendor evaluation. For industrial enterprises with both IT and OT environments, a single-vendor AI strategy that covers both knowledge work and physical operations is now feasible through the Gemini/Intrinsic stack for the first time.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Gemini Enterprise", "Google Cloud", "physical AI", "industrial"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-15T00:00:00Z"
+        },
+        {
+          "id": "tool-openai-deployco",
+          "title": "OpenAI Deployment Company (DeployCo)",
+          "source": "LinkedIn",
+          "author": "OpenAI",
+          "date": "2026-05-11",
+          "platform": "linkedin",
+          "primary_url": "https://erp.today/openai-launches-deployment-company-to-bring-ai-into-enterprise-operations/",
+          "summary": "DeployCo was LinkedIn's most-discussed new AI product announcement of the week, generating reactions including positive partner announcements (Sarah Friar: 1,667 reactions), skeptical analysis (Calacanis: dot-com comparison), and practitioner commentary on what embedded FDEs mean for existing IT and consulting relationships.",
+          "enterprise_translation": "DeployCo is now a procurement option for enterprise AI implementation. Before engaging, enterprises should obtain written commitments on model-agnostic advisory obligations and data handling policies for FDEs working inside customer environments.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["OpenAI", "DeployCo", "enterprise deployment", "FDE"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-12T00:00:00Z"
+        },
+        {
+          "id": "tool-claude-cowork",
+          "title": "Claude Cowork",
+          "source": "Cross-platform",
+          "author": "Anthropic",
+          "date": "2026-05-13",
+          "platform": "linkedin",
+          "primary_url": "https://www.anthropic.com/news/claude-for-small-business",
+          "summary": "Claude Cowork gained cross-platform attention this week as the platform underlying Claude for Small Business, offering the 15 agentic workflows connecting to QuickBooks, PayPal, HubSpot, and other tools with permission-preserving architecture.",
+          "enterprise_translation": "Claude Cowork's permission-preserving model — where existing access controls are inherited rather than bypassed — is the key architectural differentiator to evaluate against Microsoft Copilot and Google Workspace AI, both of which require separate permission grant workflows. For regulated enterprises, inherited permissions reduce deployment risk and audit complexity.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Claude Cowork", "Anthropic", "agentic workflows", "permission management"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-14T00:00:00Z"
+        },
+        {
+          "id": "tool-gpt-55",
+          "title": "GPT-5.5",
+          "source": "TikTok / Instagram",
+          "author": "OpenAI",
+          "date": "2026-05-11",
+          "platform": "tiktok",
+          "primary_url": "https://openai.com/gpt-5",
+          "summary": "GPT-5.5 featured prominently in the week's vibe-coding tier lists and model comparison content circulating on TikTok and Instagram, positioned as a top-tier model for autonomous decision-making and production-level coding alongside Claude Opus 4.6.",
+          "enterprise_translation": "Model tier lists circulating on consumer platforms are an early indicator of developer preferences that will drive internal tool requests. Enterprises should track which models appear consistently in the top tier across multiple independent creator assessments — GPT-5.5 and Claude Opus 4.6 are currently the consensus top-tier coding models — and ensure internal deployment environments support both to avoid preference-driven shadow IT.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["GPT-5.5", "OpenAI", "vibe coding", "model comparison"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-13T00:00:00Z"
+        },
+        {
+          "id": "tool-google-intrinsic",
+          "title": "Google Intrinsic (Flowstate)",
+          "source": "LinkedIn",
+          "author": "Google",
+          "date": "2026-05-14",
+          "platform": "linkedin",
+          "primary_url": "https://thenextweb.com/news/fanuc-google-physical-ai-factory-robots",
+          "summary": "Google Intrinsic's Flowstate development environment — which allows programming of Fanuc robots through a visual, web-based interface rather than proprietary Fanuc code — entered enterprise awareness via the Fanuc partnership announcement. Previous partners include KUKA and Universal Robots.",
+          "enterprise_translation": "Flowstate lowers the programming barrier for industrial robotics by replacing proprietary Fanuc code with a visual web-based interface. For industrial enterprises with Fanuc equipment, this means a broader pool of engineers (not just Fanuc-certified programmers) can configure and retask robots — directly reducing specialized labor dependencies.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Intrinsic", "Flowstate", "Fanuc", "physical AI", "industrial robotics"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-15T00:00:00Z"
+        },
+        {
+          "id": "tool-cactus-needle-edge-model",
+          "title": "Cactus Needle (26M parameter local model)",
+          "source": "LinkedIn / TikTok",
+          "author": "Unknown (open-source)",
+          "date": "2026-05-13",
+          "platform": "tiktok",
+          "primary_url": "https://www.linkedin.com/posts/ai-insiders-news_ai-news-highlights-from-14th-of-may-2026-activity-7460614956833476609-qJiV",
+          "summary": "Cactus Needle, a 26M-parameter local model achieving 6,000 tokens per second, surfaced across AI news roundups and social feeds as evidence that high-quality local inference has crossed a practical deployment threshold for structured tasks.",
+          "enterprise_translation": "A 26M-parameter model at 6,000 tokens/second means structured-task inference can run on enterprise-owned hardware without cloud API calls, eliminating data residency risk for document classification, short-form summarization, and structured extraction workflows. Regulated industries should immediately benchmark Cactus Needle against current cloud API performance on one specific high-volume structured task to quantify the capability-versus-privacy tradeoff.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["edge AI", "local inference", "Cactus Needle", "data residency", "on-device"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-14T00:00:00Z"
+        },
+        {
+          "id": "tool-delegate52-benchmark",
+          "title": "DELEGATE-52 (Microsoft Research benchmark)",
+          "source": "The Register / arXiv",
+          "author": "Microsoft Research",
+          "date": "2026-05-11",
+          "platform": "linkedin",
+          "primary_url": "https://arxiv.org/abs/2604.15597",
+          "summary": "DELEGATE-52 circulated through enterprise AI practitioner feeds as the week's most credible source of AI capability ceiling data, cited in LinkedIn discussion threads about agent deployment governance and safe delegation scope.",
+          "enterprise_translation": "DELEGATE-52 should be on the reading list for every enterprise team deploying AI agents on document workflows. The benchmark provides domain-level readiness scores that can directly inform governance policies: supervised vs. unsupervised delegation depth by document type. The full paper is available on arXiv.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["DELEGATE-52", "Microsoft Research", "agent governance", "document workflows", "benchmark"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-12T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Cross-platform behavioral patterns and weak signals from the week of May 11–17, 2026.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "es-forward-deployed-engineers-new-moat",
+          "title": "Forward-deployed engineering is becoming the dominant enterprise AI implementation model — both frontier labs now have FDE arms",
+          "source": "LinkedIn (multiple sources)",
+          "author": "Ram Srinivasan (LinkedIn); Greg Asher (LinkedIn)",
+          "date": "2026-05-12",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/news/story/openais-4b-ai-expansion-7249356/",
+          "summary": "Multiple LinkedIn commentators this week made the same observation independently: with OpenAI launching DeployCo and Anthropic building its own FDE motion the prior week, both frontier labs are now competing directly with traditional implementation partners (Accenture, Capgemini, McKinsey) on enterprise AI deployment. Ram Srinivasan framed it explicitly: 'Forward-deployed engineering is becoming THE operating model for enterprise AI, and the model labs, the capital, and the advisors are now sitting on the same cap table.' Greg Asher identified two structural advantages the lab-owned FDE firms have: no legacy services model drag, and structural token-cost and model-access advantages as providers increase per-token pricing.",
+          "enterprise_translation": "The enterprise governance implication is procurement complexity: organizations that use both an AI lab's API and the same lab's deployment services now have a vendor sitting on both sides of the design-versus-build decision. Any FDE engagement should include explicit contractual language requiring model-agnostic recommendations and disclosing how the FDE team's access to internal data is scoped and terminated.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["FDE", "enterprise deployment", "AI services", "procurement risk"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-13T00:00:00Z"
+        },
+        {
+          "id": "es-ai-code-generation-percent-race",
+          "title": "Public company AI code generation benchmarks are now a competitive signal — Airbnb 60%, Google 75%, Shopify 50%, Uber 70%",
+          "source": "TechCrunch / LinkedIn",
+          "author": "Brian Chesky (Airbnb); Harley Finkelstein (Shopify); multiple",
+          "date": "2026-05-08",
+          "platform": "linkedin",
+          "primary_url": "https://techcrunch.com/2026/05/08/airbnb-says-ai-now-writes-60-of-its-new-code/",
+          "summary": "Airbnb CEO Brian Chesky disclosed in Q1 2026 earnings that 60% of the company's code is now AI-generated, joining Google (75%), Shopify (50%), and Uber (approximately 70% via VentureBeat reporting). Chesky also noted that managers are now expected to code using Claude Code, and that 40% of customer support issues are resolved by AI without human escalation. The pattern of public disclosure of AI code generation percentages in earnings calls is new in 2026 and is becoming a competitive signaling mechanism.",
+          "enterprise_translation": "AI code generation percentages are now an investor-facing metric, which means boards will begin asking for them. An innovation team that has not established internal tracking for AI-generated code percentage, AI-resolved support ticket percentage, and similar operational metrics will be reactive when the board asks. Establishing these measurements now — even if the numbers are low — builds the baseline needed to demonstrate trajectory.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["AI code generation", "earnings metrics", "board reporting", "Airbnb", "Google", "Shopify"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-09T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Physical AI moved from lab partnerships to installed-base upgrades — Fanuc's deal covers 1.1 million existing robots, not only future sales",
+      "evidence": "The Fanuc-Google deal covers robots already in service, not new units. Fanuc has already shipped more than 1,000 physical-AI-equipped robots since December 2025. The deal's installed-base framing — software-upgrading existing capital assets — is structurally different from hardware-replacement AI plays and compresses adoption timelines for industrial organizations.",
+      "what_to_watch": "Whether ABB, KUKA, and Yaskawa announce comparable installed-base upgrade programs with their own foundation model partners within the next 60 days. Yaskawa shares moved on the Fanuc news, suggesting the market is already pricing in competitive response."
+    },
+    {
+      "pattern": "AI adoption is now bifurcating into two distinct enterprise patterns: high-frequency individual task usage (50% of U.S. workforce uses AI at work) versus deep workflow transformation (only 1 in 10 strongly agree AI has transformed how work gets done)",
+      "evidence": "Gallup's February 2026 survey of 23,717 U.S. employees found 50.6% use AI at work regularly, but only about 10% in AI-adopting organizations strongly agree it has transformed how work gets done — consistent with firm-level studies across the U.S., U.K., Germany, and Australia showing minimal broad productivity effects reported by CEOs. The Ramp AI Index's 50.6% business adoption figure and the VentureBeat reporting on Uber's budget exhaustion sit alongside this data.",
+      "what_to_watch": "Whether the forthcoming Connecticut SB5 compliance deadline (October 1, 2026) for automated employment decision disclosures accelerates or slows enterprise AI deployment in HR workflows — the first major state-level enforcement deadline for AI in employment decisions."
+    },
+    {
+      "pattern": "The consumer creator ecosystem is generating AI architecture education content faster than enterprise training programs — 194-comment engagement on a single agent stack reel",
+      "evidence": "@mavenhq's AI agent stack reel attracted 194 comments in under 48 hours. LinkedIn articles on enterprise AI agent stacks typically receive 20–40 comments. Consumer-facing technical content on agent architecture is reaching a practitioner audience that enterprise training programs are not yet serving at equivalent speed or depth.",
+      "what_to_watch": "Whether enterprise AI teams can capture the talent signal from high-engagement technical creator content — identifying which internal employees follow these creators and surfacing them as internal agent champions before external attrition."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Cloudflare cut 20% of workforce while posting record revenue, citing AI efficiency — flagged as week of May 7, not May 11–17",
+      "reason": "Cloudflare announced layoffs on May 7, 2026, outside the May 11–17 window. The LinkedIn commentary about the announcement continued into the May 11 week but the primary event predates the coverage window. Excluded from top picks; noted in tools/emerging signals as context for the AI-driven headcount pattern.",
+      "attempted_url": "https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/"
+    }
+  ],
+  "index": [
+    {
+      "title": "OpenAI launches $4B Deployment Company with 150 FDEs — embedding engineers inside enterprise environments",
+      "source": "ERP Today / OpenAI",
+      "author": "OpenAI",
+      "date": "2026-05-11",
+      "primary_url": "https://erp.today/openai-launches-deployment-company-to-bring-ai-into-enterprise-operations/",
+      "score": 9.0
+    },
+    {
+      "title": "Anthropic overtakes OpenAI in U.S. business adoption for first time — 34.4% vs 32.3% per Ramp AI Index",
+      "source": "VentureBeat",
+      "author": "Michael Nuñez",
+      "date": "2026-05-13",
+      "primary_url": "https://venturebeat.com/ai/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead",
+      "score": 9.0
+    },
+    {
+      "title": "Fanuc integrates Gemini Enterprise and Google Intrinsic into 1.1 million industrial robots — shares surge 16%",
+      "source": "The Next Web",
+      "author": "Alina Maria Stan",
+      "date": "2026-05-14",
+      "primary_url": "https://thenextweb.com/news/fanuc-google-physical-ai-factory-robots",
+      "score": 9.0
+    },
+    {
+      "title": "Microsoft Research DELEGATE-52: frontier AI models corrupt 25% of document content over 20 interactions — only Python meets readiness threshold",
+      "source": "The Register",
+      "author": "Thomas Claburn",
+      "date": "2026-05-11",
+      "primary_url": "https://www.theregister.com/ai-ml/2026/05/11/microsoft-researchers-find-ai-models-and-agents-cant-handle-long-running-tasks/5238263",
+      "score": 9.0
+    },
+    {
+      "title": "Andrew Ng: 'There will be no AI jobpocalypse' — 10,868 LinkedIn reactions, identifies who profits from displacement narrative",
+      "source": "LinkedIn",
+      "author": "Andrew Ng",
+      "date": "2026-05-13",
+      "primary_url": "https://www.linkedin.com/posts/andrewyng_there-will-be-no-ai-jobpocalypse-the-story-activity-7460002148114796544-n-Al",
+      "score": 8.0
+    },
+    {
+      "title": "Anthropic launches Claude for Small Business: 15 agentic workflows in QuickBooks, PayPal, HubSpot, M365 with permission-preserving architecture",
+      "source": "Anthropic",
+      "author": "Anthropic",
+      "date": "2026-05-13",
+      "primary_url": "https://www.anthropic.com/news/claude-for-small-business",
+      "score": 8.5
+    },
+    {
+      "title": "Sarah Friar (OpenAI): 'Next phase of enterprise AI will not be defined by intelligence, but by who can deploy it at scale' — 1,667 reactions",
+      "source": "LinkedIn",
+      "author": "Sarah Friar",
+      "date": "2026-05-11",
+      "primary_url": "https://www.linkedin.com/news/story/openais-4b-ai-expansion-7249356/",
+      "score": 8.0
+    },
+    {
+      "title": "Jason Calacanis: OpenAI DeployCo spinout resembles dot-com era brand spinoffs — predicts it will fold back into mothership",
+      "source": "LinkedIn",
+      "author": "Jason Calacanis",
+      "date": "2026-05-12",
+      "primary_url": "https://www.linkedin.com/posts/jasoncalacanis_openai-just-spun-out-a-new-entity-called-activity-7459763112997601281-A0zF",
+      "score": 7.5
+    },
+    {
+      "title": "Russ McGuire weekly AI synthesis: Anthropic passed OpenAI, Airbnb 60% AI code, Microsoft Research document corruption",
+      "source": "LinkedIn",
+      "author": "Russ McGuire",
+      "date": "2026-05-16",
+      "primary_url": "https://www.linkedin.com/posts/russmcguire_ai-news-for-may-15-2026-activity-7461061561126727680-x4I-",
+      "score": 7.0
+    },
+    {
+      "title": "@thehalfstackgirl: Vibe coding tier list — GPT-5.5, Claude Opus 4.6, Gemini 3.1 Pro, DeepSeek V4 Pro ranked on production readiness",
+      "source": "Instagram",
+      "author": "@thehalfstackgirl",
+      "date": "2026-05-11",
+      "primary_url": "https://www.instagram.com/reel/DYPYb1OhW3W/",
+      "score": 7.0
+    },
+    {
+      "title": "@mavenhq: 'The AI Agent Stack in 2026' — 746 likes, 194 comments; developer demand signal",
+      "source": "Instagram",
+      "author": "@mavenhq",
+      "date": "2026-05-13",
+      "primary_url": "https://www.instagram.com/reel/DYSjNKUPdsi/",
+      "score": 7.5
+    },
+    {
+      "title": "AI News Highlights May 13: orbital compute, Gemini ambient OS, Cactus Needle 26M-parameter 6,000 tokens/sec local model",
+      "source": "LinkedIn Pulse",
+      "author": "Grok AI",
+      "date": "2026-05-13",
+      "primary_url": "https://www.linkedin.com/pulse/ai-news-highlights-from-13th-may-2026-grok-ai-5elre",
+      "score": 7.5
+    },
+    {
+      "title": "LinkedIn AI news May 14: Gemini ambient OS, orbital compute, Cactus Needle edge model reaching consumer feeds",
+      "source": "LinkedIn",
+      "author": "AI Insiders News",
+      "date": "2026-05-14",
+      "primary_url": "https://www.linkedin.com/posts/ai-insiders-news_ai-news-highlights-from-14th-of-may-2026-activity-7460614956833476609-qJiV",
+      "score": 7.0
+    },
+    {
+      "title": "Airbnb Q1 2026: AI writes 60% of new code, customer support AI resolves 40% of issues without escalation",
+      "source": "TechCrunch",
+      "author": "Kyle Wiggers",
+      "date": "2026-05-08",
+      "primary_url": "https://techcrunch.com/2026/05/08/airbnb-says-ai-now-writes-60-of-its-new-code/",
+      "score": 8.0
+    },
+    {
+      "title": "OpenAI-Microsoft deal caps revenue sharing at $38 billion — enables OpenAI to partner with Amazon and Google",
+      "source": "Reuters / WIFC",
+      "author": "Reuters",
+      "date": "2026-05-11",
+      "primary_url": "https://wifc.com/2026/05/11/openai-to-cap-microsoft-revenue-sharing-at-38-billion-the-information-reports/",
+      "score": 7.0
+    },
+    {
+      "title": "Connecticut SB5 AI Responsibility and Transparency Act — employment decision AI disclosure requirements effective October 1, 2026",
+      "source": "K&L Gates / Transparency Coalition",
+      "author": "K&L Gates legal team",
+      "date": "2026-05-16",
+      "primary_url": "https://www.klgates.com/Connecticut-Passes-Legislation-Regulating-the-Use-of-AI-in-Employment-Decisions-5-15-2026",
+      "score": 8.0
+    },
+    {
+      "title": "Google Android Show I/O Edition 2026: Gemini Intelligence cross-app agentic layer for Samsung Galaxy and Pixel, Googlebooks announced",
+      "source": "Google Blog",
+      "author": "Sameer Samat",
+      "date": "2026-05-12",
+      "primary_url": "https://blog.google/products-and-platforms/platforms/android/android-show-io-edition-2026/",
+      "score": 7.5
+    },
+    {
+      "title": "Forward-deployed engineering becomes THE enterprise AI operating model — both OpenAI and Anthropic now have FDE arms",
+      "source": "LinkedIn",
+      "author": "Ram Srinivasan; Greg Asher",
+      "date": "2026-05-12",
+      "primary_url": "https://www.linkedin.com/news/story/openais-4b-ai-expansion-7249356/",
+      "score": 8.0
+    },
+    {
+      "title": "5 AI CEOs said the same thing about 2026 — CEO-level AI strategy messaging reaching non-technical audiences on Instagram",
+      "source": "Instagram",
+      "author": "Unknown creator",
+      "date": "2026-05-14",
+      "primary_url": "https://www.instagram.com/reel/DYUbOiNigue/",
+      "score": 6.0
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Ramp AI Index monthly releases — the Ramp adoption data became the week's most-cited enterprise AI signal; track monthly release dates and add to source list",
+      "OpenAI Deployment Company blog / Sarah Friar's LinkedIn — now a primary source for enterprise deployment strategy",
+      "Google Cloud Next recap sources — TPU 8 and Gemma 4 announcements are high-signal for enterprise infrastructure planning",
+      "Connecticut AG / DLA Piper / K&L Gates — now tracking SB5 implementation, which will generate weekly legal analysis as compliance dates approach"
+    ],
+    "sources_to_drop": [
+      "Nas Daily (Facebook) — no AI content this week; category remains low-signal for enterprise audiences"
+    ],
+    "topics_to_add": [
+      "Physical AI / industrial robotics — the Fanuc-Google deal confirms this is now an enterprise-relevant AI category, not just an R&D story",
+      "AI code generation percentage tracking — public company disclosures of AI-generated code percentages are becoming an investor-facing metric requiring internal equivalent",
+      "Enterprise AI cost governance — the Uber/Ramp budget exhaustion story indicates this is a near-term board-level concern in organizations with high developer adoption",
+      "State AI regulation timeline tracking — Connecticut SB5 effective October 1, 2026 is the first near-term enforcement deadline; track Colorado, California, Illinois equivalents"
+    ],
+    "topics_to_drop": [
+      "AI-washing of layoffs as a standalone topic — now sufficiently covered in standard enterprise AI commentary; only track when specific new governance mechanisms are proposed"
+    ],
+    "notes": "The week of May 11–17 was unusually dense with enterprise-grade social content, driven by three major structural announcements (OpenAI DeployCo, Claude for Small Business, Fanuc-Google). The Facebook section remains empty; no significant AI content surfaced in monitored groups. The LinkedIn-to-Instagram signal ratio remains approximately 3:1 for enterprise-relevant content. The emerging signal on edge model inference (Cactus Needle) is the week's most underreported item relative to its enterprise relevance — it should be elevated to a top pick in any subsequent week where additional independent coverage validates the performance claims."
+  }
+}

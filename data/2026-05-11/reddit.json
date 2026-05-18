@@ -1,0 +1,852 @@
+{
+  "tab_id": "reddit",
+  "tab_name": "Reddit",
+  "subtitle": "Community Intelligence",
+  "icon": "MessageCircle",
+  "min_items": 20,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 0.91,
+    "items_total": 22,
+    "items_new": 20,
+    "items_returning": 2
+  },
+  "executive_summary": [
+    {
+      "headline": "Reviewing AI pull requests got 3,204 upvotes—the week's viral signal about regulated accountability",
+      "body": "The highest-engagement thread this week was a 3,204-upvote r/ClaudeAI post titled 'Reviewing AI-generated pull requests in 2026.' The post—a deadpan screenshot of a rejection email auto-sent to AI-authored PRs—touched a nerve with practitioners. The most substantive comment thread (u/yopla, 58 upvotes) came from a 25-year banking-sector engineer: Claude code quality often exceeds outsourced human code, but regulatory frameworks don't care about quality—they require traceable accountability. Simply saying 'Claude reviewed it' doesn't satisfy auditors; the person who clicks 'merge' carries personal liability. An adversarial review pattern emerged as the constructive consensus: use a second AI model to find flaws, then have a human evaluate both the code and both AI outputs. This is the enterprise AI governance concept of the week: quality is not the same as auditability.",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1teuh5w/reviewing_aigenerated_pull_requests_in_2026/"
+    },
+    {
+      "headline": "Anthropic shipped Claude for Legal and Claude for Small Business in the same week—and both received skeptical community reception",
+      "body": "Two major vertical launches landed in the same week. Claude for Legal (May 12) adds six practice-area plugins and MCP connectors to Thomson Reuters, Harvey, Everlaw, DocuSign, and Box. Claude for Small Business (May 13) adds 15 pre-built skills and connectors to QuickBooks, HubSpot, Stripe, Google Workspace, and Microsoft 365. Community reaction to both was qualified: the r/ClaudeAI consensus on the Legal launch was that workflow integration with Microsoft 365 and NetDocuments matters more than the prompting layer. The consensus on Small Business was that seasoned users already do this; the product is for less tech-savvy owners. The top comment on the Small Business thread (u/martin1744, 152 upvotes): 'At last, a category for individuals who charge this to their LLC.' These two launches establish a clear strategic pattern: Anthropic is moving vertical-by-vertical with pre-built skill libraries, integration layers to existing professional software, and agent coworker interfaces—not replacing enterprise software but embedding between users and the tools they already use.",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tbvje0/anthropic_launches_claude_for_legal_with/"
+    },
+    {
+      "headline": "Claude Code Agent View (multi-session background agents) shipped May 11—early practitioners found real capability with rough UX",
+      "body": "Anthropic shipped Claude Code v2.1.139 on May 11 with Agent View in Research Preview: concurrent Claude sessions running in isolated git worktrees, supervised by a persistent daemon process that survives terminal closure. The official announcement (u/ClaudeOfficial) received 516 upvotes on r/ClaudeCode. A detailed practitioner review (u/ctrlaltdeletel) noted the significant architectural shift—a supervisor daemon now runs as a separate process (PPID 1), paving the way for remote control and mobile session management. Observed UX gaps: no branch-merge-status display per session, no project-level filtering of background sessions, and permission modes not configurable directly from Agent View. The architectural significance is independent of the current UX: the supervisor pattern is the foundation for managed multi-agent workflows where humans review session outputs without monitoring every tool call in real time.",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1tag1kv/new_in_claude_code_agent_view/"
+    },
+    {
+      "headline": "Claude Code weekly limits increased 50% through July 13—community reaction split between relief and suspicion of a fake number",
+      "body": "Anthropic's official account posted two simultaneous announcements on May 13: a 50% increase in Claude Code weekly token budgets (all Pro, Max, and Team-based Enterprise users) through July 13, alongside a 50% limit increase on r/ClaudeAI (886 upvotes, 207 comments). A concurrent r/ClaudeCode post (627 upvotes, 52 comments) captured the counter-narrative: many users reported not observing any actual increase in their weekly budget, prompting speculation that the announcement described a structural change without individual-level credit additions. Top comment (u/Corv9tte, 87 upvotes): 'It's quite strange. A lot of individuals are mentioning that they're not noticing any increased limits.' u/BigDDani (22 upvotes): 'To enhance their capacity by 50%, while simultaneously boosting token consumption by 75%, adjustments must be made accordingly'—a reference to the separately documented 40% token inflation in versions 2.1.100+. The limit increase and the token inflation are the same story from opposite directions: advertised headroom is partially consumed by billing bloat in newer versions.",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tc9oa0/claude_code_weekly_limits_are_increasing_50_now/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "claudeai-reviewing-ai-prs-2026-05-16",
+      "title": "Reviewing AI-generated pull requests in 2026",
+      "source": "r/ClaudeAI",
+      "author": "u/ai_senior",
+      "date": "2026-05-16",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1teuh5w/reviewing_aigenerated_pull_requests_in_2026/",
+      "summary": "A deadpan post about an automated system rejecting AI-generated pull requests reached 3,204 upvotes and 108 comments—the week's highest-engagement thread. The top comment from a 25-year banking engineer (u/yopla, 58 upvotes) made the enterprise-critical distinction: Claude's code quality often exceeds outsourced work, but in regulated industries the issue is not quality—it is the absence of a traceable accountability framework. 'Simply stating Claude reviewed it won't satisfy regulators, and the individual who clicks merge could face personal liability.' A constructive counter-pattern emerged in comments: use a second AI model to identify flaws in the first AI's code, then have a human evaluate both code and both AI outputs before merging. The thread surfaced a community debate about whether the post was promotional for a company named 'Limestone Digital'—several commenters flagged the OP's newly created account.",
+      "verified": true,
+      "verified_at": "2026-05-17T12:00:00Z",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 3204,
+        "comments": 108
+      },
+      "tags": [
+        "AI-code-review",
+        "enterprise-governance",
+        "accountability",
+        "regulated-industry",
+        "pull-requests"
+      ],
+      "category": "Enterprise Signal",
+      "recurrence": "new",
+      "why_it_matters": "The 3,204-upvote reaction confirms that AI-generated code review is now common enough that its governance failure modes are mainstream practitioner frustration. The banking commenter's framework is exact: AI quality and AI auditability are orthogonal properties. An enterprise can have very high-quality AI code output and zero audit trail, which is the wrong tradeoff for a regulated public company. The adversarial review pattern (second AI reviews first AI, human reviews both) is a workable interim solution that preserves auditability without requiring manual full-code review.",
+      "enterprise_translation": "A regulated enterprise deploying Claude Code for developer workflows needs two separate policies: one for code quality (measuring output against test suites and defect rates) and one for auditability (maintaining a traceable log of which AI session generated which change, who approved the PR, and under what authorization). The adversarial review pattern is a 30-day experiment: require that any AI-generated PR be reviewed by a second AI (Gemini, GPT-5.5, or a different Claude session) before human review. Have the human reviewer evaluate both the code and the second AI's critique. This adds one step and creates a documented decision trail. If your regulated industry requires model governance documentation, start maintaining a model card for each AI tool in your CI/CD pipeline."
+    },
+    {
+      "id": "claudecode-agent-view-official-2026-05-11",
+      "title": "New in Claude Code: agent view.",
+      "source": "r/ClaudeCode",
+      "author": "u/ClaudeOfficial",
+      "date": "2026-05-11",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1tag1kv/new_in_claude_code_agent_view/",
+      "summary": "Anthropic shipped Claude Code v2.1.139 with Agent View in Research Preview on May 11. The feature enables concurrent Claude sessions, each running in an isolated git worktree, supervised by a persistent daemon process (PPID 1) that continues running even when the terminal is closed. The official post received 516 upvotes and 90 comments. Top comment (u/Chronicles010, 115 upvotes): 'They created the side project I was developing just for enjoyment!' The inline reply capability was identified as the key UX enabler—managing five concurrent agents requires resolving their blockers in real time without re-entering each session. The supervisor architecture is the meaningful structural change: it enables background sessions accessible via the Claude mobile app, establishing the foundation for remote-controlled multi-agent workflows. Current UX gaps documented by practitioners: no branch-merge-status display, no project-level filtering of background sessions, permission modes not configurable directly from Agent View.",
+      "verified": true,
+      "verified_at": "2026-05-17T12:00:00Z",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 516,
+        "comments": 90
+      },
+      "tags": [
+        "Claude-Code",
+        "Agent-View",
+        "multi-agent",
+        "background-sessions",
+        "developer-tooling"
+      ],
+      "category": "Product Launch",
+      "recurrence": "new",
+      "why_it_matters": "Agent View is the first native multi-session management interface in a production coding agent tool. The supervisor daemon pattern means an enterprise team's AI coding sessions are no longer tied to a specific terminal—they can be monitored and unblocked from any interface including mobile. The isolated git worktree architecture prevents session cross-contamination, which is the most common failure mode in multi-agent coding setups. For an enterprise team running more than three concurrent AI coding sessions, the absence of cross-contamination and the presence of inline unblocking capability changes the economics of parallel AI-assisted development.",
+      "enterprise_translation": "An enterprise AI team approving Claude Code for developer use should evaluate Agent View against their change-management and access-control requirements before it reaches broader rollout. The supervisor daemon runs with PPID 1, meaning it persists independently of user sessions—this has security implications for managed laptops where session isolation is a compliance requirement. A 30-day experiment: enable Agent View for three developers running parallel feature branches, measure PR-to-merge time versus sequential single-session development, and document whether the background session architecture surfaces any IT security policy gaps."
+    },
+    {
+      "id": "claudeai-claude-for-legal-mcp-connectors-2026-05-13",
+      "title": "Anthropic launches Claude For Legal with practice-area plugins and MCP connectors to nine major legal platforms",
+      "source": "r/ClaudeAI",
+      "author": "u/Intelligent-Lynx-953",
+      "date": "2026-05-13",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tbvje0/anthropic_launches_claude_for_legal_with/",
+      "summary": "Anthropic launched Claude for Legal on May 12 with six practice-area plugins (commercial, employment, privacy, product, corporate law, and AI governance) and MCP connectors to Thomson Reuters Westlaw, Harvey, Everlaw, iManage, NetDocuments, CoCounsel, DocuSign, and Box. The announcement received 202 upvotes and 52 comments on r/ClaudeAI. Community consensus after 40 comments: the MCP integration layer into Microsoft 365 and existing document management systems is the strategic move, not the prompting plugins. Top commenter (u/Intelligent-Lynx-953, 21 upvotes) noted that CoCounsel runs on Claude—and now Claude can use CoCounsel as a resource, meaning Anthropic sits below and above the application layer simultaneously. The cold-start interview mechanism (each plugin captures firm-specific operational procedures and creates a reusable practice profile) was identified as the differentiator from generic Claude prompting. One commenter (u/benevolent001) raised the unresolved liability question: 'Who holds legal responsibility for accuracy—Anthropic, the attorney, or the intermediary?'",
+      "verified": true,
+      "verified_at": "2026-05-17T12:00:00Z",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 202,
+        "comments": 52
+      },
+      "tags": [
+        "Anthropic",
+        "Claude-for-Legal",
+        "MCP",
+        "legal-tech",
+        "enterprise-AI",
+        "vertical-integration"
+      ],
+      "category": "Enterprise Signal",
+      "recurrence": "returning_theme",
+      "recurrence_note": "Anthropic's vertical integration into regulated industries has run since the finance agents launch two weeks ago; this week the pattern extends to legal with the same structure: practice-area plugins plus MCP connectors to existing professional software.",
+      "why_it_matters": "Anthropic has now launched vertical packages in finance (May 6), legal (May 12), and small business (May 13) in a single week. The pattern is structural: each launch combines industry-specific skills with MCP connectors to existing software, a cold-start profile interview, and a Microsoft 365 integration layer. This is not prompt engineering—it is a platform strategy. For any enterprise that has been building custom Claude integrations for professional workflows, Anthropic is now competing directly with that build effort through pre-packaged alternatives. The liability question raised by the community (who is responsible for AI accuracy in legal advice?) has no current answer and is a compliance risk for any firm deploying Claude for Legal in client-facing work.",
+      "enterprise_translation": "An enterprise with a legal department or legal operations function should evaluate Claude for Legal as a starting point for AI-assisted contract review, compliance monitoring, and employment law guidance—rather than building bespoke prompt engineering. The MCP connectors to existing platforms (iManage, NetDocuments, DocuSign) remove the primary integration burden. The liability gap remains: before deploying any AI-assisted legal workflow in client-facing or regulatory filings, document the human-in-the-loop review process, specify who has sign-off authority, and confirm whether your professional liability insurance covers AI-assisted legal work. A 30-day experiment: run the contract review plugin against one category of inbound contracts (NDAs, vendor MSAs) and measure AI-flagged issues against your legal team's manual review for completeness and false-positive rate."
+    },
+    {
+      "id": "claudeai-weekly-limits-50-percent-increase-2026-05-14",
+      "title": "Claude Code weekly limits are increasing 50%, now through July 13.",
+      "source": "r/ClaudeAI",
+      "author": "u/ClaudeOfficial",
+      "date": "2026-05-13",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tc9oa0/claude_code_weekly_limits_are_increasing_50_now/",
+      "summary": "Anthropic's official account announced a 50% increase to Claude Code weekly token budgets for Pro, Max, and Team-based Enterprise users, effective immediately through July 13 at 6 PM PDT. The post received 886 upvotes and 207 comments. Top comment (u/Commercial-Wheel962, 236 upvotes): 'I've been monitoring my limits so closely that I noticed right away when my percentage dropped from 17% to 11%. What have I turned into?' A concurrent r/ClaudeCode thread (627 upvotes) collected dissenting reports: many users saw no actual limit increase, prompting community suspicion that the announcement described infrastructure headroom rather than per-account credit additions. The community correctly identified the confounding variable: a documented 40% token inflation in versions 2.1.100+ (GitHub issue #46917) means that a 50% nominal limit increase is partially offset by higher per-task token consumption in newer versions. u/martin1744 (44 upvotes): 'The summer sale has restrictions and will conclude on July 13'—correctly identifying that the increase is time-bounded and tied to SpaceX compute capacity coming online.",
+      "verified": true,
+      "verified_at": "2026-05-17T12:00:00Z",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 886,
+        "comments": 207
+      },
+      "tags": [
+        "Claude-Code",
+        "rate-limits",
+        "token-budget",
+        "enterprise-pricing",
+        "Anthropic"
+      ],
+      "category": "Enterprise Signal",
+      "recurrence": "returning_theme",
+      "recurrence_note": "Claude Code usage limits have been the dominant operational discussion since the SpaceX compute deal (week of May 4); this week's 50% increase is the second limit-expansion announcement in two weeks.",
+      "why_it_matters": "For enterprise teams running Claude Code on Max or Team plans, the 50% limit increase through July 13 has immediate operational value if your developers were hitting weekly caps mid-week. The token inflation issue (40% more tokens billed for identical workloads in v2.1.100+) means the net effective increase is closer to 7% for teams on current versions. The July 13 sunset date is the planning constraint: Anthropic is treating this as temporary capacity from the SpaceX compute arrangement, not a permanent plan change. Enterprise procurement teams negotiating Claude Enterprise contracts should ask whether the increased limits are included in the contract terms or represent temporary promotional headroom.",
+      "enterprise_translation": "An enterprise AI team with Claude Code deployed should run /usage in the CLI today and capture baseline weekly consumption figures before the July 13 sunset. If your developers are not hitting limits, the increase is irrelevant. If they are regularly hitting limits, verify whether you are on version 2.1.100+ (where the 40% token inflation applies) and calculate your net effective headroom. The most important action: schedule a re-evaluation of Claude Code subscription tiers for August 1, when the temporary limit increase expires and baseline consumption will determine whether you need a higher plan or whether SpaceX-era headroom has masked a latent capacity problem."
+    },
+    {
+      "id": "claudeai-small-business-launch-2026-05-13",
+      "title": "Anthropic Releases Claude for Small Business",
+      "source": "r/ClaudeAI",
+      "author": "u/neverhighb4",
+      "date": "2026-05-13",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tc4jwp/anthropic_releases_claude_for_small_business/",
+      "summary": "Anthropic launched Claude for Small Business on May 13 with 15 pre-built skills covering payroll planning, financial reconciliation, invoice management, business insights, marketing campaigns, and employee onboarding. MCP connectors link to QuickBooks, HubSpot, PayPal, Canva, DocuSign, Google Workspace, Microsoft 365, Slack, Stripe, and Webflow. The product operates via Claude Cowork and uses a skill-trigger model: asking 'Is this contract a trap?' automatically activates the contract review skill. The post received 331 upvotes and 44 comments. Top comment (u/martin1744, 152 upvotes): 'At last, there's a category for individuals who charge this to their LLC.' The community consensus from 40 comments: this is a marketing event for non-technical business owners, not a product upgrade for existing sophisticated users. The absence of new subscription tiers (u/GameOfScones, 22 upvotes: 'However, there is no change in tiers or pricing options') was the most practical disappointment. Anthropic is running a 10-city tour starting May 14 in Chicago, providing free AI fluency workshops for small business owners.",
+      "verified": true,
+      "verified_at": "2026-05-17T12:00:00Z",
+      "score": {
+        "total": 7.5,
+        "signal": 3,
+        "novelty": 1,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 331,
+        "comments": 44
+      },
+      "tags": [
+        "Anthropic",
+        "Claude-for-Small-Business",
+        "workflow-automation",
+        "MCP",
+        "enterprise-AI"
+      ],
+      "category": "Product Launch",
+      "recurrence": "new",
+      "why_it_matters": "Claude for Small Business targets the same connector-and-skill architecture as Claude for Legal and the May 6 finance agents. The 10-city tour and the Workday Solopreneurship Program demonstrate Anthropic is investing in onboarding non-technical users to a skill-based workflow paradigm. For large enterprises, the relevant signal is not the small business product itself but the skill-trigger mechanism (natural-language query activates the appropriate pre-built skill) as a pattern for internal enterprise tool deployment. This is a viable model for reducing the prompt engineering overhead on enterprise AI tool adoption.",
+      "enterprise_translation": "The skill-trigger mechanism—where asking a natural-language question automatically invokes the appropriate pre-built workflow—is the enterprise-applicable pattern from this launch. An enterprise AI team building internal tooling for finance, HR, or legal functions can evaluate whether the same mechanism (a library of named skill files, each triggered by matching query patterns) reduces internal onboarding friction compared to requiring employees to craft prompts. The MCP connector library (QuickBooks, HubSpot, Stripe, Google Workspace, Microsoft 365) is the fastest way to assess integration feasibility: if your organization uses three or more of those platforms, the connector layer may be usable without custom integration work."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "viral_threads",
+      "title": "Viral Threads",
+      "description": "Threads with > 500 upvotes regardless of category, pulled at fetch time",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "viral-claudeai-reviewing-ai-prs-2026-05-16",
+          "title": "Reviewing AI-generated pull requests in 2026",
+          "source": "r/ClaudeAI",
+          "author": "u/ai_senior",
+          "date": "2026-05-16",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1teuh5w/reviewing_aigenerated_pull_requests_in_2026/",
+          "summary": "Week's highest-engagement thread: 3,204 upvotes, 108 comments. See Top Picks for full analysis. Deadpan post about auto-rejecting AI PRs triggered the enterprise governance debate about AI quality vs. auditability in regulated industries.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 9.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 3204,
+            "comments": 108
+          },
+          "tags": ["AI-code-review", "enterprise-governance", "viral"],
+          "category": "Viral",
+          "recurrence": "new"
+        },
+        {
+          "id": "viral-claudeai-weekly-limits-50pct-2026-05-13",
+          "title": "Claude Code weekly limits are increasing 50%, now through July 13.",
+          "source": "r/ClaudeAI",
+          "author": "u/ClaudeOfficial",
+          "date": "2026-05-13",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tc9oa0/claude_code_weekly_limits_are_increasing_50_now/",
+          "summary": "886 upvotes, 207 comments. See Top Picks for full analysis. Official Anthropic announcement of 50% weekly limit increase through July 13; community reaction split between relief and reports of no actual increase, compounded by token inflation documentation.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 886,
+            "comments": 207
+          },
+          "tags": ["Claude-Code", "rate-limits", "Anthropic", "viral"],
+          "category": "Viral",
+          "recurrence": "returning_theme",
+          "recurrence_note": "Claude Code limit announcements have run for three consecutive weeks; this is the third official limit-related communication since the SpaceX deal."
+        },
+        {
+          "id": "viral-claudecode-agent-view-official-2026-05-11",
+          "title": "New in Claude Code: agent view.",
+          "source": "r/ClaudeCode",
+          "author": "u/ClaudeOfficial",
+          "date": "2026-05-11",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1tag1kv/new_in_claude_code_agent_view/",
+          "summary": "516 upvotes, 90 comments. See Top Picks for full analysis. Agent View Research Preview ships multi-session background agent management with supervisor daemon architecture.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 516,
+            "comments": 90
+          },
+          "tags": ["Claude-Code", "Agent-View", "multi-agent", "viral"],
+          "category": "Viral",
+          "recurrence": "new"
+        },
+        {
+          "id": "viral-claudecode-50pct-no-credits-2026-05-15",
+          "title": "\"Now say their limits are increasing by 50%, but don't actually give them more credits\"",
+          "source": "r/ClaudeCode",
+          "author": "u/PetersOdyssey",
+          "date": "2026-05-15",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1tdr7um/now_say_their_limits_are_increasing_by_50_but/",
+          "summary": "627 upvotes, 52 comments. Satirical meme post capturing community skepticism about whether the 50% limit increase delivered real headroom. Top comment (87 upvotes): 'A lot of individuals are mentioning that they're not noticing any increased limits.' Documents the gap between Anthropic's capacity announcement and practitioner-observed per-account changes.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 627,
+            "comments": 52
+          },
+          "tags": ["Claude-Code", "rate-limits", "skepticism", "viral"],
+          "category": "Viral",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases",
+      "description": "Real workflow examples and automation patterns from practitioners this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "claudecode-agent-view-practitioner-review-2026-05-13",
+          "title": "Thoughts on Claude Code 2.1.139 Agent View & Background Sessions",
+          "source": "r/ClaudeCode",
+          "author": "u/ctrlaltdeletel",
+          "date": "2026-05-13",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1tc3qjp/thoughts_on_claude_code_21139_agent_view/",
+          "summary": "A practitioner who spent a full day testing Agent View and background sessions documents the architecture and current UX gaps. Key findings: the supervisor daemon (PPID 1) persists independently of terminal sessions and enables background access from the Claude mobile app. Git worktree isolation per session prevents cross-session file collisions—the most common failure mode in multi-session setups. Current limitations: no branch-merge-status visibility in Agent View, no project-level background session filtering, permission modes must be set via CLI before Agent View can use them. The post notes that Agent View is on the `latest` npm release channel, which as of publication is 12 versions ahead of Anthropic's `stable` designation—a channel governance issue for enterprise deployments. The author recommends opting in to `claude install stable` for teams where version stability matters.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 1,
+            "comments": 10
+          },
+          "tags": [
+            "Claude-Code",
+            "Agent-View",
+            "background-sessions",
+            "multi-agent",
+            "enterprise-governance"
+          ],
+          "category": "Use Case",
+          "recurrence": "new",
+          "enterprise_translation": "Enterprise IT teams deploying Claude Code should track the `latest` vs `stable` npm channel distinction. Agent View shipped on `latest` (v2.1.139), which is 12 releases ahead of `stable` (v2.1.128) as of publication. Developers on auto-update receive Agent View by default; this means a persistent daemon process (claude daemon run, PPID 1) is now running on developer machines without an explicit opt-in decision. Before Agent View reaches broader deployment, IT should evaluate: (1) whether the persistent daemon is allowed under endpoint security policy, (2) whether worktree-isolated sessions satisfy code isolation requirements, and (3) whether the mobile remote-control feature is acceptable under your data handling policy."
+        },
+        {
+          "id": "claudeai-long-term-user-report-may-2026-05-15",
+          "title": "[Long-term user report] Claude Code quality in May 2026: the April postmortem didn't fix everything",
+          "source": "r/ClaudeAI",
+          "author": "u/Rough-Survey8375",
+          "date": "2026-05-15",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tdxwgx/longterm_user_report_claude_code_quality_in_may/",
+          "summary": "A long-term Claude user documents three concurrent quality issues in May 2026. (1) Opus 4.7 regression: persistent instruction-adherence failures and increased hedging since April 16, with no official changelog or acknowledgment as of May 15. (2) Token inflation in v2.1.100+: analysis comparing v2.1.98 and v2.1.100 shows approximately 40% more tokens billed for identical workloads (20,196 extra tokens, 978 fewer bytes transmitted), documented in GitHub issue #46917. (3) Infrastructure strain: Anthropic reported a 17-fold increase in API usage during the May 6 Code with Claude event, and peak-hour throttling began in March. The interaction between higher traffic, token inflation, and unchanged weekly caps means effective compute per user has declined even if model weights are unchanged. The author identifies the key trust issue as not the regressions themselves (which are expected) but the absence of public acknowledgment and version pinning.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 13,
+            "comments": 16
+          },
+          "tags": [
+            "Claude-Code",
+            "Opus-4.7",
+            "token-inflation",
+            "quality-regression",
+            "enterprise-AI"
+          ],
+          "category": "Use Case",
+          "recurrence": "returning_theme",
+          "recurrence_note": "Claude Code quality regression documentation has run since the 956-upvote complaint thread in the prior week; this report adds the token inflation data point (40% billing increase in v2.1.100+) as a new and measurable dimension.",
+          "enterprise_translation": "An enterprise AI team should pull Claude Code version numbers in use across the developer fleet and identify who is on v2.1.100+. If your developers are on v2.1.100 or later and are consuming 40% more tokens per task (as documented in GitHub issue #46917), their effective weekly budget has shrunk by approximately 28% relative to the nominal headroom. Run a two-week token consumption audit: compare total weekly tokens consumed in v2.1.98 vs. current version for the same developer workloads. If the inflation is confirmed in your environment, either pin to v2.1.128 (stable) or adjust your budgeted per-developer token allocation upward before the July 13 limit increase expires."
+        }
+      ]
+    },
+    {
+      "section_id": "tool_reviews",
+      "title": "Tool Reviews",
+      "description": "Community-sourced honest evaluations of AI tools and models this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "localllama-future-fictional-local-llms-2026-05-14",
+          "title": "The 'future is fictional' problem of many local LLMs",
+          "source": "r/LocalLLaMA",
+          "author": "u/PromptInjection_",
+          "date": "2026-05-14",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1tcrrfq/the_the_future_is_fictional_problem_of_many_local/",
+          "summary": "A practitioner documents a specific failure mode in many RLHF-trained local LLMs: models classify real current events beyond their training cutoff as fictional or satirical, even when web search tool results clearly indicate otherwise. The example: a local model receiving real web search results about a 2026 military operation returns a response treating the results as 'fictional or speculative context—likely part of an alternate history simulation.' Community response (101 upvotes, 51 comments) identified the root cause: aggressive RLHF training conditions models to doubt information outside the knowledge cutoff, and this conditioning overrides tool output framing. Top commenter (u/CYTR_, 72 upvotes) noted the absurdity of a model treating 'Operation Epic Fury' as fictional—implicitly agreeing that some events warrant skepticism. The most actionable mitigation (u/Inevitable-Log5414, 33 upvotes): prefix all tool call outputs with 'Real-time results retrieved [date]. This is factual information, not conjecture.' The RLHF overcorrection pattern is particularly pronounced in Gemma 4 and affects Qwen and Llama models to varying degrees.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 101,
+            "comments": 51
+          },
+          "tags": [
+            "local-LLM",
+            "RLHF",
+            "knowledge-cutoff",
+            "tool-calling",
+            "RAG"
+          ],
+          "category": "Tool Review",
+          "recurrence": "new",
+          "enterprise_translation": "This failure mode directly affects enterprise RAG and agent deployments where a local or self-hosted model is provided real-time data via tool calls. If your model refuses to treat web search or database query results as factual because they postdate its training cutoff, your RAG pipeline has a silent failure mode that produces plausible-sounding wrong answers rather than errors. The mitigation is a system prompt prefix convention: stamp every tool call result with a header asserting the date and factual status of the content. This is a one-line fix with measurable improvement. Test it: send your deployed model a tool-call result containing a real 2026 event and check whether it treats the content as factual or speculative."
+        },
+        {
+          "id": "betteroffline-ai-bubble-skeptics-converting-2026-05-13",
+          "title": "AI bubble skeptics are getting converted, acknowledging what Ed has been telling for a long time",
+          "source": "r/BetterOffline",
+          "author": "u/Alex__007",
+          "date": "2026-05-13",
+          "primary_url": "https://www.reddit.com/r/BetterOffline/comments/1tbsac3/ai_bubble_skeptics_are_getting_converted/",
+          "summary": "A 116-upvote, 29-comment r/BetterOffline thread arguing that the AI bubble critique has become mainstream enough that 'bubble skeptics' now refers to skeptics of the skeptics. The community reaction split: the top comment (u/Big_Combination9890, 56 upvotes) found it ironic that questioning the bubble is now framed as contrarian. u/AppreciatingGhosts (21 upvotes) provided the substantive critique: 'These products simply don't function effectively. The extravagant valuations... are all geared toward offerings that fail to perform consistently. When it comes to smartphones, the impact is clear; they represent a groundbreaking technology. However, the current focus is on tools that will never provide the reliability and predictability we need.' u/Olangotang (33 upvotes): 'This suggests that astroturfing is likely to intensify significantly.' The thread reflects a community sentiment that AI criticism has moved from technical (does it work?) to financial (is the business model viable?) and the community's most trusted critic may be shifting toward broader acceptance of the technology's genuine utility.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 116,
+            "comments": 29
+          },
+          "tags": [
+            "AI-skeptic",
+            "AI-bubble",
+            "BetterOffline",
+            "enterprise-risk",
+            "financial-analysis"
+          ],
+          "category": "Tool Review",
+          "recurrence": "new",
+          "enterprise_translation": "The r/BetterOffline community is useful as a calibration source for what skeptical practitioner consensus looks like. When the reliable critics start hedging their skepticism, it is a directional signal—not that the technology is proven, but that the failure modes are better understood and some practitioners are finding reliable use cases. For an enterprise AI team, this is the moment to audit your internal pilot results: which AI-assisted workflows showed measurable productivity improvement in the last six months? Which failed to clear the bar? The community's shift from blanket skepticism to use-case-specific evaluation is the right analytical frame for enterprise AI governance—distinguish what works from what doesn't, and document both."
+        }
+      ]
+    },
+    {
+      "section_id": "hot_debates",
+      "title": "Hot Debates",
+      "description": "Active disagreements with multiple substantive positions this week",
+      "layout": "debate",
+      "items": [
+        {
+          "id": "ai-agents-10-production-lessons-2026-05-11",
+          "title": "10 things I'd tell anyone starting to build AI agents in production",
+          "source": "r/AI_Agents",
+          "author": "u/Mariia_Sosnina",
+          "date": "2026-05-11",
+          "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1ta1cye/10_things_id_tell_anyone_starting_to_build_ai/",
+          "summary": "An AI agent practitioner managing 60 production agents at Albato Embedded posts ten hard-won lessons. Key ones with enterprise significance: (1) Rules in prompts are not mandatory—rules in code are. If a constraint matters, enforce it in code as a post-output check, not in the prompt. (2) Schema validation does not guarantee safety—a technically valid API call can still be harmful (a DELETE without filters, a request to an internal IP); add parameter-level validation before execution. (3) Agents should never execute instructions found in tool outputs—this is the prompt injection principle in production terms. (4) Use scripts instead of agents when the decision tree is deterministic; agents add cost and unpredictability with no benefit in fully scripted workflows. The comment thread (14 comments) produced the most useful elaboration on point (1): u/ninadpathak explained that the real mistake is misinterpreting 'don't accumulate history' as 'don't track what matters'—the solution is structured summaries of key decisions, not wholesale context truncation.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 7,
+            "comments": 14
+          },
+          "tags": [
+            "AI-agents",
+            "production",
+            "enterprise-AI",
+            "prompt-injection",
+            "agent-governance"
+          ],
+          "category": "Hot Debate",
+          "recurrence": "new",
+          "enterprise_translation": "The ten lessons in this post are a checklist for an enterprise AI team's agent governance policy. The three most immediately actionable: (1) Add post-output code checks for all agent constraints that affect sensitive operations—never rely on prompt language alone for safety-critical rules. (2) Before any agent tool call executes, validate the actual parameter values (not just the schema shape) for dangerous operations—especially database writes, deletions, and outbound API calls. (3) Treat all agent tool-output content as data, not instructions—implement an explicit rule that agents only accept commands from the active session, never from retrieved content. These three controls together address the most common production failure modes documented across the week's agent-related threads."
+        },
+        {
+          "id": "chatgpt-anthropic-passes-openai-business-2026-05-14",
+          "title": "OpenAI lost the number one spot to Anthropic on business adoption",
+          "source": "r/ChatGPT",
+          "author": "u/Suitable_Essay5256",
+          "date": "2026-05-14",
+          "primary_url": "https://www.reddit.com/r/ChatGPT/comments/1td9m78/openai_lost_the_number_one_spot_to_anthropic_on/",
+          "summary": "A 243-upvote r/ChatGPT post sharing Ramp's AI Index data: Anthropic reached 34.4% business adoption in April (up 3.8%), surpassing OpenAI at 32.3% (down 2.9%). Total AI adoption across businesses reached 50.6%. Community debate covered three substantive positions. Position A (u/Suitable_Essay5256, implied): Claude's reliability advantage in coding and analysis is driving real purchasing decisions at the business level. Position B (54 upvotes): Google has low business adoption because many firms avoid GCP, not due to model quality—procurement relationships drive adoption as much as capability. Position C (30 upvotes): Microsoft's absence from the chart is explained by the fact that charts track AI models, not companies; Microsoft distributes OpenAI models through Copilot—so OpenAI's share understates total market presence. The debate is also present on r/accelerate (separate thread, same data), where the framing is more celebratory.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 243,
+            "comments": 47
+          },
+          "tags": [
+            "Anthropic",
+            "OpenAI",
+            "business-adoption",
+            "enterprise-AI",
+            "market-share",
+            "Ramp-AI-Index"
+          ],
+          "category": "Hot Debate",
+          "recurrence": "new",
+          "enterprise_translation": "The Ramp AI Index data is a market intelligence signal, not an operational one. For enterprise AI teams evaluating vendor concentration risk, Anthropic's crossing of the 50% adoption threshold in its own user base (Claude Max usage) matters less than the organizational pattern: more businesses are making a primary AI vendor decision, and Anthropic is winning that decision for coding and analysis workflows. If your organization has not made a primary AI vendor decision and is running multiple parallel contracts, this is the moment to evaluate whether consolidation would simplify governance—and if so, which vendor's audit trail, data handling, and enterprise contract terms best fit your compliance requirements."
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Cross-subreddit patterns surfacing for the first time or at meaningful scale this week",
+      "layout": "list",
+      "items": [
+        {
+          "id": "signal-ai-code-quality-vs-auditability-gap-2026-05-16",
+          "title": "AI code quality and AI code auditability are decoupling—and regulated industries are hitting the gap first",
+          "source": "r/ClaudeAI + r/ClaudeCode + r/cybersecurity",
+          "author": "Multiple",
+          "date": "2026-05-16",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1teuh5w/reviewing_aigenerated_pull_requests_in_2026/",
+          "summary": "Three threads this week converged on the same structural tension. The 3,204-upvote PR review thread (r/ClaudeAI): a 25-year banking engineer says Claude's code often exceeds outsourced human code in quality, but regulators require a traceable accountability framework—'simply stating Claude reviewed it won't satisfy regulators.' The Agent View practitioner review (r/ClaudeCode): teams using background sessions need to document which agent session generated which change before anyone clicks 'merge.' The 10-production-lessons post (r/AI_Agents): 'memory within the model is suitable for demonstrations but not for production environments'—save all critical state to external files reviewable after the fact. The common thread: as AI tools produce better code and faster, the bottleneck shifts from output quality to the absence of an auditable decision trail. Quality improved faster than the governance layer.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "AI-governance",
+            "auditability",
+            "enterprise-AI",
+            "regulated-industry",
+            "code-review"
+          ],
+          "category": "Emerging Signal",
+          "recurrence": "new"
+        },
+        {
+          "id": "signal-anthropic-vertical-integration-continues-2026-05-13",
+          "title": "Anthropic shipped three vertical product lines in one week—the pace of pre-built skill deployment is accelerating",
+          "source": "r/ClaudeAI + r/Accounting + r/artificial",
+          "author": "Multiple",
+          "date": "2026-05-13",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tbvje0/anthropic_launches_claude_for_legal_with/",
+          "summary": "Three vertical launches in seven days: Claude for Legal (May 12), Claude for Small Business (May 13), and a 10-city tour for SMB onboarding (starting May 14). All three use the same architectural pattern: named skill files triggered by natural-language queries, MCP connectors to existing professional software, and a cold-start interview that builds a reusable firm or business profile. The finance agents (May 6, previous week) used identical architecture. The pattern has now repeated four times in nine days across banking, fintech, legal, and small business verticals. Community reaction from the prior week's r/Accounting thread ('I wish the agents luck with seven ERP systems and Bob's 2002 spreadsheet') remains valid: the integration layer is real, but the complexity of real enterprise environments is not captured in the pre-built skill library. The strategic question, now clearly in view: does this pre-built vertical stack replace custom internal AI development, or does it raise the floor for what a minimum viable AI deployment looks like?",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "Anthropic",
+            "vertical-integration",
+            "enterprise-AI",
+            "MCP",
+            "skill-architecture"
+          ],
+          "category": "Emerging Signal",
+          "recurrence": "returning_theme",
+          "recurrence_note": "Anthropic's vertical product strategy was first observed with the finance agents on May 6; this week the same architectural pattern appeared in three additional verticals in a single week."
+        },
+        {
+          "id": "signal-token-inflation-silent-cost-increase-2026-05-15",
+          "title": "Token inflation in Claude Code v2.1.100+ is a silent cost increase that compounds against limit announcements",
+          "source": "r/ClaudeCode + r/ClaudeAI",
+          "author": "Multiple",
+          "date": "2026-05-15",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tdxwgx/longterm_user_report_claude_code_quality_in_may/",
+          "summary": "Two concurrent threads documented token inflation in Claude Code versions 2.1.100 and above. The long-term user report (r/ClaudeAI) cites an analysis comparing v2.1.98 and v2.1.100: 40% more tokens billed for the same workloads (20,196 additional tokens, 978 fewer bytes transmitted), with a GitHub issue (#46917) tracking the regression. The 50% limit skeptic thread (r/ClaudeCode) captured the community math: a 50% nominal limit increase offset by 40% billing inflation yields approximately a 7% net effective increase for users on current versions. No official acknowledgment of the token inflation exists as of May 17. This is the same pattern as the Opus 4.7 regression (recognized in postmortem but not addressed in public changelog)—Anthropic ships improvements but does not communicate regressions proactively.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "tags": [
+            "Claude-Code",
+            "token-inflation",
+            "enterprise-pricing",
+            "billing",
+            "version-management"
+          ],
+          "category": "Emerging Signal",
+          "recurrence": "new"
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "Reviewing AI-generated pull requests in 2026",
+      "source": "r/ClaudeAI",
+      "author": "u/ai_senior",
+      "date": "2026-05-16",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1teuh5w/reviewing_aigenerated_pull_requests_in_2026/",
+      "score": 9.0
+    },
+    {
+      "title": "Anthropic launches Claude For Legal with practice-area plugins and MCP connectors to nine major legal platforms",
+      "source": "r/ClaudeAI",
+      "author": "u/Intelligent-Lynx-953",
+      "date": "2026-05-13",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tbvje0/anthropic_launches_claude_for_legal_with/",
+      "score": 8.5
+    },
+    {
+      "title": "New in Claude Code: agent view.",
+      "source": "r/ClaudeCode",
+      "author": "u/ClaudeOfficial",
+      "date": "2026-05-11",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1tag1kv/new_in_claude_code_agent_view/",
+      "score": 8.5
+    },
+    {
+      "title": "Claude Code weekly limits are increasing 50%, now through July 13.",
+      "source": "r/ClaudeAI",
+      "author": "u/ClaudeOfficial",
+      "date": "2026-05-13",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tc9oa0/claude_code_weekly_limits_are_increasing_50_now/",
+      "score": 8.0
+    },
+    {
+      "title": "10 things I'd tell anyone starting to build AI agents in production",
+      "source": "r/AI_Agents",
+      "author": "u/Mariia_Sosnina",
+      "date": "2026-05-11",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1ta1cye/10_things_id_tell_anyone_starting_to_build_ai/",
+      "score": 8.0
+    },
+    {
+      "title": "Anthropic Releases Claude for Small Business",
+      "source": "r/ClaudeAI",
+      "author": "u/neverhighb4",
+      "date": "2026-05-13",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tc4jwp/anthropic_releases_claude_for_small_business/",
+      "score": 7.5
+    },
+    {
+      "title": "\"Now say their limits are increasing by 50%, but don't actually give them more credits\"",
+      "source": "r/ClaudeCode",
+      "author": "u/PetersOdyssey",
+      "date": "2026-05-15",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1tdr7um/now_say_their_limits_are_increasing_by_50_but/",
+      "score": 7.5
+    },
+    {
+      "title": "OpenAI lost the number one spot to Anthropic on business adoption",
+      "source": "r/ChatGPT",
+      "author": "u/Suitable_Essay5256",
+      "date": "2026-05-14",
+      "primary_url": "https://www.reddit.com/r/ChatGPT/comments/1td9m78/openai_lost_the_number_one_spot_to_anthropic_on/",
+      "score": 7.5
+    },
+    {
+      "title": "Thoughts on Claude Code 2.1.139 Agent View & Background Sessions",
+      "source": "r/ClaudeCode",
+      "author": "u/ctrlaltdeletel",
+      "date": "2026-05-13",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1tc3qjp/thoughts_on_claude_code_21139_agent_view/",
+      "score": 7.5
+    },
+    {
+      "title": "[Long-term user report] Claude Code quality in May 2026: the April postmortem didn't fix everything",
+      "source": "r/ClaudeAI",
+      "author": "u/Rough-Survey8375",
+      "date": "2026-05-15",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1tdxwgx/longterm_user_report_claude_code_quality_in_may/",
+      "score": 7.5
+    },
+    {
+      "title": "Claude Code weekly limits are increasing 50%, now through July 13.",
+      "source": "r/ClaudeCode",
+      "author": "u/ClaudeOfficial",
+      "date": "2026-05-13",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1tc9o20/claude_code_weekly_limits_are_increasing_50_now/",
+      "score": 7.0
+    },
+    {
+      "title": "The 'future is fictional' problem of many local LLMs",
+      "source": "r/LocalLLaMA",
+      "author": "u/PromptInjection_",
+      "date": "2026-05-14",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1tcrrfq/the_the_future_is_fictional_problem_of_many_local/",
+      "score": 7.0
+    },
+    {
+      "title": "AI bubble skeptics are getting converted, acknowledging what Ed has been telling for a long time",
+      "source": "r/BetterOffline",
+      "author": "u/Alex__007",
+      "date": "2026-05-13",
+      "primary_url": "https://www.reddit.com/r/BetterOffline/comments/1tbsac3/ai_bubble_skeptics_are_getting_converted/",
+      "score": 6.0
+    },
+    {
+      "title": "OpenAI launches Daybreak cybersecurity initiative using GPT-5.5",
+      "source": "r/OpenAI",
+      "author": "u/Objective_Farm_1886",
+      "date": "2026-05-12",
+      "primary_url": "https://www.reddit.com/r/OpenAI/comments/1tand05/openai_launches_daybreak_cybersecurity_initiative/",
+      "score": 5.5
+    },
+    {
+      "title": "Did Claude Code increase their Weekly Limit?",
+      "source": "r/ClaudeCode",
+      "author": "u/Various",
+      "date": "2026-05-16",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1tenqw2/did_claude_code_increase_their_weekly_limit/",
+      "score": 6.5
+    },
+    {
+      "title": "N8N is probably the highest ROI skill I learned in 2026 (especially for AI workflows)",
+      "source": "r/n8n",
+      "author": "u/Grewup01",
+      "date": "2026-05-06",
+      "primary_url": "https://www.reddit.com/r/n8n/comments/1t5da2l/n8n_is_probably_the_highest_roi_skill_i_learned/",
+      "score": 6.5
+    },
+    {
+      "title": "$20 worth it? - May 2026",
+      "source": "r/ClaudeCode",
+      "author": "u/papayesyeshehe",
+      "date": "2026-05-17",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1tfj7g0/20_worth_it_may_2026/",
+      "score": 5.0
+    },
+    {
+      "title": "Figure Humanoid Robots Sort Packages Non-Stop in 24/7 Demo",
+      "source": "r/Futurology",
+      "author": "u/Gari_305",
+      "date": "2026-05-15",
+      "primary_url": "https://www.reddit.com/r/Futurology/comments/1te6z9m/figure_humanoid_robots_sort_packages_nonstop_in/",
+      "score": 5.5
+    },
+    {
+      "title": "There have been some leaks about Google I/O—what are your expectations?",
+      "source": "r/GeminiAI",
+      "author": "u/Dependent_Quality845",
+      "date": "2026-05-13",
+      "primary_url": "https://www.reddit.com/r/GeminiAI/comments/1tc7dzl/google_io_there_have_been_some_leaks_about_google/",
+      "score": 5.0
+    },
+    {
+      "title": "OpenAI launches DeployCo to help businesses build around intelligence",
+      "source": "r/OpenAI",
+      "author": "u/rhiever",
+      "date": "2026-05-11",
+      "primary_url": "https://www.reddit.com/r/OpenAI/comments/1ta947b/openai_launches_deployco_to_help_businesses_build/",
+      "score": 5.0
+    },
+    {
+      "title": "AI Agent Orchestration in 2026: What Enterprises Need to Know",
+      "source": "r/deeplearning",
+      "author": "u/thisguy123123",
+      "date": "2026-05-11",
+      "primary_url": "https://www.reddit.com/r/deeplearning/comments/1ta168z/ai_agent_orchestration_in_2026_what_enterprises/",
+      "score": 4.5
+    },
+    {
+      "title": "Claude Agent View (2026): The Background Agent Update Is Wild",
+      "source": "r/AISEOInsider",
+      "author": "u/Various",
+      "date": "2026-05-14",
+      "primary_url": "https://www.reddit.com/r/AISEOInsider/comments/1tc7uzo/claude_agent_view_2026_the_background_agent/",
+      "score": 5.5
+    },
+    {
+      "title": "Figure AI's humanoid robots sort 88,000 packages in 72 hours during nonstop livestream",
+      "source": "r/agi",
+      "author": "u/MetaKnowing",
+      "date": "2026-05-16",
+      "primary_url": "https://www.reddit.com/r/agi/comments/1tf1zfx/figure_ais_humanoid_robots_sort_88000_packages_in/",
+      "score": 5.0
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "AI code quality and AI code auditability are decoupling—regulated industries are hitting the gap first",
+      "evidence": "The 3,204-upvote PR review thread (r/ClaudeAI) produced the week's clearest statement of the enterprise governance problem: a 25-year banking engineer says Claude code quality exceeds outsourced human code, but regulators require traceable accountability. 'Simply stating Claude reviewed it won't satisfy regulators.' Agent View practitioner review (r/ClaudeCode) identified the same gap: background sessions need per-session action logs before any human approval. The 10-production-lessons post (r/AI_Agents) listed 'save all critical state to external files reviewable after the fact' as a production requirement. Three sources, same gap.",
+      "what_to_watch": "Whether Anthropic ships audit-trail tooling as part of Agent View or Claude Code—specifically: per-session action logs, branch attribution, and merge authorization documentation. If they don't, third-party tooling will fill the gap. Watch for enterprise-focused Claude Code wrappers that add audit-trail layers above the native CLI."
+    },
+    {
+      "pattern": "Token inflation in Claude Code v2.1.100+ is a silent compound against limit announcements—the two stories must be read together",
+      "evidence": "GitHub issue #46917 documents 40% more tokens billed per identical workload in v2.1.100+ versus v2.1.98. The 50% nominal limit increase (May 13) is partially consumed by this inflation: net effective headroom for users on current versions is approximately 7%. No official Anthropic acknowledgment of the inflation exists. The community identified the pattern independently across r/ClaudeCode (627-upvote skeptic thread) and r/ClaudeAI (long-term user report with 16 comments). The combination of token inflation, weekly caps, and time-bounded limit increases creates a capacity picture that is structurally harder to predict than advertised.",
+      "what_to_watch": "Whether Anthropic acknowledges GitHub issue #46917 and whether the inflation is addressed in a future version. Track v2.1.128 (stable channel) vs. latest channel token consumption in parallel deployments. If the inflation is fixed in stable before it is fixed in latest, this is evidence of release channel governance issues at Anthropic."
+    },
+    {
+      "pattern": "Anthropic's vertical product acceleration—four launches in nine days—is compressing the build timeline for enterprise-specific AI automation",
+      "evidence": "Finance agents (May 6), Claude for Legal (May 12), Claude for Small Business (May 13), and a 10-city SMB onboarding tour (starting May 14). All four use the same architecture: named skill files triggered by natural-language queries, MCP connectors to existing software, cold-start profile interviews. The speed of iteration (four vertical launches in nine days) is faster than enterprise AI teams can evaluate, let alone replicate internally. Community reaction is consistent: sophisticated users already do this, but the pre-packaged stack lowers the entry threshold for organizations without internal AI engineering resources.",
+      "what_to_watch": "Which industries receive the next vertical launch and whether Anthropic targets regulated heavy industry verticals (manufacturing, construction, energy) in addition to knowledge-work verticals. The r/Accounting community's skepticism (seven ERP systems, Bob's 2002 spreadsheet) remains the clearest articulation of where pre-built skills fail; watch for Anthropic's response to integration complexity in non-standard environments."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "r/singularity top post(s) for week of May 11-17 with high upvote counts—multiple searches returned only the r/singularity front page, not specific dated posts from this week",
+      "reason": "The r/singularity subreddit's top.json endpoint was blocked by robots.txt and old.reddit.com returned the same restriction. Specific post searches returned threads from prior weeks. No r/singularity posts from May 11-17, 2026 with verified upvote counts and permalinks were surfaced. Excluded from index without verified primary_url.",
+      "attempted_url": "https://www.reddit.com/r/singularity/top/?t=week"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "r/GeminiAI — surfaced this week as the clearest pre-Google I/O discussion community; worth monitoring weekly given Google I/O 2026 was May 19-20 and its community will have structured post-IO analysis",
+      "r/deeplearning — appeared this week with an enterprise agent orchestration post; low signal-to-noise but worth sampling",
+      "r/Futurology — the Figure AI robotics thread appeared here rather than r/singularity; useful for physical AI signal that affects industrial and logistics enterprises"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "AI code auditability and traceability governance — the 3,204-upvote PR review thread established this as a tier-1 enterprise practitioner concern; dedicated tracking will surface concrete tooling developments",
+      "Claude Code version management (stable vs. latest channel) — the PPID 1 supervisor daemon and Agent View defaulting to latest rather than stable is a security and governance issue for enterprise IT; worth dedicated monitoring",
+      "Token billing transparency — GitHub issue #46917 (40% token inflation in v2.1.100+) is the kind of billing-level signal that enterprise procurement teams need documented; track whether Anthropic formally acknowledges or resolves it"
+    ],
+    "topics_to_drop": [
+      "General humanoid robotics milestone posts — the Figure AI threads this week produced low-quality discussion (mostly job-loss speculation); only include robotics threads with documented production deployments in relevant industrial verticals"
+    ],
+    "notes": "This week's dominant signal is governance: the PR review thread's quality-vs-auditability distinction, the 10-production-lessons post's controls framework, the token inflation issue, and the Agent View supervisor daemon all point to the same gap—AI tooling is outpacing the governance infrastructure around it. Anthropic shipped four vertical product lines in nine days, which is faster than any enterprise procurement cycle. The strategic implication: organizations that have not built internal AI governance frameworks will find themselves choosing between pre-built Anthropic vertical stacks (fast but limited to covered integrations) and custom builds (flexible but slower). The token inflation signal is the most immediately actionable finding—it is testable, quantifiable, and directly affects enterprise budget planning for Claude Code deployments."
+  }
+}

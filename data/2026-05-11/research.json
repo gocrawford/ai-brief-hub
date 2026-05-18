@@ -1,0 +1,638 @@
+{
+  "tab_id": "research",
+  "tab_name": "Research & Regulation",
+  "subtitle": "Primary-Source Intelligence",
+  "icon": "FileText",
+  "min_items": 10,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 1.00,
+    "items_total": 13,
+    "items_new": 13,
+    "items_returning": 0
+  },
+
+  "executive_summary": [
+    {
+      "headline": "EU AI Act Digital Omnibus provisional agreement reached May 7 — high-risk deadlines move to December 2027, watermarking stays August 2026",
+      "body": "In the early hours of May 7, 2026, Council and Parliament negotiators reached a provisional agreement on the Digital Omnibus on AI. The deal postpones Annex III high-risk obligations to December 2, 2027 (from August 2, 2026) and Annex I obligations to August 2, 2028. The August 2, 2026 date now applies only to the Article 50(2) watermarking obligation — requiring generative AI systems to machine-readably mark synthetic content — with a grandfathering rule giving providers with systems already on the market until December 2, 2026. The EU Commission simultaneously published draft transparency guidelines under Article 50 for public consultation through June 3, 2026. Formal adoption is expected before August 2, 2026.",
+      "primary_url": "https://www.twobirds.com/en/insights/2026/digital-omnibus-on-ai-provisional-agreement-reached-at-the-may-trilogue"
+    },
+    {
+      "headline": "Two arXiv papers published May 11–14 document systematic security vulnerabilities in production agentic workflows",
+      "body": "JAW (arXiv:2605.11229, May 11) demonstrates a framework that successfully hijacked 4,714 GitHub Actions workflows — including official integrations for Claude Code, Gemini CLI, and Cursor CLI — achieving credential exfiltration and arbitrary command execution through controllable inputs like GitHub issue comments. The paper was responsibly disclosed with acknowledgments from GitHub, Google, and Anthropic. Separately, 'Toward Securing AI Agents Like Operating Systems' (arXiv:2605.14932, May 14) argues that OS security principles — resource isolation, privilege separation, communication mediation — map directly to agentic systems, and that four widely-used OpenClaw-like agents fail protection mechanisms even under modest attacker capabilities. Together, these papers establish that enterprise agentic deployments face concrete, demonstrated attack vectors, not theoretical ones.",
+      "primary_url": "https://arxiv.org/abs/2605.11229"
+    },
+    {
+      "headline": "OpenAI published the GPT-5.5 Instant system card on May 5 — first Instant model classified as High capability in cybersecurity and biological/chemical preparedness",
+      "body": "The GPT-5.5 Instant system card, published May 5, is the first Instant-class model OpenAI has classified as High capability in cybersecurity and biological/chemical preparedness categories, requiring additional safeguards under OpenAI's deployment framework. The model replaces GPT-5.3 Instant as the default ChatGPT model with lower latency than GPT-5.5 Thinking. For enterprise teams evaluating deployment options for latency-sensitive workflows, the High capability classification in cybersecurity means additional pre-deployment evaluation requirements under any regulated use policy.",
+      "primary_url": "https://openai.com/index/gpt-5-5-instant-system-card/"
+    },
+    {
+      "headline": "APWA architecture paper (arXiv:2605.15132, May 14) demonstrates that parallel agentic decomposition scales to tasks where prior multi-agent systems fail entirely",
+      "body": "APWA (Agent-Parallel Workload Architecture) introduces a distributed multi-agent system where a manager agent decomposes tasks into thousands of non-interfering subproblems executed by worker agents in parallel with no cross-communication requirements. On a PII redaction benchmark with 300,000-row datasets and a summarization benchmark at 10.5MB corpus size, competing systems including Magentic-One and MegaAgent failed completely; APWA maintained high structural and semantic quality with sublinear scaling (10 topics: 143s, 100 topics: 595s). The authors note that security considerations — prompt injection, malicious tools, data leakage — were explicitly not addressed in this design.",
+      "primary_url": "https://arxiv.org/abs/2605.15132"
+    },
+    {
+      "headline": "A large consumer-products company Q1 2026 10-Q filed May 13 cites AI as a cyber-attack vector and as a strategic platform — the first in this sample to link AI to both risk and growth in a single quarter",
+      "body": "A major consumer-products company filed its Q1 2026 10-Q on May 13, 2026 after a brief filing delay caused by a March 28, 2026 network intrusion. The filing explicitly identifies AI as both a threat vector in cyber-risk disclosures ('artificial intelligence' as a tool attackers use to increase the virulence of attacks) and as a strategic capability in its business description ('AI-enabled entertainment' and AI integration into product development, marketing, and consumer engagement). The dual framing — AI as both operational capability and cyber-risk multiplier — represents an emerging pattern in public-company disclosures that is distinct from the prior norm of AI appearing only in risk factors.",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000026/has-20260329.htm"
+    }
+  ],
+
+  "top_picks": [
+    {
+      "id": "eu-ai-act-omnibus-may7-provisional-agreement",
+      "title": "EU AI Act Digital Omnibus: Provisional Agreement Moves High-Risk Deadline to December 2027 — Watermarking Stays August 2026",
+      "subtitle": "The May 7 deal resolves the Annex I conformity assessment deadlock and adds new prohibited practices for intimate deepfakes; formal adoption expected before August 2.",
+      "source": "Bird & Bird / Latham & Watkins / EU Commission",
+      "author": "Bird & Bird legislative analysis team; Latham & Watkins regulatory team",
+      "date": "2026-05-07",
+      "primary_url": "https://www.twobirds.com/en/insights/2026/digital-omnibus-on-ai-provisional-agreement-reached-at-the-may-trilogue",
+      "secondary_urls": [
+        {"label": "Latham & Watkins AI Act Omnibus analysis (May 12)", "url": "https://www.lw.com/en/insights/ai-act-update-eu-resolves-to-change-rules-and-extend-deadlines"},
+        {"label": "EU Commission Article 50 draft transparency guidelines (May 8)", "url": "https://digital-strategy.ec.europa.eu/en/library/draft-guidelines-implementation-transparency-obligations-certain-ai-systems-under-article-50-ai-act"},
+        {"label": "artificialintelligenceact.eu Article 50 transparency rules analysis", "url": "https://artificialintelligenceact.eu/transparency-rules-article-50/"},
+        {"label": "GPAI enforcement Chapter V analysis — August 2 enforcement powers remain", "url": "https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/"}
+      ],
+      "verified": true,
+      "verified_at": "2026-05-15T12:00:00Z",
+      "summary": "On May 7, 2026, EU Council and Parliament negotiators reached a provisional agreement on the Digital Omnibus on AI, the most significant AI Act amendment since enactment. Key changes: (1) Annex III high-risk obligations postponed from August 2, 2026 to December 2, 2027; Annex I (AI in sector-regulated products) postponed to August 2, 2028. (2) August 2, 2026 now applies only to Article 50(2) watermarking — with a grandfathering rule giving providers with systems already deployed until December 2, 2026. (3) A new Article 5 prohibition on AI systems generating child sexual abuse material or non-consensual intimate imagery, effective December 2, 2026. (4) The definition of 'safety component' is narrowed — AI functions that merely assist users or optimize performance will not automatically be classified as high-risk. (5) The EU Commission published draft Article 50 transparency guidelines in parallel, open for consultation until June 3. The GPAI enforcement powers under Chapter V (Articles 53 and 55) continue to activate August 2, 2026 regardless of the Omnibus — that date was not changed. Formal adoption is expected before August 2.",
+      "score": {
+        "total": 9.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "tags": ["EU AI Act", "Digital Omnibus", "high-risk AI", "watermarking", "GPAI enforcement", "compliance deadline"],
+      "category": "Regulation — EU",
+      "priority": "CRITICAL",
+      "recurrence": "returning",
+      "recurrence_note": "Last week covered the May 13 trilogue as imminent; this week the agreement was reached early on May 7 and the specific deadline changes are now confirmed.",
+      "enterprise_adaptation": "The Omnibus changes create two distinct planning tracks for an enterprise AI team with EU exposure. Track 1 — High-risk relief: Annex III compliance planning moves to December 2, 2027. Teams that have been running emergency compliance programs for August 2026 can resequence that work without abandoning it — the inventory, risk classification, and documentation work done to date is still required by December 2027, and any system placed on the market or substantially modified after December 2027 must comply immediately. Track 2 — Watermarking: this is the near-term action item. Any generative AI system (text, image, audio, video) the enterprise deploys that has EU market exposure must machine-readably mark synthetic outputs by August 2, 2026 if newly deployed, or by December 2, 2026 if already deployed. Regulated-environment caveat: the GPAI enforcement powers activate August 2, 2026 regardless — if the enterprise uses a third-party GPAI model via API in any EU-facing system, the upstream provider's compliance posture (technical documentation, training data summary, copyright policy) should be verified now; contractual pass-through obligations may exist. Concrete 30-day experiment: within 30 days, audit every EU-facing generative AI output pipeline for Article 50(2) watermarking readiness. For each pipeline, document: (1) whether the output type is within scope (synthetic text, image, audio, video); (2) whether the generating system was deployed before August 2, 2026 (uses December 2026 grandfathering); (3) whether a machine-readable marking mechanism exists or needs to be built. This audit is achievable by a small team and is the prerequisite for both compliance tracks."
+    },
+    {
+      "id": "jaw-agentic-workflow-hijacking-2605-11229",
+      "title": "JAW: First Systematic Framework for Hijacking Agentic Workflows Demonstrates 4,714 Vulnerable GitHub Actions Including Official Claude Code and Gemini CLI Integrations",
+      "subtitle": "Context-Grounded Evolution methodology exploits LLM agent inputs to achieve credential exfiltration and arbitrary command execution — responsibly disclosed to GitHub, Google, and Anthropic.",
+      "source": "arXiv cs.CR / cs.AI",
+      "author": "Neil Fendley, Zhengyu Liu, Aonan Guan, Jiacheng Zhong, Yinzhi Cao",
+      "date": "2026-05-11",
+      "primary_url": "https://arxiv.org/abs/2605.11229",
+      "verified": true,
+      "verified_at": "2026-05-15T12:00:00Z",
+      "summary": "JAW (arXiv:2605.11229) is the first detection and exploitation framework for Agentic Workflow Hijacking (AWH) — attacks where an adversary crafts inputs to automation platform triggers (e.g., a GitHub issue comment) to manipulate an LLM agent into credential exfiltration or arbitrary command execution. The methodology, Context-Grounded Evolution, combines static path-feasibility analysis, dynamic prompt-provenance taint tracking, and capability profiling to evolve attack payloads. Evaluation on real-world GitHub workflows and n8n templates: 4,714 GitHub workflows successfully hijacked; eight n8n templates compromised; 15 widely-used GitHub Actions affected including official actions for Claude Code, Gemini CLI, Qwen CLI, and Cursor CLI; two official n8n nodes. Responsible disclosure resulted in acknowledgments, fixes, and bug bounties from GitHub, Google, and Anthropic. The finding is not theoretical — the attack chain produces confirmed credential exfiltration, SQL injection, and shell command execution in real workflows.",
+      "score": {
+        "total": 9.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "tags": ["agentic security", "prompt injection", "credential exfiltration", "GitHub Actions", "n8n", "CI/CD security"],
+      "category": "Research — Security",
+      "priority": "CRITICAL",
+      "recurrence": "new",
+      "enterprise_adaptation": "JAW establishes that production agentic CI/CD pipelines are a confirmed attack surface — not a theoretical one. The attack vector is explicitly the combination of LLM agent access to tools plus attacker-controllable workflow inputs (e.g., issue comments, PR descriptions, external webhooks). Implementation pattern: (1) audit every GitHub Actions workflow that invokes an LLM agent (Claude Code Action, Gemini CLI Action, Cursor CLI Action, or any custom LLM SDK call) and identify every input channel that an external party (including unauthenticated GitHub users) can control — issue titles, comments, PR descriptions, labels; (2) for each such workflow, evaluate whether the LLM agent has access to credentials, secrets, or shell execution — the JAW paper demonstrates these are the conditions required for credential exfiltration and RCE; (3) implement least-privilege controls: scope GitHub token permissions to read-only where possible; pin action versions by commit hash rather than tag to prevent injection through action update vectors. Regulated-environment caveat: any LLM agent that runs in a CI/CD pipeline with access to production secrets (API keys, database credentials, cloud IAM tokens) and that processes externally-supplied text is within scope of this attack class. Enterprise workflows that auto-trigger on PRs from forks or on external issue comments are highest-risk. Concrete 30-day experiment: run a workflow inventory across your repositories; for every workflow that (1) uses an LLM agent action and (2) has a trigger that includes external input (issue_comment, pull_request from forks, workflow_dispatch with external inputs), create an inventory with current tool permissions and a remediation priority. Even without patching, this inventory is the prerequisite for any security review."
+    },
+    {
+      "id": "apwa-distributed-agentic-workflows-2605-15132",
+      "title": "APWA: Distributed Multi-Agent Architecture Scales Parallelizable Agentic Workloads to Dataset Sizes Where Existing Systems Fail Entirely",
+      "subtitle": "Manager–worker decomposition with Ray-based distributed executor achieves sublinear scaling; 2,500+ concurrent agents on PII redaction and hierarchical summarization benchmarks.",
+      "source": "arXiv cs.AI",
+      "author": "Evan Rose, Tushin Mallick, Matthew D. Laws, Cristina Nita-Rotaru, Alina Oprea",
+      "date": "2026-05-14",
+      "primary_url": "https://arxiv.org/abs/2605.15132",
+      "verified": true,
+      "verified_at": "2026-05-15T12:00:00Z",
+      "summary": "APWA (Agent-Parallel Workload Architecture, arXiv:2605.15132) introduces a distributed multi-agent architecture designed for heavily parallelizable agentic workloads. The core design: a manager agent decomposes complex queries into non-interfering subtasks using Data Tables (compact metadata abstractions for large datasets) and Subtask Templates (parameterized job generators); worker agents process independently with no cross-worker communication; a Ray-based Distributed Executor manages infrastructure and automatic retry. On PII-300k (300,000-row PII redaction), Magentic-One and MegaAgent failed completely at larger scales; APWA processed successfully with sublinear runtime increase. On SummaryBench (corpus sizes from 166KB to 10.5MB), runtime increased from 157s to 329s — sublinear — while maintaining structural and semantic integrity. Web browsing synthesis at 100 topics: 595s vs. 143s for 10 topics. The authors explicitly note that security — prompt injection, malicious tools, data leakage — was not addressed in the current design, flagging this as an open limitation.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "tags": ["multi-agent", "distributed systems", "agentic architecture", "parallel execution", "scalability"],
+      "category": "Research — Agents",
+      "priority": "HIGH",
+      "recurrence": "new",
+      "enterprise_adaptation": "APWA addresses the specific scaling failure mode that enterprise teams first encounter when moving agent workflows from prototypes to production: tasks that work at small scale hit coordination and context-window bottlenecks at real data volumes. The implementation pattern is modular: (1) the manager-worker decomposition is the key architectural primitive — teams can adopt it independently of the Ray executor, using existing enterprise orchestration infrastructure (Azure Service Bus, internal queue systems); (2) the Data Table abstraction — metadata summaries that let an LLM agent reason about large datasets without loading them into context — is the single most transferable idea and implementable in a week. Regulated-environment caveat: APWA's paper explicitly excludes security from its design scope; the parallel, distributed nature means each worker agent's tool invocations and data access must be scoped and logged individually — this is harder with 2,500 concurrent agents than with a serial workflow. In a regulated environment, any APWA-style deployment needs per-agent audit logging and data-residency enforcement at the worker level, not just the manager. Concrete 30-day experiment: select one existing sequential agent workflow that processes large structured datasets (compliance document review, quality-data extraction, supplier data normalization) and re-implement the decomposition step: the manager creates a batch of N independent subtask specs from the full dataset, and N worker instances process them. Measure runtime and output quality compared to the serial baseline. This experiment does not require Ray or production infrastructure — it can run in a sandboxed environment with a modest batch size."
+    },
+    {
+      "id": "securing-agents-like-os-2605-14932",
+      "title": "Toward Securing AI Agents Like Operating Systems: Case Study Shows Four OpenClaw-Like Agents Fail Protection Mechanisms Under Modest Attacker Capabilities",
+      "subtitle": "OS security lens — resource isolation, privilege separation, communication mediation — applied systematically to LLM agents; established OS mitigations directly applicable.",
+      "source": "arXiv cs.CR",
+      "author": "Lukas Pirch, Micha Horlboge, Patrick Großmann, Syeda Mahnur Asif, Klim Kireev, Thorsten Holz, Konrad Rieck",
+      "date": "2026-05-14",
+      "primary_url": "https://arxiv.org/abs/2605.14932",
+      "verified": true,
+      "verified_at": "2026-05-15T12:00:00Z",
+      "summary": "Toward Securing AI Agents Like Operating Systems (arXiv:2605.14932) surveys open-source agents, derives a unified agent architecture, and evaluates four widely-used OpenClaw-like agents for security. The core argument: LLM agents and operating systems face structurally identical security challenges in resource isolation, privilege separation, and communication mediation — meaning OS security solutions are directly applicable. The empirical case study finds that several protection mechanisms fail under modest attacker capabilities, and that secure operation requires detailed system knowledge and careful configuration. Critically, the paper distinguishes between two categories of risk: (1) vulnerabilities inherent to agentic design that cannot be patched (some agentic capabilities are 'insecure by design'); and (2) vulnerabilities addressable through established OS security techniques — the larger category. The paper concludes with concrete architectural recommendations.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "tags": ["agentic security", "OS security", "privilege separation", "resource isolation", "agent architecture"],
+      "category": "Research — Security",
+      "priority": "HIGH",
+      "recurrence": "new",
+      "enterprise_adaptation": "The OS security analogy is the most actionable framing for enterprise security teams that already have OS hardening standards: every principle that applies to a multi-process OS — least privilege, namespace isolation, audit logging of system calls, capability-based access control — maps to LLM agents. Implementation pattern: (1) treat each LLM agent's tool set as its capability profile, analogous to a process's file descriptor table; define and enforce the minimum tool set each agent needs for its specific task; (2) treat multi-agent communication as inter-process communication — define explicit message schemas and validate inputs at each agent boundary, do not pass raw text between agents without sanitization; (3) treat agent memory (context window contents, retrieval results) as a process memory space — apply the same confidentiality controls you would apply to memory containing production credentials or PII. Regulated-environment caveat: the paper's finding that 'some agentic capabilities are insecure by design' is the key regulated-environment constraint — it means you cannot patch your way out of certain risks; the architectural decision to give an agent a capability (e.g., shell execution, outbound network calls) is a security decision, not just a functionality decision, and must go through your change management process. Concrete 30-day experiment: for your highest-autonomy production agent, build an explicit capability manifest — list every tool, every API call, every data store accessible to the agent — and run it against your change-management policy. Identify any capability that was implicitly enabled rather than explicitly approved. This manifest is the prerequisite for applying any OS-style security control."
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "papers",
+      "title": "Papers",
+      "description": "arXiv and peer-reviewed papers published or gaining significant traction during the week of May 11–17, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "jaw-papers-2605-11229",
+          "title": "Comment and Control: Hijacking Agentic Workflows via Context-Grounded Evolution",
+          "source": "arXiv cs.CR / cs.AI",
+          "author": "Neil Fendley, Zhengyu Liu, Aonan Guan, Jiacheng Zhong, Yinzhi Cao",
+          "date": "2026-05-11",
+          "primary_url": "https://arxiv.org/abs/2605.11229",
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "Introduces the JAW framework for detecting and exploiting Agentic Workflow Hijacking in automation platforms. Three-stage methodology: static path-feasibility analysis, dynamic prompt-provenance taint tracking, and capability profiling — combined into Context-Grounded Evolution to synthesize payloads. Evaluated on real GitHub Actions and n8n: 4,714 workflows hijacked; 8 n8n templates compromised; 15 GitHub Actions affected including Claude Code, Gemini CLI, Qwen CLI, and Cursor CLI official integrations. Attacks achieve credential exfiltration, SQL injection, and shell command execution. All findings responsibly disclosed; fixes and bug bounties received from GitHub, Google, and Anthropic.",
+          "score": {
+            "total": 9.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["agentic security", "prompt injection", "GitHub Actions", "n8n", "credential exfiltration"],
+          "category": "Research — Security",
+          "recurrence": "new"
+        },
+        {
+          "id": "securing-agents-os-papers-2605-14932",
+          "title": "Toward Securing AI Agents Like Operating Systems",
+          "source": "arXiv cs.CR",
+          "author": "Lukas Pirch, Micha Horlboge, Patrick Großmann, Syeda Mahnur Asif, Klim Kireev, Thorsten Holz, Konrad Rieck",
+          "date": "2026-05-14",
+          "primary_url": "https://arxiv.org/abs/2605.14932",
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "Surveys open-source agents, derives a unified agent architecture, and argues that AI agents face the same core security challenges as operating systems: resource isolation, privilege separation, and communication mediation. Case study of four OpenClaw-like agents shows protection mechanisms fail under modest attacker capabilities. Distinguishes vulnerabilities inherent to agentic design from those addressable with OS security techniques. Concludes that the larger class of agent vulnerabilities can be mitigated with established OS approaches.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["agentic security", "OS security", "resource isolation", "privilege separation"],
+          "category": "Research — Security",
+          "recurrence": "new"
+        },
+        {
+          "id": "apwa-papers-2605-15132",
+          "title": "APWA: A Distributed Architecture for Parallelizable Agentic Workflows",
+          "source": "arXiv cs.AI",
+          "author": "Evan Rose, Tushin Mallick, Matthew D. Laws, Cristina Nita-Rotaru, Alina Oprea",
+          "date": "2026-05-14",
+          "primary_url": "https://arxiv.org/abs/2605.15132",
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "Introduces the Agent-Parallel Workload Architecture (APWA) for high-throughput multi-agent processing of parallelizable tasks. Manager agent decomposes queries into non-interfering subtasks using Data Tables and Subtask Templates; worker agents execute independently using a Ray-based Distributed Executor. On PII-300k and SummaryBench benchmarks, competing systems including Magentic-One and MegaAgent fail completely at scale; APWA achieves sublinear runtime growth with over 2,500 concurrent agents. Authors explicitly note security — prompt injection, data leakage — was not addressed.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["multi-agent", "distributed systems", "parallel execution", "scalability", "architecture"],
+          "category": "Research — Agents",
+          "recurrence": "new"
+        },
+        {
+          "id": "opendeepthink-papers-2605-15177",
+          "title": "OpenDeepThink: Parallel Reasoning via Bradley–Terry Aggregation",
+          "source": "arXiv cs.AI",
+          "author": "Shang Zhou, Wenhao Chai, Kaiyuan Liu, Huanzhi Mao, Qiuyang Mang, Jingbo Shang",
+          "date": "2026-05-14",
+          "primary_url": "https://arxiv.org/abs/2605.15177",
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "Addresses the selection bottleneck in parallel breadth-scaling for test-time compute: pointwise LLM judging is noisy and biased. OpenDeepThink uses pairwise Bradley-Terry comparison — the LLM judges random pairs, aggregates votes into a global ranking, preserves top candidates, mutates the next three quartiles using natural-language critiques, and discards the bottom quartile. Raises Gemini 3.1 Pro's effective Codeforces Elo by +405 points in eight rounds (~27 minutes). Gains concentrate in objectively verifiable domains and reverse in subjective ones. Releases CF-73 curated benchmark.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["test-time compute", "reasoning", "parallel sampling", "evaluation", "benchmark"],
+          "category": "Research — Reasoning",
+          "recurrence": "new"
+        },
+        {
+          "id": "agentic-boosting-weak-models-2605-14163",
+          "title": "Agentic Systems as Boosting Weak Reasoning Models",
+          "source": "arXiv cs.AI",
+          "author": "Varun Sunkaraneni, Pierfrancesco Beneventano, Riccardo Neumarker, Tomaso Poggio, Tomer Galanti",
+          "date": "2026-05-13",
+          "primary_url": "https://arxiv.org/abs/2605.14163",
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "Formalizes verifier-backed committee search as inference-time boosting for reasoning models. Key finding: a committee of GPT-5.4 nano calls with critic-comparator orchestration achieves 76.4% on SWE-bench Verified (k=8 proposals), matching standalone Gemini 3 Pro and Claude Opus 4.5 Thinking — approaching the 79.0% oracle best-of-8 ceiling. Remaining failures are predominantly proposal-coverage failures (shared blind spots no selection mechanism can close). Establishes that the main challenge is identifying correct solutions already present in the proposal pool, not generating them.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["agent orchestration", "ensemble methods", "reasoning", "cost efficiency", "inference-time compute"],
+          "category": "Research — Agents",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "model_cards",
+      "title": "Model Cards",
+      "description": "New model and system card publications from frontier labs during the week of May 11–17, 2026. The primary new system card this week is GPT-5.5 Instant (published May 5, within one week of this issue's window).",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "gpt-5-5-instant-system-card-may5",
+          "title": "GPT-5.5 Instant System Card: First Instant-Class Model Classified as High Capability in Cybersecurity and Bio/Chem Preparedness",
+          "source": "OpenAI",
+          "author": "OpenAI Safety team",
+          "date": "2026-05-05",
+          "primary_url": "https://openai.com/index/gpt-5-5-instant-system-card/",
+          "secondary_urls": [
+            {"label": "OpenAI GPT-5.5 Instant release announcement", "url": "https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/"}
+          ],
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "GPT-5.5 Instant replaces GPT-5.3 Instant as the default ChatGPT model. The system card establishes GPT-5.5 Instant as the first in the Instant category to be classified as High capability in cybersecurity and biological/chemical preparedness — triggering additional deployment safeguards under OpenAI's framework. The model scores 81.2 on AIME 2025 (vs. 65.4 for its predecessor) and 76 on MMMU-Pro multimodal reasoning (vs. 69.2). Enterprise API access is available as 'chat-latest' with GPT-5.3 retained as an option for paid users for three months. HIPAA-compliant Codex use is supported only in local environments for eligible Enterprise workspaces.",
+          "score": {
+            "total": 8.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["model card", "system card", "OpenAI", "GPT-5.5", "cybersecurity capability", "enterprise deployment"],
+          "category": "Model Cards",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_us",
+      "title": "Regulation — US",
+      "description": "US federal and state AI regulatory activity during the week of May 11–17, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "nist-ai-rmf-critical-infrastructure-profile-2026",
+          "title": "NIST AI RMF Profile for Trustworthy AI in Critical Infrastructure: Sector-Specific Guidance Now Available",
+          "source": "NIST",
+          "author": "NIST ITL AI Risk Management team",
+          "date": "2026-04-07",
+          "primary_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "secondary_urls": [
+            {"label": "NIST concept note: AI RMF Profile on Trustworthy AI in Critical Infrastructure", "url": "https://www.nist.gov/programs-projects/concept-note-ai-rmf-profile-trustworthy-ai-critical-infrastructure"}
+          ],
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "NIST released a concept note for an AI RMF Profile on Trustworthy AI in Critical Infrastructure on April 7, 2026 — the first sector-specific AI RMF profile. The profile adapts the Govern-Map-Measure-Manage structure to critical infrastructure contexts including energy, healthcare, and transportation, with emphasis on safety, resilience, and operational continuity. This moves the AI RMF from generic framework to sector-specific implementation guidance. Organizations in regulated industrial sectors can now cite alignment with the critical infrastructure profile as a governance reference alongside the baseline AI RMF 1.0.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["NIST AI RMF", "critical infrastructure", "AI governance", "risk management", "sector-specific"],
+          "category": "Regulation — US",
+          "recurrence": "new"
+        },
+        {
+          "id": "white-house-national-ai-framework-march26",
+          "title": "White House National AI Legislative Framework: Federal Preemption Direction Stands as State Laws Remain Operative",
+          "source": "White House OSTP",
+          "author": "Trump Administration",
+          "date": "2026-03-20",
+          "primary_url": "https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/",
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "The March 20, 2026 White House AI legislative framework — released as a Congressional blueprint, not an executive order — directs Congress toward federal preemption of state AI laws, removal of innovation barriers, and workforce development. As of mid-May, no federal AI statute has been enacted; state laws including California and Colorado remain operative. Legal analysts note that the DOJ's AI Litigation Task Force activity, including intervention in Colorado AI Act litigation, signals that judicial proceedings may shape AI regulation before any federal statute. For enterprise compliance planning, state laws remain the operative constraint.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["federal AI policy", "preemption", "state AI law", "White House", "legislative framework"],
+          "category": "Regulation — US",
+          "recurrence": "returning_theme",
+          "recurrence_note": "Last week covered Colorado AI Act court stay; this week provides the broader federal context within which that litigation sits — the White House framework's preemption direction is the backdrop for the DOJ intervention in Colorado."
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_global",
+      "title": "Regulation — Global",
+      "description": "EU AI Act, UK, ISO, and other international AI regulatory activity during the week of May 11–17, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "eu-ai-act-omnibus-reg-may7",
+          "title": "EU AI Act Digital Omnibus Provisional Agreement: Deadline Postponement, Watermarking Grandfathering, and New Prohibited Practices",
+          "source": "Bird & Bird / EU Commission",
+          "author": "EU Council and Parliament negotiators; Bird & Bird analysis",
+          "date": "2026-05-07",
+          "primary_url": "https://www.twobirds.com/en/insights/2026/digital-omnibus-on-ai-provisional-agreement-reached-at-the-may-trilogue",
+          "secondary_urls": [
+            {"label": "Latham & Watkins full Omnibus analysis with deadline table", "url": "https://www.lw.com/en/insights/ai-act-update-eu-resolves-to-change-rules-and-extend-deadlines"},
+            {"label": "Taylor Wessing: What the political deal means", "url": "https://www.taylorwessing.com/en/insights-and-events/insights/2026/05/the-eu-digital-omnibus-on-ai-what-the-political-deal-means"}
+          ],
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "Provisional agreement reached May 7, 2026. Key compliance calendar changes: Annex III high-risk: December 2, 2027 (was August 2, 2026). Annex I high-risk (products): August 2, 2028 (was August 2, 2027). Article 50(2) watermarking: August 2, 2026 for new systems; December 2, 2026 for systems already on market. New Article 5 prohibition (intimate deepfakes, CSAM): December 2, 2026. GPAI enforcement (Chapter V): August 2, 2026 — unchanged. The definition of 'safety component' is narrowed to exclude AI that merely assists or optimizes without safety-risk implications. Industrial AI in machinery products is carved out. SME exemptions extended to companies with up to 750 employees and €150M revenue. Formal adoption expected before August 2.",
+          "score": {
+            "total": 9.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["EU AI Act", "Digital Omnibus", "high-risk AI", "watermarking", "GPAI", "compliance deadlines"],
+          "category": "Regulation — EU",
+          "recurrence": "returning",
+          "recurrence_note": "Last week covered the imminent May 13 trilogue and the GPAI dual-enforcement dimension; this week the agreement was reached May 7 and the specific deadline changes are confirmed."
+        },
+        {
+          "id": "eu-commission-art50-transparency-guidelines-may8",
+          "title": "EU Commission Publishes Draft Article 50 Transparency Guidelines for Consultation — Deadline June 3",
+          "source": "EU Commission / digital-strategy.ec.europa.eu",
+          "author": "European Commission",
+          "date": "2026-05-08",
+          "primary_url": "https://digital-strategy.ec.europa.eu/en/library/draft-guidelines-implementation-transparency-obligations-certain-ai-systems-under-article-50-ai-act",
+          "secondary_urls": [
+            {"label": "artificialintelligenceact.eu Article 50 transparency rules practical guide", "url": "https://artificialintelligenceact.eu/transparency-rules-article-50/"}
+          ],
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "On May 8, 2026, the European Commission published draft guidelines for implementing Article 50 AI Act transparency obligations — covering disclosure requirements for AI systems interacting with humans, emotion recognition and biometric categorization systems, deepfake labeling, and the watermarking obligation for generative AI content. The guidelines are open for stakeholder consultation until June 3, 2026. These are non-binding interpretive guidance; the Code of Practice on marking and labeling of AI-generated content was published in parallel. Together, they define the compliance standards that will be assessed when the August 2026 transparency obligations take effect.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["EU AI Act", "Article 50", "transparency", "watermarking", "chatbot disclosure", "deepfake labeling"],
+          "category": "Regulation — EU",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_disclosures",
+      "title": "Enterprise Disclosures",
+      "description": "Public company AI mentions in SEC filings for the week of May 11–17, 2026. Filings are cited by EDGAR URL; company names are generic per editorial policy.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "consumer-products-10q-may13-2026",
+          "title": "Large Consumer-Products Company Q1 2026 10-Q: AI as Both Cyber Threat Vector and Strategic Growth Driver — Dual Framing in a Single Filing",
+          "source": "SEC EDGAR",
+          "author": "SEC EDGAR / publicly traded consumer-products company",
+          "date": "2026-05-13",
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000026/has-20260329.htm",
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "A large consumer-products company filed its Q1 2026 10-Q on May 13, 2026, following a brief delay caused by a March 28 network intrusion that required third-party cyber-security remediation. In the cyber-risk section, the filing explicitly identifies AI as a tool attackers use to 'increase the virulence of attacks' — linking AI to threat escalation rather than just operational risk. In its strategic description, the filing identifies 'AI-enabled entertainment' as a value-creation vector and includes AI integration into product development, marketing, and consumer engagement in its forward-looking statements with associated risk caveats including 'ethical concerns, evolving regulatory standards, implementation challenges, and third-party dependencies.' This dual framing — AI as both capability and threat amplifier — is a new pattern in industrial and consumer-products disclosures; prior filings in this sector typically used AI language only in risk factors.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["10-Q", "AI disclosure", "cyber risk", "SEC filing", "strategic AI", "enterprise governance"],
+          "category": "Enterprise Disclosures",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Cross-source patterns observed this week that do not yet qualify as confirmed items but warrant monitoring.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "agentic-security-dual-publication-signal",
+          "title": "Two Independent Security Papers on Agent Vulnerabilities Published in Four Days — First Week with Multiple Primary-Source Agent Attack Disclosures",
+          "source": "arXiv cs.CR",
+          "author": "Multiple research groups",
+          "date": "2026-05-14",
+          "primary_url": "https://arxiv.org/abs/2605.11229",
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "JAW (May 11) and Toward Securing AI Agents Like Operating Systems (May 14) represent the first week in which two independent research groups published primary-source attack research on LLM-agent workflows within a four-day window. This concentration suggests the academic security community is treating agentic systems as a mature attack surface, not an emerging one. The responsible disclosure outcomes — bug bounties and patches from GitHub, Google, and Anthropic — confirm that frontier labs are treating this research stream as operationally relevant.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["agentic security", "research trends", "vulnerability disclosure", "frontier labs"],
+          "category": "Emerging Signals",
+          "recurrence": "new"
+        },
+        {
+          "id": "sycophancy-alignment-governance-signal",
+          "title": "Pluralistic Repair Score Paper (arXiv:2605.14912) Formalizes a Measurable Alignment Failure Mode Relevant to AI-Driven Enterprise Decision Support",
+          "source": "arXiv cs.AI",
+          "author": "Varad Vishwarupe, Nigel Shadbolt, Marina Jirotka",
+          "date": "2026-05-14",
+          "primary_url": "https://arxiv.org/abs/2605.14912",
+          "verified": true,
+          "verified_at": "2026-05-15T12:00:00Z",
+          "summary": "From Sycophantic Consensus to Pluralistic Repair (arXiv:2605.14912, May 14) introduces the Pluralistic Repair Score (PRS) — a metric distinguishing principled model revision from social capitulation. Empirical finding on Claude Sonnet 4.5 and GPT-4o: both models show agreement-following that coexists with low repair quality on contested-value prompts. The governance implication for enterprise teams: AI-driven decision-support systems that are optimized for user satisfaction (RLHF) may systematically avoid surfacing disagreement precisely in the high-stakes, contested-value situations where disagreement is most important.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["alignment", "sycophancy", "decision support", "AI governance", "evaluation"],
+          "category": "Emerging Signals",
+          "recurrence": "new"
+        }
+      ]
+    }
+  ],
+
+  "index": [
+    {
+      "title": "Comment and Control: Hijacking Agentic Workflows via Context-Grounded Evolution",
+      "source": "arXiv cs.CR",
+      "author": "Neil Fendley et al.",
+      "date": "2026-05-11",
+      "primary_url": "https://arxiv.org/abs/2605.11229",
+      "score": 9.5
+    },
+    {
+      "title": "EU AI Act Digital Omnibus: Provisional Agreement — High-Risk to December 2027, Watermarking August 2026",
+      "source": "Bird & Bird / EU Council and Parliament",
+      "author": "Bird & Bird legislative analysis team",
+      "date": "2026-05-07",
+      "primary_url": "https://www.twobirds.com/en/insights/2026/digital-omnibus-on-ai-provisional-agreement-reached-at-the-may-trilogue",
+      "score": 9.5
+    },
+    {
+      "title": "Toward Securing AI Agents Like Operating Systems",
+      "source": "arXiv cs.CR",
+      "author": "Lukas Pirch et al.",
+      "date": "2026-05-14",
+      "primary_url": "https://arxiv.org/abs/2605.14932",
+      "score": 8.5
+    },
+    {
+      "title": "APWA: A Distributed Architecture for Parallelizable Agentic Workflows",
+      "source": "arXiv cs.AI",
+      "author": "Evan Rose et al.",
+      "date": "2026-05-14",
+      "primary_url": "https://arxiv.org/abs/2605.15132",
+      "score": 8.0
+    },
+    {
+      "title": "GPT-5.5 Instant System Card",
+      "source": "OpenAI",
+      "author": "OpenAI Safety team",
+      "date": "2026-05-05",
+      "primary_url": "https://openai.com/index/gpt-5-5-instant-system-card/",
+      "score": 8.0
+    },
+    {
+      "title": "EU Commission Draft Article 50 Transparency Guidelines — Consultation Deadline June 3",
+      "source": "EU Commission",
+      "author": "European Commission",
+      "date": "2026-05-08",
+      "primary_url": "https://digital-strategy.ec.europa.eu/en/library/draft-guidelines-implementation-transparency-obligations-certain-ai-systems-under-article-50-ai-act",
+      "score": 8.0
+    },
+    {
+      "title": "OpenDeepThink: Parallel Reasoning via Bradley–Terry Aggregation",
+      "source": "arXiv cs.AI",
+      "author": "Shang Zhou et al.",
+      "date": "2026-05-14",
+      "primary_url": "https://arxiv.org/abs/2605.15177",
+      "score": 7.5
+    },
+    {
+      "title": "Agentic Systems as Boosting Weak Reasoning Models",
+      "source": "arXiv cs.AI",
+      "author": "Varun Sunkaraneni et al.",
+      "date": "2026-05-13",
+      "primary_url": "https://arxiv.org/abs/2605.14163",
+      "score": 7.5
+    },
+    {
+      "title": "Large Consumer-Products Company Q1 2026 10-Q: AI as Threat Vector and Strategic Driver",
+      "source": "SEC EDGAR",
+      "author": "Publicly traded consumer-products company",
+      "date": "2026-05-13",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/46080/000004608026000026/has-20260329.htm",
+      "score": 7.5
+    },
+    {
+      "title": "NIST AI RMF Profile for Trustworthy AI in Critical Infrastructure",
+      "source": "NIST",
+      "author": "NIST ITL",
+      "date": "2026-04-07",
+      "primary_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "score": 7.5
+    },
+    {
+      "title": "White House National AI Legislative Framework — Federal Preemption Direction",
+      "source": "White House OSTP",
+      "author": "Trump Administration",
+      "date": "2026-03-20",
+      "primary_url": "https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/",
+      "score": 7.0
+    },
+    {
+      "title": "From Sycophantic Consensus to Pluralistic Repair: Why AI Alignment Must Surface Disagreement",
+      "source": "arXiv cs.AI",
+      "author": "Varad Vishwarupe, Nigel Shadbolt, Marina Jirotka",
+      "date": "2026-05-14",
+      "primary_url": "https://arxiv.org/abs/2605.14912",
+      "score": 7.0
+    },
+    {
+      "title": "Two Independent Agent Security Papers in Four Days — Emerging Pattern in Academic Security Research",
+      "source": "arXiv cs.CR",
+      "author": "Multiple research groups",
+      "date": "2026-05-14",
+      "primary_url": "https://arxiv.org/abs/2605.11229",
+      "score": 7.0
+    }
+  ],
+
+  "emerging_signals": [
+    {
+      "pattern": "Agentic CI/CD pipelines emerging as primary enterprise attack surface — two papers in four days",
+      "evidence": "JAW (arXiv:2605.11229) demonstrates 4,714 hijackable GitHub Actions workflows including official Claude Code and Gemini CLI integrations; Toward Securing AI Agents Like Operating Systems (arXiv:2605.14932) shows OS-level protection mechanisms fail under modest attacker capabilities. Both papers had responsible disclosure outcomes with patches from Google, GitHub, and Anthropic.",
+      "what_to_watch": "Additional CVE disclosures for specific GitHub Actions and n8n nodes; enterprise security vendors adding agentic workflow scanning to CI/CD security products; Anthropic, Google, and GitHub publishing hardening guidance for their official LLM agent integrations."
+    },
+    {
+      "pattern": "EU AI Act watermarking obligation is now the operative near-term compliance item — not high-risk system deadlines",
+      "evidence": "The May 7 Omnibus provisional agreement moves Annex III high-risk to December 2027, leaving Article 50(2) watermarking at August 2, 2026 (December 2, 2026 for existing systems). The Commission's simultaneous publication of draft Article 50 guidelines signals that watermarking compliance will be actively reviewed. GPAI enforcement powers also activate August 2 regardless.",
+      "what_to_watch": "Final publication of Article 50 guidelines after June 3 consultation close; specific watermarking technical standards from CEN-CENELEC; formal Omnibus adoption timeline from Council and Parliament."
+    },
+    {
+      "pattern": "Public-company filings beginning to frame AI as both capability and threat multiplier in the same disclosure",
+      "evidence": "The consumer-products company 10-Q filed May 13 explicitly identifies AI in the cyber-risk section as a tool attackers use against the company AND in the strategic section as a growth and product driver — the first dual framing observed in this sector peer set.",
+      "what_to_watch": "Whether this dual-framing pattern spreads to industrial sector peers in upcoming Q1 2026 10-Q filings; whether the SEC's Division of Corporation Finance issues guidance on AI disclosure standards."
+    }
+  ],
+
+  "flagged_unverified": [
+    {
+      "claim": "Anthropic Mythos model reported by third parties as having 73% success rate on enterprise network attack ranges",
+      "reason": "The claim appears in vendor marketing content (Cranium AI blog, May 4, 2026) citing Anthropic documentation, but no primary source system card or official Anthropic publication could be verified with this specific statistic. The model itself is referenced in multiple secondary sources as a Claude-class release, but without a verifiable primary arXiv, model card, or official Anthropic announcement URL confirming the 73% figure.",
+      "attempted_url": "https://cranium.ai/resources/blog/the-bridge-of-trust-scaling-enterprise-ai-in-the-era-of-autonomous-agents/"
+    }
+  ],
+
+  "suggested_refinements": {
+    "sources_to_add": [
+      "AlphaXiv and Papers with Code weekly trending lists — for additional traction signal on papers beyond arXiv submission volume",
+      "GitHub Security Advisories — now that JAW demonstrates agentic workflow CVEs, the advisory feed is a primary source for follow-on patches and CVE identifiers",
+      "EU AI Office official publications page (digital-strategy.ec.europa.eu) — now that the Commission is issuing implementation guidance, this should be monitored weekly"
+    ],
+    "sources_to_drop": [
+      "Colorado AI Act as standalone item — with the legislature adjourned and enforcement paused, this story is now solely litigation-dependent; revisit only when a preliminary injunction ruling issues"
+    ],
+    "topics_to_add": [
+      "Agentic workflow security: formal CVE tracking for GitHub Actions and n8n LLM integrations — JAW paper establishes this as a primary source category",
+      "EU Article 50 watermarking technical implementation: CEN-CENELEC standards process and Code of Practice adoption timeline",
+      "CAISI pre-deployment evaluation agreements: the May 5 CNBC report noted new agreements with Google DeepMind, Microsoft, and xAI — this is US government AI oversight infrastructure and worth tracking as a recurring item"
+    ],
+    "topics_to_drop": [],
+    "notes": "This week's research tab is dominated by a regulatory inflection point (EU AI Act Omnibus May 7 agreement) and a security research inflection point (two independent agent attack papers in four days). Both warrant sustained tracking over the next 4–6 weeks: the regulatory story has specific compliance calendar milestones (August 2, 2026; December 2, 2026; June 3 consultation close); the security story has a responsible-disclosure follow-on cycle that typically produces CVE IDs and vendor hardening guides 30–90 days after paper publication. The enterprise disclosure search this week found limited industrial-sector peer filings; most Q1 2026 10-Qs for the relevant peer set (aggregates, roofing, insulation, building materials) were filed in late April and covered in the week of May 4. The next quarterly disclosure cycle will be Q2 2026 filings in late July and August."
+  }
+}

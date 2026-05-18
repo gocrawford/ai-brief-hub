@@ -1,0 +1,959 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.90,
+    "items_total": 30,
+    "items_new": 27,
+    "items_returning": 3,
+    "empty_week_note": ""
+  },
+
+  "executive_summary": [
+    {
+      "headline": "Agent reliability tooling becomes a standalone category: Statewright's deterministic state-machine guardrails, Needle's 26M distilled tool-calling model, and react-doctor's code-quality gate each address a different failure mode in production agent deployments",
+      "body": "The week of May 11 produced a cohort of tools focused on making agents reliable rather than capable. Statewright (GitHub: statewright/statewright, Show HN: 124 pts, 54 comments) enforces phase-specific tool access via a Rust state-machine engine — an agent in planning mode cannot see edit tools, an agent in testing mode cannot run destructive shell commands. Needle (cactus-compute/needle, Show HN: 462 pts, 327 comments) distills Gemini tool-calling into a 26M parameter model that fits in 14 MB INT4, enabling on-device tool-calling without cloud round-trips. react-doctor (millionco/react-doctor, 4.7k stars, +340/day) adds a health-score scanner that catches bad React patterns produced by coding agents before they ship. These three projects converge on the same insight: agents produce outputs that need structured review, and that review layer should be deterministic, not prompt-based.",
+      "primary_url": "https://github.com/statewright/statewright"
+    },
+    {
+      "headline": "NousResearch/hermes-agent v0.14.0 ships 808 commits and 633 merged PRs in a single release — adding an OpenAI-compatible local proxy, xAI Grok via SuperGrok OAuth, 22 messaging platforms, and 180x faster browser CDP calls",
+      "body": "Hermes Agent v0.14.0 (May 16) is the most significant single-week open-source agent release in this reporting window. The release is community-built: 215 contributors, 545 issues closed, 12 P0 closures. The headlining feature is a new OpenAI-compatible local proxy that turns any OAuth-authed provider (Claude Pro, ChatGPT Pro, SuperGrok) into an endpoint that Codex, Aider, Cline, and Continue can call without separate API keys. The cold-start shave (~19 seconds off launch), 180x faster browser CDP evaluations, and cross-session 1-hour Claude prompt caching all reduce the friction that blocks production deployments. At approximately 144,564 stars on May 11 (per the 0011011011.com digest), hermes-agent is the largest autonomous-agent repo by stars.",
+      "primary_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.5.16"
+    },
+    {
+      "headline": "LangChain ships four coordinated releases on May 12 and announces Interrupt 2026 products: LangSmith Engine, LangSmith LLM Gateway, Managed Deep Agents, and Sandboxes GA",
+      "body": "LangGraph v1.2 (May 12) adds per-node timeouts and error handlers, a new DeltaChannel type that stores only incremental deltas instead of re-serializing full state, and a v3 streaming API with typed per-channel projections. The Interrupt 2026 blog post (May 14) announced LangSmith Engine — an autonomous agent that watches production traces, clusters failures, and opens PRs with fixes — LangSmith LLM Gateway for spend caps and PII redaction at the inference layer, and Managed Deep Agents as a hosted runtime. SmithDB (Rust + Apache DataFusion) delivers P50 trace tree loads at 92ms and P50 single run loads at 71ms. These are production-infrastructure releases, not capability demos.",
+      "primary_url": "https://www.langchain.com/blog/interrupt-2026-overview"
+    },
+    {
+      "headline": "Key takeaway: The builder community is building the governance layer for agents — deterministic state machines, on-device models, code-quality scanners, and LLM gateways — because prompt-based reliability has hit its ceiling.",
+      "body": "Three separate and independent engineering efforts (Statewright, react-doctor, Needle) converged this week on the same thesis: LLM reasoning alone is not sufficient for reliable production agents. Statewright enforces deterministic tool-access restrictions at the MCP protocol layer. react-doctor scans AI-written React for measurable quality violations before they merge. Needle's 14 MB on-device tool-calling model eliminates the network hop entirely. The pattern matches the broader LangSmith Engine and LangSmith LLM Gateway announcements from Interrupt 2026. Enterprise teams building agents should treat this week's output as a signal that the evaluation-and-governance layer is now independently addressable and should be designed in from the start."
+    }
+  ],
+
+  "top_picks": [
+    {
+      "id": "repo-statewright-state-machine-guardrails",
+      "title": "statewright/statewright",
+      "subtitle": "Deterministic Rust state-machine engine that restricts which tools an agent can access in each workflow phase — planning gets read-only tools, implementation gets edit tools, testing gets test commands only",
+      "source": "GitHub / Hacker News",
+      "author": "statewright",
+      "date": "2026-05-12",
+      "primary_url": "https://github.com/statewright/statewright",
+      "secondary_urls": [
+        {
+          "label": "Show HN thread (124 pts, 54 comments)",
+          "url": "https://news.ycombinator.com/item?id=48108778"
+        },
+        {
+          "label": "Statewright review (andrew.ooo)",
+          "url": "https://andrew.ooo/posts/statewright-state-machine-guardrails-ai-agents-review/"
+        }
+      ],
+      "summary": "Statewright is a Rust-based state-machine guardrail for AI coding agents that enforces phase-specific tool access at the MCP layer. An agent in a planning state cannot see edit tools; an agent in a testing state cannot run destructive shell commands. The visual editor at statewright.ai lets practitioners inspect and modify workflow graphs. Research on a 5-task SWE-bench subset showed two local models improved from 2/10 to 10/10 correct with constraints enabled. It integrates with Claude Code, Codex, Cursor, opencode, and Pi via MCP and hooks. Provisional patent filed April 30, 2026; core engine is Apache 2.0.",
+      "key_takeaways": [
+        "Restricting tool access to a phase-specific allow-list produces a measurable reliability improvement (2/10 to 10/10 on the SWE-bench subset studied) without changing the underlying model.",
+        "Enforcement happens at the MCP protocol layer, not inside the prompt — which means the constraint is not bypassable through prompt injection or model drift.",
+        "State machines model loops and retries naturally, which is the actual structure of agentic work; DAG-only orchestration frameworks cannot represent retry paths or failure branches without workarounds."
+      ],
+      "results": "5-task SWE-bench subset: 2/10 correct without guardrails, 10/10 correct with guardrails enabled (two local models tested, 13.8 GB and 19.9 GB). Show HN: 124 pts, 54 comments (May 12, 2026). Source: statewright/statewright repo README and statewright.ai/research.",
+      "enterprise_adaptation": "Implementation pattern: Deploy Statewright as an MCP layer wrapping the coding agents that have already been approved for use on internal development workstations. Define a standard three-phase workflow (read/plan → implement → test-and-review) and configure tool allow-lists for each phase in a JSON workflow file version-controlled in your internal monorepo. The visual editor at statewright.ai/workflows can be used to build and validate the graph, then the JSON exported and committed. Agents calling disallowed tools are rejected at the protocol layer with an informative error — no custom prompt engineering required. | Regulated-environment caveats: The state-machine definitions themselves are plain JSON and can be reviewed and approved in a standard change-management process before being deployed to a team. The MCP gateway component needs to be deployed within your network perimeter or self-hosted; the managed cloud tier at statewright.ai stores workflow definitions remotely, which may require data-residency review before adoption in a regulated environment. Audit logs of state transitions and tool-access denials are available via the gateway and should be routed to your existing SIEM. | 30-day experiment: Pick one internal coding-agent workflow that has caused a production incident due to an agent running a destructive command at the wrong time (e.g., running database migrations during planning, or deleting files during a code-review pass). Model it as a three-state machine (plan → implement → verify), configure the tool allow-lists for each state, and deploy to one developer's environment. Measure whether the incident class recurs and how many state-machine rejections are logged per session.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 124,
+        "comments": 54
+      },
+      "tags": ["Agent Reliability", "State Machine", "MCP", "Rust", "Guardrails"],
+      "category": "Agent Infrastructure",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-17T12:00:00Z"
+    },
+    {
+      "id": "repo-cactus-needle-26m-tool-calling",
+      "title": "cactus-compute/needle",
+      "subtitle": "26M-parameter model distilled from Gemini tool-calling, quantizes to 14 MB INT4, designed for on-device and edge function-calling without cloud round-trips",
+      "source": "GitHub / Hacker News",
+      "author": "cactus-compute",
+      "date": "2026-05-12",
+      "primary_url": "https://github.com/cactus-compute/needle",
+      "secondary_urls": [
+        {
+          "label": "Show HN thread (462 pts, 327 comments)",
+          "url": "https://news.ycombinator.com/item?id=48111896"
+        },
+        {
+          "label": "NYU Shanghai RITS writeup",
+          "url": "https://rits.shanghai.nyu.edu/ai/cactus-releases-needle-a-26m-distilled-model-for-on-device-tool-calling/"
+        }
+      ],
+      "summary": "Needle is an MIT-licensed 26M-parameter model distilled from Google Gemini 3.1 Flash Lite for single-shot function calling. It quantizes to 14 MB INT4 and runs on phones, smartwatches, and edge devices without a cloud round-trip. Training and data-generation pipeline are on GitHub; weights are on Hugging Face; a local playground (needle playground) allows fine-tuning on custom tool schemas via a web UI. It is built on the Cactus low-latency mobile AI engine. The Show HN generated 462 points and 327 comments, indicating strong community interest in edge inference for tool-calling.",
+      "key_takeaways": [
+        "A 14 MB model that handles tool-calling on-device removes the network dependency that makes most agentic workflows impractical in low-connectivity, regulated, or privacy-sensitive environments.",
+        "The training pipeline is public, meaning teams can fine-tune Needle on their own internal tool schemas without sending those schemas to a third-party API — a meaningful advantage for regulated environments where tool definitions may encode sensitive system architecture.",
+        "Distillation from a frontier model (Gemini 3.1 Flash Lite) rather than pre-training from scratch means the function-calling capability transfers intact at a fraction of the deployment cost."
+      ],
+      "results": "14 MB INT4 footprint. 26M parameters. MIT license. Distilled from Gemini 3.1 Flash Lite. Show HN: 462 pts, 327 comments (May 12-13, 2026). Weights available on Hugging Face. Source: cactus-compute/needle GitHub README and NYU Shanghai RITS writeup (May 14, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Deploy Needle as a sidecar function-calling model on managed laptops or edge compute nodes for agent workflows that currently require cloud inference for tool dispatch. Fine-tune Needle on your internal tool schema catalog (the set of tools your agents are authorized to call) using the public training pipeline. Because the fine-tuning pipeline is local and the weights stay on-premises, no tool schema or call pattern leaves your environment. This pattern is particularly applicable to agent workflows that operate on secure networks with limited or audited internet egress — the agent dispatches tool calls locally and only the tool execution results cross network boundaries. | Regulated-environment caveats: The base model weights come from Hugging Face; use your internal artifact registry to host approved model checkpoints after the fine-tuning step. Validate the fine-tuned model against your approved tool schemas before deployment using an internal eval harness — do not assume the distilled model calls tools identically to the frontier teacher for all edge cases. Log all function-call invocations from the model to your audit trail even though inference is local. | 30-day experiment: Identify one agent workflow that currently sends 100+ tool dispatch requests per day to a cloud model endpoint. Fine-tune Needle on the tool schemas for that workflow using the public pipeline on a dev workstation. Run the fine-tuned model in shadow mode alongside the cloud model for one sprint, comparing the tool-call accuracy and latency. Report the delta in cloud API spend.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 462,
+        "comments": 327
+      },
+      "tags": ["On-Device AI", "Tool Calling", "Model Distillation", "Edge Inference", "Mobile"],
+      "category": "Inference",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-17T12:00:00Z"
+    },
+    {
+      "id": "repo-hermes-agent-v0-14",
+      "title": "NousResearch/hermes-agent v0.14.0",
+      "subtitle": "The Foundation Release — 808 commits, 633 PRs, OpenAI-compatible local proxy for OAuth providers, xAI Grok via SuperGrok, 22 messaging platforms, 180x faster browser CDP",
+      "source": "GitHub / Nous Research",
+      "author": "NousResearch",
+      "date": "2026-05-16",
+      "primary_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.5.16",
+      "secondary_urls": [
+        {
+          "label": "GitHub trending digest May 11 (0011011011.com)",
+          "url": "https://0011011011.com/blog/github-stars-2026-05-11"
+        },
+        {
+          "label": "Hermes Agent product page",
+          "url": "https://hermes-agent.nousresearch.com"
+        }
+      ],
+      "summary": "Hermes Agent v0.14.0 (May 16, 2026) is a community-built autonomous agent with 215 contributors and 545 closed issues in this release cycle. The headlining feature is an OpenAI-compatible local proxy that converts any OAuth-authed Hermes provider — Claude Pro, ChatGPT Pro, SuperGrok — into an endpoint that Codex, Aider, Cline, and Continue can call without separate API keys. Cold-start time dropped by ~19 seconds, browser CDP calls are 180x faster, and cross-session 1-hour Claude prompt caching reduces first-response latency for returning sessions. At approximately 144,564 stars (May 11 digest), it is the largest autonomous-agent repo by GitHub stars.",
+      "key_takeaways": [
+        "The OpenAI-compatible local proxy pattern allows teams to route their existing Claude Pro or ChatGPT Pro subscription through a locally-running agent endpoint, eliminating per-request API billing for workflows that already have a subscription budget.",
+        "808 commits and 633 merged PRs from 215 contributors in a single release cycle is an unusual velocity signal — the community is building real production features, not just documentation or tests.",
+        "The 12 P0 security closures in this release (redaction on by default, guild-scoped Discord allowlists, WhatsApp stranger rejection, TOCTOU fixes across auth.json and MCP OAuth) indicate the project is taking enterprise-relevant security hardening seriously."
+      ],
+      "results": "~144,564 GitHub stars as of May 11, 2026 (0011011011.com digest). v0.14.0: 808 commits, 633 merged PRs, 215 contributors, 545 issues closed, 12 P0 closures. ~19s cold-start reduction. 180x faster browser CDP. 22 messaging platforms supported. Source: GitHub releases page (NousResearch/hermes-agent, v2026.5.16).",
+      "enterprise_adaptation": "Implementation pattern: Deploy the hermes-agent gateway on an internal server with the OAuth local proxy enabled, pointed at approved provider subscriptions. This gives internal agent workflows a single, internally-hosted endpoint for LLM calls without requiring individual API key management for each developer. The gateway's skill system allows centrally-managed, versioned skill files that all agent sessions inherit — matching the pattern of a corporate IT-governed software deployment. | Regulated-environment caveats: hermes-agent is Python-based and installs via pip; conduct a supply-chain audit of its dependency tree before production deployment (the v0.14.0 release notes reference a built-in supply-chain advisory checker). The gateway must be deployed behind your network perimeter, not as a public endpoint. Redaction is ON by default as of v0.14.0, but confirm PII and secrets redaction policy settings match your compliance requirements before wiring to production data sources. MCP OAuth in the gateway now follows OAuth 2.1; verify that your internal MCP server deployments are also on 2.1 before connecting. | 30-day experiment: Stand up hermes-agent on a single internal server with the OpenAI-compatible proxy endpoint enabled, pointing at one approved Claude Pro or ChatGPT Pro subscription. Route one existing Codex or Aider workflow through the proxy. Measure whether response quality is comparable to direct API calls and track the reduction in per-request API spend over the sprint.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 2229
+      },
+      "tags": ["Autonomous Agent", "Multi-Platform", "Python", "MCP", "OAuth Proxy"],
+      "category": "Agent Framework",
+      "platform": "github",
+      "recurrence": "returning",
+      "recurrence_note": "Hermes Agent appeared in the May 4 index as a general trending project; v0.14.0 ships this week with 808 commits and 633 PRs — a major release milestone that justifies a returning top pick.",
+      "verified": true,
+      "verified_at": "2026-05-17T12:00:00Z"
+    },
+    {
+      "id": "repo-langgraph-v1-2-langchain-interrupt",
+      "title": "LangGraph v1.2 + LangChain Interrupt 2026",
+      "subtitle": "Per-node timeouts, DeltaChannel for long-running agents, v3 streaming API, plus LangSmith Engine and LangSmith LLM Gateway announced at Interrupt 2026",
+      "source": "GitHub / LangChain Blog",
+      "author": "LangChain",
+      "date": "2026-05-12",
+      "primary_url": "https://docs.langchain.com/oss/python/releases/changelog",
+      "secondary_urls": [
+        {
+          "label": "Interrupt 2026 product overview (LangChain Blog, May 14)",
+          "url": "https://www.langchain.com/blog/interrupt-2026-overview"
+        }
+      ],
+      "summary": "LangGraph v1.2 (May 12) adds finer-grained node-level control: pass timeout= to add_node for hard wall-clock limits, NodeTimeoutError for retry routing, node-level error_handler= callbacks, and graceful shutdown via RunControl.request_drain(). DeltaChannel (beta) stores only incremental deltas at each checkpoint step instead of re-serializing the full accumulated state — critical for long-running agents that accumulate large message lists. The Interrupt 2026 announcements (May 14) add LangSmith Engine (autonomous agent that watches production traces and opens PRs with fixes), LangSmith LLM Gateway (spend caps, PII redaction, audit logging at the inference layer), and Sandboxes GA (hardware-virtualized microVMs with snapshots, blueprints, and Auth Proxy).",
+      "key_takeaways": [
+        "Per-node timeouts and graceful shutdown via RunControl.request_drain() are the missing primitives that allow production agent workflows to fail predictably rather than hanging or partially completing.",
+        "DeltaChannel cuts checkpoint overhead for long-running agents — the state re-serialization cost on every step has been a practical barrier to deploying agents on multi-hour workflows.",
+        "LangSmith LLM Gateway's PII redaction and spend caps at the inference layer provide two of the three governance controls (data classification, spend control) that enterprise security teams require before approving LLM usage in production."
+      ],
+      "results": "P50 trace tree loads at 92ms, P50 single run loads at 71ms (SmithDB). LangGraph v1.2, langchain v1.3, deepagents v0.6 all released May 12, 2026. Source: docs.langchain.com/oss/python/releases/changelog (fetched May 17, 2026) and langchain.com/blog/interrupt-2026-overview (fetched May 17, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Upgrade LangGraph deployments to v1.2 and enable per-node timeouts on any node that calls an external API or runs a shell command — set a hard wall-clock limit equal to the SLA for that step, and route NodeTimeoutError to a human-escalation edge. Enable DeltaChannel on any agent thread that accumulates more than 50 turns of message history. Evaluate LangSmith LLM Gateway (currently in private beta) as the governance layer for all LLM calls — it provides the audit log, spend visibility, and PII redaction that security teams require without requiring application-level changes. | Regulated-environment caveats: LangSmith Gateway is currently a cloud-hosted service; evaluate whether it can be deployed in a self-hosted or VPC configuration before routing regulated data through it. Per-node timeouts must be tuned carefully for document-processing or long-context workflows where legitimate processing time varies widely — timeouts that are too tight will create false failures in compliance-critical workflows. LangSmith Engine opens PRs automatically; ensure the target repositories are behind a code-review gate and that the Engine's GitHub token has write access only to designated branches. | 30-day experiment: Take one existing LangGraph agent in a staging environment and add timeout= and error_handler= to every node that calls an external dependency. Run the agent against a set of 50 test inputs that include deliberate timeouts (e.g., mock a slow API). Measure the proportion of runs that complete gracefully via the drain path versus runs that hang or produce partial state.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "tags": ["LangGraph", "LangChain", "Agent Infrastructure", "Observability", "Python"],
+      "category": "Agent Framework",
+      "platform": "github",
+      "recurrence": "returning",
+      "recurrence_note": "LangChain 1.0.1 appeared in last week's framework_releases section; LangGraph v1.2 and the Interrupt 2026 announcements constitute a materially different release with new production-infrastructure capabilities.",
+      "verified": true,
+      "verified_at": "2026-05-17T12:00:00Z"
+    },
+    {
+      "id": "repo-vectifyai-pageindex-mcp",
+      "title": "VectifyAI/PageIndex + PageIndex MCP",
+      "subtitle": "Vectorless reasoning-based RAG with a new MCP server — hierarchical tree-search retrieval that hit 98.7% on FinanceBench without embeddings or chunking",
+      "source": "GitHub / AlphaSignal",
+      "author": "VectifyAI",
+      "date": "2026-05-11",
+      "primary_url": "https://github.com/VectifyAI/PageIndex",
+      "secondary_urls": [
+        {
+          "label": "PageIndex MCP server repo",
+          "url": "https://github.com/VectifyAI/pageindex-mcp"
+        },
+        {
+          "label": "AlphaSignal writeup: +29K stars, no vectors (May 8)",
+          "url": "https://alphasignalai.substack.com/p/29k-stars-no-vectors-how-pageindex"
+        }
+      ],
+      "summary": "PageIndex is an MIT-licensed vectorless RAG framework that builds a hierarchical table-of-contents tree from documents and lets an LLM reason which nodes contain the answer, without embeddings, vector databases, or chunking. VectifyAI's Mafin 2.5 system using PageIndex achieved 98.7% accuracy on the full 10,231-question FinanceBench benchmark across both GPT-4o and DeepSeek v3 base models. This week PageIndex launched a companion MCP server (VectifyAI/pageindex-mcp) making the reasoning-based retrieval available to Claude, Cursor, and any MCP-compatible agent via a one-line config entry. The repo had 2.8k stars with +4,328 weekly star gain reported by the 0011011011.com May 11 digest.",
+      "key_takeaways": [
+        "The 98.7% accuracy on FinanceBench — a benchmark of complex financial questions against 10K+ documents — is directly relevant to any enterprise team running RAG over regulatory filings, earnings reports, or compliance documentation.",
+        "The MCP server launch means the reasoning-based retrieval is now accessible from Claude Code and Cursor without any Python environment setup — lowering the adoption barrier for teams that already use MCP-compatible coding agents.",
+        "The traceability of every answer to a specific tree node and page is the audit-trail property that traditional vector similarity search cannot provide — a direct compliance requirement for regulated-industry document review."
+      ],
+      "results": "98.7% accuracy on 10,231-question FinanceBench benchmark (both GPT-4o and DeepSeek v3 base models). 2.8k GitHub stars as of fetch (GitHub, May 17 2026); +4,328 weekly star gain (0011011011.com digest, May 11). pageindex-mcp v1.6.3+ with 16+ releases. Source: github.com/VectifyAI/PageIndex (fetched May 17, 2026), alphasignalai.substack.com writeup (May 8, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Deploy PageIndex (or integrate via the MCP server) as the retrieval layer for agent workflows that operate on long-form regulatory or financial documents — annual reports, safety data sheets, compliance manuals, engineering specifications. The hierarchical tree means the retrieval answer can be traced back to a specific section and page number, producing the citation chain that compliance officers and auditors require. Connect via the MCP server for low-friction integration with existing coding-agent toolchains, or deploy the self-hosted Python library for full data-residency control. | Regulated-environment caveats: The hosted API at chat.pageindex.ai sends document content to VectifyAI's cloud; use the self-hosted path (git clone + pip install -e .) when documents contain regulated data. Evaluate the OCR module (PageIndex OCR) separately for documents with complex tables or embedded visuals — test accuracy against a representative sample of your actual document types before production use. The LLM reasoning path sends extracted document structure to your LLM endpoint, so use an internally-hosted or Azure-hosted model for sensitive documents. | 30-day experiment: Select one internal document type that your team currently queries manually or through a keyword-search tool (e.g., supplier qualification reports, inspection records, material safety data sheets). Index a set of 50 representative documents using the self-hosted PageIndex library. Build a simple question-answer interface using the MCP server against one approved coding agent. Have three analysts compare the quality and citation accuracy of PageIndex answers against their manual lookup workflow and record the results.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 4328
+      },
+      "tags": ["RAG", "Vectorless", "MCP", "FinanceBench", "Document Intelligence"],
+      "category": "RAG Framework",
+      "platform": "github",
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-17T12:00:00Z"
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "Top repos by weekly star delta for the week of May 11–17. Figures from the 0011011011.com GitHub trending digest (May 11) and direct repo fetches.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "repo-hermes-agent-trending",
+          "title": "NousResearch/hermes-agent",
+          "source": "GitHub",
+          "date": "2026-05-16",
+          "primary_url": "https://github.com/NousResearch/hermes-agent",
+          "summary": "Autonomous agent that runs on a server, remembers what it learns, and gets more capable the longer it runs. v0.14.0 (The Foundation Release) shipped May 16 with 808 commits, 633 merged PRs, 215 contributors. Adds OpenAI-compatible local proxy, xAI Grok via SuperGrok, 22 messaging platforms, 180x faster browser CDP, and 12 P0 security closures.",
+          "engagement": { "stars": 2229 },
+          "tags": ["Autonomous Agent", "Python", "Multi-Platform", "MCP"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "repo-deepseek-tui-trending",
+          "title": "Hmbown/DeepSeek-TUI",
+          "source": "GitHub",
+          "date": "2026-05-11",
+          "primary_url": "https://github.com/Hmbown/DeepSeek-TUI",
+          "summary": "Rust-based terminal coding agent built around DeepSeek V4, created by independent developer Hunter Bown. Reads and writes files, runs shell commands, manages git, connects to MCP servers, and orchestrates sub-agents from the terminal. v0.8.27 landed 17 community PRs this week — terminal flicker fixes, desktop notifications, i18n onboarding, MCP hot-reload. From 1.1K to 25K+ stars in twelve days; weekly star gain of +22K.",
+          "engagement": { "stars": 22000 },
+          "tags": ["Coding Agent", "Terminal", "Rust", "DeepSeek", "MCP"],
+          "category": "Coding Agent",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "repo-farion-cc-switch-trending",
+          "title": "farion1231/cc-switch",
+          "source": "GitHub",
+          "date": "2026-05-11",
+          "primary_url": "https://github.com/farion1231/cc-switch",
+          "summary": "Cross-platform desktop app (Tauri 2, Rust + TypeScript) for unified management of Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw, and Hermes Agent. One-click provider switching with 50+ built-in provider presets, unified MCP and skills management, cloud sync via Dropbox/OneDrive/iCloud/WebDAV. 67.4k stars, 4.3k forks. Latest commit May 11 adds ccswitch.io as the official website.",
+          "engagement": { "stars": 1364 },
+          "tags": ["Dev Tool", "Multi-Agent CLI", "Rust", "TypeScript", "MCP"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "repo-vectifyai-pageindex-trending",
+          "title": "VectifyAI/PageIndex",
+          "source": "GitHub",
+          "date": "2026-05-11",
+          "primary_url": "https://github.com/VectifyAI/PageIndex",
+          "summary": "Vectorless reasoning-based RAG. Builds a hierarchical tree from documents and uses LLM reasoning to navigate it, without embeddings or chunking. 2.8k total stars; +4,328 weekly. New this week: PageIndex MCP server launch making the retrieval layer available to Claude, Cursor, and any MCP-compatible agent via npx pageindex-mcp.",
+          "engagement": { "stars": 4328 },
+          "tags": ["RAG", "Vectorless", "Python", "MCP", "FinanceBench"],
+          "category": "RAG Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "repo-millionco-react-doctor-trending",
+          "title": "millionco/react-doctor",
+          "source": "GitHub",
+          "date": "2026-05-11",
+          "primary_url": "https://github.com/millionco/react-doctor",
+          "summary": "TypeScript tool that lets coding agents diagnose and fix React code. Produces a health score 0–100 scanning state management, performance, security, accessibility, and dead code. Works with 50+ coding agents, GitHub Actions integration. 4.7k stars; +340 stars/day reported on May 11. Tagline: 'Your agent writes bad React. This catches it.'",
+          "engagement": { "stars": 340 },
+          "tags": ["React", "Code Quality", "TypeScript", "Coding Agent", "Dev Tool"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "repo-decolua-9router-trending",
+          "title": "decolua/9router",
+          "source": "GitHub",
+          "date": "2026-05-11",
+          "primary_url": "https://github.com/decolua/9router",
+          "summary": "Free AI coding router for Claude Code, Codex, Cursor — 40+ providers, auto-fallback when rate limits are hit, token compression. 8.2k stars; +942 stars on May 11, weekly gains steady at 3.3k. Third consecutive week in trending. Routes requests to free provider tiers automatically, eliminating manual API key juggling.",
+          "engagement": { "stars": 942 },
+          "tags": ["LLM Router", "Dev Tool", "Cost Optimization", "Coding Agent"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "repo-rohitg-agentmemory-trending",
+          "title": "rohitg00/agentmemory",
+          "source": "GitHub",
+          "date": "2026-05-15",
+          "primary_url": "https://github.com/rohitg00/agentmemory",
+          "summary": "Persistent shared memory server for coding agents. v0.9.16 (May 15) ships a 5-port ready panel, interactive global-install prompt, onboarding that wires selected agents inline, and MCP surface reworded as opt-in. A memory saved by Claude Code is instantly visible to Codex and Cursor via the shared REST endpoint at :3111. 121 REST endpoints, 51 MCP tools (opt-in). +604 stars/day on May 11.",
+          "engagement": { "stars": 604 },
+          "tags": ["Agent Memory", "MCP", "Dev Tool", "Node.js"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "repo-docusealco-docuseal-trending",
+          "title": "docusealco/docuseal",
+          "source": "GitHub",
+          "date": "2026-05-11",
+          "primary_url": "https://github.com/docusealco/docuseal",
+          "summary": "Open-source DocuSign alternative with v2.5.3 shipped this week. 16.3k stars; +4,020 weekly stars. 152 releases, PDF form builders, 12 field types, self-hosted. The surge is driven by enterprise teams seeking a self-hosted document-signing stack that avoids per-seat pricing for automated agent-driven signature workflows.",
+          "engagement": { "stars": 4020 },
+          "tags": ["Document Signing", "Self-Hosted", "Enterprise", "PDF"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "repo-bytedance-ui-tars-desktop-trending",
+          "title": "bytedance/UI-TARS-desktop",
+          "source": "GitHub",
+          "date": "2026-05-11",
+          "primary_url": "https://github.com/bytedance/UI-TARS-desktop",
+          "summary": "ByteDance's vision-to-action agent stack for desktop automation — the 'see screen, click things' paradigm with serious enterprise backing. 32.9k total stars; +2.2k this week, +956 on May 11. Connects multimodal AI to desktop GUI automation. Re-entered the GitHub trending daily top 3 for the third consecutive week.",
+          "engagement": { "stars": 956 },
+          "tags": ["Desktop Automation", "Vision", "Multimodal", "ByteDance"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "repo-heygen-hyperframes-trending",
+          "title": "heygen-com/hyperframes",
+          "source": "GitHub",
+          "date": "2026-05-11",
+          "primary_url": "https://github.com/heygen-com/hyperframes",
+          "summary": "Write HTML, render video. Deterministic HTML-to-MP4 via headless Chrome and FFmpeg. 50+ pre-built components, agent-optimized CLI, Apache 2.0 license. The pitch: agents already know HTML, so video generation is just another rendering target. 17.2k stars; +401 stars/day on May 11. Unlike Remotion, fully deterministic and offline.",
+          "engagement": { "stars": 401 },
+          "tags": ["Video Generation", "HTML", "Agent Tool", "Apache 2.0"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Skills and MCP Servers",
+      "description": "Newly published agent skills, MCP servers, and prompt/eval libraries from the week of May 11–17.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "skill-pageindex-mcp-server",
+          "title": "VectifyAI/pageindex-mcp — MCP server for vectorless document RAG",
+          "source": "GitHub",
+          "date": "2026-05-11",
+          "primary_url": "https://github.com/VectifyAI/pageindex-mcp",
+          "summary": "MCP server that exposes the PageIndex reasoning-based RAG system to Claude, Cursor, and any MCP-compatible agent. Adds npx pageindex-mcp or a direct OAuth-protected HTTP endpoint at chat.pageindex.ai/mcp. Supports local PDF upload via stdio and URL-based processing via HTTP. v1.6.3+ with 16 releases.",
+          "tags": ["MCP Server", "RAG", "Document Intelligence", "Claude Code"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skill-statewright-mcp-plugin",
+          "title": "statewright/statewright — MCP plugin for state-machine agent guardrails",
+          "source": "GitHub / Hacker News",
+          "date": "2026-05-12",
+          "primary_url": "https://github.com/statewright/statewright",
+          "summary": "State machine guardrail system that integrates as an MCP plugin with Claude Code, Codex, Cursor, opencode, and Pi. Enforces per-state tool allow-lists at the protocol layer. When an agent attempts a disallowed tool, the MCP server refuses to surface it and explains the constraint. Apache 2.0 core engine; managed cloud for workflow storage. Free tier: 3 workflows, 200 transitions/month.",
+          "tags": ["MCP Server", "State Machine", "Agent Reliability", "Guardrails"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 9, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skill-agentmemory-mcp-shim",
+          "title": "rohitg00/agentmemory v0.9.16 — opt-in MCP shim with 51 tools",
+          "source": "GitHub / NewReleases.io",
+          "date": "2026-05-15",
+          "primary_url": "https://newreleases.io/project/github/rohitg00/agentmemory/release/v0.9.16",
+          "summary": "agentmemory v0.9.16 ships MCP as an opt-in surface (npx @agentmemory/mcp) alongside the primary 121-endpoint REST API. MCP surface: 51 tools, 6 resources, 3 prompts. Six first-party agent plugins (Claude Code, Codex, Cursor, Gemini CLI, Pi, OpenHuman) share memory at the same :3111 endpoint — a memory saved by Claude Code is visible to Codex and Cursor instantly.",
+          "tags": ["MCP Server", "Agent Memory", "Multi-Agent", "Node.js"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skill-drcathicks-learning-opportunities",
+          "title": "DrCatHicks/learning-opportunities — Claude Code and Codex skill for deliberate skill development",
+          "source": "GitHub / Hacker News",
+          "date": "2026-05-14",
+          "primary_url": "https://github.com/drcathicks/learning-opportunities",
+          "secondary_urls": [
+            {
+              "label": "HN thread (249 pts, 48 comments)",
+              "url": "https://news.ycombinator.com/item?id=48130679"
+            }
+          ],
+          "summary": "A Shell-based Claude Code / Codex skill by Dr. Cat Hicks (psychological scientist, author of The Psychology of Software Teams, 2026) that offers optional 10–15 minute learning exercises after architectural work — new files, schema changes, refactors. Exercises use prediction, generation, retrieval practice, and spaced repetition grounded in learning science. Semi-worked examples drawn from the developer's own project work. 1.9k stars.",
+          "engagement": { "upvotes": 249, "comments": 48 },
+          "tags": ["Agent Skill", "Learning", "Claude Code", "Codex", "Developer Experience"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "skill-executor-unified-tool-catalog",
+          "title": "RhysSullivan/executor — unified tool catalog for AI agents across OpenAPI, GraphQL, MCP, and custom JS",
+          "source": "GitHub / GitHub Trending digest",
+          "date": "2026-05-11",
+          "primary_url": "https://github.com/RhysSullivan/executor",
+          "summary": "Unified tool discovery and execution layer for AI agents. Agents discover available tools via semantic search across OpenAPI specs, GraphQL schemas, MCP servers, and custom JS functions. Centralized auth handling — the agent does not manage per-tool credentials. Acts as an MCP server for Cursor, Claude Code, and opencode. Addresses the 'every agent needs its own credential management' problem that multiplies as agent tool surfaces grow. 1.6k stars on May 11.",
+          "tags": ["MCP Server", "Tool Catalog", "Auth", "OpenAPI", "GraphQL"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skill-context7-mcp-trending",
+          "title": "upstash/context7 — up-to-date library documentation MCP server, +279 stars/28d",
+          "source": "OSSInsight",
+          "date": "2026-05-11",
+          "primary_url": "https://github.com/upstash/context7",
+          "summary": "MCP server that fetches current, version-specific library documentation at query time and injects it into agent context — eliminating hallucinated API signatures from training-cutoff drift. 28.2k total stars, +279 over 28 days. Sustained growth indicates adoption as a default tool in coding-agent workflows. Integrates with Claude Code, Cursor, Windsurf, and any MCP-compatible client.",
+          "tags": ["MCP Server", "Documentation", "Context Injection", "Coding Agent"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN and Indie Builds",
+      "description": "Show HN posts with working repos or demos, indie projects, and side-project standouts from May 11–17.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "hn-needle-26m-tool-calling",
+          "title": "Show HN: Needle — We Distilled Gemini Tool Calling into a 26M Model",
+          "source": "Hacker News",
+          "date": "2026-05-12",
+          "primary_url": "https://news.ycombinator.com/item?id=48111896",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo (cactus-compute/needle)",
+              "url": "https://github.com/cactus-compute/needle"
+            }
+          ],
+          "summary": "462 pts, 327 comments. cactus-compute distilled Gemini 3.1 Flash Lite's tool-calling capability into a 26M parameter MIT-licensed model that quantizes to 14 MB INT4. The HN thread generated substantial discussion on the tradeoffs between distillation quality and edge deployment, with commenters noting that a 14 MB tool-calling model enables offline agent workflows on consumer hardware for the first time at a practical accuracy level.",
+          "engagement": { "upvotes": 462, "comments": 327 },
+          "tags": ["On-Device AI", "Tool Calling", "Distillation", "Edge Inference"],
+          "category": "Inference",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 9, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "hn-statewright-visual-state-machines",
+          "title": "Show HN: Statewright — Visual state machines that make AI agents reliable",
+          "source": "Hacker News",
+          "date": "2026-05-12",
+          "primary_url": "https://news.ycombinator.com/item?id=48108778",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/statewright/statewright"
+            }
+          ],
+          "summary": "124 pts, 54 comments. The HN thread generated substantive discussion about whether state machines are the right primitive for agent control flow (vs. DAGs, BPMN, or pure prompt constraints). Notable thread observation: 'State machines aren't DAGs; they loop and retry, which is what agentic work actually needs.' The Rust engine with no LLM in the orchestration path was highlighted as the key architectural choice — enforcement that cannot be bypassed by model instruction-following variability.",
+          "engagement": { "upvotes": 124, "comments": 54 },
+          "tags": ["Agent Reliability", "State Machine", "MCP", "Rust"],
+          "category": "Agent Infrastructure",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 9, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "hn-drcathicks-learning-skill",
+          "title": "A Claude Code and Codex Skill for Deliberate Skill Development",
+          "source": "Hacker News",
+          "date": "2026-05-14",
+          "primary_url": "https://news.ycombinator.com/item?id=48130679",
+          "secondary_urls": [
+            {
+              "label": "GitHub: DrCatHicks/learning-opportunities",
+              "url": "https://github.com/drcathicks/learning-opportunities"
+            }
+          ],
+          "summary": "249 pts, 48 comments. Dr. Cat Hicks (psychological scientist) published a Claude Code and Codex skill that offers learning exercises grounded in cognitive science after significant architectural work. The HN thread surfaced discussion about whether AI-assisted coding erodes developer skill and how deliberate practice can be embedded in agent workflows. Strong signal for any team concerned about skill atrophy in AI-assisted development environments.",
+          "engagement": { "upvotes": 249, "comments": 48 },
+          "tags": ["Agent Skill", "Learning Science", "Developer Experience", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "hn-voker-agent-analytics",
+          "title": "Launch HN: Voker (YC S24) — Analytics for AI Agents",
+          "source": "Hacker News",
+          "date": "2026-05-12",
+          "primary_url": "https://news.ycombinator.com/item?id=48092891",
+          "secondary_urls": [
+            {
+              "label": "Voker product page",
+              "url": "https://voker.ai"
+            }
+          ],
+          "summary": "59 pts, 22 comments. Voker (YC S24) launched analytics specifically designed for AI agent performance — not technical logs but user-facing dashboards showing which agent conversations succeed, fail, or confuse. An SDK sits between the agent and users, capturing conversations. The announcement addresses the observability gap that makes it hard to tell which agent interactions are actually working.",
+          "engagement": { "upvotes": 59, "comments": 22 },
+          "tags": ["Agent Analytics", "Observability", "YC", "Dev Tool"],
+          "category": "Agent Infrastructure",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "hn-openhuman-personal-ai",
+          "title": "tinyhumansai/openhuman — Personal AI with 118-service OAuth integration and local Memory Tree",
+          "source": "GitHub / KnightLi Blog",
+          "date": "2026-05-13",
+          "primary_url": "https://github.com/tinyhumansai/openhuman",
+          "secondary_urls": [
+            {
+              "label": "KnightLi writeup (May 15)",
+              "url": "https://www.knightli.com/en/2026/05/15/openhuman-open-source-personal-ai-agent/"
+            }
+          ],
+          "summary": "Open-source desktop AI agent (Node.js, Rust, Tauri) with 118+ third-party OAuth integrations (Gmail, Notion, GitHub, Slack), a local-first Memory Tree in SQLite and Obsidian-compatible vault, a 20-minute auto-fetch loop, and TokenJuice compression cutting token costs by up to 80%. OpenHuman v0.53.43 released May 13. Approximately 7.8k stars and 629 forks at publish time (KnightLi, May 15). Currently in early beta.",
+          "tags": ["Personal AI", "Desktop Agent", "Local-First", "Rust", "Tauri"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent and RAG Implementations",
+      "description": "Production-shaped agent or RAG builds worth studying — with linked code or a detailed write-up.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "impl-pageindex-financebench-98pct",
+          "title": "VectifyAI Mafin 2.5 — 98.7% FinanceBench accuracy via reasoning-based tree-search RAG",
+          "source": "AlphaSignal / VectifyAI",
+          "date": "2026-05-08",
+          "primary_url": "https://alphasignalai.substack.com/p/29k-stars-no-vectors-how-pageindex",
+          "secondary_urls": [
+            {
+              "label": "PageIndex repo",
+              "url": "https://github.com/VectifyAI/PageIndex"
+            }
+          ],
+          "summary": "VectifyAI's Mafin 2.5 system uses PageIndex to achieve 98.7% accuracy on the full 10,231-question FinanceBench benchmark across both GPT-4o and DeepSeek v3. The retrieval mechanism builds a hierarchical table-of-contents tree from each document, then uses LLM reasoning to navigate the tree — no embeddings, no chunking, no vector database. Every answer traces back to a specific tree node and page. The eval code and raw results JSON are public in VectifyAI/Mafin2.5-FinanceBench.",
+          "results": "98.7% accuracy on 10,231-question FinanceBench benchmark. Verified across GPT-4o and DeepSeek v3 base models. Eval code public at VectifyAI/Mafin2.5-FinanceBench.",
+          "tags": ["RAG", "Finance", "Benchmark", "Vectorless", "Document Intelligence"],
+          "category": "RAG Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "impl-statewright-swebench-2-to-10",
+          "title": "Statewright SWE-bench test — from 2/10 to 10/10 correct with state-machine tool constraints",
+          "source": "statewright.ai/research",
+          "date": "2026-05-12",
+          "primary_url": "https://app.daily.dev/posts/github---statewright-statewright-state-machine-guardrails-for-ai-agents-1efw4sd82",
+          "secondary_urls": [
+            {
+              "label": "GitHub: statewright/statewright",
+              "url": "https://github.com/statewright/statewright"
+            }
+          ],
+          "summary": "Statewright's internal research on a 5-task SWE-bench subset showed two local models (13.8 GB and 19.9 GB) improved from 2/10 to 10/10 correct tasks when phase-specific tool-access constraints were enabled. The improvement was attributable to preventing models from performing premature edits during planning phases. Provisional patent filed April 30, 2026 (application #64/054,240).",
+          "results": "2/10 → 10/10 correct on 5-task SWE-bench subset for two local models (13.8 GB and 19.9 GB). Source: statewright.ai/research (referenced in daily.dev and HN thread).",
+          "tags": ["Agent Reliability", "State Machine", "SWE-bench", "Eval"],
+          "category": "Eval Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "impl-hermes-agent-local-proxy-pattern",
+          "title": "NousResearch/hermes-agent — OpenAI-compatible local proxy pattern for OAuth-authed providers",
+          "source": "GitHub Releases",
+          "date": "2026-05-16",
+          "primary_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.5.16",
+          "summary": "hermes-agent v0.14.0 ships a new local proxy that exposes any OAuth-authed provider (Claude Pro, ChatGPT Pro, SuperGrok) as an OpenAI-compatible endpoint. Codex, Aider, Cline, and Continue can use this endpoint without separate API keys or per-request billing. The pattern decouples the agent CLI from the LLM billing account, allowing a single corporate subscription to serve multiple agent workflows via an internally-controlled proxy endpoint.",
+          "tags": ["Agent Framework", "OAuth Proxy", "Local Inference", "Cost Optimization"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "n8n and Make automations with measurable, sourced outcomes.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "auto-n8n-document-review-83pct",
+          "title": "n8n AI document review — 83% reduction in review time, 27% accuracy improvement",
+          "source": "Versich / n8n",
+          "date": "2026-05-08",
+          "primary_url": "https://versich.com/blog/the-top-15-n8n-use-cases-revolutionizing-workflow-automation-in-2026/",
+          "summary": "A legal services firm deployed n8n with AI capabilities to automate document review. Result: 83% reduction in document review time and 27% improvement in accuracy versus manual review. The workflow uses n8n's AI nodes to summarize content and answer complex queries across multi-step agents, with the practitioner controlling which LLM handles each task type.",
+          "results": "83% reduction in document review time. 27% improvement in accuracy. Legal services firm deployment. Source: Versich (May 8, 2026).",
+          "tags": ["Automation", "Document Review", "Legal", "n8n"],
+          "category": "Automation",
+          "platform": "n8n",
+          "recurrence": "returning_pattern",
+          "recurrence_note": "n8n automation results appeared in last week's automation_wins section; this is a different use case (document review vs. invoice processing) with different outcome figures from the same Versich article published May 8.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "auto-n8n-hr-onboarding-3days-to-3hours",
+          "title": "n8n HR onboarding automation — from 3 days of HR work to under 3 hours, 40% employee satisfaction gain",
+          "source": "Versich / n8n",
+          "date": "2026-05-08",
+          "primary_url": "https://versich.com/blog/the-top-15-n8n-use-cases-revolutionizing-workflow-automation-in-2026/",
+          "summary": "New employee onboarding workflow built on n8n reduced onboarding from 3 days of HR staff time to under 3 hours. Employee satisfaction scores increased 40% in the first 90 days. 100% documentation compliance on every new hire. XIBIX Solutions cut HR questions by 50% using a comparable n8n AI workflow. Source: Versich case study analysis (May 8, 2026).",
+          "results": "Onboarding: 3 days → under 3 hours. Employee satisfaction +40% in first 90 days. 100% documentation compliance. XIBIX Solutions: 50% reduction in HR questions. Source: Versich (May 8, 2026).",
+          "tags": ["Automation", "HR", "Onboarding", "n8n"],
+          "category": "Automation",
+          "platform": "n8n",
+          "recurrence": "returning_pattern",
+          "recurrence_note": "n8n automation results appeared last week; this HR onboarding outcome is from a different use case with distinct numbers from the same Versich May 8 article.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "auto-n8n-data-pipeline-stepstone",
+          "title": "StepStone runs 200+ data workflows in n8n — 25x faster API integrations, 70% cost reduction vs. ETL",
+          "source": "Versich / n8n",
+          "date": "2026-05-08",
+          "primary_url": "https://versich.com/blog/the-top-15-n8n-use-cases-revolutionizing-workflow-automation-in-2026/",
+          "summary": "StepStone, the jobs platform, runs 200+ mission-critical data workflows in n8n production. API integrations run 25x faster than their previous solution. n8n replaced traditional ETL tools entirely with a 70% cost reduction. The system handles millions of records daily without infrastructure issues. Published in Versich's May 8 analysis of enterprise n8n deployments.",
+          "results": "200+ production data workflows. 25x faster API integrations. 70% cost reduction vs. traditional ETL. Millions of records daily. Source: StepStone case study via Versich (May 8, 2026).",
+          "tags": ["Automation", "Data Pipeline", "ETL", "n8n", "Enterprise"],
+          "category": "Automation",
+          "platform": "n8n",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Meaningful releases from major frameworks during May 11–17. Patch releases excluded.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "fw-langgraph-v1-2",
+          "title": "LangGraph v1.2 — per-node timeouts, DeltaChannel, v3 streaming API",
+          "source": "GitHub / LangChain Docs",
+          "date": "2026-05-12",
+          "primary_url": "https://docs.langchain.com/oss/python/releases/changelog",
+          "summary": "LangGraph v1.2 (May 12) adds per-node timeouts (pass timeout= to add_node with hard wall-clock, idle, or combined TimeoutPolicy), node-level error handlers (pass error_handler=, receive typed NodeError, return Command to update state), graceful shutdown via RunControl.request_drain(), and a new DeltaChannel (beta) that stores incremental deltas instead of re-serializing full state. Also ships the v3 streaming API (version='v3') with typed per-channel projections for messages, lifecycle, subgraphs, and updates.",
+          "tags": ["LangGraph", "Python", "Streaming", "Agent Infrastructure"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "fw-crewai-v1-14-5a5-a6",
+          "title": "CrewAI v1.14.5a5–a6 — security dependency bump and documentation fixes",
+          "source": "GitHub / CrewAI Docs",
+          "date": "2026-05-15",
+          "primary_url": "https://docs.crewai.com/en/changelog",
+          "summary": "CrewAI shipped v1.14.5a5 and v1.14.5a6 during the week (May 15). The critical change: langsmith dependency bumped to >=0.8.0 to address GHSA-3644-q5cj-c5c7, a security advisory affecting the langsmith package. Teams running CrewAI in production should upgrade to address this advisory. The alpha series continues; v1.14.5 stable has not yet shipped.",
+          "tags": ["CrewAI", "Python", "Security", "Multi-Agent"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "CrewAI v1.14.5 alpha series was covered last week (a1–a4); a5–a6 ship this week with a security advisory fix that makes the update action-required.",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "fw-hermes-agent-v0-14-release",
+          "title": "NousResearch/hermes-agent v0.14.0 — Foundation Release, 808 commits",
+          "source": "GitHub Releases",
+          "date": "2026-05-16",
+          "primary_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.5.16",
+          "summary": "v0.14.0 (May 16) is the largest single hermes-agent release by commit count. Key framework additions: OpenAI-compatible local proxy for OAuth providers, pluggable video_generate, unified computer_use cua-driver that works with non-Anthropic providers, Zed ACP Registry integration via uvx, 9 new optional skills, OpenRouter Pareto Code router, and huggingface/skills as a trusted default skill tap. 12 P0 security closures. Supply-chain advisory checker added to installer.",
+          "tags": ["Hermes Agent", "Python", "Multi-Platform", "MCP", "OAuth Proxy"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-source patterns observed across this week's repos and discussions.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "pattern-deterministic-governance-layer",
+          "title": "Deterministic governance layers are emerging as a distinct category on top of probabilistic LLM agents",
+          "source": "GitHub / Hacker News",
+          "primary_url": "https://github.com/statewright/statewright",
+          "summary": "Three independent projects this week enforce agent behavior through deterministic, non-LLM mechanisms: Statewright restricts tool access at the MCP protocol layer via a Rust state machine that the model cannot bypass; react-doctor scans AI-written React output using typed static analysis, not an LLM reviewer; Needle's fine-tunable on-device model handles tool dispatch without a cloud call. The common pattern: LLM reasoning handles open-ended cognition while a deterministic layer handles the governance and safety contract. This is structurally identical to how compilers and type systems work alongside expressive programming languages. Teams building agents should treat these two layers as separate design concerns with separate deployment and audit surfaces.",
+          "tags": ["Deterministic Governance", "Agent Safety", "Emerging Pattern", "Infrastructure"],
+          "category": "Pattern",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 9, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "pattern-shared-memory-layer-multi-agent",
+          "title": "Shared cross-agent memory is converging on a REST+MCP dual-surface pattern with a single local endpoint",
+          "source": "GitHub",
+          "primary_url": "https://github.com/rohitg00/agentmemory",
+          "summary": "agentmemory v0.9.16 ships with an explicit design principle: a memory saved by Claude Code is visible to Codex and Cursor instantly via a shared REST endpoint at :3111. The MCP surface is opt-in on top of the primary REST API (121 endpoints vs. 51 MCP tools). The same pattern appears in hermes-agent's OAuth proxy — a single locally-running process that multiple agent CLIs route through. The pattern signals that multi-agent deployments are converging on a local sidecar architecture: one persistent process manages identity, memory, and tool routing, while agent CLIs remain lightweight clients of that process.",
+          "tags": ["Agent Memory", "Multi-Agent", "Architecture Pattern", "MCP"],
+          "category": "Pattern",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "pattern-agent-cli-consolidation",
+          "title": "Agent CLI proliferation is driving consolidation tooling — cc-switch at 67K stars is infra, not a side project",
+          "source": "GitHub Trending",
+          "primary_url": "https://github.com/farion1231/cc-switch",
+          "summary": "farion1231/cc-switch (67.4k stars, Rust + TypeScript, Tauri) exists solely because six agent CLIs (Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw, Hermes Agent) each require separate configuration, credential, and MCP management. The repo's +1,364 daily star gain on May 11 reflects real adoption pressure. A similar pattern appeared with package manager consolidation tools when npm, yarn, and pnpm proliferated. The implication for enterprise teams: before standardizing on a single agent CLI, evaluate whether a management layer like cc-switch (or a custom equivalent) is a more practical path given that different tasks may warrant different underlying models.",
+          "tags": ["Agent CLI", "Consolidation", "Developer Experience", "Infrastructure"],
+          "category": "Pattern",
+          "platform": "github",
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-17T12:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    }
+  ],
+
+  "index": [
+    { "id": "repo-statewright-state-machine-guardrails", "title": "statewright/statewright — state machine guardrails for AI agents", "source": "GitHub / Hacker News", "primary_url": "https://github.com/statewright/statewright", "score": 9, "date": "2026-05-12" },
+    { "id": "repo-cactus-needle-26m-tool-calling", "title": "cactus-compute/needle — 26M distilled tool-calling model, 14 MB INT4", "source": "GitHub / Hacker News", "primary_url": "https://github.com/cactus-compute/needle", "score": 9, "date": "2026-05-12" },
+    { "id": "repo-vectifyai-pageindex-mcp", "title": "VectifyAI/PageIndex + MCP server — vectorless RAG, 98.7% FinanceBench", "source": "GitHub / AlphaSignal", "primary_url": "https://github.com/VectifyAI/PageIndex", "score": 8, "date": "2026-05-11" },
+    { "id": "repo-hermes-agent-v0-14", "title": "NousResearch/hermes-agent v0.14.0 — Foundation Release, 808 commits", "source": "GitHub", "primary_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.5.16", "score": 8, "date": "2026-05-16" },
+    { "id": "repo-langgraph-v1-2-langchain-interrupt", "title": "LangGraph v1.2 + LangChain Interrupt 2026", "source": "GitHub / LangChain Blog", "primary_url": "https://docs.langchain.com/oss/python/releases/changelog", "score": 8, "date": "2026-05-12" },
+    { "id": "hn-needle-26m-tool-calling", "title": "Show HN: Needle — Distilled Gemini Tool Calling, 26M model", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48111896", "score": 9, "date": "2026-05-12" },
+    { "id": "hn-statewright-visual-state-machines", "title": "Show HN: Statewright — Visual state machines that make AI agents reliable", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48108778", "score": 9, "date": "2026-05-12" },
+    { "id": "hn-drcathicks-learning-skill", "title": "A Claude Code and Codex Skill for Deliberate Skill Development", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48130679", "score": 7, "date": "2026-05-14" },
+    { "id": "impl-pageindex-financebench-98pct", "title": "VectifyAI Mafin 2.5 — 98.7% FinanceBench via reasoning-based RAG", "source": "AlphaSignal", "primary_url": "https://alphasignalai.substack.com/p/29k-stars-no-vectors-how-pageindex", "score": 8, "date": "2026-05-08" },
+    { "id": "impl-statewright-swebench-2-to-10", "title": "Statewright SWE-bench: 2/10 → 10/10 with tool constraints", "source": "statewright.ai", "primary_url": "https://app.daily.dev/posts/github---statewright-statewright-state-machine-guardrails-for-ai-agents-1efw4sd82", "score": 8, "date": "2026-05-12" },
+    { "id": "impl-hermes-agent-local-proxy-pattern", "title": "hermes-agent OpenAI-compatible local proxy pattern", "source": "GitHub Releases", "primary_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.5.16", "score": 7, "date": "2026-05-16" },
+    { "id": "skill-pageindex-mcp-server", "title": "VectifyAI/pageindex-mcp — MCP server for vectorless RAG", "source": "GitHub", "primary_url": "https://github.com/VectifyAI/pageindex-mcp", "score": 8, "date": "2026-05-11" },
+    { "id": "skill-statewright-mcp-plugin", "title": "statewright/statewright — MCP plugin for state-machine guardrails", "source": "GitHub", "primary_url": "https://github.com/statewright/statewright", "score": 9, "date": "2026-05-12" },
+    { "id": "skill-agentmemory-mcp-shim", "title": "rohitg00/agentmemory v0.9.16 — opt-in MCP shim, 51 tools", "source": "GitHub", "primary_url": "https://newreleases.io/project/github/rohitg00/agentmemory/release/v0.9.16", "score": 7, "date": "2026-05-15" },
+    { "id": "skill-drcathicks-learning-opportunities", "title": "DrCatHicks/learning-opportunities — Claude/Codex skill for deliberate skill development", "source": "GitHub", "primary_url": "https://github.com/drcathicks/learning-opportunities", "score": 7, "date": "2026-05-14" },
+    { "id": "skill-executor-unified-tool-catalog", "title": "RhysSullivan/executor — unified tool catalog for AI agents", "source": "GitHub", "primary_url": "https://github.com/RhysSullivan/executor", "score": 7, "date": "2026-05-11" },
+    { "id": "skill-context7-mcp-trending", "title": "upstash/context7 — up-to-date library documentation MCP server", "source": "OSSInsight", "primary_url": "https://github.com/upstash/context7", "score": 7, "date": "2026-05-11" },
+    { "id": "repo-hermes-agent-trending", "title": "NousResearch/hermes-agent — trending +2,229 stars/day", "source": "GitHub", "primary_url": "https://github.com/NousResearch/hermes-agent", "score": 8, "date": "2026-05-11" },
+    { "id": "repo-deepseek-tui-trending", "title": "Hmbown/DeepSeek-TUI — +22K stars in week, Rust terminal coding agent", "source": "GitHub", "primary_url": "https://github.com/Hmbown/DeepSeek-TUI", "score": 7, "date": "2026-05-11" },
+    { "id": "repo-farion-cc-switch-trending", "title": "farion1231/cc-switch — 67.4K star AI CLI management desktop app", "source": "GitHub", "primary_url": "https://github.com/farion1231/cc-switch", "score": 7, "date": "2026-05-11" },
+    { "id": "repo-millionco-react-doctor-trending", "title": "millionco/react-doctor — agent code quality gate for React", "source": "GitHub", "primary_url": "https://github.com/millionco/react-doctor", "score": 7, "date": "2026-05-11" },
+    { "id": "repo-decolua-9router-trending", "title": "decolua/9router — free AI coding router, 40+ providers", "source": "GitHub", "primary_url": "https://github.com/decolua/9router", "score": 6, "date": "2026-05-11" },
+    { "id": "repo-rohitg-agentmemory-trending", "title": "rohitg00/agentmemory — shared cross-agent memory server v0.9.16", "source": "GitHub", "primary_url": "https://github.com/rohitg00/agentmemory", "score": 7, "date": "2026-05-15" },
+    { "id": "repo-docusealco-docuseal-trending", "title": "docusealco/docuseal — open-source DocuSign alternative v2.5.3", "source": "GitHub", "primary_url": "https://github.com/docusealco/docuseal", "score": 6, "date": "2026-05-11" },
+    { "id": "repo-bytedance-ui-tars-desktop-trending", "title": "bytedance/UI-TARS-desktop — vision-to-action desktop automation agent", "source": "GitHub", "primary_url": "https://github.com/bytedance/UI-TARS-desktop", "score": 7, "date": "2026-05-11" },
+    { "id": "repo-heygen-hyperframes-trending", "title": "heygen-com/hyperframes — HTML-to-MP4 video rendering for agents", "source": "GitHub", "primary_url": "https://github.com/heygen-com/hyperframes", "score": 6, "date": "2026-05-11" },
+    { "id": "hn-voker-agent-analytics", "title": "Voker (YC S24) — Analytics for AI Agents", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48092891", "score": 6, "date": "2026-05-12" },
+    { "id": "hn-openhuman-personal-ai", "title": "tinyhumansai/openhuman — 118-service OAuth integration, local Memory Tree", "source": "GitHub", "primary_url": "https://github.com/tinyhumansai/openhuman", "score": 6, "date": "2026-05-13" },
+    { "id": "auto-n8n-document-review-83pct", "title": "n8n AI document review — 83% review time reduction", "source": "Versich", "primary_url": "https://versich.com/blog/the-top-15-n8n-use-cases-revolutionizing-workflow-automation-in-2026/", "score": 7, "date": "2026-05-08" },
+    { "id": "auto-n8n-hr-onboarding-3days-to-3hours", "title": "n8n HR onboarding — 3 days → under 3 hours", "source": "Versich", "primary_url": "https://versich.com/blog/the-top-15-n8n-use-cases-revolutionizing-workflow-automation-in-2026/", "score": 7, "date": "2026-05-08" },
+    { "id": "auto-n8n-data-pipeline-stepstone", "title": "StepStone n8n data pipeline — 200+ workflows, 25x faster, 70% cost reduction", "source": "Versich", "primary_url": "https://versich.com/blog/the-top-15-n8n-use-cases-revolutionizing-workflow-automation-in-2026/", "score": 7, "date": "2026-05-08" },
+    { "id": "fw-langgraph-v1-2", "title": "LangGraph v1.2 — per-node timeouts, DeltaChannel, v3 streaming", "source": "GitHub / LangChain Docs", "primary_url": "https://docs.langchain.com/oss/python/releases/changelog", "score": 8, "date": "2026-05-12" },
+    { "id": "fw-crewai-v1-14-5a5-a6", "title": "CrewAI v1.14.5a5–a6 — security advisory fix (GHSA-3644-q5cj-c5c7)", "source": "GitHub / CrewAI Docs", "primary_url": "https://docs.crewai.com/en/changelog", "score": 6, "date": "2026-05-15" },
+    { "id": "fw-hermes-agent-v0-14-release", "title": "NousResearch/hermes-agent v0.14.0 framework release", "source": "GitHub Releases", "primary_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.5.16", "score": 8, "date": "2026-05-16" },
+    { "id": "pattern-deterministic-governance-layer", "title": "Pattern: Deterministic governance layers emerging on top of probabilistic agents", "source": "GitHub / Hacker News", "primary_url": "https://github.com/statewright/statewright", "score": 9, "date": "2026-05-12" },
+    { "id": "pattern-shared-memory-layer-multi-agent", "title": "Pattern: Shared cross-agent memory converging on REST+MCP dual-surface local sidecar", "source": "GitHub", "primary_url": "https://github.com/rohitg00/agentmemory", "score": 8, "date": "2026-05-15" },
+    { "id": "pattern-agent-cli-consolidation", "title": "Pattern: Agent CLI proliferation driving consolidation tooling (cc-switch at 67K stars)", "source": "GitHub Trending", "primary_url": "https://github.com/farion1231/cc-switch", "score": 8, "date": "2026-05-11" }
+  ],
+
+  "flagged_unverified": [
+    {
+      "claim": "farion1231/cc-switch weekly star gain — the 0011011011.com digest reports +1,364 on May 11 (daily); weekly total not isolated. Total stars (67.4k) confirmed via direct GitHub fetch.",
+      "reason": "Daily star figure used as proxy for weekly delta from the May 11 digest. The May 11 figure is consistent with the repo's stated 1,669-commit history and 38 release cadence. Used daily figure conservatively in engagement.stars.",
+      "attempted_url": "https://github.com/farion1231/cc-switch"
+    },
+    {
+      "claim": "Voker HN item ID — item ID 48092891 was inferred from the May 12 front page listing at rank #23 with 59 pts and 22 comments. The direct HN item page was not fetched to confirm the ID.",
+      "reason": "The front page excerpt lists the item. The exact numeric ID was not confirmed via a direct fetch of the item page.",
+      "attempted_url": "https://news.ycombinator.com/front?day=2026-05-12"
+    },
+    {
+      "claim": "cactus-compute/needle GitHub star count — no direct fetch succeeded due to JS rendering. Star count not included in engagement field; HN points (462) used as the primary signal metric.",
+      "reason": "GitHub repo page returned broken_content_ip_and_js. Repo existence, description, and license confirmed via NYU Shanghai RITS writeup (May 14) and HN thread (May 12-13).",
+      "attempted_url": "https://github.com/cactus-compute/needle"
+    },
+    {
+      "claim": "statewright/statewright GitHub star count — no direct fetch succeeded due to JS rendering. Star count not included; HN points (124) used as the primary signal metric.",
+      "reason": "GitHub repo page returned broken_content_ip_and_js. Repo existence, description, SWE-bench results, and license confirmed via daily.dev post, andrew.ooo review, HN thread, and trendshift.io.",
+      "attempted_url": "https://github.com/statewright/statewright"
+    }
+  ],
+
+  "suggested_refinements": {
+    "sources_to_add": [
+      "0011011011.com GitHub trending digest — publishes daily star deltas for top repos with same-day timestamps; more reliable than direct GitHub trending page fetches blocked by JS rendering",
+      "newreleases.io/project/github — provides structured changelog extraction for tracked repos; useful for catching minor releases with security fixes (e.g., CrewAI GHSA-3644-q5cj-c5c7 would have been found earlier)",
+      "trendshift.io — provides weekly star gain charts for specific repos when GitHub trending page is unavailable",
+      "hermes-agent.nousresearch.com release notes — the project ships weekly major releases with detailed changelogs; should be in the monitored release watch list"
+    ],
+    "sources_to_drop": [
+      "Direct GitHub trending page fetch (github.com/trending) — consistently blocked by JavaScript rendering; secondary aggregators are faster and more reliable for this week's research window"
+    ],
+    "topics_to_add": [
+      "Agent governance and reliability tooling — Statewright, Needle, react-doctor, and LangSmith Engine all launched this week; this is now a standalone category distinct from agent frameworks",
+      "On-device and edge inference for agents — Needle's 14 MB tool-calling model opens a new deployment pattern; track cactus-compute/cactus and similar projects",
+      "Agent CLI management tooling — cc-switch at 67K stars and agentmemory's cross-CLI memory sharing signal enterprise adoption of multi-CLI environments",
+      "Vectorless RAG frameworks — PageIndex's FinanceBench results demonstrate commercial-grade accuracy without a vector database; track for regulated-industry document workflows"
+    ],
+    "topics_to_drop": [
+      "Generic 'AI productivity' n8n posts without named case studies — only include automation wins with a named organization or specific numeric outcome"
+    ],
+    "notes": "The dominant story this week is the emergence of deterministic governance tooling on top of probabilistic agents — Statewright, Needle, react-doctor, and LangSmith Engine are independent projects that converge on the same thesis. The LangChain Interrupt 2026 conference (blog post May 14) produced the most dense product announcement from an established framework vendor in this reporting window; it warrants a dedicated section next week if SmithDB and LangSmith Gateway move to GA. The CrewAI GHSA-3644-q5cj-c5c7 security advisory fix in v1.14.5a5 should be called out in a dedicated security note for teams running CrewAI 1.14.4 in production — the advisory was not widely covered in tech press this week."
+  }
+}
