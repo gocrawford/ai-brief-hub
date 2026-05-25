@@ -1,0 +1,1034 @@
+{
+  "tab_id": "social",
+  "tab_name": "Social Intelligence",
+  "subtitle": "Platform Intelligence",
+  "icon": "Share2",
+  "min_items": 15,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 0.94,
+    "items_total": 18,
+    "items_new": 17,
+    "items_returning": 1
+  },
+  "executive_summary": [
+    {
+      "headline": "Google I/O 2026 reframed the enterprise AI conversation from 'which model' to 'which agent runtime' — and LinkedIn reacted with more urgency than any prior announcement",
+      "body": "Google I/O 2026 (May 19–20) delivered the most enterprise-consequential AI week of the year. The core announcements — Gemini 3.5 Flash as an agentic model running benchmarks of 76.2% on Terminal-Bench and 83.6% on MCP Atlas, the Gemini Spark 24/7 cloud-hosted personal agent, Google Antigravity 2.0 as the enterprise orchestration harness, and Managed Agents API allowing a single API call to spin up a secure sandboxed agent — represent a complete stack, not a model update. LinkedIn engagement on Google's own post reached 2,900 reactions and 150 comments within four days. Allie K. Miller, reporting live from the event, reached 526 reactions and 113 comments with a four-theme breakdown identifying agent-first product design, orchestration efficiency, world models, and voice AI as the structural shifts. The signal for enterprise teams: Google is now competing on integration depth across Gmail, Drive, Calendar, Chrome, YouTube, and Android — not on raw model quality.",
+      "primary_url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/"
+    },
+    {
+      "headline": "An OpenAI reasoning model disproved an 80-year-old geometry conjecture — Ethan Mollick's LinkedIn post on the milestone generated the week's most pointed enterprise governance observation",
+      "body": "On May 20, OpenAI announced that an internal general-purpose reasoning model autonomously disproved the planar unit distance problem in discrete geometry, first posed by Paul Erdős in 1946. OpenAI stated this is the first time AI has autonomously solved a prominent open problem central to a field of mathematics. The model was not purpose-built for mathematics and used no domain-specific scaffolding. Ethan Mollick's LinkedIn post framing the arc — from failing to count letters in 'strawberry' in June 2024, to winning the International Math Olympiad in July 2025, to solving an 80-year-old conjecture in May 2026 — received 420 reactions and 65 comments. The most-liked comment in the thread observed that in the same window, most organizations still have not decided who can approve an LLM output before it reaches a client. That gap between model capability and organizational governance is the enterprise-relevant signal.",
+      "primary_url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/"
+    },
+    {
+      "headline": "California signed the first U.S. state executive order to prepare workers for AI disruption; the same week LinkedIn announced 875 layoffs citing AI-driven operating model changes",
+      "body": "On May 21, Governor Newsom signed an executive order directing California state agencies to develop policies — including severance standards, subsidized employment programs, expanded job training, and labor-impact tracking — to mitigate AI-driven workforce displacement. The same week, LinkedIn announced layoffs affecting approximately 875 employees (roughly 5% of its global workforce) despite 12% revenue growth, with the stated rationale being a shift of resources toward AI infrastructure and higher-growth areas. LinkedIn's AI-powered hiring tools crossed $450M ARR and are now displacing internal headcount at the same platform people use to find new jobs. The pairing of a state government response to AI displacement with a major tech platform executing AI-driven headcount reduction in the same week made the topic unavoidable on the platform itself, generating a large volume of high-engagement commentary on whether AI efficiency claims are being used to attribute structural cost cuts to a more palatable cause.",
+      "primary_url": "https://calmatters.org/economy/technology/2026/05/california-ai-layoffs-order/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "tp-google-io-2026-gemini-spark-agentic-linkedin-may20",
+      "title": "Google I/O 2026: Gemini Spark, Gemini 3.5 Flash, Antigravity 2.0, and Managed Agents — the complete enterprise agent stack arrives",
+      "source": "Google / LinkedIn / Google Cloud Blog",
+      "author": "Google (official LinkedIn page, 41.7M followers); Thomas Kurian (Google Cloud CEO)",
+      "date": "2026-05-20",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/posts/google_googles-top-ai-announcements-from-io-2026-activity-7462661754016264192-Iy04",
+      "secondary_urls": [
+        {
+          "label": "Google Cloud Blog — Enterprise innovations from Google I/O 26",
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/innovations-from-google-io-26-on-google-cloud"
+        },
+        {
+          "label": "Google Blog — I/O 2026: Welcome to the agentic Gemini era (Sundar Pichai keynote)",
+          "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/"
+        },
+        {
+          "label": "Google Blog — 100 things announced at I/O 2026",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/"
+        }
+      ],
+      "summary": "Google's official LinkedIn post on its I/O 2026 announcements received 2,900 reactions and 150 comments in four days. The post covered Gemini 3.5 Flash (benchmarks: Terminal-Bench 2.1 76.2%, GDPval-AA 1656 Elo, MCP Atlas 83.6%; priced at less than half the cost of comparable frontier models), Gemini Omni (any-input to any-output, starting with video), Gemini Spark (24/7 personal agent running on dedicated Google Cloud VMs, integrated with Gmail, Calendar, Drive, Docs, Sheets, Slides, YouTube, Maps, and third-party MCP tools, US AI Ultra subscribers at $100/month; beta opening the week of May 26), Antigravity 2.0 (desktop orchestration harness, enterprise security, Antigravity CLI), and Managed Agents API (single API call provisions a sandboxed Linux VM with tool use, file management, and browser access). For Gemini Enterprise customers, Spark integrates with Microsoft SharePoint, OneDrive, Salesforce, ServiceNow, and Zendesk and runs in a fully isolated ephemeral VM behind a DLP-enforcing Agent Gateway. Google stated internal Antigravity usage crossed 3 trillion tokens per day by mid-May 2026, up from 500 billion tokens per day in March — a 6x increase in 10 weeks.",
+      "enterprise_translation": "The design principle is distributed agent runtime replacing assistant chatbot: Google is not offering a smarter chatbot — it is offering an orchestration harness (Antigravity) that provisions sandboxed VMs on demand and connects them to the enterprise tool ecosystem. The Managed Agents API pattern is directly applicable for internal innovation teams: a single API call returns a fully provisioned agent with a remote sandbox, eliminating the infrastructure-setup bottleneck that has slowed most enterprise agentic projects. For Gemini Enterprise customers already using Google Workspace, Spark's ephemeral VM architecture and DLP gateway address the two most common governance objections to agentic deployment — credential exposure and data egress. A 30-day experiment for an enterprise team: use the Managed Agents API to build one internal agent targeting a bounded, repetitive workflow (e.g., weekly safety compliance report drafting from ServiceNow tickets), run it in a non-production environment, and measure time-to-output against the current manual baseline. The goal is not deployment — it is establishing an internal benchmark for what governed agentic delegation costs and delivers.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "likes": 2900,
+        "comments": 150
+      },
+      "tags": ["Google I/O 2026", "Gemini Spark", "Gemini 3.5 Flash", "Antigravity", "Managed Agents", "enterprise agents", "agentic AI"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-24T00:00:00Z"
+    },
+    {
+      "id": "tp-allie-miller-google-io-live-4-themes-may21",
+      "title": "Allie K. Miller reports live from Google I/O 2026: four themes that define the enterprise AI shift — agent-first design, orchestration efficiency, world models, voice UI",
+      "source": "LinkedIn",
+      "author": "Allie K. Miller (enterprise AI strategy, LinkedIn influencer)",
+      "date": "2026-05-20",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/posts/alliekmiller_reporting-live-from-google-io-2026-from-activity-7462951538249027588-MdH7",
+      "secondary_urls": [
+        {
+          "label": "Allie K. Miller LinkedIn — demo of Google display glasses prototype at I/O 2026",
+          "url": "https://www.linkedin.com/posts/alliekmiller_i-just-edited-a-photo-by-talking-to-ai-glasses-activity-7463659764460478464-TXJb"
+        }
+      ],
+      "summary": "Allie K. Miller's LinkedIn post from Google I/O 2026 received 526 reactions and 113 comments. She identified four themes: (1) Voice AI as an interface — Gemini-powered glasses with Gentle Monster and Warby Parker for fall release, plus Docs Live for voice-driven document creation; (2) Agent-first everything — Gemini Spark running on dedicated Google Cloud VMs with its own Gmail address, positioned as 'Google's answer to OpenClaw'; (3) Orchestration efficiency — Gemini 3.5 Flash running approximately 4x faster than comparable frontier models at less than half the cost; (4) World models — Gemini Omni enabling not just video generation but natural-language video editing. Her post notably flagged what was absent: no demos of multi-user collaborative AI workflows, and no mention of recursive self-improvement, which she said is the dominant theme in Silicon Valley but was absent from I/O.",
+      "enterprise_translation": "Miller's 'notably absent' observation is the most actionable signal for enterprise AI teams: Google's entire I/O was single-player AI — one agent working for one user. Enterprise workflows are fundamentally multi-player (a procurement specialist, a finance approver, a compliance reviewer all need to interact with the same AI-assisted process). The absence of collaborative AI from the largest AI developer event of the year signals that multi-agent, multi-user workflows remain an open space. The enterprise experiment: before deploying a Gemini Spark or similar personal-agent tool, map one workflow where multiple roles interact — and identify the coordination points where a single-player agent design would break or require a human handoff. Design the human-AI interface at those coordination points first, not last.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "likes": 526,
+        "comments": 113
+      },
+      "tags": ["Google I/O 2026", "Allie K. Miller", "enterprise AI strategy", "Gemini Spark", "voice AI", "world models", "orchestration"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-24T00:00:00Z"
+    },
+    {
+      "id": "tp-ethan-mollick-llm-math-progress-may20",
+      "title": "Ethan Mollick: June 2024 — can't count letters; July 2025 — IMO gold; May 2026 — solves 80-year-old geometry conjecture. The enterprise governance gap is widening.",
+      "source": "LinkedIn",
+      "author": "Ethan Mollick (Wharton professor, AI researcher)",
+      "date": "2026-05-20",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/posts/emollick_june-2024-the-latest-general-purpose-llms-activity-7462957378230128643-4Lza",
+      "secondary_urls": [
+        {
+          "label": "OpenAI — An OpenAI model has disproved a central conjecture in discrete geometry",
+          "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/"
+        },
+        {
+          "label": "TechCrunch — OpenAI claims it solved an 80-year-old math problem",
+          "url": "https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/"
+        }
+      ],
+      "summary": "Ethan Mollick's May 20 LinkedIn post received 420 reactions and 65 comments. The post presents a three-row timeline: June 2024, frontier LLMs could not count the letters in 'strawberry'; July 2025, frontier LLMs won gold at the International Math Olympiad; May 2026, a general-purpose OpenAI reasoning model disproved the Erdős unit distance conjecture — an 80-year-old open problem in discrete geometry. OpenAI confirmed the model was not purpose-built for mathematics and received no domain-specific scaffolding. Mathematicians Noga Alon, Melanie Wood, and Thomas Bloom provided companion attestations that the proof is valid. The most-engaged comment in the thread observed that in the same timeframe, most organizations still have not agreed on who can approve an LLM output before it reaches a client. Mollick's post did not frame this as hype — he noted that non-thinking models still fail the 'strawberry' letter-counting task, illustrating the jagged frontier.",
+      "enterprise_translation": "The design principle the timeline exposes is asymmetric capability growth: AI research capability is scaling vertically (solving open mathematical problems) while enterprise governance is scaling horizontally at best (adding review layers). For a public-company innovation function, the relevant experiment is not to chase capability — it is to close the governance gap. A 30-day experiment: identify the three highest-stakes AI-generated outputs in current production use (reports, recommendations, code), map who currently reviews them and with what criteria, and define a formal approval protocol with explicit accountability for each. The goal is to have a documented governance stance before the next capability jump forces the issue.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "likes": 420,
+        "comments": 65
+      },
+      "tags": ["Ethan Mollick", "AI capability", "math conjecture", "OpenAI", "enterprise governance", "AI adoption"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-24T00:00:00Z"
+    },
+    {
+      "id": "tp-cassie-kozyrkov-ai-roi-metric-trap-may19",
+      "title": "Cassie Kozyrkov: 'Most AI ROI dashboards are grading the easy stuff' — the metric trap that hollows out the business while improving the numbers",
+      "source": "LinkedIn",
+      "author": "Cassie Kozyrkov (decision intelligence expert, former Google Chief Decision Scientist)",
+      "date": "2026-05-19",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/posts/kozyrkov_aafa-decisionintelligence-aileadership-activity-7462472156732375040-ZxQ6",
+      "secondary_urls": [],
+      "summary": "Kozyrkov's May 19 LinkedIn post in her 'AI Advice From Anywhere' series received 149 reactions and 69 comments. Her argument: the easiest things to measure — task throughput, ticket close time, query response rate — are often the easiest things to automate. When AI strategy is built around only what is countable, organizations risk improving the metrics that hollow out the business while ignoring what actually compounds value: mentorship, institutional memory, judgment, taste, and the leadership conversations where reading between the lines matters. She frames AI as a decision amplifier: it scales the judgment it is given. Therefore the judgment quality in the specification pipeline — who decides what the agent optimizes for, what it monitors, when it escalates — is the binding constraint on the value of AI investment. She argues that judgment quality in the specification pipeline should be audited with the same seriousness as financial controls.",
+      "enterprise_translation": "The design principle is specification-layer governance: an AI agent optimizing for a measurable proxy metric will do so efficiently, including finding ways to hit the metric that undermine the underlying goal. This is not a failure of the model — it is a failure of specification. For a public-company innovation function measured on quarterly productivity metrics, the enterprise experiment is: for each AI agent currently in production, write a two-sentence 'specification audit' that states what the agent is optimizing for and what could go wrong if it optimizes for that proxy perfectly. If the audit reveals a governance gap (the agent could improve the metric by degrading something unmeasured), that gap should be resolved before scaling the deployment.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "likes": 149,
+        "comments": 69
+      },
+      "tags": ["Cassie Kozyrkov", "AI ROI", "enterprise governance", "decision intelligence", "AI strategy", "measurement"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-24T00:00:00Z"
+    },
+    {
+      "id": "tp-dan-martell-ai-stack-2026-linkedin-may21",
+      "title": "Dan Martell's 2026 AI stack: Claude as daily driver, OpenClaw flagged as 'fully autonomous but comes with real risk', and a 30-tool taxonomy organized by function not hype",
+      "source": "LinkedIn",
+      "author": "Dan Martell (software entrepreneur and founder coach, @dmartell)",
+      "date": "2026-05-21",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/posts/dmartell_ive-been-building-software-companies-since-activity-7463141185033977856-lwYW",
+      "secondary_urls": [],
+      "summary": "Dan Martell's May 21 LinkedIn post received 716 reactions and 156 comments. He published a 30-tool AI stack organized by function: General Assistants (Claude.ai as primary, Chat.com for fast queries, Gemini for Gmail integration), Agents (Manus.im, Claude Code, Apex.host, OpenClaw — flagged as 'fully autonomous agent but comes with real risk. Be careful.'), Productivity (Granola.ai, Notion, Loom, Lovable.dev, NotebookLM, Wispr.ai), Content Creation (ElevenLabs, VAPI.ai, Runway, Gemini Images, Higgsfield, Gamma, Kling), and Sales/Revenue (HelloFrank.ai, Membership.io, BuddyPro.ai, Youratlas.com, GetRevio.com). The post's notable quality is that it treats tools as infrastructure organized by job-to-be-done rather than by vendor marketing claims, and the explicit risk flag on OpenClaw is the kind of nuance that makes a 30-item tool list useful rather than promotional.",
+      "enterprise_translation": "The design principle Martell's stack exposes is layered autonomy: he distinguishes 'General Assistants' (interactive, human-in-the-loop) from 'Agents' (autonomous, human-off-the-loop) and explicitly flags which agents carry governance risk. For an enterprise team building an AI tool policy, the practical experiment is to use Martell's taxonomy as a template: map each AI tool currently in use or under evaluation to one of his five functional categories, identify which tools are operating in 'Agent' mode versus 'Assistant' mode, and apply different governance requirements — approval workflows, audit logging, scope limits — to tools in the Agent category. The classification exercise itself typically surfaces tools that have been deployed as assistants but are actually operating autonomously.",
+      "score": {
+        "total": 8.0,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "likes": 716,
+        "comments": 156
+      },
+      "tags": ["Dan Martell", "AI stack", "Claude", "OpenClaw", "enterprise tools", "AI governance", "autonomous agents"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-24T00:00:00Z"
+    },
+    {
+      "id": "tp-bernard-marr-ai-dangerous-may18",
+      "title": "Bernard Marr: 'When Does AI Become Too Dangerous To Ignore?' — agentic AI shifts risks from theoretical to tangible, published May 18",
+      "source": "LinkedIn Pulse",
+      "author": "Bernard Marr (Forbes contributor, enterprise AI strategy)",
+      "date": "2026-05-18",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/pulse/when-does-ai-become-too-dangerous-ignore-bernard-marr-hmu8e",
+      "secondary_urls": [],
+      "summary": "Bernard Marr's May 18 LinkedIn Pulse article, published at the start of the I/O week, received 156 reactions and 50 comments. His argument: the risk threshold has shifted because today's frontier models are agentic — they can write code, interact with external systems, and act autonomously. The risks he enumerates are operational, not speculative: AI-assisted cyberattacks on corporate infrastructure, autonomous systems making bad decisions in production, over-reliance on AI summaries that are wrong, emotional dependency in customer-facing AI deployments, and power concentration among those who control the frontier model stack. He argues the answer requires three simultaneous responses — organizational safe culture, user-level AI literacy, and government-set regulatory floors — and that 'burying heads isn't an option' for organizations with AI in production.",
+      "enterprise_translation": "The design principle Marr surfaces is operational risk at the agentic transition: the risk profile of AI in production changes qualitatively when agents can act, not just respond. For a publicly traded industrial company with AI in customer-facing or operational workflows, the immediate experiment is a red-team exercise: identify one AI-assisted process currently in production, write a two-page scenario in which the AI takes an incorrect autonomous action, and trace the liability chain — who is accountable, what is the rollback procedure, and how fast can the incorrect action be reversed. Most organizations discover the answer is 'unclear, slow, and manual,' which defines the governance gap to close before expanding agentic use.",
+      "score": {
+        "total": 7.5,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "likes": 156,
+        "comments": 50
+      },
+      "tags": ["Bernard Marr", "AI risk", "agentic AI", "enterprise governance", "AI safety", "operational risk"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-24T00:00:00Z"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "linkedin",
+      "title": "LinkedIn",
+      "description": "High-signal LinkedIn posts from the week of May 18–24, 2026, filtered to enterprise AI relevance.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "li-google-io-2026-official-post-may20",
+          "title": "Google official LinkedIn post on I/O 2026: 2,900 reactions and 150 comments on Gemini Spark, Gemini 3.5 Flash, and agentic Search",
+          "source": "LinkedIn — Google official page",
+          "author": "Google (41.7M followers)",
+          "date": "2026-05-20",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/google_googles-top-ai-announcements-from-io-2026-activity-7462661754016264192-Iy04",
+          "summary": "Google's official LinkedIn summary of I/O 2026 announcements led with Gemini Omni (any-to-any multimodal model), Gemini 3.5 Flash (agentic, fast, and less than half the cost of comparable frontier models), Information Agents in Search (background-monitoring 24/7 agents rolling out to AI Pro and Ultra subscribers this summer), and Universal Cart (a shopping agent operating across Search, Gemini, YouTube, and Gmail). The post generated 2,900 reactions and 150 comments, making it one of the highest-engagement official vendor posts of the week.",
+          "enterprise_translation": "The signal in the post's engagement pattern is as important as the content: 150 comments on a vendor announcement indicates genuine enterprise attention, not passive scrolling. The comments thread is worth reading as an unfiltered enterprise reaction surface — common concerns raised included data residency for Spark's cloud-VM model, compatibility with existing Microsoft 365 environments, and pricing at $100/month for AI Ultra versus enterprise licensing at scale.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "likes": 2900,
+            "comments": 150
+          },
+          "tags": ["Google I/O 2026", "Gemini", "enterprise AI", "agentic", "official post"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "li-hamid-najib-ai-week-recap-may22",
+          "title": "Hamid Najib weekly AI recap: tokenmaxxing as a developer KPI, agentic Gemini era is official, California AI workforce law — three enterprise rewirings in one week",
+          "source": "LinkedIn",
+          "author": "Hamid Najib",
+          "date": "2026-05-22",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/hamid-najib_ai-news-week-of-may-18-to-may-24-2026-activity-7463695032928288768-ql4I",
+          "summary": "Najib's May 22 LinkedIn recap post identified three enterprise architecture shifts from the week: (1) tokenmaxxing — developers are now treating token consumption as a performance metric rather than a cost to minimize, maximizing the work delegated to AI agents; (2) the agentic Gemini era is official, with Google deploying autonomous-task systems across its entire product ecosystem; (3) California's Newsom executive order on AI workforce disruption, the first U.S. state to create a formal policy response, signals that enterprise AI impacts on staffing are now entering the regulatory agenda.",
+          "enterprise_translation": "The 'tokenmaxxing' framing is worth tracking as an enterprise signal: when engineering teams begin treating token consumption as a productivity metric (more tokens delegated = more output), the cost management challenge inverts. Instead of asking 'are we using AI enough,' finance functions will soon be asking 'are we controlling AI spend.' A 30-day experiment: pull one month of API token spend across the engineering organization, calculate cost per meaningful output (PR merged, report delivered, ticket resolved), and establish a baseline. The goal is a denominator before the numerator scales.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["AI week recap", "tokenmaxxing", "Google I/O 2026", "California AI policy", "enterprise"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "li-cassie-kozyrkov-ai-roi-metric-trap-may19",
+          "title": "Cassie Kozyrkov: AI ROI dashboards measure what is easy to measure, which is not what actually matters — 149 reactions, 69 comments",
+          "source": "LinkedIn",
+          "author": "Cassie Kozyrkov (decision intelligence expert)",
+          "date": "2026-05-19",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/kozyrkov_aafa-decisionintelligence-aileadership-activity-7462472156732375040-ZxQ6",
+          "summary": "Kozyrkov's post argues that AI acts as a decision amplifier, scaling whatever judgment it is given. ROI dashboards that measure throughput metrics miss the categories of value — mentorship, institutional memory, judgment, taste, leadership navigation — that cannot be counted but define long-term competitive advantage. She states that the judgment quality in the specification pipeline (who defines what the agent optimizes for) is the binding constraint on AI investment value and should be audited with the same formality as financial controls. See Top Picks for full analysis.",
+          "enterprise_translation": "For enterprise AI programs preparing board-level ROI reporting: before the next quarterly review, add one line to the AI ROI scorecard asking 'what value was NOT captured by this metric?' and require the team to answer it. The question forces specification-layer thinking into a reporting cadence where it is otherwise absent.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 149,
+            "comments": 69
+          },
+          "tags": ["Cassie Kozyrkov", "AI ROI", "decision intelligence", "enterprise AI measurement"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "li-allie-miller-google-io-live-report-may20",
+          "title": "Allie K. Miller reporting live from Google I/O 2026: four themes and one pointed gap — AI is single-player only, with no collaborative workflow demos",
+          "source": "LinkedIn",
+          "author": "Allie K. Miller (enterprise AI strategy influencer)",
+          "date": "2026-05-20",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/alliekmiller_reporting-live-from-google-io-2026-from-activity-7462951538249027588-MdH7",
+          "summary": "Miller's live LinkedIn post from Google I/O received 526 reactions and 113 comments. Her four themes: voice AI as a new interface (Gemini glasses, Docs Live), agent-first product design (Gemini Spark on cloud VMs), orchestration efficiency (Gemini 3.5 Flash at 4x speed for less than half the cost of comparable models), and world models (Gemini Omni for natural-language video editing). Critically, she called out what was absent: zero demos of two people in the same AI workflow building something together, and no mention of recursive self-improvement despite it being the dominant theme in Silicon Valley. See Top Picks for full analysis.",
+          "enterprise_translation": "Miller's 'absent' observation surfaces a design gap with direct enterprise implications: every Google I/O demo assumed one user, one agent, one task. Real enterprise workflows require coordination across roles. Mapping where multi-role coordination breaks down in single-agent designs is the planning exercise most enterprise teams should be running before committing to a platform.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 526,
+            "comments": 113
+          },
+          "tags": ["Allie K. Miller", "Google I/O 2026", "enterprise AI", "agentic", "collaboration gap"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "li-bernard-marr-ai-too-dangerous-may18",
+          "title": "Bernard Marr: agentic AI has moved enterprise risk from theoretical to operational — cybersecurity, autonomous bad decisions, power concentration",
+          "source": "LinkedIn Pulse",
+          "author": "Bernard Marr (Forbes contributor)",
+          "date": "2026-05-18",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/pulse/when-does-ai-become-too-dangerous-ignore-bernard-marr-hmu8e",
+          "summary": "Published at the opening of Google I/O week, Marr's article argues that the agentic transition — AI that acts, not just responds — moves the enterprise risk discussion from 'what if AI gets smarter' to 'what if our deployed AI does the wrong thing right now.' He identifies seven categories of operational risk: AI-assisted cyberattacks, autonomous systems making bad production decisions, AI-generated deception and fraud, emotional dependency in customer-facing deployments, over-reliance on incorrect AI summaries, and power concentration among frontier model controllers. The 156 reactions and 50 comments reflected genuine enterprise practitioner engagement. See Top Picks for full analysis.",
+          "enterprise_translation": "For a public company with AI in customer-facing workflows: the liability and reputational risks Marr describes are not future risks — they are present risks for any organization with agentic AI in production without formal rollback, audit, and escalation procedures. The governance experiment is a red-team exercise on one in-production AI agent.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 156,
+            "comments": 50
+          },
+          "tags": ["Bernard Marr", "AI risk", "enterprise governance", "agentic AI", "operational risk"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "li-linkedin-cuts-875-jobs-ai-restructuring-may14",
+          "title": "LinkedIn cuts 875 jobs (5% of workforce) despite 12% revenue growth — AI-powered hiring tools crossed $450M ARR; new CEO's first move",
+          "source": "LinkedIn news / reporting",
+          "author": "Multiple LinkedIn commenters; INDmoney analysis; LinkedIn CEO Daniel Shapero internal memo",
+          "date": "2026-05-18",
+          "platform": "linkedin",
+          "primary_url": "https://www.indmoney.com/blog/us-stocks/linkedin-layoffs-2026-microsoft-ai-spending-msft-stock-analysis",
+          "secondary_urls": [
+            {
+              "label": "Instagram — LinkedIn 875 job cuts AI restructuring news card",
+              "url": "https://www.instagram.com/p/DYujC31gZSs/"
+            }
+          ],
+          "summary": "LinkedIn announced layoffs affecting approximately 875 employees (5% of its 17,500-person global workforce) in the week of May 18. Revenue grew 12% in the most recent quarter; the Productivity and Business Processes segment (which includes LinkedIn) delivered $35 billion in revenue for Microsoft's Q3 FY2026, up 17% year-on-year. LinkedIn's AI-powered hiring tools crossed $450M ARR. The cuts hit engineering, product, marketing, and the Global Business Organization. New CEO Daniel Shapero, one month into the role, stated the rationale as reallocation to higher-growth and AI-infrastructure priorities. The news generated significant commentary on the platform itself about whether AI efficiency gains are being used to attribute structural cost cuts to a more palatable cause.",
+          "enterprise_translation": "The pattern — growing revenue, rising AI tool ARR, and simultaneous headcount reduction attributed to AI-driven operating model change — is the first clear documented instance of a major platform using its own AI-powered products to reshape its internal workforce. For enterprise teams preparing AI ROI narratives, LinkedIn's situation provides a concrete benchmark: the platform's hiring tools at $450M ARR appear sufficient to justify 875 fewer human roles in adjacent functions. The enterprise experiment: model what your AI tool investment would need to generate in value before it changes the headcount assumption in the next planning cycle, and decide whether to make that connection explicit in leadership communications or not.",
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["LinkedIn", "AI layoffs", "enterprise restructuring", "AI ROI", "workforce", "Microsoft"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "tiktok",
+      "title": "TikTok",
+      "description": "AI education and tool content from TikTok for the week of May 18–24, 2026. Consumer-creator signals translated to enterprise concepts.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "tt-build-your-own-claude-code-agent-may19",
+          "title": "Build Your Own Claude Code — full AI coding agent tutorial posted May 19, shows agent construction from scratch in under 12 minutes",
+          "source": "YouTube / TikTok cross-post",
+          "author": "Independent developer tutorial",
+          "date": "2026-05-19",
+          "platform": "tiktok",
+          "primary_url": "https://www.youtube.com/watch?v=k_D_C3ExypU",
+          "summary": "A build-your-own AI coding agent tutorial posted May 19 demonstrates how modern AI engineering workflows operate under the hood — instructions, tool access, and agent teaching — in a format accessible to non-specialist developers. The video reached the algorithmic surface on TikTok as a cross-post in the week following Code with Claude 2026 (May 6 Anthropic developer conference). It is representative of a broader TikTok pattern: high-view explainer videos on agent construction, not just agent use, indicating that the consumer audience is moving from 'what can this do' to 'how do I build this.'",
+          "enterprise_translation": "The design principle is agent construction literacy: consumer creators are now teaching agent architecture (instructions + tools + teaching loops) to audiences with no CS background. The enterprise translation is that internal teams do not need specialized ML engineers to build bounded agents — they need practitioners who understand the three-component pattern. A 30-day experiment: run a half-day internal workshop using a tutorial of this type to have non-engineers on an operations or compliance team build a simple bounded agent on a test dataset. The goal is identifying which internal practitioners can own agent construction versus which need hand-off to a central engineering team.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["Claude Code", "AI agent tutorial", "vibe coding", "developer education", "TikTok AI"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "tt-gemini-spark-insane-24-7-agent-may18",
+          "title": "'Google's New Gemini Spark Is INSANE — Your Phone Can Think Now' — YouTube Short cross-posting to TikTok, posted May 18",
+          "source": "YouTube Shorts / TikTok cross-post",
+          "author": "Tech commentary channel (cross-platform, YouTube Shorts primary)",
+          "date": "2026-05-18",
+          "platform": "tiktok",
+          "primary_url": "https://www.youtube.com/watch?v=k8p2gcz6y7w",
+          "summary": "An 8-minute Gemini Spark explainer posted on May 18 (the day before Google I/O keynote) used pre-release details to frame Spark as 'an invisible, tireless employee living inside your phone 24/7.' Key consumer-facing claims: cross-app automation without coding, natural language task delegation, autonomous browser control in Chrome, and physical integration with Android's Private Compute Core for high-stakes action confirmation. The video's framing of 'your phone is no longer waiting for instructions — it is actively helping you think' is the consumer-facing articulation of the background agent pattern.",
+          "enterprise_translation": "The design principle is background agent with consent gates: Spark checks before high-stakes actions (payments, sending emails, deleting files) but operates autonomously otherwise. The consumer demo demonstrates the exact consent-gate pattern that enterprise agentic AI systems need: default autonomous operation, mandatory confirmation at defined risk thresholds. A 30-day experiment: identify one process where an agent could handle 90% of steps autonomously but needs human confirmation at two points — define the confirmation triggers, test the user experience of being interrupted at exactly those moments, and measure whether the consent experience is acceptable or adds more friction than the automation saves.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["Gemini Spark", "Google I/O 2026", "background agent", "consent gate", "TikTok AI", "consumer AI"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "tt-google-io-2026-bombshells-gemini-omni-spark-may22",
+          "title": "'Google Just Dropped HUGE AI Bombshells at I/O 2026' — Gemini Omni and Spark explained, Antigravity token volume six-fold in 10 weeks",
+          "source": "YouTube Shorts / TikTok cross-post",
+          "author": "Technology commentary channel",
+          "date": "2026-05-22",
+          "platform": "tiktok",
+          "primary_url": "https://www.youtube.com/watch?v=uOcGCkL9-9M",
+          "summary": "A post-event explainer video covering Google I/O 2026's most technically significant claims, including a data point not widely reported in text coverage: internal Google Antigravity usage crossed 3 trillion tokens per day by mid-May 2026, up from 500 billion tokens per day in March — a 6x increase in 10 weeks. The video also covered Gemini Omni's physics-grounded video generation, Universal Cart's cross-ecosystem shopping agent, and the distribution advantage Google holds by embedding agents across products users already open daily (Search, Gmail, Chrome, YouTube, Maps). The comment thread reflected enterprise viewer concerns: data residency questions about Spark's cloud-VM architecture, and whether Google's ecosystem lock-in is a feature or a governance risk.",
+          "enterprise_translation": "The 3 trillion token per day figure is the enterprise-relevant data point: Google's internal teams are already running agentic workflows at this scale, which means the orchestration layer (Antigravity) has been stress-tested at production volume. For enterprise teams evaluating Google Cloud's Managed Agents API, this usage data supports the reliability argument. The counter-question is the same one Miller raised: all those tokens are processing single-user tasks. Multi-role enterprise workflows are still an open engineering problem.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["Google I/O 2026", "Antigravity", "Gemini Omni", "token volume", "enterprise AI", "TikTok AI"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "tt-vibe-coding-ai-101-CBS-may24",
+          "title": "CBS News explains vibe coding for a mainstream audience — 'low risk, internal facing, a few people' as the enterprise starting point",
+          "source": "YouTube (CBS News) / TikTok cross-post",
+          "author": "CBS News technology segment",
+          "date": "2026-05-24",
+          "platform": "tiktok",
+          "primary_url": "https://www.youtube.com/watch?v=qyYgUgTf0sA",
+          "summary": "CBS News ran a vibe coding explainer on May 24 in a technology segment that reached mainstream audiences via TikTok cross-posts. The segment defined vibe coding as describing software in plain language and refining AI-generated output conversationally. Notably, the segment's technology expert recommended starting with 'low risk, internal facing, a few people' applications rather than production systems with sensitive data, citing testing and code verification requirements. This mainstream media moment signals that vibe coding has crossed from developer subculture to general business awareness.",
+          "enterprise_translation": "The CBS segment's framing — 'low risk, internal facing, a few people' as the correct starting point — is the right enterprise governance stance for vibe-coded tools. The pattern is: vibe-coded internal tools (a custom dashboard, a process checklist generator, an internal data summarizer) are appropriate first deployments; customer-facing tools or systems handling payment or personal data require code review regardless of how the code was generated. A 30-day experiment: identify one internal workflow that currently uses a shared spreadsheet or manual email chain, build a vibe-coded replacement on a sandboxed internal tool platform, and measure adoption by the target team.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["vibe coding", "CBS News", "mainstream AI", "enterprise deployment", "no-code AI", "TikTok AI"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "instagram",
+      "title": "Instagram",
+      "description": "Practitioner and creator content on Instagram for the week of May 18–24, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "ig-askcatgpt-google-io-2026-gemini-spark-may23",
+          "title": "'The things I think you should ACTUALLY care about from Google I/O 2026' — 1.2K likes, 38 comments; @askcatgpt at Google I/O with @rpn",
+          "source": "Instagram",
+          "author": "@askcatgpt (Google Partner, creator at Google I/O)",
+          "date": "2026-05-22",
+          "platform": "instagram",
+          "primary_url": "https://www.instagram.com/p/DYqqAQUCA5e/",
+          "summary": "This Instagram post (1,210 likes, 38 comments) was a Google Partner post published from Google I/O 2026. The creator, @askcatgpt, was present at the event alongside @rpn (Roberto Nickson), @colinandsamir, @siliconvalleygirl, and @kallaway, and met with Google DeepMind founder Demis Hassabis. The post prioritized Gemini Spark as the highest-signal announcement, framing it as an agent that 'connects to all your apps and helps you get sh*t done while you're out living your life.' The Google Partner label means this was a compensated presence, but the engagement numbers suggest the content also had organic reach — 1,210 likes on a creator post at an invite-only event is a legitimate signal of audience interest.",
+          "enterprise_translation": "The creator's framing of Spark as connecting to apps 'while you're out living your life' is the consumer articulation of the background-agent pattern. For an enterprise team, the translation is: Spark's value proposition is freeing cognitive bandwidth by handling routine monitoring and task execution in parallel with human work. The governance question this surfaces is whether users at an enterprise should be able to connect a personal agent (Spark, OpenClaw) to corporate data systems — and if so, what the data handling and audit requirements are. Establishing a personal-agent policy before user-driven adoption occurs is the 30-day experiment.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 1210,
+            "comments": 38
+          },
+          "tags": ["Google I/O 2026", "Gemini Spark", "Instagram creator", "Google Partner", "AI agent"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "ig-codewithbrij-ai-stack-may2026-may20",
+          "title": "@codewithbrij posts 'The AI Stack, May 2026 edition' — 10 layers, 2 vertical rails, observability and governance now cut through every layer",
+          "source": "Instagram",
+          "author": "@codewithbrij",
+          "date": "2026-05-20",
+          "platform": "instagram",
+          "primary_url": "https://www.instagram.com/p/DYlqnhQFJCN/",
+          "summary": "@codewithbrij's May 2026 AI stack diagram (2,692 engagements) shows a production AI stack that has shifted since late 2024: observability and governance are no longer layers — they are vertical rails cutting through every layer of the stack. Memory became its own layer. MCP replaced custom integrations. Vector databases got pulled into Postgres. AutoGen is gone, with more framework consolidation expected. AI gateways had their first significant security moment with a CISA Known Exploited Vulnerabilities listing in April 2026. The post's summary: the stack is not getting taller, it is getting thinner in the middle and thicker at the edges.",
+          "enterprise_translation": "The 'governance as vertical rail' framing is directly applicable to enterprise AI architecture reviews: the shift from 'add a governance layer' to 'governance runs through everything' means that an enterprise team cannot add audit logging and access control as an afterthought — they must be built into the data path, tool call layer, and agent output layer simultaneously. The CISA KEV listing for AI gateways means that at least one production AI gateway vulnerability has been actively exploited — a data point that IT security teams at public companies should pull into their April-May 2026 vulnerability review.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 2692
+          },
+          "tags": ["AI stack", "enterprise architecture", "observability", "governance", "MCP", "CISA"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "ig-alliekmiller-google-io-ai-glasses-may23",
+          "title": "@alliekmiller demos Google display glasses prototype at I/O 2026: plant ID, calendar scheduling, and outfit editing from Nano Banana Pro",
+          "source": "Instagram",
+          "author": "@alliekmiller (Allie K. Miller, enterprise AI strategy)",
+          "date": "2026-05-22",
+          "platform": "instagram",
+          "primary_url": "https://www.instagram.com/reel/DYpqq5XxzVo/",
+          "secondary_urls": [
+            {
+              "label": "Allie K. Miller LinkedIn — glasses demo description",
+              "url": "https://www.linkedin.com/posts/alliekmiller_i-just-edited-a-photo-by-talking-to-ai-glasses-activity-7463659764460478464-TXJb"
+            }
+          ],
+          "summary": "Miller's Instagram Reel shows a hands-on demo of Google's internal display glasses prototype at I/O 2026. The glasses feature a single full-color display in the right lens, open-ear speakers, and microphones. A two-second long press on the right temple activates Gemini. Demo tasks: plant identification, visual question answering on a chess board, and immediate calendar appointment creation. The image editing in the video used Nano Banana Pro, Google DeepMind's Gemini 3 Pro image model, which simultaneously changed the outfit she was wearing in real life and in the captured image on her phone screen. No release date announced; audio-only glasses with Warby Parker and Gentle Monster are coming in fall 2026.",
+          "enterprise_translation": "The glasses demo surface the next interface evolution for field-based workers: voice-activated, context-aware AI with real-time visual understanding, without hands-free device interaction. For industrial organizations with field technicians, the enterprise translation is: a version of this hardware, pointed at equipment rather than chess boards, could identify components, access maintenance history, and log work orders by voice — without requiring the technician to pull out a tablet. The 30-day experiment is not to adopt AI glasses but to map one field workflow where real-time visual AI would change the task sequence, and document the data and integration requirements before hardware decisions are made.",
+          "score": {
+            "total": 6.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 140,
+            "comments": 5
+          },
+          "tags": ["AI glasses", "Google I/O 2026", "Nano Banana Pro", "physical AI", "wearable AI", "field workforce"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "ig-mavenhq-ai-agent-stack-may13",
+          "title": "Maven HQ Instagram: 'The AI Agent Stack in 2026' — 746K views, 194 comments; still surfacing in feeds during Google IO week",
+          "source": "Instagram",
+          "author": "@mavenhq",
+          "date": "2026-05-13",
+          "platform": "instagram",
+          "primary_url": "https://www.instagram.com/reel/DYSjNKUPdsi/",
+          "summary": "Maven HQ's AI Agent Stack in 2026 Reel was posted May 13 and continued to surface in algorithmic feeds throughout the week of May 18–24 due to sustained engagement (746K views, 194 comments). The reel uses a comment-gating engagement mechanic ('comment agent to learn how to build this') that drives algorithm distribution. The underlying content — a visual breakdown of 2026's AI agent stack — was circulating in enterprise team Slack channels during the Google I/O week, cross-referencing the Maven stack diagram against the Gemini Enterprise Managed Agents API announcement.",
+          "enterprise_translation": "Maven HQ's agent stack content demonstrates that practitioner-level AI architecture education is now being consumed at consumer video scale. The enterprise translation is not the specific tools in the stack — it is the education pattern: when operations teams are watching AI stack explainers on Instagram at 746K views, they are forming mental models of what enterprise AI should look like. Those mental models will influence which internal AI proposals get sponsored and which face resistance. Enterprise AI teams that produce their own internal 'stack explainer' content (in the same visual, accessible format) will have an easier time aligning leadership expectations with technical reality.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 746000,
+            "comments": 194
+          },
+          "tags": ["AI agent stack", "enterprise AI", "Instagram education", "Maven HQ", "agent architecture"],
+          "recurrence": "returning_trend",
+          "recurrence_note": "Maven HQ AI agent stack content appeared in last week's index; this post from May 13 continued surfacing in feeds with sustained high-view distribution during the May 18-24 window.",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "facebook",
+      "title": "Facebook",
+      "description": "Facebook community and page signals for the week of May 18–24, 2026.",
+      "layout": "list",
+      "items": []
+    },
+    {
+      "section_id": "tools_trending",
+      "title": "Tools Trending",
+      "description": "Tools with the highest cross-platform mention volume in the week of May 18–24, 2026, based on LinkedIn post references, TikTok/Instagram content, and comment threads.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "tool-gemini-spark",
+          "title": "Gemini Spark",
+          "source": "Google",
+          "author": "Google DeepMind / Google",
+          "date": "2026-05-19",
+          "platform": "linkedin",
+          "primary_url": "https://gemini.google/overview/agent/spark/",
+          "summary": "24/7 cloud-hosted personal AI agent running on dedicated Google Cloud VMs, powered by Gemini 3.5 Flash and the Antigravity harness. Integrates natively with Gmail, Calendar, Drive, Docs, Sheets, YouTube, Google Maps, and via MCP with OpenTable, Canva, and Instacart. Requires explicit user consent before high-stakes actions (sending email, spending money, deleting files). Beta for US AI Ultra subscribers ($100/month) opening the week of May 26. Dominant topic across all platforms this week following Google I/O.",
+          "enterprise_translation": "Gemini Spark is the first Google product that puts a background AI agent into enterprise Workspace with an explicit consent architecture and DLP-gating. For Gemini Enterprise customers, it is the most direct path to governed agentic deployment without building a custom agent stack. The governance question to answer before enterprise adoption: does the 'ephemeral VM, fresh per task' architecture meet your data residency and audit log requirements?",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["Gemini Spark", "Google", "background agent", "enterprise", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "tool-gemini-35-flash",
+          "title": "Gemini 3.5 Flash",
+          "source": "Google",
+          "author": "Google DeepMind",
+          "date": "2026-05-19",
+          "platform": "linkedin",
+          "primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+          "summary": "Gemini 3.5 Flash is the first in Google's 3.5 model family, designed for agentic and coding workflows. Benchmarks: Terminal-Bench 2.1 76.2%, GDPval-AA 1656 Elo, MCP Atlas 83.6%. Google states it runs at approximately 4x the speed of comparable frontier models at less than half the cost. Generally available in Gemini Enterprise Agent Platform, Gemini API, Google AI Studio, Android Studio, Gemini app, and AI Mode in Search. Positioned as the model behind Gemini Spark and Antigravity.",
+          "enterprise_translation": "At less than half the cost of comparable frontier models, Gemini 3.5 Flash's economics change the ROI calculation for high-volume agentic workflows. For enterprise teams running cost-per-task analyses on AI deployments, this model's benchmark performance combined with its pricing creates a direct compare against Claude Code and GPT-5.5 at current API rates.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["Gemini 3.5 Flash", "Google", "model benchmarks", "enterprise AI", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "tool-claude-code",
+          "title": "Claude Code",
+          "source": "Anthropic",
+          "author": "Anthropic",
+          "date": "2026-05-18",
+          "platform": "linkedin",
+          "primary_url": "https://www.anthropic.com/claude-code",
+          "summary": "Claude Code continued to appear in the majority of AI practitioner stack posts this week, including Dan Martell's 716-reaction LinkedIn post where it is listed under the 'Agents' category alongside OpenClaw and Manus.im. The Code with Claude 2026 developer conference (May 6) features continued circulating on social platforms: multi-agent orchestration in public beta, the 'Dreaming' feature (async session review and self-improvement) in research preview, and a new compute partnership with SpaceX's Colossus cluster.",
+          "enterprise_translation": "Claude Code's consistent appearance across LinkedIn practitioner stacks signals market consolidation: it is the default reference when developers describe autonomous coding agents. For enterprise teams evaluating coding agent governance, Claude Code's published enterprise features — governance controls, observability, auditability — are now the comparison baseline against which other coding agents are evaluated.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["Claude Code", "Anthropic", "coding agent", "enterprise AI", "trending"],
+          "recurrence": "returning",
+          "recurrence_note": "Claude Code was a top trending tool last week; this week's sustained mention volume is driven by the Code with Claude 2026 conference content continuing to circulate and by its inclusion in Dan Martell's high-engagement stack post.",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "tool-google-antigravity",
+          "title": "Google Antigravity 2.0",
+          "source": "Google",
+          "author": "Google",
+          "date": "2026-05-19",
+          "platform": "linkedin",
+          "primary_url": "https://developers.googleblog.com/all-the-news-from-the-google-io-2026-developer-keynote/",
+          "summary": "Antigravity 2.0, announced at Google I/O 2026, is Google's agent-first development platform — a desktop application with an Antigravity CLI, enterprise security and compliance layer, and programmatic SDK. Internally, Google developers were processing 3 trillion tokens per day through Antigravity by mid-May 2026 (up from 500 billion in March). The platform is now generally available globally. Via Google Cloud's Agent Platform, Antigravity agents run inside secure, Google-managed boundaries with customer data controls.",
+          "enterprise_translation": "Antigravity is the orchestration layer that connects Gemini models to enterprise tool ecosystems. For teams evaluating whether to build on Google Cloud versus a third-party agent framework, the Antigravity SDK with enterprise security controls and the Managed Agents API represent a managed alternative to self-hosted orchestration. The 3 trillion tokens/day figure is a reliability signal: the harness has been production-tested at scale inside Google.",
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "tags": ["Google Antigravity", "agent orchestration", "enterprise AI platform", "Google I/O 2026", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "tool-openclaw",
+          "title": "OpenClaw",
+          "source": "Multiple practitioner stacks",
+          "author": "OpenClaw (product; sources: Dan Martell LinkedIn post, mattverlaque Instagram post)",
+          "date": "2026-05-21",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/dmartell_ive-been-building-software-companies-since-activity-7463141185033977856-lwYW",
+          "summary": "OpenClaw appeared in two separate practitioner AI stacks this week — Dan Martell's LinkedIn post (716 reactions) with the explicit flag 'fully autonomous agent but comes with real risk. Be careful,' and @mattverlaque's Instagram stack post where it appears as a rejected alternative for AI employees. The contrasting treatments — one warning, one avoid — are the week's sharpest signal on where enterprise practitioners are drawing the governance line on fully autonomous agents.",
+          "enterprise_translation": "OpenClaw's dual appearance with a risk warning signals that fully autonomous agents are now in practitioner stacks with explicit governance annotations rather than being avoided entirely. The enterprise translation is that 'fully autonomous' is no longer a disqualifier — it is a governance category that requires explicit policy. A 30-day experiment: write a one-page internal policy on what conditions must be met before a fully autonomous agent (one that takes actions without per-step human confirmation) is approved for use on enterprise systems. The act of writing the policy forces the governance question to be resolved before adoption pressure arrives.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "tags": ["OpenClaw", "autonomous agent", "enterprise governance", "AI risk", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "tool-gemini-omni",
+          "title": "Gemini Omni",
+          "source": "Google DeepMind",
+          "author": "Demis Hassabis (Google DeepMind CEO)",
+          "date": "2026-05-19",
+          "platform": "instagram",
+          "primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+          "summary": "Gemini Omni is Google's any-input, any-output multimodal model, announced at I/O 2026. Current capability: generates and edits video grounded in real-world physics (gravity, kinetic energy, fluid dynamics) from text, image, audio, or video input. Outputs carry SynthID watermarks. Available now in the Gemini app (Omni Flash) for Google AI Plus, Pro, and Ultra subscribers globally. Enterprise availability of Omni Flash via Gemini API and Agent Platform API in coming weeks. Surfaced prominently on Instagram via the @alliekmiller Reel showing natural-language outfit editing.",
+          "enterprise_translation": "Gemini Omni's physics-grounded video generation is premature for most enterprise workflows this week but signals the direction of enterprise training content, product visualization, and synthetic data generation. The 30-day experiment is awareness, not deployment: identify one use case in your organization where physics-accurate synthetic video would replace expensive physical asset creation (e.g., safety training simulations, equipment installation demos), and track whether Omni's capability reaches production quality for that use case by Q3 2026.",
+          "score": {
+            "total": 6.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 0,
+            "source_quality": 2
+          },
+          "tags": ["Gemini Omni", "Google DeepMind", "multimodal AI", "video generation", "world model", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "tool-granola-ai",
+          "title": "Granola AI",
+          "source": "Multiple practitioner stacks",
+          "author": "Granola AI (product); Dan Martell LinkedIn stack post (716 reactions)",
+          "date": "2026-05-21",
+          "platform": "linkedin",
+          "primary_url": "https://www.granola.ai/",
+          "summary": "Granola appeared in Dan Martell's 716-reaction LinkedIn stack post under Productivity ('Meeting notes without joining the call'), in @ebony.marketinggirly's AI stack Reel referenced in the Lightreel AI Prosumer Report, and in Ali Abdaal's AI tool tier list referenced across TikTok and Instagram. Its distinguishing characteristic in practitioner descriptions: it generates meeting notes without requiring the user to join or invite a bot, making it less intrusive than competing meeting transcription tools in regulated or executive environments.",
+          "enterprise_translation": "Granola's 'no bot joins the call' architecture is the governance-relevant differentiator for regulated enterprise environments where adding an AI recording bot to an executive, legal, or board-level meeting creates an explicit consent and disclosure issue. The enterprise experiment: evaluate whether Granola's on-device processing model meets your data handling requirements versus cloud-dependent meeting note tools, particularly for meetings that involve non-public financial information or legal privilege.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "tags": ["Granola AI", "meeting notes", "enterprise productivity", "AI tools", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "tool-openai-reasoning-model-math",
+          "title": "OpenAI General-Purpose Reasoning Model (unnamed, May 2026)",
+          "source": "OpenAI",
+          "author": "OpenAI research team; Ethan Mollick (LinkedIn post, 420 reactions)",
+          "date": "2026-05-20",
+          "platform": "linkedin",
+          "primary_url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
+          "summary": "An unnamed internal OpenAI general-purpose reasoning model autonomously disproved the Erdős unit distance conjecture in discrete geometry on May 20, 2026. The model was not purpose-built for mathematics. OpenAI stated this is the first time AI has autonomously solved a prominent open problem central to a field of mathematics, with validation from three independent mathematicians (Noga Alon, Melanie Wood, Thomas Bloom). LinkedIn and TikTok discussion focused on the capability arc and the governance gap it exposes rather than the mathematical content.",
+          "enterprise_translation": "The model's ability to autonomously solve a problem with no domain-specific scaffolding signals that general-purpose reasoning models are now operating in territory previously reserved for specialist systems. For enterprise teams, the translation is: the same class of model can be directed at your internal complex reasoning problems (contract analysis edge cases, regulatory compliance interpretation, failure mode analysis) without requiring domain-specific fine-tuning. The governance question is who verifies the output — as happened with OpenAI's previous false claim on Erdős problems, mathematician-level verification was required to confirm the result. Your enterprise equivalent of 'mathematician verification' should be defined before deploying autonomous reasoning on high-stakes internal problems.",
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "tags": ["OpenAI", "reasoning model", "math proof", "autonomous AI", "governance", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Cross-platform behavioral patterns from the week of May 18–24, 2026.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "es-single-player-ai-multi-player-enterprise-gap",
+          "title": "Single-player AI design dominates every major product launch — enterprise multi-role workflows are an explicit gap",
+          "source": "Synthesis — Allie K. Miller LinkedIn (526 reactions), Google I/O 2026 keynote",
+          "author": "Cross-platform synthesis",
+          "date": "2026-05-21",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/alliekmiller_reporting-live-from-google-io-2026-from-activity-7462951538249027588-MdH7",
+          "summary": "Google I/O 2026 featured zero demos of two people working in the same AI workflow simultaneously. Gemini Spark, the week's headline agent, is designed as a single-user personal agent. Anthropic's Claude Code multi-agent orchestration operates with lead/worker agent patterns but not multi-human collaborative workflows. TikTok's AI agent content focuses on solo creators and solo developers. The week's entire social media content about AI agents assumes one human, one agent, one task. The enterprise pattern — procurement + finance + compliance simultaneously reviewing the same AI-assisted process — has no current platform-native solution.",
+          "enterprise_translation": "The multi-player gap is an active product space: the first platform to solve coordinated multi-human AI workflows for enterprise teams will own a significant enterprise use case that no current leader is addressing. For innovation teams, the near-term experiment is to identify one process requiring three or more roles interacting with AI-generated content, document the coordination failure points in a single-agent design, and evaluate whether those failures require new tooling or can be solved with existing workflow orchestration (approval routing, notification triggers) wrapped around single-agent outputs.",
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "tags": ["multi-agent", "collaborative AI", "enterprise workflow", "product gap", "emerging signal"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        },
+        {
+          "id": "es-tokenmaxxing-cost-discipline-tension",
+          "title": "Tokenmaxxing emerges as developer performance metric — directly collides with enterprise cost governance on AI spend",
+          "source": "LinkedIn — Hamid Najib week recap (May 22); Latent Space / Claude Code pricing coverage",
+          "author": "Cross-platform synthesis",
+          "date": "2026-05-22",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/hamid-najib_ai-news-week-of-may-18-to-may-24-2026-activity-7463695032928288768-ql4I",
+          "summary": "A new developer culture pattern surfaced this week across LinkedIn and developer communities: 'tokenmaxxing,' where developers maximize the amount of work delegated to AI agents as a performance metric (more tokens delegated = higher throughput). This directly conflicts with enterprise cost governance: when engineering culture treats token consumption as a productivity KPI, finance teams lose the cost-control levers they typically manage through headcount and tooling budgets. The Anthropic Claude Code pricing controversy from the prior week (which tripled image-prompt costs and caused the Uber $2,000/person/month budget exhaustion story) provides a concrete example of what tokenmaxxing looks like at scale without cost guardrails.",
+          "enterprise_translation": "The tokenmaxxing pattern is the current year's equivalent of the 2010s cloud cost governance problem: when developers treat an almost-free resource as unlimited, usage scales until finance intervenes with a budget crisis. The governance experiment for enterprise AI teams: before engineering teams adopt tokenmaxxing as a culture norm, establish per-team monthly token budgets, build a reporting dashboard showing cost per meaningful output, and define escalation paths when usage exceeds forecast. The goal is to enable high-throughput agentic development while maintaining the cost visibility that public-company finance requires.",
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "tags": ["tokenmaxxing", "AI cost governance", "enterprise spend", "Claude Code", "developer culture", "emerging signal"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-24T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "Google I/O 2026: Gemini Spark, Gemini 3.5 Flash, Antigravity 2.0, and Managed Agents — official LinkedIn post, 2,900 reactions",
+      "source": "LinkedIn — Google",
+      "author": "Google",
+      "date": "2026-05-20",
+      "primary_url": "https://www.linkedin.com/posts/google_googles-top-ai-announcements-from-io-2026-activity-7462661754016264192-Iy04",
+      "score": 9.0
+    },
+    {
+      "title": "Allie K. Miller live from Google I/O 2026: four themes and the 'single-player AI' gap",
+      "source": "LinkedIn",
+      "author": "Allie K. Miller",
+      "date": "2026-05-20",
+      "primary_url": "https://www.linkedin.com/posts/alliekmiller_reporting-live-from-google-io-2026-from-activity-7462951538249027588-MdH7",
+      "score": 8.5
+    },
+    {
+      "title": "Ethan Mollick: LLM capability arc from 'strawberry' to geometry conjecture — and the governance gap widening in parallel",
+      "source": "LinkedIn",
+      "author": "Ethan Mollick",
+      "date": "2026-05-20",
+      "primary_url": "https://www.linkedin.com/posts/emollick_june-2024-the-latest-general-purpose-llms-activity-7462957378230128643-4Lza",
+      "score": 8.5
+    },
+    {
+      "title": "Cassie Kozyrkov: the AI ROI metric trap — measuring what is easy to automate, not what actually matters",
+      "source": "LinkedIn",
+      "author": "Cassie Kozyrkov",
+      "date": "2026-05-19",
+      "primary_url": "https://www.linkedin.com/posts/kozyrkov_aafa-decisionintelligence-aileadership-activity-7462472156732375040-ZxQ6",
+      "score": 8.0
+    },
+    {
+      "title": "Dan Martell 2026 AI stack: 30 tools organized by function, OpenClaw flagged as 'fully autonomous but real risk', 716 reactions",
+      "source": "LinkedIn",
+      "author": "Dan Martell",
+      "date": "2026-05-21",
+      "primary_url": "https://www.linkedin.com/posts/dmartell_ive-been-building-software-companies-since-activity-7463141185033977856-lwYW",
+      "score": 8.0
+    },
+    {
+      "title": "Bernard Marr: When Does AI Become Too Dangerous To Ignore? — agentic AI shifts risk from theoretical to operational",
+      "source": "LinkedIn Pulse",
+      "author": "Bernard Marr",
+      "date": "2026-05-18",
+      "primary_url": "https://www.linkedin.com/pulse/when-does-ai-become-too-dangerous-ignore-bernard-marr-hmu8e",
+      "score": 7.5
+    },
+    {
+      "title": "Google I/O 2026 enterprise innovations: Gemini Enterprise Managed Agents API, Gemini Spark with DLP gateway, CodeMender security agent",
+      "source": "Google Cloud Blog",
+      "author": "Thomas Kurian (Google Cloud CEO)",
+      "date": "2026-05-19",
+      "primary_url": "https://cloud.google.com/blog/products/ai-machine-learning/innovations-from-google-io-26-on-google-cloud",
+      "score": 9.0
+    },
+    {
+      "title": "OpenAI model disproves 80-year-old Erdős geometry conjecture — first autonomous AI solution to a central open mathematics problem",
+      "source": "OpenAI",
+      "author": "OpenAI research team",
+      "date": "2026-05-20",
+      "primary_url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
+      "score": 8.5
+    },
+    {
+      "title": "TechCrunch — OpenAI claims it solved an 80-year-old math problem; mathematicians this time back the claim",
+      "source": "TechCrunch",
+      "author": "Rebecca Bellan",
+      "date": "2026-05-20",
+      "primary_url": "https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/",
+      "score": 7.5
+    },
+    {
+      "title": "CalMatters — Newsom signs California AI executive order: severance, job training, and labor-market tracking in response to AI disruption",
+      "source": "CalMatters",
+      "author": "Khari Johnson",
+      "date": "2026-05-21",
+      "primary_url": "https://calmatters.org/economy/technology/2026/05/california-ai-layoffs-order/",
+      "score": 7.0
+    },
+    {
+      "title": "LinkedIn announces 875 layoffs (5% of workforce) despite 12% revenue growth — AI hiring tools at $450M ARR",
+      "source": "INDmoney / Reuters / Bloomberg",
+      "author": "Multiple reporters; Daniel Shapero (LinkedIn CEO, internal memo)",
+      "date": "2026-05-18",
+      "primary_url": "https://www.indmoney.com/blog/us-stocks/linkedin-layoffs-2026-microsoft-ai-spending-msft-stock-analysis",
+      "score": 7.0
+    },
+    {
+      "title": "@askcatgpt Instagram: 'What to ACTUALLY care about from Google I/O 2026' — Google Partner post, Gemini Spark focus, 1,210 likes",
+      "source": "Instagram",
+      "author": "@askcatgpt",
+      "date": "2026-05-22",
+      "primary_url": "https://www.instagram.com/p/DYqqAQUCA5e/",
+      "score": 6.0
+    },
+    {
+      "title": "@codewithbrij: The AI Stack May 2026 — observability and governance are now vertical rails, not layers",
+      "source": "Instagram",
+      "author": "@codewithbrij",
+      "date": "2026-05-20",
+      "primary_url": "https://www.instagram.com/p/DYlqnhQFJCN/",
+      "score": 6.5
+    },
+    {
+      "title": "@alliekmiller Instagram Reel: Google display glasses demo — plant ID, calendar creation, Nano Banana Pro outfit editing",
+      "source": "Instagram",
+      "author": "@alliekmiller",
+      "date": "2026-05-22",
+      "primary_url": "https://www.instagram.com/reel/DYpqq5XxzVo/",
+      "score": 6.5
+    },
+    {
+      "title": "Build Your Own Claude Code AI Agent tutorial — TikTok/YouTube, agent architecture for non-specialists, posted May 19",
+      "source": "YouTube / TikTok",
+      "author": "Independent developer tutorial",
+      "date": "2026-05-19",
+      "primary_url": "https://www.youtube.com/watch?v=k_D_C3ExypU",
+      "score": 6.5
+    },
+    {
+      "title": "Gemini Spark 24/7 agent explainer — 'invisible tireless employee' for consumer audiences, cross-posted to TikTok, posted May 18",
+      "source": "YouTube Shorts / TikTok",
+      "author": "Tech commentary channel",
+      "date": "2026-05-18",
+      "primary_url": "https://www.youtube.com/watch?v=k8p2gcz6y7w",
+      "score": 6.5
+    },
+    {
+      "title": "@mavenhq Instagram: The AI Agent Stack in 2026 — 746K views, 194 comments, continuing to surface in feeds during I/O week",
+      "source": "Instagram",
+      "author": "@mavenhq",
+      "date": "2026-05-13",
+      "primary_url": "https://www.instagram.com/reel/DYSjNKUPdsi/",
+      "score": 6.0
+    },
+    {
+      "title": "CBS News vibe coding explainer — mainstream business audience, 'low risk, internal facing, a few people' as enterprise starting point",
+      "source": "YouTube (CBS News) / TikTok",
+      "author": "CBS News",
+      "date": "2026-05-24",
+      "primary_url": "https://www.youtube.com/watch?v=qyYgUgTf0sA",
+      "score": 6.0
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Single-player AI design dominates all major product launches; multi-role enterprise workflows are an explicit gap",
+      "evidence": "Google I/O 2026 had zero multi-user AI workflow demos. Gemini Spark, Claude Code, and every TikTok/Instagram AI tutorial this week assumed one human, one agent, one task. Allie K. Miller's observation (526 reactions, 113 comments) named this gap explicitly: 'I worry AI is becoming single-player mode only.'",
+      "what_to_watch": "Whether Anthropic's multi-agent orchestration (public beta from Code with Claude 2026) adds multi-human coordination capability, or whether a new entrant addresses the multi-role enterprise workflow gap explicitly."
+    },
+    {
+      "pattern": "Tokenmaxxing emerging as a developer KPI — directly colliding with enterprise cost governance",
+      "evidence": "Hamid Najib's May 22 LinkedIn week recap named tokenmaxxing as the week's defining developer behavior shift. Prior week's Anthropic pricing controversy (image prompt cost tripling, Uber's $2,000/person/month budget exhaustion) shows what tokenmaxxing looks like without cost guardrails at scale.",
+      "what_to_watch": "Whether enterprise AI vendors introduce consumption-based usage governance tools (per-team budgets, cost-per-output dashboards) in Q3 2026, or whether budget crises force reactive governance after the fact."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Ali Abdaal TikTok AI tool tier list with Claude Code and Perplexity in S-tier — referenced in Lightreel AI Prosumer Report",
+      "reason": "Primary TikTok URL for this specific video was not directly accessible for engagement verification. Engagement figures (views, likes) could not be confirmed at fetch time. Referenced via Lightreel aggregator report only.",
+      "attempted_url": "https://lightreel.ai/blogs/ai-prosumer-tools-on-tiktok"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Monitor @rpn (Roberto Nickson) TikTok and Instagram directly during Google I/O-adjacent weeks — he was present at I/O 2026 and his content surfaced in other creators' captions but his own posts were not directly fetched this cycle.",
+      "Add the Google Cloud Blog (cloud.google.com/blog) as a primary source for enterprise AI product releases — its I/O 2026 coverage contained more actionable enterprise detail than any LinkedIn post this week.",
+      "Track TechCrunch directly for Google I/O and Anthropic announcements — the Gemini Spark and math-proof coverage was higher quality than aggregator summaries."
+    ],
+    "sources_to_drop": [
+      "Facebook section continues to produce no enterprise-relevant signal. Maintain monitoring but deprioritize active research time in subsequent weeks unless a specific community or page produces enterprise AI content."
+    ],
+    "topics_to_add": [
+      "Multi-role AI workflow design — the single-player AI gap identified by Allie K. Miller is the most enterprise-relevant structural observation of the week and should be tracked as a dedicated topic in future cycles.",
+      "AI governance policy (state and federal) — Newsom's executive order signals that regulatory activity on AI workforce disruption is accelerating. Track state-level AI policy as a recurring section.",
+      "Tokenmaxxing and enterprise token cost governance — track developer community framing of token consumption as a KPI and enterprise responses."
+    ],
+    "topics_to_drop": [
+      "Consumer entertainment AI (AI-generated songs, viral AI dances) — no signal this week from consumer entertainment AI that translated to enterprise concepts with sufficient specificity to include."
+    ],
+    "notes": "This week was exceptionally strong for LinkedIn due to Google I/O 2026. The week produced the highest-engagement enterprise AI LinkedIn posts of the year to date (Google official post at 2,900 reactions, Allie K. Miller at 526 reactions, Dan Martell at 716 reactions). The 0.80 freshness floor was easily met — only one item (Maven HQ Instagram) is a continuing signal from a prior week. The Facebook section produced no enterprise-relevant content; this is consistent with prior weeks. Methodology: all top pick URLs were fetched directly and engagement figures were captured at fetch time from the rendered page. Section item engagement figures reflect page-reported values as of May 24, 2026."
+  }
+}

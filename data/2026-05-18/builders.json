@@ -1,0 +1,854 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.90,
+    "items_total": 30,
+    "items_new": 27,
+    "items_returning": 3,
+    "empty_week_note": ""
+  },
+
+  "executive_summary": [
+    {
+      "headline": "Token economics become the dominant engineering problem: three independent tools shipped this week (Semble, CodeGraph v0.8.0, rtk) that each cut the token cost of a single coding-agent session by 60–98%, with reproducible benchmarks attached",
+      "body": "The week of May 18 produced a cluster of tools aimed at making agent sessions cheaper, not smarter. Semble (MinishLab/semble, 3.6k stars, HN front page May 18: 270 pts / 89 comments) is an MIT-licensed MCP server that replaces grep+read with local semantic code retrieval, achieving 98% fewer tokens and 94% recall at 2k tokens — where grep+read needs a 100k context window for 85% recall. CodeGraph (colbymchenry/codegraph) shipped v0.8.0 on May 20 with answer-steering that delivers 35% cost and 70% token reduction across 7 real-world codebases. The rtk Rust CLI proxy (rtk-ai/rtk, 51.9k stars on May 21 snapshot) compresses shell command outputs before they reach LLM context, delivering 60–90% token reduction with zero dependencies. These are not prompt-engineering papers; each ships a reproducible benchmark or token log.",
+      "primary_url": "https://github.com/MinishLab/semble"
+    },
+    {
+      "headline": "Forge (antoinezambelli/forge) takes an 8B local model from 53% to 99% on multi-step agentic tasks using five domain-agnostic guardrail layers — accepted to ACM CAIS '26, 680 HN points",
+      "body": "Show HN: Forge (May 19, 680 pts) is the week's highest-scored builder post. The thesis: a local 8B model with Forge guardrails (99.3%) outperforms Claude Sonnet without guardrails (87.2%). The guardrail stack is five layers — retry nudges, step enforcement, error recovery, rescue parsing, VRAM-aware context compaction — each independently toggleable. Error recovery scores 0% on every model tested, local and frontier, without the retry mechanism. That is an architectural absence, not a capability gap. The paper covers 97 model/backend configurations across 18 scenarios, 50 runs each. A proxy mode lets any OpenAI-compatible client route through Forge transparently.",
+      "primary_url": "https://github.com/antoinezambelli/forge"
+    },
+    {
+      "headline": "Datasette Agent ships first alpha — conversational SQL over any SQLite database with a plugin-first governance model that includes per-user USD spend caps",
+      "body": "Simon Willison announced Datasette Agent on May 21 as the convergence of three years of LLM library work with Datasette. The architecture is plugin-first: the base agent handles conversational SQL queries, with datasette-agent-charts adding Observable Plot visualizations, datasette-agent-openai-imagegen adding image generation, and datasette-agent-sprites adding sandboxed code execution. Four alpha releases (0.1a1–0.1a4) shipped during the week. The datasette-llm-limits plugin (May 21) adds per-user USD spending caps — the governance primitive that enterprise teams need before wiring any LLM to internal data.",
+      "primary_url": "https://simonwillison.net/2026/May/21/datasette-agent/"
+    },
+    {
+      "headline": "Key takeaway: The open-source AI engineering community this week converged on one shared constraint — context cost — and attacked it from three independent angles: smarter retrieval (Semble, CodeGraph), compressed outputs (rtk), and reliability layers that prevent wasted retries (Forge).",
+      "body": "Each of the three token-cost tools ships a different primitive: Semble replaces file-read cycles with semantic retrieval at the MCP layer; CodeGraph pre-indexes the codebase knowledge graph so agents navigate with fewer tool calls; rtk compresses shell output before it enters context. Together they address the three main token sources in a coding-agent session: retrieval, exploration, and command output. Forge adds the fourth dimension: reliability, which determines how many retries — and therefore how many wasted token cycles — a workflow generates. An enterprise AI team that treats these four as a stack rather than four independent experiments can materially reduce the per-task cost of agentic workflows on existing infrastructure."
+    }
+  ],
+
+  "top_picks": [
+    {
+      "id": "forge-guardrails-8b-99pct",
+      "title": "antoinezambelli/forge",
+      "subtitle": "Open-source reliability layer that takes an 8B local model from 53% to 99% on multi-step agentic workflows using five domain-agnostic guardrail layers — peer-reviewed at ACM CAIS '26",
+      "source": "GitHub / Hacker News",
+      "author": "antoinezambelli",
+      "date": "2026-05-19",
+      "primary_url": "https://github.com/antoinezambelli/forge",
+      "secondary_urls": [
+        {
+          "label": "Show HN thread (680 pts, May 19 2026)",
+          "url": "https://news.ycombinator.com/item?id=48192383"
+        },
+        {
+          "label": "Demo video",
+          "url": "https://youtu.be/MzRgJoJAXGc"
+        }
+      ],
+      "summary": "Forge is an open-source reliability layer for self-hosted LLM tool-calling. Five independently toggleable guardrail layers wrap any local model. Result: Ministral 8B with Forge scores 99.3% on multi-step agentic benchmarks vs. 53% baseline; Claude Sonnet without guardrails scores 87.2%. Error recovery contributes 0% accuracy to every model tested without the retry mechanism. The paper covers 97 model/backend configurations, 18 scenarios, 50 runs each, accepted to ACM CAIS '26. A proxy mode routes any OpenAI-compatible client through Forge transparently.",
+      "verified": true,
+      "verified_at": "2026-05-24T12:00:00Z",
+      "key_takeaways": [
+        "A local 8B model with Forge guardrails (99.3%) outperforms Claude Sonnet without guardrails (87.2%) — the reliability gap between frontier and local models is architectural, not capability-based.",
+        "Error recovery scores 0% for every model tested without the retry mechanism. Forge adds ToolResolutionError (distinguishing 'tool ran and found nothing' from 'tool ran and returned data'), which prevents bad data cascading downstream silently.",
+        "The same model weights score 7% vs. 83% depending on serving layer — a 75-point accuracy swing from infrastructure alone. Forge makes the serving configuration a first-class parameter in its eval harness."
+      ],
+      "results": "Ministral 8B with Forge: 99.3%. Claude Sonnet without Forge: 87.2%. 97 model/backend configurations, 18 scenarios, 50 runs each. Show HN: 680 pts (May 19, 2026). Paper: ACM CAIS '26, May 26–29, San Jose. Source: github.com/antoinezambelli/forge README and HN item 48192383.",
+      "enterprise_adaptation": "Implementation pattern: Deploy Forge in proxy mode on an internal server and route your existing OpenAI-compatible agentic workflow clients through it — no application code changes required. Configure the retry nudge layer first (highest-impact layer: 24–49 point accuracy improvement in the paper's ablation study) and enable the VRAM-aware context manager to prevent silent CPU fallback on managed hardware. The step enforcement layer can encode your organization's required task sequencing (e.g., a read-before-write rule for database agents, or a plan-before-implement rule for coding agents) without any prompt engineering. | Regulated-environment caveats: Forge is Python-based and installs via pip; run a dependency audit before production deployment. The proxy mode intercepts all tool call traffic — ensure the Forge server is deployed within your network perimeter and logs are routed to your SIEM. The VRAM query via nvidia-smi at startup requires appropriate permissions on the host machine. Treat the backend configuration (serving layer, quant level, temperature) as part of the test fixture — small changes produce large accuracy swings per the paper. | 30-day experiment: Identify one internal multi-step agentic workflow that currently has a measurable failure rate. Deploy Forge in proxy mode with retry nudges and error recovery enabled. Run the workflow against a fixed test set of 20 inputs with and without Forge active. Compare completion rate, failure mode distribution, and token cost per successful completion.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 680
+      },
+      "tags": ["Agent Reliability", "Guardrails", "Local LLM", "Tool Calling", "Python"],
+      "category": "Agent Infrastructure",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "semble-code-search-mcp-98pct-tokens",
+      "title": "MinishLab/semble v0.2.0",
+      "subtitle": "Local MCP server for semantic code search — 98% fewer tokens than grep+read, indexes a repo in 250ms, queries in 1.5ms, CPU-only",
+      "source": "GitHub / Hacker News",
+      "author": "MinishLab",
+      "date": "2026-05-18",
+      "primary_url": "https://github.com/MinishLab/semble",
+      "secondary_urls": [
+        {
+          "label": "Show HN (270 pts, 89 comments, May 18 2026)",
+          "url": "https://news.ycombinator.com/front?day=2026-05-18"
+        }
+      ],
+      "summary": "Semble is an MIT-licensed code search library and MCP server for AI coding agents. It replaces the grep+read cycle with local semantic retrieval using a 137M-parameter CPU-only model, achieving 98% fewer tokens and 94% recall at 2k tokens vs. 85% for grep+read at a 100k context window. v0.2.0 (May 21) adds non-blocking MCP server model loading. Average repo indexes in 250ms; queries resolve in 1.5ms. 218x faster indexing than CodeRankEmbed Hybrid, 10x faster queries, 99% of its retrieval quality. 3.6k stars.",
+      "verified": true,
+      "verified_at": "2026-05-24T12:00:00Z",
+      "key_takeaways": [
+        "98% fewer tokens at 94% recall vs. grep+read at 85% recall with a 100k context window — better retrieval quality at a fraction of the context cost.",
+        "Runs entirely on CPU with no external service dependencies, deployable inside a network perimeter without egress to any external model API.",
+        "218x indexing speed advantage over transformer-based alternatives means the index stays fresh without a background GPU process."
+      ],
+      "results": "98% fewer tokens than grep+read. 94% recall at 2k tokens vs. 85% for grep+read at 100k. 218x faster indexing, 10x faster queries. 99% of CodeRankEmbed quality. Index time ~250ms. Query latency ~1.5ms. 3.6k GitHub stars. Show HN: 270 pts, 89 comments (May 18, 2026). Source: github.com/MinishLab/semble README.",
+      "enterprise_adaptation": "Implementation pattern: Deploy Semble as an MCP server on developer workstations using the uvx one-command install. The server runs locally with no external API calls, safe for environments with controlled internet egress. Point approved coding agents (Claude Code, Codex CLI, Cursor) at the Semble MCP endpoint and add the AGENTS.md snippet to project repositories. This replaces the grep+read cycle that inflates context windows on large monorepos. The token reduction is most pronounced on repositories with 10k+ files. | Regulated-environment caveats: The 137M-parameter model weights are downloaded on first use from a public model registry; host the approved checkpoint in your internal artifact registry after an initial dependency review. Semble indexes code locally — no code content leaves the host. Verify uvx installation is compatible with your managed endpoint security policies. | 30-day experiment: Pick a large internal codebase where coding agents currently use many sequential grep and cat tool calls. Install Semble as an MCP server on one developer's workstation and log token consumption per session with and without Semble active. Compare average tokens per successful task completion over 30 working days.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 270,
+        "comments": 89
+      },
+      "tags": ["MCP Server", "Code Search", "Token Efficiency", "Semantic Search", "CPU Inference"],
+      "category": "MCP Server",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "codegraph-v0-8-0-semantic-knowledge-graph",
+      "title": "colbymchenry/codegraph v0.8.0",
+      "subtitle": "Pre-indexed semantic code knowledge graph — v0.8.0 (May 20) cuts token cost 35% and tool calls 70% across 7 real-world codebases",
+      "source": "GitHub",
+      "author": "colbymchenry",
+      "date": "2026-05-20",
+      "primary_url": "https://github.com/colbymchenry/codegraph",
+      "secondary_urls": [],
+      "summary": "CodeGraph is a TypeScript-based local SQLite code knowledge graph for Claude Code, Codex, Cursor, and OpenCode. v0.8.0 (May 20) adds answer-steering that delivers 35% cost reduction, 59% fewer tokens, 49% faster response, and 70% fewer tool calls vs. a no-graph baseline. Benchmarks run on 7 real-world open-source codebases using Claude Opus 4.7 / Claude Code v2.1.145. Excalidraw: 83→12 tool calls; Tokio: 75→9 tool calls. Supports 19+ languages, 100% local, no API keys. 12.9k stars, 741 forks.",
+      "verified": true,
+      "verified_at": "2026-05-24T12:00:00Z",
+      "key_takeaways": [
+        "70% tool-call reduction on complex codebases (Excalidraw: 83→12, Tokio: 75→9) directly reduces LLM inference cost — each tool call is a round trip to the model.",
+        "Benchmark methodology is reproducible: headless Claude Code with --strict-mcp-config, 4 runs per arm, median reported, against known public repos at --depth 1.",
+        "Framework-aware route detection (13 frameworks, 19+ languages) means the knowledge graph understands URL patterns and middleware chains, relevant for service-oriented codebases."
+      ],
+      "results": "7 real-world codebases, 4 runs per arm, median reported. Average: 35% cheaper, 59% fewer tokens, 49% faster, 70% fewer tool calls. Best-case: Excalidraw (83→12 tool calls, $1.02→$0.54). Tested with Claude Opus 4.7 / Claude Code v2.1.145. 12.9k GitHub stars. Source: github.com/colbymchenry/codegraph README benchmarks.",
+      "enterprise_adaptation": "Implementation pattern: Install CodeGraph as an MCP server against internal monorepo or service repositories. The SQLite index stays on the developer's machine — no code leaves the host. Use the auto-sync file watcher for incremental indexing; native OS events mean no full rebuild on change. For large codebases spanning multiple services, run one CodeGraph instance per service boundary to keep query latency low and context focused. | Regulated-environment caveats: Requires tree-sitter and SQLite with WASM fallbacks; validate WASM sandbox is permitted under your endpoint security policy. Pin the npm package to a specific version in your internal registry. Framework route detection is available for 13 frameworks; for internal frameworks, use the symbol-lookup functionality as baseline. | 30-day experiment: Run one developer's coding agent sessions for two weeks with CodeGraph disabled (baseline) and two weeks with it enabled, logging total tokens consumed and wall-clock time per merged PR. Compare per-PR cost at your current API rate.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 2123
+      },
+      "tags": ["Code Intelligence", "MCP Server", "Token Efficiency", "TypeScript", "Knowledge Graph"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "datasette-agent-first-alpha",
+      "title": "simonwillison/datasette-agent",
+      "subtitle": "First alpha of Datasette Agent — extensible AI assistant for Datasette with per-user spend caps and plugin-gated capabilities",
+      "source": "simonwillison.net",
+      "author": "simonwillison",
+      "date": "2026-05-21",
+      "primary_url": "https://simonwillison.net/2026/May/21/datasette-agent/",
+      "secondary_urls": [
+        {
+          "label": "agent.datasette.io live demo",
+          "url": "https://agent.datasette.io"
+        },
+        {
+          "label": "datasette-agent on GitHub",
+          "url": "https://github.com/simonwillison/datasette-agent"
+        }
+      ],
+      "summary": "Datasette Agent is a plugin-first AI assistant for Datasette that answers natural-language questions against any SQLite database. Four companion plugins shipped the same week: base SQL querying, datasette-agent-charts (Observable Plot), datasette-agent-openai-imagegen (ChatGPT Images 2.0), datasette-agent-sprites (Fly Sprites sandboxed code execution). The datasette-llm-limits plugin (May 21) adds per-user USD spending caps. Four alpha releases (0.1a1–0.1a4) shipped during the week. Live demo at agent.datasette.io runs on Gemini 3.1 Flash-Lite.",
+      "verified": true,
+      "verified_at": "2026-05-24T12:00:00Z",
+      "key_takeaways": [
+        "datasette-llm-limits ships a per-user USD spending cap as a first-class configuration option — the governance primitive that allows an enterprise team to deploy a user-accessible data querying tool without open-ended LLM spend exposure.",
+        "The plugin-first architecture means teams can audit and approve individual capabilities (SQL queries, charts, code execution) independently rather than accepting a monolithic agent feature set.",
+        "Running on open-weight models in LM Studio locally is documented as a one-liner uvx command, enabling conversational data querying against internal databases without sending query content to a cloud endpoint."
+      ],
+      "results": "Four plugin releases (0.1a1–0.1a4) in a single week. Three companion plugins shipped. datasette-llm-limits 0.1a1 adds per-user spending caps. Live demo at agent.datasette.io. Source: simonwillison.net/2026/May/21/datasette-agent/.",
+      "enterprise_adaptation": "Implementation pattern: Deploy datasette-agent on an internal Datasette instance pointed at internal SQLite databases (operational metrics, product telemetry, ERP exports). Configure datasette-llm-limits with a per-user daily USD cap to bound LLM spend. Start with the base SQL-querying functionality before enabling charts or code execution plugins — the SQL layer alone provides significant value and has the narrowest attack surface. Use the open-weight model path (LM Studio + uvx) to keep query content on-premises for databases containing regulated data. | Regulated-environment caveats: The code execution plugin (datasette-agent-sprites) runs code in cloud-hosted Fly Sprites sandboxes; disable this for data that cannot leave your network perimeter. The image generation plugin sends requests to ChatGPT Images 2.0; disable similarly. The base SQL and chart plugins can run with on-premises LLMs. The project is early alpha (0.1a4 as of May 24); audit the dependency tree before internal production deployment. | 30-day experiment: Point datasette-agent at one internal analytics dataset your team currently queries via manual SQL or a BI tool. Enable only the base SQL plugin and datasette-llm-limits with a $1/user/day cap. Have five analysts use it for routine data queries for two weeks. Measure time per query task vs. previous workflow and capture any SQL accuracy failures.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {},
+      "tags": ["Agent", "SQLite", "Data Querying", "Plugin Architecture", "Python"],
+      "category": "Agent Framework",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "rtk-rust-token-killer-cli",
+      "title": "rtk-ai/rtk",
+      "subtitle": "Single Rust binary that compresses shell command outputs before they reach LLM context — 60–90% token reduction on common dev commands",
+      "source": "GitHub",
+      "author": "rtk-ai",
+      "date": "2026-05-18",
+      "primary_url": "https://github.com/rtk-ai/rtk",
+      "secondary_urls": [],
+      "summary": "rtk (Rust Token Killer) is a CLI proxy that intercepts command outputs — ls, cat, grep, git, npm test, cargo test, pytest, docker ps — and compresses them before they enter the LLM context window. A typical 30-minute Claude Code session drops from ~150,000 tokens to ~45,000 tokens (70% reduction). Single zero-dependency Rust binary installable with one command. Integrates with Claude Code via hooks. Works with Cursor, Gemini CLI, Codex, Copilot. 51.9k stars on May 21 GitHub trending snapshot.",
+      "verified": true,
+      "verified_at": "2026-05-24T12:00:00Z",
+      "key_takeaways": [
+        "90% token reduction on test command output (npm test, cargo test, pytest) is the highest-leverage intervention — test output is verbose by design; rtk shows only failures, which is what agents need.",
+        "A single Rust binary with zero dependencies means the attack surface for supply-chain review is minimal and tractable.",
+        "Hook-first mode applies automatically to every agent conversation and subagent without per-session configuration."
+      ],
+      "results": "~150,000 tokens per session → ~45,000 tokens (70% reduction). pytest -90%, npm test -90%, git push -92%, grep -80%, ls/tree -80%. 51.9k GitHub stars (May 21 trending snapshot). Source: github.com/rtk-ai/rtk README.",
+      "enterprise_adaptation": "Implementation pattern: Deploy rtk in hook-first mode on developer workstations running sanctioned coding agents. The hook integrates with Claude Code's settings.json and applies automatically to all sessions. For teams with a standardized coding agent setup, include rtk initialization in your developer environment provisioning script. Works with Cursor, Gemini CLI, Codex, and Copilot regardless of which coding agent is approved for a given team. | Regulated-environment caveats: rtk is a Rust binary available via GitHub Releases; host the approved binary in your internal artifact registry and pin the version in provisioning scripts. Review the compression heuristics for any output format your agents treat as structured data — rtk is designed for developer workflow outputs. The hook modifies ~/.claude/settings.json; validate this is compatible with your managed endpoint security profile. | 30-day experiment: Deploy rtk on five developer workstations in hook-first mode. Compare total LLM API spend for those five developers against a control group of five without rtk over 30 days. Normalize by number of agent sessions per developer. Report the per-session and per-PR token cost delta.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 1156
+      },
+      "tags": ["Token Efficiency", "CLI", "Rust", "Coding Agent", "Dev Tool"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new"
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "Top repos by weekly star delta for the week of May 18–24, 2026. Figures from the curvesoft.net GitHub trending digest (May 21) and direct repo fetches.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "trending-tinyhumansai-openhuman",
+          "title": "tinyhumansai/openhuman",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/tinyhumansai/openhuman",
+          "summary": "Open-source personal AI super-intelligence built in Rust. Turns connected data into sub-3k-token Markdown chunks, organizes them into summary trees, and stores the index locally in SQLite. 23.6k total stars; 3,394 stars gained on May 21 — the highest single-day delta in this week's trending snapshot.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 3394 },
+          "tags": ["Personal AI", "Rust", "Privacy", "Local-First"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "trending-colbymchenry-codegraph",
+          "title": "colbymchenry/codegraph",
+          "source": "GitHub",
+          "date": "2026-05-20",
+          "primary_url": "https://github.com/colbymchenry/codegraph",
+          "summary": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, OpenCode — 35% cheaper, 59% fewer tokens, 70% fewer tool calls vs. baseline (7 real-world codebases, Claude Opus 4.7). v0.8.0 shipped May 20 with answer-steering. 12.9k stars; 2,123 stars gained May 21.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 2123 },
+          "tags": ["Code Intelligence", "MCP Server", "Token Efficiency", "TypeScript"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-eyaltoledano-claude-task-master",
+          "title": "eyaltoledano/claude-task-master",
+          "source": "GitHub",
+          "date": "2026-05-18",
+          "primary_url": "https://github.com/eyaltoledano/claude-task-master",
+          "summary": "AI-powered task management system for multi-step development workflows. Drops into Cursor, Lovable, Windsurf, Roo. Manages task decomposition, context threading, and agent handoff across sessions. 25.3k stars; 2,449 weekly star delta in GitHub trending weekly snapshot.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 2449 },
+          "tags": ["Task Management", "Agent Orchestration", "JavaScript"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "claude-task-master appeared in the May 4 index; returning with a 2,449 weekly star delta — one of the highest velocity signals in the weekly trending window.",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-obra-superpowers",
+          "title": "obra/superpowers",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/obra/superpowers",
+          "summary": "Agentic skills framework and software development methodology. Structures the full dev lifecycle: brainstorm, spec, plan, subagent-driven implementation, TDD, review. Works across Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot CLI. 200k+ total stars; 1,743 stars gained May 21. Accepted into Anthropic's Claude plugin marketplace.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 1743 },
+          "tags": ["Agent Skills", "Development Methodology", "Shell", "Multi-Agent"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-rtk-ai-rtk",
+          "title": "rtk-ai/rtk",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/rtk-ai/rtk",
+          "summary": "CLI proxy that compresses shell command outputs before they enter LLM context — 60–90% token reduction on common dev commands. Single Rust binary, zero dependencies. 51.9k total stars (May 21 trending snapshot); 1,156 stars gained May 21.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 1156 },
+          "tags": ["Token Efficiency", "CLI", "Rust", "Dev Tool"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-rohitg00-agentmemory",
+          "title": "rohitg00/agentmemory",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/rohitg00/agentmemory",
+          "summary": "Persistent memory layer for AI coding agents. Captures every tool call, deduplicates and privacy-filters observations (strips API keys and secrets), LLM-compresses into structured facts, and indexes across keyword, semantic embeddings, and knowledge graph. Fuses results with Reciprocal Rank Fusion. Four memory tiers. 15.1k stars; 1,080 stars gained May 21.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 1080 },
+          "tags": ["Memory", "Agent Infrastructure", "TypeScript", "Knowledge Graph"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "trending-tensorzero-tensorzero",
+          "title": "tensorzero/tensorzero",
+          "source": "GitHub",
+          "date": "2026-05-18",
+          "primary_url": "https://github.com/tensorzero/tensorzero",
+          "summary": "Open-source LLMOps stack unifying gateway, observability, evaluation, and optimization in a single Rust-based service. The feedback loop turns production inference data into fine-tuning and prompt optimization inputs. 10.4k stars; 2,239 weekly star delta in GitHub trending weekly snapshot. Gateway under 1ms p99 overhead at 10k+ QPS.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 2239 },
+          "tags": ["LLMOps", "Gateway", "Observability", "Rust"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-minishlab-semble",
+          "title": "MinishLab/semble",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/MinishLab/semble",
+          "summary": "Local semantic code search MCP server — 98% fewer tokens vs. grep+read, 218x faster indexing than transformer alternatives, CPU-only. v0.2.0 shipped May 21 with non-blocking MCP server model loading. 3.6k stars. Active commit week: five commits May 18–21.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 800 },
+          "tags": ["MCP Server", "Code Search", "Python", "Token Efficiency"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-karpathy-autoresearch",
+          "title": "karpathy/autoresearch",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/karpathy/autoresearch",
+          "summary": "AI agents running autonomous ML research on single-GPU nanochat training. Agents design experiments, run training jobs, interpret results, and iterate — a self-directed research loop with bounded compute. 82.3k total stars; 367 stars gained May 21.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 367 },
+          "tags": ["Agent Research", "ML Training", "Python", "Autonomous"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "trending-humanlayer-12-factor-agents",
+          "title": "humanlayer/12-factor-agents",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/humanlayer/12-factor-agents",
+          "summary": "Twelve principles for building production-grade LLM-powered software. Covers context management, tool design, failure handling, and human-in-the-loop patterns. 21.4k total stars; 366 stars gained May 21. TypeScript reference implementations accompany each factor.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 366 },
+          "tags": ["Agent Architecture", "Best Practices", "TypeScript", "Production"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Skills and MCP Servers",
+      "description": "Newly-published agent skills, MCP servers, prompt libraries, and eval frameworks from the week of May 18–24, 2026.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "skills-minishlab-semble-v020",
+          "title": "MinishLab/semble v0.2.0 MCP Server",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/MinishLab/semble",
+          "summary": "v0.2.0 adds non-blocking MCP server model loading, resolving a latency issue where the initial tool call blocked while the 137M-parameter model loaded. README updated May 19 to document integration with more subagents beyond Claude Code. Setup is one uvx command; AGENTS.md snippet provided.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 3600 },
+          "tags": ["MCP Server", "Code Search", "Python"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skills-obra-superpowers-marketplace",
+          "title": "obra/superpowers — Accepted into Anthropic Claude plugin marketplace",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/obra/superpowers",
+          "summary": "Accepted into Anthropic's Claude plugin marketplace this week. Superpowers provides a structured development methodology as composable skills: /brainstorm (design refinement), /write-plan (task decomposition), /execute-plan (subagent dispatch). Uses git worktrees for task isolation and enforces RED-GREEN-REFACTOR test discipline via skill triggers. Works across Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot CLI without modification. 200k+ stars.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 200000 },
+          "tags": ["Agent Skills", "Development Methodology", "Shell", "Multi-Agent"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skills-mattpocock-skills-collection",
+          "title": "mattpocock/skills",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/mattpocock/skills",
+          "summary": "Production-grade engineering skills for AI coding agents. 97k total stars; 2,540 stars gained May 21. Includes grill-me (Socratic relentless design review), ubiquitous-language (domain glossary extraction), and TypeScript-focused engineering skills. 156.2k installs. Works with Claude Code, Codex, Cursor.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 2540 },
+          "tags": ["Agent Skills", "TypeScript", "Engineering", "Shell"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skills-gentleman-programming-engram-mcp",
+          "title": "Gentleman-Programming/engram — Go MCP memory server",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/Gentleman-Programming/engram",
+          "summary": "Persistent memory system for AI coding agents — a Go binary with SQLite + FTS5 for storage, an MCP server for agent access, HTTP API, CLI, and TUI. Agent-agnostic: works with any MCP-compatible coding agent. 3.7k stars; 39 stars gained May 21. One binary, local SQLite, no external dependencies.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 39 },
+          "tags": ["MCP Server", "Memory", "Go", "SQLite"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 1, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skills-datasette-llm-limits-governance",
+          "title": "simonwillison/datasette-llm-limits — per-user LLM spend cap plugin",
+          "source": "simonwillison.net",
+          "date": "2026-05-21",
+          "primary_url": "https://simonwillison.net/2026/May/21/datasette-agent/",
+          "summary": "Plugin for datasette-llm that adds configurable per-user and global USD spending limits on LLM usage inside Datasette. Configuration is per-user or global, with rolling window (e.g., $1.00 per user per 24 hours). Works with datasette-llm-accountant for cost tracking. Released May 21 as 0.1a1. Ships the governance primitive enterprise teams need before deploying any user-accessible LLM interface against internal data.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": {},
+          "tags": ["Governance", "Spend Control", "Plugin", "Python"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skills-addyosmani-agent-skills",
+          "title": "addyosmani/agent-skills",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/addyosmani/agent-skills",
+          "summary": "Production-grade engineering skills for AI coding agents from Addy Osmani. 44.3k total stars; 394 stars gained May 21. Focused on web engineering patterns: performance, accessibility, testing, CI/CD. Complements obra/superpowers as a domain-specific skill layer for front-end and full-stack engineering teams.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 394 },
+          "tags": ["Agent Skills", "Web Engineering", "Shell", "Performance"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN and Indie Builds",
+      "description": "Show HN posts with working repos or demos, and standout indie projects from the week of May 18–24, 2026.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "showhn-forge-guardrails-8b-99pct",
+          "title": "Show HN: Forge — Guardrails take an 8B model from 53% to 99% on agentic tasks",
+          "source": "Hacker News",
+          "date": "2026-05-19",
+          "primary_url": "https://news.ycombinator.com/item?id=48192383",
+          "secondary_urls": [
+            {
+              "label": "Repo: antoinezambelli/forge",
+              "url": "https://github.com/antoinezambelli/forge"
+            }
+          ],
+          "summary": "The week's highest-scoring Show HN (680 pts). Author built Forge after hitting the compounding math problem: 90% per-step accuracy in a 5-step workflow produces a 40% failure rate. Five domain-agnostic guardrail layers take Ministral 8B to 99.3%. Claude Sonnet without guardrails: 87.2%. Key finding in comments: the same model weights score 7% vs. 83% depending on serving layer — infrastructure variance dominates model variance in some configurations.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "upvotes": 680 },
+          "tags": ["Guardrails", "Local LLM", "Reliability", "ACM"],
+          "category": "Agent Infrastructure",
+          "platform": "hn",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "showhn-semble-code-search-98pct-tokens",
+          "title": "Show HN: Semble — Code search for agents that uses 98% fewer tokens than grep",
+          "source": "Hacker News",
+          "date": "2026-05-18",
+          "primary_url": "https://news.ycombinator.com/front?day=2026-05-18",
+          "secondary_urls": [
+            {
+              "label": "Repo: MinishLab/semble",
+              "url": "https://github.com/MinishLab/semble"
+            }
+          ],
+          "summary": "270 pts, 89 comments, HN front page May 18. Local CPU-only MCP server replaces grep+read cycles with semantic retrieval: 98% fewer tokens, 94% recall at 2k tokens. Community interest centered on the 137M-parameter CPU model quality and practical indexing speed claims, which reviewers independently verified.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "upvotes": 270, "comments": 89 },
+          "tags": ["MCP Server", "Code Search", "Token Efficiency", "CPU"],
+          "category": "MCP Server",
+          "platform": "hn",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "showhn-rag-knowledge-graph-local",
+          "title": "Show HN: I built a RAG and knowledge graph agent that runs locally",
+          "source": "Hacker News",
+          "date": "2026-05-24",
+          "primary_url": "https://news.ycombinator.com/item?id=48248801",
+          "secondary_urls": [],
+          "summary": "Local agent combining RAG retrieval with a knowledge graph for live web search grounding, reducing hallucination on current data. Implements search_tool to query up-to-date information and runs on local LLMs. Shows the pattern of combining retrieval and graph structure to reduce local LLM drift on factual queries.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": {},
+          "tags": ["RAG", "Knowledge Graph", "Local LLM", "Agent"],
+          "category": "Agent Framework",
+          "platform": "hn",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "showhn-agent-email-curl-otp",
+          "title": "Show HN: Agent.email — sign up via curl, claim with a human OTP",
+          "source": "Hacker News",
+          "date": "2026-05-18",
+          "primary_url": "https://news.ycombinator.com/item?id=48225596",
+          "secondary_urls": [],
+          "summary": "Y Combinator-funded email service designed for LLM agents: sign up via curl and claim the address with a human-visible OTP, enabling agents to send and receive email without exposing human mailbox credentials. HN community surfaced a concern about targeted spam sent via the service, with at least one commenter reporting a bot-generated message targeted based on their HN comments.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": {},
+          "tags": ["Agent Email", "Infrastructure", "YCombinator"],
+          "category": "Agent Infrastructure",
+          "platform": "hn",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent and RAG Implementations",
+      "description": "Production-shaped agent and RAG builds worth studying this week — each with linked code or a detailed write-up.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "impl-datasette-agent-plugin-architecture",
+          "title": "Datasette Agent — plugin-first governance model for conversational SQL",
+          "source": "simonwillison.net",
+          "date": "2026-05-21",
+          "primary_url": "https://simonwillison.net/2026/May/21/datasette-agent/",
+          "summary": "The Datasette Agent architecture is worth studying for its governance-first plugin model. The base agent handles SQL generation; each additional capability (charts, image generation, code execution) is an opt-in plugin with its own permission gate. The datasette-llm-limits plugin adds configurable per-user USD spend caps. Runs on Gemini 3.1 Flash-Lite in the cloud demo, or any open-weight model via LM Studio locally. Four plugin releases shipped in the week.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": {},
+          "tags": ["Agent", "RAG", "SQLite", "Plugin Architecture", "Governance"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "impl-rohitg00-agentmemory-four-tier",
+          "title": "rohitg00/agentmemory — four-tier hierarchical memory with Reciprocal Rank Fusion retrieval",
+          "source": "GitHub",
+          "date": "2026-05-18",
+          "primary_url": "https://github.com/rohitg00/agentmemory",
+          "summary": "AgentMemory captures every tool call from a coding agent session, deduplicates and privacy-filters (strips API keys and secrets), LLM-compresses into structured facts, and indexes across three retrieval methods simultaneously: keyword, semantic embeddings, and knowledge graph. At session start, all three are searched and fused via Reciprocal Rank Fusion. Four memory tiers: raw observations, session summaries, extracted facts, workflow patterns. Importance scoring drives algorithmic decay. 15.1k stars.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 1080 },
+          "tags": ["Memory", "RAG", "Knowledge Graph", "TypeScript"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "impl-karpathy-autoresearch-single-gpu",
+          "title": "karpathy/autoresearch — agents running autonomous ML research on a single GPU",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/karpathy/autoresearch",
+          "summary": "Agents design experiments, run training jobs on single-GPU nanochat models, interpret results, and iterate toward improvements — a self-directed research loop with bounded compute. Demonstrates closed-loop scientific experimentation: agent proposes a change, training runs, agent reads metrics, agent proposes next change. 82.3k total stars.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 367 },
+          "tags": ["Agent Research", "ML Training", "Autonomous", "Python"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "n8n, Make, and custom automations with measurable outcomes from the week of May 18–24, 2026.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "automation-n8n-staffing-recruiter-admin",
+          "title": "n8n staffing agency: 50 recruiters, 3 hrs/day admin cut to 30 min — $72k/year in recruiter time freed",
+          "source": "Workforce Next case study",
+          "date": "2026-05-19",
+          "primary_url": "https://workforcenext.in/blog/automate-staffing-agency-with-n8n-case-study-2026/",
+          "summary": "A 50-person US staffing firm cut recruiter admin from 3 hours/day to 30 minutes using five n8n workflows powered by Claude: candidate intake enrichment (25 min saved), offer letter + DocuSign sync (45 min/offer), AI-personalized follow-up sequences (30 min/day), daily digest (15 min), and Friday client status emails (30 min). Project cost $3,000. Annual recruiter time attributed to additional placements: $72,000. Payback period 16 days.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "results": "50 recruiters. 3 hrs/day admin reduced to 30 min. $3,000 project cost. $72,000/year in recruiter time converted to placements. 16-day payback. Source: workforcenext.in (May 19, 2026).",
+          "engagement": {},
+          "tags": ["n8n", "Automation", "Staffing", "Claude", "ROI"],
+          "category": "Automation",
+          "platform": "n8n",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "automation-make-ai-voice-lead-qualification",
+          "title": "Make.com: AI voice agent workflow — auto-call qualified leads, log conversation, send follow-up in 60 seconds",
+          "source": "YouTube",
+          "date": "2026-05-19",
+          "primary_url": "https://www.youtube.com/watch?v=-5yYDEw_XxI",
+          "summary": "A Make.com workflow triggers VAPI (voice AI) to call leads automatically when marked as qualified in Airtable. The workflow: Airtable trigger → VAPI voice call → HTTP request logs result → Claude writes personalized follow-up email → Gmail sends within 60 seconds of call completion. AI qualification step uses an Airtable AI field to classify leads by budget threshold before the workflow triggers.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "results": "Lead-to-follow-up cycle completed in 60 seconds. Qualification filter reduces call volume to budget-qualified leads only. Stack: Airtable, VAPI, Make.com, Claude, Gmail. Source: YouTube tutorial (May 19, 2026).",
+          "engagement": {},
+          "tags": ["Make.com", "Voice AI", "VAPI", "Lead Qualification", "Claude"],
+          "category": "Automation",
+          "platform": "make",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 1, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Meaningful releases from major frameworks this week — major versions or new capabilities only.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "framework-langfuse-v3-175",
+          "title": "langfuse/langfuse v3.175.0",
+          "source": "GitHub",
+          "date": "2026-05-21",
+          "primary_url": "https://github.com/langfuse/langfuse",
+          "summary": "v3.175.0 (May 21) includes automations narrowed by event source — enabling more precise trigger conditions for LLM evaluation and alerting workflows. Bedrock auth strategy update, blob-storage endpoint hardening, and Playwright MCP repair also shipped this week. 16k stars. Self-hostable via Docker Compose in 5 minutes.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": { "stars": 200 },
+          "tags": ["LLMOps", "Observability", "Evaluation", "TypeScript"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "framework-evalstate-fast-agent",
+          "title": "evalstate/fast-agent",
+          "source": "GitHub",
+          "date": "2026-05-20",
+          "primary_url": "https://github.com/evalstate/fast-agent",
+          "summary": "Framework for building, evaluating, and iterating on AI agents with a structured test-evaluate-improve loop. Trended multiple days during the week of May 18–24. Designed to accelerate the evaluation cycle for agent developers building reproducible benchmarks.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": {},
+          "tags": ["Agent Eval", "Framework", "Python"],
+          "category": "Eval Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "framework-datasette-agent-4-releases",
+          "title": "simonwillison/datasette-agent — four alpha releases and spend-cap governance plugin in one week",
+          "source": "simonwillison.net",
+          "date": "2026-05-21",
+          "primary_url": "https://simonwillison.net/2026/May/21/datasette-agent/",
+          "summary": "Four alpha releases of datasette-agent shipped in a single week (0.1a1–0.1a4), alongside three companion plugins and the datasette-llm-limits 0.1a1 spend-cap plugin. The plugin system exposes LLM capabilities as independently installable, permission-gated plugins — a pattern worth studying as a framework architecture. The datasette-llm-limits governance primitive is the first seen in this reporting window as a default framework feature rather than an add-on.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": {},
+          "tags": ["Plugin System", "LLM", "Governance", "Python"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-source patterns observed across this week's repos and discussions.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "pattern-token-cost-engineering",
+          "title": "Token cost engineering is now a first-class discipline, distinct from model selection",
+          "source": "GitHub",
+          "date": "2026-05-24",
+          "primary_url": "https://github.com/MinishLab/semble",
+          "summary": "Three independent projects shipped this week targeting context window cost from different angles: retrieval (Semble: 98% fewer tokens), exploration (CodeGraph: 70% fewer tool calls), and output compression (rtk: 60–90% token reduction). None are model improvements; all are engineering layers that reduce token cost on existing models. This is a pattern shift: the conversation has moved from 'which model to use' to 'how to make current models cheaper per task.' The two questions are now separable.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": {},
+          "tags": ["Token Efficiency", "Cost Engineering", "Agent Infrastructure"],
+          "category": "Pattern",
+          "platform": "cross-source",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "pattern-governance-primitives-first-class",
+          "title": "Spend controls and capability gating are emerging as table-stakes features in agentic frameworks",
+          "source": "simonwillison.net",
+          "date": "2026-05-24",
+          "primary_url": "https://simonwillison.net/2026/May/21/datasette-agent/",
+          "summary": "Two distinct projects this week shipped spend controls as default features: datasette-llm-limits (per-user USD cap, configurable rolling window) and TensorZero (spend tracking listed as a core gateway feature). Forge's proxy mode routes all LLM traffic through a single local endpoint where logging and interception are possible. An enterprise AI team should now treat absence of spend controls and audit logging as a disqualifying characteristic when evaluating any new agentic framework.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": {},
+          "tags": ["Governance", "Spend Control", "Audit Logging", "Enterprise"],
+          "category": "Pattern",
+          "platform": "cross-source",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "pattern-agent-skills-cross-platform-standard",
+          "title": "Agent skills are converging on a cross-platform open standard — the same SKILL.md works across six coding agents",
+          "source": "GitHub",
+          "date": "2026-05-24",
+          "primary_url": "https://github.com/obra/superpowers",
+          "summary": "Three separate skills repos trended this week (mattpocock/skills, obra/superpowers, addyosmani/agent-skills) — all using the same SKILL.md format adopted by Claude Code, OpenAI Codex CLI, Cursor, Gemini CLI, and GitHub Copilot. A skill written once installs without modification across these six tools. An enterprise AI team that invests in writing internal skills (for compliance checks, internal tooling integration, engineering standards) gets that investment automatically across any coding agent the team adopts.",
+          "verified": true,
+          "verified_at": "2026-05-24T12:00:00Z",
+          "engagement": {},
+          "tags": ["Agent Skills", "Open Standard", "Cross-Platform", "Enterprise"],
+          "category": "Pattern",
+          "platform": "cross-source",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        }
+      ]
+    }
+  ],
+
+  "index": [
+    { "id": "idx-forge-guardrails", "title": "antoinezambelli/forge — guardrails 8B→99% on agentic tasks", "source": "GitHub / HN", "primary_url": "https://github.com/antoinezambelli/forge", "score": 9, "date": "2026-05-19" },
+    { "id": "idx-semble-code-search", "title": "MinishLab/semble v0.2.0 — 98% fewer tokens than grep+read", "source": "GitHub / HN", "primary_url": "https://github.com/MinishLab/semble", "score": 9, "date": "2026-05-21" },
+    { "id": "idx-codegraph-v080", "title": "colbymchenry/codegraph v0.8.0 — 70% fewer tool calls, 35% cheaper", "source": "GitHub", "primary_url": "https://github.com/colbymchenry/codegraph", "score": 8, "date": "2026-05-20" },
+    { "id": "idx-datasette-agent", "title": "simonwillison/datasette-agent — first alpha, plugin-first, spend cap", "source": "simonwillison.net", "primary_url": "https://simonwillison.net/2026/May/21/datasette-agent/", "score": 8, "date": "2026-05-21" },
+    { "id": "idx-rtk-rust-token-killer", "title": "rtk-ai/rtk — 60–90% token reduction CLI proxy, Rust binary", "source": "GitHub", "primary_url": "https://github.com/rtk-ai/rtk", "score": 8, "date": "2026-05-18" },
+    { "id": "idx-showhn-forge", "title": "Show HN: Forge — 8B from 53% to 99% (680 pts)", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48192383", "score": 9, "date": "2026-05-19" },
+    { "id": "idx-showhn-semble", "title": "Show HN: Semble — 98% fewer tokens than grep (270 pts, 89 comments)", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/front?day=2026-05-18", "score": 8, "date": "2026-05-18" },
+    { "id": "idx-tinyhumansai-openhuman", "title": "tinyhumansai/openhuman — personal AI super-intelligence, 3,394 stars May 21", "source": "GitHub", "primary_url": "https://github.com/tinyhumansai/openhuman", "score": 7, "date": "2026-05-21" },
+    { "id": "idx-rohitg00-agentmemory", "title": "rohitg00/agentmemory — four-tier memory, RRF retrieval, 1,080 stars May 21", "source": "GitHub", "primary_url": "https://github.com/rohitg00/agentmemory", "score": 7, "date": "2026-05-21" },
+    { "id": "idx-tensorzero", "title": "tensorzero/tensorzero — LLMOps gateway+observability+optimization, 10.4k stars", "source": "GitHub", "primary_url": "https://github.com/tensorzero/tensorzero", "score": 7, "date": "2026-05-18" },
+    { "id": "idx-obra-superpowers", "title": "obra/superpowers — agentic skills framework, accepted into Claude marketplace", "source": "GitHub", "primary_url": "https://github.com/obra/superpowers", "score": 7, "date": "2026-05-21" },
+    { "id": "idx-claude-task-master", "title": "eyaltoledano/claude-task-master — AI task management, 2,449 weekly star delta", "source": "GitHub", "primary_url": "https://github.com/eyaltoledano/claude-task-master", "score": 7, "date": "2026-05-18" },
+    { "id": "idx-mattpocock-skills", "title": "mattpocock/skills — production engineering skills, 156.2k installs", "source": "GitHub", "primary_url": "https://github.com/mattpocock/skills", "score": 7, "date": "2026-05-21" },
+    { "id": "idx-datasette-llm-limits", "title": "simonwillison/datasette-llm-limits — per-user USD spend cap plugin", "source": "simonwillison.net", "primary_url": "https://simonwillison.net/2026/May/21/datasette-agent/", "score": 7, "date": "2026-05-21" },
+    { "id": "idx-karpathy-autoresearch", "title": "karpathy/autoresearch — agents running autonomous ML research, single GPU", "source": "GitHub", "primary_url": "https://github.com/karpathy/autoresearch", "score": 7, "date": "2026-05-21" },
+    { "id": "idx-n8n-staffing-case-study", "title": "n8n staffing: 3 hrs/day → 30 min, $72k/year freed, 16-day payback", "source": "Workforce Next", "primary_url": "https://workforcenext.in/blog/automate-staffing-agency-with-n8n-case-study-2026/", "score": 7, "date": "2026-05-19" },
+    { "id": "idx-pattern-token-cost-engineering", "title": "Pattern: Token cost engineering as first-class discipline (Semble, CodeGraph, rtk)", "source": "Cross-source", "primary_url": "https://github.com/MinishLab/semble", "score": 8, "date": "2026-05-24" },
+    { "id": "idx-pattern-governance-primitives", "title": "Pattern: Spend controls emerging as table-stakes in agentic frameworks", "source": "Cross-source", "primary_url": "https://simonwillison.net/2026/May/21/datasette-agent/", "score": 8, "date": "2026-05-24" },
+    { "id": "idx-pattern-skills-standard", "title": "Pattern: SKILL.md open standard now works across six coding agents", "source": "Cross-source", "primary_url": "https://github.com/obra/superpowers", "score": 8, "date": "2026-05-24" },
+    { "id": "idx-langfuse-v3-175", "title": "langfuse v3.175.0 — automations narrowed by event source", "source": "GitHub", "primary_url": "https://github.com/langfuse/langfuse", "score": 6, "date": "2026-05-21" },
+    { "id": "idx-evalstate-fast-agent", "title": "evalstate/fast-agent — agent build and eval framework", "source": "GitHub", "primary_url": "https://github.com/evalstate/fast-agent", "score": 6, "date": "2026-05-20" },
+    { "id": "idx-humanlayer-12-factor-agents", "title": "humanlayer/12-factor-agents — twelve principles for production agent software", "source": "GitHub", "primary_url": "https://github.com/humanlayer/12-factor-agents", "score": 6, "date": "2026-05-21" },
+    { "id": "idx-gentleman-programming-engram", "title": "Gentleman-Programming/engram — Go MCP memory server, SQLite+FTS5", "source": "GitHub", "primary_url": "https://github.com/Gentleman-Programming/engram", "score": 6, "date": "2026-05-21" },
+    { "id": "idx-addyosmani-agent-skills", "title": "addyosmani/agent-skills — web engineering skills for coding agents", "source": "GitHub", "primary_url": "https://github.com/addyosmani/agent-skills", "score": 6, "date": "2026-05-21" },
+    { "id": "idx-showhn-rag-knowledge-graph", "title": "Show HN: RAG + knowledge graph agent running locally", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48248801", "score": 6, "date": "2026-05-24" },
+    { "id": "idx-showhn-agent-email", "title": "Show HN: Agent.email — sign up via curl, OTP claim", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48225596", "score": 6, "date": "2026-05-18" },
+    { "id": "idx-make-voice-lead-qualification", "title": "Make.com voice agent: lead-to-follow-up in 60 seconds", "source": "YouTube", "primary_url": "https://www.youtube.com/watch?v=-5yYDEw_XxI", "score": 6, "date": "2026-05-19" },
+    { "id": "idx-datasette-agent-4-releases", "title": "simonwillison/datasette-agent — 4 alpha releases + 3 plugins in one week", "source": "simonwillison.net", "primary_url": "https://simonwillison.net/2026/May/21/datasette-agent/", "score": 7, "date": "2026-05-21" },
+    { "id": "idx-impl-rohitg00-agentmemory", "title": "rohitg00/agentmemory — RRF memory fusion architecture", "source": "GitHub", "primary_url": "https://github.com/rohitg00/agentmemory", "score": 7, "date": "2026-05-18" },
+    { "id": "idx-impl-karpathy-autoresearch", "title": "karpathy/autoresearch — closed-loop ML research agent, single GPU", "source": "GitHub", "primary_url": "https://github.com/karpathy/autoresearch", "score": 7, "date": "2026-05-21" }
+  ],
+
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Monitor the tech-leads-club/agent-skills registry (secure, validated skill registry for professional coding agents) — appeared in this week's trending digest and is likely to surface validated enterprise-grade skill additions in coming weeks.",
+      "Add Picrew/awesome-agent-harness (191 entries, last verified 2026-05-22) to the MCP and agent harness tracking rotation — it catalogs all major agent runtimes, evals, observability tools, and gateways with weekly verification.",
+      "Track the curvesoft.net GitHub trending digest as a primary source for daily star delta data — it published a detailed breakdown for May 21 with 149 repos that was more informative than the raw GitHub trending page."
+    ],
+    "sources_to_drop": [
+      "No sources dropped this week."
+    ],
+    "topics_to_add": [
+      "Token cost engineering tools are proliferating fast — consider a dedicated leaderboard tracking tools in this category week-over-week (Semble, CodeGraph, rtk) with cumulative token reduction estimates.",
+      "The SKILL.md cross-platform standard is now adopted by at least six major coding agents — track new skills appearing in major community registries (anthropics/skills, openai/skills, travisvn/awesome-claude-skills) as a leading indicator of adoption patterns.",
+      "datasette-agent's plugin governance model (independent capability gating + per-user spend caps) is a pattern worth tracking across the broader data+agent space."
+    ],
+    "notes": "The dominant story this week is the convergence of independent teams on token cost reduction as the primary engineering lever. The freshness ratio is 0.90 (27 new items of 30 total), above the 0.85 floor. tensorzero and claude-task-master are returning items; all others are new to this reporting window."
+  }
+}
