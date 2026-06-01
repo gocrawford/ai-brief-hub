@@ -1,0 +1,839 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.87,
+    "items_total": 30,
+    "items_new": 26,
+    "items_returning": 4,
+    "empty_week_note": ""
+  },
+
+  "executive_summary": [
+    {
+      "headline": "CodeWhale crosses 36k stars with a DeepSeek V4 terminal agent that costs 30x less per task than Claude Code, while CLI-Anything (41.5k stars) makes any existing desktop software agent-native through auto-generated CLIs — two approaches converging on the same goal: lower the cost floor for agentic work",
+      "body": "The week of May 25–31 produced two distinct cost-reduction vectors in the open-source agent space. CodeWhale (Hmbown/CodeWhale, 36.2k stars, v0.8.48 May 31) is a Rust terminal coding agent for DeepSeek V4 with 90% prefix-cache hit rate and explicit pricing at $0.0028/1M input cache-hit tokens — roughly 30x cheaper per task than Claude Code at equivalent quality. CLI-Anything (HKUDS/CLI-Anything, 41.5k stars) takes the inverse approach: rather than swapping models for cost, it auto-generates full CLI harnesses for 39 desktop applications (GIMP, Blender, LibreOffice, ComfyUI, OBS) and tests them against 2,330 test cases at 100% pass rate, making human-designed software agent-callable without manual prompt engineering. CodeGraph shipped v0.9.7 (May 28) adding Go gRPC interface resolution, dynamic-dispatch fallback for codegraph_trace, and interface-to-implementation linking for C#, TypeScript, Swift, and Scala — its benchmark re-validated on Opus 4.8 now shows 25% cheaper, 57% fewer tokens, 62% fewer tool calls.",
+      "primary_url": "https://github.com/Hmbown/CodeWhale"
+    },
+    {
+      "headline": "Understand-Anything (47.2k stars, 11.6k weekly delta) turns any codebase into an interactive knowledge graph — the highest-starred agent-native tool to trend this week",
+      "body": "Lum1104/Understand-Anything hit 47.2k stars with 11.6k added this week, the largest absolute weekly delta of any AI-specific repo in this reporting window. The Claude Code plugin converts codebases, knowledge bases, and documents into interactive force-directed knowledge graphs using a multi-agent pipeline with tree-sitter structural analysis and LLM semantic understanding. Key capabilities include diff impact analysis (trace ripple effects before committing), persona-adaptive UI (adjusts detail level for junior dev vs. PM), and an Obsidian knowledge-base mode that extracts wikilinks, detects implicit relationships, and surfaces community clusters. v2.7.3 shipped May 19; no major new release this week but star momentum indicates organic discovery of a February release that has matured into a reliable tool.",
+      "primary_url": "https://github.com/Lum1104/Understand-Anything"
+    },
+    {
+      "headline": "GitHub's own agentic workflows cut token spend 62% using pruned MCP tool manifests and a daily audit-optimize loop shipped in the gh-aw CLI — a documented pattern any enterprise AI team can replicate",
+      "body": "An InfoQ write-up published May 29 documents GitHub's internal process for reducing token cost in its 12+ CI agentic workflows. The Effective Tokens metric (output weighted 4x, cache reads 0.1x, model multipliers from Haiku 0.25x to Opus 5x) provides a model-agnostic cost proxy. Auto-Triage Issues achieved 62% ET reduction over 109 post-fix runs; Security Guard 43%; Smoke Claude 59%. The mechanism: remove unused MCP tools (a 40-tool GitHub MCP server adds 10–15 KB schema per turn), replace MCP calls with gh CLI commands for simple reads, pre-download files before agent start, and route all calls through a transparent HTTP proxy that strips authentication tokens. The Daily Token Usage Auditor and Daily Token Optimiser ship today in the gh-aw CLI as two independently-runnable workflows that self-report into the same daily digest.",
+      "primary_url": "https://www.infoq.com/news/2026/05/github-agentic-token-savings/"
+    },
+    {
+      "headline": "Key takeaway: Three independent patterns converged this week on agent cost reduction: model substitution (CodeWhale — same task, cheaper model), token reduction (CodeGraph v0.9.7, GitHub gh-aw audit loop), and scope reduction (CLI-Anything — replace open-ended agent exploration with auto-generated structured CLIs). An enterprise AI team that treats these as a stack rather than competing choices has a roadmap for cutting per-task LLM spend without model tradeoffs.",
+      "body": "The open-source community is iterating faster on the cost dimension than the capability dimension this week. CodeWhale reduces cost by substituting DeepSeek V4 for frontier models at 30x lower per-task pricing. CodeGraph reduces cost by replacing token-expensive file exploration with a pre-indexed knowledge graph. GitHub's gh-aw reduces cost by removing unused tool manifests and pre-fetching data. CLI-Anything reduces cost by replacing free-form agentic exploration of desktop applications with structured, tested CLI interfaces. These are four separable interventions — none requires adopting the others — and each has a primary source with reproducible benchmarks attached."
+    }
+  ],
+
+  "top_picks": [
+    {
+      "id": "codegraph-v0-9-7-opus-48-revalidated",
+      "title": "colbymchenry/codegraph v0.9.7",
+      "subtitle": "Pre-indexed code knowledge graph for AI agents — v0.9.7 (May 28) adds Go gRPC resolution, dynamic-dispatch fallback, cross-language interface linking; benchmarks re-validated on Opus 4.8",
+      "source": "GitHub",
+      "author": "colbymchenry",
+      "date": "2026-05-28",
+      "primary_url": "https://github.com/colbymchenry/codegraph",
+      "secondary_urls": [
+        {
+          "label": "v0.9.7 release notes (May 28, 2026)",
+          "url": "https://github.com/colbymchenry/codegraph/releases/tag/v0.9.7"
+        }
+      ],
+      "summary": "CodeGraph v0.9.7 (May 28, 2026) ships Go gRPC interface-to-implementation resolution, dynamic-dispatch fallback for codegraph_trace, interface-to-implementation linking for C#, TypeScript, JavaScript, Swift, and Scala, and generated-files ranked last in search. Benchmarks re-validated against Opus 4.8 on May 29 report: 25% cheaper, 57% fewer tokens, 23% faster, 62% fewer tool calls. 34.7k total stars; 13 releases since initial public open-source release.",
+      "verified": true,
+      "verified_at": "2026-05-31T14:00:00Z",
+      "key_takeaways": [
+        "Interface-to-implementation linking now covers C#, TypeScript, JavaScript, Swift, and Scala — the five languages most common in enterprise service-oriented codebases — meaning agents investigating an interface method now surface concrete implementations without a manual grep.",
+        "Dynamic-dispatch fallback in codegraph_trace eliminates the silent dead-end that previously appeared when the agent hit a polymorphic boundary; it now inlines both endpoints' source, callers, and callees in a single response.",
+        "Benchmark re-validation against Opus 4.8 (released May 29) confirms the 62% tool-call reduction holds on the new model — the improvement is architectural, not model-specific."
+      ],
+      "results": "Average across 7+ real-world codebases (Opus 4.8, re-validated May 29, 2026): 25% cheaper, 57% fewer tokens, 23% faster, 62% fewer tool calls. 34.7k GitHub stars. Source: github.com/colbymchenry/codegraph README and v0.9.7 release notes.",
+      "enterprise_adaptation": "Implementation pattern: Deploy CodeGraph as an MCP server on developer workstations via the interactive installer (`npx codegraph@latest install`), which auto-detects Claude Code, Cursor, Codex CLI, OpenCode, Hermes Agent, Gemini CLI, Antigravity IDE, and Kiro. The installer writes MCP config and instructions; no manual CLAUDE.md editing is required. For C# and Java/Spring codebases specifically, v0.9.7's cross-language interface resolution means agents can now trace service interfaces through implementations without free-form search — relevant for enterprise codebases with heavy DI and interface-driven design. | Regulated-environment caveats: The SQLite index lives on the developer's machine with no external data egress. Pin the npm package version in your internal developer-tooling provisioning script and host the approved package in your internal registry. The installer modifies agent instruction files (CLAUDE.md, AGENTS.md, Cursor rules) — validate these modifications are compatible with your managed endpoint security profile before fleet rollout. The v0.9.7 installer includes a duplicate-block cleanup that removes previously-written instruction blocks; audit existing CLAUDE.md files before rolling out to ensure no custom notes were embedded inside the CODEGRAPH_START/CODEGRAPH_END markers. | 30-day experiment: Deploy CodeGraph on five developer workstations running your approved coding agent. For two weeks, log tokens per completed PR with CodeGraph disabled (baseline). For two weeks, enable CodeGraph and log the same metric. Report per-PR token cost delta at your current API rate. Focus the comparison on your largest service — the tool-call reduction is most pronounced on repos with complex import graphs.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 3000
+      },
+      "tags": ["Code Intelligence", "MCP Server", "Token Efficiency", "TypeScript", "Knowledge Graph"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "returning",
+      "recurrence_note": "codegraph appeared in the May 18 index as a top pick. Returning this week because v0.9.7 (May 28) ships significant new capabilities: Go gRPC resolution, multi-language interface linking, and Opus 4.8 benchmark re-validation."
+    },
+    {
+      "id": "codewhale-deepseek-v4-30x-cheaper",
+      "title": "Hmbown/CodeWhale v0.8.48",
+      "subtitle": "Rust terminal coding agent for DeepSeek V4 — 90% prefix-cache hit, ~30x cheaper per task than Claude Code, sub-agents, MCP, Skills, 36.2k stars",
+      "source": "GitHub",
+      "author": "Hmbown",
+      "date": "2026-05-31",
+      "primary_url": "https://github.com/Hmbown/CodeWhale",
+      "secondary_urls": [],
+      "summary": "CodeWhale is an open-source Rust terminal coding agent purpose-built for DeepSeek V4 (previously DeepSeek-TUI). v0.8.48 shipped May 31, 2026. The agent achieves 90% live prefix-cache hit rates using DeepSeek V4's extended KV cache, reducing per-task cost to approximately 30x below Claude Code at equivalent complexity. Supports MCP tool integration, a Skills extension system, concurrent sub-agents (up to 20), and Plan/Agent/YOLO modes. 36.2k stars; 104 releases since January 2026.",
+      "verified": true,
+      "verified_at": "2026-05-31T14:00:00Z",
+      "key_takeaways": [
+        "90% prefix-cache hit rate means the agent re-reads the Constitution and codebase context at ~1/100th the cost of a cold read — the cost claim of 30x cheaper per task is directly tied to this cache architecture, not model capability tradeoffs.",
+        "Up to 20 concurrent sub-agents with typed return values and schema-validated results — the same parallel decomposition pattern as other top coding agents, but on DeepSeek V4 pricing ($0.0028/1M input cache-hit tokens vs Anthropic's higher rates).",
+        "Plan/Agent/YOLO mode progression mirrors enterprise governance needs: Plan (read-only investigation with no writes) lets a team audit what an agent would do before execution; Agent (approval gates on every tool call) is the default for regulated workflows; YOLO is scoped to trusted test environments."
+      ],
+      "results": "90% live prefix-cache hit rate claimed. ~30x cheaper per task vs Claude Code at comparable task complexity — per README pricing table: deepseek-v4-flash cache-hit input $0.0028/1M tokens, output $0.28/1M. 36.2k GitHub stars; v0.8.48 released May 31, 2026. Source: github.com/Hmbown/CodeWhale README and releases.",
+      "enterprise_adaptation": "Implementation pattern: Install CodeWhale on developer workstations running DeepSeek V4 API access. The npm/Homebrew/Docker install path provides signed binaries. Begin with Plan mode for an initial two-week audit of what agents propose before allowing any writes — this produces a log of planned actions without executing them, which satisfies a regulated-environment review requirement before broader enablement. Once the action log is reviewed, advance to Agent mode with approval gates; YOLO mode is appropriate only for sandboxed test environments. The Skills system accepts the same SKILL.md format used by Claude Code, Codex, and other tools, so existing internal skills transfer without modification. | Regulated-environment caveats: CodeWhale routes API calls to DeepSeek's API endpoints — confirm your data residency policy permits sending code context to DeepSeek's infrastructure (hosted in China). For organizations with strict data residency requirements, evaluate against a self-hosted DeepSeek V4 deployment on your own infrastructure rather than the public API. The prefix cache is on DeepSeek's servers by default; this is not a local cache. MCP tool integrations are community-maintained; audit each MCP server before enabling in a production workflow. Pin the binary version in your developer provisioning script. | 30-day experiment: Identify one developer workflow currently running on Claude Code with a stable, measurable task pattern (e.g., PR review, test generation). Run the same task set on CodeWhale with DeepSeek V4-Flash for 15 working days. Compare tokens consumed and API spend. Report the per-task cost delta and any quality divergences observed by the developer.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 1200
+      },
+      "tags": ["Terminal Agent", "DeepSeek", "Rust", "Cost Efficiency", "Sub-Agents"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "understand-anything-47k-knowledge-graph",
+      "title": "Lum1104/Understand-Anything",
+      "subtitle": "Claude Code plugin that converts any codebase or knowledge base into an interactive knowledge graph — 47.2k stars, 11.6k weekly delta, diff impact analysis, persona-adaptive UI",
+      "source": "GitHub",
+      "author": "Lum1104",
+      "date": "2026-05-25",
+      "primary_url": "https://github.com/Lum1104/Understand-Anything",
+      "secondary_urls": [],
+      "summary": "Understand-Anything is a Claude Code plugin that converts codebases, knowledge bases, and documents into interactive knowledge graphs using a multi-agent pipeline combining tree-sitter structural analysis with LLM semantic understanding. Capabilities include diff impact analysis (trace change ripple effects before committing), guided architecture tours ordered by dependency, fuzzy and semantic search, persona-adaptive UI (junior dev vs. PM views), and an Obsidian wiki mode that extracts wikilinks and detects implicit relationships. 47.2k total stars; 11.6k weekly star delta.",
+      "verified": true,
+      "verified_at": "2026-05-31T14:00:00Z",
+      "key_takeaways": [
+        "Diff impact analysis traces which parts of the system a proposed change affects before committing — a pre-change impact map that sidesteps the 'I didn't know that touched the auth module' failure mode common in large service codebases.",
+        "The Obsidian knowledge-base mode applies the same pipeline to non-code documentation: wikilinks, categories, and LLM-discovered implicit relationships are surfaced in a force-directed graph — useful for institutional knowledge bases maintained alongside a codebase.",
+        "Persona-adaptive UI adjusts graph detail level based on the viewer type (junior dev, PM, power user) — a structural approach to the common problem of agent tools that expose too much or too little context for different stakeholders."
+      ],
+      "results": "47.2k GitHub stars; 11.6k weekly star delta (week of May 25–31, 2026, per pasqualepillitteri.it tracking). Plugin available via Claude Code marketplace. v2.7.3 released May 19, 2026. Source: github.com/Lum1104/Understand-Anything README.",
+      "enterprise_adaptation": "Implementation pattern: Install Understand-Anything via the Claude Code plugin marketplace (`/plugin marketplace add Lum1104/Understand-Anything`). Point it at your internal service repository. Use the diff impact analysis view before any cross-service change merges — the graph shows affected nodes and dependency chains without requiring an architect to trace them manually. For knowledge management teams, the Obsidian wiki mode can surface implicit relationships in internal documentation wikis and runbook collections that are not cross-linked explicitly. | Regulated-environment caveats: The plugin sends code and document content to Claude for semantic understanding; verify this is acceptable for the specific codebase under your data governance policy. For codebases containing proprietary algorithms, run the plugin against non-sensitive modules first. The multi-agent pipeline uses multiple sequential LLM calls per analysis; budget accordingly. The tree-sitter structural parse is fully local, but the semantic pass requires Claude API access. | 30-day experiment: Run Understand-Anything on one internal service repository. Ask three developers to use the guided tour before their first PR on an unfamiliar module. Survey them on onboarding time vs. prior approach (reading docs + code manually). Use the diff impact view for one sprint's worth of cross-service PRs and log any cases where the impact graph surfaced a dependency the developer had not identified.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 11600
+      },
+      "tags": ["Code Intelligence", "Knowledge Graph", "Claude Code Plugin", "Codebase Understanding"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "github-gh-aw-62pct-token-reduction",
+      "title": "GitHub gh-aw — 62% token reduction in agentic CI workflows via MCP pruning and daily audit-optimize loop",
+      "subtitle": "GitHub's own production agent workflows cut LLM spend 62% by removing unused MCP tools, replacing some MCP calls with gh CLI, and running daily Auditor + Optimiser agents — all shipped in the open-source gh-aw CLI",
+      "source": "InfoQ / GitHub",
+      "author": "GitHub Engineering",
+      "date": "2026-05-29",
+      "primary_url": "https://www.infoq.com/news/2026/05/github-agentic-token-savings/",
+      "secondary_urls": [
+        {
+          "label": "gh-aw CLI (GitHub)",
+          "url": "https://github.com/github/gh-aw"
+        }
+      ],
+      "summary": "GitHub Engineering published findings on May 29 from optimizing 12+ internal agentic CI workflows using a new Effective Tokens (ET) metric. Auto-Triage Issues cut ET 62% over 109 runs; Security Guard 43%; Smoke Claude 59%. Mechanism: remove unused MCP tools (each adds 10–15 KB schema per turn), replace MCP calls for simple reads with gh CLI, pre-download files before agent start, and route calls through a transparent HTTP proxy that keeps auth tokens away from the agent. A Daily Token Usage Auditor and Daily Token Optimiser run on cron, aggregate spend by workflow, and file GitHub issues with optimization proposals. Both ship in the gh-aw CLI as of May 31.",
+      "verified": true,
+      "verified_at": "2026-05-31T14:00:00Z",
+      "key_takeaways": [
+        "Unused MCP tool manifests add 10–15 KB of schema to every turn's context window — removing tools the workflow never calls is the cheapest available optimization and requires no prompt engineering.",
+        "The Effective Tokens metric (output ×4, cache reads ×0.1, model multipliers Haiku 0.25×/Sonnet 1×/Opus 5×) provides a cost proxy that normalizes across models and enables apples-to-apples comparison when workflows change models.",
+        "The audit-and-optimize loop is self-referential: both agents appear in their own daily reports, making the meta-cost of the optimization itself visible and bounded."
+      ],
+      "results": "Auto-Triage Issues: 62% ET reduction over 109 post-fix runs. Security Guard: 43% ET reduction. Smoke Claude: 59% ET reduction. Daily Community Attribution: 37% improvement. One workflow (Contribution Check) saw 5% ET increase attributable to larger PRs, not regression. Source: infoq.com/news/2026/05/github-agentic-token-savings/.",
+      "enterprise_adaptation": "Implementation pattern: Adopt the Effective Tokens metric for your own agentic CI workflows by instrumenting a transparent HTTP proxy between your agent runner and the LLM API endpoint. Log input, output, and cache tokens per run to a token-usage.jsonl artifact. Schedule a weekly audit that ranks workflows by ET spend and flags regressions above a threshold (e.g., >10% week-over-week increase). For MCP-heavy workflows, inventory tool usage per run and identify tools with zero call frequency — remove them from the manifest. Replace MCP calls that only fetch static content (diff text, file content) with pre-download steps that write the content into the workspace before the agent starts. | Regulated-environment caveats: The transparent HTTP proxy is the most architecturally sensitive component — it intercepts all LLM traffic and requires careful placement within your network perimeter. Log retention for token-usage.jsonl files must comply with your audit log retention policy. If your agentic workflows use enterprise LLM API contracts with usage-based billing, the ET metric's model multipliers may need recalibration against your actual contract pricing. The gh-aw CLI is maintained by GitHub; evaluate the open-source license before embedding it in internal tooling. | 30-day experiment: Pick two agentic workflows you run in CI today. Instrument token logging via the transparent proxy pattern for two weeks (baseline). In week three, audit the tool manifests, remove unused MCP tools, and pre-download static content. Compare ET spend week three vs. weeks one and two. Report the ET delta and any quality changes (success rate, failure mode distribution).",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {},
+      "tags": ["Token Efficiency", "MCP", "CI/CD", "Agent Optimization", "DevOps"],
+      "category": "Agent Infrastructure",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "cli-anything-agent-native-2330-tests",
+      "title": "HKUDS/CLI-Anything",
+      "subtitle": "Auto-generates full CLI harnesses for 39 desktop applications (GIMP, Blender, LibreOffice, ComfyUI, OBS) — 2,330 tests at 100% pass rate, making human-designed software agent-callable",
+      "source": "GitHub",
+      "author": "HKUDS",
+      "date": "2026-05-25",
+      "primary_url": "https://github.com/HKUDS/CLI-Anything",
+      "secondary_urls": [
+        {
+          "label": "CLI-Hub registry",
+          "url": "https://clianything.cc/"
+        }
+      ],
+      "summary": "CLI-Anything auto-generates structured CLI interfaces for any desktop application through a seven-stage automation pipeline, exposing them to AI agents via MCP. The CLI-Hub registry indexes community-built CLIs, installable with `cli-hub install <name>`. 39 applications covered as of v0.3.0 (April 24, 2026), including GIMP, Blender, Inkscape, LibreOffice, OBS Studio, Zoom, ComfyUI, QGIS, and Godot Engine. 2,330 tests across all applications with 100% pass rate (1,732 unit, 579 e2e, 19 Node.js). One unified SKILL.md per application works across Pi, Claude Code, OpenClaw, Cursor, Codex, Copilot CLI, and Goose. 41.5k stars.",
+      "verified": true,
+      "verified_at": "2026-05-31T14:00:00Z",
+      "key_takeaways": [
+        "The seven-stage pipeline (discover, scaffold, implement, test, document, package, publish) produces CLIs that are structured, not ad-hoc — each CLI exposes JSON mode, REPL mode, and a `--help` hierarchy, giving agents deterministic interfaces instead of open-ended UI manipulation.",
+        "A single SKILL.md canonical form works across six coding agents without modification — the investment in building an internal CLI for a proprietary internal tool yields cross-agent portability.",
+        "The CLI-Hub registry and autonomous discovery (`cli-hub install`) provide the dependency-resolution layer that enterprise agent workflows lack: agents can discover and install the right CLI for the task at hand rather than requiring pre-installed tool sets."
+      ],
+      "results": "2,330 total tests across 39 applications. 100% pass rate (1,732 unit + 579 e2e + 19 Node.js tests). 41.5k GitHub stars. v0.3.0 released April 24, 2026. Source: github.com/HKUDS/CLI-Anything README.",
+      "enterprise_adaptation": "Implementation pattern: Identify internal tools (ERP interfaces, proprietary analytics platforms, internal CLIs without MCP support) that agents currently cannot call directly. Use CLI-Anything's seven-stage pipeline to auto-generate a CLI harness for each tool. Deploy the generated CLIs to your internal CLI registry (equivalent to CLI-Hub but self-hosted) and expose them to approved coding agents via MCP or Skills. The generated CLIs expose a stable interface that IT governance can review and approve once, rather than reviewing every ad-hoc agent tool call. | Regulated-environment caveats: The auto-generated CLI harnesses wrap real applications and execute on the host machine; run them in sandboxed environments during testing. The CLI-Hub registry is public and community-maintained — for internal tools, self-host the registry rather than publishing to the public hub. Audit each generated CLI for any file-system or network operations before approving for production agent use. The SKILL.md format is currently cross-agent compatible but review the canonical format when updating agents, as the spec may evolve. | 30-day experiment: Pick one internal application that agents currently cannot call programmatically. Use CLI-Anything to generate its CLI harness. Write 20 test cases covering the most common agent workflows for that tool. Deploy the harness to a sandboxed developer environment and run it with your approved coding agent for two weeks. Measure task completion rate vs. a control group using prompt-based UI automation.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 0
+      },
+      "tags": ["Agent-Native", "CLI Generation", "MCP", "Skills", "Desktop Automation"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new"
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "Top AI-relevant repos by weekly star delta for the week of May 25–31, 2026. Figures from pasqualepillitteri.it tracking (verified May 24 UTC) and direct repo fetches.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "trending-lum1104-understand-anything",
+          "title": "Lum1104/Understand-Anything",
+          "source": "GitHub",
+          "date": "2026-05-25",
+          "primary_url": "https://github.com/Lum1104/Understand-Anything",
+          "summary": "Claude Code plugin converting any codebase, knowledge base, or document into an interactive knowledge graph. Multi-agent pipeline: tree-sitter structural analysis + LLM semantic understanding. Diff impact analysis, guided architecture tours, persona-adaptive UI, Obsidian wiki mode. 47.2k total stars; 11.6k weekly delta.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 11600 },
+          "tags": ["Claude Code Plugin", "Knowledge Graph", "Code Intelligence"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-imbad0202-academic-research-skills",
+          "title": "Imbad0202/academic-research-skills",
+          "source": "GitHub",
+          "date": "2026-05-25",
+          "primary_url": "https://github.com/Imbad0202/academic-research-skills",
+          "summary": "Academic Research Skills (ARS) for Claude Code: 13-agent research team with PRISMA systematic review, 12-agent paper writing, 7-agent peer review, and a 10-stage pipeline orchestrator. Intent Detection Layer and Opponent's Agreement protocol guard against hallucination and corner-cutting. v3.3.5 shipped with Artifact Reproducibility Lockfile schema. 21.4k total stars; 11.6k weekly delta.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 11600 },
+          "tags": ["Agent Skills", "Academic Research", "Claude Code", "Multi-Agent"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "trending-hkuds-cli-anything",
+          "title": "HKUDS/CLI-Anything",
+          "source": "GitHub",
+          "date": "2026-05-25",
+          "primary_url": "https://github.com/HKUDS/CLI-Anything",
+          "summary": "Auto-generates structured CLI harnesses for desktop applications and exposes them to AI agents via MCP. 39 applications covered; 2,330 tests at 100% pass rate. CLI-Hub registry for autonomous CLI discovery and installation. One SKILL.md per app works across Claude Code, Cursor, Codex, Pi, OpenClaw, Copilot CLI. 41.5k stars.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 0 },
+          "tags": ["Agent-Native", "CLI Generation", "MCP", "Skills"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "trending-hmbown-codewhale",
+          "title": "Hmbown/CodeWhale",
+          "source": "GitHub",
+          "date": "2026-05-31",
+          "primary_url": "https://github.com/Hmbown/CodeWhale",
+          "summary": "Rust terminal coding agent for DeepSeek V4. 90% prefix-cache hit; ~30x cheaper per task vs Claude Code. Up to 20 concurrent sub-agents. Plan/Agent/YOLO modes. MCP + Skills. v0.8.48 shipped May 31. 36.2k stars; weekly delta not separately tracked but active release pace (104 total releases).",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 1200 },
+          "tags": ["Terminal Agent", "DeepSeek", "Rust", "Cost Efficiency"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-tinyhumansai-openhuman-v056",
+          "title": "tinyhumansai/openhuman v0.56.0",
+          "source": "GitHub",
+          "date": "2026-05-27",
+          "primary_url": "https://github.com/tinyhumansai/openhuman",
+          "summary": "Open-source personal AI super-intelligence. v0.56.0 (May 27) ships Memory subtabs and a WebGL memory graph; drops Knowledge Vaults in favour of the refined memory tree model. MCP registry now visible in UI with transport-aware install. 118+ third-party integrations via OAuth auto-fetch. TokenJuice compression up to 80% token reduction. 30k stars; 17.1k weekly delta (from 26.8k at May 21 snapshot).",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 3200 },
+          "tags": ["Personal AI", "Rust", "Memory Tree", "Token Compression"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "openhuman appeared in the May 18 trending section. Returning this week with v0.56.0 (May 27) shipping Memory subtabs, WebGL memory graph, and MCP registry UI.",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "trending-can1357-oh-my-pi",
+          "title": "can1357/oh-my-pi v15.7.2",
+          "source": "GitHub",
+          "date": "2026-05-31",
+          "primary_url": "https://github.com/can1357/oh-my-pi",
+          "summary": "Terminal AI coding agent with IDE toolchain wired in: LSP, debuggers (lldb, dlv, debugpy), 40+ providers, 32 built-in tools, 13 LSP ops. Content-hash anchored editing (Hashline) reduces output tokens 61% per Grok 4 Fast benchmark. Hindsight memory system. Sub-agent fan-out into isolated worktrees. v15.7.2 (May 31, 409 total releases). 8.8k stars.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 400 },
+          "tags": ["Terminal Agent", "LSP", "Debugger", "TypeScript/Rust"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "trending-rohitg00-agentmemory-v0924",
+          "title": "rohitg00/agentmemory v0.9.24",
+          "source": "GitHub",
+          "date": "2026-05-29",
+          "primary_url": "https://github.com/rohitg00/agentmemory",
+          "summary": "Persistent memory for AI coding agents across Claude Code, Cursor, Codex, Copilot, Hermes, OpenCode, and 18 others. Four-tier memory consolidation (Working, Episodic, Semantic, Procedural), BM25+Vector+Graph retrieval via RRF. LongMemEval-S: 95.2% R@5. v0.9.24 (May 29) ships --version flag and iii hard-pin enforcement. AGENT_ID multi-agent isolation shipped this week. 20.2k stars.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 800 },
+          "tags": ["Agent Memory", "Persistent Memory", "TypeScript", "Multi-Agent"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "agentmemory appeared in the May 18 index. Returning because v0.9.24 shipped May 29 with AGENT_ID multi-agent isolation — the first release that explicitly supports concurrent isolated agents sharing one memory server.",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-onlook-dev-onlook",
+          "title": "onlook-dev/onlook",
+          "source": "GitHub",
+          "date": "2026-05-25",
+          "primary_url": "https://github.com/onlook-dev/onlook",
+          "summary": "Open-source visual AI code editor for React — described as 'the Cursor for Designers.' Lets designers build, style, and edit React apps visually with AI assistance. TypeScript. 18.6k total stars; 2.1k weekly delta per GitHub trending snapshot.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 2143 },
+          "tags": ["Visual Coding", "React", "TypeScript", "Designer Tools"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Agent Skills and MCP Servers",
+      "description": "Newly-published agent skills, MCP servers, and context layers shipping in the week of May 25–31, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "skill-imbad0202-academic-research-skills",
+          "title": "Imbad0202/academic-research-skills v3.3.5",
+          "source": "GitHub",
+          "author": "Imbad0202",
+          "date": "2026-05-25",
+          "primary_url": "https://github.com/Imbad0202/academic-research-skills",
+          "summary": "Comprehensive Claude Code skill suite for the full academic research pipeline: deep research (13-agent team with Semantic Scholar API verification), paper writing (12-agent pipeline with LaTeX hardening), peer review (7-agent, EIC + 3 reviewers + Devil's Advocate), and pipeline orchestration (10-stage, adaptive checkpoints). v3.3.5 adds Artifact Reproducibility Lockfile schema and Benchmark Report Schema for honest benchmark comparisons. Installs from Claude Code marketplace. 21.4k stars.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 11600 },
+          "tags": ["Agent Skill", "Academic Research", "Claude Code", "Multi-Agent"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "mcp-kaelio-ktx-data-context-layer",
+          "title": "Kaelio/ktx — executable context layer for data agents",
+          "source": "GitHub / Hacker News",
+          "author": "Kaelio",
+          "date": "2026-05-28",
+          "primary_url": "https://github.com/Kaelio/ktx-ai-data-agents-mcp-context-skills",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=48309986"
+            }
+          ],
+          "summary": "ktx is a self-improving context layer that teaches data agents how to query a warehouse accurately — ingests company knowledge from Notion/dbt/Looker/Metabase, maps joinable columns, detects fan and chasm traps, and builds a semantic layer of approved metric definitions. Exposes CLI and MCP tools for agents to query. v0.7.0 (May 28). Supports PostgreSQL, Snowflake, BigQuery, ClickHouse, MySQL, SQL Server, SQLite. 606 stars. Show HN May 28.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 606 },
+          "tags": ["MCP Server", "Data Agents", "Semantic Layer", "Warehouse"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "mcp-cloakbrowser-stealth-chromium",
+          "title": "CloakHQ/CloakBrowser",
+          "source": "GitHub",
+          "author": "CloakHQ",
+          "date": "2026-05-25",
+          "primary_url": "https://github.com/CloakHQ/CloakBrowser",
+          "summary": "Chromium fork with 58 C++ source-level fingerprint patches (Canvas, WebGL, audio, GPU) that passes bot detection tests including Cloudflare Turnstile and scores 0.9 on reCAPTCHA v3. Drop-in replacement for Playwright with `humanize=True` mouse/keyboard simulation. MIT license; patched binary auto-downloads on first import. Community uses it as a browser tool for AI agents requiring reliable web interaction. 7k stars (from trending digest).",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 7000 },
+          "tags": ["Browser Automation", "Playwright", "Python", "Agent Tool"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "mcp-dograh-voice-agent-platform",
+          "title": "dograh-hq/dograh v1.31.0",
+          "source": "GitHub",
+          "author": "dograh-hq",
+          "date": "2026-05-25",
+          "primary_url": "https://github.com/dograh-hq/dograh",
+          "summary": "Open-source self-hostable voice agent platform — self-described alternative to Vapi and Retell. Zero to working voice bot in 2 minutes via drag-and-drop workflow builder. Bring your own LLM, TTS, and STT models. BSD 2-Clause license. Python-based, Docker-first. Telephony integration (Twilio, Vonage, others). Data residency: your infra, your rules. v1.31.0 (May 21). 2.8k stars.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 2800 },
+          "tags": ["Voice Agent", "Self-Hosted", "Telephony", "Python"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skill-presenton-ai-presentation-generator",
+          "title": "presenton/presenton — open-source AI presentation generator",
+          "source": "GitHub",
+          "author": "presenton",
+          "date": "2026-05-25",
+          "primary_url": "https://github.com/presenton/presenton",
+          "summary": "Self-hosted open-source alternative to Gamma and Beautiful AI. Supports OpenAI, Gemini, Ollama and custom models for LLM and image generation. Custom HTML/Tailwind CSS templates. Generates editable PPTX files. Deployable via Docker or Electron desktop app. electron-v0.8.6-beta shipped May 29. Active Amazon Bedrock docs update May 25. 7.6k stars.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 7600 },
+          "tags": ["Presentation Generation", "Self-Hosted", "AI Agent", "PPTX"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN and Indie Builds",
+      "description": "Show HN posts and indie projects from May 25–31, 2026 with working repos or demos.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "showhn-tiny-vllm-cpp-cuda-inference",
+          "title": "Show HN: Tiny-vLLM — high-performance LLM inference engine in C++ and CUDA",
+          "source": "Hacker News",
+          "author": "jmaczan",
+          "date": "2026-05-29",
+          "primary_url": "https://news.ycombinator.com/item?id=48328184",
+          "secondary_urls": [
+            {
+              "label": "GitHub: jmaczan/tiny-vllm",
+              "url": "https://github.com/jmaczan/tiny-vllm"
+            }
+          ],
+          "summary": "From-scratch LLM inference engine in C++/CUDA implementing KV cache, static and continuous batching, online softmax, FlashAttention-like attention, and PagedAttention. Framed as a learning resource rather than a production vLLM replacement — ships full source and a structured course covering GPU memory, CUDA kernel engineering, RoPE, GQA, and paged attention. 187 HN points (May 29 front page). 148 stars.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "upvotes": 187 },
+          "tags": ["LLM Inference", "C++", "CUDA", "Education", "vLLM"],
+          "category": "Agent Infrastructure",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "showhn-continue-yn-agent-permission-fatigue-game",
+          "title": "Show HN: Continue? Y/N — 60-second game about AI agent permission fatigue",
+          "source": "Hacker News",
+          "author": "Wirbelwind",
+          "date": "2026-05-28",
+          "primary_url": "https://news.ycombinator.com/item?id=48308376",
+          "secondary_urls": [
+            {
+              "label": "scalex.dev — AI agent permissions summary",
+              "url": "https://scalex.dev/blog/ai-agent-permissions/"
+            }
+          ],
+          "summary": "A 60-second browser game that simulates the agent permission approval loop — the player approves or denies agent tool calls while malicious commands appear mixed in. Designed to illustrate the cognitive load and failure modes of human-in-the-loop agent permission systems. 379 HN points, 156 comments (May 28). Comments thread includes links to clawband.io (agent permissioning platform) and github.com/stanislavkozlovski/dclaude for local agent permission management.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "upvotes": 379, "comments": 156 },
+          "tags": ["Agent Safety", "Human-in-the-Loop", "Permissioning", "Game"],
+          "category": "Agent Infrastructure",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "showhn-ktx-data-agent-context-layer",
+          "title": "Show HN: Ktx — open-source executable context layer for data agents",
+          "source": "Hacker News",
+          "author": "lucamrtl",
+          "date": "2026-05-28",
+          "primary_url": "https://news.ycombinator.com/item?id=48309986",
+          "secondary_urls": [
+            {
+              "label": "GitHub: Kaelio/ktx",
+              "url": "https://github.com/Kaelio/ktx-ai-data-agents-mcp-context-skills"
+            }
+          ],
+          "summary": "Show HN for ktx: an executable context layer that teaches any data agent how to query a warehouse accurately using approved metric definitions, joinable column maps, and business wiki knowledge. The HN thread confirms the self-improving mechanism: corrections from user interactions feed back into the semantic layer. Apache 2.0. Supports most SQL warehouses and BI tools. Discussed in HN thread alongside dbt, Metabase, and Notion ingestion workflows.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 84 },
+          "tags": ["MCP Server", "Data Agents", "Semantic Layer", "Show HN"],
+          "category": "MCP Server",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "showhn-zot-coding-agent-harness",
+          "title": "Show HN: Zot — yet another coding agent harness",
+          "source": "Hacker News",
+          "author": "patriceckhart",
+          "date": "2026-05-30",
+          "primary_url": "https://news.ycombinator.com/item?id=48319524",
+          "secondary_urls": [
+            {
+              "label": "GitHub: patriceckhart/zot (partial)",
+              "url": "https://github.com/patriceckhart/zot"
+            }
+          ],
+          "summary": "A coding agent harness submitted as Show HN on May 30. The thread discusses Claude Code, DeepSeek Reasonix, Pi, OpenCode, and MCP/tool-calling extensibility. Comments reference the Agent Harness ecosystem and parallel discussions about TUI design in Zed's terminal threads. The title self-deprecates ('yet another'), reflecting the active fragmentation in the agent harness space. Points and comment count not publicly visible in fetched page.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": {},
+          "tags": ["Coding Agent", "Harness", "MCP", "TUI"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 5, "signal": 1, "novelty": 1, "actionability": 1, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent and RAG Implementations",
+      "description": "Production-shaped agent or RAG builds worth studying — with linked code or detailed write-up.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "impl-vahidkowsari-pi-local-rag",
+          "title": "vahidkowsari/pi-local-rag — local RAG extension for the Pi coding agent",
+          "source": "GitHub",
+          "author": "vahidkowsari",
+          "date": "2026-05-26",
+          "primary_url": "https://github.com/vahidkowsari/pi-local-rag",
+          "summary": "A local hybrid RAG pipeline for the Pi coding agent with zero cloud dependency. Hybrid BM25 + vector search using SQLite FTS5 and sqlite-vec (384-dim cosine). ONNX embeddings via Xenova/all-MiniLM-L6-v2 (~23 MB, runs fully offline). Tracked paths with auto-refresh (stale index rebuilt if >24h old). Three MCP tools: rag_index, rag_query, rag_status. Supports PDF (with OCR fallback), DOCX, HTML, Markdown, JSON, YAML, source code. Published May 26, 2026.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 17 },
+          "tags": ["RAG", "Local-First", "SQLite", "ONNX", "Pi Agent"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "impl-tracer-cloud-opensre",
+          "title": "Tracer-Cloud/opensre — open-source AI SRE agent framework",
+          "source": "GitHub",
+          "author": "Tracer-Cloud",
+          "date": "2026-05-29",
+          "primary_url": "https://github.com/tracer-cloud/opensre",
+          "summary": "Open-source framework for building AI SRE agents with 60+ integrated tools. Structured incident investigation with runbook-aware reasoning, predictive failure detection, and evidence-backed root cause analysis. Supports Anthropic, OpenAI, Ollama, Gemini, OpenRouter, NVIDIA NIM. Posts summaries to Slack or PagerDuty with optional automated remediation. v0.1 released May 15, 2026. 6.2k stars.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 6200 },
+          "tags": ["SRE", "Incident Response", "Multi-Agent", "DevOps"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "impl-github-agentic-token-reduction-pattern",
+          "title": "GitHub internal: audit-and-optimize loop cuts agentic CI token spend 62%",
+          "source": "InfoQ",
+          "author": "GitHub Engineering",
+          "date": "2026-05-29",
+          "primary_url": "https://www.infoq.com/news/2026/05/github-agentic-token-savings/",
+          "summary": "Documented production pattern for reducing LLM token spend in agentic CI workflows: (1) remove unused MCP tool manifests, (2) replace MCP calls for simple reads with gh CLI, (3) pre-download static files before agent start, (4) proxy all calls through a transparent HTTP proxy with token logging. Daily Auditor + Optimiser agents self-report and file GitHub issues proposing specific workflow optimizations. Auto-Triage Issues: 62% ET reduction over 109 runs. Shipped in open-source gh-aw CLI.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": {},
+          "tags": ["Token Efficiency", "MCP Optimization", "CI/CD", "Agent Infrastructure"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "n8n / custom automations with measurable outcomes from the week of May 25–31, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "automation-n8n-devops-classifier-25pct-auto-resolved",
+          "title": "n8n DevOps classifier: 25% of support tickets auto-resolved, ~3 min average response time",
+          "source": "n8n Community",
+          "author": "Javdet",
+          "date": "2026-05-27",
+          "primary_url": "https://community.n8n.io/t/ai-powered-devops-first-line-a-classifier-4-specialized-assistants-built-with-n8n/297183",
+          "summary": "n8n workflow with a Slack-connected message classifier routing into four specialized DevOps assistants (CI/CD Investigator, incident agent, infra question handler, modification request handler), each with its own MCP toolset (GitHub MCP, Kubernetes MCP, Grafana MCP). Attachments analyzer processes screenshots and log files before the main agent runs. Results: ~25% of requests fully closed without an engineer; ~40% reach on-call with diagnostics pre-attached; avg response time under 3 min; ~$250/month LLM spend. Templates published. Posted May 27, 2026.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "results": "~25% of requests fully closed without an engineer. ~40% reach on-call with diagnostics attached. Avg response time: under 3 min. LLM spend: ~$250/month. Thread published: n8n Community, May 27, 2026.",
+          "engagement": {},
+          "tags": ["n8n", "DevOps", "Multi-Agent", "Slack", "MCP"],
+          "category": "Automation",
+          "platform": "n8n",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "automation-github-agentic-ci-62pct-token",
+          "title": "GitHub gh-aw: 62% token reduction in CI agent workflows via daily audit loop",
+          "source": "InfoQ / GitHub",
+          "author": "GitHub Engineering",
+          "date": "2026-05-29",
+          "primary_url": "https://www.infoq.com/news/2026/05/github-agentic-token-savings/",
+          "summary": "GitHub Engineering's published workflow for reducing LLM token spend across agentic CI processes. Key interventions: prune unused MCP tool manifests (each saves 10–15 KB per turn), swap MCP reads for gh CLI commands, pre-download files into workspace before agent start. Measurable outcomes: Auto-Triage Issues 62% ET reduction over 109 runs; Security Guard 43%; Smoke Claude 59%. Daily cron-driven Auditor and Optimiser agents self-report into the same digest. Available via gh-aw CLI.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "results": "62% effective token reduction (Auto-Triage Issues, 109 post-fix runs). 43% (Security Guard). 59% (Smoke Claude). 37% (Daily Community Attribution). Source: InfoQ, May 29, 2026.",
+          "engagement": {},
+          "tags": ["Token Efficiency", "CI/CD", "MCP Optimization", "Automation"],
+          "category": "Automation",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Meaningful releases from major AI frameworks and tools this week — major versions or new capabilities only.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "framework-codegraph-v0-9-7",
+          "title": "colbymchenry/codegraph v0.9.7 — Go gRPC, multi-language interface linking, Opus 4.8 re-validation",
+          "source": "GitHub",
+          "date": "2026-05-28",
+          "primary_url": "https://github.com/colbymchenry/codegraph/releases/tag/v0.9.7",
+          "summary": "v0.9.7 (May 28) adds Go gRPC interface stub resolution, dynamic-dispatch fallback in codegraph_trace, interface-to-implementation linking for C#/TypeScript/JavaScript/Swift/Scala, generated files ranked last in search, and test files deprioritized in codegraph_explore. Benchmark re-validated on Opus 4.8 (May 29): 25% cheaper, 57% fewer tokens, 62% fewer tool calls. 34.7k stars.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 3000 },
+          "tags": ["Code Intelligence", "MCP", "TypeScript", "Knowledge Graph"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "CodeGraph appeared in the May 18 top picks. Returning with v0.9.7 as a meaningful framework release with new language coverage and benchmark re-validation.",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "framework-openhuman-v056-memory-webgl",
+          "title": "tinyhumansai/openhuman v0.56.0 — Memory subtabs, WebGL memory graph, MCP registry UI",
+          "source": "GitHub",
+          "date": "2026-05-27",
+          "primary_url": "https://github.com/tinyhumansai/openhuman",
+          "summary": "v0.56.0 (May 27) ships Memory subtabs for navigating Working, Episodic, Semantic, and Procedural memory tiers independently, a WebGL-rendered memory graph, and the MCP registry visible in UI with transport-aware install. Drops Knowledge Vaults in favour of the unified memory tree model. 30k stars; active weekly commit pace (2,650 total commits).",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 3200 },
+          "tags": ["Personal AI", "Memory Tree", "Rust", "MCP"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "openhuman appeared in the May 18 trending section. Returning because v0.56.0 ships a Memory tier UI — a new capability in the memory architecture, not just a patch.",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "framework-codewhale-v0848-rust-agent",
+          "title": "Hmbown/CodeWhale v0.8.48 — DeepSeek V4 terminal agent, May 31 release",
+          "source": "GitHub",
+          "date": "2026-05-31",
+          "primary_url": "https://github.com/Hmbown/CodeWhale/releases",
+          "summary": "v0.8.48 (May 31, 2026) is the latest in a weekly release cadence for the Rust-based DeepSeek V4 terminal coding agent. 104 total releases since January 2026. The agent's architecture — Constitution-driven authority hierarchy, three execution modes (Plan/Agent/YOLO), concurrent sub-agents, and prefix-cache optimization — remains stable; weekly releases focus on tool coverage, provider integration, and platform compatibility. 36.2k stars.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "stars": 1200 },
+          "tags": ["Terminal Agent", "DeepSeek", "Rust", "Releases"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-source patterns observed across this week's repos and discussions.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "pattern-agent-native-interface-generation",
+          "title": "Agent-native interface generation is replacing prompt-based UI automation",
+          "source": "GitHub",
+          "date": "2026-05-31",
+          "primary_url": "https://github.com/HKUDS/CLI-Anything",
+          "summary": "CLI-Anything (41.5k stars, 2,330 tests) and ktx (606 stars, Show HN May 28) represent the same design choice from different angles: rather than letting agents navigate unstructured interfaces via prompts, generate structured, tested interfaces once and let agents use those. CLI-Anything generates CLIs for desktop applications; ktx generates a semantic layer for data warehouses. Both expose MCP surfaces. The pattern is: replace open-ended agent exploration of a system with a pre-built, tested, agent-callable interface that encodes human expertise about how the system should be queried. An enterprise AI team has a clearer path to governance with this pattern — the interface definition is a reviewable artifact, unlike an agent's ad-hoc tool calls.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": {},
+          "tags": ["Agent-Native", "Interface Generation", "MCP", "Governance"],
+          "category": "Pattern",
+          "platform": "cross-source",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "pattern-agent-permission-ux-surfacing",
+          "title": "Agent permission fatigue is surfacing as a first-class UX problem with multiple competing solutions",
+          "source": "Hacker News",
+          "date": "2026-05-28",
+          "primary_url": "https://news.ycombinator.com/item?id=48308376",
+          "summary": "The Continue? Y/N game (379 HN pts, 156 comments) sparked a thread that links to clawband.io (a dedicated agent permissioning platform), github.com/stanislavkozlovski/dclaude (local permission management for Claude), and scalex.dev's agent permissions summary. Three separate products/papers addressing the same identified failure mode: humans cannot sustainably approve every agent tool call, but open-ended auto-approval creates security exposure. The design space is now clearly identified by the community as a problem distinct from agent capability — it is an interface problem. An enterprise AI team should treat permission design as part of any agentic workflow deployment, not an afterthought.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": { "upvotes": 379 },
+          "tags": ["Agent Safety", "Permission Management", "UX", "Human-in-the-Loop"],
+          "category": "Pattern",
+          "platform": "cross-source",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "pattern-model-substitution-cost-engineering",
+          "title": "DeepSeek V4 is becoming the default cost-reduction model for community-built coding agents",
+          "source": "GitHub",
+          "date": "2026-05-31",
+          "primary_url": "https://github.com/Hmbown/CodeWhale",
+          "summary": "Three independent community coding agents now explicitly target DeepSeek V4 as the primary model: CodeWhale (36.2k stars, Rust), usewhale/DeepSeek-Code-Whale (299 stars, newer fork), and lessweb/deepcode-cli (Node.js). All three cite 90%+ prefix-cache hit rates and publish explicit pricing tables showing input cache-hit costs at $0.0028–$0.003625/1M tokens — 10–30x below frontier model pricing for cached inputs. The community is treating model substitution as a separable engineering choice from agent architecture. A team that has already invested in a Skills and MCP infrastructure on Claude Code can evaluate CodeWhale's compatibility (it accepts the same SKILL.md format) as a cost-reduction experiment without rewriting agent tooling.",
+          "verified": true,
+          "verified_at": "2026-05-31T14:00:00Z",
+          "engagement": {},
+          "tags": ["DeepSeek", "Cost Engineering", "Model Substitution", "Rust"],
+          "category": "Pattern",
+          "platform": "cross-source",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        }
+      ]
+    }
+  ],
+
+  "index": [
+    { "id": "idx-codegraph-v097", "title": "colbymchenry/codegraph v0.9.7 — Go gRPC, multi-language interface linking, Opus 4.8 re-validation", "source": "GitHub", "primary_url": "https://github.com/colbymchenry/codegraph", "score": 9, "date": "2026-05-28" },
+    { "id": "idx-github-gh-aw-62pct", "title": "GitHub gh-aw — 62% token reduction in agentic CI workflows via MCP pruning + audit loop", "source": "InfoQ / GitHub", "primary_url": "https://www.infoq.com/news/2026/05/github-agentic-token-savings/", "score": 9, "date": "2026-05-29" },
+    { "id": "idx-codewhale-v0848", "title": "Hmbown/CodeWhale v0.8.48 — Rust DeepSeek V4 terminal agent, 30x cheaper, 36.2k stars", "source": "GitHub", "primary_url": "https://github.com/Hmbown/CodeWhale", "score": 8, "date": "2026-05-31" },
+    { "id": "idx-understand-anything-47k", "title": "Lum1104/Understand-Anything — codebase to interactive knowledge graph, 47.2k stars, 11.6k weekly delta", "source": "GitHub", "primary_url": "https://github.com/Lum1104/Understand-Anything", "score": 8, "date": "2026-05-25" },
+    { "id": "idx-cli-anything-2330-tests", "title": "HKUDS/CLI-Anything — auto-generates agent-native CLIs for 39 apps, 2,330 tests, 100% pass rate", "source": "GitHub", "primary_url": "https://github.com/HKUDS/CLI-Anything", "score": 8, "date": "2026-05-25" },
+    { "id": "idx-kaelio-ktx-mcp-data-agents", "title": "Kaelio/ktx — executable context layer for data agents, semantic layer + MCP, Show HN May 28", "source": "GitHub / HN", "primary_url": "https://github.com/Kaelio/ktx-ai-data-agents-mcp-context-skills", "score": 8, "date": "2026-05-28" },
+    { "id": "idx-n8n-devops-classifier-25pct", "title": "n8n DevOps classifier: 25% auto-resolved, 40% pre-diagnosed, <3 min response, $250/mo spend", "source": "n8n Community", "primary_url": "https://community.n8n.io/t/ai-powered-devops-first-line-a-classifier-4-specialized-assistants-built-with-n8n/297183", "score": 8, "date": "2026-05-27" },
+    { "id": "idx-imbad0202-academic-skills", "title": "Imbad0202/academic-research-skills v3.3.5 — 13-agent research team, 21.4k stars, 11.6k weekly delta", "source": "GitHub", "primary_url": "https://github.com/Imbad0202/academic-research-skills", "score": 7, "date": "2026-05-25" },
+    { "id": "idx-can1357-oh-my-pi-v1572", "title": "can1357/oh-my-pi v15.7.2 — terminal agent with LSP, debugger, 40+ providers, Hashline editing", "source": "GitHub", "primary_url": "https://github.com/can1357/oh-my-pi", "score": 7, "date": "2026-05-31" },
+    { "id": "idx-showhn-continue-yn-379pts", "title": "Show HN: Continue? Y/N — AI agent permission fatigue game (379 pts, 156 comments)", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48308376", "score": 7, "date": "2026-05-28" },
+    { "id": "idx-showhn-tiny-vllm-187pts", "title": "Show HN: Tiny-vLLM — LLM inference engine in C++ and CUDA (187 pts)", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48328184", "score": 7, "date": "2026-05-29" },
+    { "id": "idx-dograh-voice-agent-platform", "title": "dograh-hq/dograh v1.31.0 — self-hosted voice agent platform, Vapi/Retell alternative, 2.8k stars", "source": "GitHub", "primary_url": "https://github.com/dograh-hq/dograh", "score": 7, "date": "2026-05-25" },
+    { "id": "idx-tracer-cloud-opensre", "title": "Tracer-Cloud/opensre — open-source AI SRE agent framework, 60+ tools, 6.2k stars", "source": "GitHub", "primary_url": "https://github.com/tracer-cloud/opensre", "score": 7, "date": "2026-05-29" },
+    { "id": "idx-showhn-ktx-data-context", "title": "Show HN: Ktx — executable context layer for data agents, Apache 2.0", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48309986", "score": 7, "date": "2026-05-28" },
+    { "id": "idx-rohitg00-agentmemory-v0924", "title": "rohitg00/agentmemory v0.9.24 — AGENT_ID multi-agent isolation, LongMemEval-S 95.2% R@5", "source": "GitHub", "primary_url": "https://github.com/rohitg00/agentmemory", "score": 7, "date": "2026-05-29" },
+    { "id": "idx-tinyhumansai-openhuman-v056", "title": "tinyhumansai/openhuman v0.56.0 — Memory subtabs, WebGL graph, MCP registry UI, 30k stars", "source": "GitHub", "primary_url": "https://github.com/tinyhumansai/openhuman", "score": 7, "date": "2026-05-27" },
+    { "id": "idx-vahidkowsari-pi-local-rag", "title": "vahidkowsari/pi-local-rag — local hybrid RAG for Pi agent, BM25+vector, zero cloud dependency", "source": "GitHub", "primary_url": "https://github.com/vahidkowsari/pi-local-rag", "score": 7, "date": "2026-05-26" },
+    { "id": "idx-presenton-ai-presentation", "title": "presenton/presenton — open-source AI presentation generator, PPTX export, 7.6k stars", "source": "GitHub", "primary_url": "https://github.com/presenton/presenton", "score": 6, "date": "2026-05-25" },
+    { "id": "idx-onlook-dev-visual-editor", "title": "onlook-dev/onlook — visual AI code editor for React, 18.6k stars, 2.1k weekly delta", "source": "GitHub", "primary_url": "https://github.com/onlook-dev/onlook", "score": 6, "date": "2026-05-25" },
+    { "id": "idx-cloakhq-cloakbrowser", "title": "CloakHQ/CloakBrowser — stealth Chromium for agent browser automation, 58 C++ patches, 0.9 reCAPTCHA", "source": "GitHub", "primary_url": "https://github.com/CloakHQ/CloakBrowser", "score": 6, "date": "2026-05-25" },
+    { "id": "idx-showhn-zot-coding-harness", "title": "Show HN: Zot — coding agent harness with MCP and TUI", "source": "Hacker News", "primary_url": "https://news.ycombinator.com/item?id=48319524", "score": 5, "date": "2026-05-30" },
+    { "id": "idx-pattern-agent-native-interface", "title": "Pattern: agent-native interface generation replacing prompt-based UI automation (CLI-Anything, ktx)", "source": "Cross-source", "primary_url": "https://github.com/HKUDS/CLI-Anything", "score": 8, "date": "2026-05-31" },
+    { "id": "idx-pattern-permission-fatigue-ux", "title": "Pattern: agent permission fatigue surfacing as first-class UX problem", "source": "Cross-source", "primary_url": "https://news.ycombinator.com/item?id=48308376", "score": 8, "date": "2026-05-28" },
+    { "id": "idx-pattern-deepseek-cost-substitution", "title": "Pattern: DeepSeek V4 as default cost-reduction model for community coding agents (CodeWhale, Whale, Deep Code CLI)", "source": "Cross-source", "primary_url": "https://github.com/Hmbown/CodeWhale", "score": 8, "date": "2026-05-31" },
+    { "id": "idx-usewhale-deepseek-code-whale", "title": "usewhale/DeepSeek-Code-Whale — terminal agent for DeepSeek, 97% cache hit, 1M context, 30x cheaper", "source": "GitHub", "primary_url": "https://github.com/usewhale/DeepSeek-Code-Whale", "score": 6, "date": "2026-05-30" },
+    { "id": "idx-jmaczan-tiny-vllm-github", "title": "jmaczan/tiny-vllm — from-scratch LLM inference in C++/CUDA, PagedAttention, KV cache", "source": "GitHub", "primary_url": "https://github.com/jmaczan/tiny-vllm", "score": 6, "date": "2026-05-29" },
+    { "id": "idx-automation-gh-aw-token-reduction", "title": "GitHub gh-aw automation: 62% ET reduction via MCP pruning + audit-optimize loop", "source": "InfoQ / GitHub", "primary_url": "https://www.infoq.com/news/2026/05/github-agentic-token-savings/", "score": 9, "date": "2026-05-29" },
+    { "id": "idx-opensre-incident-investigation", "title": "Tracer-Cloud/opensre — AI SRE agent: runbook-aware reasoning, 60+ tools, PagerDuty integration", "source": "GitHub", "primary_url": "https://github.com/tracer-cloud/opensre", "score": 7, "date": "2026-05-29" },
+    { "id": "idx-framework-codegraph-v097-release", "title": "codegraph v0.9.7 release: Go gRPC, 5-language interface linking, Opus 4.8 benchmark re-validation", "source": "GitHub", "primary_url": "https://github.com/colbymchenry/codegraph/releases/tag/v0.9.7", "score": 8, "date": "2026-05-28" },
+    { "id": "idx-framework-codewhale-v0848-release", "title": "CodeWhale v0.8.48 release — latest in weekly DeepSeek V4 terminal agent cadence", "source": "GitHub", "primary_url": "https://github.com/Hmbown/CodeWhale/releases", "score": 7, "date": "2026-05-31" }
+  ],
+
+  "flagged_unverified": [
+    {
+      "claim": "Conductor project stable 1.0 — 'lightweight alternative to existing agent frameworks with built-in MCP support' and '3x faster task completion than LangChain'",
+      "reason": "Claim sourced from skillsllm.com news brief; no GitHub repo URL found. The 3x performance claim is not corroborated by any primary source. Excluded from index.",
+      "attempted_url": "https://skillsllm.com/news/ai-news-2026-05-25"
+    }
+  ],
+
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Track pasqualepillitteri.it weekly GitHub trending digest as a primary source — it publishes per-repo weekly star deltas with direct GitHub API verification, more reliable than the GitHub trending page for star-delta data.",
+      "Add trendshift.io to the rotation for weekly-delta tracking across AI repos — the site provides trending stats with social mention context.",
+      "Follow the gh-aw (github/gh-aw) CLI discussions page for the GitHub token audit reports — this is now a weekly source of production agentic workflow cost data from a credible primary source."
+    ],
+    "sources_to_drop": [
+      "No sources dropped this week."
+    ],
+    "topics_to_add": [
+      "Track the agent permission management space (clawband.io, dclaude, agent permissioning platforms) explicitly — the Y/N game thread confirmed this is an active unsolved problem with multiple competing solutions.",
+      "Track DeepSeek V4-based community agents (CodeWhale, Whale, Deep Code CLI) as a separate leaderboard alongside Claude Code-based tools — the cost dimension is materially different and relevant for readers managing LLM budgets.",
+      "Track the CLI-Anything registry (clianything.cc) weekly for new applications covered — each addition expands the scope of what agents can call without manual prompt engineering."
+    ],
+    "notes": "Freshness ratio is 0.87 (26 new items of 30 total), above the 0.85 floor. Four returning items: codegraph (v0.9.7 major release), openhuman (v0.56.0 memory UI), agentmemory (v0.9.24 multi-agent isolation), codewhale framework release section. The dominant theme this week is cost reduction from three angles: model substitution (DeepSeek V4), token reduction (CodeGraph, GitHub gh-aw), and scope reduction (CLI-Anything, ktx). The permission fatigue thread (379 HN pts) is the week's highest-signal discussion for enterprise AI teams building human-in-the-loop workflows."
+  }
+}

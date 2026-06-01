@@ -1,0 +1,1045 @@
+{
+  "tab_id": "social",
+  "tab_name": "Social Intelligence",
+  "subtitle": "Platform Intelligence",
+  "icon": "Share2",
+  "min_items": 15,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 0.94,
+    "items_total": 18,
+    "items_new": 17,
+    "items_returning": 1
+  },
+  "executive_summary": [
+    {
+      "headline": "Token budget management emerged as the enterprise AI operations problem of the week — Ethan Mollick's posts naming it drew nearly 1,200 combined reactions on LinkedIn",
+      "body": "Two Mollick posts published May 27 and May 29 documented the same structural gap from different angles. The May 27 post (966 reactions, 208 comments) framed the problem: large organizations blew through annual AI token budgets in the first two months of 2026, and no governance model yet exists for who gets tokens, at what volume, or to what end. The May 29 follow-up (142 likes, 44 comments) provided the counterpoint — no organization that has adopted AI coding is retreating from it, so the answer is not a pause but a governance model. Allie K. Miller's May 29 X diary entry added confirming field color: every CIO she meets is 'worried about token maxxing and cost' and wants 'signal among the noise.' The enterprise-relevant framing: token budgets are no longer an IT line item — they are a proxy for AI deployment maturity, and organizations without a usage-allocation model are exposing themselves to both cost overruns and adoption inequality between power users and median developers.",
+      "primary_url": "https://www.linkedin.com/posts/emollick_the-fact-that-tokens-went-from-something-activity-7465420726150250496-Tuv5"
+    },
+    {
+      "headline": "The Cursor Developer Habits Report provided the first comprehensive data on AI coding concentration and the scale of the power-user gap — p99 developers produce 46x more AI-generated lines than the median",
+      "body": "Cursor published its inaugural Developer Habits Report on May 28, based on what it described as the most comprehensive dataset on AI coding in existence across all model families. Five themes emerged: developer acceleration (PRs are up 2.5x year-over-year in lines changed; Mega PRs of 1,000+ lines are becoming common), the economics of intelligence (cost per agent request varies by up to 9x across model families), the power user gap (Gini scores of 0.77, 0.75, 0.72 across three usage metrics; p99 developers produce 46x more lines and merge 15x more PRs than the median active user), the rise of context (input tokens now exceed 90% of input-output volume; input token costs rose from roughly half to nearly 70% of total since the start of 2026), and the shift to automation (5x more agent-generated changes are reaching commits without a manual diff acceptance step since the start of the year). The LinkedIn post received 529 likes. For enterprise AI teams managing adoption equity and cost controls simultaneously, these metrics define the benchmark: if a team's internal Gini is near 0.77, a small cohort of power users is generating most of the AI-coded output — which has implications for dependency, knowledge transfer, and governance.",
+      "primary_url": "https://www.linkedin.com/posts/cursorai_read-the-full-report-activity-7465791164860829696-ktid"
+    },
+    {
+      "headline": "Anthropic's Claude Opus 4.8 launched May 28 with Dynamic Workflows enabling hundreds of parallel subagents per session — the same week Allie K. Miller's field diary documented that most F500 enterprises are still running 2024-vintage AI strategies",
+      "body": "Anthropic released Claude Opus 4.8 on May 28, introducing three production-relevant capabilities: Dynamic Workflows (research preview, Enterprise and Team plans) allowing hundreds of parallel subagents in a single Claude Code session with output verification before reporting back; effort control letting users dial model thoroughness from standard through extra and max; and a Messages API update allowing mid-task instruction updates without breaking the prompt cache. Benchmarks show it as the only model to complete every Super-Agent benchmark case end-to-end, scored 84% on Online-Mind2Web (a browser-agent eval), and is four times less likely than Opus 4.7 to let code flaws pass unremarked. The same week, Allie K. Miller's X diary entry noted that 'the average F500 enterprise is just now hearing about the hill climbing / flywheel / AI-legible company framework' and that most enterprise AI strategies 'sound like startup strategies at the end of 2024.' The gap between frontier model capability and median enterprise deployment posture widened again this week.",
+      "primary_url": "https://www.anthropic.com/news/claude-opus-4-8"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "tp-ethan-mollick-token-budget-governance-linkedin-may27",
+      "title": "Ethan Mollick: Token budgets are the new AI governance crisis — organizations blew annual budgets in two months and have no allocation model",
+      "source": "LinkedIn",
+      "author": "Ethan Mollick (Wharton, AI research / education)",
+      "date": "2026-05-27",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/posts/emollick_the-fact-that-tokens-went-from-something-activity-7465420726150250496-Tuv5",
+      "summary": "Mollick's May 27 post (966 reactions, 208 comments) named the operational gap that no one had framed cleanly: tokens went from a budget non-entity to an absolute infrastructure requirement for engineering teams in under 12 months. Large organizations are swinging between extremes — 'everyone should use as many tokens as possible' to 'can we just use local models?' — because there is no agreed governance model for who gets tokens, how many, and to what measurable end. The unanswered questions he listed (should the best engineers get the most tokens? should the worst? are there use cases to prioritize?) are not theoretical — they are the decisions organizations are making by default, usually by manager whim.",
+      "enterprise_translation": "The design principle is resource governance for a non-fungible compute asset. Token allocation is structurally identical to compute quota management in pre-cloud on-prem infrastructure — the difference is that token spend maps directly to cognitive task output, not just compute cycles. An enterprise innovation team can run a 30-day experiment: instrument existing Claude or Copilot usage by team and task type (coding, document analysis, compliance review), rank use cases by cost-per-output-unit rather than total spend, and propose a tiered allocation model that maximizes measurable throughput rather than egalitarian access. This reframes the token cost debate from a budget problem to a productivity design problem — which is the level at which it should be decided.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "likes": 966,
+        "comments": 208
+      },
+      "tags": ["token governance", "AI budgets", "enterprise AI operations", "agentic coding", "Ethan Mollick"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-31T00:00:00Z"
+    },
+    {
+      "id": "tp-cursor-developer-habits-report-linkedin-may28",
+      "title": "Cursor Developer Habits Report: p99 developers produce 46x more AI-generated lines than the median — the power-user gap is now measurable",
+      "source": "LinkedIn / Cursor",
+      "author": "Cursor (318K LinkedIn followers)",
+      "date": "2026-05-28",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/posts/cursorai_read-the-full-report-activity-7465791164860829696-ktid",
+      "secondary_urls": [
+        {
+          "label": "Cursor Developer Habits Report (full report)",
+          "url": "https://cursor.com/insights"
+        }
+      ],
+      "summary": "Cursor released its first Developer Habits Report on May 28, drawing on what it describes as the most comprehensive AI coding dataset across all model families. The five headline findings: PRs are up 2.5x year-over-year in lines changed; cost per agent request varies by 9x across model families; Gini scores for usage concentration sit at 0.77/0.75/0.72 — with p99 developers producing 46x more AI lines and merging 15x more PRs than the median active user; input tokens have risen from roughly half to nearly 70% of total input/output token costs since January 2026; and 5x more agent-generated changes are now reaching commits without a manual diff step compared to the start of the year. The LinkedIn post received 529 likes and 18 comments.",
+      "enterprise_translation": "The design principle is talent concentration risk in AI-augmented workflows. A Gini coefficient of 0.77 means a small cohort of power users is generating the bulk of AI-assisted output — the same structural risk as bus-factor dependency in traditional software teams, but amplified by the speed differential between p99 and median users. An enterprise AI team can run this experiment within 30 days: pull AI tool usage logs (Claude Code, Copilot, or equivalent) and calculate the equivalent Gini for your organization. If the score is above 0.65, you have a knowledge transfer and dependency risk — your AI-skilled cohort is producing output that the median team member cannot review, maintain, or replicate without upskilling. The actionable output is a targeted enablement program for the 40th-to-70th percentile, not the top 1%.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "likes": 529,
+        "comments": 18
+      },
+      "tags": ["Cursor", "developer habits", "AI coding", "power user gap", "token economics", "enterprise AI"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-31T00:00:00Z"
+    },
+    {
+      "id": "tp-ethan-mollick-choosing-to-stay-human-linkedin-may26",
+      "title": "Ethan Mollick: 'Choosing to Stay Human' — cognitive surrender is the design principle that AI companies are optimizing for, and enterprise teams are not deciding intentionally",
+      "source": "LinkedIn / One Useful Thing",
+      "author": "Ethan Mollick (Wharton, AI research / education)",
+      "date": "2026-05-26",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/posts/emollick_choosing-to-stay-human-activity-7465129658767032321-1CBM",
+      "secondary_urls": [
+        {
+          "label": "One Useful Thing — Choosing to Stay Human (full essay)",
+          "url": "https://www.oneusefulthing.org/p/choosing-to-stay-human"
+        }
+      ],
+      "summary": "Mollick's May 26 LinkedIn post (569 reactions, 229 comments) linked to an essay arguing that AI systems are designed to be frictionless — and that frictionlessness is the mechanism of cognitive surrender. Two controlled studies anchor the argument: in a high school math experiment in Turkey, students using ChatGPT did homework better but underperformed at test time, because AI handled the productive struggle required for learning; in a Python course across ten Taipei high schools, students whose AI tutor asked questions rather than giving answers scored 0.15 standard deviations higher — equivalent to 6-9 months of additional schooling. The broader warning: defaults are being set for what work to give AI by labs designing for engagement, employers deciding what counts as 'using AI well,' and educators defining 'AI literacy' — mostly without deliberate planning.",
+      "enterprise_translation": "The design principle is intentionality as an organizational design choice, not an individual willpower question. Enterprise teams deploying AI tools are, by default, optimizing for the lab's engagement incentives rather than their organization's learning or capability objectives. The concrete experiment: before deploying a new AI workflow to a team, specify explicitly which cognitive tasks should remain human (judgment calls, novel problem framing, stakeholder communication of risk) and which can be delegated (formatting, retrieval, first-draft generation). Write this down as a team policy before the tool is live, not after habit formation. Mollick's evidence suggests the window to set those defaults is narrow — and that once a generation of workers builds habits around AI as a shortcut, reversal is structurally difficult.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "likes": 569,
+        "comments": 229
+      },
+      "tags": ["cognitive surrender", "AI literacy", "enterprise AI governance", "Ethan Mollick", "education research"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-31T00:00:00Z"
+    },
+    {
+      "id": "tp-allie-miller-ai-hidden-intent-linkedin-may28",
+      "title": "Allie K. Miller: Too many business leaders believe AI says what it means — an intent/display matrix from 2023 is more relevant than ever",
+      "source": "LinkedIn",
+      "author": "Allie K. Miller (enterprise AI strategy)",
+      "date": "2026-05-28",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/posts/alliekmiller_too-many-business-leaders-believe-that-ai-activity-7465835683157311488-N1EB",
+      "summary": "Miller's May 28 post (159 reactions, 107 comments) surfaced a 2023 intent/display matrix she and a collaborator built: a 2x2 framework distinguishing what AI intends versus what it displays, arguing that most executives apply naive face-value interpretation to AI outputs. She linked to the Claude Mythos system card and Anthropic's NLA (natural language as alignment) paper as current reference reading. The post landed the same week Anthropic confirmed it would release Mythos-class models to the public — making the question of AI intent display timing pointed.",
+      "enterprise_translation": "The design principle is interpretability as an operations requirement, not a research aspiration. For regulated enterprise teams, the intent/display gap is not abstract: an AI system that displays a plausible-looking compliance answer but pursues a different optimization objective (reducing its own token usage, satisfying a superficial pattern match) is a governance failure the audit trail will not catch. A 30-day experiment: take one AI-generated output from the last month that was approved and acted on, and reconstruct what the model was actually optimizing for by examining the full prompt context, the model's reasoning trace (if available), and whether the output satisfied the stated goal or a correlated proxy. Run this as an internal red-team exercise to calibrate how much face-value trust your team is extending to AI outputs without verification.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "likes": 159,
+        "comments": 107
+      },
+      "tags": ["AI intent", "AI governance", "Allie K. Miller", "Claude Mythos", "enterprise AI safety"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-31T00:00:00Z"
+    },
+    {
+      "id": "tp-allie-miller-field-diary-x-may29",
+      "title": "Allie K. Miller field diary: CIOs worried about token maxxing, F500 strategies two years behind, superusers not sharing learnings",
+      "source": "X (formerly Twitter)",
+      "author": "Allie K. Miller (@alliekmiller)",
+      "date": "2026-05-29",
+      "platform": "x",
+      "primary_url": "https://x.com/alliekmiller/status/2060424789190160651",
+      "summary": "Miller posted a bullet-list field diary on May 29 (12.8K views, 92 likes, 17 replies) with 20+ observations from her week. Enterprise-relevant signals: every CIO she meets is worried about token costs and wants signal among the noise; the average F500 is just now discovering the AI flywheel framework; internal superusers who have transformed their workflows are not incentivized to share, so the best learnings are not circulating; most enterprise governance questions remain open on explainability and NLA work from Anthropic; engineers prefer OpenAI Codex over Claude Code at the moment; and 'connecting tools into AI systems safely is still a big open question in the enterprise.'",
+      "enterprise_translation": "The design principle is knowledge circulation as a deployment multiplier. Miller's observation that internal superusers are not incentivized to share their workflow transformations is the structural cause of the slow-diffusion pattern — top AI users in enterprises are discovering productivity gains privately and rationally keeping them as individual competitive advantages (or simply lacking a sharing channel). An enterprise innovation team can directly address this within 30 days: identify the top 5% of internal AI tool users by usage metrics, schedule structured 'what did you change and why' interviews, and convert the outputs into transferable workflow templates. The goal is not documentation for its own sake — it is capturing the learning that is currently trapped in individual practice and making it a team capability.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "views": 12800,
+        "likes": 92,
+        "comments": 17
+      },
+      "tags": ["Allie K. Miller", "enterprise AI", "token costs", "CIO concerns", "AI adoption", "knowledge transfer"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-31T00:00:00Z"
+    },
+    {
+      "id": "tp-openai-codex-locked-mac-computer-use-may26",
+      "title": "OpenAI Codex Locked Use: an AI agent that keeps working on your Mac after the screen locks — the always-on desktop agent arrives",
+      "source": "Enterprise DNA / OpenAI",
+      "author": "OpenAI (announced May 21, 2026)",
+      "date": "2026-05-25",
+      "platform": "linkedin",
+      "primary_url": "https://enterprisedna.co/resources/news/openai-codex-locked-mac-desktop-agent-2026/",
+      "secondary_urls": [
+        {
+          "label": "LinkedIn article — Codex can now operate your Mac while the screen is off",
+          "url": "https://www.linkedin.com/pulse/codex-can-now-operate-your-mac-while-screen-off-jeff-j-hunter-uz2vc"
+        }
+      ],
+      "summary": "OpenAI shipped a feature called Locked Use in Codex on May 21, allowing the agent to operate Mac desktop applications after the screen locks. It does this through an Apple authorization plug-in that temporarily unlocks the Mac scoped to the active task, covers the display so the screen appears locked to anyone nearby, and relocks immediately if local keyboard or mouse input is detected. The broader Codex update also shipped Goal Mode (multi-step autonomous task execution) to general availability and added Appshots for instant window context capture. The feature is not available in the EEA, UK, or Switzerland at launch.",
+      "enterprise_translation": "The design principle is device-decoupled agentic execution — an agent task is no longer bounded by whether the human operator is actively watching. This is the consumer-facing version of what enterprise teams have been building with cloud-hosted sandboxed agents (Gemini Spark, Anthropic Managed Agents): the agent keeps executing autonomously after the human disengages. For IT and security teams at regulated enterprises, Locked Use raises a concrete governance question before it becomes a policy: if employees install the Codex Computer Use plugin on managed MacBooks, the plugin requires Screen Recording and Accessibility permissions — exactly the permissions that DLP tools monitor as insider threat indicators. A 30-day experiment for an enterprise security team: before allowing Codex Computer Use on managed endpoints, draft a policy specifying which application types it can interact with, which are prohibited (finance, legal, HR systems), and what the audit logging requirement is for every locked-use session.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {},
+      "tags": ["OpenAI Codex", "computer use", "locked use", "desktop agent", "autonomous AI", "enterprise security"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-05-31T00:00:00Z"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "linkedin",
+      "title": "LinkedIn",
+      "description": "Enterprise AI signal from the week's top LinkedIn posts, filtered for >100 reactions or structural relevance to enterprise AI teams.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "li-ethan-mollick-token-governance-may27",
+          "title": "Ethan Mollick: Token budget allocation is the new AI governance problem — no org has a model for who gets tokens or how many",
+          "source": "LinkedIn",
+          "author": "Ethan Mollick",
+          "date": "2026-05-27",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/emollick_the-fact-that-tokens-went-from-something-activity-7465420726150250496-Tuv5",
+          "summary": "966 reactions, 208 comments. Mollick documented the absence of any enterprise governance model for token allocation — organizations are swinging between universal adoption and local-model cost-cutting with no principled middle ground. Poses five unanswered operational questions that every AI program manager now faces.",
+          "enterprise_translation": "Token allocation is the immediate proxy for AI deployment maturity. Organizations without an allocation policy are effectively delegating the decision to manager preference and individual initiative — a pattern that produces the Gini distribution Cursor documented in the same week. A governance model should specify tiers (high-value agentic tasks vs. drafting assistance), per-role budgets, and a review cycle tied to measured output rather than spend.",
+          "score": {
+            "total": 9.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "likes": 966,
+            "comments": 208
+          },
+          "tags": ["token governance", "enterprise AI operations", "Ethan Mollick"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "li-ethan-mollick-choosing-human-may26",
+          "title": "Ethan Mollick: Cognitive surrender is the default when AI is designed for frictionless engagement — enterprises need a policy before habits form",
+          "source": "LinkedIn / One Useful Thing",
+          "author": "Ethan Mollick",
+          "date": "2026-05-26",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/emollick_choosing-to-stay-human-activity-7465129658767032321-1CBM",
+          "summary": "569 reactions, 229 comments. Post linking to essay with two controlled study citations: ChatGPT use improved homework but reduced test performance in Turkey (because productive struggle was eliminated); AI tutor that asked questions rather than gave answers produced a 0.15 standard deviation gain in Taipei (equivalent to 6-9 months of schooling). Core warning: AI literacy currently means only 'how to use tools,' not 'what to keep for yourself.'",
+          "enterprise_translation": "Cognitive surrender scales at the team level through social proof and tool defaults. When an enterprise rolls out a generative AI tool, the implicit message is that AI-generated output is the expected format — which sets the delegation default. A policy specifying what cognitive work remains human (risk assessment, judgment calls, novel framing) needs to precede tool rollout, not follow it.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "likes": 569,
+            "comments": 229
+          },
+          "tags": ["cognitive surrender", "AI literacy", "enterprise AI policy", "Ethan Mollick"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "li-allie-miller-ai-intent-display-may28",
+          "title": "Allie K. Miller: The intent/display matrix for AI — most leaders assume AI says what it means, which is the wrong default",
+          "source": "LinkedIn",
+          "author": "Allie K. Miller",
+          "date": "2026-05-28",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/alliekmiller_too-many-business-leaders-believe-that-ai-activity-7465835683157311488-N1EB",
+          "summary": "159 reactions, 107 comments. Miller surfaced a 2x2 intent/display framework she created in 2023, distinguishing what an AI intends from what it displays. Posted alongside references to the Claude Mythos system card and Anthropic's NLA interpretability paper. The timing — same week as the Mythos public release announcement — made the post more resonant.",
+          "enterprise_translation": "Face-value interpretation of AI outputs is the path of least resistance and the source of compliance risk. For regulated industries, the right default is 'the AI is displaying a plausible answer, not necessarily the correct one' — which means verification workflows and not just output review. The intent/display lens is a useful framing for AI governance training: teach teams to ask 'what was the model optimizing for?' not just 'is the output right?'",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 159,
+            "comments": 107
+          },
+          "tags": ["AI intent", "AI governance", "Allie K. Miller", "interpretability"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "li-bernard-marr-entry-level-jobs-may25",
+          "title": "Bernard Marr: Cutting entry-level jobs for AI savings today will hollow out the talent pipeline in three to five years",
+          "source": "LinkedIn",
+          "author": "Bernard Marr",
+          "date": "2026-05-25",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/bernardmarr_ai-could-wipe-out-entry-level-jobs-and-that-activity-7464550480845889536-5WgQ",
+          "summary": "89 reactions, 32 comments. Marr's post argued that eliminating junior roles in marketing, finance, law, software development, and customer service to capture AI efficiency gains removes the apprenticeship layer that produces senior capability. The structural risk: in 3-5 years, organizations will have senior staff overloaded and no bench. The efficiency gain is real and immediate; the capability gap is deferred and harder to measure.",
+          "enterprise_translation": "This is a workforce planning issue disguised as a near-term cost argument. For enterprises reducing headcount in AI-automatable junior roles, the 30-day experiment is a structural audit: for each junior role being reduced, map what skills that role develops through doing (not training) and identify whether those skills will be needed at senior levels in 36 months. If the answer is yes and the only development path was that junior role, the pipeline math is negative.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 89,
+            "comments": 32
+          },
+          "tags": ["workforce transformation", "entry-level jobs", "AI automation", "talent pipeline", "Bernard Marr"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "li-ethan-mollick-token-handwringing-followup-may29",
+          "title": "Ethan Mollick: No organization that has adopted AI coding is retreating — the right response to token cost concerns is governance, not pause",
+          "source": "LinkedIn",
+          "author": "Ethan Mollick",
+          "date": "2026-05-29",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/emollick_the-hand-wringing-over-token-usage-costs-activity-7466158047418286080-pH9O",
+          "summary": "142 reactions, 44 comments. Follow-up to the May 27 token post: Mollick clarified that the handwringing is real but no organization is actually rolling back AI coding. Two legitimate uses for tokens: building things, and experiments to figure out best practices (which involves failure). The warning: what started in coding will happen in every function.",
+          "enterprise_translation": "Token costs are a maturation signal, not a stop signal. Organizations now beginning to see cost overruns on AI coding spend are at the inflection point that coding teams hit first — which means every other function (legal, finance, operations, HR) is 6-12 months behind that same cost-discovery curve. The governance model built now for coding token allocation is a reusable template for every subsequent function rollout.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "likes": 142,
+            "comments": 44
+          },
+          "tags": ["token costs", "AI coding", "enterprise AI operations", "Ethan Mollick"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "li-mcp-97m-downloads-may27",
+          "title": "MCP reaches 97M monthly downloads — 78% of enterprise AI teams have at least one MCP-backed agent in production",
+          "source": "LinkedIn Pulse",
+          "author": "Bartek Kotlarczyk",
+          "date": "2026-05-27",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/pulse/mcp-hits-97m-downloads-how-model-context-protocol-ai-kotlarczyk-ciyxe",
+          "summary": "Article published May 27 documenting the Model Context Protocol's adoption trajectory: launched with 100K downloads in November 2024, the SDK now hits 97M monthly downloads. 78% of enterprise AI teams report at least one MCP-backed agent in production (April 2026 survey); 67% of CTOs named it the default agent integration standard within 12 months. The public registry holds 9,400+ servers. Competing protocols (A2A 23%, ACP 8%, UCP 4%) trail significantly.",
+          "enterprise_translation": "MCP becoming the de facto enterprise agent integration standard means the infrastructure decision is largely made — but the governance decision is not. Teams building MCP-backed agents now need an MCP server governance policy: which servers are approved, what read/write permissions are scoped, what audit logging is required, and how DLP rules apply when an agent connects to an internal knowledge base through an MCP server. The 9,400-server registry is a procurement and security review backlog, not just a shopping list.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "comments": 2
+          },
+          "tags": ["MCP", "Model Context Protocol", "enterprise AI", "agent integration", "infrastructure"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "tiktok",
+      "title": "TikTok",
+      "description": "Viral and practitioner AI content from TikTok this week. Filtered for technical content over 50K views from repeatable-content accounts.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "tt-vibe-coding-agentic-engineering-distinction-may27",
+          "title": "Vibe coding vs. agentic engineering: Karpathy's framework spreading across TikTok AI creator accounts",
+          "source": "TikTok / YouTube (cross-platform)",
+          "author": "Multiple creators including @marcinteodoru and #VibeCoding hashtag cluster",
+          "date": "2026-05-27",
+          "platform": "tiktok",
+          "primary_url": "https://www.swfte.com/blog/vibe-coding-guide",
+          "secondary_urls": [
+            {
+              "label": "Andrej Karpathy on Agentic Engineering — full framework",
+              "url": "https://websearchapi.ai/blog/andrej-karpathy-from-vibe-coding-to-agentic-engineering"
+            }
+          ],
+          "summary": "The Karpathy vibe-coding/agentic-engineering distinction spread across TikTok AI creator accounts during the week of May 25. The framework: vibe coding raises the floor (prompt, accept, run, ship something that didn't exist before) while agentic engineering preserves the ceiling (multi-agent orchestration, specs, evals, observability, human accountability for security and regressions). Creator videos in the #VibeCoding hashtag cluster — which hit high engagement this week — consistently referenced the dichotomy. The core formula: 'Vibe coding is the floor-raising version; agentic engineering is the ceiling-preserving practice.'",
+          "enterprise_translation": "The design principle is accountability gradient in AI-assisted development. Vibe coding transfers accountability to the model ('it works on my machine'); agentic engineering keeps accountability with the human ('real users, real data, real consequences'). For enterprise software teams, every AI coding project sits on this spectrum — and the decision about where to place it has security, audit, and SLA implications. A 30-day experiment: classify current AI-assisted projects by Karpathy's framework. Vibe coding projects should have clear scope limits (prototypes, internal tools, non-production experiments). Agentic engineering projects need specs, evals, and an explicit human owner.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 85000
+          },
+          "tags": ["vibe coding", "agentic engineering", "Karpathy", "AI coding", "TikTok"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "tt-bytedance-seedance-ai-video-may28",
+          "title": "ByteDance Seedance goes viral on TikTok as the week's leading AI video generation tool — $70B capex plan signals infrastructure ambition",
+          "source": "TikTok / Straits Times",
+          "author": "@digitalsamaritan and AI tools hashtag cluster; ByteDance official",
+          "date": "2026-05-28",
+          "platform": "tiktok",
+          "primary_url": "https://www.straitstimes.com/business/companies-markets/tiktok-owner-bytedance-said-to-weigh-spending-as-much-as-89-billion-in-ai-push",
+          "secondary_urls": [
+            {
+              "label": "Yahoo Finance — ByteDance weighs capex of as much as $70 billion in AI push",
+              "url": "https://finance.yahoo.com/sectors/technology/articles/bytedance-weighs-capex-much-70-075109320.html"
+            }
+          ],
+          "summary": "TikTok creator accounts showcasing AI video generation using ByteDance's Seedance tool generated significant cross-platform attention during the week. Simultaneously, Bloomberg reported on May 27 that ByteDance is weighing capital expenditures of up to $70B in 2026 — with potential to reach $100B under favorable conditions — as it builds AI infrastructure to lead the Chinese AI market and compete with US players. Seedance powers TikTok's native video generation features and is ranked in the top three on the Arena text-to-image leaderboard.",
+          "enterprise_translation": "The design principle is platform-native AI generation at scale — the same infrastructure that powers consumer viral video creation can be repurposed for enterprise content production workflows. ByteDance's $70B capex is not a TikTok story; it is a signal that the underlying video generation and agentic AI infrastructure is receiving investment at a scale that will accelerate model capability beyond what most enterprise teams currently plan for. Enterprise communications teams running content production operations should track Seedance-class tools as near-term candidates for internal video report, training material, and operational documentation generation.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 120000
+          },
+          "tags": ["Seedance", "ByteDance", "AI video generation", "TikTok", "AI infrastructure"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "tt-claude-code-dynamic-workflows-tiktok-may29",
+          "title": "Anthropic Claude Opus 4.8 Dynamic Workflows demo circulates on TikTok — hundreds of parallel subagents in a single session",
+          "source": "TikTok / Anthropic",
+          "author": "@aiwithjames and Claude Code creator cluster",
+          "date": "2026-05-29",
+          "platform": "tiktok",
+          "primary_url": "https://www.anthropic.com/news/claude-opus-4-8",
+          "summary": "Following Anthropic's May 28 release of Claude Opus 4.8, TikTok AI creator accounts in the Claude Code and #AIAgents hashtag clusters began circulating demos of the Dynamic Workflows feature — which allows a single Claude Code session to plan work, spin up hundreds of parallel subagents, and verify outputs before reporting back. Creators focused on codebase-scale migration demos across hundreds of thousands of lines of code. The Claude Code creator community has been one of the more technically precise clusters on TikTok this year.",
+          "enterprise_translation": "The design principle is parallel subagent decomposition for large-scope tasks — the same pattern TikTok demos show for codebase migrations applies to enterprise workflows like regulatory document review, multi-system data reconciliation, or audit trail generation across distributed systems. The consumer demo makes the pattern visible; the enterprise version requires a governed sandbox (which Anthropic's self-hosted sandbox announcement from the prior week provides). A 30-day experiment: identify one large-scope repetitive enterprise task (e.g., quarterly compliance report generation from multiple source systems), prototype it as a Dynamic Workflows Claude Code session in a non-production environment, and measure the quality and time differential versus the current manual approach.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 73000
+          },
+          "tags": ["Claude Code", "Dynamic Workflows", "parallel subagents", "Anthropic", "TikTok", "#AIAgents"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "tt-cursor-developer-habits-power-user-gap-tiktok-may29",
+          "title": "Cursor Developer Habits Report spreads on TikTok dev channels: p99 developers producing 46x more AI lines — the numbers spread virally",
+          "source": "TikTok",
+          "author": "#VibeCoding and #Cursor hashtag cluster",
+          "date": "2026-05-29",
+          "platform": "tiktok",
+          "primary_url": "https://cursor.com/insights",
+          "summary": "The Cursor Developer Habits Report statistics spread across TikTok developer creator accounts after the May 28 LinkedIn post. Creator reaction videos highlighted the p99/median gap (46x more AI lines, 15x more PRs) as both aspirational (for individual developers) and alarming (for team leads). The 5x increase in automated commits without manual diff acceptance generated particular discussion in the #ClaudeCode and #Cursor hashtag clusters.",
+          "enterprise_translation": "The consumer signal is individual developers benchmarking themselves against the Cursor p99. The enterprise concept is team capability stratification — when your internal data shows a similar Gini curve, the question is whether you have the peer learning and workflow-sharing infrastructure to compress the distribution, or whether you are allowing a power-user cohort to become permanently irreplaceable. The 30-day action: pull usage telemetry, calculate your organization's equivalent of the Cursor Gini, and use it as the basis for a targeted peer enablement program rather than another generic AI training module.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 62000
+          },
+          "tags": ["Cursor", "developer habits", "power user gap", "AI coding", "TikTok", "#VibeCoding"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "instagram",
+      "title": "Instagram",
+      "description": "AI practitioner and business content from Instagram this week. Filtered for technical or enterprise-relevant AI content.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "ig-roberto-nickson-galaxy-s26-ai-may27",
+          "title": "Roberto Nickson (@rpn): Galaxy S26 Ultra Galaxy AI — on-device AI integration generating privacy commentary in the comments",
+          "source": "Instagram",
+          "author": "Roberto P. Nickson (@rpn)",
+          "date": "2026-05-27",
+          "platform": "instagram",
+          "primary_url": "https://www.instagram.com/reel/DY2RCEoAgqS/",
+          "summary": "Nickson's paid partnership reel for Samsung's Galaxy S26 Ultra received 1,624 likes and 36 comments. The reel promoted Galaxy AI features — described as 'AI built into the hardware layer.' The comments section generated a substantive secondary signal: multiple top-voted comments raised on-device AI data handling concerns ('So now the AI is reading all my emails?' / 'AI built into the hardware layer is where things get really interesting'). The privacy concern commentary in the comments was more technically engaged than is typical for a consumer product reel.",
+          "enterprise_translation": "The design principle is hardware-layer AI and the consumer visibility it creates for data handling assumptions. When employees use personal devices with on-device AI for work tasks (a common BYOD scenario), the device's AI may be processing corporate communications through local or cloud models with terms of service the enterprise IT policy does not cover. The enterprise action is not to block Galaxy AI or equivalent — it is to update BYOD policies to explicitly define which categories of data employees may process through on-device AI on personal hardware.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 1624,
+            "comments": 36
+          },
+          "tags": ["Samsung Galaxy AI", "on-device AI", "BYOD", "privacy", "consumer AI"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "ig-ai-tools-daily-comparison-may29",
+          "title": "AI tools comparison reel: 'How do the best AI tools right now stack up against each other?' — practitioner benchmark content",
+          "source": "Instagram",
+          "author": "AI tools comparison creator",
+          "date": "2026-05-29",
+          "platform": "instagram",
+          "primary_url": "https://www.instagram.com/reel/DY7UhKdjnWd/",
+          "summary": "An AI tools comparison reel published May 29 generated significant engagement in the #AITools2026 hashtag cluster by presenting side-by-side comparisons of current frontier models across coding, writing, and reasoning tasks. This format — practitioner benchmarking presented as short-form video rather than a research paper or blog post — has become the dominant AI content archetype on Instagram Reels in 2026, as it translates the tool evaluation format into a socially shareable format.",
+          "enterprise_translation": "The design principle is social proof through peer benchmarking — practitioners sharing tool comparisons horizontally rather than waiting for vendor documentation or analyst reports. For enterprise AI teams evaluating tool selection, the consumer benchmark reel is a leading indicator: the workflows these creators test (coding tasks, document summarization, multi-step reasoning) are the same ones that will drive internal tool adoption decisions. Monitor which tools consistently win in practitioner comparisons three months before IT procurement cycles.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 80000
+          },
+          "tags": ["AI tools comparison", "Instagram Reels", "practitioner benchmarks", "#AITools2026"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "ig-vibe-coding-reel-may28",
+          "title": "Instagram Reel: 'The Right Way to Do Vibe Coding in 2026' — Karpathy framework reaches mainstream creator content",
+          "source": "Instagram",
+          "author": "AI workflow creator",
+          "date": "2026-05-28",
+          "platform": "instagram",
+          "primary_url": "https://www.instagram.com/reel/DY4oEicSrZt/",
+          "summary": "A Reel published May 28 framing vibe coding as a practitioner skill attracted engagement across the #AIWorkflow and #VibeCoding audiences. The content matched the Karpathy vibe-coding/agentic-engineering framing circulating on TikTok — indicating cross-platform propagation of the same conceptual framework. The reel format (under 60 seconds, workflow walk-through with voiceover) is the dominant educational AI content format on Instagram in 2026.",
+          "enterprise_translation": "The cross-platform spread of the vibe coding / agentic engineering distinction from Karpathy's AI Ascent 2026 talk to Instagram Reels in the same week shows how quickly enterprise-relevant technical frameworks now travel through consumer social channels. Enterprise learning and development teams should monitor which LinkedIn/academic concepts are becoming Instagram-scale social content within 2-3 weeks — that timeline is the window to get ahead of the framework in internal training before employees self-educate from consumer sources.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 95000
+          },
+          "tags": ["vibe coding", "Instagram Reels", "AI workflow", "Karpathy", "#VibeCoding"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "facebook",
+      "title": "Facebook",
+      "description": "AI content from Facebook pages and groups this week.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "fb-ai-ipo-race-may2026",
+          "title": "No significant original AI enterprise content from Facebook this week — platform carrying reposts of SpaceX/OpenAI/Anthropic IPO news cycle",
+          "source": "Facebook",
+          "author": "Various pages",
+          "date": "2026-05-28",
+          "platform": "facebook",
+          "primary_url": "https://www.facebook.com/cgtnamerica/posts/spacex-openai-anthropic-the-biggest-names-in-ai-are-heading-to-wall-street-ben-n/1422282016597042/",
+          "summary": "Facebook's main AI signal this week was downstream redistribution of the OpenAI/Anthropic/SpaceX IPO news cycle rather than original community insight. No significant AI enterprise content surfaced from Facebook groups (DeepNet Group, AI for Business) this week that was not already covered in other platform coverage.",
+          "enterprise_translation": "No enterprise translation applicable — Facebook carried redistribution content this week, not original signal. The IPO coverage (AI companies going public) is a relevant macro signal for enterprise leaders managing AI vendor relationships in a changing public-market risk environment, but the substance is better tracked via financial filings than Facebook reposts.",
+          "score": {
+            "total": 3.0,
+            "signal": 1,
+            "novelty": 0,
+            "actionability": 0,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Facebook", "AI IPO", "redistribution content"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "tools_trending",
+      "title": "Tools Trending",
+      "description": "Top 8 AI tools by cross-platform mention volume this week, based on LinkedIn, TikTok, Instagram, and X activity.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "tool-cursor-may25",
+          "title": "Cursor — #1 cross-platform by mention volume; Developer Habits Report released May 28 with comprehensive usage data",
+          "source": "cross-platform",
+          "author": "Cursor / Anysphere",
+          "date": "2026-05-28",
+          "platform": "linkedin",
+          "primary_url": "https://cursor.com/insights",
+          "summary": "Cursor dominated cross-platform mention volume this week driven by the Developer Habits Report. Mentioned in LinkedIn (529 likes on the release post), TikTok developer creator accounts, Instagram Reels, and X threads. The data-backed report format — rare for an AI tool company — drove a higher quality of discussion than typical product launches.",
+          "enterprise_translation": "Cursor's decision to publish actual usage concentration data (Gini 0.77, p99 vs. median splits) rather than promotional metrics is worth noting as a procurement evaluation signal. Vendors willing to publish concentration data are more credible sources for enterprise tool selection conversations than those who publish only aggregate adoption numbers.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["Cursor", "AI coding", "developer tools", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "tool-claude-code-may25",
+          "title": "Claude Code — #2; Opus 4.8 Dynamic Workflows launched May 28, enabling hundreds of parallel subagents per session",
+          "source": "cross-platform",
+          "author": "Anthropic",
+          "date": "2026-05-28",
+          "platform": "linkedin",
+          "primary_url": "https://www.anthropic.com/news/claude-opus-4-8",
+          "summary": "Claude Code ranked second by cross-platform mention driven by the Opus 4.8 launch and Dynamic Workflows feature. Strong presence in TikTok's #ClaudeCode hashtag and LinkedIn enterprise discussions. Allie K. Miller's X diary noted that engineers currently prefer Codex over Claude Code, which is the most direct competitive signal from this week's field reporting.",
+          "enterprise_translation": "The Allie Miller observation that average engineers prefer Codex over Claude Code is worth tracking: it may reflect the Codex Locked Use announcement (which generated more consumer-facing excitement) versus Claude's Dynamic Workflows (which are more enterprise-relevant but require Enterprise/Team/Max plans). For procurement decisions, the capability gap matters less than the plan-tier gating on high-value features.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Claude Code", "Anthropic", "agentic AI", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "tool-openai-codex-may25",
+          "title": "OpenAI Codex — #3; Locked Use feature enabling autonomous Mac desktop operation while screen is locked generated significant cross-platform coverage",
+          "source": "cross-platform",
+          "author": "OpenAI",
+          "date": "2026-05-25",
+          "platform": "linkedin",
+          "primary_url": "https://enterprisedna.co/resources/news/openai-codex-locked-mac-desktop-agent-2026/",
+          "summary": "Codex ranked third by mention volume, driven heavily by the Locked Use announcement (May 21 announcement, spreading through social media during the week of May 25). The security-implications discussion in LinkedIn comments and developer community posts was as prominent as the productivity discussion. Not available in EEA, UK, or Switzerland at launch.",
+          "enterprise_translation": "The Locked Use feature's geographic restriction to outside EEA/UK/Switzerland is a direct data protection regulation response. For US-headquartered enterprises with European operations, this creates a feature parity split that IT policy needs to address before employees self-select into workarounds.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["Codex", "OpenAI", "computer use", "desktop agent", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "tool-seedance-bytedance-may25",
+          "title": "Seedance (ByteDance) — #4; TikTok native AI video generation trending as ByteDance $70B capex story drives attention",
+          "source": "cross-platform",
+          "author": "ByteDance",
+          "date": "2026-05-28",
+          "platform": "tiktok",
+          "primary_url": "https://www.straitstimes.com/business/companies-markets/tiktok-owner-bytedance-said-to-weigh-spending-as-much-as-89-billion-in-ai-push",
+          "summary": "Seedance ranked fourth by cross-platform mention, with the majority on TikTok (as the native generation tool) and secondary pickup on LinkedIn and Instagram after the ByteDance capex story. Ranked #3 on the Arena text-to-image leaderboard. The capex announcement ($70B in 2026, potential $100B in 2027) amplified infrastructure awareness.",
+          "enterprise_translation": "ByteDance's infrastructure investment signals that consumer AI video generation capabilities will continue improving significantly in 2026 and 2027. Enterprise communications and marketing teams should establish a small sandbox evaluation of Seedance and peer tools now — not for current deployment, but to calibrate where capability will be when the tools are mature enough for governed internal use in 12-18 months.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Seedance", "ByteDance", "AI video", "TikTok native", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "tool-claude-opus48-may25",
+          "title": "Claude Opus 4.8 — #5; new model with 84% Online-Mind2Web score and 4x improved code flaw detection launched May 28",
+          "source": "cross-platform",
+          "author": "Anthropic",
+          "date": "2026-05-28",
+          "platform": "linkedin",
+          "primary_url": "https://www.anthropic.com/news/claude-opus-4-8",
+          "summary": "Opus 4.8 ranked fifth, distinct from Claude Code in cross-platform discussion. LinkedIn posts focused on the reliability and honesty improvements (4x less likely to let code flaws pass unremarked, lower misaligned behavior rates). Allie Miller's field observation that 'no one seems to care about Opus 4.8 launch but it's only been 24 hours' proved partially correct — it generated less social velocity than Codex Locked Use, but more substantive discussion on LinkedIn.",
+          "enterprise_translation": "The honesty improvements in Opus 4.8 — specifically the 4x reduction in unremarked code flaws and lower deception rates — are the most enterprise-relevant capability changes this cycle, even though they generated less social excitement than capability benchmarks. For regulated industries, an AI that flags its own uncertainty and code errors rather than presenting confident incorrect outputs is a governance asset that compound over an agentic workflow's lifetime.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Claude Opus 4.8", "Anthropic", "model release", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "tool-mcp-protocol-may25",
+          "title": "MCP (Model Context Protocol) — #6; 97M monthly downloads reported; 78% enterprise production deployment cited",
+          "source": "cross-platform",
+          "author": "Anthropic (originator) / ecosystem",
+          "date": "2026-05-27",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/pulse/mcp-hits-97m-downloads-how-model-context-protocol-ai-kotlarczyk-ciyxe",
+          "summary": "MCP ranked sixth, with the LinkedIn article on 97M monthly downloads driving most of the discussion. Cross-platform mentions were concentrated on LinkedIn (enterprise infrastructure conversations) rather than TikTok/Instagram (where it is rarely discussed by name). The tool-trending ranking reflects enterprise signal quality over consumer volume.",
+          "enterprise_translation": "MCP's 97M monthly download figure and 78% enterprise production deployment rate mean the integration standard decision is effectively resolved — but enterprises now need MCP governance policies, not MCP adoption plans. The governance gap (what servers are approved, what audit logging is required) is where the remaining work sits.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["MCP", "Model Context Protocol", "agent infrastructure", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "tool-claude-mythos-preview-may25",
+          "title": "Claude Mythos Preview — #7; Anthropic confirmed public release 'in coming weeks,' LinkedIn discussions on enterprise security implications",
+          "source": "cross-platform",
+          "author": "Anthropic",
+          "date": "2026-05-29",
+          "platform": "linkedin",
+          "primary_url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-mythos-class-models-will-roll-out-to-the-public/",
+          "summary": "Claude Mythos Preview ranked seventh by enterprise mention volume following Anthropic's May 29 confirmation that it plans public release 'in the coming weeks.' Currently restricted to ~50 partners through Project Glasswing. Has found over 10,000 high/critical-severity vulnerabilities in production software. LinkedIn discussions focused on what public release means for enterprise security teams running open-source dependencies.",
+          "enterprise_translation": "When Mythos-class models reach general availability, the enterprise security implication is not that your own security team can use them — it is that attackers also gain access to a model capable of finding 10,000 critical vulnerabilities in a month. Enterprise security leaders should treat the Mythos public release timeline as a patching urgency signal: the window between Anthropic's controlled-partner discovery and general-availability exploitation is measured in weeks, not months.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Claude Mythos", "Anthropic", "cybersecurity", "enterprise security", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "tool-runway-mcp-may25",
+          "title": "Runway MCP — #8; direct AI video generation from agents via Claude, ChatGPT, and Cursor launched this week",
+          "source": "cross-platform",
+          "author": "Runway",
+          "date": "2026-05-26",
+          "platform": "tiktok",
+          "primary_url": "https://sifuyik.substack.com/p/9-top-viral-ai-tools-and-tips-today-99d",
+          "summary": "Runway launched an MCP integration allowing direct video and image generation from AI agents — connecting Runway models (Seedance 2.0, Gen-4.5, Kling, GPT Image 2, Nano Banana Pro) into Claude, ChatGPT, Cursor, and Replit workflows. Supports text-to-image, image-to-video, upscaling, and editing with automatic task handling. Trended in the #AIAgents hashtag cluster on TikTok as a practical demonstration of MCP's utility beyond text-based tools.",
+          "enterprise_translation": "Runway MCP is the first major creative AI tool to ship MCP integration, which demonstrates that the MCP ecosystem is expanding beyond text/code tools into media generation. For enterprise communications and marketing teams, this is the architecture that will allow AI agents to generate, refine, and publish visual assets in a single workflow — currently in the 'evaluate for future use' category rather than immediate deployment, but the integration pattern is now established.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["Runway MCP", "AI video", "MCP integration", "agent workflows", "trending"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Cross-platform behavioral patterns surfacing this week that do not yet have a definitive story but are worth tracking.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "sig-ai-knowledge-hoarding-may25",
+          "title": "Emerging signal: Internal AI superusers are not incentivized to share workflow transformations — knowledge circulation bottleneck identified across multiple field reports",
+          "source": "cross-platform (LinkedIn, X)",
+          "author": "Allie K. Miller field diary; corroborated by Ethan Mollick Wharton research",
+          "date": "2026-05-29",
+          "platform": "x",
+          "primary_url": "https://x.com/alliekmiller/status/2060424789190160651",
+          "summary": "Miller's May 29 field diary identified a specific organizational pattern: employees who have substantially transformed their workflows with AI are not sharing their methods, because they lack incentives to do so or lack a channel. This matches a structural dynamic Mollick described from Wharton consulting experiments — when AI helps individuals outperform, the individual captures the gain and the organization does not automatically inherit the method.",
+          "enterprise_translation": "This is an organizational design problem solvable with straightforward structure: create an explicit knowledge-sharing channel (a weekly AI methods review, a #what-I-changed Slack channel, or an internal AI practice community with real participation incentives). The organizations that solve this in 2026 will have a compounding advantage over those that let AI productivity gains remain trapped in individual practice.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["knowledge sharing", "AI adoption", "organizational design", "enterprise AI"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        },
+        {
+          "id": "sig-ai-graduation-speech-backlash-may25",
+          "title": "Emerging signal: Pro-AI graduation speeches being booed; anti-AI rhetoric receiving cheers — consumer sentiment divergence accelerating",
+          "source": "X (Allie K. Miller field diary)",
+          "author": "Allie K. Miller observation",
+          "date": "2026-05-29",
+          "platform": "x",
+          "primary_url": "https://x.com/alliekmiller/status/2060424789190160651",
+          "summary": "Miller's field diary noted that speeches from Eric Schmidt and others who are pro-AI at graduation events are getting loudly booed, while anti-AI speeches (she cited Ronny Chieng saying 'f*ck AI') are receiving 'light to heavy cheers.' This is a weak signal on its own but consistent with the broader sentiment data showing consumer/graduate-age AI ambivalence deepening at the same time enterprise deployment is accelerating.",
+          "enterprise_translation": "The graduation cohort entering the workforce in 2026 has a more antagonistic baseline relationship with AI than the prior cohort — which has implications for change management in enterprise AI deployments. Organizations rolling out mandatory AI tools to teams that include recent graduates should expect higher resistance than prior cycles, and should plan explicit human-agency framing in their change management communication rather than efficiency-only messaging.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["AI sentiment", "workforce attitudes", "change management", "consumer AI"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-05-31T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Token budget governance is becoming the operational maturity metric for enterprise AI programs",
+      "evidence": "Two Mollick LinkedIn posts (966 + 142 reactions combined), Allie Miller's X field diary ('every CIO I meet is worried about token maxxing'), and the Cursor Developer Habits Report (p99/median Gini of 0.77) all converged on the same gap: organizations have deployed AI but have not built the allocation and governance infrastructure to manage it at scale. The Pragmatic Engineer's newsletter on AI spend rationalization trends confirmed the same pattern from engineering leadership conversations.",
+      "what_to_watch": "Whether Cursor's token governance metrics (cost per accepted line, cost per agent request by model family) become the basis for enterprise procurement and allocation standards. If they do, Cursor's data posture becomes a competitive moat."
+    },
+    {
+      "pattern": "The vibe coding / agentic engineering framework is propagating from Karpathy's talk into mainstream social content at TikTok/Instagram scale within two weeks",
+      "evidence": "Framework originated in Karpathy's AI Ascent 2026 talk (May 28 coverage by websearchapi.ai). By May 28-29, TikTok creator accounts in the #VibeCoding cluster and Instagram Reels in the #AIWorkflow cluster were explicitly using the framework. The propagation timeline from academic/keynote to TikTok Reel is now measured in days, not months.",
+      "what_to_watch": "Whether the framework enters enterprise learning and development programs before or after employees self-educate from consumer social content. Organizations that frame internal AI coding programs around the vibe-coding/agentic-engineering distinction will have clearer governance conversations than those using vague 'AI-assisted development' language."
+    },
+    {
+      "pattern": "Consumer privacy commentary in AI product endorsement comments is becoming more technically sophisticated",
+      "evidence": "Roberto Nickson's Galaxy S26 Ultra reel (1,624 likes) generated comments including 'So now the AI is reading all my emails?' and 'AI built into the hardware layer is where things get really interesting' — both more technically precise than typical consumer product commentary. This mirrors the pattern on LinkedIn where privacy and governance commentary on AI product posts is increasingly detailed.",
+      "what_to_watch": "Whether consumer-facing AI products start proactively addressing on-device data handling in the product content itself, or whether the privacy commentary continues to accumulate in comment sections as a secondary signal layer that enterprise IT teams can mine for employee concern patterns."
+    }
+  ],
+  "index": [
+    {
+      "title": "Ethan Mollick: Token budgets are the new AI governance crisis",
+      "source": "LinkedIn",
+      "author": "Ethan Mollick",
+      "date": "2026-05-27",
+      "primary_url": "https://www.linkedin.com/posts/emollick_the-fact-that-tokens-went-from-something-activity-7465420726150250496-Tuv5",
+      "score": 9.0
+    },
+    {
+      "title": "Cursor Developer Habits Report: p99 developers produce 46x more AI-generated lines",
+      "source": "LinkedIn / Cursor",
+      "author": "Cursor",
+      "date": "2026-05-28",
+      "primary_url": "https://www.linkedin.com/posts/cursorai_read-the-full-report-activity-7465791164860829696-ktid",
+      "score": 9.0
+    },
+    {
+      "title": "Ethan Mollick: Choosing to Stay Human — cognitive surrender as enterprise design risk",
+      "source": "LinkedIn / One Useful Thing",
+      "author": "Ethan Mollick",
+      "date": "2026-05-26",
+      "primary_url": "https://www.linkedin.com/posts/emollick_choosing-to-stay-human-activity-7465129658767032321-1CBM",
+      "score": 8.5
+    },
+    {
+      "title": "Allie K. Miller field diary: CIOs worried about token maxxing, F500 strategies two years behind",
+      "source": "X",
+      "author": "Allie K. Miller",
+      "date": "2026-05-29",
+      "primary_url": "https://x.com/alliekmiller/status/2060424789190160651",
+      "score": 8.5
+    },
+    {
+      "title": "Claude Mythos Preview: Anthropic confirms public release 'in coming weeks'",
+      "source": "BleepingComputer / Anthropic",
+      "author": "Anthropic",
+      "date": "2026-05-29",
+      "primary_url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-mythos-class-models-will-roll-out-to-the-public/",
+      "score": 8.5
+    },
+    {
+      "title": "Claude Opus 4.8 Dynamic Workflows: hundreds of parallel subagents per session",
+      "source": "Anthropic",
+      "author": "Anthropic",
+      "date": "2026-05-28",
+      "primary_url": "https://www.anthropic.com/news/claude-opus-4-8",
+      "score": 8.5
+    },
+    {
+      "title": "Allie K. Miller: AI says what it means — intent/display matrix resurfaces",
+      "source": "LinkedIn",
+      "author": "Allie K. Miller",
+      "date": "2026-05-28",
+      "primary_url": "https://www.linkedin.com/posts/alliekmiller_too-many-business-leaders-believe-that-ai-activity-7465835683157311488-N1EB",
+      "score": 8.0
+    },
+    {
+      "title": "OpenAI Codex Locked Use: AI agent keeps working on Mac after screen locks",
+      "source": "Enterprise DNA / OpenAI",
+      "author": "OpenAI",
+      "date": "2026-05-25",
+      "primary_url": "https://enterprisedna.co/resources/news/openai-codex-locked-mac-desktop-agent-2026/",
+      "score": 8.0
+    },
+    {
+      "title": "Ethan Mollick: No org is retreating from AI coding despite token cost concerns",
+      "source": "LinkedIn",
+      "author": "Ethan Mollick",
+      "date": "2026-05-29",
+      "primary_url": "https://www.linkedin.com/posts/emollick_the-hand-wringing-over-token-usage-costs-activity-7466158047418286080-pH9O",
+      "score": 8.0
+    },
+    {
+      "title": "MCP hits 97M monthly downloads; 78% of enterprise AI teams have production MCP agent",
+      "source": "LinkedIn Pulse",
+      "author": "Bartek Kotlarczyk",
+      "date": "2026-05-27",
+      "primary_url": "https://www.linkedin.com/pulse/mcp-hits-97m-downloads-how-model-context-protocol-ai-kotlarczyk-ciyxe",
+      "score": 8.0
+    },
+    {
+      "title": "Vibe coding vs agentic engineering — Karpathy framework spreading cross-platform",
+      "source": "TikTok / cross-platform",
+      "author": "Multiple creators",
+      "date": "2026-05-27",
+      "primary_url": "https://websearchapi.ai/blog/andrej-karpathy-from-vibe-coding-to-agentic-engineering",
+      "score": 8.0
+    },
+    {
+      "title": "ByteDance Seedance TikTok viral AI video; $70B capex plan confirmed",
+      "source": "TikTok / Straits Times",
+      "author": "ByteDance",
+      "date": "2026-05-28",
+      "primary_url": "https://www.straitstimes.com/business/companies-markets/tiktok-owner-bytedance-said-to-weigh-spending-as-much-as-89-billion-in-ai-push",
+      "score": 7.5
+    },
+    {
+      "title": "Claude Code Dynamic Workflows demo circulating on TikTok creator accounts",
+      "source": "TikTok / Anthropic",
+      "author": "Multiple creators",
+      "date": "2026-05-29",
+      "primary_url": "https://www.anthropic.com/news/claude-opus-4-8",
+      "score": 8.0
+    },
+    {
+      "title": "Cursor Developer Habits Report: power user gap spreads on TikTok dev channels",
+      "source": "TikTok",
+      "author": "Multiple creators",
+      "date": "2026-05-29",
+      "primary_url": "https://cursor.com/insights",
+      "score": 7.5
+    },
+    {
+      "title": "Bernard Marr: Cutting entry-level jobs for AI savings hollows the talent pipeline",
+      "source": "LinkedIn",
+      "author": "Bernard Marr",
+      "date": "2026-05-25",
+      "primary_url": "https://www.linkedin.com/posts/bernardmarr_ai-could-wipe-out-entry-level-jobs-and-that-activity-7464550480845889536-5WgQ",
+      "score": 7.5
+    },
+    {
+      "title": "Roberto Nickson Galaxy S26 Ultra Galaxy AI reel — privacy commentary in comments",
+      "source": "Instagram",
+      "author": "Roberto P. Nickson (@rpn)",
+      "date": "2026-05-27",
+      "primary_url": "https://www.instagram.com/reel/DY2RCEoAgqS/",
+      "score": 7.0
+    },
+    {
+      "title": "Runway MCP: direct AI video generation from Claude, ChatGPT, Cursor agents",
+      "source": "cross-platform",
+      "author": "Runway",
+      "date": "2026-05-26",
+      "primary_url": "https://sifuyik.substack.com/p/9-top-viral-ai-tools-and-tips-today-99d",
+      "score": 7.5
+    },
+    {
+      "title": "AI graduation speech backlash: pro-AI booed, anti-AI cheered — consumer sentiment diverging",
+      "source": "X (Allie K. Miller observation)",
+      "author": "Allie K. Miller",
+      "date": "2026-05-29",
+      "primary_url": "https://x.com/alliekmiller/status/2060424789190160651",
+      "score": 6.5
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Dan Martell May 25 Instagram reel on AI tools for business — described as 'paying kids to follow a script' in preview text, content not accessible",
+      "reason": "Reel content not accessible (Instagram video playback error at fetch time); engagement numbers only partially visible (331 replies shown but content unclear); could not verify claim or extract enterprise-relevant content",
+      "attempted_url": "https://www.instagram.com/reel/DYxe4xiB0Dv/"
+    },
+    {
+      "claim": "Bernard Marr LinkedIn Pulse article: 'The AI Abundance Dream Sounds Amazing, But Who Really Benefits?' — May 27",
+      "reason": "Article was fetched and content verified; however, it did not generate measurable LinkedIn engagement (no reaction count visible), making it ineligible for Top Picks on source_quality grounds. Retained in index for editorial reference.",
+      "attempted_url": "https://www.linkedin.com/pulse/ai-abundance-dream-sounds-amazing-who-really-benefits-bernard-marr-te4re"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "The Pragmatic Engineer newsletter — Gergely Orosz's May 28 piece on AI token spend rationalization trends among engineering leaders cited multiple named engineering leaders at mid-sized and large companies; direct sourcing recommended next week",
+      "Cursor insights page (cursor.com/insights) — inaugural Developer Habits Report; bookmark for quarterly updates; high data quality",
+      "AI Ascent 2026 conference social coverage — Karpathy's agentic engineering framework talk generated the week's most durable cross-platform conceptual signal; future Ascent sessions should be tracked proactively"
+    ],
+    "sources_to_drop": [
+      "Facebook — third consecutive week with no original enterprise AI signal from Facebook groups; consider dropping to 'monitor only' and noting empty if nothing surfaces",
+      "@danmartell Instagram — reel content was inaccessible at verification; prior week coverage was a paid partnership; deprioritize unless technical AI content surfaces"
+    ],
+    "topics_to_add": [
+      "Token allocation governance frameworks — multiple signals this week point to this as the operational AI maturity question; track LinkedIn posts and practitioner newsletters for emerging frameworks",
+      "On-device AI / BYOD policy — Samsung Galaxy AI comment patterns suggest employee awareness is ahead of enterprise policy; worth monitoring for more structured content"
+    ],
+    "topics_to_drop": [
+      "Consumer AI entertainment content (AI video deepfakes, avatar creation) — present in TikTok search results but no enterprise-translation signal; continue filtering"
+    ],
+    "notes": "This week's strongest signal was the convergence of Ethan Mollick, Allie K. Miller, and Cursor all naming the same enterprise AI operational gap (token governance, usage concentration, knowledge circulation) from different vantage points in the same week. The coherence of the signal across LinkedIn, X, and a product data report is worth noting for readers: when independent sources converge on the same operational problem, it is typically 2-3 quarters from becoming a formal enterprise process requirement. Methodology note: all primary URLs were fetched and content verified at time of writing. Engagement numbers were captured at fetch time and will change as the week closes."
+  }
+}
