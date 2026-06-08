@@ -1,0 +1,1089 @@
+{
+  "tab_id": "launches",
+  "tab_name": "Launches",
+  "subtitle": "Launch Intelligence",
+  "icon": "Rocket",
+  "min_items": 20,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.96,
+    "items_total": 28,
+    "items_new": 27,
+    "items_returning": 1
+  },
+  "executive_summary": [
+    {
+      "headline": "Microsoft Build 2026 ships seven in-house MAI models and a full agent platform — Microsoft is no longer just reselling OpenAI access.",
+      "body": "At Build on June 2, Microsoft released MAI-Thinking-1 (its first reasoning model), MAI-Code-1-Flash, MAI-Transcribe-1.5, MAI-Voice-2, and MAI-Image-2.5, alongside Microsoft IQ (GA), Microsoft Scout (early access), and Frontier Tuning (private preview). The package is a direct challenge to Anthropic and OpenAI at the enterprise level.",
+      "primary_url": "https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/"
+    },
+    {
+      "headline": "Anthropic files a confidential S-1 with the SEC on June 1 — an IPO is now a formal process, not a rumor.",
+      "body": "Anthropic submitted its draft Form S-1 to the SEC on June 1, opening a path to a public offering after regulatory review. No share count or price range has been set. The company was last valued at $65B in its Series H round announced late May 2026.",
+      "primary_url": "https://www.anthropic.com/news/confidential-draft-s1-sec"
+    },
+    {
+      "headline": "GitHub Copilot switches to usage-based billing on June 1 — the flat-fee era for AI coding tools is over.",
+      "body": "All Copilot plans now bill on GitHub AI Credits consumed. The base seat cost is unchanged but any usage beyond included credits is metered. Enterprise teams with heavy agentic workloads may see per-developer costs rise 3-4x; GitHub is giving existing customers a buffer of extra credits through August.",
+      "primary_url": "https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/"
+    },
+    {
+      "headline": "NVIDIA Nemotron 3 Ultra (550B) and Google Gemma 4 12B ship as open-weight models — frontier reasoning and multimodal capability now available for on-premises deployment.",
+      "body": "NVIDIA's Nemotron 3 Ultra (June 4) is a 550B MoE model with 1M-token context and SWE-bench Verified score of 71.9, designed for long-running agentic workloads. Google's Gemma 4 12B (June 3) is the first mid-sized encoder-free multimodal model that fits in 16GB of VRAM, released under Apache 2.0. Both are available on Hugging Face.",
+      "primary_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16"
+    },
+    {
+      "headline": "Flourish raises $500M at a $2.5B valuation to build brain-inspired AI — the bet is on dramatically lower power consumption.",
+      "body": "The neuroscience-informed AI startup founded in 2025 closed a $500M round led by Lux Capital and GV, with participation from Catalio Capital and Jeff Bezos. The company is targeting power reduction of more than an order of magnitude versus conventional LLMs, with a consumer-device model planned. No product has shipped yet.",
+      "primary_url": "https://siliconangle.com/2026/06/04/ai-startup-flourish-reportedly-raises-500m-round-backed-jeff-bezos/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "microsoft-build-2026-mai-models-iq-jun02",
+      "title": "Microsoft Build 2026 — MAI Model Family, Microsoft IQ GA, and Microsoft Scout",
+      "source": "Microsoft Blog",
+      "date": "2026-06-02",
+      "primary_url": "https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/",
+      "secondary_urls": [
+        {
+          "label": "MAI Model Family Keynote",
+          "url": "https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/"
+        },
+        {
+          "label": "CNBC coverage",
+          "url": "https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html"
+        }
+      ],
+      "summary": "Microsoft released a family of seven in-house models at Build 2026: MAI-Thinking-1 (first-party reasoning model, 35B active params, 256K context, private preview on Foundry), MAI-Code-1-Flash (inference-efficient coding model, live in VS Code and GitHub Copilot), MAI-Transcribe-1.5 (SOTA accuracy across 43 languages, 5x faster than rivals), MAI-Voice-2 (15 languages with voice cloning), and MAI-Image-2.5 (#2 on Arena image-editing leaderboard). Alongside the models, Microsoft IQ went GA — a context layer (Work IQ, Fabric IQ, Foundry IQ, Web IQ) that grounds agents in enterprise knowledge. Microsoft Scout, an always-on personal agent built on OpenClaw and WorkIQ, is in early access for Frontier program enrollees. Frontier Tuning, which applies in-boundary reinforcement learning using enterprise data, entered private preview.",
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Microsoft is no longer positioned as a reseller of OpenAI models. MAI-Thinking-1 outperforms Sonnet 4.6 on blind human preference tests and matches Opus 4.6 on SWE-bench Pro, per Microsoft's own claims. MAI-Code-1-Flash is positioned as cheaper than Anthropic Haiku. The Microsoft IQ context layer is a direct answer to the agent grounding problem that has slowed enterprise Copilot adoption. Scout's agentic posture parallels but differs from OpenAI Operator and Google's Search agents.",
+      "pricing": "MAI-Thinking-1 described as 'low-token cost'; no published per-token rates at launch. Microsoft IQ GA at no stated additional cost for existing Copilot/Foundry/Studio subscriptions. Frontier Tuning pricing not disclosed.",
+      "key_takeaways": [
+        "Microsoft IQ is GA today: any team on GitHub Copilot, Copilot Studio, or Microsoft Foundry can build agents grounded in Work IQ (organizational graph), Fabric IQ (data semantics), and Web IQ (live web search) without custom integration work.",
+        "MAI-Code-1-Flash is the new default model in VS Code and Copilot CLI — teams should audit cost impact under the new Copilot usage-based billing that also went live June 1.",
+        "Frontier Tuning (private preview) enables in-boundary RL on enterprise data, which is materially different from standard fine-tuning: agents learn operational patterns over time without data leaving the compliance boundary.",
+        "Microsoft Execution Containers (MXC) provide OS-enforced sandboxed environments for agents — a concrete answer to the IT governance objection that has blocked autonomous agent rollouts.",
+        "Microsoft Discovery is GA: enterprise teams doing materials science, drug discovery, or process optimization R&D can access a fully managed agentic science platform built on Azure."
+      ],
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-06-07T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["enterprise-ai", "microsoft", "models", "agents", "build-2026"]
+    },
+    {
+      "id": "anthropic-ipo-s1-confidential-jun01",
+      "title": "Anthropic Confidentially Files Form S-1 with the SEC",
+      "source": "Anthropic",
+      "date": "2026-06-01",
+      "primary_url": "https://www.anthropic.com/news/confidential-draft-s1-sec",
+      "secondary_urls": [
+        {
+          "label": "CNBC coverage",
+          "url": "https://www.cnbc.com/2026/06/01/anthropic-ipo-s1-prospectus.html"
+        }
+      ],
+      "summary": "Anthropic submitted a confidential draft registration statement (Form S-1) to the SEC on June 1, 2026, initiating a formal IPO process. No share count, price range, or revenue figures are publicly disclosed at this stage. The company was last valued at approximately $65B in its late-May Series H. Timing depends on market conditions and SEC review.",
+      "category": "Frontier Model",
+      "evaluation": "MONITOR",
+      "competitive_context": "OpenAI has also been reported to be preparing a filing, with SpaceX expected to price first (mid-to-late June). A public Anthropic would face quarterly disclosure obligations that will, for the first time, reveal unit economics on Claude usage — data that will reset enterprise procurement negotiations. Competing enterprise buyers have leverage to delay major contract renewals until financials are public.",
+      "pricing": "Not disclosed at filing stage.",
+      "key_takeaways": [
+        "The confidential filing is a legal step, not a pricing event — public financials and S-1 roadshow are months away.",
+        "Enterprise procurement teams negotiating multi-year Claude contracts now have leverage: post-IPO financials will expose real margins, potentially enabling better pricing terms.",
+        "Anthropic's transition from PBC (public benefit corporation) to IPO market will introduce quarterly earnings pressure — watch for product roadmap acceleration or pricing changes as a result."
+      ],
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-07T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["frontier-model", "anthropic", "ipo", "funding"]
+    },
+    {
+      "id": "github-copilot-usage-billing-ga-jun01",
+      "title": "GitHub Copilot Switches to Usage-Based Billing — All Plans, June 1",
+      "source": "GitHub Blog",
+      "date": "2026-06-01",
+      "primary_url": "https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/",
+      "secondary_urls": [
+        {
+          "label": "Enterprise prep guide",
+          "url": "https://www.linkedin.com/pulse/get-ready-github-copilots-new-usage-based-billing-5-step-joel-gerbino-jkuyc"
+        }
+      ],
+      "summary": "As of June 1, all GitHub Copilot plans bill on GitHub AI Credits consumed per token, replacing flat Premium Request Units. Copilot Business retains its $19/seat base but usage of Chat, CLI, cloud agents, Spaces, and Copilot code review now draws from a monthly credit pool. Code completions and Next Edit suggestions remain fully included. Organization admins can set user-level spend guardrails. During June–August, GitHub is providing 3,000 AI Credits/user/month (Copilot Business) vs. the standard 1,900 as a transition buffer. Copilot Max launched as a new tier for higher-usage users.",
+      "category": "Dev Tools",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "GitHub follows Anthropic in moving away from flat AI pricing. A May 2026 analysis found that teams running heavy agentic workflows could see per-developer costs rise ~3.5x, and a 200-developer org with 30% power users could see an annual swing of $127K–$229K. This aligns with the GitHub Copilot cost pressure reported at Uber, where engineer API costs ran $150–$500/month for Claude Code users. The new model forces engineering, finance, and DevEx teams to align on usage governance, which is new organizational work.",
+      "pricing": "Copilot Business: $19/seat/month base + AI Credit overage. Copilot Enterprise: $39/seat/month base + AI Credit overage. Standard included pools: 1,900 credits/user (Business), 3,900 (Enterprise). Transition buffer through August: 3,000 and 7,000 respectively.",
+      "key_takeaways": [
+        "Pull your organization's Copilot usage CSV from GitHub billing immediately — GitHub provides a billing preview tool that projects costs under the new model.",
+        "Agentic sessions (multi-step Copilot cloud agent, Copilot Spaces) are the primary cost driver; code completions remain free and do not consume credits.",
+        "Set enterprise-level budgets before the August transition window closes; carried-over PRU budgets converted automatically but may not reflect the right intent under the token model.",
+        "Copilot code review now consumes both AI Credits and GitHub Actions minutes — double-count this in cost projections if your org runs heavy PR automation."
+      ],
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-07T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["dev-tools", "github", "copilot", "pricing", "enterprise"]
+    },
+    {
+      "id": "nvidia-nemotron-3-ultra-550b-jun04",
+      "title": "NVIDIA Nemotron 3 Ultra — 550B Open Frontier Reasoning Model",
+      "source": "NVIDIA / Hugging Face",
+      "date": "2026-06-04",
+      "primary_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+      "secondary_urls": [
+        {
+          "label": "FriendliAI Day-0 deployment guide",
+          "url": "https://friendli.ai/blog/nvidia-nemotron-3-ultra"
+        }
+      ],
+      "summary": "Nemotron 3 Ultra is NVIDIA's 550B-parameter (55B active per token) open frontier reasoning model, released June 4 on Hugging Face, NIM microservices, OpenRouter, and ModelScope. Architecture is a Mamba-2/MoE/Attention hybrid with Multi-Token Prediction and a 1M-token context window. SWE-bench Verified score: 71.9; GPQA Diamond: 87; MMLU Pro: 86.8. Minimum hardware: 8× GB200 or 16× H100. Available under OpenMDW 1.1 license (commercial and non-commercial use). Jensen Huang cited it at Build as 5x faster and 30% lower cost than competing open models.",
+      "category": "Open Source",
+      "evaluation": "ADD TO WATCHLIST",
+      "competitive_context": "Positions directly against Meta Llama and Mistral at the frontier-scale open tier, and indirectly against Anthropic Opus 4.8 and GPT-5.5 at the closed frontier. The MoE architecture (55B active / 550B total) reduces inference cost relative to dense models of equivalent reasoning quality. The 1M token context is the highest in the open-weight tier. Hardware requirement (8× GB200 minimum) limits adoption to well-capitalized on-premises or private cloud deployments — this is not a laptop model.",
+      "pricing": "Weights free under OpenMDW 1.1. Inference costs depend on deployment (NIM microservices, self-hosted, or third-party APIs).",
+      "key_takeaways": [
+        "The 1M-token context and 71.9 SWE-bench score make this the strongest open-weight option for long-document reasoning tasks — relevant for legal, compliance, and engineering teams needing full-codebase or full-document context.",
+        "Hardware floor (8× GB200 or 16× H100) means only teams with dedicated AI infrastructure can self-host — verify whether your organization's on-premises GPU cluster qualifies before evaluating.",
+        "The OpenMDW 1.1 license permits commercial use; review the specific terms before deploying in a production product."
+      ],
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-07T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["open-source", "nvidia", "frontier-model", "agentic", "on-premises"]
+    },
+    {
+      "id": "openai-chatgpt-dreaming-memory-jun04",
+      "title": "OpenAI ChatGPT Dreaming V3 — Scalable Memory Architecture",
+      "source": "OpenAI",
+      "date": "2026-06-04",
+      "primary_url": "https://openai.com/index/chatgpt-memory-dreaming/",
+      "summary": "OpenAI released Dreaming V3, a compute-efficient memory architecture that replaced the previous saved-memories list for ChatGPT. The system runs in the background, synthesizes memory across chat history, and produces a structured per-user context profile. Factual recall in OpenAI's evaluations rose from 41.5% to 82.8%; preference-following from 31.4% to 71.3%. Available to Plus and Pro users in the US at launch, with Free and Go rollout following. A 5x reduction in compute per user made Free-tier deployment viable.",
+      "category": "Frontier Model",
+      "evaluation": "MONITOR",
+      "competitive_context": "This closes a gap between ChatGPT and Claude, which has offered long-context session memory via Projects for some time. The enterprise implication is for ChatGPT Enterprise and Teams customers who manage sensitive user data — the memory summary page (visible and editable by users) addresses a compliance concern but creates new data governance questions about what the system retains and for how long.",
+      "pricing": "Included with existing Plus ($20/month), Pro ($200/month), Free, and Go plans at no additional cost.",
+      "key_takeaways": [
+        "Enterprise and Teams administrators should review what the memory system retains for users — OpenAI provides a user-level memory summary page, but org-level audit and erasure controls are worth confirming before widespread deployment.",
+        "The 5x compute efficiency gain indicates OpenAI can now deliver long-term personalization at Free-tier scale — relevant signal for the competitive landscape and for estimating chatbot replacement timelines."
+      ],
+      "score": {
+        "total": 7.5,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-07T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["frontier-model", "openai", "chatgpt", "memory", "personalization"]
+    },
+    {
+      "id": "meta-business-agent-global-launch-jun03",
+      "title": "Meta Business Agent — Global Launch Across WhatsApp, Messenger, Instagram",
+      "source": "Meta Newsroom",
+      "date": "2026-06-03",
+      "primary_url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+      "secondary_urls": [
+        {
+          "label": "TechCrunch coverage",
+          "url": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/"
+        }
+      ],
+      "summary": "Meta launched Meta Business Agent globally on June 3, expanding from 1M+ existing pilot users to all businesses in all countries. The agent answers customer questions, recommends products, books appointments, qualifies leads, and closes sales — operating 24/7 across WhatsApp, Messenger, and Instagram (Instagram is a new addition). The Meta Business Agent Platform enables enterprise-scale deployment with integrations for Shopify, Zendesk, and 100+ systems. Pricing is free to start, with subscription tiers coming in the next months.",
+      "category": "AI Agent",
+      "evaluation": "MONITOR",
+      "competitive_context": "Over one billion messages are sent between people and businesses on Meta platforms every day. The free launch undercuts Intercom, Zendesk AI, and Salesforce Agentforce in the SMB segment, while the enterprise platform competes with those same vendors at scale. For a public-company enterprise team, the more relevant question is whether key suppliers or distribution partners are moving customer interactions to WhatsApp, which would create integration obligations.",
+      "pricing": "Free to start; subscription tiers not yet disclosed; enterprise platform pricing not yet announced. Token-based billing expected at scale.",
+      "key_takeaways": [
+        "If your organization engages customers or partners via WhatsApp in any region (particularly Latin America, South Asia, and EMEA), assess whether the Business Agent Platform changes their inbound workflow expectations.",
+        "The enterprise platform integrates with Shopify, Zendesk, and Shopee — a B2B team using any of those can build a connected agent without custom development."
+      ],
+      "score": {
+        "total": 7.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-07T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["ai-agent", "meta", "whatsapp", "enterprise", "customer-service"]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "product_hunt",
+      "title": "Product Hunt — Top AI Launches, Week of June 1",
+      "description": "Top products from the Product Hunt weekly leaderboard for June 1–7, 2026 (Week 23), ranked by upvotes. Maker websites used as primary URLs where available.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "ph-fundraisly-jun02",
+          "title": "Fundraisly",
+          "source": "Product Hunt",
+          "date": "2026-06-02",
+          "primary_url": "https://fundraisly.com",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/fundraisly"
+            }
+          ],
+          "summary": "AI agent that analyzes 300K+ investors and millions of deals, identifies active matches, maps warm paths through the user's network, and runs targeted outreach. Claims to produce 20–40 qualified investor meetings.",
+          "category": "AI Agent",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["ai-agent", "fundraising", "venture-capital"],
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "ph-mailwarm-2-jun01",
+          "title": "Mailwarm 2.0",
+          "source": "Product Hunt",
+          "date": "2026-06-01",
+          "primary_url": "https://www.mailwarm.com",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/mailwarm"
+            }
+          ],
+          "summary": "Email warm-up tool upgraded for deliverability, helping sender reputation management and inbox placement. Updated for 2026 email provider rules.",
+          "category": "Dev Tools",
+          "evaluation": "SKIP",
+          "recurrence": "new",
+          "tags": ["email", "deliverability"],
+          "score": {
+            "total": 3.5,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 0,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "ph-sellerclaw-jun05",
+          "title": "SellerClaw",
+          "source": "Product Hunt",
+          "date": "2026-06-05",
+          "primary_url": "https://sellerclaw.com",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/sellerclaw"
+            }
+          ],
+          "summary": "Multi-agent system that runs e-commerce stores across Shopify, eBay, and Amazon: specialized agents for product sourcing, listing creation, ad management, pricing, and customer support coordinated by a supervisor agent. Human-in-the-loop approvals before any action executes. Free to start.",
+          "category": "AI Agent",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["ai-agent", "e-commerce", "multi-agent"],
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "ph-minimi-claude-jun05",
+          "title": "Minimi",
+          "source": "Product Hunt",
+          "date": "2026-06-05",
+          "primary_url": "https://www.projectminimi.com",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/minimi-2"
+            }
+          ],
+          "summary": "Ambient memory layer for Claude Desktop. Connects via a single MCP connector, synthesizes recent activities and interactions, and surfaces context in response to natural-language queries: 'What have I been ignoring?', 'Who in my network have I not spoken to in 30+ days?'",
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["mcp", "claude", "memory", "productivity"],
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "ph-mina-meeting-assistant-jun01",
+          "title": "Mina Meeting Assistant",
+          "source": "Product Hunt",
+          "date": "2026-06-01",
+          "primary_url": "https://www.usemina.ai",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/mina-meeting-assistant"
+            }
+          ],
+          "summary": "AI meeting participant that joins Zoom, Google Meet, and Teams calls, responds to questions in real time using connected tool context, generates CRM updates and summaries while the meeting is live, and executes follow-ups without requiring a post-meeting step. Connects to 200+ tools including Salesforce, HubSpot, Jira, and Slack. Free plan includes 2,500 one-time credits; Pro at $49/month.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["meeting-assistant", "enterprise-ai", "agent"],
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "ph-databox-mcp-jun01",
+          "title": "Databox MCP",
+          "source": "Product Hunt",
+          "date": "2026-06-01",
+          "primary_url": "https://databox.com/mcp",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/databox-mcp"
+            }
+          ],
+          "summary": "MCP server that connects Claude, ChatGPT, Cursor, and n8n directly to Databox metrics. Lets AI tools query live business performance data, trigger reports, and push new datasets back into Databox — all via natural language. Included for all Databox users at no extra cost; works with 130+ Databox integrations.",
+          "category": "Dev Tools",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["mcp", "analytics", "enterprise-ai", "business-data"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "ph-astra-autonomous-pentest-jun04",
+          "title": "Astra Autonomous Pentest",
+          "source": "Product Hunt",
+          "date": "2026-06-04",
+          "primary_url": "https://www.getastra.io",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/astra-security"
+            }
+          ],
+          "summary": "AI agent platform that autonomously runs penetration tests, validates exploits (reducing false positives), and delivers remediation via Cursor, Copilot, and Claude Code prompts. Built on eight years of real-world pentest data. Targets continuous vulnerability management without a periodic manual pentest cadence.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["security", "ai-agent", "pentest", "enterprise"],
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "ph-insforge-backend-branching-jun02",
+          "title": "InsForge Backend Branching",
+          "source": "Product Hunt",
+          "date": "2026-06-02",
+          "primary_url": "https://insforge.com",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/insforge"
+            }
+          ],
+          "summary": "Git-style branching for the entire backend environment — databases, storage, authentication, and edge functions — with a single command. Enables isolated full-stack environments for feature development or AI agent testing without shared-database state collisions.",
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["dev-tools", "backend", "open-source"],
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "frontier_models",
+      "title": "Frontier Model Releases",
+      "description": "New model releases from frontier labs and major research organizations during the week of June 1–7.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "google-gemma-4-12b-jun03",
+          "title": "Google Gemma 4 12B — Encoder-Free Multimodal Model, Apache 2.0",
+          "source": "Google DeepMind",
+          "date": "2026-06-03",
+          "primary_url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/",
+          "secondary_urls": [
+            {
+              "label": "Hugging Face weights",
+              "url": "https://huggingface.co/google/gemma-4-12b"
+            }
+          ],
+          "summary": "Gemma 4 12B is the first mid-sized open model to natively process text, images, audio, and video without separate encoders — a single decoder-only transformer handles all modalities. Released under Apache 2.0. Requires 16GB VRAM or unified memory, runs on consumer laptops. The Gemma 4 family has crossed 150 million total downloads. Available on Hugging Face, Kaggle, and major cloud providers.",
+          "category": "Open Source",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["open-source", "google", "multimodal", "on-device"],
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "openai-gpt-rosalind-capabilities-jun03",
+          "title": "OpenAI GPT-Rosalind — Life Sciences Model Update",
+          "source": "OpenAI",
+          "date": "2026-06-03",
+          "primary_url": "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/",
+          "summary": "GPT-Rosalind received new capabilities combining GPT-5.5 agentic tool use with stronger domain intelligence in medicinal chemistry and genomics. Uses 31% fewer tokens than GPT-5.5 while improving accuracy on drug-discovery evals. Available in research preview to eligible organizations through a trusted-access deployment structure. OpenAI also launched Rosalind Biodefense as a companion initiative.",
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["life-sciences", "openai", "enterprise-ai", "restricted-access"],
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 0,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "ideogram-4-open-weight-jun03",
+          "title": "Ideogram 4.0 — Open-Weight Text-to-Image Model, 9.3B Parameters",
+          "source": "Ideogram",
+          "date": "2026-06-03",
+          "primary_url": "https://ideogram.ai/blog/ideogram-4.0/",
+          "secondary_urls": [
+            {
+              "label": "Hugging Face weights (nf4)",
+              "url": "https://huggingface.co/ideogram-ai/ideogram-4-nf4"
+            }
+          ],
+          "summary": "Ideogram's first open-weight text-to-image model: 9.3B parameter Diffusion Transformer trained from scratch. Ranked first among open-weight models on DesignArena, ninth overall (below only closed models from OpenAI and Google). Key capabilities: native 2K resolution, JSON bounding-box layout control, hex color conditioning, background transparency. The nf4 checkpoint fits on a 24GB GPU. Commercial use requires a separate paid license; research and non-commercial use is free.",
+          "category": "Open Source",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["open-source", "image-generation", "design", "fine-tuning"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "yc_and_startups",
+      "title": "YC & Early-Stage AI Startups",
+      "description": "Notable YC W26 companies and early-stage AI startups with public launches or disclosures this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "flourish-ai-500m-neuroscience-jun04",
+          "title": "Flourish — $500M Raise for Brain-Inspired AI at $2.5B Valuation",
+          "source": "SiliconAngle",
+          "date": "2026-06-04",
+          "primary_url": "https://siliconangle.com/2026/06/04/ai-startup-flourish-reportedly-raises-500m-round-backed-jeff-bezos/",
+          "summary": "Flourish raised $500M at a $2.5B valuation — led by Lux Capital and GV, with about $100M from Jeff Bezos and participation from Catalio. The company applies neuroscience and connectomics research to build AI that requires an order of magnitude less power than conventional LLMs. Plans a consumer-device model that can learn continuously. No product has shipped; the company expects a breakthrough within five years.",
+          "category": "AI Agent",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["funding", "neuroscience", "edge-ai", "pre-product"],
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 0,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "yc-w26-beacon-health-ai-prior-auth",
+          "title": "YC W26 Highlight — Beacon Health: AI Agents for EHR Prior Authorization",
+          "source": "LinkedIn / YC W26",
+          "date": "2026-06-02",
+          "primary_url": "https://www.linkedin.com/posts/guillaumerx21_4-startups-from-ycs-wildest-batch-yet-w26-activity-7467576401731190785-U6gF",
+          "summary": "Beacon Health (YC W26, $5.4M seed from Accel) deploys AI agents in EHRs to handle prior authorization, screenings, and clinical coding — replacing workflows that previously required three people. The approach is pure workflow execution, not a chatbot layer. The W26 batch overall had 14 companies past $1M ARR before Demo Day.",
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["healthcare", "ai-agent", "yc", "enterprise-ai"],
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_ai",
+      "title": "Enterprise AI Platform Launches",
+      "description": "Enterprise-grade AI platform announcements and launches from major technology and services companies.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "microsoft-frontier-tuning-jun02",
+          "title": "Microsoft Frontier Tuning — In-Boundary RL for Enterprise Agents",
+          "source": "Microsoft 365 Dev Blog",
+          "date": "2026-06-02",
+          "primary_url": "https://devblogs.microsoft.com/microsoft365dev/frontier-tuning-teaching-ai-to-work-the-way-you-do/",
+          "summary": "Frontier Tuning applies reinforcement learning within an organization's compliance boundary so agents improve using the company's own data, domain knowledge, and workflows — without data leaving the tenant. Currently in private preview via the Frontier partner-led FDE program; expected in Copilot Studio and Foundry soon. This is distinct from standard fine-tuning: it creates a continuous improvement loop rather than a one-time model update.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["microsoft", "enterprise-ai", "reinforcement-learning", "agents"],
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "cognizant-physical-ai-platform-jun05",
+          "title": "Cognizant Intelligence Spine — Sovereign Physical AI Platform-as-a-Service",
+          "source": "Cognizant",
+          "date": "2026-06-05",
+          "primary_url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Launches-Sovereign-Physical-AI-Platform-as-a-Service/default.aspx",
+          "summary": "Cognizant (NASDAQ: CTSH) launched the Intelligence Spine, an enterprise platform that connects industrial sensors, IoT devices, factory automation, and energy infrastructure into a unified agentic intelligence layer. The platform sits between the physical edge and the reasoning layer, with 'sovereign' governance meaning the enterprise owns and controls all institutional intelligence it generates. Targeting eight verticals: utilities, oil and gas, manufacturing, logistics, transportation, aerospace/defense, healthcare, and consumer/retail.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["physical-ai", "iot", "enterprise-ai", "manufacturing", "industrial"],
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "azure-databricks-ai-search-genie-code-jun01",
+          "title": "Azure Databricks June 2026 — AI Search GA, Genie Code Auto-Approve, Agent Bricks Web Search",
+          "source": "Microsoft Learn / Azure Databricks",
+          "date": "2026-06-01",
+          "primary_url": "https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/june",
+          "summary": "Databricks June 2026 release includes: Vector Search renamed to AI Search (GA), now supporting full-text search without vectors or embeddings; Genie Code auto-approve mode (AI classifier blocks risky actions before executing); Agent Bricks Supervisor Agent now supports web search as a built-in tool; Genie Code full-page experience in Beta. Genie products move to pay-as-you-go pricing on July 6 (150 DBUs free/user/month, ~$10.50 equivalent).",
+          "category": "Enterprise AI",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["databricks", "azure", "enterprise-ai", "search", "agents"],
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "azure-functions-mcp-extension-build-2026-jun02",
+          "title": "Azure Functions MCP Extension — MCP Apps, Auth, and Foundry Toolbox Integration",
+          "source": "Microsoft Tech Community",
+          "date": "2026-06-02",
+          "primary_url": "https://techcommunity.microsoft.com/blog/appsonazureblog/azure-functions-mcp-extension-whats-new-at-build-2026/4524099",
+          "summary": "The Azure Functions MCP extension shipped full MCP primitives (tool, resource, and prompt triggers), MCP Apps for interactive UI responses, built-in Entra ID authentication with OBO token exchange, and structured content (JSON output alongside text). Upcoming: surfacing MCP servers in Foundry Toolbox so agents discover tools automatically. Available today on .NET, Java, Python, TypeScript, and JavaScript.",
+          "category": "Dev Tools",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["mcp", "azure", "dev-tools", "enterprise-ai", "agents"],
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "funding",
+      "title": "Notable AI Funding Rounds",
+      "description": "AI funding rounds announced or reported during June 1–7, 2026, cross-checked against company or primary press sources.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "zutacore-100m-series-c-jun02",
+          "title": "ZutaCore — $100M Series C for Waterless AI Data Center Cooling",
+          "source": "ZutaCore",
+          "date": "2026-06-02",
+          "primary_url": "https://blog.zutacore.com/press-releases/zutacore-100m-series-c-funding-ai-data-center-cooling",
+          "secondary_urls": [
+            {
+              "label": "Calcalist detail on $600M valuation",
+              "url": "https://www.calcalistech.com/ctechnews/article/ryzxms2ezx"
+            }
+          ],
+          "summary": "ZutaCore closed a $100M Series C at an estimated $600M valuation (Calcalist), backed by Mitsubishi Electric, Carrier Ventures, and Samsung Ventures. The company's waterless two-phase direct-to-chip liquid cooling platform supports processors exceeding 4,000 watts. ZutaCore reports 75+ deployments across the Americas, Europe, and Asia. Total funding since founding is approximately $200M.",
+          "category": "Hardware",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["funding", "hardware", "data-center", "cooling", "infrastructure"],
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "flourish-ai-funding-jun04-funding-section",
+          "title": "Flourish — $500M at $2.5B (Brain-Inspired AI, Pre-Product)",
+          "source": "SiliconAngle",
+          "date": "2026-06-04",
+          "primary_url": "https://siliconangle.com/2026/06/04/ai-startup-flourish-reportedly-raises-500m-round-backed-jeff-bezos/",
+          "summary": "Flourish raised $500M at a $2.5B valuation from Lux Capital, GV, Catalio, and Jeff Bezos (personal investment of ~$100M). The startup applies neuroscience and connectomics to build low-power AI. No product shipped; company expects a breakthrough within five years. The round is notable for its size relative to pre-product stage.",
+          "category": "AI Agent",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["funding", "neuroscience", "pre-product", "edge-ai"],
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 0,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "open_source",
+      "title": "Open Source & Dev Tool Releases",
+      "description": "Notable open-source model and tooling releases from the week of June 1–7, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "nvidia-nemotron-3-ultra-open-source-section",
+          "title": "NVIDIA Nemotron 3 Ultra — 550B Open Frontier Reasoning Model (OpenMDW 1.1)",
+          "source": "NVIDIA / Hugging Face",
+          "date": "2026-06-04",
+          "primary_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+          "summary": "See Top Picks for full details. 550B total parameters, 55B active per token, 1M-token context, SWE-bench Verified 71.9, Apache-compatible OpenMDW 1.1 license for commercial use. Minimum hardware: 8× GB200 or 16× H100. Available on Hugging Face, NIM microservices, and OpenRouter.",
+          "category": "Open Source",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["open-source", "nvidia", "frontier-model", "reasoning"],
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "google-gemma-4-12b-open-source-section",
+          "title": "Google Gemma 4 12B — Apache 2.0, 16GB VRAM, Encoder-Free Multimodal",
+          "source": "Google DeepMind",
+          "date": "2026-06-03",
+          "primary_url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/",
+          "summary": "See Frontier Models section. Apache 2.0, runs locally on 16GB VRAM. Encoder-free architecture handles text, image, audio, and video natively. 150M total Gemma downloads milestone. Available via Hugging Face, Kaggle, LM Studio, Ollama, and Google Cloud.",
+          "category": "Open Source",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["open-source", "google", "multimodal", "on-device", "apache"],
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "ideogram-4-open-weight-open-source-section",
+          "title": "Ideogram 4.0 — First Open-Weight Text-to-Image Model from Ideogram",
+          "source": "Ideogram",
+          "date": "2026-06-03",
+          "primary_url": "https://ideogram.ai/blog/ideogram-4.0/",
+          "summary": "9.3B Diffusion Transformer, native 2K output, JSON layout control. Best open-weight model on DesignArena. Non-commercial weights free; commercial use requires a paid license. Available on Hugging Face (ideogram-ai/ideogram-4-nf4 fits 24GB GPU) and via the Ideogram API.",
+          "category": "Open Source",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["open-source", "image-generation", "design", "fine-tuning"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "to_watch",
+      "title": "To Watch — Early-Stage High Signal",
+      "description": "Items that are pre-GA or pre-product but carry meaningful strategic signal for the coming quarter.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "microsoft-mxc-agent-containers-preview-jun02",
+          "title": "Microsoft Execution Containers (MXC) — OS-Enforced Agent Sandboxing, Preview",
+          "source": "Microsoft Build Live Blog",
+          "date": "2026-06-02",
+          "primary_url": "https://news.microsoft.com/build-2026-live-blog",
+          "summary": "MXC gives developers and IT admins OS-enforced sandboxed environments for agents — containment enforced at the operating system level, not just application logic. OpenClaw on Windows runs multi-step workflows inside MXC boundaries; NVIDIA OpenShell adds inference routing and PII obfuscation on top. Currently in preview. This is the infrastructure layer that makes autonomous agents acceptable to enterprise security and compliance teams.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["microsoft", "security", "agents", "enterprise-ai", "governance"],
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        },
+        {
+          "id": "microsoft-discovery-ga-science-platform-jun02",
+          "title": "Microsoft Discovery — Agentic Science Platform GA",
+          "source": "Microsoft Blog",
+          "date": "2026-06-02",
+          "primary_url": "https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/",
+          "summary": "Microsoft Discovery is generally available as an enterprise-grade agentic AI platform for the full scientific research workflow, built on Azure. Cited use cases include copper-leaching solutions (BHP), semiconductor R&D acceleration (Syensqo), and drug discovery iteration (GSK). A free Discovery local app (requires GitHub Copilot account) is available in preview for the broader scientific community.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["enterprise-ai", "microsoft", "science", "r-and-d", "azure"],
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-07T12:00:00Z"
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "Microsoft Build 2026 — MAI Model Family, Microsoft IQ GA, Microsoft Scout",
+      "source": "Microsoft Blog",
+      "date": "2026-06-02",
+      "primary_url": "https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/",
+      "score": 9.0
+    },
+    {
+      "title": "GitHub Copilot Usage-Based Billing GA — All Plans, June 1",
+      "source": "GitHub Blog",
+      "date": "2026-06-01",
+      "primary_url": "https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/",
+      "score": 8.5
+    },
+    {
+      "title": "NVIDIA Nemotron 3 Ultra — 550B Open Frontier Reasoning Model",
+      "source": "NVIDIA / Hugging Face",
+      "date": "2026-06-04",
+      "primary_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+      "score": 8.0
+    },
+    {
+      "title": "Anthropic Confidentially Files Form S-1 with the SEC",
+      "source": "Anthropic",
+      "date": "2026-06-01",
+      "primary_url": "https://www.anthropic.com/news/confidential-draft-s1-sec",
+      "score": 8.0
+    },
+    {
+      "title": "Google Gemma 4 12B — Encoder-Free Multimodal Model, Apache 2.0",
+      "source": "Google DeepMind",
+      "date": "2026-06-03",
+      "primary_url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/",
+      "score": 8.0
+    },
+    {
+      "title": "OpenAI ChatGPT Dreaming V3 — Scalable Memory Architecture",
+      "source": "OpenAI",
+      "date": "2026-06-04",
+      "primary_url": "https://openai.com/index/chatgpt-memory-dreaming/",
+      "score": 7.5
+    },
+    {
+      "title": "Meta Business Agent — Global Launch Across WhatsApp, Messenger, Instagram",
+      "source": "Meta Newsroom",
+      "date": "2026-06-03",
+      "primary_url": "https://about.fb.com/news/2026/06/meta-business-agent/",
+      "score": 7.5
+    },
+    {
+      "title": "Microsoft Frontier Tuning — In-Boundary RL for Enterprise Agents",
+      "source": "Microsoft 365 Dev Blog",
+      "date": "2026-06-02",
+      "primary_url": "https://devblogs.microsoft.com/microsoft365dev/frontier-tuning-teaching-ai-to-work-the-way-you-do/",
+      "score": 7.0
+    },
+    {
+      "title": "Cognizant Intelligence Spine — Sovereign Physical AI Platform-as-a-Service",
+      "source": "Cognizant",
+      "date": "2026-06-05",
+      "primary_url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Launches-Sovereign-Physical-AI-Platform-as-a-Service/default.aspx",
+      "score": 7.0
+    },
+    {
+      "title": "Azure Databricks June 2026 — AI Search GA, Genie Code Auto-Approve",
+      "source": "Microsoft Learn / Azure Databricks",
+      "date": "2026-06-01",
+      "primary_url": "https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/june",
+      "score": 7.0
+    },
+    {
+      "title": "Azure Functions MCP Extension — MCP Apps, Auth, Foundry Toolbox Integration",
+      "source": "Microsoft Tech Community",
+      "date": "2026-06-02",
+      "primary_url": "https://techcommunity.microsoft.com/blog/appsonazureblog/azure-functions-mcp-extension-whats-new-at-build-2026/4524099",
+      "score": 7.0
+    },
+    {
+      "title": "Microsoft Execution Containers (MXC) — OS-Enforced Agent Sandboxing",
+      "source": "Microsoft Build Live Blog",
+      "date": "2026-06-02",
+      "primary_url": "https://news.microsoft.com/build-2026-live-blog",
+      "score": 7.0
+    },
+    {
+      "title": "Microsoft Discovery — Agentic Science Platform GA",
+      "source": "Microsoft Blog",
+      "date": "2026-06-02",
+      "primary_url": "https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/",
+      "score": 7.0
+    },
+    {
+      "title": "Databox MCP — Chat with Business Data Inside Claude, ChatGPT, and More",
+      "source": "Databox",
+      "date": "2026-06-01",
+      "primary_url": "https://databox.com/mcp",
+      "score": 6.5
+    },
+    {
+      "title": "Ideogram 4.0 — Open-Weight Text-to-Image Model, 9.3B Parameters",
+      "source": "Ideogram",
+      "date": "2026-06-03",
+      "primary_url": "https://ideogram.ai/blog/ideogram-4.0/",
+      "score": 6.5
+    },
+    {
+      "title": "Flourish — $500M Raise for Brain-Inspired AI at $2.5B Valuation",
+      "source": "SiliconAngle",
+      "date": "2026-06-04",
+      "primary_url": "https://siliconangle.com/2026/06/04/ai-startup-flourish-reportedly-raises-500m-round-backed-jeff-bezos/",
+      "score": 6.0
+    },
+    {
+      "title": "ZutaCore — $100M Series C for Waterless AI Data Center Cooling",
+      "source": "ZutaCore",
+      "date": "2026-06-02",
+      "primary_url": "https://blog.zutacore.com/press-releases/zutacore-100m-series-c-funding-ai-data-center-cooling",
+      "score": 6.0
+    },
+    {
+      "title": "Fundraisly — AI Fundraising Agent (Product Hunt #1 of the Week)",
+      "source": "Product Hunt",
+      "date": "2026-06-02",
+      "primary_url": "https://fundraisly.com",
+      "score": 6.0
+    },
+    {
+      "title": "Astra Autonomous Pentest — AI Agents for Continuous Vulnerability Management",
+      "source": "Product Hunt",
+      "date": "2026-06-04",
+      "primary_url": "https://www.getastra.io",
+      "score": 6.0
+    },
+    {
+      "title": "YC W26 — Beacon Health AI Prior Authorization Agents",
+      "source": "LinkedIn / YC",
+      "date": "2026-06-02",
+      "primary_url": "https://www.linkedin.com/posts/guillaumerx21_4-startups-from-ycs-wildest-batch-yet-w26-activity-7467576401731190785-U6gF",
+      "score": 5.5
+    },
+    {
+      "title": "SellerClaw — Multi-Agent E-Commerce Store Operator",
+      "source": "Product Hunt",
+      "date": "2026-06-05",
+      "primary_url": "https://sellerclaw.com",
+      "score": 5.5
+    },
+    {
+      "title": "Minimi — Ambient Memory Layer for Claude",
+      "source": "Product Hunt",
+      "date": "2026-06-05",
+      "primary_url": "https://www.projectminimi.com",
+      "score": 5.5
+    },
+    {
+      "title": "Mina Meeting Assistant — Live AI Teammate in Zoom / Teams / Meet",
+      "source": "Product Hunt",
+      "date": "2026-06-01",
+      "primary_url": "https://www.usemina.ai",
+      "score": 5.5
+    },
+    {
+      "title": "InsForge Backend Branching — Git-Style Backend Environment Isolation",
+      "source": "Product Hunt",
+      "date": "2026-06-02",
+      "primary_url": "https://insforge.com",
+      "score": 5.5
+    },
+    {
+      "title": "OpenAI GPT-Rosalind Update — Life Sciences Model with 31% Token Efficiency Gain",
+      "source": "OpenAI",
+      "date": "2026-06-03",
+      "primary_url": "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/",
+      "score": 5.5
+    },
+    {
+      "title": "Flourish AI Funding — $500M Pre-Product Neuroscience AI Round",
+      "source": "SiliconAngle",
+      "date": "2026-06-04",
+      "primary_url": "https://siliconangle.com/2026/06/04/ai-startup-flourish-reportedly-raises-500m-round-backed-jeff-bezos/",
+      "score": 5.5
+    },
+    {
+      "title": "Microsoft MAI Model Family — MAI-Thinking-1 Keynote Transcript",
+      "source": "Microsoft AI",
+      "date": "2026-06-03",
+      "primary_url": "https://microsoft.ai/news/microsoft-build-2026-mai-keynote-transcript/",
+      "score": 7.0
+    },
+    {
+      "title": "Mailwarm 2.0 — Email Warm-Up Tool Upgrade",
+      "source": "Product Hunt",
+      "date": "2026-06-01",
+      "primary_url": "https://www.mailwarm.com",
+      "score": 3.5
+    }
+  ],
+  "flagged_unverified": [],
+  "suggested_refinements": {
+    "add_next_week": [
+      "Monitor Gemini 3.5 Pro general availability — Google has targeted June but it had not shipped as of June 7; check blog.google and Google AI Studio for the release.",
+      "Watch for Microsoft Work IQ APIs GA on June 16 — this gives developers programmatic access to the organizational intelligence graph, which is the most concrete agentic enterprise capability from Build.",
+      "Track Anthropic S-1 public filing date — the confidential filing starts SEC review clock; watch for the public filing that reveals financials.",
+      "Follow NVIDIA Nemotron 4 signal — Jensen Huang mentioned Nemotron 4 is in development at Build; any research preview or technical report is a top pick candidate.",
+      "Check YC S26 batch announcements — application decisions went out June 5 and the batch runs July–September; early launches from accepted companies may appear in the next two weeks."
+    ],
+    "drop_or_deprioritize": [
+      "Mailwarm-style email tooling — no enterprise AI relevance; skip category unless there is a genuine AI differentiation claim with a primary source.",
+      "Consumer social media scheduling tools (SocialEcho category) — limited strategic signal for this reader; exclude unless there is meaningful enterprise AI capability."
+    ],
+    "methodology_note": "All top picks verified against primary source URLs. Product Hunt items use maker websites as primary_url per URL Resolution Rules; PH canonical product pages in secondary_urls. Funding items cross-checked against company press release or primary coverage (SiliconAngle, company investor page). GitHub Copilot billing change verified against GitHub Blog changelog dated June 1.",
+    "scoring_rubric_url": "See /skills/99-editorial-voice.md for the full 4-axis scoring rubric (Signal, Novelty, Actionability, Source Quality).",
+    "verification_protocol_url": "See /skills/99-editorial-voice.md for the verification protocol applied to all top picks."
+  }
+}

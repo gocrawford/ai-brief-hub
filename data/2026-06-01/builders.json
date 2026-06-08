@@ -1,0 +1,1079 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.89,
+    "items_total": 36,
+    "items_new": 32,
+    "items_returning": 4,
+    "empty_week_note": ""
+  },
+
+  "executive_summary": [
+    {
+      "headline": "chopratejas/headroom (15.9k stars, 12k weekly delta) ships v0.23.0 with GitHub Copilot subscription mode — a context compression proxy that cuts 60–95% of tokens before they reach any LLM, local-first, reversible, and wrapable in one command around Claude, Codex, Cursor, or Aider",
+      "body": "Headroom is a Python/Rust library that compresses tool outputs, logs, RAG chunks, and files before they reach the LLM. Six algorithms run locally; originals are preserved and retrievable on demand. v0.23.0 (June 4, 2026) adds GitHub Copilot subscription mode through Headroom and fixes a cross-project CCR memory leak. Verified benchmarks on the README show: code search 17,765 → 1,408 tokens (92% savings); SRE incident debugging 65,694 → 5,118 (92%); GitHub issue triage 54,174 → 14,761 (73%). GSM8K accuracy is unchanged at 0.870; TruthfulQA marginally improves (+0.030). Headroom ships as a library, an OpenAI-compatible proxy, an MCP server (`headroom_compress`, `headroom_retrieve`, `headroom_stats`), and a one-command agent wrapper. Nothing leaves the machine. 15.9k stars; 153 releases since initial public release.",
+      "primary_url": "https://github.com/chopratejas/headroom"
+    },
+    {
+      "headline": "NousResearch/hermes-agent v0.16.0 'The Surface Release' ships the official Electron desktop app for macOS/Linux/Windows — 186k total stars — and v0.15.0 'Velocity Release' cut run_agent.py from 16,083 lines to 3,821 while expanding Kanban into a multi-agent platform",
+      "body": "Hermes Agent shipped two significant releases this week. v0.15.0 (May 28) was a structural overhaul: 76% reduction in core agent code from 16,083 to 3,821 lines, Kanban expanded to a full multi-agent platform, cold-start performance improvements, and Bitwarden Secrets Manager integration. v0.16.0 (June 5) is the Surface Release: a native Electron desktop app for macOS (12+), Linux, and Windows (10+) with one-click install, concurrent multi-profile sessions, drag-and-drop file input, and remote gateway connections over OAuth. The community-built desktop client hit ~10k stars in two months before Nous Research folded it into the official product line. 186k total stars; supports 200+ models via OpenRouter, Nous Portal, NovitaAI, NVIDIA NIM, OpenAI, and self-hosted endpoints.",
+      "primary_url": "https://github.com/NousResearch/hermes-agent"
+    },
+    {
+      "headline": "Alibaba open-sources Open Code Review (alibaba/open-code-review), a Go CLI battle-tested across tens of thousands of developers internally with millions of defects identified — and MemPalace/mempalace hits 53.1k stars with 96.6% LongMemEval R@5 requiring zero API calls",
+      "body": "Two distinct tools addressing opposite ends of the coding workflow shipped meaningful public releases this week. Alibaba's Open Code Review is a hybrid architecture (deterministic pipeline + LLM agent) Go CLI incubated from a production tool used at Alibaba scale for two years. It produces precise line-level comments, bundles a fine-tuned ruleset for NPE, thread-safety, XSS, and SQL injection, and integrates with Claude Code and Codex. HN thread (item 48406358, June 5) surfaced third-party benchmarks: ~74% recall and ~12% precision on a 50-PR Martian benchmark using qwen3.7-plus at $7 total cost. MemPalace is a local-first AI memory system storing verbatim conversation history (no summarization) with a pluggable ChromaDB backend, 29 MCP tools, and auto-save hooks for Claude Code sessions. Raw semantic retrieval hits 96.6% R@5 on 500 LongMemEval questions with no API calls and no LLM at any retrieval stage.",
+      "primary_url": "https://github.com/alibaba/open-code-review"
+    },
+    {
+      "headline": "Key takeaway: The week of June 1–7 converged on two engineering priorities — context cost reduction (headroom, ECC orch-* skills, markitdown surging 16k stars/day) and persistent agent memory (mempalace 53.1k stars, supermemory #1 on three benchmarks). These are not competing patterns. An enterprise AI team that deploys context compression at the proxy layer and verbatim memory at the session layer addresses both LLM spend and the Claude-session-expiry problem in a single architecture.",
+      "body": "Context compression and agent memory are the most practically useful engineering themes to emerge this week, and they are stacking rather than competing. Headroom sits at the proxy layer and shrinks what enters the context window. MemPalace sits at the session layer and ensures that compressed sessions can be recalled verbatim across session resets. affaan-m/ECC shipped the orch-* orchestrator skill family this week (210k stars, June 7 commit), adding agent orchestration as a cross-harness skill. And microsoft/markitdown surged 16k stars in a single day, signaling renewed interest in the document-to-Markdown conversion layer that feeds all of these systems. The stack from document intake (markitdown/liteparse) → context compression (headroom) → agent memory (mempalace/supermemory) is now fully open-source, composable, and locally deployable."
+    }
+  ],
+
+  "top_picks": [
+    {
+      "id": "headroom-v0-23-0-context-compression",
+      "title": "chopratejas/headroom v0.23.0",
+      "subtitle": "Context compression proxy for AI agents — 60–95% fewer tokens, 6 algorithms, library + proxy + MCP server + agent wrap, local-first, reversible, v0.23.0 adds GitHub Copilot subscription mode",
+      "source": "GitHub",
+      "author": "chopratejas",
+      "date": "2026-06-04",
+      "primary_url": "https://github.com/chopratejas/headroom",
+      "secondary_urls": [
+        {
+          "label": "v0.23.0 release notes (June 4, 2026)",
+          "url": "https://github.com/chopratejas/headroom/releases/tag/v0.23.0"
+        }
+      ],
+      "summary": "Headroom compresses tool outputs, logs, RAG chunks, files, and conversation history before they reach the LLM using six algorithms. It runs as a library, an OpenAI-compatible proxy, an MCP server, or a one-command agent wrapper around Claude, Codex, Cursor, or Aider. Data never leaves the machine; originals are preserved and reversibly retrievable. v0.23.0 (June 4, 2026) adds GitHub Copilot subscription mode through Headroom and fixes a cross-project CCR workspace leak. 15.9k stars; 153 releases.",
+      "verified": true,
+      "verified_at": "2026-06-07T18:00:00Z",
+      "key_takeaways": [
+        "Six compression algorithms — including semantic deduplication, structural pruning, and relevance filtering — stack in a configurable pipeline. The proxy intercepts any OpenAI-compatible traffic without code changes; the MCP server exposes headroom_compress, headroom_retrieve, and headroom_stats as callable tools inside any MCP client.",
+        "Verified benchmarks on the repo README show: code search 17,765 → 1,408 tokens (92% reduction); SRE incident debugging 65,694 → 5,118 tokens (92%); GitHub issue triage 54,174 → 14,761 tokens (73%). GSM8K accuracy is unchanged at 0.870; TruthfulQA improves 0.530 → 0.560.",
+        "headroom learn mines failed agent sessions and writes corrections to CLAUDE.md or AGENTS.md, creating a feedback loop where compression failures surface as actionable instruction updates — the tool actively reduces its own error rate over time."
+      ],
+      "results": "Code search: 17,765 → 1,408 tokens (92% savings). SRE incident debugging: 65,694 → 5,118 tokens (92%). GitHub issue triage: 54,174 → 14,761 tokens (73%). GSM8K: unchanged at 0.870. TruthfulQA: 0.530 → 0.560. BFCL: 97%. Source: github.com/chopratejas/headroom README (fetched June 7, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Deploy Headroom as a transparent proxy on developer workstations or in CI using `headroom proxy --port 8787`. Any agent or tool already configured to use an OpenAI-compatible API endpoint requires no code changes — redirect the base URL to the local proxy. For MCP-native workflows, add the Headroom MCP server (`headroom mcp install`) to expose `headroom_compress`, `headroom_retrieve`, and `headroom_stats` inside Claude Code, Cursor, or Codex. Run `headroom wrap claude` to wrap the Claude CLI directly. The agent wrapper and proxy modes are composable — run the proxy for CI pipelines and the wrapper for interactive developer sessions. | Regulated-environment caveats: Headroom runs fully locally by default — no data egress. Confirm the Python 3.10+ runtime is approved for developer workstations under your endpoint management policy. The MCP server requires a local process running on a well-known port; verify this does not conflict with your endpoint firewall rules. For air-gapped environments, host the PyPI/npm packages in your internal registry and pin the version. The `headroom learn` feature writes to CLAUDE.md and AGENTS.md — review what it writes before fleet deployment to ensure instruction files remain compliant with your AI governance policy. Pin the npm package version in your internal developer-tooling provisioning script. | 30-day experiment: Identify two agentic CI workflows that consume significant LLM tokens (e.g., automated code review, test generation). Deploy Headroom in proxy mode for both. For two weeks, run without compression (baseline). For two weeks, enable compression. Compare: (1) tokens per run, (2) API cost per run, (3) task quality score (success rate, human review acceptance rate). Report the per-run cost delta against your current LLM API contract pricing.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 12000
+      },
+      "tags": ["Context Compression", "Token Efficiency", "MCP Server", "Proxy", "Local-First"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "hermes-agent-v016-surface-desktop",
+      "title": "NousResearch/hermes-agent v0.16.0 — The Surface Release",
+      "subtitle": "Self-improving AI agent gets official Electron desktop app for macOS/Linux/Windows — 186k stars, v0.15.0 cut core code 76%, v0.16.0 adds GUI, MCP catalog, multi-profile sessions",
+      "source": "GitHub",
+      "author": "NousResearch",
+      "date": "2026-06-05",
+      "primary_url": "https://github.com/NousResearch/hermes-agent",
+      "secondary_urls": [
+        {
+          "label": "Hermes Agent releases",
+          "url": "https://github.com/NousResearch/hermes-agent/releases"
+        },
+        {
+          "label": "Hermes Desktop landing page",
+          "url": "https://hermes-agent.nousresearch.com/desktop"
+        }
+      ],
+      "summary": "Hermes Agent is a self-improving open-source AI agent with a closed learning loop that creates skills from experience, searches past conversations via FTS5, and builds a persistent user model across sessions. v0.15.0 (May 28) cut the core agent file from 16,083 to 3,821 lines and expanded Kanban into a multi-agent platform. v0.16.0 (June 5, 2026) ships the official Electron desktop app for macOS 12+, Linux, and Windows 10+, with MCP catalog, concurrent multi-profile sessions, and Simplified Chinese translation. Supports 200+ models via OpenRouter, Nous Portal, NVIDIA NIM, and any OpenAI-compatible endpoint. 186k total stars; MIT license.",
+      "verified": true,
+      "verified_at": "2026-06-07T18:00:00Z",
+      "key_takeaways": [
+        "The 76% reduction in run_agent.py (16,083 → 3,821 lines in v0.15.0) is architectural, not cosmetic — Kanban became a standalone multi-agent platform with isolated subagent spawning for parallel workstreams, making the orchestration layer testable and extensible without touching the core agent loop.",
+        "v0.16.0's desktop app ships with concurrent multi-profile sessions and remote gateway connections over OAuth, enabling an AI team to run Hermes against separate project workspaces simultaneously without credential or context cross-contamination.",
+        "The agentskills.io open standard compatibility means Hermes skills are portable to other agents supporting the standard — skills built for internal workflows on Hermes do not require rewriting when evaluating alternative agent runtimes."
+      ],
+      "results": "186k GitHub stars; 1,355 contributors; 10,897 commits. v0.15.0: core file reduced from 16,083 to 3,821 lines (76% reduction). Desktop app was originally a community project that reached ~10k stars in two months before being folded into the official product line. Source: github.com/NousResearch/hermes-agent README and releases page (fetched June 7, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Hermes Agent installs via pip or a one-line curl installer across Linux, macOS, WSL2, and Windows (native PowerShell, no WSL required). For team deployments, the messaging gateway (`hermes gateway setup`) enables a single Hermes instance to serve Telegram, Slack, Discord, Teams, and WhatsApp from one configuration. The Kanban multi-agent platform in v0.15.0+ allows parallel subagent spawning for workstreams — useful for parallelizing long-running internal agent workflows. The scheduled automation feature (cron scheduler, natural language scheduling) supports unattended nightly backups, weekly audit reports, and daily summaries without custom tooling. | Regulated-environment caveats: Hermes routes API calls to external model providers by default (OpenRouter, Nous Portal, OpenAI, Anthropic). For data residency requirements, configure a self-hosted OpenAI-compatible endpoint (LM Studio, vLLM, Ollama) and set the custom endpoint via `hermes model`. The FTS5 cross-session search and persistent memory are stored locally under ~/.hermes; confirm local storage paths are covered by your endpoint encryption policy. Bitwarden Secrets Manager integration (added v0.15.0) handles credential storage — evaluate against your approved secrets management solution before fleet deployment. Pin the Python package version in your internal provisioning script. | 30-day experiment: Deploy Hermes on three developer workstations. For two weeks, run without the skills or Kanban features (baseline for task completion time on a representative repeating workflow, e.g., weekly repo audit + Jira ticket creation). For two weeks, enable skills and the cron scheduler for the same workflow. Measure: time to complete, errors requiring human intervention, and whether the autonomous skill creation feature generated any skills worth keeping permanently.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 5000
+      },
+      "tags": ["Agent Framework", "Desktop App", "Self-Improving", "Multi-Agent", "MCP"],
+      "category": "Agent Framework",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "alibaba-open-code-review-go-cli",
+      "title": "alibaba/open-code-review v1.1.8",
+      "subtitle": "Battle-tested Go CLI code review agent — hybrid deterministic + LLM architecture, line-level comments, fine-tuned ruleset for NPE/thread-safety/XSS/SQL injection, 2 years internal at Alibaba, millions of defects identified",
+      "source": "GitHub / Hacker News",
+      "author": "Alibaba",
+      "date": "2026-05-30",
+      "primary_url": "https://github.com/alibaba/open-code-review",
+      "secondary_urls": [
+        {
+          "label": "HN discussion — Open Code Review (June 5, 2026)",
+          "url": "https://news.ycombinator.com/item?id=48406358"
+        }
+      ],
+      "summary": "alibaba/open-code-review is a Go CLI AI code review agent open-sourced after two years of internal use at Alibaba scale across tens of thousands of developers, with millions of code defects identified. The hybrid architecture combines deterministic pipelines (precise file filtering, intelligent file bundling, fine-grained rule matching) with an LLM agent (standalone location and reflection components, scenario-optimized prompts). Produces precise line-level comments; built-in fine-tuned ruleset covers NPE, thread-safety, XSS, and SQL injection. Supports OpenAI and Anthropic; integrates with Claude Code and Codex agent frameworks. v1.1.8 released May 30, 2026; 18 releases total. 591 stars as of fetch.",
+      "verified": true,
+      "verified_at": "2026-06-07T18:00:00Z",
+      "key_takeaways": [
+        "Third-party benchmarks posted in the HN thread (item 48406358) using qwen3.7-plus via OpenRouter on a 50-PR Martian benchmark showed ~74% recall and ~12% precision (F1 ~20%) at a total cost of ~$7 for 50 PRs — useful as a first-pass defect filter, not as a replacement for human review.",
+        "The Go CLI design was a deliberate choice: skills/sub-agent approaches for code review are harder to debug, harder to evaluate, and difficult to tune. A purpose-built CLI with deterministic preprocessing stages produces more predictable, auditable behavior than a general-purpose agent running a review skill.",
+        "The curated scenario-specific toolset and standalone location and reflection components are architecturally separable — an engineering team integrating this into their CI can replace the LLM backend without touching the deterministic pipeline stages."
+      ],
+      "results": "Two years of internal use at Alibaba across tens of thousands of developers. Millions of code defects identified (per README). Third-party HN benchmark: ~74% recall, ~12% precision on 50-PR Martian benchmark using qwen3.7-plus, total cost ~$7. Source: github.com/alibaba/open-code-review README; news.ycombinator.com/item?id=48406358 (fetched June 7, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Open Code Review installs as a Go binary and runs from the terminal or CI pipeline with `ocr review` against a git diff. No external dashboard required; output is structured review comments written to stdout or directly as GitHub PR comments. Integrate into your CI/CD pipeline as a pre-merge gate: run `ocr review --pr <branch>` in your CI workflow and surface comments as review bot annotations. The built-in fine-tuned ruleset for NPE, thread-safety, XSS, and SQL injection is directly relevant to Java/Go/TypeScript enterprise codebases. Configure the LLM backend to point at your approved model provider — the tool supports OpenAI-compatible endpoints, so a self-hosted or Azure OpenAI deployment works. | Regulated-environment caveats: Code diffs are sent to the configured LLM backend; confirm your data governance policy permits sending code diffs to the configured endpoint. For codebases containing proprietary algorithms or regulated data access patterns, restrict the tool to diff-only mode (not full file context) until you have reviewed the data handling. The tool can be fully air-gapped by pointing the LLM endpoint at a self-hosted model. Go binary distribution: pin the version and host the binary in your internal artifact registry rather than pulling from the public GitHub releases. | 30-day experiment: Enable Open Code Review in CI on one active repository as a non-blocking gate for two weeks. Log every comment it produces. Have your senior engineers classify each comment as true positive, false positive, or noise. At the end of two weeks, calculate the precision and recall against your codebase. Adjust the ruleset and model based on results, then enable as a blocking gate for the third and fourth weeks. Report the defect catch rate and false-positive rate.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 591
+      },
+      "tags": ["Code Review", "Go CLI", "CI/CD", "Agent", "Security"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "mempalace-96pct-longmemeval-verbatim",
+      "title": "MemPalace/mempalace v3.3.5",
+      "subtitle": "Local-first AI memory — verbatim storage, 96.6% LongMemEval R@5 with no API calls, 29 MCP tools, pluggable ChromaDB backend, auto-save hooks for Claude Code sessions, 53.1k stars",
+      "source": "GitHub",
+      "author": "MemPalace",
+      "date": "2026-05-10",
+      "primary_url": "https://github.com/MemPalace/mempalace",
+      "secondary_urls": [],
+      "summary": "MemPalace is a local-first AI memory system that stores conversation history verbatim (no summarization or paraphrasing) and retrieves it via semantic search. The palace model organizes memories into wings (people/projects), rooms (topics), and drawers (content), enabling scoped retrieval rather than flat corpus search. Raw semantic retrieval achieves 96.6% R@5 on 500 LongMemEval questions requiring no API key, no cloud, and no LLM at any stage. Hybrid v4 pipeline with LLM rerank reaches ≥99% R@5. Ships 29 MCP tools and auto-save hooks for Claude Code sessions. 53.1k stars; v3.3.5 released May 10, 2026.",
+      "verified": true,
+      "verified_at": "2026-06-07T18:00:00Z",
+      "key_takeaways": [
+        "Verbatim storage is the architectural differentiator: no summarization means no lossy compression of facts, no paraphrase hallucinations, and no post-hoc reasoning about what was said. The semantic search index retrieves what was literally stored, scoped by wing and room rather than searching a flat vector corpus.",
+        "96.6% LongMemEval R@5 requiring zero API calls and zero LLM at retrieval time means the memory system works during model API outages, rate limit periods, or air-gapped environments — retrievals are pure local vector search against ChromaDB.",
+        "The auto-save hooks for Claude Code sessions solve the 30-day session expiry problem: sessions auto-serialize into the palace as they progress, so a session reset restores full context without developer intervention."
+      ],
+      "results": "LongMemEval R@5 (raw, no LLM): 96.6%. Hybrid v4 held-out 450q: 98.4%. Hybrid + LLM rerank: ≥99%. LoCoMo R@10 (hybrid v5): 88.9%. ConvoMem avg recall: 92.9%. MemBench R@5: 80.3%. Source: github.com/MemPalace/mempalace README (fetched June 7, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Install MemPalace via `pip install mempalace` (Python 3.9+; ~300 MB for the embedding model). Add the 29 MCP tools to Claude Code or Cursor via the standard MCP configuration. Organize memory wings around project codebases and internal systems; rooms around recurring workflows (oncall runbooks, architecture decision records, code review patterns). Enable the Claude Code auto-save hook to serialize sessions automatically — this addresses the common enterprise complaint that agent session context is lost when projects span multiple weeks. | Regulated-environment caveats: MemPalace runs fully locally by default. The ChromaDB vector store and all memory files live on the developer's machine — confirm these paths are covered by your endpoint encryption and DLP policy. The optional LLM rerank pipeline calls an external model API if enabled; disable reranking to keep the system fully local. Watch for impostor sites distributing malicious versions of the package — MemPalace's README explicitly warns about this. Install only from the official PyPI package at the URL listed in the repo. For team deployments with a shared memory store, the pluggable backend interface allows swapping ChromaDB for an enterprise vector database with access controls. | 30-day experiment: Deploy MemPalace for three developers working on a shared codebase. Enable auto-save hooks for Claude Code sessions. After two weeks, measure: (1) how many times developers need to re-explain context that was previously discussed with the agent, (2) retrieval accuracy on a 20-question test set drawn from real past decisions. In weeks three and four, enable the structured wing/room organization for the codebase. Compare context-retrieval quality before and after structured organization.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 4000
+      },
+      "tags": ["Agent Memory", "Local-First", "MCP Server", "RAG", "Claude Code"],
+      "category": "Agent Infrastructure",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "ecc-v2rc1-orchestrator-skills-210k",
+      "title": "affaan-m/ECC v2.0.0-rc.1 — orch-* orchestrator skill family",
+      "subtitle": "Cross-harness agent workflow system ships orch-* orchestrator skills (June 7) — 210k stars, 64 agents, 261 skills, 84 command shims, Rust control plane prototype in v2.0.0-rc.1",
+      "source": "GitHub",
+      "author": "affaan-m",
+      "date": "2026-06-07",
+      "primary_url": "https://github.com/affaan-m/ECC",
+      "secondary_urls": [
+        {
+          "label": "ECC website",
+          "url": "https://ecc.tools"
+        }
+      ],
+      "summary": "ECC (affaan-m) is a cross-harness agent workflow system providing skills, hooks, rules, MCP configurations, and legacy command shims for Claude Code, Codex, Cursor, OpenCode, Gemini, Zed, and GitHub Copilot. The June 7 commit ships the orch-* orchestrator skill family (#2153). The v2.0.0-rc.1 surface refresh includes 64 agents, 261 skills, 84 legacy command shims, a Tkinter-based dashboard GUI, operator workflow skills, and the ECC 2.0 alpha Rust control plane prototype in the ecc2/ directory. 210k stars; 242 contributors; MIT license.",
+      "verified": true,
+      "verified_at": "2026-06-07T18:00:00Z",
+      "key_takeaways": [
+        "The orch-* family adds orchestration as a first-class, versionable skill — meaning agent teams can share, review, and pin orchestration logic in the same way they pin code dependencies, rather than encoding it in per-session prompts.",
+        "The Rust control-plane prototype (ecc2/) exposes daemon, sessions, status, stop, resume commands — a structured approach to long-running multi-session agent workstreams that survives developer workstation restarts.",
+        "Cross-harness parity (Claude Code, Codex, Cursor, OpenCode, Gemini) means an internal ECC skill library built for one agent harness transfers to another without rewriting, reducing lock-in risk when agent harness choices evolve."
+      ],
+      "results": "210k GitHub stars; 242 contributors; 2,054 commits; v2.0.0-rc.1 includes 64 agents, 261 skills, 84 legacy command shims. Source: github.com/affaan-m/ECC README (fetched June 7, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Install ECC via the selective install architecture introduced in v1.9.0 — choose specific skill categories rather than installing the full catalog, reducing the surface area reviewed by IT governance. Use the `ecc status --markdown --write status.md` command to generate weekly operator status snapshots for AI program governance reports. The AgentShield security feature and ECC Tools cost controls address enterprise governance requirements directly. | Regulated-environment caveats: ECC modifies CLAUDE.md, AGENTS.md, and Cursor rules files on developer machines — review what changes are written before fleet deployment. The selective install architecture allows excluding skill categories that are not appropriate for your environment (e.g., social media skills, prediction market tools). The Rust control plane prototype (ecc2/) is alpha; evaluate stability before enabling in production CI. Pin the git tag in your internal provisioning script. | 30-day experiment: Select five ECC skills most relevant to your team's repeating workflows (e.g., typescript-reviewer, java-reviewer, documentation-lookup). Install via selective install on three workstations. For two weeks, run without ECC (baseline). For two weeks, enable the selected skills. Measure: (1) PR first-pass acceptance rate, (2) reviewer round-trip count, (3) developer self-reported confidence in code quality.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 3000
+      },
+      "tags": ["Agent Skills", "Cross-Harness", "Orchestration", "Claude Code", "Codex"],
+      "category": "Agent Skill",
+      "platform": "github",
+      "recurrence": "new"
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "Top AI-relevant repos by weekly star delta for the week of June 1–7, 2026. Stars reported as weekly delta where available; figures from note.com/shali_note/n/n10ee18d10021 summary (verified June 7) and direct repo fetches.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "trending-mempalace-53k-verbatim",
+          "title": "MemPalace/mempalace",
+          "source": "GitHub",
+          "date": "2026-06-01",
+          "primary_url": "https://github.com/MemPalace/mempalace",
+          "summary": "Local-first AI memory system using verbatim storage and semantic retrieval. 96.6% LongMemEval R@5 raw, no API calls required. Palace model (wings/rooms/drawers) enables scoped retrieval. 29 MCP tools; Claude Code auto-save hooks. 53.1k total stars; trending high based on YouTube coverage noting 54k stars.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 4000 },
+          "tags": ["Agent Memory", "Local-First", "MCP", "Claude Code"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-chopratejas-headroom-15k",
+          "title": "chopratejas/headroom",
+          "source": "GitHub",
+          "date": "2026-06-04",
+          "primary_url": "https://github.com/chopratejas/headroom",
+          "summary": "Context compression layer for AI agents. 60–95% fewer tokens, 6 algorithms, local-first, reversible. Runs as library, OpenAI-compatible proxy, MCP server, or one-command agent wrapper. v0.23.0 (June 4) adds GitHub Copilot subscription mode. 15.9k stars; 12k weekly delta per YouTube trending summary.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 12000 },
+          "tags": ["Context Compression", "Token Efficiency", "MCP", "Proxy"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-nousresearch-hermes-agent-186k",
+          "title": "NousResearch/hermes-agent",
+          "source": "GitHub",
+          "date": "2026-06-05",
+          "primary_url": "https://github.com/NousResearch/hermes-agent",
+          "summary": "Self-improving AI agent with built-in learning loop. v0.15.0 (May 28): 76% core code reduction. v0.16.0 (June 5): official Electron desktop app for macOS/Linux/Windows. 186k stars; 5k+ weekly delta. Supports 200+ models; 23 messaging platforms; MIT license.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 5000 },
+          "tags": ["Agent Framework", "Desktop App", "Self-Improving", "Multi-Agent"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-microsoft-markitdown-126k-16k-day",
+          "title": "microsoft/markitdown",
+          "source": "GitHub",
+          "date": "2026-06-01",
+          "primary_url": "https://github.com/microsoft/markitdown",
+          "summary": "Python tool for converting files and office documents to Markdown, purpose-built for LLM input and RAG preprocessing. Surged 16,000 stars in a single day this week per note.com/shali_note trending summary. 126k total stars. v0.1.6 released May 26, 2026. Converts PDF, PowerPoint, Word, Excel, images, audio, HTML, CSV, JSON, XML, and YouTube URLs to Markdown, preserving headings, lists, tables, and links.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 16000 },
+          "tags": ["Document Conversion", "RAG", "LLM Input", "Markdown"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-affaan-ecc-210k-orch-skills",
+          "title": "affaan-m/ECC",
+          "source": "GitHub",
+          "date": "2026-06-07",
+          "primary_url": "https://github.com/affaan-m/ECC",
+          "summary": "Cross-harness agent workflow system. June 7 commit ships orch-* orchestrator skill family. v2.0.0-rc.1: 64 agents, 261 skills, 84 command shims, Rust control plane prototype. 210k stars; 242 contributors. Works across Claude Code, Codex, Cursor, OpenCode, Gemini, Zed, GitHub Copilot.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 3000 },
+          "tags": ["Agent Skills", "Cross-Harness", "Orchestration"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-mvanhorn-last30days-skill-26k",
+          "title": "mvanhorn/last30days-skill",
+          "source": "GitHub",
+          "date": "2026-06-01",
+          "primary_url": "https://github.com/mvanhorn/last30days-skill",
+          "summary": "Agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, GitHub, and the web, synthesizing a grounded summary scored by real engagement signals rather than editor curation. Installs via Claude Code marketplace, npx skills, or OpenClaw. v3.3.0 (May 17); 1,012 tests passing. 26.8k stars; trending in YouTube AI repo summaries for the week.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 1200 },
+          "tags": ["Agent Skill", "Research", "Multi-Source", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "trending-obra-superpowers-213k",
+          "title": "obra/superpowers",
+          "source": "GitHub",
+          "date": "2026-06-01",
+          "primary_url": "https://github.com/obra/superpowers",
+          "summary": "Agentic software development methodology: composable skills that enforce plan-first → spec → subagent-driven implementation → TDD → review. Seven-step workflow from brainstorm to branch cleanup. 213k total stars; latest release v5.1.0 (May 4, 2026). Works across Claude Code, Codex, Cursor.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 2000 },
+          "tags": ["Agent Skills", "TDD", "Software Methodology", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-panniantong-agent-reach-20k",
+          "title": "Panniantong/Agent-Reach",
+          "source": "GitHub",
+          "date": "2026-03-31",
+          "primary_url": "https://github.com/Panniantong/Agent-Reach",
+          "summary": "Python CLI that gives AI agents access to Twitter, Reddit, YouTube, GitHub, Bilibili, and XiaoHongShu without API fees. Routes through CLI tools (yt-dlp 154k stars, twitter-cli, rdt-cli). v1.4.0 released March 31, 2026. 20k stars. Optional proxy ~$1/month for geo-restricted sources.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 700 },
+          "tags": ["Agent Tool", "Social Media", "Web Access", "CLI"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "trending-run-llama-liteparse-8k",
+          "title": "run-llama/liteparse",
+          "source": "GitHub",
+          "date": "2026-05-30",
+          "primary_url": "https://github.com/run-llama/liteparse",
+          "summary": "Fast open-source document parser written in Rust (70.4%) by LlamaIndex. Converts PDF, DOCX, XLSX, PPTX, and images to JSON or text with bounding boxes. Built-in Tesseract OCR (zero setup), HTTP OCR server support, WASM build for browser use. Node.js v2.0.4 released May 30, 2026. 8.4k stars.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 2380 },
+          "tags": ["Document Parsing", "Rust", "OCR", "RAG", "LlamaIndex"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-alibaba-open-code-review-591",
+          "title": "alibaba/open-code-review",
+          "source": "GitHub",
+          "date": "2026-05-30",
+          "primary_url": "https://github.com/alibaba/open-code-review",
+          "summary": "Go CLI AI code review agent. Hybrid deterministic + LLM architecture. Battle-tested at Alibaba scale (tens of thousands of developers, millions of defects). Line-level comments, fine-tuned ruleset for NPE/thread-safety/XSS/SQL injection. v1.1.8 (May 30, 2026). 591 stars, trending via HN (item 48406358, 212 points).",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 591 },
+          "tags": ["Code Review", "Go", "CI/CD", "Security"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Agent Skills and MCP Servers",
+      "description": "Newly published agent skills, MCP servers, prompt libraries, and eval frameworks observed in the week of June 1–7, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "skill-headroom-mcp-server",
+          "title": "headroom MCP server — headroom_compress, headroom_retrieve, headroom_stats",
+          "source": "GitHub",
+          "date": "2026-06-04",
+          "primary_url": "https://github.com/chopratejas/headroom",
+          "summary": "headroom ships a built-in MCP server exposing three tools: headroom_compress (compress any content before it reaches the LLM), headroom_retrieve (retrieve originals on demand), headroom_stats (report token savings per session). Install via `headroom mcp install` into any MCP client. Works alongside the proxy and library modes.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 12000 },
+          "tags": ["MCP Server", "Context Compression", "Token Efficiency"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skill-ecc-orch-orchestrator-family",
+          "title": "affaan-m/ECC orch-* orchestrator skill family",
+          "source": "GitHub",
+          "date": "2026-06-07",
+          "primary_url": "https://github.com/affaan-m/ECC",
+          "summary": "The June 7 commit (#2153) to ECC ships the orch-* orchestrator skill family as a first-class skill set. Cross-harness compatible with Claude Code, Codex, Cursor, OpenCode, Gemini. Orchestration logic is now versionable, shareable, and pinnable in the same way code dependencies are pinned.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 3000 },
+          "tags": ["Agent Skill", "Orchestration", "Cross-Harness"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skill-mempalace-29-mcp-tools",
+          "title": "MemPalace/mempalace — 29 MCP tools for structured agent memory",
+          "source": "GitHub",
+          "date": "2026-05-10",
+          "primary_url": "https://github.com/MemPalace/mempalace",
+          "summary": "MemPalace ships 29 MCP tools covering memory storage, retrieval, scoped search, wing/room/drawer management, temporal entity-relationship graph operations (add, query, invalidate, timeline), and specialist agent isolation with per-agent wings and diaries. Install into any MCP client. Python 3.9+; ChromaDB default backend; pluggable.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 4000 },
+          "tags": ["MCP Server", "Agent Memory", "Local-First", "Claude Code"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skill-mvanhorn-last30days-v330",
+          "title": "mvanhorn/last30days-skill v3.3.0 — multi-source research skill with Polymarket signals",
+          "source": "GitHub",
+          "date": "2026-05-17",
+          "primary_url": "https://github.com/mvanhorn/last30days-skill",
+          "summary": "Agent skill exposing `/last30days <topic>` to research any topic across Reddit, X, YouTube, HN, Polymarket, GitHub, and the web in a single pass, merging overlapping stories and scoring by engagement rather than editorial curation. Installs via Claude Code marketplace, `npx skills add`, OpenClaw clawhub, or direct download for claude.ai. v3.3.0 (May 17, 2026); 1,012 tests. 26.8k stars.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 1200 },
+          "tags": ["Agent Skill", "Research", "Multi-Source", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "benchmark-run-llama-parsebench-464",
+          "title": "run-llama/ParseBench — document parsing benchmark for AI agents (CVPR 2026)",
+          "source": "GitHub / CVPR",
+          "date": "2026-06-04",
+          "primary_url": "https://github.com/run-llama/ParseBench",
+          "summary": "Open-source benchmark evaluating document parsing quality on ~2,000 human-verified pages from enterprise insurance, finance, and government documents. Five dimensions: Tables (GTRM), Charts (ChartDataPointMatch), Content Faithfulness, Semantic Formatting, Visual Grounding. Presented at CVPR 2026 (June 4). arXiv:2604.08538. 464 stars.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 464 },
+          "tags": ["Benchmark", "Document Parsing", "RAG", "Eval Framework", "CVPR"],
+          "category": "Eval Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "skill-supermemory-memoryapi-23k",
+          "title": "supermemoryai/supermemory — #1 on LongMemEval, LoCoMo, and ConvoMem memory benchmarks",
+          "source": "GitHub",
+          "date": "2026-06-01",
+          "primary_url": "https://github.com/supermemoryai/supermemory",
+          "summary": "Memory and context layer for AI with #1 rankings on LongMemEval (81.6%), LoCoMo, and ConvoMem. Extracts facts from conversations, builds user profiles, handles knowledge updates and contradictions, and forgets expired information. Full RAG, connectors, file processing. TypeScript/Python SDKs. Agent Skill install via `npx skills add supermemoryai/skills`. 23.2k stars.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 2944 },
+          "tags": ["Agent Memory", "MCP", "RAG", "Context Layer"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN and Indie Builds",
+      "description": "Show HN posts and indie builds from the week of June 1–7, 2026 with working repos or demos.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "showhn-alibaba-open-code-review-212pts",
+          "title": "Open Code Review – An AI-powered code review CLI tool (alibaba/open-code-review)",
+          "source": "Hacker News",
+          "date": "2026-06-05",
+          "primary_url": "https://news.ycombinator.com/item?id=48406358",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/alibaba/open-code-review"
+            }
+          ],
+          "summary": "Alibaba's battle-tested internal AI code review CLI open-sourced as a Go binary. Hybrid deterministic + LLM architecture; line-level comments; fine-tuned ruleset (NPE, thread-safety, XSS, SQL injection). HN thread (212 points, 60 comments, June 5) surfaced independent precision/recall benchmarks and a lively debate on AI code review trade-offs vs. skills/sub-agent approaches.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "upvotes": 212, "comments": 60 },
+          "tags": ["Code Review", "Go CLI", "CI/CD", "AI Agent"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "showhn-mercek-ecs-ide-60pts",
+          "title": "Show HN: Mercek – A Desktop IDE for AWS ECS",
+          "source": "Hacker News",
+          "date": "2026-06-05",
+          "primary_url": "https://news.ycombinator.com/item?id=48397461",
+          "secondary_urls": [
+            {
+              "label": "Mercek site",
+              "url": "https://mercek.dev"
+            }
+          ],
+          "summary": "Mercek is a desktop IDE for managing and inspecting AWS ECS deployments with AI-assisted operational workflows. 60 points, 24 comments on HN (June 5). Targets DevOps and platform engineering teams running containerized workloads on ECS who want agent-assisted operations without context-switching to the AWS console.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "upvotes": 60, "comments": 24 },
+          "tags": ["DevOps", "AWS ECS", "Desktop IDE", "Agent"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 1, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "hn-open-code-review-hn-thread-technical-depth",
+          "title": "Ask HN: What is your (AI) dev tech stack / workflow? — 447-comment developer census",
+          "source": "Hacker News",
+          "date": "2026-06-07",
+          "primary_url": "https://news.ycombinator.com/item?id=48413629",
+          "summary": "An Ask HN thread (212 points, 447 comments, June 7) documents how developers are actually using AI coding agents in 2026. Key patterns from top comments: plan-mode first, TDD with agent writing code to make human-written tests pass, multi-harness worktree setups (Claude + Codex in parallel), and aggressive AGENTS.md curation. Multiple commenters cite the same agent-agnostic methodology: immutable phase artifacts in .agents/plans/, per-task commits, PR-based review flow.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "upvotes": 212, "comments": 447 },
+          "tags": ["Developer Practice", "Agent Workflow", "TDD", "Multi-Harness"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "showhn-when-ai-builds-itself-recursi",
+          "title": "When AI Builds Itself: Anthropic Institute article on recursive self-improvement — 447-comment HN thread",
+          "source": "Hacker News",
+          "date": "2026-06-05",
+          "primary_url": "https://news.ycombinator.com/item?id=48400842",
+          "secondary_urls": [
+            {
+              "label": "exocomp GitHub (community recursive agent experiment)",
+              "url": "https://github.com/cookiengineer/exocomp"
+            }
+          ],
+          "summary": "The HN thread on Anthropic's recursive self-improvement article (item 48400842, June 5) generated a 400+ comment technical discussion on harness architecture, MCP tool abstraction, TUI rendering, and the role of token economics in shaping agent behavior. Surfaced exocomp, a community-built recursive agent framework with unit-tested critical paths. The MCP-as-blank-slate runtime pattern (opt-in proxy storing schemas on filesystem, local + remote tools, OAuth flows) was described in detail by multiple independent practitioners.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "comments": 400 },
+          "tags": ["Agent Architecture", "MCP", "Recursive Agent", "Harness Design"],
+          "category": "Agent Framework",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent and RAG Implementations",
+      "description": "Production-shaped agent and RAG builds worth studying, with linked code or detailed write-ups.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "impl-headroom-context-stack-composable",
+          "title": "The composable context stack: markitdown → headroom → mempalace",
+          "source": "GitHub (multi-repo)",
+          "date": "2026-06-07",
+          "primary_url": "https://github.com/chopratejas/headroom",
+          "secondary_urls": [
+            {
+              "label": "microsoft/markitdown",
+              "url": "https://github.com/microsoft/markitdown"
+            },
+            {
+              "label": "MemPalace/mempalace",
+              "url": "https://github.com/MemPalace/mempalace"
+            }
+          ],
+          "summary": "Three independently deployable open-source tools that compose into a complete document-to-agent context pipeline: markitdown converts enterprise documents (PDF, DOCX, PPTX, XLSX) to Markdown for LLM input; headroom compresses the resulting context 60–95% before it reaches the model; mempalace stores sessions verbatim and retrieves them at 96.6% R@5 across resets. Each tool ships an MCP server. The full stack is locally deployable with no external API dependency at the retrieval or compression layers.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "tags": ["RAG", "Context Engineering", "MCP", "Local-First", "Document Parsing"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "impl-alibaba-hybrid-code-review-arch",
+          "title": "alibaba/open-code-review — deterministic pipeline × LLM agent hybrid architecture",
+          "source": "GitHub",
+          "date": "2026-05-30",
+          "primary_url": "https://github.com/alibaba/open-code-review",
+          "summary": "Open Code Review's hybrid architecture documents a principled approach to reducing false positives in AI code review: deterministic stages (file filtering, bundling, rule matching) run before the LLM agent stage, constraining the model to a precisely scoped, pre-filtered context. Third-party benchmarks on a 50-PR test set showed ~74% recall at $7 total cost using qwen3.7-plus. The architecture is a deployable pattern for any workflow where LLM judgment should be applied to pre-structured inputs rather than raw context.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "tags": ["Code Review", "Hybrid Architecture", "CI/CD", "Agent Pattern"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "impl-supermemory-livingknowledgegraph",
+          "title": "supermemoryai/supermemory — living knowledge graph memory vs. RAG",
+          "source": "GitHub",
+          "date": "2026-06-01",
+          "primary_url": "https://github.com/supermemoryai/supermemory",
+          "summary": "Supermemory articulates a clean architectural distinction on the README: memory is not RAG. RAG retrieves document chunks; memory extracts and tracks facts about users over time, handles contradictions, and forgets expired information. The system builds a living knowledge graph where relationships between memories are tracked, not just individual vectors. LongMemEval 81.6% R@5 (#1); LoCoMo and ConvoMem also #1. Open-source MemoryBench framework for reproducible comparison against Mem0, Zep, and others.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "tags": ["Agent Memory", "Knowledge Graph", "RAG", "Benchmarks"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "n8n, Make, and custom automations with measurable outcomes from the week of June 1–7, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "automation-n8n-github-telegram-weekly-reports",
+          "title": "n8n: AI-generated weekly GitHub repo reports via Telegram — zero dashboard, negligible token cost",
+          "source": "n8n Community",
+          "date": "2026-06-07",
+          "primary_url": "https://community.n8n.io/t/i-built-a-telegram-bot-that-sends-me-ai-generated-weekly-reports-on-all-my-github-repos-no-dashboard-needed/298538",
+          "summary": "An n8n workflow built in approximately one afternoon sends AI-generated weekly GitHub repo reports via Telegram every Monday at 9 AM. Uses Qwen via OpenRouter to turn aggregated GitHub event data (not raw payloads) into readable, actionable reports. Supports on-demand /report, /issues, /prs, and /status Telegram commands. Aggregates stats before hitting the LLM, keeping token costs negligible even across many repos. Fallback Code node formats raw stats if the LLM call fails.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "results": "Built in approximately one afternoon. Weekly Monday 9 AM automated delivery. Token costs described as negligible with aggregation-before-LLM pattern. On-demand commands for instant repo health checks. Source: community.n8n.io post fetched June 7, 2026.",
+          "tags": ["n8n", "GitHub", "Automation", "Telegram", "LLM"],
+          "category": "Automation",
+          "platform": "n8n",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 1, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "automation-headroom-proxy-ci-cost",
+          "title": "Headroom proxy in CI: 73–92% token reduction across agentic workflows with no code changes",
+          "source": "GitHub",
+          "date": "2026-06-04",
+          "primary_url": "https://github.com/chopratejas/headroom",
+          "summary": "The Headroom proxy pattern (`headroom proxy --port 8787`) intercepts any OpenAI-compatible API traffic in CI without code changes. Verified benchmarks: code search 92% reduction, SRE incident debugging 92%, GitHub issue triage 73%. The proxy is the zero-effort integration path — no agent modification, no prompt editing, no library installation. Works with any CI runner that can set an environment variable for the base URL.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "results": "Code search: 17,765 → 1,408 tokens (92%). SRE debugging: 65,694 → 5,118 tokens (92%). Issue triage: 54,174 → 14,761 tokens (73%). Answer quality unchanged or improved on GSM8K, TruthfulQA, BFCL. Source: github.com/chopratejas/headroom README.",
+          "tags": ["Token Efficiency", "CI/CD", "Proxy", "Cost Reduction"],
+          "category": "Automation",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Meaningful framework releases from the week of June 1–7, 2026 — major versions or new capabilities only.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "framework-hermes-agent-v016-desktop",
+          "title": "NousResearch/hermes-agent v0.16.0 — The Surface Release (June 5, 2026)",
+          "source": "GitHub",
+          "date": "2026-06-05",
+          "primary_url": "https://github.com/NousResearch/hermes-agent/releases",
+          "summary": "v0.16.0 ships the official Electron desktop app for macOS 12+, Linux, and Windows 10+. New: concurrent multi-profile sessions, drag-and-drop file input, inline model picker in status bar, remote Hermes gateway connections over OAuth or username/password, Simplified Chinese translation, full browser-based admin panel, OIDC login support, SSRF and credential-leak hardening. `hermes update` self-update command. Follows v0.15.0 (May 28) which cut core agent code 76% and expanded Kanban to multi-agent platform.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 5000 },
+          "tags": ["Agent Framework", "Desktop App", "Multi-Agent", "MCP"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "framework-headroom-v023-copilot-mode",
+          "title": "chopratejas/headroom v0.23.0 — GitHub Copilot subscription mode (June 4, 2026)",
+          "source": "GitHub",
+          "date": "2026-06-04",
+          "primary_url": "https://github.com/chopratejas/headroom/releases/tag/v0.23.0",
+          "summary": "v0.23.0 adds GitHub Copilot subscription mode through Headroom (deterministic token handoff to proxy). Fixes a cross-project CCR workspace leak that caused memory proactive expansion to bleed across project boundaries. Upgrades base images to Python 3.13/Debian 13. Remediates CVE-2026-44577, CVE-2026-44580, CVE-2026-45149, and CVE-2026-42271 in dependencies. 47 commits to main since this release at time of fetch.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 12000 },
+          "tags": ["Context Compression", "GitHub Copilot", "MCP", "Security"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "framework-run-llama-liteparse-nodejs-v204",
+          "title": "run-llama/liteparse Node.js v2.0.4 (May 30, 2026)",
+          "source": "GitHub",
+          "date": "2026-05-30",
+          "primary_url": "https://github.com/run-llama/liteparse",
+          "summary": "Liteparse v2.0.4 for Node.js is the latest in a Rust-core (70.4%) document parser series. 50 releases total since February 2026. Supports PDF, DOCX, XLSX, PPTX, images to JSON or text with bounding boxes. Multilingual access from Rust, Node.js, Python, and browser (WASM). Built-in Tesseract OCR (zero setup). Presented at CVPR 2026 alongside the companion ParseBench benchmark (arXiv:2604.08538).",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "engagement": { "stars": 2380 },
+          "tags": ["Document Parsing", "Rust", "Node.js", "WASM", "LlamaIndex"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-source patterns observed across repos and discussions for the week of June 1–7, 2026.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "pattern-context-compression-and-memory-stack",
+          "title": "Context compression and verbatim memory are converging into a composable open-source stack",
+          "source": "GitHub (multi-repo)",
+          "date": "2026-06-07",
+          "primary_url": "https://github.com/chopratejas/headroom",
+          "summary": "Three distinct repos trending this week — headroom (context compression), MemPalace (verbatim memory), and markitdown (document-to-Markdown) — compose into a locally deployable, fully open-source pipeline that addresses the three most common failure modes in enterprise agent deployments: excessive token spend, session context loss, and unstructured document ingestion. All three ship MCP servers, enabling plug-in installation rather than bespoke integration. This pattern is not theorized; it is deployable today from PyPI and npm.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "tags": ["Context Engineering", "Agent Memory", "MCP", "Composability"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "pattern-deterministic-hybrid-over-pure-agent",
+          "title": "Production tools are moving from pure LLM agents to hybrid deterministic + LLM architectures",
+          "source": "GitHub / Hacker News",
+          "date": "2026-06-07",
+          "primary_url": "https://github.com/alibaba/open-code-review",
+          "summary": "Three independent signals this week: Alibaba's Open Code Review explicitly chose Go CLI + deterministic pipeline over skills/sub-agents for code review, citing debuggability and tunability. Headroom's compression pipeline runs 6 deterministic algorithms before any LLM call. The HN thread on AI dev workflows (447 comments) showed practitioners using plan-mode + human-written tests + agent-written implementation as the dominant model — deterministic test validation as the outer loop, LLM as the inner loop. The emerging consensus: unconstrained LLM agents are hard to evaluate; hybrid architectures with deterministic stages produce auditable, improvable systems.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "tags": ["Agent Architecture", "Hybrid Architecture", "Deterministic", "Eval"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "pattern-agent-skill-as-dependency",
+          "title": "Agent skills are being treated as versionable dependencies, not just prompts",
+          "source": "GitHub (multi-repo)",
+          "date": "2026-06-07",
+          "primary_url": "https://github.com/affaan-m/ECC",
+          "summary": "ECC's orch-* skill family, mvanhorn/last30days-skill v3.3.0, and obra/superpowers v5.1.0 all ship with version pins, changelogs, and test suites (1,012, 997, and 1,282 tests respectively). The pattern: agent skills are no longer prompt files — they are versioned software artifacts with reproducible installation (`npx skills add`, `claude plugin marketplace add`), composable install architectures (ECC selective install), and cross-harness compatibility. An enterprise AI team can now manage agent skills with the same governance tooling as code dependencies.",
+          "verified": true,
+          "verified_at": "2026-06-07T18:00:00Z",
+          "tags": ["Agent Skills", "Versioning", "Governance", "Cross-Harness"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    }
+  ],
+
+  "index": [
+    {
+      "id": "idx-headroom-v023",
+      "title": "chopratejas/headroom v0.23.0 — context compression proxy, 60–95% fewer tokens",
+      "source": "GitHub",
+      "date": "2026-06-04",
+      "primary_url": "https://github.com/chopratejas/headroom",
+      "score": 9
+    },
+    {
+      "id": "idx-hermes-agent-v016",
+      "title": "NousResearch/hermes-agent v0.16.0 — official desktop app, 186k stars",
+      "source": "GitHub",
+      "date": "2026-06-05",
+      "primary_url": "https://github.com/NousResearch/hermes-agent",
+      "score": 8
+    },
+    {
+      "id": "idx-alibaba-open-code-review",
+      "title": "alibaba/open-code-review — Go CLI, hybrid architecture, millions of defects at Alibaba scale",
+      "source": "GitHub / HN",
+      "date": "2026-05-30",
+      "primary_url": "https://github.com/alibaba/open-code-review",
+      "score": 8
+    },
+    {
+      "id": "idx-mempalace-96pct-longmemeval",
+      "title": "MemPalace/mempalace v3.3.5 — verbatim memory, 96.6% LongMemEval R@5, no API calls, 53.1k stars",
+      "source": "GitHub",
+      "date": "2026-05-10",
+      "primary_url": "https://github.com/MemPalace/mempalace",
+      "score": 8
+    },
+    {
+      "id": "idx-ecc-v2rc1-orch-skills",
+      "title": "affaan-m/ECC v2.0.0-rc.1 orch-* orchestrator skills — 210k stars, 261 skills",
+      "source": "GitHub",
+      "date": "2026-06-07",
+      "primary_url": "https://github.com/affaan-m/ECC",
+      "score": 8
+    },
+    {
+      "id": "idx-microsoft-markitdown-16k-day",
+      "title": "microsoft/markitdown — 16k stars in one day this week, 126k total, Markdown conversion for LLMs",
+      "source": "GitHub",
+      "date": "2026-06-01",
+      "primary_url": "https://github.com/microsoft/markitdown",
+      "score": 7
+    },
+    {
+      "id": "idx-mvanhorn-last30days-skill",
+      "title": "mvanhorn/last30days-skill v3.3.0 — multi-source research skill, 26.8k stars",
+      "source": "GitHub",
+      "date": "2026-05-17",
+      "primary_url": "https://github.com/mvanhorn/last30days-skill",
+      "score": 7
+    },
+    {
+      "id": "idx-obra-superpowers-213k",
+      "title": "obra/superpowers v5.1.0 — agent software development methodology, 213k stars",
+      "source": "GitHub",
+      "date": "2026-05-04",
+      "primary_url": "https://github.com/obra/superpowers",
+      "score": 7
+    },
+    {
+      "id": "idx-run-llama-liteparse-nodejs",
+      "title": "run-llama/liteparse Node.js v2.0.4 — Rust document parser, WASM, zero-setup OCR",
+      "source": "GitHub",
+      "date": "2026-05-30",
+      "primary_url": "https://github.com/run-llama/liteparse",
+      "score": 7
+    },
+    {
+      "id": "idx-run-llama-parsebench-cvpr",
+      "title": "run-llama/ParseBench — document parsing benchmark for AI agents, CVPR 2026",
+      "source": "GitHub / CVPR",
+      "date": "2026-06-04",
+      "primary_url": "https://github.com/run-llama/ParseBench",
+      "score": 7
+    },
+    {
+      "id": "idx-headroom-mcp-server",
+      "title": "headroom MCP server — headroom_compress, headroom_retrieve, headroom_stats",
+      "source": "GitHub",
+      "date": "2026-06-04",
+      "primary_url": "https://github.com/chopratejas/headroom",
+      "score": 8
+    },
+    {
+      "id": "idx-mempalace-29-mcp-tools",
+      "title": "MemPalace/mempalace — 29 MCP tools for structured agent memory",
+      "source": "GitHub",
+      "date": "2026-05-10",
+      "primary_url": "https://github.com/MemPalace/mempalace",
+      "score": 8
+    },
+    {
+      "id": "idx-ecc-orch-skill-family",
+      "title": "affaan-m/ECC orch-* orchestrator skill family (June 7, 2026)",
+      "source": "GitHub",
+      "date": "2026-06-07",
+      "primary_url": "https://github.com/affaan-m/ECC",
+      "score": 7
+    },
+    {
+      "id": "idx-supermemory-23k-benchmarks",
+      "title": "supermemoryai/supermemory — #1 on LongMemEval, LoCoMo, ConvoMem, 23.2k stars",
+      "source": "GitHub",
+      "date": "2026-06-01",
+      "primary_url": "https://github.com/supermemoryai/supermemory",
+      "score": 7
+    },
+    {
+      "id": "idx-panniantong-agent-reach",
+      "title": "Panniantong/Agent-Reach — internet access CLI for agents, no API fees, 20k stars",
+      "source": "GitHub",
+      "date": "2026-03-31",
+      "primary_url": "https://github.com/Panniantong/Agent-Reach",
+      "score": 6
+    },
+    {
+      "id": "idx-showhn-alibaba-ocr-212pts",
+      "title": "Show HN: alibaba/open-code-review — 212 points, 60 comments, HN June 5",
+      "source": "Hacker News",
+      "date": "2026-06-05",
+      "primary_url": "https://news.ycombinator.com/item?id=48406358",
+      "score": 8
+    },
+    {
+      "id": "idx-showhn-mercek-ecs-ide",
+      "title": "Show HN: Mercek — Desktop IDE for AWS ECS, 60 points",
+      "source": "Hacker News",
+      "date": "2026-06-05",
+      "primary_url": "https://news.ycombinator.com/item?id=48397461",
+      "score": 6
+    },
+    {
+      "id": "idx-hn-ai-dev-stack-447-comments",
+      "title": "Ask HN: What is your (AI) dev tech stack / workflow? — 212 points, 447 comments",
+      "source": "Hacker News",
+      "date": "2026-06-07",
+      "primary_url": "https://news.ycombinator.com/item?id=48413629",
+      "score": 7
+    },
+    {
+      "id": "idx-n8n-github-telegram-reports",
+      "title": "n8n: AI-generated weekly GitHub repo reports via Telegram, built in one afternoon",
+      "source": "n8n Community",
+      "date": "2026-06-07",
+      "primary_url": "https://community.n8n.io/t/i-built-a-telegram-bot-that-sends-me-ai-generated-weekly-reports-on-all-my-github-repos-no-dashboard-needed/298538",
+      "score": 6
+    },
+    {
+      "id": "idx-headroom-proxy-ci",
+      "title": "Headroom proxy in CI: 73–92% token reduction, zero code changes",
+      "source": "GitHub",
+      "date": "2026-06-04",
+      "primary_url": "https://github.com/chopratejas/headroom",
+      "score": 8
+    },
+    {
+      "id": "idx-hermes-desktop-release",
+      "title": "NousResearch/hermes-agent v0.16.0 release — Electron desktop app",
+      "source": "GitHub",
+      "date": "2026-06-05",
+      "primary_url": "https://github.com/NousResearch/hermes-agent/releases",
+      "score": 8
+    },
+    {
+      "id": "idx-headroom-v023-copilot",
+      "title": "headroom v0.23.0 — GitHub Copilot subscription mode, CCR workspace leak fix",
+      "source": "GitHub",
+      "date": "2026-06-04",
+      "primary_url": "https://github.com/chopratejas/headroom/releases/tag/v0.23.0",
+      "score": 7
+    },
+    {
+      "id": "idx-pattern-context-compression-stack",
+      "title": "Emerging pattern: markitdown → headroom → mempalace composable context stack",
+      "source": "GitHub (multi-repo)",
+      "date": "2026-06-07",
+      "primary_url": "https://github.com/chopratejas/headroom",
+      "score": 8
+    },
+    {
+      "id": "idx-pattern-deterministic-hybrid",
+      "title": "Emerging pattern: deterministic + LLM hybrid architectures replacing pure agent approaches",
+      "source": "GitHub / Hacker News",
+      "date": "2026-06-07",
+      "primary_url": "https://github.com/alibaba/open-code-review",
+      "score": 8
+    },
+    {
+      "id": "idx-pattern-skills-as-deps",
+      "title": "Emerging pattern: agent skills as versionable dependencies with test suites",
+      "source": "GitHub (multi-repo)",
+      "date": "2026-06-07",
+      "primary_url": "https://github.com/affaan-m/ECC",
+      "score": 8
+    },
+    {
+      "id": "idx-impl-context-pipeline",
+      "title": "The composable context stack: markitdown → headroom → mempalace",
+      "source": "GitHub",
+      "date": "2026-06-07",
+      "primary_url": "https://github.com/chopratejas/headroom",
+      "score": 8
+    },
+    {
+      "id": "idx-impl-alibaba-hybrid-arch",
+      "title": "alibaba/open-code-review — deterministic + LLM hybrid architecture study",
+      "source": "GitHub",
+      "date": "2026-05-30",
+      "primary_url": "https://github.com/alibaba/open-code-review",
+      "score": 8
+    },
+    {
+      "id": "idx-impl-supermemory-knowledge-graph",
+      "title": "supermemoryai/supermemory — living knowledge graph memory vs. RAG pattern",
+      "source": "GitHub",
+      "date": "2026-06-01",
+      "primary_url": "https://github.com/supermemoryai/supermemory",
+      "score": 7
+    },
+    {
+      "id": "idx-hn-when-ai-builds-itself",
+      "title": "HN: When AI Builds Itself — 400+ comment discussion on agent architecture and MCP",
+      "source": "Hacker News",
+      "date": "2026-06-05",
+      "primary_url": "https://news.ycombinator.com/item?id=48400842",
+      "score": 6
+    },
+    {
+      "id": "idx-toknow-github-trending-june",
+      "title": "toknow.ai GitHub trending summary: Impeccable, VoxCPM2, TradingAgents, Compound Engineering",
+      "source": "ToKnow.ai",
+      "date": "2026-06-04",
+      "primary_url": "https://toknow.ai/posts/github-trending-design-skills-tokenizer-free-tts-trading-agents/",
+      "score": 6
+    },
+    {
+      "id": "idx-shali-note-github-trending-summary",
+      "title": "shali note: GitHub trend summary — markitdown surge, hermes-agent, headroom attention week of June 1",
+      "source": "Note.com",
+      "date": "2026-06-06",
+      "primary_url": "https://note.com/shali_note/n/n10ee18d10021",
+      "score": 6
+    }
+  ],
+
+  "suggested_refinements": {
+    "sources_to_add": [
+      "toknow.ai weekly GitHub trending summaries — surfaced this week as a reliable secondary signal for star deltas when GitHub's own trending page is blocked",
+      "note.com/shali_note GitHub trend summaries — Japanese-language aggregation with star delta figures verified this week against direct repo fetches",
+      "NousResearch skills hub and agentskills.io registry for new cross-harness agent skills",
+      "chopratejas/headroom changelog for weekly release notes — actively releasing (153 releases) with significant capability additions"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Context compression tools (headroom, RTK, Context Mode) — a cluster forming around pre-LLM compression that deserves its own tracking",
+      "Verbatim vs. summarized memory architectures — MemPalace vs. supermemory vs. Mem0 as competing approaches to the same problem",
+      "Hybrid deterministic + LLM architectures — the pattern is appearing independently in code review, context compression, and RAG; worth tracking as a design pattern"
+    ],
+    "topics_to_drop": [],
+    "notes": "The week's biggest signal is the convergence of context engineering tools into a composable, locally deployable stack. The next week should actively check for: (1) any headroom v0.24.0+ release, (2) whether MemPalace ships a v3.4.0 with any new capabilities, (3) whether alibaba/open-code-review sees adoption growth following the HN thread. markitdown trending 16k stars in one day warrants a follow-up to confirm whether the surge is sustained or a one-day spike."
+  }
+}
