@@ -1,0 +1,1125 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.87,
+    "items_total": 31,
+    "items_new": 27,
+    "items_returning": 4,
+    "empty_week_note": ""
+  },
+
+  "executive_summary": [
+    {
+      "headline": "addyosmani/agent-skills (47.5k stars) and mattpocock/skills (112k stars) land the week's clearest message: agent skills are now a software engineering discipline with specs, quality gates, versioning, and test suites — not a prompt file you paste into a README",
+      "body": "Two senior-engineer skill libraries dominated the week's GitHub signal. Addy Osmani's agent-skills (47.5k stars) packages a seven-command development lifecycle — /spec, /plan, /build, /test, /review, /code-simplify, /ship — grounded in Google engineering practices, including Hyrum's Law, the Beyonce Rule, trunk-based development, and the test pyramid. Matt Pocock's skills (112k stars) surfaces the same idea from an independent practitioner angle: 18 skills structured around real failure modes in Claude Code and Codex, with the /request-refactor-plan skill showing 3.20x agent success improvement on evals. Both repos install in one command and work across Claude Code, Codex, and Cursor."
+    },
+    {
+      "headline": "NVIDIA/SkillSpector ships the first dedicated pre-installation security scanner for agent skills — 64 vulnerability patterns across 16 categories including MCP tool poisoning, supply-chain CVE lookups via OSV.dev, and taint tracking — Apache-2.0, 5.3k stars",
+      "body": "SkillSpector addresses the supply-chain risk introduced by the now-large agent skills ecosystem. It scans git repos, URLs, zip files, or directories before installation, running fast static analysis then optionally an LLM semantic pass. It checks for prompt injection, data exfiltration, privilege escalation, excessive agency, memory poisoning, MCP tool poisoning (TP1–TP4), and YARA-matched malware signatures. NVIDIA's own claim: over 26% of common agent skills contain vulnerabilities. Output is terminal, JSON, Markdown, or SARIF; a 0–100 risk score with severity labels. The tool is directly paired with the addyosmani/agent-skills wave — the same week that skills frameworks grew significantly, a dedicated scanner appeared."
+    },
+    {
+      "headline": "commensa-ai/commensa-audit (Show HN, June 10) measured the hidden cost of AI-generated PRs: 27% of agent-built code in a 162-PR sprint was the AI correcting its own earlier work — the first production-scale rework audit released as an open-source tool",
+      "body": "commensa-audit reads git history and classifies every PR by signal cascade: explicit corrective reverts → self-correction (predominantly undoing lines added in the prior N days) → churn-cluster membership → otherwise generative. On commensa-ai's own 162-PR, 13-day sprint, 27% of PRs were AI self-correction. The tool produces an HTML report, JSON export, and per-PR CSV. This is not a theoretical concern: 27% rework tax on a 162-PR dataset is a concrete cost of agentic development that is now quantifiable and trackable."
+    },
+    {
+      "headline": "Key takeaway: The week of June 8–14 converged on skills governance — three independent signals (addyosmani/agent-skills, mattpocock/skills, NVIDIA/SkillSpector) established that agent skills need the same version control, test suites, and security scanning as code dependencies. The rework audit from commensa-ai completed the picture: production agent pipelines that lack quality gates pay a measurable 27% correction tax.",
+      "body": "The week's pattern is consistent: as agentic coding moves from prototype to production-speed workflows (sermakarevich/fleet demonstrated 3 parallel agents running continuously, hitting Claude's $200 subscription limit in 30 minutes), the engineering discipline around skills — what they do, whether they are safe, whether they produce net-new code — has become the constraint. An enterprise AI team deploying agent skills without SkillSpector pre-scanning and without a quality gate library like addyosmani/agent-skills is accepting supply-chain risk and a potential 27% rework overhead on every sprint."
+    }
+  ],
+
+  "top_picks": [
+    {
+      "id": "addyosmani-agent-skills-production-grade",
+      "title": "addyosmani/agent-skills v0.6.1",
+      "subtitle": "Production-grade engineering skills for AI coding agents — 7 lifecycle commands, 23 skills, Google engineering practices, specialist agent personas, 47.5k stars",
+      "source": "GitHub",
+      "author": "addyosmani",
+      "date": "2026-06-11",
+      "primary_url": "https://github.com/addyosmani/agent-skills",
+      "secondary_urls": [
+        {
+          "label": "YouTube overview — 8 Trending GitHub Repos (June 11, 2026)",
+          "url": "https://www.youtube.com/watch?v=uohhX2hfQjA"
+        }
+      ],
+      "summary": "agent-skills packages the engineering workflows senior developers use at Google into seven slash commands for AI coding agents: /spec, /plan, /build, /test, /review, /code-simplify, /ship. Grounded in Google's Software Engineering book, Hyrum's Law, the Beyonce Rule, test pyramid, trunk-based development, and Shift Left. Ships 23 skills, 3 specialist agent personas (code-reviewer, test-engineer, security-auditor), and 4 reference checklists. Shell-based (78.6%), MIT license. 47.5k stars; latest release v0.6.1 (May 23, 2026).",
+      "verified": true,
+      "verified_at": "2026-06-13T18:00:00Z",
+      "key_takeaways": [
+        "The seven-command lifecycle enforces planning artifacts before code generation — /spec defines what to build, /plan defines how, /build executes incrementally, /test proves it works, /review gates before merge, /code-simplify reduces complexity, /ship stages production release. Each command is a structured workflow, not a free-form prompt.",
+        "The three specialist personas (code-reviewer, test-engineer, security-auditor) are subagent definitions that run on demand — an enterprise team can invoke /review to spawn a dedicated code-reviewer agent that applies the full Google review checklist to a diff, without requiring the main coding agent to context-switch.",
+        "Grounding in Chesterton's Fence, Hyrum's Law, and change sizing norms means the skills encode conservative, auditable engineering behaviors — the same patterns that reduce defect rates in large human engineering teams apply equally as guardrails for AI-generated code."
+      ],
+      "results": "47.5k GitHub stars; 5.3k forks; 201 commits; v0.6.1 (May 23, 2026). Trending on GitHub week of June 8–14, 2026. Source: github.com/addyosmani/agent-skills (fetched June 13, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Install via `npx agent-skills install` and add to your Claude Code, Codex, or Cursor configuration. For enterprise deployments, use selective installation — identify the five skills most relevant to your team's recurring patterns (e.g., /spec, /plan, /build, /review for sprint-based development; /test and /code-simplify for refactoring cycles). The specialist agent personas work as on-demand subagents: invoke /review to run a dedicated code-reviewer against any PR diff, or /test to run a test-engineer checking coverage before merge. | Regulated-environment caveats: agent-skills is Shell-based (78.6%) and runs locally in the agent context — no data leaves the developer machine. Review each skill file before fleet deployment to confirm no external network calls are made. The /ship skill stages production deployment steps; gate this behind a human approval step in your CI/CD pipeline rather than letting it run fully autonomously. Confirm that the AGENTS.md files written by setup scripts are covered by your AI governance policy. Pin the npm package version in your internal developer-tooling provisioning script. | 30-day experiment: Identify two recurring agent failure modes on your team (common ones: agent adds untested code, agent over-engineers the first solution). Install the /test and /code-simplify skills. For two weeks, run agent sessions without skills (baseline). For two weeks, enforce skills. Measure: PR first-pass acceptance rate, test coverage of agent-authored code, and human reviewer round-trip count. Report the delta.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 47500
+      },
+      "tags": ["Agent Skills", "Engineering Best Practices", "Quality Gates", "Claude Code", "Codex"],
+      "category": "Agent Skill",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "nvidia-skillspector-security-scanner",
+      "title": "NVIDIA/SkillSpector",
+      "subtitle": "Security scanner for AI agent skills — 64 vulnerability patterns, 16 categories, MCP tool poisoning detection, live OSV.dev CVE lookups, Apache-2.0, 5.3k stars",
+      "source": "GitHub",
+      "author": "NVIDIA",
+      "date": "2026-06-13",
+      "primary_url": "https://github.com/NVIDIA/SkillSpector",
+      "secondary_urls": [
+        {
+          "label": "NVIDIA SkillSpector AI Insiders writeup",
+          "url": "https://aiinsiders.net/article/nvidia-ships-open-source-scanner-for-agent-skill-supply-chain-risk/"
+        }
+      ],
+      "summary": "SkillSpector scans AI agent skills before installation, detecting 64 vulnerability patterns across 16 categories: prompt injection (5), data exfiltration (4), privilege escalation (3), supply chain (6), excessive agency (4), output handling (3), system prompt leakage (3), memory poisoning (3), tool misuse (3), rogue agent (2), trigger abuse (3), behavioral AST (8), taint tracking (5), YARA signatures (4), MCP least privilege (4), and MCP tool poisoning (4). Two-stage analysis: fast static pass then optional LLM semantic check. Live CVE lookups against OSV.dev. Multi-format output: terminal, JSON, Markdown, SARIF. Risk score 0–100. NVIDIA claims over 26% of common agent skills contain vulnerabilities. Python 97.3%; Apache-2.0; 5.3k stars.",
+      "verified": true,
+      "verified_at": "2026-06-13T18:00:00Z",
+      "key_takeaways": [
+        "The MCP tool poisoning category (TP1–TP4) is new and specific to 2026's threat landscape: it detects hidden instructions in tool metadata (HTML comments, zero-width characters, base64 data URIs), Unicode deception (homoglyphs, RTL overrides), parameter description injection, and description-behavior mismatch via LLM. These are vectors that did not exist in traditional security scanners.",
+        "Behavioral AST analysis (8 patterns) catches exec(), eval(), dynamic imports, subprocess calls, and dangerous execution chains without needing to run the code — pure static analysis on the skill file structure. Taint tracking follows data flows from source (env vars, user input) to sink (network, exec) across variable assignments.",
+        "The SARIF output format means SkillSpector results can be imported directly into GitHub Advanced Security, Azure DevOps, or any SARIF-compatible security dashboard — enabling pre-installation skill scanning as a gate in a CI/CD pipeline."
+      ],
+      "results": "5.3k GitHub stars; 23 commits; Apache-2.0. NVIDIA's stated figure: over 26% of common agent skills contain vulnerabilities. SARIF output enables integration with GitHub Advanced Security. Source: github.com/NVIDIA/SkillSpector (fetched June 13, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Run SkillSpector as a pre-installation gate in your internal agent skill approval workflow. For any skill repo being evaluated: `skillspector scan <repo-url>`. For CI/CD integration, use `--format sarif` to emit a SARIF report and import into GitHub Advanced Security or your SAST pipeline. For internal skill registries, run SkillSpector on every new skill PR as a non-blocking gate initially, then graduate to blocking once false-positive rates are understood. The live OSV.dev CVE lookup (SC4) requires network access — for air-gapped environments, use `--offline` to disable live lookups and maintain a mirrored CVE database. | Regulated-environment caveats: SkillSpector's LLM semantic pass (if enabled) sends skill content to an LLM endpoint — route this to an internally approved model endpoint rather than the default. The static analysis pass is fully local and safe for regulated environments. YARA signature checks run locally against bundled signature packs; review the included YARA rules before fleet deployment. Pin the Python package version in your internal package registry. | 30-day experiment: Run SkillSpector on your currently installed agent skills library (all skills in your CLAUDE.md, AGENTS.md, and Cursor rules files). Generate an HTML report. Classify each finding as actionable risk, acceptable risk, or false positive. Report the percentage of skills with at least one HIGH or CRITICAL finding. Use this baseline to define your internal skill approval policy.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 5300
+      },
+      "tags": ["Security", "Agent Skills", "Supply Chain", "MCP Security", "SARIF"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "mattpocock-skills-real-engineer",
+      "title": "mattpocock/skills",
+      "subtitle": "18 composable agent skills from Matt Pocock's .claude directory — /tdd, /grill-me, /diagnose, /request-refactor-plan (3.20x agent success), /to-prd, works with any model, MIT, 112k stars",
+      "source": "GitHub",
+      "author": "mattpocock",
+      "date": "2026-05-28",
+      "primary_url": "https://github.com/mattpocock/skills",
+      "secondary_urls": [
+        {
+          "label": "Tessl skills registry — eval scores per skill",
+          "url": "https://tessl.io/registry/skills/github/mattpocock/skills"
+        },
+        {
+          "label": "MorningMail.ai Agentic Coding newsletter (June 9)",
+          "url": "https://morningmail.ai/en/newsletter/agentic-coding-7LswmXRrJNp1QHsbwKoU/2026-06-10"
+        }
+      ],
+      "summary": "mattpocock/skills publishes 18 production skills organized around real failure modes: /grill-me (pre-coding alignment interview, 68 quality score), /tdd (red-green-refactor loop), /diagnose (reproduce → minimise → hypothesise → instrument → fix, 90% impact), /request-refactor-plan (3.20x agent success on evals), /to-prd (converts conversation to PRD, 1.00x baseline), /improve-codebase-architecture, /caveman (75% token reduction mode), /git-guardrails-claude-code (blocks dangerous git commands). Install via `npx skills@latest add mattpocock/skills`. Works across Claude Code, Codex, and Cursor. MIT; 112k stars; monthly champion on GitHub by +55,905 stars.",
+      "verified": true,
+      "verified_at": "2026-06-13T18:00:00Z",
+      "key_takeaways": [
+        "/request-refactor-plan shows 3.20x agent success improvement on evals (Tessl registry) — structured refactor planning via user interview followed by filing a GitHub issue produces dramatically better outcomes than asking an agent to refactor directly. The skill forces plan → issue → incremental execution rather than wholesale rewrites.",
+        "/caveman compresses agent communication by ~75% by dropping filler, articles, and pleasantries while preserving full technical accuracy — a token efficiency tool that pairs with context compression tools at the infrastructure layer.",
+        "The /grill-me and /grill-with-docs skills encode alignment before coding: the agent interviews the developer relentlessly about the plan until every branch of the decision tree is resolved. This addresses the most common agentic failure mode — agents that start coding before requirements are clear."
+      ],
+      "results": "112k GitHub stars; +55,905 monthly star delta (monthly champion week of June 8–14). /request-refactor-plan: 3.20x agent success on 3 eval scenarios (Tessl). /diagnose: 90% impact score on 3 eval scenarios. Source: github.com/mattpocock/skills; tessl.io/registry/skills/github/mattpocock/skills (fetched June 13, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Install via `npx skills@latest add mattpocock/skills`, selecting only the skills relevant to your team's workflow. For enterprise onboarding, start with /grill-me, /tdd, and /diagnose — these three address the three most common failure modes (unclear requirements, untested code, hard-to-debug regressions). Add /request-refactor-plan for any codebase refactoring initiative. The /git-guardrails-claude-code skill blocks dangerous git commands (push, reset --hard, clean, branch -D) before they execute — install this on all developer workstations running agent sessions. | Regulated-environment caveats: Skills are file-based and run entirely within the agent's local context — no external API calls at skill execution time. The /to-issues skill creates GitHub issues via the configured issue tracker — confirm OAuth scopes are scoped to the approved repository. The /improve-codebase-architecture skill reads the CONTEXT.md domain model and ADRs — ensure those files do not contain regulated or confidential business logic before the agent processes them. Pin the npx package version in your internal provisioning script. | 30-day experiment: Identify the single most common rework pattern on your team (e.g., agent writes code without tests, or agent misunderstands requirements). Install the corresponding skill. For two weeks, run without it (baseline). For two weeks, enforce it. Report: PR rework rate, first-pass code review acceptance rate, and lines of code written vs. lines surviving after one sprint.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 55905
+      },
+      "tags": ["Agent Skills", "TDD", "Refactoring", "Claude Code", "Token Efficiency"],
+      "category": "Agent Skill",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "commensa-audit-rework-tax-27pct",
+      "title": "commensa-ai/commensa-audit",
+      "subtitle": "One-page rework report from git history — 27% of 162 agent-built PRs were AI self-correction, local-first, read-only, signal-cascade classification, MIT",
+      "source": "GitHub / Hacker News",
+      "author": "commensa-ai",
+      "date": "2026-06-10",
+      "primary_url": "https://github.com/commensa-ai/commensa-audit",
+      "secondary_urls": [
+        {
+          "label": "Show HN: I audited 162 agent-written PRs – 27% were the AI fixing itself",
+          "url": "https://showhn.buzzing.cc/en/"
+        }
+      ],
+      "summary": "commensa-audit reads a GitHub repo's last 500 PRs and classifies each as generative or corrective using a transparent signal cascade: explicit corrective title/revert → self-correction (PR predominantly undoes lines from the prior N days) → churn-cluster membership → otherwise generative. Output: rework tax (share of PRs and changed lines correcting earlier work), superseded work (PRs whose output was entirely replaced), abandoned attempts (closed without merging), churn clusters (chains rewriting each other), line survival, hotspots by module, and agent-marked share. The authors' own 162-PR, 13-day sprint showed 27% rework tax. Read-only, local-first. Python 57.1%; MIT.",
+      "verified": true,
+      "verified_at": "2026-06-13T18:00:00Z",
+      "key_takeaways": [
+        "A 27% rework tax on a 162-PR sprint means roughly 1 in 4 PRs is the agent correcting its own earlier output — this cost does not appear in token counts, API billing, or PR velocity metrics, but it does appear in git history. commensa-audit makes it visible for the first time.",
+        "The churn-cluster metric surfaces the worst failure mode: chains of PRs rewriting each other (e.g., 'it took 10 PRs to get dark mode right'). This pattern is invisible in standard engineering metrics but measurable from git history alone.",
+        "The agent-marked share is explicitly stated as a lower bound, never an attribution claim — absence of an agent marker (Co-Authored-By trailer, body signature) is not evidence of human authorship. This makes the tool conservative: it will not overstate AI contribution."
+      ],
+      "results": "The authors' own sprint: 162 PRs, 13 days, 27% rework tax. Tool covers newest 500 PRs by default. Output: HTML report (self-contained, forwardable), JSON export, per-PR CSV. Source: github.com/commensa-ai/commensa-audit (fetched June 13, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Point commensa-audit at any GitHub repo your team is actively developing with agents: `python commensa_audit.py --repo <org>/<repo>`. The read-only, local-first design means no data leaves the developer machine and no write access to the repo is needed. Run monthly to track whether your quality gate investments (agent-skills, SkillSpector, /tdd) are reducing the rework tax. Use the hotspots output to identify which modules accumulate the most AI-generated churn — these are candidates for additional human review gates or more constrained agent scope. | Regulated-environment caveats: The tool reads GitHub API data via a personal access token; scope the token to `repo:read` only. For on-premises GitHub Enterprise, the GitHub API endpoint is configurable. The agent-marked share heuristic relies on Co-Authored-By trailers and PR body signatures — standardize these conventions across your team to improve signal quality. For squash-merge workflows, line survival metrics will be optimistic; note this in reporting. | 30-day experiment: Run commensa-audit on your primary AI-assisted development repo for the past 30 days. Calculate your baseline rework tax. Install one quality gate (addyosmani/agent-skills /review skill or a /tdd skill). Run commensa-audit again after 30 days. Report whether the rework tax moved.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 2
+      },
+      "tags": ["Agent Governance", "Code Quality", "Git Analytics", "Rework Measurement", "Local-First"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "revfactory-harness-meta-skill-team-factory",
+      "title": "revfactory/harness",
+      "subtitle": "Meta-skill team-architecture factory for Claude Code — 6 agent team patterns, generates agent definitions + skills from one sentence, 6.6k stars, Apache-2.0",
+      "source": "GitHub",
+      "author": "revfactory",
+      "date": "2026-05-29",
+      "primary_url": "https://github.com/revfactory/harness",
+      "secondary_urls": [
+        {
+          "label": "Harness tutorial — Build an Entire AI Agent Team With Claude Code",
+          "url": "https://www.youtube.com/watch?v=xFemCQdqy3Y"
+        },
+        {
+          "label": "Shareuhack GitHub trending weekly June 10",
+          "url": "https://www.shareuhack.com/en/posts/github-trending-weekly-2026-06-10"
+        }
+      ],
+      "summary": "harness is a meta-skill for Claude Code that designs multi-agent teams from a single sentence. It generates agent definitions (.claude/agents/) and skills (.claude/skills/) tailored to the domain using one of six pre-defined team-architecture patterns: Pipeline (sequential dependent tasks), Fan-out/Fan-in (parallel independent tasks), Expert Pool (context-dependent selective invocation), Producer-Reviewer (generation + quality review), Supervisor (central agent with dynamic task distribution), and Hierarchical Delegation (top-down recursive delegation). Trigger: 'build a harness for this project.' HTML 100%; Apache-2.0; 4.6k stars; +1,553 weekly delta.",
+      "verified": true,
+      "verified_at": "2026-06-13T18:00:00Z",
+      "key_takeaways": [
+        "harness is a factory that builds other factories: it does not execute tasks; it generates the agent team architecture, role definitions, and skill assignments for a domain. The output is a versioned set of agent definitions and skills that can then be reviewed, modified, and committed like code.",
+        "The six team patterns are not arbitrary: Pipeline, Fan-out/Fan-in, Expert Pool, Producer-Reviewer, Supervisor, and Hierarchical Delegation map to the six canonical multi-agent coordination patterns described in agent framework documentation. An enterprise team can select the pattern appropriate to their workflow structure rather than inventing one from scratch.",
+        "The meta-skill concept means harness itself is a Claude Code skill — it is installed and invoked like any other skill, producing new skills and agent definitions as its output. This makes multi-agent system design reproducible and auditable: the harness invocation and its output both live in version control."
+      ],
+      "results": "+1,553 weekly star delta; 6,663 total stars (4.6k confirmed at fetch); 644 forks; 6 contributors; Apache-2.0. Source: github.com/revfactory/harness; youtube.com/watch?v=xFemCQdqy3Y (fetched June 13, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Install harness as a Claude Code plugin and invoke with 'build a harness for [domain description]'. Review the generated agent definitions and skills before committing — each generated agent definition specifies role, tools, scope, and escalation behavior. Use the Fan-out/Fan-in pattern for parallelizable research or analysis workflows; use Producer-Reviewer for code generation with mandatory human-equivalent review; use Supervisor for workflows where task prioritization changes dynamically. | Regulated-environment caveats: harness writes to .claude/agents/ and .claude/skills/ in the project directory — review generated agent definitions before fleet deployment, particularly tool access declarations and scope constraints. The generated agents inherit whatever model endpoint is configured for Claude Code — confirm generated agents are routed to your approved endpoint. For air-gapped environments, harness itself runs locally; the generated agents may call external APIs depending on the domain harness is applied to. | 30-day experiment: Identify one multi-step workflow your team currently runs manually or with ad-hoc agents (e.g., weekly repo audit, sprint retrospective prep, automated test generation for a new feature). Invoke harness to generate a team architecture for it. Review and adjust the generated agent definitions. Run the team for one sprint. Compare completion time and error rate against the manual or ad-hoc baseline.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 1553
+      },
+      "tags": ["Multi-Agent", "Agent Architecture", "Meta-Skill", "Claude Code", "Team Design"],
+      "category": "Agent Skill",
+      "platform": "github",
+      "recurrence": "new"
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "Top AI-relevant repos by weekly star delta for the week of June 8–14, 2026. Star deltas from shareuhack.com/en/posts/github-trending-weekly-2026-06-10 (verified June 13, 2026). Returning repos from last week are marked with recurrence notes.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "trending-chopratejas-headroom-14k-wk2",
+          "title": "chopratejas/headroom",
+          "source": "GitHub",
+          "date": "2026-06-08",
+          "primary_url": "https://github.com/chopratejas/headroom",
+          "summary": "Context compression proxy for AI agents — 60–95% fewer tokens, six algorithms, library + proxy + MCP server + agent wrapper. Returning from last week; now +14,266 weekly delta, 20.5k total stars. Monthly delta: +16,237. Context Engineering demand is sustained.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 14266 },
+          "tags": ["Context Compression", "Token Efficiency", "MCP Server", "Proxy"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "Last week's top pick; returning with higher verified weekly delta (+14,266 vs. +12,000 last week) confirming sustained demand.",
+          "score": { "total": 9, "signal": 3, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-nousresearch-hermes-agent-11k",
+          "title": "NousResearch/hermes-agent",
+          "source": "GitHub",
+          "date": "2026-06-08",
+          "primary_url": "https://github.com/NousResearch/hermes-agent",
+          "summary": "Self-improving AI agent — v0.16.0 shipped official Electron desktop app last week. Returns this week with +11,747 weekly delta, 188.8k total stars. Newly trending note: native Windows support confirmed this week via Hindsight memory integration guide.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 11747 },
+          "tags": ["Agent Framework", "Desktop App", "Self-Improving", "Multi-Agent"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "Returning from last week; confirmed this week as native Windows support guide published.",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-microsoft-markitdown-11k-wk2",
+          "title": "microsoft/markitdown",
+          "source": "GitHub",
+          "date": "2026-06-08",
+          "primary_url": "https://github.com/microsoft/markitdown",
+          "summary": "Document-to-Markdown conversion for LLMs. Returning from last week; +11,177 weekly delta this week, 149.3k total stars, monthly delta +26,881. Largest monthly star accumulator on the chart. The document pipeline necessity is the most durable trend across both weeks.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 11177 },
+          "tags": ["Document Conversion", "RAG", "LLM Input", "Markdown"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "Returning from last week; monthly champion at +26,881 stars over 30 days, confirming sustained demand.",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-affaan-ecc-9k-wk2",
+          "title": "affaan-m/ECC",
+          "source": "GitHub",
+          "date": "2026-06-08",
+          "primary_url": "https://github.com/affaan-m/ECC",
+          "summary": "Cross-harness agent workflow system. Returning from last week; +9,301 weekly delta, 211.8k total stars. The highest-starred project in this week's chart. New this week: continued commits building on the orch-* orchestrator skill family shipped June 7.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 9301 },
+          "tags": ["Agent Skills", "Cross-Harness", "Orchestration", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "Returning from last week; highest-starred project on this week's chart at 211.8k total.",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-leonxlnx-taste-skill-7k",
+          "title": "Leonxlnx/taste-skill",
+          "source": "GitHub",
+          "date": "2026-06-08",
+          "primary_url": "https://github.com/Leonxlnx/taste-skill",
+          "summary": "Agent skill that stops AI from generating boring, generic output — described by HN as 'Anti-Slop Front End Framework'. +7,597 weekly delta, 39.5k total stars, monthly delta +22,388. Shell; MIT. Trending evidence that 'anti-slop' aesthetic quality is now a first-class optimization target for front-end agent output.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 7597 },
+          "tags": ["Agent Skill", "Frontend", "Anti-Slop", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 }
+        },
+        {
+          "id": "trending-addyosmani-agent-skills-47k",
+          "title": "addyosmani/agent-skills",
+          "source": "GitHub",
+          "date": "2026-06-11",
+          "primary_url": "https://github.com/addyosmani/agent-skills",
+          "summary": "Production-grade engineering skills for AI coding agents — /spec, /plan, /build, /test, /review, /code-simplify, /ship. Grounded in Google engineering practices. 47.5k stars; trending on GitHub week of June 8–14. See Top Picks for full detail.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 47500 },
+          "tags": ["Agent Skills", "Quality Gates", "Engineering Practices"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-mattpocock-skills-112k",
+          "title": "mattpocock/skills",
+          "source": "GitHub",
+          "date": "2026-05-28",
+          "primary_url": "https://github.com/mattpocock/skills",
+          "summary": "18 composable engineering skills from Matt Pocock's .claude directory. Monthly champion: +55,905 stars in 30 days. /request-refactor-plan shows 3.20x agent success on evals (Tessl). 112k total stars; MIT. See Top Picks for full detail.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 55905 },
+          "tags": ["Agent Skills", "TDD", "Refactoring", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-revfactory-harness-1k",
+          "title": "revfactory/harness",
+          "source": "GitHub",
+          "date": "2026-05-29",
+          "primary_url": "https://github.com/revfactory/harness",
+          "summary": "Meta-skill that generates domain-specific agent team architectures. +1,553 weekly delta; 6.6k total stars. Six team patterns. Generates .claude/agents/ and .claude/skills/ from one sentence. Apache-2.0. See Top Picks for full detail.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 1553 },
+          "tags": ["Multi-Agent", "Meta-Skill", "Team Design", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-superloglabs-superlog-820",
+          "title": "superloglabs/superlog",
+          "source": "GitHub",
+          "date": "2026-06-02",
+          "primary_url": "https://github.com/superloglabs/superlog",
+          "summary": "Open-source agentic observability — ingests OTel traces/logs/metrics, groups noisy signals into incidents, uses AI agents to self-heal software. OTLP ingest proxy, Postgres + ClickHouse backend, pluggable agent runner interfaces. TypeScript 97.6%; Apache-2.0; 820 stars. Created June 2, 2026; new this week.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 820 },
+          "tags": ["Observability", "OpenTelemetry", "Self-Healing", "Agent Infrastructure"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-tastyeffectco-sandboxd-610",
+          "title": "tastyeffectco/sandboxd",
+          "source": "GitHub",
+          "date": "2026-06-07",
+          "primary_url": "https://github.com/tastyeffectco/sandboxd",
+          "summary": "Self-hosted AI app-builder engine — isolated Linux containers with preview URLs, built-in Claude Code + OpenCode agent support, HTTP API, SSE streaming, idle/wake lifecycle. One Docker host, no Kubernetes. Go 95.7%; MIT; 610 stars; v0.1.1 (June 7, 2026). Purpose-built for agent sandboxing at scale.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 610 },
+          "tags": ["Agent Sandbox", "Docker", "Preview URLs", "Self-Hosted"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Agent Skills and MCP Servers",
+      "description": "Newly published agent skills, MCP servers, and security tools for the agent skills ecosystem — week of June 8–14, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "skill-nvidia-skillspector-scanner",
+          "title": "NVIDIA/SkillSpector — 64-pattern security scanner for agent skills",
+          "source": "GitHub",
+          "date": "2026-06-13",
+          "primary_url": "https://github.com/NVIDIA/SkillSpector",
+          "summary": "Pre-installation security scanner for AI agent skills. Detects 64 vulnerability patterns: prompt injection, data exfiltration, privilege escalation, supply-chain CVEs (live OSV.dev), excessive agency, memory poisoning, MCP tool poisoning (TP1–TP4), YARA-matched malware, and taint tracking. Two-stage: static + optional LLM. Output: SARIF, JSON, Markdown. 5.3k stars; Apache-2.0.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 5300 },
+          "tags": ["Security Scanner", "Agent Skills", "MCP Security", "SARIF"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skill-phuryn-pm-skills-100plus",
+          "title": "phuryn/pm-skills — 100+ agentic PM skills, 8 plugins, full product lifecycle",
+          "source": "GitHub",
+          "date": "2026-05-20",
+          "primary_url": "https://github.com/phuryn/pm-skills",
+          "summary": "PM skills marketplace: 65 PM skills across 8 plugins (product-discovery, product-strategy, execution, market-research, data-analytics, go-to-market, marketing-growth, toolkit). Trigger with /discover, /strategy, /write-prd, /plan-launch, /north-star. Works with Claude Code and Cowork. 11.8k stars; MIT. Trending this week — picking up ~2,000 stars/day according to YouTube coverage.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 11800 },
+          "tags": ["Agent Skill", "Product Management", "PM Skills", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skill-amelngady-guard-skills-512",
+          "title": "amElnagdy/guard-skills — AI code quality gates, fail-safe for agent output",
+          "source": "GitHub",
+          "date": "2026-06-06",
+          "primary_url": "https://github.com/amElnagdy/guard-skills",
+          "summary": "Quality gates for coding agents: catch lint failures, low test coverage, and missing docs before agent-generated code ships. 'Fail-safe by default.' Created June 6, 2026; 512 stars this week. MIT. Directly addresses the pattern surfaced by commensa-audit: 27% of agent PRs correct earlier work.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 512 },
+          "tags": ["Agent Skill", "Quality Gates", "Code Quality", "CI/CD"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skill-fxa3bah-onebrain-mcp-obsidian",
+          "title": "fxa3bah/OneBrain — unified local memory for AI agents via MCP, Obsidian vault + Ollama, zero API cost",
+          "source": "GitHub / Trendshift",
+          "date": "2026-06-08",
+          "primary_url": "https://github.com/fxa3bah/OneBrain",
+          "summary": "Unifies every AI agent on a single local shared memory over MCP. Combines Obsidian vault (human-readable storage), gbrain (by Garry Tan), and Ollama (local LLM). 100% offline, $0 API cost. Orchestrate with OpenClaw or Hermes. 143 stars; new 2026.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 143 },
+          "tags": ["MCP Server", "Agent Memory", "Obsidian", "Ollama", "Local-First"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skill-grooverlabs-fable-transcript-memory",
+          "title": "grooverLab/fable — high-fidelity transcript memory for Claude Code, byte-identical recall, local-first, MCP",
+          "source": "GitHub / Trendshift",
+          "date": "2026-06-08",
+          "primary_url": "https://github.com/grooverLab/fable",
+          "summary": "Indexes every Claude Code session transcript, enables byte-identical recall, search, pruning, and composition. Local-first, stdlib-only, MCP. Solves Claude Code session expiry differently from MemPalace: transcript-level rather than entity-level storage. New 2026.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "tags": ["MCP Server", "Session Memory", "Claude Code", "Local-First", "Transcript"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "skill-diya73-mcp-hub-self-hosted-registry",
+          "title": "DIYA73/mcp-hub — self-hosted MCP server registry and proxy, NestJS + PostgreSQL + Redis + BullMQ",
+          "source": "Trendshift",
+          "date": "2026-06-08",
+          "primary_url": "https://github.com/DIYA73/mcp-hub",
+          "summary": "Self-hosted MCP server registry and proxy: register, proxy, and monitor any MCP server. NestJS backend, PostgreSQL storage, Redis queuing, BullMQ worker, WebSocket streaming. Designed for teams that need an internal MCP server catalog with controlled access rather than relying on public registries. New 2026.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "tags": ["MCP Server", "Registry", "Self-Hosted", "Enterprise"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN and Indie Builds",
+      "description": "Show HN posts and indie builds from the week of June 8–14, 2026 with working repos or demos.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "showhn-commensa-audit-27pct-rework",
+          "title": "Show HN: I audited 162 agent-written PRs – 27% were the AI fixing itself (commensa-ai/commensa-audit)",
+          "source": "Hacker News",
+          "date": "2026-06-10",
+          "primary_url": "https://github.com/commensa-ai/commensa-audit",
+          "secondary_urls": [
+            {
+              "label": "Show HN listing (Buzzing.cc)",
+              "url": "https://showhn.buzzing.cc/en/"
+            }
+          ],
+          "summary": "The builders released commensa-audit after discovering that 27% of 162 PRs in their own 13-day AI-first sprint were the agent correcting its own earlier work. The tool reads git history and classifies every PR as generative or corrective using a transparent signal cascade. Read-only, local-first, MIT. The finding — 27% rework tax — is the most concrete measurement of AI-generated code quality cost published this week.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": {},
+          "tags": ["Agent Governance", "Code Quality", "Rework Measurement", "Git Analytics"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "showhn-fleet-3-agents-nonstop",
+          "title": "Show HN: I am running 3 coding agents non-stop over the last 3 days — sermakarevich/fleet",
+          "source": "Hacker News",
+          "date": "2026-06-14",
+          "primary_url": "https://github.com/sermakarevich/fleet",
+          "secondary_urls": [
+            {
+              "label": "HN thread",
+              "url": "https://news.ycombinator.com/item?id=48520757"
+            }
+          ],
+          "summary": "sermakarevich/fleet is a lightweight Python supervisor for running coding agents in parallel. Uses a centralized beads task queue (Dolt-backed distributed graph issue tracker), git worktrees for worker isolation, per-task artifact folders, and a web UI for monitoring. Key finding: 3 parallel agents burn a $200 Claude subscription in 30 minutes. Solution: use a strong model for design/analysis, local qwen3.6:36B via Ollama on 2 GPUs for workers, strong model for validation. Effective cost: 3 workers running 24/7 on local GPU at near-zero API cost. MIT; 11 stars.",
+          "verified": true,
+          "verified_at": "2026-06-14T18:00:00Z",
+          "engagement": {},
+          "tags": ["Multi-Agent", "Parallel Agents", "Ollama", "Local LLM", "Task Queue"],
+          "category": "Agent Infrastructure",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "showhn-agent-gate-ci-firewall",
+          "title": "Show HN: Agent Gate – a deterministic CI firewall for AI-generated PRs (sjh9714/agent-gate)",
+          "source": "Hacker News",
+          "date": "2026-06-13",
+          "primary_url": "https://github.com/sjh9714/agent-gate",
+          "secondary_urls": [
+            {
+              "label": "HN Show new listing",
+              "url": "https://news.ycombinator.com/shownew"
+            }
+          ],
+          "summary": "Agent Gate is a TypeScript CI firewall that checks AI-generated PRs before merge: out-of-contract edits (agent changed files outside declared scope), workflow permission escalation, agent control-plane drift (instruction or tool config changes), missing test evidence for high-risk source changes, and MCP config drift. No checkout of PR code; no runtime LLM calls; no policy loaded from untrusted PR head. Supports Markdown and JSON reports plus PR comment upsert. TypeScript 99.7%; MIT; 6 stars.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": {},
+          "tags": ["CI/CD", "Agent Governance", "PR Review", "Deterministic"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "hn-ai-agent-burns-6k-aws-dn42",
+          "title": "AI agent bankrupted its operator trying to scan DN42 — $6,531.30 AWS bill in 24 hours (documented case study)",
+          "source": "Hacker News",
+          "date": "2026-06-12",
+          "primary_url": "https://news.ycombinator.com/item?id=48500012",
+          "secondary_urls": [
+            {
+              "label": "GRID THE GREY write-up",
+              "url": "https://gridthegrey.com/posts/uncontrolled-ai-agent-racks-up-6531-aws-bill-scanning-hobbyist-network/"
+            }
+          ],
+          "summary": "An autonomous AI agent (handle: JertLinc3522) was given AWS credentials and an open-ended task to scan DN42, a hobbyist BGP network. With no spend limits, the agent provisioned five m8g.12xlarge instances, load balancers, and Lambdas for 20 Gbps scanning. The DN42 community responded with LLM tarpits. AWS bill: $6,531.30 in 24 hours, later negotiated to $1,894. HN thread documented the forensics in detail. Key lessons: hard billing caps, minimal-privilege short-lived credentials, human approval gates, cost estimation steps, and explicit scope constraints in system prompts are non-optional for production agent deployments.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": {},
+          "tags": ["Agent Governance", "AWS Cost Control", "Security", "Production Agents"],
+          "category": "Agent Infrastructure",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent and RAG Implementations",
+      "description": "Production-shaped agent and RAG builds worth studying, with linked code or detailed write-ups.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "impl-fleet-parallel-agent-hybrid-cost",
+          "title": "sermakarevich/fleet — strong model for design, local qwen3.6 for workers, strong model for validation",
+          "source": "GitHub / Hacker News",
+          "date": "2026-06-14",
+          "primary_url": "https://github.com/sermakarevich/fleet",
+          "secondary_urls": [
+            {
+              "label": "HN thread",
+              "url": "https://news.ycombinator.com/item?id=48520757"
+            }
+          ],
+          "summary": "fleet's Show HN thread documents the only publicly verified three-tier agent cost architecture this week: (1) strong frontier model for task analysis/design and adding tasks to the queue; (2) local qwen3.6:36B on 2 GPUs (36GB total, 256K context, Ollama) as workers — slower but free; (3) strong frontier model again for validation and creating fix tasks. Git worktrees isolate workers per task. The beads task queue (Dolt-backed) handles dependencies, priorities, and multi-worker claiming. 3 workers running concurrently was found optimal — near 100% GPU utilization, questions answered overnight via Telegram.",
+          "verified": true,
+          "verified_at": "2026-06-14T18:00:00Z",
+          "tags": ["Multi-Agent", "Hybrid LLM", "Cost Architecture", "Parallel Agents"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "impl-agent-governance-stack-skills-scan-gate",
+          "title": "The agent governance stack: addyosmani/agent-skills + SkillSpector + guard-skills + agent-gate",
+          "source": "GitHub (multi-repo)",
+          "date": "2026-06-13",
+          "primary_url": "https://github.com/addyosmani/agent-skills",
+          "secondary_urls": [
+            {
+              "label": "NVIDIA/SkillSpector",
+              "url": "https://github.com/NVIDIA/SkillSpector"
+            },
+            {
+              "label": "amElnagdy/guard-skills",
+              "url": "https://github.com/amElnagdy/guard-skills"
+            },
+            {
+              "label": "sjh9714/agent-gate",
+              "url": "https://github.com/sjh9714/agent-gate"
+            }
+          ],
+          "summary": "Four independently deployable tools that compose into a complete agent governance pipeline this week: agent-skills enforces engineering-grade workflows during coding (pre-generation); SkillSpector scans skills before installation (pre-deployment); guard-skills catches lint failures, test gaps, and missing docs before code ships (pre-merge); agent-gate validates PRs for scope compliance, workflow permission escalation, and MCP config drift (pre-merge CI). The stack is fully local except agent-gate's GitHub API calls for PR data.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "tags": ["Agent Governance", "Security", "Quality Gates", "CI/CD"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "impl-tastyeffectco-sandboxd-agent-app-builder",
+          "title": "tastyeffectco/sandboxd — open-source engine for AI app-builder products with isolated agent sandboxes",
+          "source": "GitHub",
+          "date": "2026-06-07",
+          "primary_url": "https://github.com/tastyeffectco/sandboxd",
+          "summary": "sandboxd documents the infrastructure pattern for AI app-builder products: isolated Linux containers, per-user filesystem and memory limits, built-in Claude Code and OpenCode agent support, live preview URLs, idle/wake lifecycle (saves memory, preserves files), Go control plane + Traefik routing + SQLite state. v0.1.1 (June 7, 2026). The architecture separates agent execution from preview serving — agents run in the sandboxd container; preview traffic routes through Traefik to the sandboxed app. Self-hosted on one Docker host, no Kubernetes.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "tags": ["Agent Sandbox", "Docker", "Preview URLs", "Infrastructure Pattern"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "n8n, Make, and custom automations with measurable outcomes from the week of June 8–14, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "automation-n8n-10k-templates-milestone",
+          "title": "n8n community template library passes 10,000 workflows — largest self-hostable AI automation library",
+          "source": "n8n / Create With",
+          "date": "2026-06-10",
+          "primary_url": "https://www.createwith.com/tool/n8n",
+          "summary": "n8n's community-contributed workflow template library passed 10,000 automations on June 10, 2026. Announced on LinkedIn. Every template is community-built, fully inspectable, and deployable on private self-hosted infrastructure. Covers data transformation, API orchestration, AI agent workflows, database operations, and cross-platform integrations. New templates include an AI-powered KPI report template (revenue, ROAS, CAC, growth rates — delivered to email/Slack/WhatsApp/Telegram daily via cron) and a contract review workflow for legal compliance. n8n reached v2.25.7 this week with credential-picker data isolation fixes.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "results": "10,000+ community-contributed templates as of June 10, 2026. Self-hostable; private infrastructure deployment supported. KPI template automates ROAS, CAC, revenue growth rate calculation and plain-language AI summary. Source: createwith.com/tool/n8n (fetched June 13, 2026).",
+          "tags": ["n8n", "Automation", "Workflow Templates", "Self-Hosted"],
+          "category": "Automation",
+          "platform": "n8n",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 1, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "automation-langgraph-durable-threads-timeout",
+          "title": "LangGraph 1.2.4 per-node timeouts + DeltaChannel: long-running agents no longer silently stall or blow up checkpoint storage",
+          "source": "GitHub / PyPI",
+          "date": "2026-06-02",
+          "primary_url": "https://mer.vin/2026/06/langgraph-1-2-stateful-agent-orchestration-with-graphs-checkpoints-and-cli-deploy/",
+          "secondary_urls": [
+            {
+              "label": "YouTube — Durable Long Threads walkthrough (June 13)",
+              "url": "https://www.youtube.com/watch?v=2YqzzrqTheE"
+            }
+          ],
+          "summary": "LangGraph 1.2.4 (early June 2026) adds per-node timeouts (pass timeout= directly to add_node), run-level limits (run_timeout and idle_timeout), cooperative shutdown via RunControl (stops after current superstep, saves resumable checkpoint), and a beta DeltaChannel that persists only per-step deltas rather than re-serializing full state. With snapshot_frequency, long-thread storage stays roughly flat instead of growing linearly. CLI 0.4.29 adds HTTPS dev server cert support. These features address the two most common long-running agent failures: stuck nodes and checkpoint storage inflation.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "results": "Per-node timeouts cap individual node execution. DeltaChannel keeps storage flat (full snapshot every K steps + incremental deltas). RunControl enables clean pause/resume without process kill. Source: mer.vin/2026/06/langgraph-1-2... ; YouTube walkthrough (fetched June 13, 2026).",
+          "tags": ["LangGraph", "Durable Agents", "Checkpointing", "Long-Running Agents"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "automation-superlog-ai-self-heal-observability",
+          "title": "superloglabs/superlog — open-source agentic observability, OTel ingestion, AI-driven incident grouping and self-healing",
+          "source": "GitHub",
+          "date": "2026-06-02",
+          "primary_url": "https://github.com/superloglabs/superlog",
+          "summary": "Superlog ingests OTel traces, logs, and metrics, groups them into incidents using AI agents, and surfaces a self-healing agentic layer above standard observability tooling. TypeScript 97.6%; Apache-2.0; 820 stars. Architecture: web app + API + OTLP ingest proxy + worker processes (incident grouping, background jobs) + Postgres + ClickHouse + pluggable agent runner interfaces. Community edition fully open-source; hosted cloud tier with free tier and pay-as-you-go. Created June 2, 2026.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "results": "820 stars; 124 commits; Apache-2.0; launched June 2, 2026. Community edition fully open-source. Source: github.com/superloglabs/superlog (fetched June 13, 2026).",
+          "tags": ["Observability", "OpenTelemetry", "Self-Healing", "Incident Management"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Meaningful framework releases from the week of June 8–14, 2026 — major versions or new capabilities only.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "framework-langgraph-124-per-node-timeouts",
+          "title": "LangGraph 1.2.4 — per-node timeouts, DeltaChannel, RunControl, CLI 0.4.29 HTTPS (June 2–11, 2026)",
+          "source": "GitHub / PyPI",
+          "date": "2026-06-11",
+          "primary_url": "https://mer.vin/2026/06/langgraph-1-2-stateful-agent-orchestration-with-graphs-checkpoints-and-cli-deploy/",
+          "summary": "LangGraph 1.2.4 lands four significant changes: (1) per-node timeout= parameter on add_node with configurable timeout_policy; (2) run_timeout and idle_timeout run-level limits — idle_timeout resets on every progress step, catching silently stuck agents; (3) RunControl cooperative shutdown after current superstep, saving a resumable checkpoint; (4) beta DeltaChannel that persists only deltas with periodic full snapshots, keeping long-thread storage flat. CLI 0.4.28 adds ty type checker and TS 6 tooling; CLI 0.4.29 adds HTTPS dev server cert support. Production classifier; post-v1.0.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": {},
+          "tags": ["LangGraph", "Agent Framework", "Durable Agents", "Checkpointing"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "framework-n8n-226-ai-workflow-mcp-oauth",
+          "title": "n8n 2.26.0 — AI workflow grounding, MCP OAuth token fix, sub-agent tool call resolution (June 2026)",
+          "source": "n8n / Releasebot",
+          "date": "2026-06-09",
+          "primary_url": "https://releasebot.io/updates/n8n",
+          "summary": "n8n 2.26.0 ships: ground AI workflow completion in saved graph (agent workflows tied to committed state); fix hardcoded `aud` claim in MCP OAuth tokens (unblocking MCP-authenticated workflows); resolve sub-agent tool calls inline when nested (LangChain agent node); prefer MCP registry nodes when wiring AI Agent tools; move instance AI builds to a skill; sub-workflows respect own timeout settings. 2.25.7 also released (credential-picker data isolation to workflow-level context). Two releases in the week; both targeted at production AI workflow reliability.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": {},
+          "tags": ["n8n", "Workflow Automation", "MCP", "AI Workflow"],
+          "category": "Automation",
+          "platform": "n8n",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "framework-crewai-52k-stars-native-mcp-a2a",
+          "title": "CrewAI — 52k+ stars, native MCP and A2A protocol support, Flows event-driven architecture",
+          "source": "GitHub / Morph",
+          "date": "2026-06-09",
+          "primary_url": "https://github.com/crewAIInc/crewAI",
+          "summary": "CrewAI reached 52,000 GitHub stars as of this week. Recent additions: native MCP and A2A protocol support (per Morph AI framework comparison); Flows feature (event-driven @start, @listen, @router decorators for deterministic branching across multiple crews); unified LanceDB memory backend with LLM-analyzed fact extraction, hierarchical scope tree, and 0.85 similarity threshold deduplication; 30+ built-in tools. Fastest path to a working multi-agent prototype. Practical pattern: CrewAI to prototype, LangGraph to productionize when state rigor is non-negotiable.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "engagement": { "stars": 52000 },
+          "tags": ["CrewAI", "Multi-Agent", "MCP", "A2A Protocol"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-source patterns observed across repos and discussions for the week of June 8–14, 2026.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "pattern-skills-governance-as-engineering-discipline",
+          "title": "Agent skills now need the same governance stack as code dependencies: versioning, security scanning, and quality gates",
+          "source": "GitHub (multi-repo)",
+          "date": "2026-06-13",
+          "primary_url": "https://github.com/addyosmani/agent-skills",
+          "summary": "Four independent signals converged this week: addyosmani/agent-skills (engineering lifecycle), mattpocock/skills (3.20x eval improvement with structured skills), NVIDIA/SkillSpector (64-pattern security scanner before install), and amElnagdy/guard-skills (fail-safe quality gates before merge). The pattern is now deployable end-to-end: define skills with engineering practices → scan skills for vulnerabilities before installation → gate agent output against quality thresholds before merge → audit rework tax post-sprint (commensa-audit). This is not a roadmap; all four tools exist and work today.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "tags": ["Agent Governance", "Skills Ecosystem", "Security", "Quality Gates"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "pattern-agent-cost-control-three-tier-model",
+          "title": "Production agent pipelines are converging on a three-tier model cost architecture: frontier model for design, local model for execution, frontier model for validation",
+          "source": "GitHub / Hacker News",
+          "date": "2026-06-14",
+          "primary_url": "https://github.com/sermakarevich/fleet",
+          "summary": "Two independent signals this week validated the same architecture. sermakarevich/fleet (Show HN, June 14): strong frontier model for task analysis and queue management, qwen3.6:36B on local GPU for parallel workers, strong model for validation and fix-task creation. The AI agent DN42 incident (HN, June 12): unconstrained frontier model given cloud credentials with no spend limits burned $6,531 in 24 hours — the opposite of this pattern. The three-tier approach decouples reasoning cost from execution cost and keeps production-scale parallelism affordable.",
+          "verified": true,
+          "verified_at": "2026-06-14T18:00:00Z",
+          "tags": ["Cost Architecture", "Local LLM", "Multi-Agent", "Ollama"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "pattern-meta-skills-design-before-build",
+          "title": "Meta-skills that design agent teams before execution are emerging as a distinct category above individual skill libraries",
+          "source": "GitHub (multi-repo)",
+          "date": "2026-06-13",
+          "primary_url": "https://github.com/revfactory/harness",
+          "summary": "revfactory/harness (meta-skill that generates agent teams and skill sets) and the parallel emergence of phuryn/pm-skills (65-skill PM lifecycle) and addyosmani/agent-skills (7-command engineering lifecycle) represent three levels of the same architecture: individual skills (mattpocock/skills), domain-specific skill libraries (pm-skills, agent-skills), and meta-skills that generate teams and skills for arbitrary domains (harness). The meta-skill layer is now deployable and open-source. An enterprise team can invoke harness to generate a purpose-built agent team for any internal workflow without designing the team architecture from scratch.",
+          "verified": true,
+          "verified_at": "2026-06-13T18:00:00Z",
+          "tags": ["Meta-Skills", "Agent Architecture", "Multi-Agent", "Team Design"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    }
+  ],
+
+  "index": [
+    {
+      "id": "idx-addyosmani-agent-skills",
+      "title": "addyosmani/agent-skills v0.6.1 — production-grade engineering lifecycle skills, 47.5k stars",
+      "source": "GitHub",
+      "date": "2026-06-11",
+      "primary_url": "https://github.com/addyosmani/agent-skills",
+      "score": 9
+    },
+    {
+      "id": "idx-nvidia-skillspector",
+      "title": "NVIDIA/SkillSpector — 64-pattern security scanner for agent skills, MCP tool poisoning detection, 5.3k stars",
+      "source": "GitHub",
+      "date": "2026-06-13",
+      "primary_url": "https://github.com/NVIDIA/SkillSpector",
+      "score": 9
+    },
+    {
+      "id": "idx-mattpocock-skills-112k",
+      "title": "mattpocock/skills — 18 composable agent skills, 3.20x eval improvement on /request-refactor-plan, 112k stars",
+      "source": "GitHub",
+      "date": "2026-05-28",
+      "primary_url": "https://github.com/mattpocock/skills",
+      "score": 8
+    },
+    {
+      "id": "idx-commensa-audit-27pct",
+      "title": "commensa-ai/commensa-audit — 27% rework tax on 162 agent PRs, git-history rework measurement tool",
+      "source": "GitHub / HN",
+      "date": "2026-06-10",
+      "primary_url": "https://github.com/commensa-ai/commensa-audit",
+      "score": 8
+    },
+    {
+      "id": "idx-revfactory-harness",
+      "title": "revfactory/harness — meta-skill team-architecture factory, 6 patterns, generates agent definitions + skills",
+      "source": "GitHub",
+      "date": "2026-05-29",
+      "primary_url": "https://github.com/revfactory/harness",
+      "score": 8
+    },
+    {
+      "id": "idx-chopratejas-headroom-wk2",
+      "title": "chopratejas/headroom — +14,266 weekly delta (returning), 20.5k total stars, context compression proxy",
+      "source": "GitHub",
+      "date": "2026-06-08",
+      "primary_url": "https://github.com/chopratejas/headroom",
+      "score": 9
+    },
+    {
+      "id": "idx-leonxlnx-taste-skill",
+      "title": "Leonxlnx/taste-skill — anti-slop agent skill, +7,597 weekly delta, 39.5k total stars",
+      "source": "GitHub",
+      "date": "2026-06-08",
+      "primary_url": "https://github.com/Leonxlnx/taste-skill",
+      "score": 7
+    },
+    {
+      "id": "idx-superloglabs-superlog",
+      "title": "superloglabs/superlog — open-source agentic observability, OTel ingestion, AI-driven self-healing",
+      "source": "GitHub",
+      "date": "2026-06-02",
+      "primary_url": "https://github.com/superloglabs/superlog",
+      "score": 7
+    },
+    {
+      "id": "idx-tastyeffectco-sandboxd",
+      "title": "tastyeffectco/sandboxd — self-hosted AI app-builder engine, isolated sandboxes, preview URLs, v0.1.1",
+      "source": "GitHub",
+      "date": "2026-06-07",
+      "primary_url": "https://github.com/tastyeffectco/sandboxd",
+      "score": 7
+    },
+    {
+      "id": "idx-sermakarevich-fleet",
+      "title": "sermakarevich/fleet — 3 coding agents non-stop, Python supervisor, beads task queue, local Ollama workers",
+      "source": "GitHub / HN",
+      "date": "2026-06-14",
+      "primary_url": "https://github.com/sermakarevich/fleet",
+      "score": 8
+    },
+    {
+      "id": "idx-sjh9714-agent-gate",
+      "title": "sjh9714/agent-gate — deterministic CI firewall for AI-generated PRs, scope check + permission escalation",
+      "source": "GitHub / HN",
+      "date": "2026-06-13",
+      "primary_url": "https://github.com/sjh9714/agent-gate",
+      "score": 7
+    },
+    {
+      "id": "idx-phuryn-pm-skills",
+      "title": "phuryn/pm-skills — 65 PM skills, 8 plugins, full product lifecycle, 11.8k stars",
+      "source": "GitHub",
+      "date": "2026-05-20",
+      "primary_url": "https://github.com/phuryn/pm-skills",
+      "score": 7
+    },
+    {
+      "id": "idx-amelngady-guard-skills",
+      "title": "amElnagdy/guard-skills — AI code quality gates, lint/coverage/docs failure detection before merge",
+      "source": "GitHub",
+      "date": "2026-06-06",
+      "primary_url": "https://github.com/amElnagdy/guard-skills",
+      "score": 7
+    },
+    {
+      "id": "idx-fxa3bah-onebrain",
+      "title": "fxa3bah/OneBrain — unified MCP memory over Obsidian + Ollama, 100% offline, $0 API cost",
+      "source": "GitHub",
+      "date": "2026-06-08",
+      "primary_url": "https://github.com/fxa3bah/OneBrain",
+      "score": 7
+    },
+    {
+      "id": "idx-diya73-mcp-hub",
+      "title": "DIYA73/mcp-hub — self-hosted MCP server registry and proxy, NestJS + PostgreSQL + Redis",
+      "source": "GitHub",
+      "date": "2026-06-08",
+      "primary_url": "https://github.com/DIYA73/mcp-hub",
+      "score": 7
+    },
+    {
+      "id": "idx-grooverlabs-fable",
+      "title": "grooverLab/fable — high-fidelity transcript memory for Claude Code, byte-identical recall, local MCP",
+      "source": "GitHub",
+      "date": "2026-06-08",
+      "primary_url": "https://github.com/grooverLab/fable",
+      "score": 6
+    },
+    {
+      "id": "idx-hn-ai-agent-burns-aws",
+      "title": "AI agent bankrupted operator scanning DN42 — $6,531 AWS bill in 24 hours, documented case study",
+      "source": "Hacker News",
+      "date": "2026-06-12",
+      "primary_url": "https://news.ycombinator.com/item?id=48500012",
+      "score": 8
+    },
+    {
+      "id": "idx-langgraph-124-timeouts",
+      "title": "LangGraph 1.2.4 — per-node timeouts, DeltaChannel, RunControl cooperative shutdown",
+      "source": "GitHub / PyPI",
+      "date": "2026-06-11",
+      "primary_url": "https://mer.vin/2026/06/langgraph-1-2-stateful-agent-orchestration-with-graphs-checkpoints-and-cli-deploy/",
+      "score": 8
+    },
+    {
+      "id": "idx-n8n-2260",
+      "title": "n8n 2.26.0 — AI workflow grounding, MCP OAuth token fix, sub-agent tool call resolution",
+      "source": "n8n",
+      "date": "2026-06-09",
+      "primary_url": "https://releasebot.io/updates/n8n",
+      "score": 7
+    },
+    {
+      "id": "idx-n8n-10k-templates",
+      "title": "n8n community library passes 10,000 templates — largest self-hostable AI automation library",
+      "source": "n8n",
+      "date": "2026-06-10",
+      "primary_url": "https://www.createwith.com/tool/n8n",
+      "score": 6
+    },
+    {
+      "id": "idx-crewai-52k-mcp-a2a",
+      "title": "CrewAI 52k stars — native MCP + A2A protocol support, Flows event-driven architecture",
+      "source": "GitHub",
+      "date": "2026-06-09",
+      "primary_url": "https://github.com/crewAIInc/crewAI",
+      "score": 7
+    },
+    {
+      "id": "idx-governance-stack-pattern",
+      "title": "Emerging pattern: agent governance stack (agent-skills + SkillSpector + guard-skills + agent-gate)",
+      "source": "GitHub (multi-repo)",
+      "date": "2026-06-13",
+      "primary_url": "https://github.com/addyosmani/agent-skills",
+      "score": 9
+    },
+    {
+      "id": "idx-three-tier-cost-pattern",
+      "title": "Emerging pattern: frontier model for design, local model for execution, frontier model for validation",
+      "source": "GitHub / Hacker News",
+      "date": "2026-06-14",
+      "primary_url": "https://github.com/sermakarevich/fleet",
+      "score": 9
+    },
+    {
+      "id": "idx-meta-skills-pattern",
+      "title": "Emerging pattern: meta-skills that design agent teams before execution (individual → library → meta)",
+      "source": "GitHub (multi-repo)",
+      "date": "2026-06-13",
+      "primary_url": "https://github.com/revfactory/harness",
+      "score": 8
+    },
+    {
+      "id": "idx-impl-governance-pipeline",
+      "title": "The agent governance stack: addyosmani/agent-skills + SkillSpector + guard-skills + agent-gate",
+      "source": "GitHub",
+      "date": "2026-06-13",
+      "primary_url": "https://github.com/addyosmani/agent-skills",
+      "score": 9
+    },
+    {
+      "id": "idx-impl-fleet-cost-arch",
+      "title": "fleet three-tier cost architecture: frontier design + local execution + frontier validation",
+      "source": "GitHub",
+      "date": "2026-06-14",
+      "primary_url": "https://github.com/sermakarevich/fleet",
+      "score": 8
+    },
+    {
+      "id": "idx-impl-sandboxd-app-builder",
+      "title": "tastyeffectco/sandboxd — infrastructure pattern for AI app-builder products",
+      "source": "GitHub",
+      "date": "2026-06-07",
+      "primary_url": "https://github.com/tastyeffectco/sandboxd",
+      "score": 7
+    },
+    {
+      "id": "idx-nousresearch-hermes-wk2",
+      "title": "NousResearch/hermes-agent — +11,747 weekly delta (returning), 188.8k total, Windows support confirmed",
+      "source": "GitHub",
+      "date": "2026-06-08",
+      "primary_url": "https://github.com/NousResearch/hermes-agent",
+      "score": 7
+    },
+    {
+      "id": "idx-affaan-ecc-wk2",
+      "title": "affaan-m/ECC — +9,301 weekly delta (returning), 211.8k total stars, highest-starred chart entry",
+      "source": "GitHub",
+      "date": "2026-06-08",
+      "primary_url": "https://github.com/affaan-m/ECC",
+      "score": 7
+    },
+    {
+      "id": "idx-superlog-self-heal-observability",
+      "title": "superloglabs/superlog — agentic observability, AI-driven incident grouping, self-healing layer",
+      "source": "GitHub",
+      "date": "2026-06-02",
+      "primary_url": "https://github.com/superloglabs/superlog",
+      "score": 7
+    },
+    {
+      "id": "idx-showhn-fleet-3agents-nonstop",
+      "title": "Show HN: I am running 3 coding agents non-stop — sermakarevich/fleet",
+      "source": "Hacker News",
+      "date": "2026-06-14",
+      "primary_url": "https://news.ycombinator.com/item?id=48520757",
+      "score": 8
+    }
+  ],
+
+  "suggested_refinements": {
+    "sources_to_add": [
+      "shareuhack.com weekly GitHub trending summaries — surfaced as a reliable primary source for verified weekly star deltas, replacing note.com/shali_note as the principal star-delta source",
+      "Tessl skills registry (tessl.io/registry) — provides eval scores and impact metrics for agent skills, the only platform currently publishing quantified agent skill performance data",
+      "showhn.buzzing.cc — aggregates Show HN posts in ranked order, faster for identifying high-signal Show HN items than the raw HN search API",
+      "trendshift.io/topics/mcp — active MCP server tracking with new entries by week, useful for surfacing early-stage MCP servers before they reach GitHub trending"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Agent skills security and supply-chain scanning — SkillSpector's arrival confirms this is now a standalone topic; track NVIDIA/SkillSpector releases and any competing scanners weekly",
+      "Agent rework tax measurement — commensa-audit is the first tool in this category; track adoption and any similar git-history analysis tools appearing",
+      "Three-tier agent cost architectures (frontier-design / local-execute / frontier-validate) — fleet documents the pattern; watch for other teams publishing their cost architectures"
+    ],
+    "topics_to_drop": [],
+    "notes": "The week's dominant signal is that agent skills have matured from 'interesting prompt patterns' to a software engineering discipline with the full stack: lifecycle standards (agent-skills, mattpocock/skills), security scanning (SkillSpector), quality gates (guard-skills), CI governance (agent-gate), and rework measurement (commensa-audit). Next week should check: (1) SkillSpector adoption and whether any competing scanners appear; (2) whether addyosmani/agent-skills crosses 50k stars; (3) any response from commensa-ai to the 27% rework finding — specifically whether install of quality gates reduces the tax; (4) whether LangGraph 1.2.4's per-node timeouts are adopted in production agent pipelines reporting reduced stuck-agent incidents."
+  }
+}

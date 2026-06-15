@@ -1,0 +1,535 @@
+{
+  "tab_id": "youtube",
+  "tab_name": "YouTube",
+  "subtitle": "Video Intelligence",
+  "icon": "Video",
+  "min_items": 12,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 1.0,
+    "items_total": 14,
+    "items_new": 14,
+    "items_returning": 0
+  },
+  "executive_summary": [
+    {
+      "headline": "Claude Fable 5 launched June 9 as the first publicly available Mythos-class model — then the US government suspended it 72 hours later under an export-control directive, creating the most significant AI governance flashpoint of the year",
+      "body": "Anthropic released Claude Fable 5 on June 9, making Mythos-class capability available to the public for the first time. The model features a 1-million-token context window, 128K max output, always-on adaptive thinking, and safety classifiers that automatically route flagged requests to Claude Opus 4.8. Stripe reported Fable 5 compressed a two-month codebase migration into a single day. At 5:21pm ET on June 12, Commerce Secretary Howard Lutnick issued an export-control directive requiring Anthropic to suspend all access to both Fable 5 and Mythos 5 for any foreign national — forcing a global shutdown for all customers to achieve compliance. Anthropic complied but publicly disagreed, stating the directive was based on a misunderstanding and warning the precedent would halt all frontier model deployments industry-wide. The suspension dominated YouTube coverage across all tiers for the remainder of the week.",
+      "primary_url": "https://www.anthropic.com/news/fable-mythos-access"
+    },
+    {
+      "headline": "Apple WWDC 2026 introduced Siri AI — a rebuilt assistant powered by a hybrid Apple Foundation Model / Google Gemini architecture — and OpenAI filed a confidential S-1 with the SEC on June 8 at a reported $852 billion valuation",
+      "body": "Apple's WWDC keynote on June 8 announced Siri AI, a fundamentally new version of Siri built on Apple Intelligence with personal context understanding, cross-platform continuity, onscreen awareness, and a dedicated conversational app. The underlying architecture combines Apple's own foundation models with Google Gemini, confirming the Apple-Google model partnership. Siri AI enters developer beta immediately; consumer rollout comes later in 2026. The EU and China are excluded from initial availability. Separately, OpenAI filed a confidential S-1 registration with the SEC on June 8 — one week after Anthropic filed its own — at a reported $852 billion valuation with Goldman Sachs, Morgan Stanley, and JPMorgan as lead underwriters. The parallel AI IPO filings mark the most consequential capital market event in the AI sector to date.",
+      "primary_url": "https://www.youtube.com/watch?v=hF8swzNR1-o"
+    },
+    {
+      "headline": "UC Berkeley's Agents' Last Exam benchmark established that today's best AI agents pass only 26% of real-world professional tasks — with even the top model scoring 0% on the hardest tier — recalibrating enterprise expectations for autonomous deployment",
+      "body": "UC Berkeley's Center for Responsible, Decentralized Intelligence released Agents' Last Exam (ALE), a benchmark covering 1,490 long-horizon professional tasks across 13 industry clusters and 55 subfields developed with 250+ domain experts. The highest-performing agent combination — Codex paired with GPT-5.5 — achieved a 26.2% overall pass rate and an 8.6% pass rate on the hardest Last Exam tier. Claude Code running Opus 4.7 scored 14.1% overall and 0% on the Last Exam tier. The failure mode analysis is the most useful data point for enterprise AI teams: 47% of failures come from wrong strategy at the outset, 31% from missing domain knowledge, and 22% from execution bugs. The key experimental finding is that swapping foundation models produced an 18-percentage-point swing while swapping harnesses produced only 6 — meaning model selection matters more than orchestration architecture for task success.",
+      "primary_url": "https://www.youtube.com/watch?v=O4OblK71ZUQ"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "apple-wwdc-2026-siri-ai-keynote",
+      "title": "Apple WWDC 2026 June 8: Introducing Siri AI and more",
+      "source": "Apple Developer",
+      "author": "Apple",
+      "date": "2026-06-08",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=hF8swzNR1-o",
+      "summary": "The official Apple WWDC 2026 keynote (1 hour 16 minutes) announces Siri AI — a fully rebuilt assistant powered by Apple Intelligence — as the centerpiece of iOS 27, iPadOS 27, and macOS Golden Gate. Key architectural facts: the underlying foundation model is a hybrid of Apple's in-house models and Google Gemini; Siri AI features personal context understanding (accessing messages, emails, and photos to answer in-context questions), cross-platform continuity, onscreen awareness, Visual Intelligence via the camera, a dedicated conversational Siri app, and integrated writing tools. Developer beta begins June 8; consumer rollout is later in 2026. Siri AI is not available in the EU or China at launch. The Apple-Google model partnership is confirmed: Gemini provides the world knowledge and reasoning layer while Apple's private compute handles on-device personal data. The practical enterprise implication is that Apple Intelligence is now a hybrid cloud-on-device agent platform controlled by Apple's privacy infrastructure, not a chatbot wrapper.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-06-14T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Apple", "Siri AI", "WWDC 2026", "Apple Intelligence", "Google Gemini", "iOS 27", "enterprise AI"],
+      "category": "Keynote",
+      "key_takeaways": [
+        "The Apple-Google model partnership is now confirmed at the architecture level: Siri AI is built on Apple Foundation Models for on-device personal data tasks and Google Gemini for world knowledge and reasoning. For enterprise teams evaluating the AI assistant landscape, this means Apple Intelligence is not a first-party model story — it is a hybrid that routes queries between Apple's private compute and Google's cloud model. Data governance teams need to understand which query types leave the Apple secure enclave and reach Gemini infrastructure.",
+        "The 'personal context understanding' capability is the strategic shift: Siri AI can now access the content of messages, emails, and photos in-context, not just calendar and contact metadata. An enterprise running iOS 27 on managed devices should audit which employee data classes Siri AI will now be permitted to read by default, and determine whether MDM policy updates are needed before the consumer rollout later in 2026.",
+        "The EU and China exclusions are governance signals, not just market limitations: Siri AI's absence from the EU at launch reflects the regulatory friction between Apple Intelligence's data architecture and the EU AI Act (which takes full effect in August 2026) and GDPR. Enterprise teams with EU operations or employees should flag that the Siri AI experience on managed iOS 27 devices will differ between EU and non-EU jurisdictions, requiring separate MDM profiles or explicit feature restriction policies."
+      ],
+      "suggested_actions": [
+        "Review Apple's developer documentation for Apple Intelligence and Siri AI (available from June 8 on developer.apple.com) to determine which data classes Siri AI accesses on managed devices and whether current MDM policies allow or restrict that access before the broader consumer rollout.",
+        "Map the Apple-Google Gemini data flow against your organization's data classification policy: identify any data class (HR records, financial data, customer PII) that employees might reference in Siri AI queries that would reach Google Gemini infrastructure, and determine whether that constitutes a permitted third-party data transfer under your governance framework.",
+        "Flag the EU exclusion to any teams with European operations: Siri AI will not be available on EU-based iOS 27 devices at launch, meaning EU employees will have a materially different Apple Intelligence experience than US-based employees. Assess whether this creates a workflow parity issue for any cross-regional teams."
+      ]
+    },
+    {
+      "id": "anthropic-fable-mythos-suspension-contextian",
+      "title": "The US Government Banned Claude Mythos 5 and Fable 5?!",
+      "source": "THE CONTEXTIAN",
+      "author": "THE CONTEXTIAN",
+      "date": "2026-06-13",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=fE1CLgyIyIs",
+      "summary": "A rigorous 13-minute legal and technical analysis of the June 12 export-control directive that forced Anthropic to suspend Claude Fable 5 and Mythos 5 globally. The video covers: the directive timeline (5:21pm ET, June 12; both models disabled before midnight by Anthropic), the export-control mechanism used (the EAR's deemed-export doctrine, designed for hardware and discrete data transfers — not deployed AI software), the stated trigger (a rival company's claim of a Fable 5 jailbreak, which Anthropic reviewed and found to involve previously known minor vulnerabilities also reachable by GPT-5.5 without any bypass), the procedural gap (no Federal Register notice, no disclosed administrative review process, no pre-deprivation hearing, no clear appeal pathway), and the structural precedent (if a contested jailbreak claim is sufficient to compel a global model shutdown, the same mechanism applies to any frontier model). Anthropic complied but publicly called the action a 'misunderstanding' and stated it was working to restore access. Sources cited: anthropic.com/news/fable-mythos-access, crowell.com, sidley.com. This is the most rigorous publicly available analysis of the legal mechanism and its enterprise governance implications.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-06-14T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Anthropic", "Claude Fable 5", "Claude Mythos 5", "export controls", "AI governance", "enterprise risk", "US government"],
+      "category": "Legal / Governance Analysis",
+      "key_takeaways": [
+        "The EAR deemed-export doctrine was designed for hardware and discrete data transfers — not deployed AI software running on cloud infrastructure. The video's legal analysis (citing Crowell and Sidley commentary) is the clearest explanation of why the regulatory instrument used here has no established precedent for AI models and why Anthropic's compliance was not an admission that the action was legally correct. Enterprise teams building on Anthropic models should track the restoration timeline and any formal rule-making that follows.",
+        "The operational reality of the suspension is the most concrete enterprise risk signal of the week: Anthropic received a directive at 5:21pm ET and disabled models for all global customers before midnight — with no appeal pathway and no pre-deprivation process. Any enterprise workload that ran on Claude Fable 5 or Mythos 5 was disrupted with no advance notice. Model dependency governance — specifically, the question of which production workloads have a tested fallback to a different model — is now a board-level supply chain risk, not just an engineering contingency.",
+        "Anthropic's public disagreement while complying sets a precedent for enterprise vendors: the company explicitly stated it believes the action was a misunderstanding and that the standard applied would halt all frontier deployments industry-wide. The vendor's public posture creates room for customers to ask, in procurement and contract negotiations, what SLA commitments exist for model availability and what customer remedies apply when availability is interrupted by a government directive."
+      ],
+      "suggested_actions": [
+        "Audit which production workloads currently depend on Claude Fable 5 or Mythos 5 (or would immediately adopt them on availability restoration) and confirm that each has a tested fallback to a different model — either Claude Opus 4.8, GPT-5.5, or an internally-hosted alternative — with documented rollback procedures that do not require engineering intervention to activate.",
+        "Review your vendor dependency and business continuity policy to determine whether 'government-directed model suspension' is covered as a force majeure event under existing Anthropic enterprise agreements, and flag any gaps to your legal and procurement teams before the next contract renewal.",
+        "Monitor anthropic.com/news for access restoration updates, and subscribe to the Anthropic status page for real-time operational alerts — the most reliable signal for when Fable 5 access returns will come from official Anthropic channels, not third-party coverage."
+      ]
+    },
+    {
+      "id": "matt-wolfe-insane-week-ai-news-june-12",
+      "title": "AI News: An INSANE Week… Here's What Matters",
+      "source": "Matt Wolfe",
+      "author": "Matt Wolfe",
+      "date": "2026-06-12",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=nydHKXjwu0U",
+      "summary": "Matt Wolfe's 30-minute weekly synthesis covers every major story of June 8–12, 2026, with primary source links for all claims. Chapters with timestamps: Fable 5 and Mythos 5 launch and technical capabilities (0:07), live coding demos in Fable 5 — one-shot game clone, YouTube clone, B-roll generator (5:35), Apple Intelligence and Siri AI breakdown with Gemini integration confirmed (10:43), Google NotebookLM upgrade to Gemini 3.5 with code execution in secure cloud sandbox and 100+ curated skills (18:25), Gemini 3.5 Live Translate for real-time speech translation coming to Google Meet and Translate (19:45), DiffusionGemma — Google's text-generation diffusion model optimized for local device speed (21:45), Dario Amodei's policy manifesto calling for mandatory third-party safety testing and government power to block unsafe deployments (23:56), Sam Altman and Jakub Pachocki's AGI plan including an automated AI researcher target of March 2028 (25:40), ChatGPT gaining ability to draft and send emails directly (27:07), OpenAI IPO S-1 filing (27:27), SpaceX $75B IPO (27:46), Coinbase for Agents (28:23). All primary source URLs are listed in the video description.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-14T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Matt Wolfe", "weekly AI news", "Claude Fable 5", "Apple Intelligence", "Google Gemini", "NotebookLM", "OpenAI IPO"],
+      "category": "Weekly Intelligence",
+      "key_takeaways": [
+        "The Fable 5 live coding demos (timestamps 5:35–10:42) are the most useful section for enterprise teams evaluating the model's actual capability floor before the suspension: Wolfe demonstrates one-shot game cloning, a YouTube interface clone, and a B-roll video generator from article text — each completed in a single prompt. The demos are reproducible and serve as a practical benchmark for what 'Mythos-class' means on representative creative-technical tasks before any enterprise benchmarking can occur.",
+        "Google NotebookLM's upgrade to Gemini 3.5 with a secure cloud sandbox for code execution is the underreported enterprise feature of the week: the 'secure cloud computer' inside NotebookLM means teams can now run Python against uploaded documents inside a Google-managed environment without deploying any infrastructure. For an enterprise data team that cannot install local Python tooling on managed devices, this is a compliant browser-based data analysis environment available today.",
+        "Dario Amodei's policy manifesto (anthropic.com posted June 11) calling for mandatory third-party safety testing and government power to block unsafe model deployments is both a regulatory signal and a context clue for the June 12 suspension: Amodei's public advocacy for government intervention in AI safety occurred one day before a government directive disrupted Anthropic's own model access. Enterprise teams evaluating Anthropic's policy posture should read the manifesto alongside the suspension statement — they present conflicting messages on the appropriate scope of government authority."
+      ],
+      "suggested_actions": [
+        "Watch the Fable 5 coding demo section (5:35–10:42) with a technical team member and identify which class of tasks — one-shot prototypes, document processing, multi-file code migrations — would be the highest-value internal use cases if Fable 5 access is restored, so that evaluation begins immediately on restoration rather than requiring another planning cycle.",
+        "Evaluate NotebookLM's Gemini 3.5 upgrade for your team's document analysis and research workflows: the combination of 'upload documents, run Python on them in a secure cloud sandbox' addresses the most common enterprise barrier to local AI data analysis tools. Test it on a representative internal analysis task before the next team sprint.",
+        "Read Dario Amodei's policy manifesto (darioamodei.com/post/policy-on-the-ai-exponential) in parallel with Anthropic's suspension statement (anthropic.com/news/fable-mythos-access) to form an independent view on how Anthropic's public regulatory advocacy aligns with its vendor reliability posture — this is relevant context for any board or risk committee briefing on AI vendor risk."
+      ]
+    },
+    {
+      "id": "ben-ai-claude-managed-agents-deployment",
+      "title": "Claude Managed Agents Will Change How You Sell AI Forever",
+      "source": "Ben AI",
+      "author": "Ben AI",
+      "date": "2026-06-09",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=ojmQ3t2LfVo",
+      "summary": "A 28-minute hands-on walkthrough of Claude Managed Agents, Anthropic's production agent deployment platform that became generally available on June 9 alongside Fable 5. The video covers: what managed agents are (pre-packaged agent workflows with skills, MCPs, memory, sub-agents, and context, deployed through the Claude API — all the features available in Claude Code or Claude Co-work, but packaged for external deployment and triggered via webhook, schedule, or event); six concrete deployment patterns (custom web app, SaaS, Slack/WhatsApp, n8n/Make/Zapier automation, Notion/ClickUp embedded agent, autonomous scheduled workflow); the business model angle (packaging workflows as productized services without exposing the underlying IP); and a detailed walkthrough of the Console, skills, credential vaults, memory stores, and the 'Dream' feature (nightly background synthesis of chat history into persistent memory stores). Cost structure: API list price plus $0.08 per hour of agent execution time. Key build recommendation: construct managed agents inside Claude Code rather than the managed agent dashboard, which the video documents as limited for complex workflows.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-14T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["Claude Managed Agents", "Anthropic", "enterprise agents", "deployment", "automation", "MCP", "scheduled agents"],
+      "category": "Tutorial / Product Walkthrough",
+      "key_takeaways": [
+        "Managed Agents' scheduled deployments (now GA as of June 9) resolve the primary operational gap for enterprise agent deployments: agents can now run on a cron schedule without an external scheduler or a standing human trigger. The 'Dream' feature — agents reviewing their own chat history nightly and persisting key learnings to a memory store — provides a simple path to agents that improve on a recurring task without requiring a re-prompt cycle. This is the architectural primitive for any workflow where the agent needs to learn from prior runs.",
+        "The credential vault feature (GA as of June 9) is the enterprise security enabler that makes Managed Agents viable for regulated environments: API keys, tokens, and service credentials are stored in an encrypted vault and injected into the agent's sandbox at runtime, meaning secrets never appear in prompt text or session logs. For an enterprise with strict secrets management policies, this removes the most common objection to deploying agents against internal APIs — credential exposure in plaintext prompt context.",
+        "The cost structure ($0.08 per agent execution hour on top of API token costs) makes managed agents financially predictable for scoped business workflows in a way that open-ended LLM API usage is not: a nightly summarization agent running for 10 minutes costs $0.013 in execution time plus token costs. Enterprise teams can model total agent operating cost against current human task cost before committing to production deployment."
+      ],
+      "suggested_actions": [
+        "Identify one recurring internal task that currently requires a human trigger — a weekly report compilation, a daily digest from multiple sources, a periodic compliance check — and prototype it as a Claude Managed Agent with a cron schedule. The GA of scheduled deployments means this is buildable today inside the Claude Console without external scheduling infrastructure.",
+        "Evaluate the credential vault feature against your current secrets management policy: if your team has been holding off on agent deployments because of concerns about API keys appearing in prompt context, the vault now provides an Anthropic-managed encrypted store. Confirm with your security team whether Anthropic's vault architecture (documented at platform.anthropic.com) meets your secrets management requirements.",
+        "Map any planned agent deployment against the $0.08/hour execution cost plus API token cost before committing to production: for high-frequency or long-running agents, the execution cost component becomes significant. Run a cost estimate against the equivalent human task cost to establish the ROI threshold before piloting."
+      ]
+    },
+    {
+      "id": "ale-benchmark-uc-berkeley-agents-last-exam",
+      "title": "Agents' Last Exam (Jun 2026)",
+      "source": "AI Paper Slop",
+      "author": "AI Paper Slop",
+      "date": "2026-06-07",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=O4OblK71ZUQ",
+      "summary": "A 19-minute explainer of the Agents' Last Exam (ALE) benchmark paper (arxiv.org/abs/2606.05405), published by UC Berkeley's Center for Responsible, Decentralized Intelligence. ALE evaluates AI agents on 1,490 long-horizon professional tasks across 13 industry clusters and 55 subfields, built with 250+ domain experts. The benchmark uses real Linux and Windows VMs, verifiable outcomes (not LLM-as-judge), and deterministic grading wherever possible. Performance results: Codex + GPT-5.5 achieves 26.2% overall (8.6% on the hardest Last Exam tier); Claude Code + Opus 4.7 achieves 14.1% overall (0% on Last Exam tier). The key experimental finding: swapping foundation models produced an 18-percentage-point performance swing; swapping orchestration harnesses produced only a 6-point swing — meaning model choice matters more than framework choice for agent task success. Failure mode breakdown: 47% wrong strategy at outset, 31% missing domain knowledge, 22% execution bugs. The paper explicitly frames the benchmark as a measure of 'economic value delivered by AI agents in real professional workflows' — distinguishing it from capability benchmarks like MMLU or SWE-Bench.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-06-14T00:00:00Z",
+      "recurrence": "new",
+      "tags": ["ALE benchmark", "AI agents", "enterprise AI", "evaluation", "GPT-5.5", "Claude Code", "professional workflows"],
+      "category": "Research / Benchmarks",
+      "key_takeaways": [
+        "The 26.2% pass rate by the top agent combination on real professional tasks — against tasks designed by domain experts with verifiable outcomes — is the most useful calibration data point for enterprise AI teams planning agentic deployment timelines. It does not mean agents are 'not ready'; it means they are most reliable on near-term tier tasks (pass rates around 30%) and systematically fail on the hardest tier (0% for the best open combination). Deployment strategy should match task difficulty to current capability, not assume uniform competence.",
+        "The 47% failure rate from 'wrong strategy at the outset' — not execution bugs or missing knowledge — is the primary engineering insight for enterprise agent builders: the most common failure mode is the agent choosing an incorrect high-level approach before any tool call is made. Mitigations include structured task decomposition prompts, pre-flight planning steps, and human-in-the-loop checkpoints at strategy confirmation before execution begins.",
+        "The finding that model choice produces a 3x larger performance swing than harness/framework choice inverts the common enterprise assumption that investing in orchestration architecture is the path to better agent outcomes. For teams currently evaluating LangGraph, CrewAI, or custom orchestration frameworks, this data suggests spending the same effort on model evaluation and prompt engineering would produce larger gains."
+      ],
+      "suggested_actions": [
+        "Download the ALE paper (arxiv.org/abs/2606.05405) and use the industry cluster and task taxonomy to identify which of the 13 industry clusters and 55 subfields map most closely to your team's planned agent deployment use cases. The benchmark's 150 public tasks provide a ready-made evaluation set for testing current model capability on representative work.",
+        "Run the 'strategy failure' audit on any agentic workflow currently in production or pilot: instrument the workflow to capture the agent's high-level approach decision before execution begins, and review whether the chosen strategy matches domain expert expectations for a random sample of 20 recent runs. If wrong-strategy failures account for more than 40% of errors, implement a structured planning step before tool execution.",
+        "Use the 3:1 model-vs-harness performance differential as the decision criterion for where to focus the next engineering quarter: if your team is planning to invest in orchestration framework improvements, redirect that capacity to model evaluation and prompt engineering first, and measure whether the same task pass rate improvement can be achieved at lower engineering cost."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "tool_updates",
+      "title": "Tool & Model Updates",
+      "description": "Major launches and capability changes shown on YouTube this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "claude-fable-5-launch-overview",
+          "title": "Claude Fable 5 and Claude Mythos 5 — Anthropic's Mythos-Class Tier Goes Public",
+          "source": "Anthropic",
+          "author": "Anthropic",
+          "date": "2026-06-09",
+          "platform": "web",
+          "primary_url": "https://www.anthropic.com/news/fable-mythos-access",
+          "summary": "Claude Fable 5 launched June 9 as a Mythos-class model made safe for general use: 1-million-token context window, 128K max output, always-on adaptive thinking, and safety classifiers that automatically fall back to Claude Opus 4.8 for flagged requests in cybersecurity, biology, chemistry, and model distillation domains. Claude Mythos 5 — the same underlying model with some safeguards removed — was simultaneously released to Project Glasswing participants (vetted cyber defenders and critical infrastructure operators). Both models cost $10 per million input tokens and $50 per million output tokens. Fable 5 was included at no extra cost on Pro, Max, Team, and seat-based Enterprise plans through June 22. Claude Managed Agents (scheduled deployments, credential vaults, session webhooks) went GA simultaneously. On June 12, the US government issued an export-control directive suspending both Fable 5 and Mythos 5 access globally.",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Claude Fable 5", "Claude Mythos 5", "Anthropic", "model launch", "export controls"],
+          "category": "Model Launch",
+          "enterprise_translation": "Fable 5's safety classifier architecture is the enterprise-relevant design choice: the classifier automatically routes flagged requests to Opus 4.8 without user intervention, meaning the enterprise team does not have to manage prompt-level filtering for the five restricted domains. For a team with sensitive workflow categories (cyber tooling, chemistry, biology), the classifier acts as a built-in governance layer. The immediate enterprise action before restoration: audit which planned use cases touch the restricted domains, and determine whether automatic Opus 4.8 fallback is acceptable for those specific workflows or requires a separate routing policy."
+        },
+        {
+          "id": "google-notebooklm-gemini-35-upgrade",
+          "title": "NotebookLM Upgraded to Gemini 3.5 with Secure Cloud Code Execution",
+          "source": "Google",
+          "author": "Google",
+          "date": "2026-06-11",
+          "platform": "web",
+          "primary_url": "https://blog.google/innovation-and-ai/products/notebooklm/better-research-notebooklm/",
+          "summary": "Google upgraded NotebookLM to run on Gemini 3.5, adding a secure cloud computer for writing and executing code directly inside a research session, 100+ curated skills, and more output format options. The secure cloud sandbox allows users to upload documents and run Python analysis against them in a managed environment — without any local Python installation or external Jupyter infrastructure. Covered in Matt Wolfe's June 12 weekly summary (youtube.com/watch?v=nydHKXjwu0U, timestamp 18:25) and confirmed at blog.google. The upgrade makes NotebookLM a browser-based data analysis environment, not just a document summarization tool.",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Google", "NotebookLM", "Gemini 3.5", "data analysis", "enterprise tools"],
+          "category": "Platform Update",
+          "enterprise_translation": "The secure cloud sandbox inside NotebookLM is the feature most directly applicable to enterprise teams blocked from installing local AI tooling by IT policy. A team that cannot run Jupyter notebooks or local Python on managed devices can now upload a dataset or document corpus into NotebookLM and run Python analysis in a Google-managed cloud environment with no local installation. The 30-day pilot: identify one recurring analysis task — quarterly data review, competitive pricing file, contract clause extraction — that currently requires manual Python scripting, and test whether NotebookLM's code execution sandbox produces equivalent output."
+        },
+        {
+          "id": "chatgpt-dreaming-v3-memory-overhaul",
+          "title": "ChatGPT Dreaming V3 — Asynchronous Background Memory Synthesis",
+          "source": "OpenAI",
+          "author": "OpenAI",
+          "date": "2026-06-04",
+          "platform": "web",
+          "primary_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "summary": "OpenAI shipped ChatGPT Dreaming V3 on June 4, replacing the previous manually-curated persistent memory with an asynchronous background synthesis engine. The system evaluates past chat histories, files, and connected apps in the background to build a dynamic, long-term memory state. Described in Allied Angels' June 12 recap (youtube.com/watch?v=fFUgqCLyQK8, timestamp 1:33): the architecture is compute-efficient, reduces context staleness, and avoids the previous problem of stale or incorrect manual memory entries persisting indefinitely. Rolling out to Plus and Pro users with twice the memory capacity of the prior implementation. Memory is now maintained by the model's background synthesis, not by user curation.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["OpenAI", "ChatGPT", "memory", "Dreaming V3", "enterprise AI"],
+          "category": "Platform Update",
+          "enterprise_translation": "Dreaming V3's background synthesis architecture changes the enterprise data governance question for ChatGPT Enterprise: the model is now actively inferring and persisting information from past conversations without user confirmation. For enterprise compliance teams, this introduces a new class of data retention question — the model may infer and store organizational context from historical sessions that users did not explicitly intend to persist. Enterprise workspace administrators should review whether the Dreaming V3 rollout applies to ChatGPT Enterprise accounts and, if so, what controls exist to audit or clear the synthesized memory store."
+        }
+      ]
+    },
+    {
+      "section_id": "tutorials",
+      "title": "Tutorials",
+      "description": "How-tos worth replicating this week, with key takeaways for technical teams",
+      "layout": "list",
+      "items": [
+        {
+          "id": "ben-ai-managed-agents-build-tutorial",
+          "title": "Building and Deploying Claude Managed Agents — Console, Code, and Production Patterns",
+          "source": "Ben AI",
+          "author": "Ben AI",
+          "date": "2026-06-09",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=ojmQ3t2LfVo",
+          "summary": "The hands-on tutorial section of Ben AI's Managed Agents video (chapters starting at 10:39) covers the Claude Console interface in detail: how to create agents, configure system prompts, attach built-in tools and skills, set up credential vaults for API key injection, configure memory stores, and enable the Dream feature for nightly background learning. The build recommendation is explicit: use Claude Code to build managed agents programmatically, then deploy via the API. The tutorial demonstrates deploying an agent to a custom Vercel dashboard, setting up n8n triggers, and configuring a Slack chat interface. The credential vault walkthrough (adding API keys that become available as environment variables inside the agent sandbox) is the most operationally novel section for teams evaluating production deployment.",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Claude Managed Agents", "tutorial", "Claude Code", "production deployment", "n8n", "credential vault"],
+          "category": "Tutorial",
+          "key_takeaways": [
+            "The build-in-Claude-Code-then-deploy pattern is the recommended production path: the managed agent dashboard is sufficient for simple workflow configuration but does not support the complex multi-step agent logic needed for enterprise workflows. Building the agent logic inside Claude Code and deploying via the API preserves full programmatic control, versioning, and testability.",
+            "The Dream feature (nightly background synthesis of session history into persistent memory stores) has a concrete enterprise application for recurring analysis workflows: configure Dream to run at a scheduled off-peak time so agents that run against weekly operational data accumulate institutional context over time without requiring manual memory curation or re-prompting on each run.",
+            "The credential vault is the single most important feature for regulated enterprise deployments: API keys, tokens, and service credentials injected at runtime via the vault never appear in prompt text, session logs, or outputs. This directly addresses the most common IT objection to agent deployments against internal APIs."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases",
+      "description": "Agents and automation in real workflows — with enterprise translations",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "stripe-fable-5-codebase-migration-case",
+          "title": "Stripe Migrated a 50-Million-Line Ruby Codebase with Claude Fable 5 in One Day",
+          "source": "techcoffeehouse.com",
+          "author": "techcoffeehouse.com",
+          "date": "2026-06-14",
+          "platform": "web",
+          "primary_url": "https://techcoffeehouse.com/2026/06/14/anthropic-claude-fable-5-us-government-shutdown/",
+          "summary": "Tech Coffee House's detailed report on the Fable 5 launch and suspension documents the Stripe case study cited by Anthropic: Stripe used Claude Fable 5 to execute a codebase-wide migration across a 50-million-line Ruby codebase in a single day — a task the Stripe team estimated would otherwise require a full engineering team working for more than two months. The case study is the highest-signal enterprise deployment data point for Fable 5's practical capability. It represents a 60x compression of engineering time on a specific, well-scoped migration task. The article also covers Fable 5's safety classifier architecture, the suspension timeline, the government's jailbreak claim, and Anthropic's response in full.",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["Claude Fable 5", "Stripe", "codebase migration", "enterprise AI", "software engineering"],
+          "category": "Enterprise Case Study",
+          "enterprise_translation": "The Stripe 50-million-line Ruby migration is the most concrete enterprise ROI data point for Fable-class autonomous coding: two months of team engineering time compressed to one day on a well-defined migration task. The replicable enterprise pattern is scope-bounded codebase transformation — not open-ended greenfield development. An enterprise team with a large legacy codebase targeted for language migration, framework upgrade, or compliance remediation (updating deprecated API calls, applying new logging standards across a large codebase) can evaluate whether a similar task structure would produce comparable compression. The 30-day experiment: scope one class of systematic code transformation across your codebase, run it against a representative 5% sample using Claude Code today, and measure actual time savings before committing to full deployment."
+        },
+        {
+          "id": "openai-ipo-s1-enterprise-implications",
+          "title": "OpenAI & Anthropic Both Filed for IPO This Week | AI Money Minute | June 9, 2026",
+          "source": "AI Money Minute",
+          "author": "AI Money Minute",
+          "date": "2026-06-09",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=QGjfQtI9qOg",
+          "summary": "A four-minute financial news summary covering the parallel IPO filings: OpenAI filed a confidential S-1 with the SEC on June 8 at a reported $852 billion valuation, with Goldman Sachs, Morgan Stanley, and JPMorgan as lead underwriters — one week after Anthropic filed its own S-1 at a reported $965 billion valuation. The video notes that neither company has set a public offering date, and that both filings are confidential, meaning no public S-1 has yet been filed. The video frames the parallel filings as 'the most consequential week for AI on Wall Street.' The combined implied market cap of both companies at the time of filing exceeds $1.8 trillion.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T00:00:00Z",
+          "recurrence": "new",
+          "tags": ["OpenAI", "Anthropic", "IPO", "S-1", "SEC", "enterprise risk", "vendor governance"],
+          "category": "Industry / Capital Markets",
+          "enterprise_translation": "Both Anthropic and OpenAI moving toward public markets within the same week has direct enterprise vendor governance implications: public companies face SEC disclosure obligations, shareholder pressure on profitability, and a reduced tolerance for commercial terms that prioritize strategic relationships over unit economics. Enterprise teams with multi-year Anthropic or OpenAI contracts should anticipate pricing and licensing renegotiations as both companies optimize for public-market metrics. The 90-day action: review current Anthropic and OpenAI enterprise agreements for auto-renewal terms and price-change clauses, and assess whether current pricing would hold through a post-IPO pricing review cycle."
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Patterns observed across multiple videos this week",
+      "layout": "list",
+      "items": []
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "The US government's export-control action on Fable 5 and Mythos 5 reveals that frontier AI model availability is now a policy risk variable, not just a technical one — and enterprise AI continuity planning has not caught up",
+      "evidence": "The Contextian's legal analysis, Anthropic's official statement (anthropic.com/news/fable-mythos-access), Matt Wolfe's weekly recap, and multiple secondary commentators all converged on the same operational conclusion: a single government directive issued at 5:21pm ET on a Friday disabled globally deployed AI models for hundreds of millions of users before midnight. No enterprise BCP framework in common use treats 'vendor model suspended by government directive with no advance notice' as a covered risk event. The legal analysis (citing Crowell and Sidley) identifies that the EAR deemed-export doctrine used here has no established precedent for cloud-deployed AI software — meaning the mechanism's scope and appeal pathway are genuinely unclear. Anthropic's public disagreement while complying creates a novel vendor posture: the company is simultaneously compliant with the directive and publicly contesting its legitimacy.",
+      "what_to_watch": "Whether Anthropic restores Fable 5 and Mythos 5 access and on what timeline, and whether the action triggers formal rule-making that clarifies the export-control framework for AI model weights. If restoration takes longer than two weeks, expect enterprise procurement teams to begin treating model availability as a negotiable SLA term in AI vendor agreements."
+    },
+    {
+      "pattern": "Both foundation model providers and enterprise adopters are rapidly converging on Managed/Agentic deployment patterns — and the governance gap between current enterprise policy and production agent behavior is widening faster than compliance functions are tracking",
+      "evidence": "Ben AI's Managed Agents tutorial (June 9) demonstrated production agent deployments with scheduled runs, persistent memory, and automated email and Slack outputs — all within existing enterprise SaaS perimeters. The ALE benchmark (June 8 arxiv publication, June 7 YouTube coverage) established that the best current agents complete 26% of real professional tasks correctly on real operating systems. The Fable 5 Stripe case study showed a 60x task time compression on a bounded migration scope. Across all three sources, the same pattern emerges: agents are being deployed into production workflows before organizations have documented what governance controls are needed for persistent-memory, scheduled, autonomous agents that interact with internal APIs and external services.",
+      "what_to_watch": "Whether any of the KPMG, PwC, or other Big Four firm deployments of Claude Co-work and Managed Agents (announced in prior weeks) produce public documentation of their governance frameworks for production agent deployments — the first enterprise to publish a replicable compliance architecture for managed agents will set the de facto standard."
+    },
+    {
+      "pattern": "Multiple AI policy initiatives launched simultaneously this week create an overlapping regulatory landscape that enterprise legal and compliance teams need to map before Q4 2026",
+      "evidence": "The Great American AI Act discussion draft (June 4, covered in the Architecture of Intent video from June 8, youtube.com/watch?v=zBmHEZhbRb0) introduces federal preemption of state AI development laws, mandatory frontier model auditing, and required disclosure when AI is a 'substantial factor' in mass layoffs. The EU AI Act takes full effect August 2026. Dario Amodei's June 11 policy manifesto calls for mandatory third-party safety testing and government power to block unsafe deployments — and was published one day before the government exercised exactly that power against Anthropic. The simultaneous presence of a bipartisan US legislative draft, a live EU regulation, and an active export-control mechanism creates regulatory uncertainty that is not captured in any single framework.",
+      "what_to_watch": "Whether the Great American AI Act advances beyond discussion draft status before the EU AI Act's August 2026 full-enforcement date, and whether the Fable 5/Mythos 5 suspension accelerates congressional urgency to establish a statutory process for AI model access restrictions — removing the current ambiguity about whether the Commerce Department can act unilaterally under existing EAR authority."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Claude Fable 5 ranked #2 out of 123 AI models worldwide at launch",
+      "reason": "This claim appears in multiple consumer-oriented YouTube summaries (including the 'Abi' channel video at youtube.com/watch?v=1J2xGUSpLsU) but was not traced to a specific leaderboard or benchmark source with a verifiable URL at the time of research. The Anthropic system card and launch announcement do not use this specific ranking. Retained in the index but not cited in Top Picks summaries without a primary source for the specific claim.",
+      "attempted_url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+    }
+  ],
+  "index": [
+    {
+      "id": "apple-wwdc-siri-ai-index",
+      "title": "Apple WWDC 2026 June 8: Introducing Siri AI and more",
+      "source": "Apple Developer",
+      "author": "Apple",
+      "date": "2026-06-08",
+      "primary_url": "https://www.youtube.com/watch?v=hF8swzNR1-o",
+      "score": 9.0
+    },
+    {
+      "id": "anthropic-fable-mythos-suspension-index",
+      "title": "The US Government Banned Claude Mythos 5 and Fable 5?!",
+      "source": "THE CONTEXTIAN",
+      "author": "THE CONTEXTIAN",
+      "date": "2026-06-13",
+      "primary_url": "https://www.youtube.com/watch?v=fE1CLgyIyIs",
+      "score": 9.0
+    },
+    {
+      "id": "claude-fable-5-launch-anthropic-index",
+      "title": "Anthropic Statement: US Government Directive to Suspend Fable 5 and Mythos 5",
+      "source": "Anthropic",
+      "author": "Anthropic",
+      "date": "2026-06-12",
+      "primary_url": "https://www.anthropic.com/news/fable-mythos-access",
+      "score": 9.0
+    },
+    {
+      "id": "matt-wolfe-insane-week-index",
+      "title": "AI News: An INSANE Week… Here's What Matters",
+      "source": "Matt Wolfe",
+      "author": "Matt Wolfe",
+      "date": "2026-06-12",
+      "primary_url": "https://www.youtube.com/watch?v=nydHKXjwu0U",
+      "score": 8.0
+    },
+    {
+      "id": "ben-ai-managed-agents-index",
+      "title": "Claude Managed Agents Will Change How You Sell AI Forever",
+      "source": "Ben AI",
+      "author": "Ben AI",
+      "date": "2026-06-09",
+      "primary_url": "https://www.youtube.com/watch?v=ojmQ3t2LfVo",
+      "score": 8.0
+    },
+    {
+      "id": "ale-benchmark-index",
+      "title": "Agents' Last Exam (Jun 2026)",
+      "source": "AI Paper Slop",
+      "author": "AI Paper Slop",
+      "date": "2026-06-07",
+      "primary_url": "https://www.youtube.com/watch?v=O4OblK71ZUQ",
+      "score": 8.0
+    },
+    {
+      "id": "stripe-fable-codebase-index",
+      "title": "Anthropic Releases Claude Fable 5 — Then the Government Bans It",
+      "source": "Tech Coffee House",
+      "author": "Tech Coffee House",
+      "date": "2026-06-14",
+      "primary_url": "https://techcoffeehouse.com/2026/06/14/anthropic-claude-fable-5-us-government-shutdown/",
+      "score": 8.0
+    },
+    {
+      "id": "allied-angels-weekly-recap-index",
+      "title": "Claude Fable 5 Dropped & ChatGPT's New Dreaming Memory | AI News This Week (Jun 12)",
+      "source": "Allied Angels: Startup & VC Insights",
+      "author": "Allied Angels",
+      "date": "2026-06-12",
+      "primary_url": "https://www.youtube.com/watch?v=fFUgqCLyQK8",
+      "score": 7.5
+    },
+    {
+      "id": "great-american-ai-act-analysis-index",
+      "title": "The Architecture of Intent: A Policy Analysis of the Great American AI Act",
+      "source": "CCD-IS",
+      "author": "CCD-IS (Vladimir Tsakanyan)",
+      "date": "2026-06-08",
+      "primary_url": "https://www.youtube.com/watch?v=zBmHEZhbRb0",
+      "score": 7.5
+    },
+    {
+      "id": "openai-anthropic-ipo-money-minute-index",
+      "title": "OpenAI & Anthropic Both Filed for IPO This Week | AI Money Minute | June 9, 2026",
+      "source": "AI Money Minute",
+      "author": "AI Money Minute",
+      "date": "2026-06-09",
+      "primary_url": "https://www.youtube.com/watch?v=QGjfQtI9qOg",
+      "score": 7.0
+    },
+    {
+      "id": "claude-banned-julian-goldie-index",
+      "title": "Claude 5 is BANNED — US Government Suspends Claude Mythos-5 & Fable-5",
+      "source": "AI News Today (Julian Goldie Podcast)",
+      "author": "Julian Goldie",
+      "date": "2026-06-13",
+      "primary_url": "https://www.youtube.com/watch?v=KN7uzGeffPs",
+      "score": 6.5
+    },
+    {
+      "id": "notebooklm-gemini-upgrade-index",
+      "title": "Better Research with NotebookLM — Gemini 3.5 Update",
+      "source": "Google",
+      "author": "Google",
+      "date": "2026-06-11",
+      "primary_url": "https://blog.google/innovation-and-ai/products/notebooklm/better-research-notebooklm/",
+      "score": 7.5
+    },
+    {
+      "id": "claude-fable-5-intro-insane-index",
+      "title": "Introducing Claude Fable 5. INSANE",
+      "source": "YouTube (unattributed channel)",
+      "author": "Unknown",
+      "date": "2026-06-12",
+      "primary_url": "https://www.youtube.com/watch?v=nnbF95T5Cp0",
+      "score": 6.0
+    },
+    {
+      "id": "openai-ipo-breakdown-techienews-index",
+      "title": "OpenAI's IPO Could Change AI Forever? Full Breakdown (June 11, 2026)",
+      "source": "TechieNews",
+      "author": "TechieNews",
+      "date": "2026-06-11",
+      "primary_url": "https://www.youtube.com/watch?v=SBuMi8RxbI0",
+      "score": 6.0
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "THE CONTEXTIAN (YouTube) — the Fable 5/Mythos 5 suspension video is the most rigorous publicly available analysis of the legal mechanism behind the export-control directive. The channel covers AI governance and policy with primary-source citation discipline. Add to Tier 2 for governance coverage.",
+      "Ben AI (YouTube, Ben van Sprundel) — the Claude Managed Agents tutorial is the clearest and most operationally complete walkthrough of the GA Managed Agents platform, with production deployment patterns and cost structure. Add to Tier 3 for agent deployment coverage.",
+      "Tech Coffee House (techcoffeehouse.com) — the June 14 Fable 5 article is the most comprehensive single-source timeline of the launch, capabilities, Stripe case study, suspension, and policy implications. Not a YouTube channel, but worth monitoring as a primary-source aggregator."
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Claude Managed Agents GA — the June 9 simultaneous launch of Fable 5 and Managed Agents GA was covered primarily from the build/sell-AI angle. The enterprise production deployment angle (security, compliance, data governance) was not covered in depth by any Tier 1-2 channel. The Anthropic platform documentation at platform.anthropic.com should be swept next week for any enterprise deployment guidance published alongside the GA.",
+      "Great American AI Act workforce displacement disclosure — the Act requires employers to disclose when AI is a 'substantial factor' in a mass layoff, including the AI involved, the estimated share of AI-attributable losses, and pre-layoff upskilling efforts. This is the most directly enterprise-relevant provision and was not discussed in depth in any Tier 1-2 video this week. Worth dedicated coverage if the bill advances.",
+      "Agents' Last Exam benchmark primary paper — the arxiv paper (arxiv.org/abs/2606.05405) is the primary source for the ALE benchmark. The Tier 1-2 channels did not produce a practitioner-level breakdown of the enterprise implications this week. Sam Witteveen or AI Engineer would be natural channels to cover this from a multi-agent architecture angle."
+    ],
+    "topics_to_drop": [],
+    "notes": "All 14 index items are new against the 2026-06-01 week. No URL overlap with the previous week's index. Freshness pct_new = 1.0. The week was dominated by two simultaneous stories: the Claude Fable 5 launch and suspension (June 9–12) and Apple WWDC 2026 Siri AI (June 8). The Agents' Last Exam benchmark is dated June 7 (YouTube) but covers June 2026 published content and is treated as within window. No view counts were captured — YouTube pages do not expose engagement metrics in static page content. All YouTube primary URLs returned HTTP 200 with video title, author, and publish date confirmed at fetch time. The Anthropic statement URL (anthropic.com/news/fable-mythos-access) returned valid content at fetch time with the full suspension statement text. The Stripe 50-million-line codebase migration claim is sourced from the Tech Coffee House article citing Anthropic's own case study documentation — treated as secondary source citing primary; not independently verified at stripe.com. The 'ranked #2 out of 123 AI models' claim from multiple consumer channels has been flagged as unverified in the flagged_unverified section."
+  }
+}

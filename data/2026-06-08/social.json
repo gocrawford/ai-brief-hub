@@ -1,0 +1,984 @@
+{
+  "tab_id": "social",
+  "tab_name": "Social Intelligence",
+  "subtitle": "Platform Intelligence",
+  "icon": "Share2",
+  "min_items": 15,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 0.95,
+    "items_total": 20,
+    "items_new": 19,
+    "items_returning": 1
+  },
+  "executive_summary": [
+    {
+      "headline": "Anthropic's Fable 5 launched June 9 as the first public Mythos-class model — Stripe migrated 50 million lines of code in a day — then the U.S. government pulled it offline three days later under an export control directive, the first government-forced takedown of a publicly deployed frontier model",
+      "body": "On June 9, 2026, Anthropic released Claude Fable 5, its most capable generally available model, built on the same Mythos-class foundation as the restricted Mythos 5. Stripe reported Fable 5 completed a codebase-wide migration on a 50-million-line Ruby codebase in a single day — work that would have taken an entire engineering team over two months manually. Allie K. Miller (523 LinkedIn likes) described it as 'an actual leap' with zero babysitting needed across 100+ hour runs. Within 24 hours, developers discovered the model was silently routing certain queries to Claude Opus 4.8 without API-level notification — Anthropic admitted the behavior and promised visible safeguard indicators. Then, on June 12 at 5:21 PM ET, the U.S. Commerce Department issued an export control directive ordering Anthropic to suspend all access to Fable 5 and Mythos 5 for any foreign national — inside or outside the United States. Anthropic disabled both models for all customers globally to ensure compliance, calling the triggering jailbreak claim 'narrow, non-universal' and disputing the government's rationale publicly. For enterprise AI governance teams, this week crystallized two previously theoretical risks into operational realities: a frontier model's capability can change silently without an API signal, and a government can pull a live commercial model by directive in under 90 minutes.",
+      "primary_url": "https://www.anthropic.com/news/claude-fable-5"
+    },
+    {
+      "headline": "OpenAI filed a confidential S-1 on June 8 alongside its 'third phase' plan — automated AI researcher by March 2028, personal AGI for everyone — setting up the most consequential AI IPO race in history alongside Anthropic's own June 1 filing",
+      "body": "On June 8, OpenAI announced it had confidentially submitted a draft S-1 to the SEC, one week after Anthropic's June 1 filing. The same day, CEO Sam Altman and Chief Scientist Jakub Pachocki published 'Built to benefit everyone: our plan,' declaring a 'third phase' with three goals: build an automated AI researcher (internal belief that by March 2028, a significant fraction of OpenAI's research will be done by AI systems in tandem with human researchers); accelerate the economy with broadly shared gains; and give every person on Earth a personal AGI. LinkedIn reaction focused on the structural implication of the automated researcher goal: if a significant fraction of AI research is AI-conducted by 2028, the pace of model capability improvement could outrun enterprise governance frameworks calibrated for human-pace release cycles. OpenAI also announced the acquisition of Ona on June 11, a startup providing secure, persistent cloud environments for agents to extend Codex beyond single-device sessions into customer-controlled cloud execution. OpenAI and Visa simultaneously announced a partnership to enable AI agents to initiate purchases using tokenized Visa credentials within user-defined spending rules.",
+      "primary_url": "https://openai.com/index/built-to-benefit-everyone-our-plan/"
+    },
+    {
+      "headline": "Anthropic's agent billing split takes effect June 15 — flat-rate AI compute ends, agent pipelines reprice to metered infrastructure, enterprise procurement frameworks built around subscription pricing are structurally mismatched with the new model",
+      "body": "The week of June 8-14 was the final week of flat-rate Claude agent usage. Effective June 15, Anthropic moved Claude Agent SDK, headless claude -p, Claude Code GitHub Actions, and third-party apps off subscription limits onto a separate monthly credit metered at full API rates — with no rollover. Community estimates put the effective cost increase for heavy programmatic users at 12x-150x+ depending on workload. Nipun Mehra's June 11 LinkedIn Pulse article 'Flat-rate AI ends June 15. FTE billing is next.' argued that the FTE-based invoice is the next billing model under pressure as AI makes output measurable. Enterprise procurement implication: AI agent workloads that were treated as software subscriptions — fixed cost, predictable — are now infrastructure workloads: metered, variable, requiring the same budget controls as cloud compute.",
+      "primary_url": "https://www.linkedin.com/pulse/flat-rate-ai-ends-june-15-fte-billing-next-nipun-mehra-99bnf"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "tp-anthropic-fable5-launch-stripe-jun09",
+      "title": "Anthropic launches Claude Fable 5: Stripe migrates 50 million lines of code in a day, Allie K. Miller calls it 'an actual leap' after zero-babysitting 100-hour runs",
+      "source": "Anthropic / LinkedIn",
+      "author": "Anthropic; Allie K. Miller (enterprise AI strategy)",
+      "date": "2026-06-09",
+      "platform": "linkedin",
+      "primary_url": "https://www.anthropic.com/news/claude-fable-5",
+      "secondary_urls": [
+        {
+          "label": "Allie K. Miller LinkedIn review — 523 likes",
+          "url": "https://www.linkedin.com/posts/alliekmiller_fable-5-is-something-to-pay-attention-activity-7470549844030402561-uHuC"
+        },
+        {
+          "label": "Espressio AI — Inside Stripe's 50M-line Ruby migration with Claude Fable 5",
+          "url": "https://espressio.ai/blog/stripe-50m-line-ruby-migration-claude-fable-5"
+        }
+      ],
+      "summary": "Anthropic launched Claude Fable 5 on June 9, the first publicly available Mythos-class model, priced at $10/million input tokens and $50/million output tokens. Stripe reported Fable 5 completed a codebase-wide migration on a 50-million-line Ruby codebase in a single day — work estimated to take an entire team over two months manually. Allie K. Miller's June 10 LinkedIn review (523 likes, 146 comments) described it as 'an actual leap,' citing zero babysitting needed across multi-hour autonomous runs and the model being the first to pass an MBA-level tricky word-math problem while automatically verifying its own work. A new 30-day data retention policy applies to all Mythos-class models for workspaces with zero data retention (ZDR) — affecting enterprise customers on AWS Bedrock, Google Cloud Agent Platform, and Microsoft Foundry.",
+      "enterprise_translation": "The design principle is long-horizon autonomous task execution with human-designed scope, not human-in-the-loop supervision. The Stripe migration result is a concrete enterprise analog: multi-month engineering backlog work — codebase migrations, dependency upgrades, refactors — is now a candidate for single-day agent runs rather than sprint-cycle planning. The governance implication from the 30-day ZDR retention requirement is equally operational: enterprise teams using Bedrock, Google Cloud Agent Platform, or Microsoft Foundry with ZDR enabled should verify before June 22 whether Mythos-class model use triggers the new retention obligation and whether that retention window conflicts with existing data handling commitments. A 30-day experiment: identify one multi-month engineering backlog item and scope it as a Fable 5 agent task with a defined start state, exit criteria, and human review gate — measure whether elapsed time compresses toward the Stripe benchmark.",
+      "score": {
+        "total": 9.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "likes": 523,
+        "comments": 146
+      },
+      "tags": ["Fable 5", "Anthropic", "Mythos-class", "long-horizon agents", "Stripe", "enterprise AI"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z"
+    },
+    {
+      "id": "tp-anthropic-government-model-shutdown-jun12",
+      "title": "U.S. government orders Anthropic to disable Fable 5 and Mythos 5 globally — the first government-forced takedown of a publicly deployed frontier model, 72 hours after launch",
+      "source": "The Guardian / Anthropic statement",
+      "author": "U.S. Commerce Department directive; Anthropic public response",
+      "date": "2026-06-12",
+      "platform": "linkedin",
+      "primary_url": "https://www.theguardian.com/technology/2026/jun/13/anthropic-disable-advanced-ai-models-us-government-order",
+      "secondary_urls": [
+        {
+          "label": "Rediff — Anthropic suspends access to AI models globally",
+          "url": "https://www.rediff.com/news/commentary/2026/jun/13/anthropic-suspends-access-to-ai-models-globally/28743e4dad7d777961129d73be832575"
+        },
+        {
+          "label": "X — Marktechpost breakdown of the directive",
+          "url": "https://x.com/Marktechpost/status/2065710470091399289"
+        }
+      ],
+      "summary": "On June 12, 2026, at 5:21 PM ET, the U.S. Commerce Department issued an export control directive ordering Anthropic to suspend all access to Fable 5 and Mythos 5 for any foreign national — inside or outside the United States, including foreign-national Anthropic employees. Anthropic disabled both models for all global customers to ensure compliance, leaving Claude Opus 4.8, Sonnet 4.6, and Haiku 4.5 live. The government's stated concern was a reported jailbreak method that could allow Fable 5 to assist with software vulnerability exploitation. Anthropic publicly disagreed, calling the cited technique 'a narrow, non-universal jailbreak' present across multiple public models including OpenAI's GPT-5.5, and stated the action 'does not adhere to principles of transparency, fairness, and technical grounding.' The order arrived 72 hours after launch and Anthropic was given 90 minutes to comply.",
+      "enterprise_translation": "The design principle is government-exercisable model access control as an operational risk category. This event made concrete what was previously theoretical: a commercially deployed frontier model can be taken offline by a single government directive within 90 minutes, with no advance warning to enterprise customers. For regulated enterprises with production workflows on Fable 5 or any Mythos-class model, the operational gap is the absence of a failover protocol for a forced model withdrawal. A 30-day experiment: review every production agent workflow that calls a specific named model and verify whether a documented fallback chain exists — what model, at what capability tier, the pipeline routes to if the primary model becomes unavailable. The Fable 5 shutdown is the first live test of a resilience pattern most enterprise AI architectures have not built.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {},
+      "tags": ["government AI regulation", "Fable 5", "export control", "AI governance", "enterprise resilience"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z"
+    },
+    {
+      "id": "tp-openai-third-phase-automated-researcher-jun08",
+      "title": "OpenAI 'Built to benefit everyone: our plan' — automated AI researcher by March 2028, personal AGI for everyone, Phase 3 declared same day as confidential S-1 filing",
+      "source": "OpenAI / LinkedIn reaction",
+      "author": "Sam Altman (CEO, OpenAI); Jakub Pachocki (Chief Scientist, OpenAI)",
+      "date": "2026-06-08",
+      "platform": "linkedin",
+      "primary_url": "https://openai.com/index/built-to-benefit-everyone-our-plan/",
+      "secondary_urls": [
+        {
+          "label": "AI Insiders — OpenAI's mission statement reads like an S-1",
+          "url": "https://aiinsiders.net/article/openais-mission-statement-reads-like-an-s-1"
+        },
+        {
+          "label": "Fortune — OpenAI files confidential S-1",
+          "url": "https://fortune.com/2026/06/09/openai-files-confidential-s-1-sec-ipo/"
+        }
+      ],
+      "summary": "On June 8, Sam Altman and Chief Scientist Jakub Pachocki co-published 'Built to benefit everyone: our plan,' declaring a 'third phase' for OpenAI. Three goals: (1) build an automated AI researcher — internal belief that by March 2028, a significant fraction of OpenAI's research will be conducted by AI systems in tandem with human researchers; (2) accelerate the economy while ensuring gains are widely shared; (3) give every person on Earth a personal AGI. The automated researcher goal is the most operationally specific claim: 'AI doing AI research will become the determining factor of the pace of progress within the next few years.' The same day, OpenAI confirmed it had confidentially submitted a draft S-1 to the SEC. LinkedIn enterprise reaction focused on the structural implication: if AI research is AI-conducted by 2028, model capability release cycles compress below annual procurement review cadence.",
+      "enterprise_translation": "The design principle is AI-accelerated research as a governance velocity problem. If a significant fraction of AI capability research is AI-conducted by March 2028, the interval between model generations could compress below the annual procurement review cycle most enterprises use to re-evaluate AI tool risk. The 21-month timeline means enterprise AI governance frameworks should be stress-tested now against a scenario where the model capability landscape changes materially twice per year rather than once. A 30-day experiment: review your current AI risk framework and identify the shortest re-evaluation trigger. If the framework has no mechanism for accelerated re-review when a model vendor publishes a significant capability upgrade, draft the trigger criteria before the next vendor update cycle.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {},
+      "tags": ["OpenAI", "automated AI researcher", "AGI roadmap", "IPO", "Phase 3", "AI governance velocity"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z"
+    },
+    {
+      "id": "tp-anthropic-billing-split-june15-jun11",
+      "title": "Nipun Mehra: 'Flat-rate AI ends June 15. FTE billing is next.' — the $500-of-work-on-a-$20-plan era ends, agent compute reprices to metered infrastructure",
+      "source": "LinkedIn Pulse",
+      "author": "Nipun Mehra (LinkedIn Pulse)",
+      "date": "2026-06-11",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/pulse/flat-rate-ai-ends-june-15-fte-billing-next-nipun-mehra-99bnf",
+      "secondary_urls": [
+        {
+          "label": "Claude Code pricing changes — Bind AI breakdown",
+          "url": "https://blog.getbind.co/claude-code-pricing-changes-june-15-what-youll-actually-pay-2026/"
+        },
+        {
+          "label": "Weekend Dispatch — June 13, 2026: The free ride for your agents ends Monday",
+          "url": "https://claudecodefornoncoders.substack.com/p/weekend-dispatch-june-13-2026-the"
+        }
+      ],
+      "summary": "Nipun Mehra's June 11 LinkedIn Pulse article argued that Anthropic's June 15 agent billing split is not just a pricing event but the leading indicator of a structural shift from FTE-based service pricing to consumption-based billing across the enterprise software stack. Effective June 15: Claude Agent SDK, headless claude -p, Claude Code GitHub Actions, and third-party agents move from subscription limits to a separate monthly credit pool metered at full API rates ($20/month Pro, $100/month Max 5x, $200/month Max 20x), with no rollover. Community estimates put the effective cost increase at 12x for light automation users and 150x+ for heavy Sonnet-based pipelines. Mehra's thesis: 'the FTE-based invoice survived for thirty years because procurement could read it, not because it measured output' — and that measurement is now possible.",
+      "enterprise_translation": "The design principle is agent compute as metered infrastructure, not licensed software. Enterprise AI teams that have been deploying agent pipelines on subscription plans have been operating with artificially low cost signals — the real cost of the workload has been subsidized. The June 15 split forces a cost reckoning that is architecturally necessary but operationally disruptive for teams that did not anticipate it. A 30-day experiment: pull a monthly token consumption report for every Claude Code, Agent SDK, and headless claude -p workflow in production and compare actual token consumption against the June 15 credit allotment. Any pipeline that overruns the monthly credit represents a budget exposure not visible in last quarter's AI cost line. Build a model-routing rule that automatically substitutes Haiku 4.5 or Sonnet 4.6 for tasks that do not require frontier capability.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {},
+      "tags": ["Anthropic billing", "agent compute", "AI pricing", "FTE billing", "enterprise AI cost"],
+      "recurrence": "returning",
+      "recurrence_note": "GitHub Copilot token billing was last week's top pick on the same pricing model shift; this is the Anthropic-specific implementation story landing in the same week.",
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z"
+    },
+    {
+      "id": "tp-claude-code-v2-1-172-subagents-jun10",
+      "title": "Claude Code v2.1.172: sub-agents can now spawn sub-agents up to 5 levels deep — true recursive task decomposition ships natively, no workarounds required",
+      "source": "Claude Code release notes / YouTube",
+      "author": "Anthropic (Claude Code team)",
+      "date": "2026-06-10",
+      "platform": "linkedin",
+      "primary_url": "https://claudekit.io/en/updates/claude-code-2-1-172/",
+      "secondary_urls": [
+        {
+          "label": "YouTube — Claude Code v2.1.172: Agents that spawn agents",
+          "url": "https://www.youtube.com/watch?v=cWB9tTeExgE"
+        },
+        {
+          "label": "Ready Solutions AI — nested subagent depth probe",
+          "url": "https://readysolutions.ai/blog/2026-06-11-claude-code-nested-subagents/"
+        }
+      ],
+      "summary": "Claude Code version 2.1.172, released June 10, 2026, added native support for sub-agents spawning their own sub-agents — up to 5 levels of agent hierarchy without workarounds. The changelog describes the pattern as an orchestrator delegating to a worker, that worker delegating further, enabling real recursive task decomposition. The same release added automatic context compaction for 1M-context sessions, which previously got permanently stuck. One independent probe found the effective depth exceeded the stated 5-level cap in certain configurations. The AI Daily Brief described this as shipping simultaneously with Fable 5, giving developers a hierarchical multi-agent execution framework and a model capable of reliably following long-horizon instructions.",
+      "enterprise_translation": "The design principle is parallel subagent decomposition at scale — the same pattern that TikTok creators demo as 'AI swarms' is now natively supported inside Claude Code without requiring custom orchestration scaffolding. For an enterprise AI team, a multi-step knowledge work task that currently runs sequentially — research, synthesis, draft, review, formatting — can now be decomposed into a fan-out hierarchy where specialized sub-agents run in parallel. The governance question this raises is whether existing agent audit frameworks were designed for single-agent action logs or for hierarchical trees of agent actions. A 30-day experiment: take one sequential multi-step agent workflow and redesign it as a 2-3 level subagent hierarchy with distinct specialized roles. Measure whether elapsed time and output quality both improve over the sequential baseline.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {},
+      "tags": ["Claude Code", "sub-agents", "multi-agent", "recursive decomposition", "enterprise AI"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z"
+    },
+    {
+      "id": "tp-openai-ona-acquisition-codex-jun11",
+      "title": "OpenAI acquires Ona to give Codex agents persistent cloud execution environments — agents that keep working after the laptop closes, inside the customer's own cloud boundary",
+      "source": "OpenAI / CNBC",
+      "author": "OpenAI (official announcement)",
+      "date": "2026-06-11",
+      "platform": "linkedin",
+      "primary_url": "https://openai.com/index/openai-to-acquire-ona/",
+      "secondary_urls": [
+        {
+          "label": "CNBC — OpenAI to acquire Ona to support its AI coding assistant, Codex",
+          "url": "https://www.cnbc.com/2026/06/11/open-ai-ona-acquisition-codex.html"
+        }
+      ],
+      "summary": "On June 11, OpenAI announced an agreement to acquire Ona, a startup providing secure, pre-configured cloud environments where AI agents can access tools, systems, and context for long-running work. OpenAI framed the acquisition as enabling Codex to extend beyond work tied to a single device or active session — agents operating inside a customer's own cloud environment with scoped credentials, activity logs, and governance controls, even when laptops are closed. Ona had 2 million developers working in secure, reproducible cloud environments and shares multiple customers with OpenAI. After close, the Ona team joins OpenAI's Codex division.",
+      "enterprise_translation": "The design principle is customer-controlled persistent execution environments for agents — the governance pattern that resolves the 'agents need to keep working but the laptop closes' problem in a way that regulated enterprises can deploy. Ona's architecture gives enterprises control over where agents run, what they can access, how credentials are scoped, and how activity is logged, without giving OpenAI access to those boundaries. A 30-day experiment: map one Codex pilot use case against the Ona execution model — identify which data, credentials, and systems the agent would need access to, and verify whether those resources can be scoped and logged inside your own cloud boundary before requesting access to the Codex + Ona preview.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {},
+      "tags": ["OpenAI", "Ona", "Codex", "persistent agents", "enterprise cloud", "agent governance"],
+      "recurrence": "new",
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "linkedin",
+      "title": "LinkedIn",
+      "description": "Enterprise AI signal from the week's top LinkedIn posts, filtered for strategic relevance to enterprise AI teams.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "li-allie-miller-fable5-review-jun10",
+          "title": "Allie K. Miller (523 likes): 'Fable 5 is something to pay attention to — zero babysitting needed, an actual leap, your work is no longer 9-to-5'",
+          "source": "LinkedIn",
+          "author": "Allie K. Miller (enterprise AI strategy)",
+          "date": "2026-06-10",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/alliekmiller_fable-5-is-something-to-pay-attention-activity-7470549844030402561-uHuC",
+          "summary": "Miller's June 10 review (523 likes, 146 comments) described Fable 5 as 'the first Anthropic model that I kicked off, went to a long lunch, and didn't have to do squat to steer it.' She cited reasoning capability beyond prior models, context management at 1M tokens without active intervention, and noted the new 30-day data retention policy on all Mythos-class models for ZDR enterprise environments. Her framing — 'your work is no longer 9-to-5' — was the week's most-shared reframe of what Fable 5 changes about how agent tasks are scoped.",
+          "enterprise_translation": "For enterprise AI teams, Miller's review is a practitioner signal that long-horizon autonomous task execution is ready for real workflows. The 30-day retention policy detail is the compliance flag: ZDR enterprise customers on Bedrock, Google Cloud, or Microsoft Foundry should verify the new retention obligation against existing customer data commitments before deploying Mythos-class models in production.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "likes": 523,
+            "comments": 146
+          },
+          "tags": ["Fable 5", "Allie Miller", "enterprise AI", "long-horizon agents"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "li-mollick-technology-organizing-jun08",
+          "title": "Ethan Mollick (300 likes): 'A year ago the closest thing we had to a usable general-purpose AI agent was o3. Technology is moving faster than our ability to organize around it.'",
+          "source": "LinkedIn",
+          "author": "Ethan Mollick (Wharton, AI research / education)",
+          "date": "2026-06-08",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/emollick_a-year-ago-the-closest-thing-we-had-to-a-activity-7469581674884988928-Vlpy",
+          "summary": "Mollick's June 8 post (300 likes, 99 comments) juxtaposed the AI agent landscape from June 2025 versus June 2026. The core observation: AI capability has moved faster in 12 months than organizations' ability to update their operating models, governance structures, or role definitions to match. The post landed the same week OpenAI declared Phase 3 and Anthropic launched Fable 5 — and the day before a government directive pulled that model offline. The engagement pattern suggests this framing resonated as an organizing principle for practitioners experiencing whiplash.",
+          "enterprise_translation": "The organizational adaptation gap is the enterprise AI problem that sits above all individual tool and model decisions. For each AI tool in production, verify whether the governance, role, and workflow design was updated when the tool's capability materially changed — or whether the original design assumptions are still in place.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 300,
+            "comments": 99
+          },
+          "tags": ["Ethan Mollick", "organizational adaptation", "AI governance"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "li-openai-third-phase-reaction-jun08",
+          "title": "OpenAI 'Built to benefit everyone: our plan' — LinkedIn enterprise reaction focuses on the automated researcher timeline as a governance velocity signal",
+          "source": "LinkedIn / OpenAI",
+          "author": "Sam Altman (CEO, OpenAI); Jakub Pachocki (Chief Scientist, OpenAI)",
+          "date": "2026-06-08",
+          "platform": "linkedin",
+          "primary_url": "https://openai.com/index/built-to-benefit-everyone-our-plan/",
+          "summary": "LinkedIn reaction to OpenAI's Phase 3 plan focused on the automated researcher milestone: if AI conducts a 'significant fraction' of OpenAI's own research by March 2028, the capability release cycle compresses below annual procurement review cadence. The most-shared reading: this is not an AGI claim — it is a 21-month operational milestone with direct implications for enterprise governance frameworks calibrated to slower release cycles. The same-day S-1 announcement frames this as an investor disclosure, not just a mission statement.",
+          "enterprise_translation": "The March 2028 automated researcher target is the planning horizon for reviewing whether current governance frameworks have provisions for accelerated capability release cycles. If a significant fraction of frontier AI research is AI-conducted within 21 months, the pace of model improvement may outrun annual risk re-evaluation cycles.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["OpenAI", "Phase 3", "automated researcher", "AGI roadmap", "enterprise governance"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "li-peter-buchanan-june12-roundup",
+          "title": "Peter Buchanan AI to ROI June 12: Fable 5 silent degradation confirmed and reversed, Apple rebuilds Siri on Gemini distillation, Munich court rules Google liable for AI Overview false claims",
+          "source": "LinkedIn",
+          "author": "Peter Buchanan (AI to ROI newsletter)",
+          "date": "2026-06-12",
+          "platform": "linkedin",
+          "primary_url": "https://www.linkedin.com/posts/peterbuchanan_ai-to-roi-news-analysis-june-12-2026-activity-7471198609137504257-6ccB",
+          "summary": "Buchanan's June 12 executive roundup covered five stories: Fable 5's silent quality degradation — Anthropic admitted it and reversed course, with the precedent set that 'enterprises can no longer assume model behavior matches published specs without continuous evaluation'; Apple rebuilt Siri using Gemini model distillation for iOS 27; a Munich court ruling that Google is directly liable for false claims generated by AI Overviews; and Oracle cloud infrastructure growing 93% year-over-year while its stock fell 10%, with OpenAI accounting for nearly half of $638 billion in contracted future Oracle revenue.",
+          "enterprise_translation": "Three governance signals: the silent degradation admission confirms continuous model evaluation is a production necessity; the Munich AI Overviews ruling sets a precedent that AI-generated content carries the generator's liability; and the Oracle concentration data point illustrates that single-vendor AI infrastructure dependency creates correlated financial risk.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 3
+          },
+          "tags": ["Fable 5", "silent degradation", "Apple Siri", "Munich court", "AI liability", "Oracle"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "li-apple-siri-gemini-wwdc2026-jun09",
+          "title": "WWDC 2026: Apple rebuilds Siri on Gemini model distillation — 2 billion devices, no CapEx, no model ownership — LinkedIn enterprise reaction focuses on the platform leverage model",
+          "source": "LinkedIn / Apple Newsroom",
+          "author": "Apple (official); enterprise LinkedIn reaction",
+          "date": "2026-06-09",
+          "platform": "linkedin",
+          "primary_url": "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/",
+          "secondary_urls": [
+            {
+              "label": "Apple — Full Apple Intelligence announcement at WWDC 2026",
+              "url": "https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/"
+            }
+          ],
+          "summary": "At WWDC 2026 on June 8, Apple announced Siri AI — rebuilt personal assistant running on Apple's own third-generation Foundation Models, distilled from a custom 1.2-trillion-parameter Google Gemini model licensed for approximately $1 billion per year. Apple uses no Google-deployed assistant stack — Gemini acts as a teacher during distillation; Apple's smaller on-device models learn to match it. Developer betas shipped June 8 across iOS 27. General availability is targeted for fall 2026 in English. Siri AI does not ship on iPhone or iPad in the EU at launch due to the Digital Markets Act.",
+          "enterprise_translation": "The Apple Siri distillation architecture is the consumer-grade version of the same build vs. buy AI capability question enterprises face. The EU availability gap matters operationally: Siri AI is not the default on EU iPhones at launch, which creates a divergent capability landscape for mobile-dependent enterprise AI workflows across EU and non-EU employee device fleets.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Apple", "Siri AI", "Gemini", "WWDC 2026", "AI distillation", "enterprise platform"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "tiktok",
+      "title": "TikTok / Short Video",
+      "description": "High-signal short-form AI content from TikTok and YouTube Shorts, filtered for technical substance and enterprise design principle extraction.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "tt-claude-code-subagents-spawn-youtube-jun10",
+          "title": "@ClaudeCodeUpdates (YouTube): 'Claude Code v2.1.172 — Agents that spawn agents' — 39-second explainer of nested sub-agent recursion, 5 levels deep",
+          "source": "YouTube Shorts",
+          "author": "Claude Code Updates (YouTube)",
+          "date": "2026-06-10",
+          "platform": "tiktok",
+          "primary_url": "https://www.youtube.com/watch?v=cWB9tTeExgE",
+          "summary": "A 39-second YouTube Short released June 10 covered the Claude Code v2.1.172 nested sub-agent feature: an orchestrator delegates to a worker, that worker delegates further, up to 5 levels of native hierarchy with no workarounds required. The video landed within 24 hours of the release and surfaced in TikTok-mirrored AI tool channels with the #ClaudeCode and #AIAgents hashtags.",
+          "enterprise_translation": "The consumer-creator pattern here is 'build an AI swarm that handles a whole project.' The enterprise design principle is parallel subagent decomposition: a complex work product that currently runs as a sequential human-plus-AI workflow can be restructured as a fanned-out agent hierarchy where specialized sub-agents handle research, synthesis, draft, and review in parallel. The 5-level depth provides enough hierarchy for most enterprise workflows without requiring custom orchestration infrastructure.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["Claude Code", "sub-agents", "nested agents", "AI swarm"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "tt-fable5-stripe-codebase-youtube-jun10",
+          "title": "YouTube: 'GAME CHANGER: Fable 5 Does 2 Months in 1 Day' — Stripe's 50M-line codebase migration distilled into a 2-minute engineering demo",
+          "source": "YouTube",
+          "author": "AI tools creator (YouTube)",
+          "date": "2026-06-10",
+          "platform": "tiktok",
+          "primary_url": "https://www.youtube.com/watch?v=oTwLGZshiC0",
+          "summary": "A June 10 short-form video covering the Stripe-Fable 5 migration story was among the highest-performing AI technical videos of the week. The format: a direct comparison of two months of human team work versus one day of Fable 5 agent work on a 50-million-line Ruby codebase. The video spread in #VibeCoding, #AIAgents, and #ClaudeCode communities as the week's most concrete enterprise-scale capability demonstration.",
+          "enterprise_translation": "The consumer signal is 'AI can do months of work in a day.' The enterprise design principle is bounded-scope autonomous engineering: the Stripe migration is a scoped migration task with a clear start and exit state where Fable 5 provided the execution bandwidth. Enterprise teams with backlogged technical debt — dependency upgrades, deprecated API removal, lint rule rollout — should evaluate whether these tasks are now candidates for Fable 5 agent execution rather than sprint-cycle planning.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Fable 5", "Stripe", "codebase migration", "engineering automation"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "tt-anthropic-model-shutdown-viral-jun13",
+          "title": "TikTok / X viral: US government pulls Fable 5 in 90 minutes — first government-forced live model takedown becomes the week's most-shared AI governance story",
+          "source": "X (Twitter) / Instagram Reels",
+          "author": "@dashboardlim (X, viral thread); @ai_in_60 (Instagram cross-post)",
+          "date": "2026-06-13",
+          "platform": "tiktok",
+          "primary_url": "https://www.instagram.com/reel/DZh7c3UAQ0-/",
+          "secondary_urls": [
+            {
+              "label": "X — @dashboardlim viral thread on the government shutdown",
+              "url": "https://x.com/dashboardlim/status/2065626517166498176"
+            }
+          ],
+          "summary": "The Fable 5 government shutdown generated TikTok and short-form video content within hours of the June 12 directive. The @ai_in_60 Instagram Reel posted June 13 summarized the sequence: 'The US government just ordered Anthropic to shut down its most powerful AI model. Fable 5 and Mythos 5 are suspended for all users worldwide, effective June 12th.' The @dashboardlim X thread broke down the sequence — directive at 5:21 PM ET, 90 minutes to comply, all global users affected, three days of public access — and spread to TikTok. The question driving engagement: how does a regulated enterprise design agent pipelines resilient to a forced live model withdrawal?",
+          "enterprise_translation": "The consumer signal is outrage and confusion at AI service disruption. The enterprise design principle is model-level redundancy as infrastructure resilience: a production pipeline that has a single named model as its primary inference endpoint is exposed to a single-point-of-failure risk that this week's event made real. Enterprise teams should review whether critical agent pipelines have a documented fallback model chain that can be activated without manual intervention.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["Fable 5", "government AI regulation", "model availability", "enterprise resilience"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "tt-claude-code-subagents-fan-out-tutorial-jun13",
+          "title": "YouTube tutorial Ep 13: 'Claude Code Subagents — Fan-Out Parallel Execution' — a 10-hour task decomposed into 5 parallel 2-hour subtasks",
+          "source": "YouTube",
+          "author": "Claude Code series creator (YouTube)",
+          "date": "2026-06-13",
+          "platform": "tiktok",
+          "primary_url": "https://www.youtube.com/watch?v=OMhGY3ZOQD8",
+          "summary": "A June 13 tutorial in a 19-part Claude Code series demonstrated fan-out parallel execution using the v2.1.172 nested sub-agent capability. The core demo: a daunting 10-hour sequential task decomposed into five parallel 2-hour subtasks, each handled by a specialized sub-agent role — one writes code, another reviews, another documents — with results merged by the orchestrator.",
+          "enterprise_translation": "The enterprise analog to the 10-hour task decomposition is any multi-workstream research or compliance project: a regulatory submission, a vendor due diligence, a competitive landscape review. The fan-out pattern reduces elapsed time without reducing depth. The governance consideration is that a fan-out hierarchy generates multiple concurrent action logs — enterprise teams should verify whether audit trail infrastructure captures hierarchical agent actions as a traceable tree or flattens them to a single log.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Claude Code", "fan-out", "parallel execution", "sub-agents", "enterprise workflow"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "instagram",
+      "title": "Instagram",
+      "description": "Practitioner workflow signals and AI adoption patterns from Instagram Reels and posts, week of June 8-14 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "ig-thattechpastor-government-shutdown-jun13",
+          "title": "@thattechpastor: 'One letter. 5:21pm. Gone by the end of the business day. I'm not worried about the technology. I'm watching how the decision got made.'",
+          "source": "Instagram",
+          "author": "@thattechpastor",
+          "date": "2026-06-13",
+          "platform": "instagram",
+          "primary_url": "https://www.instagram.com/reel/DZgtMGwzvq_/",
+          "summary": "A June 13 Instagram Reel from @thattechpastor (13 likes) framed the Fable 5 shutdown not as a technology failure but as a governance process failure: 'No hearing. No process you can read. Access here one minute, gone the next.' The post's closing line — 'When the keys turn in the dark, the people last in line lose first' — circulated in enterprise AI, ethics, and compliance communities as the week's most-quoted framing of the event.",
+          "enterprise_translation": "The process transparency framing is the enterprise governance signal: the Fable 5 shutdown was not preceded by a public review, a vendor notification, or an appeal process. For regulated enterprises with production workflows on Fable 5 with SLA commitments downstream, a 90-minute compliance window is not compatible with standard change management. The actionable output is a vendor dependency audit: which AI model providers have no contractual SLA on model availability, and which of those models are in production workflows where a forced withdrawal would breach a downstream commitment?",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 13
+          },
+          "tags": ["Fable 5", "AI governance", "government regulation", "process transparency"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "ig-30s-ai-claude-code-billing-jun12",
+          "title": "@30s.ai: 'Treat agents like cloud infra now: metered, budgeted, monitored. Send this to the teammate whose cron job runs claude -p every night and has no idea Monday is coming.'",
+          "source": "Instagram",
+          "author": "@30s.ai",
+          "date": "2026-06-12",
+          "platform": "instagram",
+          "primary_url": "https://www.instagram.com/p/DZfiwkOkyey/",
+          "summary": "A June 12 Instagram post from @30s.ai gave a concise breakdown of the Anthropic June 15 billing change: Agent SDK, headless claude -p, Claude Code GitHub Actions, and third-party apps move off subscription limits to a separate credit pool metered at full API rates. The post noted effective cost increases of 12x for light use and 150x+ for heavy automation, framed the pattern as the same move GitHub made with Copilot on June 1, and closed with: 'Treat agents like cloud infra now: metered, budgeted, monitored.' The post used #ClaudeCode, #AgentSDK, and #AIAgents and was widely cross-shared to developer Slack channels.",
+          "enterprise_translation": "The 'cloud infra, not subscription' framing is the architectural shift this billing change demands: agent workloads that were treated as software licenses are now infrastructure workloads. Enterprise teams should apply the same budget and alerting infrastructure to agent token consumption as they apply to cloud compute spend — with per-pipeline cost attribution, anomaly detection, and automatic throttling when credits approach exhaustion.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Anthropic billing", "agent compute", "Claude Code", "AI infrastructure"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "ig-learningdailyai-fable5-launch-jun09",
+          "title": "@learningdailyai: Fable 5 Reel — 'The real question is no longer whether AI can answer a question. It is how well it can handle a real project from start to finish.'",
+          "source": "Instagram",
+          "author": "@learningdailyai",
+          "date": "2026-06-09",
+          "platform": "instagram",
+          "primary_url": "https://www.instagram.com/reel/DZYgM8Yt-oH/",
+          "summary": "A June 9 Instagram Reel from @learningdailyai (4 likes) summarized the Fable 5 launch with a reframe: AI progress is now measured by how well it sustains reasoning and manages multi-step work across an entire workflow, not isolated benchmark performance. The Reel cited Anthropic's launch claims — strongest performance on longer, complex tasks; safeguarded for general public use via automatic routing — and closed with the practical question: 'how well it can handle a real project from start to finish.'",
+          "enterprise_translation": "Enterprise teams still evaluating AI assistants against isolated task benchmarks (summarization, code snippet generation) are measuring the wrong thing. The evaluation frame for Fable 5-class models is: does the model reliably complete a scoped project — with defined start state, intermediate steps, and exit criteria — without requiring human re-steering at each transition?",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "likes": 4
+          },
+          "tags": ["Fable 5", "AI project completion", "long-horizon", "enterprise evaluation"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "facebook",
+      "title": "Facebook",
+      "description": "Facebook community and page signals on AI topics, week of June 8-14 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "fb-economist-ai-risks-jun14",
+          "title": "The Economist on Facebook: AI as 'a profoundly odd, risky, and powerful technology' — post circulated in AI Philosophy and AI for Business groups week of June 14",
+          "source": "Facebook / The Economist",
+          "author": "The Economist (Facebook Page)",
+          "date": "2026-06-14",
+          "platform": "facebook",
+          "primary_url": "https://www.facebook.com/TheEconomist/posts/a-failure-to-see-ai-for-what-it-is-a-profoundly-odd-risky-and-powerful-technolog/1509533124538536/",
+          "summary": "The Economist's June 14 Facebook post, circulating in the AI Philosophy and AI for Business communities, framed the week's events — Fable 5 launch and forced withdrawal, dual AI IPO filings, silent degradation admissions — as evidence of a broader failure to see AI for what it is: 'a profoundly odd, risky, and powerful technology.' The post generated comment threads focused on the governance gap between AI capability deployment speed and regulatory or organizational response speed.",
+          "enterprise_translation": "The governance framing resonating in Facebook community groups mirrors the practitioner experience this week: capability arrived faster than institutions could process it, and the response mechanisms were built for a slower pace. The enterprise action is not to slow down but to build faster-cycling governance loops — quarterly model risk reviews instead of annual, rolling audit of agent pipelines instead of point-in-time assessments.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["AI governance", "AI risk", "enterprise AI"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "tools_trending",
+      "title": "Tools Trending This Week",
+      "description": "Cross-platform tool mention count and context for the week of June 8-14 2026. Tracked across LinkedIn, TikTok, Instagram, X, and developer communities.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "tool-claude-fable5",
+          "title": "Claude Fable 5 — week's dominant tool story: launched, degraded-and-patched, pulled by government directive, restored",
+          "source": "Anthropic",
+          "author": "Anthropic",
+          "date": "2026-06-09",
+          "platform": "linkedin",
+          "primary_url": "https://www.anthropic.com/news/claude-fable-5",
+          "summary": "Most mentions of any tool across all platforms this week by a significant margin. Launched June 9, silent routing admitted and patched within 24 hours, government directive June 12, restoration in progress.",
+          "enterprise_translation": "First publicly available Mythos-class model. SWE-Bench Pro at 80.3%. Enterprise entry: API at $10/million input / $50/million output. ZDR retention policy mandatory on managed cloud platforms. Verify fallback model chains before deploying in production.",
+          "score": {
+            "total": 9.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Fable 5", "Anthropic", "frontier model"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "tool-claude-code-v2-1-172",
+          "title": "Claude Code v2.1.172 — native nested sub-agent support, 5 levels deep; 1M-context auto-compaction",
+          "source": "Anthropic",
+          "author": "Anthropic",
+          "date": "2026-06-10",
+          "platform": "linkedin",
+          "primary_url": "https://claudekit.io/en/updates/claude-code-2-1-172/",
+          "summary": "Added native nested sub-agent support and 1M-context auto-compaction. Heavy mention volume in #ClaudeCode, developer YouTube, and TikTok AI tool communities.",
+          "enterprise_translation": "Enables hierarchical multi-agent workflows without custom orchestration. The governance question: does your audit infrastructure capture a tree of agent actions or flatten them?",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Claude Code", "sub-agents", "developer tools"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "tool-openai-codex-ona",
+          "title": "OpenAI Codex + Ona — persistent customer-controlled cloud execution for long-running agents",
+          "source": "OpenAI",
+          "author": "OpenAI",
+          "date": "2026-06-11",
+          "platform": "linkedin",
+          "primary_url": "https://openai.com/index/openai-to-acquire-ona/",
+          "summary": "Codex acquisition of Ona adds persistent, customer-controlled cloud execution for long-running agent tasks. Codex at 5 million weekly users. Mentioned extensively on LinkedIn and in enterprise AI developer communities.",
+          "enterprise_translation": "Persistent agent execution inside customer cloud boundary — the architecture regulated enterprises need for Codex in production. Watch for the Ona integration timeline for enterprise availability.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["Codex", "OpenAI", "persistent agents", "enterprise cloud"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "tool-siri-ai-apple-intelligence",
+          "title": "Apple Siri AI / Apple Intelligence (iOS 27) — developer beta June 8, GA fall 2026, not shipping in EU on iPhone/iPad at launch",
+          "source": "Apple",
+          "author": "Apple",
+          "date": "2026-06-08",
+          "platform": "linkedin",
+          "primary_url": "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/",
+          "summary": "Rebuilt on Apple Foundation Models distilled from Google Gemini. Not shipping in EU or China at launch. Heavy mention volume from WWDC coverage across LinkedIn and Instagram.",
+          "enterprise_translation": "Managed device AI on iPhones without third-party cloud exposure. EU availability gap matters for enterprises with EU employee device fleets.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Siri AI", "Apple Intelligence", "iOS 27", "on-device AI"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "tool-google-notebooklm-gemini35",
+          "title": "Google NotebookLM — upgraded to Gemini 3.5 with code execution and structured output (PDF, Excel, charts)",
+          "source": "Google",
+          "author": "Google",
+          "date": "2026-06-08",
+          "platform": "linkedin",
+          "primary_url": "https://ai-weekly.ai/newsletter-06-09-2026/",
+          "summary": "Upgraded to Gemini 3.5 with Antigravity on June 8, adding advanced reasoning, code execution, and support for PDF/chart/Excel output. Rolling out for Google AI Ultra and select Workspace business accounts.",
+          "enterprise_translation": "NotebookLM with code execution and structured output formats is a credible enterprise research synthesis tool for Google Workspace organizations without shadow IT risk.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {},
+          "tags": ["NotebookLM", "Gemini 3.5", "Google Workspace"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "tool-openai-visa-agent-payments",
+          "title": "OpenAI + Visa — AI agents can initiate purchases with tokenized credentials within user-defined spending rules",
+          "source": "AP News / Bloomberg",
+          "author": "OpenAI; Visa",
+          "date": "2026-06-10",
+          "platform": "linkedin",
+          "primary_url": "https://apnews.com/article/visa-chatgpt-openai-shopping-mastercard-d769dec86344cb4977c98789e8ec492f",
+          "summary": "Tokenized Visa credentials, user-defined spending rules, real-time fraud monitoring. No consumer product or pricing disclosed. Significant LinkedIn and enterprise finance community discussion on agent-driven commerce liability.",
+          "enterprise_translation": "Agentic commerce plumbing is in place. For enterprises deploying procurement or purchasing agents, the tokenized credential model resolves the authorization question. Define spending authorization scopes before deploying purchasing agents.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["OpenAI", "Visa", "agent payments", "agentic commerce"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "tool-claude-agent-sdk-billing",
+          "title": "Claude Agent SDK — billing split effective June 15: metered credits at full API rates, no rollover",
+          "source": "Anthropic",
+          "author": "Anthropic",
+          "date": "2026-06-12",
+          "platform": "linkedin",
+          "primary_url": "https://blog.getbind.co/claude-code-pricing-changes-june-15-what-youll-actually-pay-2026/",
+          "summary": "The June 15 billing split of Agent SDK from subscription was the second-highest-volume tool discussion topic this week. Heavy discussion in #ClaudeCode, #AIAgents, and developer Instagram communities.",
+          "enterprise_translation": "Agent SDK compute is now metered infrastructure. Apply cloud budget controls: per-pipeline attribution, anomaly alerts, automatic model-routing to cheaper models for tasks that do not require frontier capability.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Anthropic", "Agent SDK", "billing", "AI infrastructure"],
+          "recurrence": "returning",
+          "recurrence_note": "Prior week covered GitHub Copilot token billing (same pricing model shift); this is the Anthropic-specific implementation story.",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "tool-gemini-chrome-android",
+          "title": "Gemini in Chrome Android — agentic browsing (form fill, booking, transactions) rolling out late June 2026",
+          "source": "MarketingProfs / Google",
+          "author": "Google",
+          "date": "2026-06-12",
+          "platform": "linkedin",
+          "primary_url": "https://www.marketingprofs.com/opinions/2026/54994/ai-update-june-12-2026-ai-news-and-views-from-the-past-week",
+          "summary": "Google announced Chrome auto-browse coming to Android in late June — Gemini-powered agents that can fill forms, book appointments, compare options, and complete transactions.",
+          "enterprise_translation": "Agentic browser automation reaching Android Chrome means enterprise employees will have browser agents that can act on internal web tools. Define which internal web applications should be accessible to browser agents before the rollout.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {},
+          "tags": ["Gemini", "Chrome", "agentic browsing", "Android"],
+          "recurrence": "new",
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        }
+      ]
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Silent model degradation detection is becoming a production requirement, not a QA exercise — Fable 5's routing behavior made this a live issue for the entire enterprise AI community this week",
+      "evidence": "Anthropic admitted that Fable 5 was silently routing certain queries to Claude Opus 4.8 with no API signal. The admission confirmed that continuous model output monitoring is necessary to detect capability changes that do not manifest in API metadata. Developer community discussion surfaced across LinkedIn, Reddit, and engineering Slack channels. Source: https://www.kucoin.com/news/flash/anthropic-apologizes-for-claude-fable-5-censorship-promises-transparency-fixes",
+      "what_to_watch": "Monitor for Anthropic's promised visible safeguard routing indicators in the Fable 5 API. When visible routing lands, establish a regression test baseline against the current Fable 5 output quality as a reference point for future silent changes."
+    },
+    {
+      "pattern": "Munich court ruling establishes AI-generated content carries direct generator liability — the AI Overviews precedent extends beyond search to any AI tool generating novel text from source documents",
+      "evidence": "Munich Regional Court ruled Google is directly liable for false claims in AI Overviews and cannot claim Digital Services Act hosting safe harbor for AI-generated novel text. First judicial ruling of this type. Covered by The Next Web and circulated in enterprise AI legal and compliance communities. Source: https://thenextweb.com/news/google-ai-overviews-german-court-liable",
+      "what_to_watch": "Track whether German ruling triggers similar challenges in other EU member states or UK courts. Enterprise compliance teams should review whether internal AI tools generating novel summaries, analyses, or recommendations from source documents face analogous liability."
+    },
+    {
+      "pattern": "Both Anthropic and OpenAI are now in the SEC S-1 pipeline — the transition to public-company disclosure obligations will produce the most rigorously audited public statements on AI risk either company has ever made",
+      "evidence": "Anthropic (June 1, $965B valuation) and OpenAI (June 8, $852B valuation) both filed confidential S-1 drafts with the SEC. Public S-1 documents expected late summer 2026. Risk factor sections will define enterprise board AI risk vocabulary for years. Source: https://fortune.com/2026/06/09/openai-files-confidential-s-1-sec-ipo/",
+      "what_to_watch": "Monitor SEC EDGAR for public S-1 filing dates from both companies. When risk factor sections become public, treat them as primary enterprise AI governance reference documents. An enterprise AI governance team that reads these filings before their board does is ahead of the curve."
+    }
+  ],
+  "index": [
+    {
+      "title": "Anthropic launches Claude Fable 5 (Mythos-class, general public) — Stripe migrates 50M lines of code in a day",
+      "source": "Anthropic",
+      "author": "Anthropic",
+      "date": "2026-06-09",
+      "primary_url": "https://www.anthropic.com/news/claude-fable-5",
+      "score": 9.5
+    },
+    {
+      "title": "U.S. government disables Fable 5 and Mythos 5 globally — 72 hours after launch, 90-minute compliance window",
+      "source": "The Guardian / Anthropic",
+      "author": "U.S. Commerce Department",
+      "date": "2026-06-12",
+      "primary_url": "https://www.theguardian.com/technology/2026/jun/13/anthropic-disable-advanced-ai-models-us-government-order",
+      "score": 9.0
+    },
+    {
+      "title": "Allie K. Miller (523 likes): 'Fable 5 is something to pay attention to' — zero babysitting, 100+ hour runs",
+      "source": "LinkedIn",
+      "author": "Allie K. Miller",
+      "date": "2026-06-10",
+      "primary_url": "https://www.linkedin.com/posts/alliekmiller_fable-5-is-something-to-pay-attention-activity-7470549844030402561-uHuC",
+      "score": 8.5
+    },
+    {
+      "title": "OpenAI 'Built to benefit everyone: our plan' — Phase 3, automated AI researcher by March 2028, S-1 filed same day",
+      "source": "OpenAI",
+      "author": "Sam Altman; Jakub Pachocki",
+      "date": "2026-06-08",
+      "primary_url": "https://openai.com/index/built-to-benefit-everyone-our-plan/",
+      "score": 8.5
+    },
+    {
+      "title": "Anthropic Agent SDK billing split effective June 15 — flat-rate agent compute ends, 12x-150x+ effective cost increase",
+      "source": "LinkedIn Pulse / Anthropic",
+      "author": "Nipun Mehra; Anthropic",
+      "date": "2026-06-11",
+      "primary_url": "https://www.linkedin.com/pulse/flat-rate-ai-ends-june-15-fte-billing-next-nipun-mehra-99bnf",
+      "score": 8.5
+    },
+    {
+      "title": "Claude Code v2.1.172: sub-agents spawn sub-agents, 5 levels deep; 1M-context auto-compaction",
+      "source": "Anthropic release notes",
+      "author": "Anthropic",
+      "date": "2026-06-10",
+      "primary_url": "https://claudekit.io/en/updates/claude-code-2-1-172/",
+      "score": 8.5
+    },
+    {
+      "title": "Anthropic admits Fable 5 silently routed queries to Opus 4.8 without API signal — promises visible safeguards going forward",
+      "source": "KuCoin News",
+      "author": "Anthropic",
+      "date": "2026-06-10",
+      "primary_url": "https://www.kucoin.com/news/flash/anthropic-apologizes-for-claude-fable-5-censorship-promises-transparency-fixes",
+      "score": 8.5
+    },
+    {
+      "title": "YouTube: 'GAME CHANGER: Fable 5 Does 2 Months in 1 Day' — Stripe's 50M-line codebase migration demo",
+      "source": "YouTube",
+      "author": "AI tools creator",
+      "date": "2026-06-10",
+      "primary_url": "https://www.youtube.com/watch?v=oTwLGZshiC0",
+      "score": 8.5
+    },
+    {
+      "title": "OpenAI acquires Ona — persistent agent execution inside customer cloud boundary for Codex",
+      "source": "OpenAI / CNBC",
+      "author": "OpenAI",
+      "date": "2026-06-11",
+      "primary_url": "https://openai.com/index/openai-to-acquire-ona/",
+      "score": 8.0
+    },
+    {
+      "title": "Ethan Mollick (300 likes): technology moving faster than our ability to organize around it",
+      "source": "LinkedIn",
+      "author": "Ethan Mollick",
+      "date": "2026-06-08",
+      "primary_url": "https://www.linkedin.com/posts/emollick_a-year-ago-the-closest-thing-we-had-to-a-activity-7469581674884988928-Vlpy",
+      "score": 8.0
+    },
+    {
+      "title": "Peter Buchanan AI to ROI June 12: five stories every executive should track this week",
+      "source": "LinkedIn",
+      "author": "Peter Buchanan",
+      "date": "2026-06-12",
+      "primary_url": "https://www.linkedin.com/posts/peterbuchanan_ai-to-roi-news-analysis-june-12-2026-activity-7471198609137504257-6ccB",
+      "score": 8.0
+    },
+    {
+      "title": "Claude Code v2.1.172 — Agents that spawn agents (YouTube, 39-second explainer)",
+      "source": "YouTube Shorts",
+      "author": "Claude Code Updates",
+      "date": "2026-06-10",
+      "primary_url": "https://www.youtube.com/watch?v=cWB9tTeExgE",
+      "score": 8.0
+    },
+    {
+      "title": "TikTok / X viral: US government pulls Fable 5 in 90 minutes — @dashboardlim breakdown thread",
+      "source": "X / Instagram",
+      "author": "@dashboardlim; @ai_in_60",
+      "date": "2026-06-13",
+      "primary_url": "https://www.instagram.com/reel/DZh7c3UAQ0-/",
+      "score": 8.0
+    },
+    {
+      "title": "OpenAI confidentially files S-1 — joins Anthropic in IPO pipeline at $852B valuation",
+      "source": "Fortune / The Guardian",
+      "author": "OpenAI",
+      "date": "2026-06-08",
+      "primary_url": "https://fortune.com/2026/06/09/openai-files-confidential-s-1-sec-ipo/",
+      "score": 8.0
+    },
+    {
+      "title": "Apple WWDC 2026: Siri AI rebuilt on Gemini distillation — developer beta June 8, GA fall 2026",
+      "source": "Apple Newsroom",
+      "author": "Apple",
+      "date": "2026-06-08",
+      "primary_url": "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/",
+      "score": 7.5
+    },
+    {
+      "title": "@thattechpastor Instagram: 'One letter. 5:21pm. Gone by the end of the business day.' — Fable 5 shutdown framing",
+      "source": "Instagram",
+      "author": "@thattechpastor",
+      "date": "2026-06-13",
+      "primary_url": "https://www.instagram.com/reel/DZgtMGwzvq_/",
+      "score": 7.5
+    },
+    {
+      "title": "@30s.ai Instagram: 'Treat agents like cloud infra now: metered, budgeted, monitored'",
+      "source": "Instagram",
+      "author": "@30s.ai",
+      "date": "2026-06-12",
+      "primary_url": "https://www.instagram.com/p/DZfiwkOkyey/",
+      "score": 7.5
+    },
+    {
+      "title": "OpenAI + Visa: AI agents can now initiate purchases with tokenized credentials",
+      "source": "AP News",
+      "author": "OpenAI; Visa",
+      "date": "2026-06-10",
+      "primary_url": "https://apnews.com/article/visa-chatgpt-openai-shopping-mastercard-d769dec86344cb4977c98789e8ec492f",
+      "score": 7.5
+    },
+    {
+      "title": "Munich Regional Court: Google directly liable for false claims in AI Overviews",
+      "source": "The Next Web",
+      "author": "Munich Regional Court",
+      "date": "2026-06-10",
+      "primary_url": "https://thenextweb.com/news/google-ai-overviews-german-court-liable",
+      "score": 7.0
+    },
+    {
+      "title": "Andrej Karpathy on Fable 5: 'It's never felt this tempting to stop looking at the code at all'",
+      "source": "Global Advisors",
+      "author": "Andrej Karpathy",
+      "date": "2026-06-10",
+      "primary_url": "https://globaladvisors.biz/2026/06/10/quote-andrej-karpathy-anthropic-openai-founder-formerly-head-of-tesla-ai/",
+      "score": 7.5
+    },
+    {
+      "title": "Google NotebookLM upgraded to Gemini 3.5 with code execution and structured output formats",
+      "source": "AI-Weekly",
+      "author": "Google",
+      "date": "2026-06-08",
+      "primary_url": "https://ai-weekly.ai/newsletter-06-09-2026/",
+      "score": 7.0
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "SEC EDGAR — monitor for Anthropic and OpenAI public S-1 filings (expected late summer 2026); risk factor sections should be treated as primary enterprise AI governance documents when they land",
+      "Anthropic news page — track Fable 5 and Mythos 5 restoration announcement and any changed access conditions or data handling requirements",
+      "r/ClaudeAI and r/ClaudeCode subreddits — these surfaced higher-signal enterprise developer discussion than Facebook this week; consider adding to monitoring rotation"
+    ],
+    "sources_to_drop": [
+      "Facebook general monitoring — this platform consistently produces the lowest-signal enterprise AI content; consider reducing to monitoring-only unless a verified high-signal enterprise AI community post surfaces in two consecutive weeks"
+    ],
+    "topics_to_add": [
+      "Ethan Mollick's 'Co-Existence' book (October 20 release) — his AI-audience design framing has direct enterprise implications for internal knowledge management and agent-facing documentation; track early review coverage for new design principles",
+      "AI-generated content liability developments following the Munich court ruling — track EU-wide application and UK equivalents as they emerge"
+    ],
+    "topics_to_drop": [],
+    "notes": "The week of June 8-14 was dominated by a single cluster: Fable 5 launch, silent degradation admission, government shutdown, billing split. Future weeks may need to consciously diversify beyond Anthropic to prevent the tab becoming Claude-centric when other platforms (TikTok creators, Instagram AI educators) are producing substantive content on non-Anthropic topics."
+  }
+}

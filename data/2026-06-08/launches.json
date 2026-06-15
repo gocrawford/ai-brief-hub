@@ -1,0 +1,1090 @@
+{
+  "tab_id": "launches",
+  "tab_name": "Launches",
+  "subtitle": "Launch Intelligence",
+  "icon": "Rocket",
+  "min_items": 20,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.96,
+    "items_total": 26,
+    "items_new": 25,
+    "items_returning": 1
+  },
+  "executive_summary": [
+    {
+      "headline": "Anthropic launches Claude Fable 5, its most capable publicly available model — then suspends access three days later after a US government directive.",
+      "body": "Anthropic released Claude Fable 5 on June 9, the first Mythos-class model made available for general use, with 80.3% on SWE-Bench Pro and a 1M-token context window at $10/$50 per million tokens. Access was suspended June 12 following a US government directive. This is the most significant model capability jump since GPT-5.5 — and the suspension underscores that dual-use frontier AI now operates under active government oversight.",
+      "primary_url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+    },
+    {
+      "headline": "Apple WWDC 2026 ships Siri AI built on Google Gemini — Claude and ChatGPT become native iPhone AI options for the first time via Extensions.",
+      "body": "Apple's June 8 WWDC keynote announced iOS 27 and a rebuilt Siri AI powered by Google's Gemini model, with an Extensions system allowing users to choose Claude or ChatGPT as their default iPhone assistant. Siri AI arrives in beta this fall on iPhone 15 Pro and newer. For enterprise teams, the Extensions model means AI choice is moving to the device level — employees with personal iPhones will arrive at work with frontier AI already in their pocket.",
+      "primary_url": "https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/"
+    },
+    {
+      "headline": "Physical AI funding dominates the week: NEURA Robotics closes up to $1.4B at $7B from Nvidia, Amazon, and Bosch; TensorWave raises $350M for AMD-based AI cloud.",
+      "body": "Humanoid robotics company NEURA Robotics closed a Series C of up to $1.4B (June 10, milestone-contingent) backed by Tether, Qualcomm, Amazon, Nvidia, Bosch, Schaeffler, and the European Investment Bank — the largest funding round ever for a full-stack robotics company. On the same day, TensorWave raised $350M at $1.55B to build an AMD-native alternative to Nvidia AI cloud, co-led by Magnetar Capital and AMD Ventures.",
+      "primary_url": "https://www.businesswire.com/news/home/20260610204575/en/NEURA-Robotics-Announces-Record-Series-C-of-up-to-$1.4-Billion-to-Accelerate-the-Worlds-Leading-Physical-AI-Platform"
+    },
+    {
+      "headline": "OpenAI and Oracle remove procurement friction: Oracle Universal Credits can now be applied to GPT-5.5 and Codex without a separate vendor contract.",
+      "body": "OpenAI announced on June 10 that Oracle Cloud Infrastructure customers can access GPT-5.5 and Codex against existing Oracle Universal Credits without setting up a separate OpenAI purchasing relationship. Availability begins in the coming weeks. For enterprises with large Oracle commitments, this eliminates the primary procurement barrier to OpenAI adoption at scale.",
+      "primary_url": "https://openai.com/index/openai-on-oracle-cloud/"
+    },
+    {
+      "headline": "Cyera raises $600M at $12B — AI data security is the fastest-growing enterprise AI infrastructure category.",
+      "body": "Cyera closed a $600M round at a $12B valuation on June 10-11, led by Evolution Equity Partners with participation from Temasek, Cyberstarts, Accel, AT&T Ventures, Blackstone, and Coatue. The company's pitch is that enterprises deploying AI have no visibility into where their sensitive data sits. The round values Cyera 4x higher than 18 months ago and reflects how rapidly AI-related data governance has become a board-level procurement priority.",
+      "primary_url": "https://www.nytimes.com/2026/06/10/business/dealbook/cyera-ai-cybersecurity-funding.html"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "anthropic-claude-fable-5-jun09",
+      "title": "Anthropic Claude Fable 5 — First Public Mythos-Class Model (Suspended June 12)",
+      "source": "Anthropic",
+      "date": "2026-06-09",
+      "primary_url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "secondary_urls": [
+        {
+          "label": "TechCrunch coverage",
+          "url": "https://techcrunch.com/2026/06/09/anthropics-claude-fable-5-is-a-version-of-mythos-the-public-can-access-today/"
+        },
+        {
+          "label": "Claude Fable model page",
+          "url": "https://www.anthropic.com/claude/fable"
+        }
+      ],
+      "summary": "Anthropic released Claude Fable 5 on June 9 — the first publicly available model built on the Mythos architecture, previously restricted to Project Glasswing security researchers. Key specs: 80.3% on SWE-Bench Pro (vs. Opus 4.8 at 69.2%), 1M-token context window, 128K max output, $10/$50 per million tokens — less than half the price of Mythos Preview. Enterprise customers on consumption-based plans had full access immediately. Access was suspended June 12 following a US government directive; Anthropic is working to restore it. A companion model, Claude Mythos 5 (same underlying weights, cyber safeguards lifted), is restricted to Glasswing partners and select biology researchers.",
+      "category": "Frontier Model",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Fable 5's SWE-Bench Pro score of 80.3% surpasses GPT-5.5 (58.6%) and Opus 4.8 (69.2%) on the hardest public coding benchmark. On the Hebbia Finance Benchmark for senior-level reasoning, Fable 5 scored highest of any model. Customer validation includes Stripe reporting months of engineering compressed into days and a codebase-wide Ruby migration (50M lines) completed in one day. The suspension introduces supply-chain risk for teams planning to build on Fable 5 — evaluate on a non-critical workload first before committing production infrastructure.",
+      "pricing": "$10 per million input tokens; $50 per million output tokens. Included on Pro, Max, Team, and seat-based Enterprise plans at no extra cost through June 22 (when capacity allows resumption). After June 23, requires usage credits until subscription inclusion is restored.",
+      "key_takeaways": [
+        "Access is currently suspended following a US government directive dated June 12 — do not build production integrations until Anthropic confirms restoration and provides an access timeline.",
+        "The model's longest autonomous task horizon of any Claude release to date (several hours vs. 30-minute check-ins for Opus 4.8) is the most enterprise-relevant capability uplift: compliance review, code migration, and document analysis workflows that previously required human handoffs can potentially run unattended.",
+        "Fable 5 ships with safety classifiers that route requests touching cybersecurity, biology, chemistry, and distillation attempts to Opus 4.8 — triggers less than 5% of sessions per Anthropic, but technical security teams should test coverage before deploying in a SOC or vulnerability-research context.",
+        "The 30-day data retention requirement for all Mythos-class traffic (including Fable 5) is new — enterprise IT and legal teams should review this against existing data-handling policies before enabling Fable 5 in production.",
+        "At $10/$50 pricing, Fable 5 is substantially cheaper than Mythos Preview ($25/$125) and competitive with Opus 4.8 for long-context tasks — run a cost comparison before the suspension lifts to be ready."
+      ],
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["frontier-model", "anthropic", "claude", "coding", "enterprise-ai"]
+    },
+    {
+      "id": "apple-wwdc-2026-siri-ai-ios27-jun08",
+      "title": "Apple WWDC 2026 — Siri AI on Gemini, Claude and ChatGPT Extensions, iOS 27",
+      "source": "Apple Newsroom",
+      "date": "2026-06-08",
+      "primary_url": "https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/",
+      "secondary_urls": [
+        {
+          "label": "Mashable: Everything announced at WWDC 2026",
+          "url": "https://mashable.com/tech/everything-announced-at-wwdc-2026"
+        }
+      ],
+      "summary": "Apple previewed iOS 27, iPadOS 27, macOS 27 'Golden Gate', and a rebuilt Siri AI at WWDC 2026 on June 8. Siri AI runs on Google's custom Gemini model inside Apple's Private Cloud Compute infrastructure (Google does not receive user data). An Extensions system lets users switch their default AI to Claude or ChatGPT — the first time either model becomes a native Apple platform option, reaching approximately 2.2B Apple devices at public release in fall 2026. Key enterprise signals: cross-app context (Siri can search messages, emails, photos, and take actions across apps), on-screen awareness, agentic Passwords app that autonomously navigates websites to update credentials. Developer beta is available now; public beta in July; full release in September alongside iPhone 18.",
+      "category": "Enterprise AI",
+      "evaluation": "MONITOR",
+      "competitive_context": "Apple confirming Google Gemini as its AI engine while also enabling Claude and ChatGPT as user-selectable alternatives reframes the platform competition: AI capability is no longer a walled garden. For enterprise IT, the immediate implication is that managed Apple devices running iOS 27 will have employees using Gemini-powered Siri by default — with the ability to switch to Claude or ChatGPT in settings. MDM policies for Apple Intelligence will need review before fall rollout. The agentic Passwords feature that autonomously updates credentials is a precedent: device-OS AI taking real-world actions without user input is now a shipping product, not a demo.",
+      "pricing": "Part of iOS 27 / free software update. Some Apple Intelligence server-model features have daily usage limits; increased access via iCloud+ subscriptions.",
+      "key_takeaways": [
+        "Review your MDM policy for Apple Intelligence before iOS 27 beta reaches managed devices in July — the Extensions system means employees could switch from Gemini to Claude or ChatGPT on their managed iPhone without IT approval under current policies.",
+        "The agentic Passwords feature is the most operationally significant WWDC announcement: Apple ships an OS-level AI agent that takes real-world actions autonomously. This normalizes agentic behavior in end-user devices and raises the employee expectation bar for business software.",
+        "Claude is now a native Apple platform option for the first time — any enterprise already using Claude via API should verify that enterprise data policies extend to mobile-device usage, not just desktop and cloud API access.",
+        "Siri AI is not available in the EU at iOS/iPadOS launch due to regulatory requirements — EMEA enterprise deployments need to plan for asymmetric AI feature availability."
+      ],
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["apple", "siri", "ios27", "gemini", "enterprise-ai", "mobile"]
+    },
+    {
+      "id": "openai-oracle-universal-credits-jun10",
+      "title": "OpenAI on Oracle Cloud — GPT-5.5 and Codex via Oracle Universal Credits",
+      "source": "OpenAI",
+      "date": "2026-06-10",
+      "primary_url": "https://openai.com/index/openai-on-oracle-cloud/",
+      "secondary_urls": [
+        {
+          "label": "Coverage via LinkedIn DX Briefing",
+          "url": "https://www.linkedin.com/pulse/welcome-dx-today-executive-briefing-june-12-2026-rick-spair-h9eje"
+        }
+      ],
+      "summary": "OpenAI and Oracle announced on June 10 that Oracle Cloud Infrastructure customers can apply existing Oracle Universal Credits (UCM) toward OpenAI's GPT-5.5 and Codex autonomous coding agent. No new vendor contract, procurement process, or billing relationship is required — charges run through the existing Oracle account. Availability begins in the coming weeks; Oracle customers contact their sales representative for timing. This follows the expiry of OpenAI's exclusivity arrangement with Microsoft (ended late April 2026).",
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Oracle is the primary cloud and ERP vendor for a large portion of the Global 2000, particularly in manufacturing, utilities, finance, and government. A company with a $200M Oracle cloud commitment can begin using GPT-5.5 and Codex without board-level approval for a new AI vendor — it just draws down existing credits. This is the most significant procurement friction-reduction event in enterprise AI since Microsoft embedded Copilot in M365. It also signals that OpenAI's post-exclusivity strategy is multi-cloud distribution rather than competing with its own cloud infrastructure.",
+      "pricing": "Charged against existing Oracle Universal Credits at standard OCI rates; specific per-token pricing through OCI not yet published. Contact Oracle sales for enterprise commitment pricing.",
+      "key_takeaways": [
+        "If your organization holds Oracle Universal Credits, you can access GPT-5.5 and Codex within the coming weeks without procurement approval for a new AI vendor — audit your OCI credit balance and prepare a pilot project now.",
+        "Codex, OpenAI's autonomous coding agent, is included — this is not just model API access; it is an agentic system that can operate on your codebase. Define scope, access controls, and review gates before the first production run.",
+        "This deal is the clearest signal that OpenAI is prioritizing enterprise distribution over building its own cloud — compare with Microsoft's integrated Copilot strategy and Google's Vertex AI path when making platform consolidation decisions."
+      ],
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["openai", "oracle", "enterprise-ai", "procurement", "codex", "gpt-5.5"]
+    },
+    {
+      "id": "neura-robotics-1-4b-series-c-jun10",
+      "title": "NEURA Robotics — Up to $1.4B Series C at $7B for Humanoid Physical AI",
+      "source": "BusinessWire / CNBC",
+      "date": "2026-06-10",
+      "primary_url": "https://www.businesswire.com/news/home/20260610204575/en/NEURA-Robotics-Announces-Record-Series-C-of-up-to-$1.4-Billion-to-Accelerate-the-Worlds-Leading-Physical-AI-Platform",
+      "secondary_urls": [
+        {
+          "label": "CNBC coverage",
+          "url": "https://www.cnbc.com/2026/06/10/neura-robotics-funding-ai-humanoid-robots.html"
+        }
+      ],
+      "summary": "German humanoid robotics company NEURA Robotics closed a Series C of up to $1.4B at a $7B valuation on June 10, 2026 — the round is milestone-contingent, not a lump-sum close. Lead investor is Tether (stablecoin issuer); strategic backers include Qualcomm, Amazon, Nvidia, Bosch, Schaeffler, and the European Investment Bank. NEURA's order backlog and strategic deployment pipeline already exceed $1B. The company targets mass production of millions of cognitive robots by 2030 and operates the world's first real-world robot training facilities (NEURA Gyms).",
+      "category": "Hardware",
+      "evaluation": "ADD TO WATCHLIST",
+      "competitive_context": "The investor roster maps almost exactly onto the supply chain a humanoid robotics business requires: Nvidia for inference chips, Amazon for logistics deployment, Bosch and Schaeffler for industrial components. This is strategic capital, not speculative. The EU-headquartered location (Germany) and EIB backing position NEURA as the likely choice for European industrial deployments that are cautious about US-China dependencies. For a public-enterprise team in industrial/building products, the question is not if humanoid robots reach their facilities but when and from which vendor — NEURA is now the European bet.",
+      "pricing": "Not disclosed; enterprise deployment contracts quoted per engagement.",
+      "key_takeaways": [
+        "The $1.4B ceiling is milestone-contingent — treat the number as a financing commitment, not a closed round. Track NEURA's production milestones as a proxy for when commercial deployment timelines become real.",
+        "The Bosch and Schaeffler strategic investments mean industrial component suppliers are actively betting on humanoid robotics integration — survey your own supplier relationships to understand which of your partners are investing in physical AI.",
+        "NEURA Gyms (real-world robot training environments) are an operational model worth monitoring: the company that controls real-world training data for industrial robots will have a compounding advantage similar to what autonomous vehicle companies gained from fleet telemetry."
+      ],
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["hardware", "robotics", "physical-ai", "funding", "industrial"]
+    },
+    {
+      "id": "cyera-600m-ai-data-security-jun10",
+      "title": "Cyera Raises $600M at $12B — AI Data Security Becomes a Megaround Category",
+      "source": "New York Times / TechTimes",
+      "date": "2026-06-10",
+      "primary_url": "https://www.nytimes.com/2026/06/10/business/dealbook/cyera-ai-cybersecurity-funding.html",
+      "secondary_urls": [
+        {
+          "label": "TechTimes: Cyera $600M detail",
+          "url": "https://www.techtimes.com/articles/318226/20260611/cyera-raises-600m-ai-data-security-valuation-doubles-12-billion.htm"
+        }
+      ],
+      "summary": "Cyera raised $600M at a $12B valuation on June 10-11, led by Evolution Equity Partners with participation from Temasek, Cyberstarts, Accel, AT&T Ventures, Blackstone, and Coatue. The company discovers where sensitive enterprise data sits — a problem made urgent by AI deployments that can inadvertently surface data across organizational boundaries. Cyera's valuation increased approximately 4x from $3B to $12B in 18 months. Total cumulative funding is approximately $1.9B.",
+      "category": "Enterprise AI",
+      "evaluation": "ADD TO WATCHLIST",
+      "competitive_context": "The round is a direct signal that AI data governance has moved from an audit checkbox to a board-level spend priority. Cyera's core product is a data security posture management (DSPM) platform — it shows enterprises which data assets are exposed to AI models, agents, or external services, and where sensitive data is co-mingled with public-model training pipelines. The strategic investors (Temasek as a sovereign-owned fund, AT&T Ventures) indicate government and telecom sectors are paying for this capability today. For a regulated public-enterprise team, the governance gap Cyera addresses — not knowing where your sensitive data goes when employees use AI tools — is a live audit risk.",
+      "pricing": "Enterprise pricing; contact Cyera for custom quotes.",
+      "key_takeaways": [
+        "If your organization has not yet mapped which AI tools (internal and third-party) have access to which data stores, Cyera or a comparable DSPM tool should be on your Q3 evaluation list.",
+        "The Temasek (Singapore government) and AT&T Ventures participation signals this category is attracting regulated-industry buyers — your sector peer companies are almost certainly evaluating AI data security tools.",
+        "The 4x valuation increase in 18 months reflects real customer adoption growth, not just market enthusiasm — in procurement negotiations, Cyera will increasingly price its leverage."
+      ],
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["funding", "security", "data-governance", "enterprise-ai", "compliance"]
+    },
+    {
+      "id": "pega-infinity-studio-jun08",
+      "title": "Pega Infinity Studio — AI-Governed App Development with No Token Costs at Runtime",
+      "source": "Pegasystems",
+      "date": "2026-06-08",
+      "primary_url": "https://www.pega.com/about/news/press-releases/pega-harnesses-best-practices-and-ai-coding-agents-build-apps-mission",
+      "secondary_urls": [
+        {
+          "label": "Pega Predictable AI / no token tax announcement",
+          "url": "https://markets.ft.com/data/announce/detail?dockey=600-202606081130BIZWIRE_USPRX____20260608_BW778439-1"
+        }
+      ],
+      "summary": "Pegasystems (NASDAQ: PEGA) launched Pega Infinity Studio at PegaWorld on June 8, an AI-first development environment for mission-critical applications that works with Claude Code, GitHub Copilot, and OpenAI Codex via MCP. The accompanying Pega Predictable AI architecture eliminates per-token runtime charges by shifting heavy AI reasoning to design time — runtime agents use lightweight semantic queries instead of re-reasoning. Enterprise customers pay a flat fee per completed case regardless of AI usage. Pega Infinity 26 (full suite) is available in Q3 2026. Infinity Studio includes 10 new MCP tools and 50+ agent skills.",
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Pega's 'no token tax' positioning is a direct counter to the GitHub Copilot usage-based billing change from June 1 and Anthropic's capacity-sensitive pricing on Fable 5. For regulated enterprises building customer-facing or operational workflows on Pega (financial services, insurance, healthcare, government), the ability to predict AI costs per case — rather than per token — is a significant budget and audit simplification. Pega's installed base in financial services and insurance makes this especially relevant as a path to production-grade agentic workflows without open-ended compute exposure.",
+      "pricing": "Flat price per completed case; token charges eliminated at runtime under Pega Infinity 26 (Q3 2026). Contact Pega sales for licensing details.",
+      "key_takeaways": [
+        "The 'design-time reasoning, lightweight runtime' architecture is the most concrete answer to the enterprise AI cost-predictability problem published this week — teams struggling to budget for agentic workflows should request a Pega cost-per-case estimate.",
+        "Open MCP support means Pega Infinity Studio can be powered by your existing AI coding agents (Claude Code, GitHub Copilot, Codex) — you do not need to switch tooling to adopt the governance architecture.",
+        "Pega Infinity 26 full suite ships Q3 2026 — if your enterprise is on Pega today, the Q3 upgrade cycle is the entry point to production agentic workflows without token-exposure risk."
+      ],
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["enterprise-ai", "pega", "agentic", "governance", "no-code", "mcp"]
+    },
+    {
+      "id": "atomicwork-ai-workforce-ga-jun09",
+      "title": "Atomicwork AI Workforce Platform — Governed AI Coworkers for Enterprise IT, HR, and Finance",
+      "source": "Atomicwork",
+      "date": "2026-06-09",
+      "primary_url": "https://www.atomicwork.com/blog/ai-workforce-launch",
+      "secondary_urls": [
+        {
+          "label": "PR Newswire announcement",
+          "url": "https://www.prnewswire.com/news-releases/atomicwork-launches-the-first-governed-ai-workforce-for-enterprise-it-302795475.html"
+        }
+      ],
+      "summary": "Atomicwork launched its AI Workforce Platform to general availability on June 9 — a set of governed AI 'coworkers' (agents with defined scope, identity, access, budget, and a human manager) for enterprise IT, HR, finance, and workplace teams. Each coworker owns a defined role end to end: Device Ops Engineer, Network Ops Engineer, Cloud Ops Engineer, Access Manager, Incident Manager, SecOps Engineer, and HR Ops Specialist. Coworkers operate in sandboxed environments with observable, reversible, bounded actions. They connect to JumpCloud, Entra ID, Workday, Okta, Salesforce, and internal tools through a single interface. Agent 'Atom' works across Teams, Slack, email, browser, chat, voice, and vision.",
+      "category": "Enterprise AI",
+      "evaluation": "ADD TO WATCHLIST",
+      "competitive_context": "Atomicwork positions against ServiceNow, Freshservice, and Jira Service Management in ITSM, but its 'AI coworker with a manager' model is a substantively different governance architecture than a traditional ticketing system with AI features. The human-manager primitive — each coworker has a named owner who approves budget and scope — directly addresses the accountability gap that IT governance teams cite as the primary blocker to deploying autonomous agents. This is the same governance pattern Microsoft is building into Copilot Studio and Azure, but for ITSM and HR workflows specifically.",
+      "pricing": "Not publicly disclosed; contact Atomicwork for enterprise pricing.",
+      "key_takeaways": [
+        "The 'AI coworker with a human manager' operating model resolves the accountability question that blocks most enterprise agent deployments — if your IT governance policy requires a named human owner for any automated action, Atomicwork's architecture satisfies that requirement by design.",
+        "Sandboxed execution with observable, reversible, bounded actions is the IT security requirement most agent platforms still lack — evaluate whether your current agent tooling provides equivalent guarantees before comparing on features.",
+        "The Access Manager coworker (handling application provisioning and de-provisioning across SaaS and internal apps) is the highest-ROI entry point for an IT team — access management backlogs are universal and the risk profile is well-understood."
+      ],
+      "score": {
+        "total": 7.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-06-14T12:00:00Z",
+      "recurrence": "new",
+      "tags": ["enterprise-ai", "agents", "itsm", "hr", "governance", "ai-workforce"]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "product_hunt",
+      "title": "Product Hunt — Top AI Launches, Week of June 8",
+      "description": "Top products from the Product Hunt weekly leaderboard for June 8–14, 2026 (Week 24), ranked by weekly position. Maker websites used as primary URLs where available.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "ph-bond-ai-todo-jun08",
+          "title": "Bond — The AI To-Do List That Does Itself",
+          "source": "Product Hunt",
+          "date": "2026-06-08",
+          "primary_url": "https://www.bond.app",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/bond-7"
+            }
+          ],
+          "summary": "Bond is an AI to-do list that autonomously executes tasks from your list, not just tracks them. The product applies an AI agent to work through items — browsing, scheduling, sending messages — without requiring manual completion. Ranked #1 on Product Hunt Week 24 leaderboard.",
+          "category": "AI Agent",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["ai-agent", "productivity", "task-management"],
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "ph-publora-agent-social-api-jun09",
+          "title": "Publora — Publishing API for AI Agents Across 10 Social Platforms",
+          "source": "Product Hunt",
+          "date": "2026-06-09",
+          "primary_url": "https://www.publora.com",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/publora"
+            }
+          ],
+          "summary": "Publora is an MCP-native publishing API that lets AI agents post, schedule, and manage content across 10 social platforms. Designed for agent-to-platform integration rather than human dashboards — any AI system with Publora access can autonomously publish without human-in-the-loop approval. Ranked #2 Week 24.",
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["mcp", "api", "social-media", "developer-tools", "agent"],
+          "score": {
+            "total": 5.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 0,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "ph-honen-enterprise-learning-jun08",
+          "title": "Honen — Automated Teaching and Learning Infrastructure for Enterprise",
+          "source": "Product Hunt",
+          "date": "2026-06-08",
+          "primary_url": "https://www.honen.ai",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/honen"
+            }
+          ],
+          "summary": "Honen provides automated teaching and learning infrastructure for any company — generating training content, assessments, and personalized learning paths from existing internal documentation and workflows. Ranked #1 on the June 8 daily leaderboard and #3 weekly.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["enterprise-ai", "learning", "training", "productivity"],
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "ph-browse-sh-agent-web-memory-jun08",
+          "title": "Browse.sh — Give Agents Muscle Memory for Automating the Web",
+          "source": "Product Hunt",
+          "date": "2026-06-08",
+          "primary_url": "https://browse.sh",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/browse-sh"
+            }
+          ],
+          "summary": "Browse.sh is a catalog-and-memory layer for browser automation agents. It records and indexes browsing automations so agents can recall and reuse successful navigation patterns across sessions — giving web agents 'muscle memory' rather than solving each site from scratch. Ranked #5 Week 24.",
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["browser-automation", "agent", "developer-tools", "memory"],
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "ph-respan-gateway-ai-observability-jun10",
+          "title": "Respan Gateway — One AI Gateway with Built-In Observability and Evals",
+          "source": "Product Hunt",
+          "date": "2026-06-10",
+          "primary_url": "https://www.respan.dev",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/respan-gateway"
+            }
+          ],
+          "summary": "Respan Gateway is an AI model routing and observability layer that unifies access to multiple LLM providers with built-in evaluation and tracing. One gateway replaces per-provider API wiring and adds observability, cost tracking, and automated evals without requiring separate tooling. Ranked #8 Week 24.",
+          "category": "Dev Tools",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["developer-tools", "observability", "llm-gateway", "enterprise-ai", "evals"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "ph-spotlight-backplanes-claude-code-jun10",
+          "title": "Spotlight by Backplanes — Session Reports for Claude Code and Codex",
+          "source": "Product Hunt",
+          "date": "2026-06-10",
+          "primary_url": "https://www.backplanes.dev/spotlight",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/spotlight-by-backplanes"
+            }
+          ],
+          "summary": "Spotlight generates session reports and audit trails for Claude Code and OpenAI Codex agent runs — capturing what changed, what tools were called, cost per session, and security signals. Addresses the governance gap where autonomous coding agents take actions without leaving a human-readable audit trail. Ranked #9 Week 24.",
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["developer-tools", "security", "audit", "claude-code", "codex", "governance"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "ph-vercel-drop-deploy-jun11",
+          "title": "Vercel Drop — Drag-to-Deploy for Web Projects",
+          "source": "Product Hunt",
+          "date": "2026-06-11",
+          "primary_url": "https://vercel.com/drop",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/vercel-drop"
+            }
+          ],
+          "summary": "Vercel Drop is a drag-and-drop deployment surface: drop any project folder or file and it goes live on Vercel infrastructure immediately. Designed for AI-generated code outputs (from Claude Code, v0, etc.) that need zero-friction deployment. Ranked #11 Week 24.",
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["developer-tools", "deployment", "vercel", "vibe-coding"],
+          "score": {
+            "total": 4.5,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "ph-slashspace-ai-canvas-jun11",
+          "title": "Slashspace AI — Canvas-First AI Workspace for Complex Work",
+          "source": "Product Hunt",
+          "date": "2026-06-11",
+          "primary_url": "https://slashspace.ai",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/slashspace-ai"
+            }
+          ],
+          "summary": "Slashspace AI is a canvas-first AI workspace for sustained, multi-step knowledge work. The interface organizes AI interactions as spatially arranged nodes rather than a chat thread, enabling non-linear reasoning and parallel workflows across long projects. Ranked #13 Week 24.",
+          "category": "Enterprise AI",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["productivity", "knowledge-work", "enterprise-ai", "canvas"],
+          "score": {
+            "total": 4.5,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "frontier_models",
+      "title": "Frontier Model Releases",
+      "description": "New model releases from frontier labs and major research organizations, June 8–14, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "anthropic-fable-5-model-section",
+          "title": "Claude Fable 5 — Mythos-Class Frontier Model (Access Suspended June 12)",
+          "source": "Anthropic",
+          "date": "2026-06-09",
+          "primary_url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "summary": "See Top Picks for full detail. Highlights: 80.3% SWE-Bench Pro, 1M-token context, 128K max output, $10/$50 per million tokens. Access suspended June 12 per US government directive. Available on Claude API, Bedrock, Vertex AI, Foundry, Databricks, and Snowflake. Subscription-plan inclusion paused; resumption date unconfirmed.",
+          "category": "Frontier Model",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["frontier-model", "anthropic", "claude", "coding"],
+          "score": {
+            "total": 9.0,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "github-copilot-agent-session-visibility-jun10",
+          "title": "GitHub Copilot Chat — Agent Session Visibility, Search, and Log Access",
+          "source": "GitHub Blog",
+          "date": "2026-06-10",
+          "primary_url": "https://github.blog/changelog/2026-06-10-copilot-chat-now-sees-your-agent-sessions/",
+          "summary": "GitHub shipped two new Copilot Chat tools on June 10: Get Agent Logs (pulls a cloud agent session's full action log into chat for post-run analysis) and Session Search (finds and summarizes past agent sessions by topic, title, or recency). Users can now ask follow-up questions about completed agent work directly in chat. This closes the inspection gap for autonomous coding agents — previously, what an agent did in a session was opaque after completion.",
+          "category": "Dev Tools",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "returning",
+          "recurrence_note": "GitHub Copilot usage-based billing launched June 1; this week adds agent observability tooling on top of the billing change.",
+          "tags": ["github", "copilot", "dev-tools", "agent", "observability"],
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_ai",
+      "title": "Enterprise AI Platform Launches",
+      "description": "Enterprise-grade AI platform announcements and launches from major technology and services companies, June 8–14, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "pointfive-ai-efficiency-os-tokenshift-jun08",
+          "title": "PointFive AI Efficiency OS + TokenShift — Cloud and AI Coding Agent Cost Governance",
+          "source": "PointFive",
+          "date": "2026-06-08",
+          "primary_url": "https://www.pointfive.co/press/pointfive-raises-60m-series-b",
+          "secondary_urls": [
+            {
+              "label": "PointFive website",
+              "url": "https://www.pointfive.co"
+            }
+          ],
+          "summary": "PointFive raised $60M in a Series B led by Accel (with Salesforce Ventures, Entrée Capital, Index Ventures) and simultaneously launched two products: AI Efficiency OS (continuous cloud and AI optimization platform with agentic workflows for fully automated cost remediation) and TokenShift (developer-endpoint tool that optimizes token consumption and enforces governance controls across Claude Code, Codex, Cursor, and Copilot). TokenShift lets IT teams set per-developer budgets, prevent personal-project AI use, and block unapproved MCP data sharing — all in real time.",
+          "category": "Enterprise AI",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["enterprise-ai", "cost-governance", "dev-tools", "cloud", "coding-agents", "funding"],
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "microsoft-work-iq-api-ga-jun16-preview",
+          "title": "Microsoft Work IQ API — GA June 16 with Consumption-Based Copilot Credits Pricing",
+          "source": "Microsoft Learn / Microsoft Licensing",
+          "date": "2026-06-09",
+          "primary_url": "https://www.microsoft.com/en-us/licensing/news/work-iq-general-availability",
+          "secondary_urls": [
+            {
+              "label": "Microsoft Partner Center announcement",
+              "url": "https://learn.microsoft.com/en-us/partner-center/announcements/2026-june"
+            }
+          ],
+          "summary": "Microsoft confirmed during the week of June 8 that Work IQ API goes GA on June 16, allowing custom agents and third-party AI platforms to ground in Microsoft 365 data (organizational graph, email, calendar, Teams, SharePoint) at scale. Billing is Copilot Credits-based, consumption-only: no separate SKU or per-user license. Light scenario costs approximately $0.20–$0.40 per call; medium scenario $0.30–$0.75. Administrators must enable consumptive billing before June 16 or third-party agents using Work IQ will stop functioning.",
+          "category": "Enterprise AI",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["microsoft", "work-iq", "enterprise-ai", "agents", "m365", "apis"],
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "microsoft-kpmg-atos-agent-365-jun09",
+          "title": "Microsoft Expands Agent 365 Deployments — KPMG (276K staff) and Atos (56K across 54 countries)",
+          "source": "Nasdaq / Microsoft",
+          "date": "2026-06-09",
+          "primary_url": "https://www.nasdaq.com/articles/microsoft-deepens-agentic-ai-push-and-collaborations-whats-ahead",
+          "summary": "On June 9, Microsoft announced two major Agent 365 deployments: KPMG deploying Microsoft 365 Copilot E7 across its 276,000-person workforce (KPMG classified as a 'Frontier Firm'), and Atos deploying Copilot E7 to all 56,000 employees across 54 countries while managing a 19,000-agent fleet through Agent 365. These are the largest disclosed enterprise Agent 365 deployments to date. Microsoft also reports M365 Copilot paid seats topped 20 million with seat additions accelerating 250% year over year.",
+          "category": "Enterprise AI",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["microsoft", "copilot", "enterprise-ai", "agents", "deployment"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "funding",
+      "title": "Notable AI Funding Rounds",
+      "description": "AI funding rounds announced or reported during June 8–14, 2026, cross-checked against company or primary press sources.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "neura-robotics-funding-section",
+          "title": "NEURA Robotics — Up to $1.4B Series C at $7B (Humanoid Physical AI, Germany)",
+          "source": "BusinessWire",
+          "date": "2026-06-10",
+          "primary_url": "https://www.businesswire.com/news/home/20260610204575/en/NEURA-Robotics-Announces-Record-Series-C-of-up-to-$1.4-Billion-to-Accelerate-the-Worlds-Leading-Physical-AI-Platform",
+          "summary": "See Top Picks for detail. Up to $1.4B milestone-contingent. Investors: Tether, Qualcomm, Amazon, Nvidia, Bosch, Schaeffler, European Investment Bank. Targets millions of cognitive robots in production by 2030. Described as the largest funding round ever for a full-stack robotics company.",
+          "category": "Hardware",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["funding", "robotics", "physical-ai", "industrial", "humanoid"],
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "cyera-600m-funding-section",
+          "title": "Cyera — $600M at $12B (AI Data Security Posture Management)",
+          "source": "New York Times",
+          "date": "2026-06-10",
+          "primary_url": "https://www.nytimes.com/2026/06/10/business/dealbook/cyera-ai-cybersecurity-funding.html",
+          "summary": "See Top Picks for detail. $600M led by Evolution Equity Partners; Temasek, Cyberstarts, Accel, AT&T Ventures, Blackstone, Coatue also participated. Total cumulative funding approximately $1.9B. Valuation up 4x in 18 months on enterprise AI data governance demand.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["funding", "security", "data-governance", "enterprise-ai"],
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "tensorwave-350m-amd-ai-cloud-jun10",
+          "title": "TensorWave — $350M Series B at $1.55B (AMD-Native AI Cloud Alternative to Nvidia)",
+          "source": "SiliconAngle",
+          "date": "2026-06-10",
+          "primary_url": "https://siliconangle.com/2026/06/10/data-center-infrastructure-startup-tensorwave-raises-350m-help-break-nvidias-ai-chip-monopoly/",
+          "secondary_urls": [
+            {
+              "label": "TensorWave announcement",
+              "url": "https://tensorwave.com/blog/tensorwave-raises-350-million-series-b-at-1-55b-valuation-to-expand-global-amd-powered-ai-infrastructure"
+            }
+          ],
+          "summary": "TensorWave raised $350M Series B at a $1.55B valuation to expand its AMD Instinct GPU cluster (currently 8,192 GPUs — one of the largest AMD training clusters in North America) as an alternative to Nvidia-based AI cloud. Co-led by Magnetar Capital and AMD Ventures; also Maverick Silicon, Nexus Venture Partners, and Western Frontier. TensorWave provides training and inference infrastructure for large-scale AI workloads.",
+          "category": "Hardware",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["funding", "hardware", "amd", "ai-cloud", "infrastructure"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "physicsx-300m-series-c-jun08",
+          "title": "PhysicsX — $300M Series C at $2.4B (AI Replaces Days-Long Physics Simulations in Seconds)",
+          "source": "PhysicsX Newsroom",
+          "date": "2026-06-08",
+          "primary_url": "https://www.physicsx.ai/newsroom/physicsx-announces-300m-series-c-to-accelerate-physics-ai-for-industrial-engineering",
+          "summary": "PhysicsX raised $300M Series C at a $2.4B valuation. The London-based company builds AI models that replace classical physics simulations (structural analysis, fluid dynamics, thermal modeling) — cutting compute time from days to seconds with equivalent accuracy. Booked revenue tripled year over year. The company is targeting aerospace, automotive, and industrial engineering design cycles.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["funding", "enterprise-ai", "simulation", "industrial", "engineering"],
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "pointfive-60m-series-b-ai-efficiency-os-funding",
+          "title": "PointFive — $60M Series B (AI and Cloud Cost Governance, TokenShift Launch)",
+          "source": "PointFive",
+          "date": "2026-06-08",
+          "primary_url": "https://www.pointfive.co/press/pointfive-raises-60m-series-b",
+          "summary": "See Enterprise AI section for product detail. $60M led by Accel with Salesforce Ventures, Entrée Capital, Index Ventures. Total funding $96M. Round accompanies launch of AI Efficiency OS and TokenShift products for AI coding agent cost governance.",
+          "category": "Dev Tools",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["funding", "developer-tools", "cost-governance", "enterprise-ai"],
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "open_source",
+      "title": "Open Source and Dev Tool Releases",
+      "description": "Notable open-source model and tooling releases from the week of June 8–14, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "hcompany-holo-3-1-local-computer-use",
+          "title": "H Company Holo 3.1 — Local Computer-Use Agent, 140ms Latency, SOTA AndroidWorld",
+          "source": "Hugging Face / H Company",
+          "date": "2026-06-08",
+          "primary_url": "https://huggingface.co/blog/Hcompany/holo31",
+          "secondary_urls": [
+            {
+              "label": "H Company Holo Models API",
+              "url": "https://hcompany.ai/holo-models-api"
+            }
+          ],
+          "summary": "H Company released Holo 3.1 on June 2-8, a family of local computer-use agent models (0.8B, 4B, 9B, 35B-A3B) based on Qwen architecture with native function-calling support, quantized checkpoints (NVFP4, FP8, Q4 GGUF), and 140ms perception-to-action latency on an RTX 4090. The 35B model achieves 79.3% on AndroidWorld (new SOTA) and 74.2% on OSWorld. The Q4 GGUF checkpoint runs on 12GB VRAM. Unlike cloud-based computer-use APIs, Holo 3.1 runs fully on-premises — screenshots and actions never leave the network.",
+          "category": "Open Source",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["open-source", "computer-use", "local-ai", "agent", "on-premises"],
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "jetbrains-mellum2-12b-moe-coding",
+          "title": "JetBrains Mellum 2 — 12B MoE Coding Model, Apache 2.0, 2.5B Active Parameters",
+          "source": "JetBrains Blog",
+          "date": "2026-06-08",
+          "primary_url": "https://blog.jetbrains.com/ai/2026/06/mellum2-goes-open-source-a-fast-model-for-ai-workflows/",
+          "secondary_urls": [
+            {
+              "label": "MarkTechPost coverage",
+              "url": "https://www.marktechpost.com/2026/06/02/jetbrains-releases-mellum2-a-12b-moe-model-for-fast-specialized-tasks-in-multi-model-ai-pipelines/"
+            }
+          ],
+          "summary": "JetBrains released Mellum 2, a 12B MoE coding model (2.5B active parameters) trained from scratch on ~10.6 trillion tokens, released under Apache 2.0. The model is purpose-built for software engineering tasks rather than general-purpose instruction following. Available on CoreWeave Inference and Hugging Face. JetBrains positions it as IDE-company advantage: years of developer-workflow context converted into model specialization. Reached 16,000+ Hugging Face downloads in its first week.",
+          "category": "Open Source",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["open-source", "coding", "moe", "developer-tools", "jetbrains"],
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "to_watch",
+      "title": "To Watch — Early-Stage High Signal",
+      "description": "Items that are pre-GA, announced but not yet shipping, or carry meaningful strategic signal for the next one to two quarters.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "physicsx-ai-simulation-industrial-engineering",
+          "title": "PhysicsX — AI Replaces Physics Simulations at Production Scale",
+          "source": "PhysicsX",
+          "date": "2026-06-08",
+          "primary_url": "https://www.physicsx.ai/newsroom/physicsx-announces-300m-series-c-to-accelerate-physics-ai-for-industrial-engineering",
+          "summary": "PhysicsX's $300M Series C and 3x revenue growth (see Funding section) positions the company as the most funded physics-AI startup. For industrial/building products enterprises running complex structural, thermal, or fluid simulations, PhysicsX's approach of replacing simulation runs (hours to days) with neural surrogate models (seconds) can compress design cycles materially. The company is actively signing aerospace, automotive, and industrial engineering customers.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["enterprise-ai", "simulation", "industrial", "engineering", "r-and-d"],
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        },
+        {
+          "id": "gemini-3-5-pro-expected-late-june-2026",
+          "title": "Google Gemini 3.5 Pro — 2M-Token Context Flagship, Expected Late June 2026",
+          "source": "Google Blog (I/O 2026)",
+          "date": "2026-06-08",
+          "primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+          "summary": "Gemini 3.5 Pro has not shipped publicly as of June 14. Google confirmed at I/O 2026 (May 19) that Pro would launch in June with a 2M-token context window — the largest of any production frontier model. It is in internal use and limited Vertex preview. Prediction markets priced a late-June launch window. The signal to watch: the model picker in Google AI Studio, where new models typically appear before an official announcement.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["frontier-model", "google", "gemini", "multimodal", "long-context"],
+          "score": {
+            "total": 6.5,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-14T12:00:00Z"
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "Anthropic Claude Fable 5 — First Public Mythos-Class Model (Access Suspended June 12)",
+      "source": "Anthropic",
+      "date": "2026-06-09",
+      "primary_url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "score": 9.0
+    },
+    {
+      "title": "Apple WWDC 2026 — Siri AI on Gemini, Claude and ChatGPT Extensions, iOS 27",
+      "source": "Apple Newsroom",
+      "date": "2026-06-08",
+      "primary_url": "https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/",
+      "score": 8.5
+    },
+    {
+      "title": "OpenAI on Oracle Cloud — GPT-5.5 and Codex via Oracle Universal Credits",
+      "source": "OpenAI",
+      "date": "2026-06-10",
+      "primary_url": "https://openai.com/index/openai-on-oracle-cloud/",
+      "score": 8.5
+    },
+    {
+      "title": "NEURA Robotics — Up to $1.4B Series C at $7B (Humanoid Physical AI)",
+      "source": "BusinessWire",
+      "date": "2026-06-10",
+      "primary_url": "https://www.businesswire.com/news/home/20260610204575/en/NEURA-Robotics-Announces-Record-Series-C-of-up-to-$1.4-Billion-to-Accelerate-the-Worlds-Leading-Physical-AI-Platform",
+      "score": 8.0
+    },
+    {
+      "title": "Cyera — $600M at $12B (AI Data Security)",
+      "source": "New York Times",
+      "date": "2026-06-10",
+      "primary_url": "https://www.nytimes.com/2026/06/10/business/dealbook/cyera-ai-cybersecurity-funding.html",
+      "score": 8.0
+    },
+    {
+      "title": "Microsoft Work IQ API — GA June 16 with Consumption-Based Copilot Credits",
+      "source": "Microsoft Licensing",
+      "date": "2026-06-09",
+      "primary_url": "https://www.microsoft.com/en-us/licensing/news/work-iq-general-availability",
+      "score": 8.0
+    },
+    {
+      "title": "Pega Infinity Studio — AI-Governed App Development, No Runtime Token Costs",
+      "source": "Pegasystems",
+      "date": "2026-06-08",
+      "primary_url": "https://www.pega.com/about/news/press-releases/pega-harnesses-best-practices-and-ai-coding-agents-build-apps-mission",
+      "score": 8.0
+    },
+    {
+      "title": "Atomicwork AI Workforce Platform — Governed AI Coworkers for Enterprise IT and HR",
+      "source": "Atomicwork",
+      "date": "2026-06-09",
+      "primary_url": "https://www.atomicwork.com/blog/ai-workforce-launch",
+      "score": 7.5
+    },
+    {
+      "title": "H Company Holo 3.1 — Local Computer-Use Agent, SOTA AndroidWorld, 140ms Latency",
+      "source": "Hugging Face / H Company",
+      "date": "2026-06-08",
+      "primary_url": "https://huggingface.co/blog/Hcompany/holo31",
+      "score": 7.5
+    },
+    {
+      "title": "PointFive AI Efficiency OS + TokenShift — AI Coding Agent Cost Governance ($60M Series B)",
+      "source": "PointFive",
+      "date": "2026-06-08",
+      "primary_url": "https://www.pointfive.co/press/pointfive-raises-60m-series-b",
+      "score": 7.5
+    },
+    {
+      "title": "PhysicsX — $300M Series C (AI Replaces Physics Simulations for Industrial Engineering)",
+      "source": "PhysicsX",
+      "date": "2026-06-08",
+      "primary_url": "https://www.physicsx.ai/newsroom/physicsx-announces-300m-series-c-to-accelerate-physics-ai-for-industrial-engineering",
+      "score": 7.0
+    },
+    {
+      "title": "JetBrains Mellum 2 — 12B MoE Coding Model, Apache 2.0",
+      "source": "JetBrains",
+      "date": "2026-06-08",
+      "primary_url": "https://blog.jetbrains.com/ai/2026/06/mellum2-goes-open-source-a-fast-model-for-ai-workflows/",
+      "score": 7.0
+    },
+    {
+      "title": "GitHub Copilot Chat — Agent Session Visibility and Log Access",
+      "source": "GitHub Blog",
+      "date": "2026-06-10",
+      "primary_url": "https://github.blog/changelog/2026-06-10-copilot-chat-now-sees-your-agent-sessions/",
+      "score": 7.0
+    },
+    {
+      "title": "TensorWave — $350M Series B at $1.55B (AMD-Native AI Cloud)",
+      "source": "SiliconAngle",
+      "date": "2026-06-10",
+      "primary_url": "https://siliconangle.com/2026/06/10/data-center-infrastructure-startup-tensorwave-raises-350m-help-break-nvidias-ai-chip-monopoly/",
+      "score": 6.5
+    },
+    {
+      "title": "Microsoft KPMG and Atos Agent 365 Deployments — 276K and 56K Employees",
+      "source": "Nasdaq",
+      "date": "2026-06-09",
+      "primary_url": "https://www.nasdaq.com/articles/microsoft-deepens-agentic-ai-push-and-collaborations-whats-ahead",
+      "score": 6.5
+    },
+    {
+      "title": "Respan Gateway — One AI Gateway with Built-In Observability and Evals",
+      "source": "Product Hunt",
+      "date": "2026-06-10",
+      "primary_url": "https://www.respan.dev",
+      "score": 6.5
+    },
+    {
+      "title": "Spotlight by Backplanes — Session Reports and Audit Trails for Claude Code and Codex",
+      "source": "Product Hunt",
+      "date": "2026-06-10",
+      "primary_url": "https://www.backplanes.dev/spotlight",
+      "score": 6.5
+    },
+    {
+      "title": "Gemini 3.5 Pro — 2M-Token Context Flagship, Expected Late June 2026",
+      "source": "Google Blog",
+      "date": "2026-06-08",
+      "primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+      "score": 6.5
+    },
+    {
+      "title": "Browse.sh — Agent Web Automation Muscle Memory (Product Hunt Week 24 #5)",
+      "source": "Product Hunt",
+      "date": "2026-06-08",
+      "primary_url": "https://browse.sh",
+      "score": 6.0
+    },
+    {
+      "title": "Bond — AI To-Do List That Executes Its Own Tasks (Product Hunt Week 24 #1)",
+      "source": "Product Hunt",
+      "date": "2026-06-08",
+      "primary_url": "https://www.bond.app",
+      "score": 5.5
+    },
+    {
+      "title": "Honen — Automated Enterprise Learning Infrastructure (Product Hunt Week 24 #3)",
+      "source": "Product Hunt",
+      "date": "2026-06-08",
+      "primary_url": "https://www.honen.ai",
+      "score": 5.5
+    },
+    {
+      "title": "Publora — MCP-Native Social Publishing API for AI Agents (Product Hunt Week 24 #2)",
+      "source": "Product Hunt",
+      "date": "2026-06-09",
+      "primary_url": "https://www.publora.com",
+      "score": 5.0
+    },
+    {
+      "title": "Slashspace AI — Canvas-First AI Workspace for Complex Work (Product Hunt #13)",
+      "source": "Product Hunt",
+      "date": "2026-06-11",
+      "primary_url": "https://slashspace.ai",
+      "score": 4.5
+    },
+    {
+      "title": "Vercel Drop — Drag-to-Deploy for AI-Generated Projects (Product Hunt #11)",
+      "source": "Product Hunt",
+      "date": "2026-06-11",
+      "primary_url": "https://vercel.com/drop",
+      "score": 4.5
+    },
+    {
+      "title": "PhysicsX — AI Replaces Physics Simulations in Seconds",
+      "source": "PhysicsX",
+      "date": "2026-06-08",
+      "primary_url": "https://www.physicsx.ai/newsroom/physicsx-announces-300m-series-c-to-accelerate-physics-ai-for-industrial-engineering",
+      "score": 7.0
+    },
+    {
+      "title": "PointFive TokenShift — Token Governance for Claude Code, Codex, Cursor, Copilot",
+      "source": "PointFive",
+      "date": "2026-06-08",
+      "primary_url": "https://www.pointfive.co",
+      "score": 7.5
+    },
+    {
+      "title": "Pega Predictable AI — No Token Charges at Runtime for Enterprise Agents",
+      "source": "Pegasystems",
+      "date": "2026-06-08",
+      "primary_url": "https://markets.ft.com/data/announce/detail?dockey=600-202606081130BIZWIRE_USPRX____20260608_BW778439-1",
+      "score": 7.5
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "GPT-6 launched June 10, 2026 with photorealistic real-time video background generation",
+      "reason": "Multiple sources including YouTube analysis and Polymarket data place GPT-6 at 10% probability of a June launch as of June 14. The aidailyshot.com article claiming a June 10 launch appears to be speculative/forward-looking content published before the model shipped. No primary source from OpenAI confirms a June 10 GPT-6 launch. Excluded from index.",
+      "attempted_url": "https://aidailyshot.com/blog/openai-gpt-6-photorealistic-video-background-launch-2026"
+    }
+  ],
+  "suggested_refinements": {
+    "topics_to_add": [
+      "Track Claude Fable 5 access restoration date — Anthropic suspended access June 12 per US government directive; the restoration announcement is a top-pick candidate the moment it appears on anthropic.com/news.",
+      "Monitor Gemini 3.5 Pro public GA — Google's I/O promise of a June 2026 launch has not materialized as of June 14; watch the AI Studio model picker for first signal.",
+      "Follow Anthropic S-1 public filing — confidential filing clock started June 1; public filing revealing financials is a near-term event with enterprise procurement implications.",
+      "Watch NinjaOne $400M Series C extension announced week of June 6-12 — not confirmed in primary source by close of the week; carry to next week if press release surfaces."
+    ],
+    "topics_to_drop": [
+      "VC Boom (Product Hunt Week 24 #4) — fundraising deck scoring tool with limited enterprise AI relevance; exclude category unless there is meaningful agent capability claim with a primary source.",
+      "Consumer personal-assistant apps (Asmi AI, Journey Now) — too consumer-oriented for this reader; skip unless there is an enterprise deployment path."
+    ],
+    "notes": "All top picks verified against primary source URLs. Product Hunt items use maker websites as primary_url per URL Resolution Rules; PH canonical product pages in secondary_urls. Claude Fable 5 is verified as launched (Anthropic primary source) but flagged for the June 12 suspension — evaluation is EVALUATE NOW because the model capability is real and procurement teams should prepare to act when access is restored. GPT-6 June 10 launch claim is placed in flagged_unverified; no OpenAI primary source confirms a June 10 launch. Scoring rubric: /skills/99-editorial-voice.md. Verification protocol: /skills/99-editorial-voice.md."
+  }
+}
