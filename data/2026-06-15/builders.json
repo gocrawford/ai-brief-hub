@@ -1,0 +1,1169 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.88,
+    "items_total": 32,
+    "items_new": 28,
+    "items_returning": 4,
+    "empty_week_note": ""
+  },
+
+  "executive_summary": [
+    {
+      "headline": "DietrichGebert/ponytail lands as the week's breakout new repo with 16.4k stars: a plugin that makes AI coding agents behave like the laziest senior dev in the room, benchmarking at 80–94% less code, 3–6x faster runs, and 47–77% cheaper across five everyday tasks",
+      "body": "ponytail enforces a five-rung checklist before any code generation: does this need to exist, does stdlib cover it, is there a native platform feature, is a dependency already installed, can it be one line — and only then, the minimum that works. The benchmarks use promptfoo evals across Claude Haiku, Sonnet, and Opus over ten runs per cell, with raw numbers in the repo. Paired with addyosmani/agent-skills (#1 on the weekly trending chart at +11,088 stars), the week's clearest signal is that code minimization and anti-overengineering are now first-class optimization targets, not afterthoughts.",
+      "primary_url": "https://github.com/DietrichGebert/ponytail"
+    },
+    {
+      "headline": "Panniantong/Agent-Reach hits #1 on two independent tracking sites this week: a zero-API-fee CLI that gives agents read/search access to Twitter, Reddit, YouTube, GitHub, Bilibili, LinkedIn, and nine other platforms — 31,986 total stars, +5,873 weekly delta",
+      "body": "Agent-Reach solves the live-internet blindness of most coding agents without requiring any API keys: it installs tools like twitter-cli, rdt-cli, xhs-cli, yt-dlp, gh CLI, and feedparser into the agent's PATH via one command, then lets the agent call them through MCP. The June 18 data from StartupCorners shows it added 1,161 stars in a single day. The pattern it confirms: developers are moving from paying-per-API to composing free upstream CLIs into agent capability layers.",
+      "primary_url": "https://github.com/Panniantong/Agent-Reach"
+    },
+    {
+      "headline": "Active exploitation of Langflow CVE-2026-5027 across roughly 7,000 exposed instances intersects with two LangGraph/LangChain-core CVEs — a direct signal that open-source agent framework infrastructure now requires the same patching urgency as any internet-facing service",
+      "body": "VulnCheck confirmed exploitation of Langflow's path traversal (CVE-2026-5027, CVSS 8.8) on June 8, with Censys counting approximately 7,000 exposed instances. Separately, LangGraph carries a SQL injection-to-RCE chain (CVE-2025-67644, CVSS 7.3) in its SQLite checkpointer, and LangChain-core has a path traversal that reads credentials from disk (CVE-2026-34070, CVSS 7.5). Specific patch versions differ: langgraph-checkpoint-sqlite 3.0.1, langgraph 1.0.10, langchain-core 1.2.22. An enterprise team running any self-hosted LangGraph or Langflow endpoint that touches production data should treat these as P0 patches this week.",
+      "primary_url": "https://aiweekly.co/node/3302"
+    },
+    {
+      "headline": "Key takeaway: The week of June 15–21 split on two axes — code minimization (ponytail, shadcn/improve codifying the expensive-model-audits/cheap-model-executes pattern) and live-internet agent capability (Agent-Reach, last30days-skill both in the top 10 by weekly stars). The security story from the prior week matured: SkillSpector continued climbing (+4,633 weekly delta, now 6,973 total stars) while framework CVE exploitation reminded teams that agent infrastructure is now an attack surface.",
+      "body": "The governance stack from the previous week (agent-skills + SkillSpector + guard-skills + agent-gate) is now compounded with a new security pressure: popular agent frameworks used in production are under active exploitation. An enterprise AI team running self-hosted LangGraph, Langflow, or any agent infrastructure behind the corporate firewall must verify patch status before the end of the week. The builder community answered with two new local-first safety tools (Kintsugi, PromptShark) that sit between the agent and the system without any cloud dependency."
+    }
+  ],
+
+  "top_picks": [
+    {
+      "id": "dietrichgebert-ponytail-code-minimizer",
+      "title": "DietrichGebert/ponytail",
+      "subtitle": "AI agent plugin that enforces code minimization before generation — 80–94% less code, 3–6x faster, 47–77% cheaper; benchmarked across Claude Haiku/Sonnet/Opus; 16.4k stars",
+      "source": "GitHub",
+      "author": "DietrichGebert",
+      "date": "2026-06-12",
+      "primary_url": "https://github.com/DietrichGebert/ponytail",
+      "secondary_urls": [
+        {
+          "label": "Shareuhack GitHub Trending Weekly 2026-06-17 — ponytail spotlight",
+          "url": "https://www.shareuhack.com/en/posts/github-trending-weekly-2026-06-17"
+        }
+      ],
+      "summary": "ponytail makes AI coding agents run a five-rung checklist before writing any code: does this need to exist (YAGNI), can stdlib do it, is there a native platform feature, is a dependency already installed, can it be one line — and only then the minimum that works. Benchmarks run with promptfoo across ten runs per cell on Claude Haiku, Sonnet, and Opus over five everyday tasks (email validator, debounce, CSV sum, countdown timer, rate limiter): 80–94% less code, 3–6x faster, 47–77% cheaper versus no skill. v4.6.0 released June 15, 2026; supports Claude Code, Codex, Gemini, Cursor, OpenCode, and GitHub Copilot Marketplace. JavaScript 91.3%; MIT; 16.4k stars.",
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "key_takeaways": [
+        "The five-rung checklist is a static decision tree, not a prompt: the agent hits the first rung that holds and stops. YAGNI-first design means the agent never reaches 'write code from scratch' unless all four cheaper options are exhausted — this is why the benchmark shows code reduction, not just token reduction.",
+        "The ponytail:comment convention marks shortcut decisions in generated code for later upgrade — any line using stdlib instead of a custom implementation gets a comment explaining the tradeoff. This makes the agent's minimization decisions auditable in code review rather than invisible in chat history.",
+        "The benchmark methodology is reproducible from the repo: `npx promptfoo eval -c benchmarks/promptfooconfig.yaml` replays the five tasks across three models. The raw numbers are in `benchmarks/results/`. An enterprise team can fork the benchmark and add their own internal task set to validate the improvement on their actual workload."
+      ],
+      "results": "16.4k GitHub stars; 682 forks; 8 releases; v4.6.0 (June 15, 2026). Benchmarks: 80–94% less code, 3–6x faster, 47–77% cheaper — median of 10 runs across Claude Haiku, Sonnet, Opus on five tasks. Source: github.com/DietrichGebert/ponytail (fetched June 21, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Install ponytail into the team's Claude Code or Codex configuration via its plugin file (`.claude-plugin`, `.codex-plugin`) — the install is a single file drop, not a service. Set `PONYTAIL_DEFAULT_MODE=full` in the team's shared agent configuration to enforce the checklist on all agent sessions. Use `/ponytail-review` after any agent session to identify where the agent generated code it could have avoided. Use `/ponytail-debt` to flag existing agent-generated code that violates minimization principles, targeting modules with the highest rework tax (per commensa-audit, if deployed). | Regulated-environment caveats: ponytail runs entirely in the agent's local context — no data leaves the developer machine at skill execution time. The plugin files in `.claude-plugin` and `.codex-plugin` are plain text; review them before fleet deployment to confirm no unexpected network calls. The GitHub Copilot Marketplace plugin variant installs via Copilot's extension mechanism — confirm the extension is allowlisted in your IT-managed Copilot policy before deploying to all developer workstations. Pin the npm package version in your internal developer-tooling provisioning script. | 30-day experiment: Select two developer workstations running agent-assisted development. Install ponytail on one (treatment), leave the other as baseline. Run for two sprint cycles. Measure: lines of agent-generated code per story point, first-pass code review acceptance rate, and API token cost per sprint. Use the repo's promptfoo benchmark config to run the five reference tasks on both configurations and compare to the published numbers.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 16400
+      },
+      "tags": ["Agent Skills", "Code Minimization", "YAGNI", "Claude Code", "Benchmarks"],
+      "category": "Agent Skill",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "panniantong-agent-reach-zero-api-internet",
+      "title": "Panniantong/Agent-Reach",
+      "subtitle": "Zero-API-fee CLI that gives agents read/search access to 15+ platforms — Twitter, Reddit, YouTube, GitHub, Bilibili, LinkedIn, WeChat, XiaoHongShu; one install, MCP-native; 31,986 total stars",
+      "source": "GitHub",
+      "author": "Panniantong",
+      "date": "2026-06-15",
+      "primary_url": "https://github.com/Panniantong/Agent-Reach",
+      "secondary_urls": [
+        {
+          "label": "Top 8 AI GitHub Repos This Week — week of June 15 (YouTube, June 20)",
+          "url": "https://www.youtube.com/watch?v=VNH2ZFVv6to"
+        },
+        {
+          "label": "Shareuhack GitHub Trending Weekly 2026-06-17",
+          "url": "https://www.shareuhack.com/en/posts/github-trending-weekly-2026-06-17"
+        }
+      ],
+      "summary": "Agent-Reach is a one-command installer that wires free upstream CLIs (twitter-cli, rdt-cli, xhs-cli, yt-dlp, gh CLI, feedparser, Jina Reader, Exa) into any AI agent's PATH and MCP configuration, giving the agent read/search access across Twitter/X, Reddit, YouTube, GitHub, Bilibili, LinkedIn, WeChat public accounts, Xiaohongshu, Douyin, Weibo, V2EX, and Xiaoyuzhou podcasts at zero API cost. Credentials are stored locally in `~/.agent-reach/config.yaml` at permission 600. Python 94.7%; MIT; 31,986 total stars; +5,873 weekly delta; ranked #1 in the week of June 15 by two independent tracking sources.",
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "key_takeaways": [
+        "Agent-Reach is an orchestration layer, not a scraper: it installs and configures existing open-source CLI tools that handle the actual platform access. Each channel is a separate file and can be swapped out independently — the architecture is pluggable rather than monolithic. This means an enterprise team can selectively enable only the channels they need (e.g., GitHub, RSS, web reading) and disable channels with regulatory concerns (e.g., Twitter timeline posting, Xiaohongshu commenting) without touching the rest.",
+        "The MCP integration means agents running in Claude Code, Cursor, or OpenClaw can call platform-access tools as structured function calls rather than raw shell commands — the agent sees `search_reddit(query=…, subreddit=…)` as a first-class tool, not a shell escape. This keeps the agent's tool use auditable.",
+        "`agent-reach doctor` performs a self-diagnostic of channel health — it checks whether each configured CLI is installed, authenticated, and returning valid responses. This is directly useful in enterprise deployments where some channels may be blocked by network policy; doctor output tells the team exactly which channels need an exception request before deployment."
+      ],
+      "results": "31,986 total stars; +5,873 weekly delta (GitHub Trending Weekly June 17); ranked #1 on two independent tracking sources for week of June 15. Python 94.7%; MIT; 4 releases; v1.4.0 (March 31, 2026). Source: github.com/Panniantong/Agent-Reach (fetched June 21, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Run `agent-reach install` on developer workstations using a selective channel install — specify only the channels relevant to the team's workflows. For a market research or competitive intelligence workflow: enable web reading (Jina Reader), RSS, GitHub, and web search (Exa). Disable social posting channels (Twitter timeline posting, Xiaohongshu commenting) entirely in the team's provisioned configuration. Register the MCP server entry in the team's shared CLAUDE.md or AGENTS.md rather than per-developer. | Regulated-environment caveats: Agent-Reach stores credentials locally in `~/.agent-reach/config.yaml` at 600 permissions — no credentials transit any external service. However, the agent now has live read access to external platforms, meaning queries and content will leave the corporate network to reach those platforms. Confirm that the intended platforms are accessible from the developer's machine under network policy. For any research workflows where the content retrieved may be subject to data classification rules, add a system prompt instruction restricting how the agent stores or forwards retrieved content. Run `agent-reach install --dry-run` to preview what will be installed before committing to any endpoint. | 30-day experiment: Identify one recurring research or monitoring task currently performed manually (e.g., tracking competitor GitHub activity weekly, monitoring industry-relevant Reddit threads, synthesizing YouTube transcripts from a set of technical channels). Install Agent-Reach with only the required channels enabled. Run the agent on the same task for two weeks. Measure: wall-clock time per task cycle, number of manual follow-up steps required, and any gaps in coverage versus the manual process. Report whether agent-automated reach reduces the task cycle time to under 15 minutes.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 5873
+      },
+      "tags": ["Agent Capability", "Internet Access", "MCP", "Zero API Cost", "Multi-Platform"],
+      "category": "Agent Infrastructure",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "shadcn-improve-tiered-model-cost-framework",
+      "title": "shadcn/improve",
+      "subtitle": "Cost-optimized coding framework: expensive model for eight-dimension audit and plan writing, cheaper model executes — 5,006 stars, created June 10, 2026",
+      "source": "GitHub",
+      "author": "shadcn",
+      "date": "2026-06-10",
+      "primary_url": "https://github.com/shadcn/improve",
+      "secondary_urls": [
+        {
+          "label": "Shareuhack GitHub Trending Weekly 2026-06-17 — new repos spotlight",
+          "url": "https://www.shareuhack.com/en/posts/github-trending-weekly-2026-06-17"
+        }
+      ],
+      "summary": "improve is a cost-optimized framework that separates audit/planning work (assigned to the most capable model) from execution (assigned to a cheaper model). It runs eight-dimension audits of agent-generated code before producing a structured execution plan, then routes plan execution to a cheaper model. Created June 10, 2026; 5,006 total stars within the week of release; MIT. The pattern is explicitly called out by the Shareuhack weekly as now the standard cost-optimization approach in the builder community.",
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "key_takeaways": [
+        "The eight-dimension audit covers correctness, completeness, security, performance, maintainability, test coverage, documentation, and edge case handling. Running all eight dimensions on the expensive model before execution significantly reduces the likelihood of rework — audit findings become the plan, not a post-hoc review.",
+        "The tiered cost architecture (expensive model for audit + plan, cheap model for execution) is the same pattern validated empirically by sermakarevich/fleet the prior week. shadcn/improve codifies it as a reusable framework rather than a custom worktree setup, making the pattern deployable without custom infrastructure.",
+        "improve operates as a framework layer above the model provider — it is not tied to any specific model or agent host, meaning it can route the audit step to Claude Opus or GPT-4o and the execution step to Haiku, Gemini Flash, or a locally hosted Qwen model without modifying the framework code."
+      ],
+      "results": "5,006 total stars; created June 10, 2026; MIT. Source: github.com/shadcn/improve (fetched June 21, 2026). Independently confirmed as a new addition to GitHub Trending Weekly (shareuhack.com, June 17, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Deploy improve as the planning layer for any agent workflow where code quality matters: the expensive-model audit catches issues before execution begins, reducing downstream rework. For a regulated-environment deployment, assign the audit model to the team's approved frontier model endpoint and the execution model to either a cheaper tier of the same endpoint or an internally hosted open-weights model (e.g., Qwen via Ollama). The eight-dimension audit output is a structured artifact that can be reviewed and approved by a human engineer before execution begins — insert a human-in-the-loop approval step between plan generation and plan execution. | Regulated-environment caveats: The audit step sends code context to the expensive model endpoint — confirm that the code being audited does not contain regulated data (credentials, PII, proprietary algorithms) before routing to an external provider. If running in an environment with data residency requirements, route both the audit and execution models to an on-premises or regional endpoint. The framework's execution model assignment is configurable — pin both model assignments explicitly in the configuration rather than relying on defaults that may change between versions. | 30-day experiment: Apply improve to one recurring agent workflow (e.g., automated test generation for a new feature, or agent-assisted code refactoring of a module). Run the workflow without improve for two weeks (baseline). Enable improve for two weeks. Compare: number of human reviewer comments per PR, first-pass merge rate, and total API cost per workflow run (the expensive-audit + cheap-execute pattern should show lower total cost than expensive-execute without audit).",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 5006
+      },
+      "tags": ["Cost Optimization", "Tiered Models", "Agent Framework", "Code Quality", "Audit"],
+      "category": "Agent Framework",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "deus-data-codebase-memory-mcp-code-intelligence",
+      "title": "DeusData/codebase-memory-mcp",
+      "subtitle": "High-performance code intelligence MCP server — indexes Linux kernel (28M LOC) in 3 minutes, sub-ms queries, 120x fewer tokens, 155 languages, single static binary, zero dependencies; 2.8k stars",
+      "source": "GitHub",
+      "author": "DeusData",
+      "date": "2026-06-15",
+      "primary_url": "https://github.com/DeusData/codebase-memory-mcp",
+      "secondary_urls": [
+        {
+          "label": "Top 8 AI GitHub Repos This Week — #3 codebase-memory-mcp (YouTube, June 20)",
+          "url": "https://www.youtube.com/watch?v=VNH2ZFVv6to"
+        },
+        {
+          "label": "inference.report GitHub listing June 16, 2026",
+          "url": "https://inference.report/github/2026-06-16"
+        }
+      ],
+      "summary": "codebase-memory-mcp builds a persistent knowledge graph of a codebase's functions, classes, call chains, HTTP routes, and cross-service links using tree-sitter AST analysis across 155 languages. Delivers 14 MCP tools: search, trace, architecture, impact analysis, Cypher queries, dead code detection, cross-service HTTP linking, and ADR management. Indexes the Linux kernel (28M LOC, 75K files) in 3 minutes; answers structural queries in under 1 ms; replaces file-by-file grep/read cycles that consume ~412,000 tokens with 5 graph queries at ~3,400 tokens (120x reduction). Single static binary for macOS, Linux, and Windows; zero dependencies; no API keys; MIT.",
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "key_takeaways": [
+        "The 120x token reduction claim is grounded in a specific comparison: 5 structural queries against the knowledge graph consume ~3,400 tokens; the equivalent file-by-file search consumes ~412,000 tokens. For teams where context window cost is the primary constraint on agent session length, a 120x reduction is structurally significant — it means an agent can perform more meaningful work within the same context budget.",
+        "LSP-style hybrid type resolution for Go, C, C++, and TypeScript/JavaScript/JSX/TSX means the knowledge graph tracks type-level relationships (which struct implements which interface, which function calls which HTTP endpoint) rather than just text-level symbol references. This is the difference between an agent that knows 'this function exists' and one that knows 'this function is the only callsite for this service's billing endpoint'.",
+        "Infrastructure-as-code indexing (Dockerfiles, Kubernetes manifests, Kustomize overlays as graph nodes) means the knowledge graph includes deployment topology alongside application code. An agent asking 'what services call the payments API' gets an answer that spans both code and Kubernetes configuration — a pattern directly relevant to teams running microservice architectures."
+      ],
+      "results": "2.8k GitHub stars; 292 forks; 32 releases; v0.6.1 (May 4, 2026); 610 commits. Benchmarks: Linux kernel (28M LOC, 75K files) indexed in 3 minutes; sub-ms query response; 120x fewer tokens than file-by-file grep equivalent. All release binaries verified clean on VirusTotal (0/72 across all platforms). Source: github.com/DeusData/codebase-memory-mcp (fetched June 21, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Install the single static binary via `install` (auto-detects Claude Code, Codex CLI, Gemini CLI, Zed, OpenCode, and others) into any developer's local environment. For fleet deployment, distribute the pinned binary version via internal developer tooling; the zero-dependency design means no package manager conflicts. Point the MCP server at any internal repository before onboarding agents to that codebase — the `architecture` and `impact` MCP tools are the most valuable for enterprise codebases where agents need to understand blast radius before making changes. | Regulated-environment caveats: The knowledge graph is built and queried locally — no codebase content is sent to any external service. The binary ships with SHA-256 checksums and clean VirusTotal scans for all platform variants; verify these before fleet deployment. The optional 3D visualization UI runs at localhost:9749 — confirm this port does not conflict with corporate network monitoring or endpoint detection rules. For codebases containing regulated data in source files (e.g., hardcoded connection strings, config files with environment variables), the graph indexes structure but not content — confirm that the MCP query responses do not surface sensitive config values through the symbol-value resolution feature. | 30-day experiment: Select one active internal repository where agents frequently need codebase context (e.g., a microservices repo or a large monorepo). Install codebase-memory-mcp. Run agent sessions on a representative task (e.g., 'add a new field to this service and update all callers') with and without the MCP server active. Measure: number of tool calls per task, tokens consumed per task, and whether the agent correctly identified all affected callsites without the knowledge graph versus with it.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 2800
+      },
+      "tags": ["MCP Server", "Code Intelligence", "Knowledge Graph", "Token Efficiency", "Static Binary"],
+      "category": "MCP Server",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "langflow-cve-2026-5027-langgraph-cve-patch-now",
+      "title": "Langflow CVE-2026-5027 + LangGraph CVE-2025-67644: framework CVEs under active exploitation — patch versions confirmed",
+      "subtitle": "Langflow CVSS 8.8 under active exploit across ~7,000 exposed instances; LangGraph SQL injection to RCE (CVSS 7.3); LangChain-core path traversal reads credentials (CVSS 7.5) — specific patch versions confirmed",
+      "source": "AI Weekly / VulnCheck / Censys",
+      "author": "VulnCheck / Censys / Check Point",
+      "date": "2026-06-19",
+      "primary_url": "https://aiweekly.co/node/3302",
+      "secondary_urls": [
+        {
+          "label": "7000 Langflow servers under attack — LangGraph and LangChain-core have the same holes (backbox.org)",
+          "url": "https://news.backbox.org/2026/06/19/7000-langflow-servers-are-under-attack-langgraph-and-langchain-have-the-same-holes/"
+        }
+      ],
+      "summary": "VulnCheck confirmed active exploitation of Langflow's CVE-2026-5027 (CVSS 8.8, unauthenticated remote file write) on June 9, 2026, with Censys finding roughly 7,000 exposed instances. LangGraph carries a SQL injection to full RCE chain (CVE-2025-67644, CVSS 7.3) in its SQLite checkpointer where user-controlled filter keys are inserted into queries without parameterization. LangChain-core has a path traversal that reads arbitrary files including .env credential files (CVE-2026-34070, CVSS 7.5). Patches: langgraph-checkpoint-sqlite 3.0.1, langgraph 1.0.10, langgraph-checkpoint-redis 1.0.2, langchain-core 1.2.22.",
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "key_takeaways": [
+        "The patch versions differ between CVEs and must be applied correctly. For LangGraph, the SQLite checkpointer fix requires langgraph-checkpoint-sqlite 3.0.1 AND langgraph 1.0.10 — applying only the checkpointer package leaves the base langgraph path exposed. For LangChain-core, CVE-2026-34070 (CVSS 7.5) is fixed in 1.2.22 and 0.3.86, but the earlier CVE-2025-68664 (CVSS 9.3) requires 1.2.5 or 0.3.81 — clearing both requires the higher of the two version requirements per track.",
+        "The Langflow exploitation shows the speed of weaponization: the patch shipped April 15, attacks started in June with a public proof-of-concept available, and Censys found 7,000 exposed instances within days of VulnCheck confirming exploitation. The same trajectory applies to LangGraph CVE-2025-67644 — a public proof-of-concept exists but no confirmed in-the-wild exploitation as of June 19.",
+        "The attack surface for LangChain-core's path traversal is any code path that calls load_prompt() with a user-influenced config dict — including any agent orchestration layer that loads prompt templates from external configuration. In enterprise deployments, this often means the configuration management layer is the vulnerability, not the agent code itself."
+      ],
+      "results": "Confirmed exploitation of CVE-2026-5027 on approximately 7,000 Langflow instances (Censys, June 2026). Public proof-of-concept for CVE-2025-67644 (LangGraph) available — no in-the-wild exploitation confirmed as of June 19. Patches available and version-pinned. Source: aiweekly.co/node/3302; backbox.org (fetched June 21, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Audit every internal deployment that runs Langflow, LangGraph, or LangChain-core and confirm it is patched to the required versions before the end of the week. Use `pip show langflow langchain-core langgraph langgraph-checkpoint-sqlite langgraph-checkpoint-redis` to check installed versions. For Langflow, upgrade to the patched release and confirm that the CVE-2026-5027 endpoint is not accessible from the internet. For LangGraph, upgrade langgraph-checkpoint-sqlite to 3.0.1 and langgraph to 1.0.10; confirm `get_state_history()` is not exposed to network input. For LangChain-core, upgrade to 1.2.22 (or 0.3.86 on the 0.3 track) and audit all uses of `load_prompt()` for user-influenced config dict values. | Regulated-environment caveats: If running Langflow, LangGraph, or LangChain-core on infrastructure that is internet-accessible (including VPN-gated but publicly routable), the CVE-2026-5027 exploitation timeline (patch April → exploit June → 7k instances) should inform patch SLA policy for AI framework dependencies — these are now treated as web application vulnerabilities, not library updates. For air-gapped or fully internal deployments, the risk profile is lower but not zero: the SQL injection in LangGraph's SQLite checkpointer can be triggered by internally-originated malicious input (e.g., a compromised agent prompting the orchestrator). Assign these CVEs to your existing vulnerability management process rather than treating them as out-of-scope developer tooling. | 30-day experiment: Run `pip show` against all internal Python environments that may carry LangChain, LangGraph, or Langflow. Document the version landscape. Confirm patch coverage. Establish a standing monthly dependency audit for AI framework packages — Python's PyPI ecosystem does not have automatic security update mechanisms equivalent to npm audit or cargo audit; this must be actively maintained.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {},
+      "tags": ["Security", "CVE", "LangGraph", "Langflow", "LangChain", "Patching"],
+      "category": "Agent Infrastructure",
+      "platform": "github",
+      "recurrence": "new"
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "Top AI-relevant repos by weekly star delta for the week of June 15–21, 2026. Star deltas from shareuhack.com/en/posts/github-trending-weekly-2026-06-17 (data period June 9–17, 2026; verified June 21, 2026). Returning repos from prior weeks are marked with recurrence notes.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "trending-addyosmani-agent-skills-11k-wk3",
+          "title": "addyosmani/agent-skills",
+          "source": "GitHub",
+          "date": "2026-06-15",
+          "primary_url": "https://github.com/addyosmani/agent-skills",
+          "summary": "Production-grade engineering skills for AI coding agents — /spec, /plan, /build, /test, /review, /code-simplify, /ship. #1 on the weekly trending chart: +11,088 stars this week, 61,198 total. The Shareuhack analysis marks this as the Skills ecosystem's transition from early adoption to critical evaluation phase, paired with NVIDIA/SkillSpector's 26% vulnerability finding.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 11088 },
+          "tags": ["Agent Skills", "Engineering Best Practices", "Quality Gates"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "Top Pick last week; returning this week at +11,088 star delta, now 61,198 total — climbing from 47,500 two weeks ago. Included in top-8 YouTube roundup for week of June 15.",
+          "score": { "total": 9, "signal": 3, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-chopratejas-headroom-10k-wk3",
+          "title": "chopratejas/headroom",
+          "source": "GitHub",
+          "date": "2026-06-15",
+          "primary_url": "https://github.com/chopratejas/headroom",
+          "summary": "Context compression proxy — 60–95% fewer tokens, six algorithms, library + proxy + MCP server. #2 this week: +10,660 weekly delta, 30,002 total stars. Monthly #1 with +26,561 stars over 30 days. Code search compressed from 17,700 to 1,400 tokens; SRE incident debugging from 65,694 to 5,118 tokens. Context Engineering remains the single most durable trend across three consecutive weekly charts.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 10660 },
+          "tags": ["Context Compression", "Token Efficiency", "MCP Server"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "Three consecutive weeks on the weekly chart; monthly #1 at +26,561 stars over 30 days. Engineer at Netflix maintains this repo.",
+          "score": { "total": 9, "signal": 3, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-mvanhorn-last30days-skill-9k",
+          "title": "mvanhorn/last30days-skill",
+          "source": "GitHub",
+          "date": "2026-06-15",
+          "primary_url": "https://github.com/mvanhorn/last30days-skill",
+          "summary": "AI agent skill that researches any topic across Reddit, X/Twitter, YouTube, Hacker News, Polymarket, and the web — synthesizes a grounded summary. #4 this week: +9,676 stars, 43,460 total. Built for OpenClaw (`clawhub` and `openclaw` tags). Python; MIT. Ranked #2 overall for the week by one source alongside Agent-Reach, confirming multi-platform social intelligence as the dominant new capability demand.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 9676 },
+          "tags": ["Agent Skill", "Social Research", "Multi-Platform", "OpenClaw"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-phuryn-pm-skills-6k-wk2",
+          "title": "phuryn/pm-skills",
+          "source": "GitHub",
+          "date": "2026-06-15",
+          "primary_url": "https://github.com/phuryn/pm-skills",
+          "summary": "PM Skills Marketplace — 100+ agentic skills across 8 plugins (product-discovery, product-strategy, execution, market-research, data-analytics, go-to-market, marketing-growth, toolkit). #5 this week: +6,117 stars, 19,001 total. Compatible with Claude Code and claude-cowork-plugin. The Shareuhack analysis recommends piloting 1–2 highest-frequency workflows before broad rollout. MIT.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 6117 },
+          "tags": ["Agent Skill", "Product Management", "PM Skills", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "Appeared in last week's New Skills section at 11.8k stars; returns this week at 19,001 total (+6,117 weekly delta) confirming sustained momentum.",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-panniantong-agent-reach-5k",
+          "title": "Panniantong/Agent-Reach",
+          "source": "GitHub",
+          "date": "2026-06-15",
+          "primary_url": "https://github.com/Panniantong/Agent-Reach",
+          "summary": "Zero-API-fee CLI for agent internet access across 15+ platforms. #6 this week: +5,873 weekly delta, 31,986 total stars. Ranked #1 in two independent tracking sources for the week of June 15. See Top Picks for full detail.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 5873 },
+          "tags": ["Agent Capability", "MCP", "Zero API Cost", "Multi-Platform"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "trending-nvidia-skillspector-4k-wk2",
+          "title": "NVIDIA/SkillSpector",
+          "source": "GitHub",
+          "date": "2026-06-15",
+          "primary_url": "https://github.com/NVIDIA/SkillSpector",
+          "summary": "Pre-installation security scanner for AI agent skills — 64 vulnerability patterns, 16 categories including MCP tool poisoning. #8 this week: +4,633 weekly delta, 6,973 total stars (up from 5,300 last week). The Shareuhack weekly marks this week as the Skills ecosystem's transition to the security governance phase. Featured in the top-8 YouTube roundup for week of June 15.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 4633 },
+          "tags": ["Security Scanner", "Agent Skills", "MCP Security", "SARIF"],
+          "category": "Dev Tool",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "Top Pick last week at 5,300 stars; now 6,973 total, adding +4,633 this week alone — the security governance narrative is accelerating.",
+          "score": { "total": 8, "signal": 3, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-dietrichgebert-ponytail-16k",
+          "title": "DietrichGebert/ponytail",
+          "source": "GitHub",
+          "date": "2026-06-12",
+          "primary_url": "https://github.com/DietrichGebert/ponytail",
+          "summary": "AI agent plugin for code minimization — 80–94% less code, 3–6x faster, 47–77% cheaper. New repo, #1 on the new-repos chart this week at 24,417 total stars (arsentev.ai tracking). See Top Picks for full detail.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 16400 },
+          "tags": ["Agent Skills", "Code Minimization", "YAGNI", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-xiaomimo-mimo-code-9k",
+          "title": "XiaomiMiMo/MiMo-Code",
+          "source": "GitHub",
+          "date": "2026-06-10",
+          "primary_url": "https://github.com/XiaomiMiMo/MiMo-Code",
+          "summary": "Xiaomi's open-source terminal coding assistant — fork of OpenCode with persistent memory via local SQLite, 1M token context window (MiMo-V2.5), automatic checkpoints, build/plan/compose modes, subagent spawning. Claims superior performance on long agentic coding workflows (200+ steps) versus Claude Code. TypeScript; MIT; 9,357 total stars; #2 on the new-repos chart this week.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 9357 },
+          "tags": ["Coding Agent", "Local Memory", "Terminal", "Open Source"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "trending-shadcn-improve-5k",
+          "title": "shadcn/improve",
+          "source": "GitHub",
+          "date": "2026-06-10",
+          "primary_url": "https://github.com/shadcn/improve",
+          "summary": "Cost-optimized coding framework: expensive model for eight-dimension audit, cheap model executes. #3 on the new-repos chart this week at 5,006 total stars; created June 10, 2026. See Top Picks for full detail.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 5006 },
+          "tags": ["Cost Optimization", "Tiered Models", "Audit", "Claude Code"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "trending-omnigent-ai-omnigent-2k",
+          "title": "omnigent-ai/omnigent",
+          "source": "GitHub",
+          "date": "2026-06-11",
+          "primary_url": "https://github.com/omnigent-ai/omnigent",
+          "summary": "Meta-harness over multiple AI agents — one common layer over Claude Code, Codex, Pi, and custom agents; swap or combine without rewriting; spend caps and approval gates; real-time multi-person shared sessions synced across terminal, browser, and phone. Python; Apache-2.0; 2,736 total stars; created June 11, 2026. #4 on the new-repos chart.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 2736 },
+          "tags": ["Multi-Agent", "Meta-Harness", "Session Sharing", "Spend Caps"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Agent Skills and MCP Servers",
+      "description": "Newly published agent skills, MCP servers, and infrastructure tools for the agent skills ecosystem — week of June 15–21, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "skill-deus-data-codebase-memory-mcp",
+          "title": "DeusData/codebase-memory-mcp — 120x token reduction, 155-language code intelligence MCP, single static binary",
+          "source": "GitHub",
+          "date": "2026-06-15",
+          "primary_url": "https://github.com/DeusData/codebase-memory-mcp",
+          "summary": "High-performance code intelligence MCP server that builds a persistent knowledge graph of any codebase. 14 MCP tools, 120x fewer tokens than grep-based approaches, 155-language support via tree-sitter, LSP-style hybrid type resolution, infrastructure-as-code indexing. Single static binary, zero dependencies. See Top Picks for full detail.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 2800 },
+          "tags": ["MCP Server", "Code Intelligence", "Knowledge Graph", "Token Efficiency"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skill-levy-street-world-of-claudecraft",
+          "title": "levy-street/world-of-claudecraft — AI-built MMO, nine classes, five-player dungeons, single Docker deploy; 866 stars",
+          "source": "GitHub",
+          "date": "2026-06-10",
+          "primary_url": "https://github.com/levy-street/world-of-claudecraft",
+          "summary": "A playable mini-MMO built predominantly with AI assistance — three zones, nine classes with classic-style abilities, parties, duels, ranked arena, 5-player dungeons. All assets are procedurally generated; no external files. Self-hosts in one Docker command. Runs online (PostgreSQL accounts) or offline (browser). TypeScript; 866 total stars; created June 10, 2026. Demonstrates AI-assisted game development at a level of completeness that would have required a small studio team two years ago.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 866 },
+          "tags": ["AI-Built", "Game Dev", "Claude Code", "Procedural Generation"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "skill-plannotator-effective-html-skills",
+          "title": "plannotator/effective-html — agent skills for clean, self-contained HTML artifacts (plans, diagrams, visualizations)",
+          "source": "GitHub",
+          "date": "2026-06-09",
+          "primary_url": "https://github.com/plannotator/effective-html",
+          "summary": "Three agent skills (html, html-diagram, html-plan) that turn a prompt into a clean, self-contained HTML artifact using an SVG-first, minimal-prose style. Installs into Claude Code or Codex. Produces single-file outputs that are shareable without dependencies. HTML; 988 total stars; created June 9, 2026. Addresses a practical gap: agents often produce HTML that requires external CSS/JS files that break when moved.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 988 },
+          "tags": ["Agent Skill", "HTML", "SVG", "Visualization", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 1, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skill-anthropics-skills-public-repo",
+          "title": "anthropics/skills — Anthropic's public repository of agent skills for Claude; +519 stars June 18 alone",
+          "source": "GitHub",
+          "date": "2026-06-15",
+          "primary_url": "https://github.com/anthropics/skills",
+          "summary": "Anthropic's official public repository for Claude agent skills, gaining 519 stars in a single day (June 18) per StartupCorners tracking. The existence of a first-party skills repo from the model lab signals that agent skills are becoming a supported, curated ecosystem rather than a community-only practice. Directly relevant to the addyosmani/agent-skills and mattpocock/skills ecosystem from the prior two weeks.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 519 },
+          "tags": ["Agent Skill", "Anthropic", "First-Party", "Claude Code"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "skill-joeseesun-qiaomu-goal-meta-skill",
+          "title": "joeseesun/qiaomu-goal-meta-skill — meta-skill that turns vague asks into precise agent goals; 630 stars",
+          "source": "GitHub / arsentev.ai",
+          "date": "2026-06-16",
+          "primary_url": "https://github.com/joeseesun/qiaomu-goal-meta-skill",
+          "summary": "A meta-skill that converts a vague user ask into a precise, structured goal for an AI agent before any work begins. Identified by arsentev.ai as the Week W25 featured repo (June 16, 2026). 630 stars. Addresses the single most common agentic failure mode — agents that start executing before requirements are clearly scoped — using a goal-clarification interview pattern before handoff to downstream skills.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 630 },
+          "tags": ["Agent Skill", "Goal Clarification", "Meta-Skill", "Pre-Execution"],
+          "category": "Agent Skill",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "skill-chromedevelopertools-chrome-devtools-mcp",
+          "title": "ChromeDevTools/chrome-devtools-mcp — Chrome DevTools exposed as an MCP server for coding agents; +104 stars June 18",
+          "source": "GitHub",
+          "date": "2026-06-15",
+          "primary_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "summary": "Official MCP server that exposes Chrome DevTools to AI coding agents — network requests, console output, DOM, JavaScript execution, performance profiling, all as structured MCP tool calls. +104 stars on June 18 alone (StartupCorners). This is a first-party implementation from the Chrome DevTools team, not a third-party wrapper, making it directly trustworthy for enterprise browser automation and testing workflows.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "stars": 104 },
+          "tags": ["MCP Server", "Chrome DevTools", "Browser Automation", "First-Party"],
+          "category": "MCP Server",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN and Indie Builds",
+      "description": "Show HN posts and indie builds from the week of June 15–21, 2026 with working repos or demos.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "showhn-promptshark-mitm-proxy-loop-detector",
+          "title": "Show HN: PromptShark – MitM proxy, C++ loop detector and replay for AI agents (apvcode/PromptShark)",
+          "source": "Hacker News",
+          "date": "2026-06-16",
+          "primary_url": "https://github.com/apvcode/PromptShark",
+          "secondary_urls": [
+            {
+              "label": "HN thread",
+              "url": "https://news.ycombinator.com/item?id=48562707"
+            },
+            {
+              "label": "Dev.to writeup: Built PromptShark in One Evening",
+              "url": "https://dev.to/apvcode/i-built-promptshark-in-one-evening-to-stop-my-ai-agents-from-burning-money-on-infinite-loops-7ok"
+            }
+          ],
+          "summary": "PromptShark is a transparent local proxy that sits between an AI agent and the OpenAI API, intercepting requests and detecting infinite tool-calling loops using a dedicated C++ loop detector (configurable hash-based pattern matching, THRESHOLD=3 default). Features time-travel replay: click any past step, edit the JSON payload in a built-in editor, preview via interactive diff, re-run from that point. SQLite caches earlier steps for instant replay. Cost tracking in USD, latency/TTFT measurement, Chaos Mode for simulating 429 rate limits. HTML/Go/C++; MIT; v0.1.0 (June 16, 2026).",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "upvotes": 0 },
+          "tags": ["Agent Debugging", "MitM Proxy", "Loop Detection", "Time-Travel Replay"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "showhn-kintsugi-local-first-command-guardrail",
+          "title": "Show HN: Kintsugi – local-first safety layer for AI coding agents (arrowassassin/kintsugi)",
+          "source": "Hacker News / LLM Digest",
+          "date": "2026-06-16",
+          "primary_url": "https://github.com/arrowassassin/kintsugi",
+          "secondary_urls": [
+            {
+              "label": "Kintsugi project site",
+              "url": "https://arrowassassin.github.io/kintsugi/"
+            },
+            {
+              "label": "LLM Digest daily June 16 2026",
+              "url": "https://www.llm-digest.com/daily/2026-06-16"
+            }
+          ],
+          "summary": "Kintsugi intercepts an agent's real shell commands (rm -rf, git push --force, terraform destroy, DROP TABLE) before execution: deterministic rule engine warns in plain English, holds catastrophic commands for a one-key approval decision, makes destructive actions reversible via snapshots (reflink CoW + copy fallback), and records everything in a tamper-evident, hash-chained SQLite log. Phase 0–5 roadmap: Recorder → Gate → Explain/Score → Undo → Recorder UI → Launch. Agent-agnostic; native pre-tool hooks for Claude Code, Qwen Code, Gemini CLI, GitHub Copilot CLI, Cursor CLI, Codex CLI, OpenCode. Rust 72.5%; MIT; created June 14, 2026.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": {},
+          "tags": ["Agent Safety", "Command Guardrail", "Local-First", "Tamper-Evident Log", "Undo"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "showhn-beamweaver-langgraph-for-elixir",
+          "title": "Show HN: BeamWeaver – LangChain/LangGraph-style agents and observability for Elixir",
+          "source": "Hacker News",
+          "date": "2026-06-19",
+          "primary_url": "https://news.ycombinator.com/item?id=48562707",
+          "summary": "BeamWeaver brings LangChain/DeepAgents-style agent and workflow patterns to Elixir with OTP-native design — including built-in observability for agentic systems that the builder found missing in the existing Elixir ecosystem. Agents and tool definitions; multi-step workflows; OTP supervision for fault tolerance. Interesting from an enterprise perspective: Elixir/OTP's supervision tree provides natural circuit-breaker behavior for long-running agent workflows without additional middleware.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": {},
+          "tags": ["Elixir", "Agent Framework", "OTP", "Observability"],
+          "category": "Agent Framework",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 }
+        },
+        {
+          "id": "showhn-multiplayer-local-debugging-agent",
+          "title": "Show HN: Multiplayer – open-source local debugging agent, unsampled full-stack runtime data",
+          "source": "Hacker News",
+          "date": "2026-06-18",
+          "primary_url": "https://github.com/multiplayer-app/multiplayer",
+          "secondary_urls": [
+            {
+              "label": "The Slop Report June 19 2026",
+              "url": "https://slopreport.net/2026/06/19/slop-report"
+            }
+          ],
+          "summary": "Multiplayer is a local debugging agent that captures full-stack, unsampled session data when something goes wrong. Unlike sampling-based observability (Datadog, Sentry), Multiplayer captures the complete event stream for a specific failure session — full-stack, unsampled, local-first. No cloud dependency for the capture phase. The open-source release is the capture and replay layer; the AI debugging analysis runs on the captured data.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": {},
+          "tags": ["Debugging", "Full-Stack", "Local-First", "Agent Observability"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "showhn-anma-boundary-contracts-cheaper-agents",
+          "title": "Show HN: ANMA — boundary contracts for cheaper AI coding agents (anma-labs/anma)",
+          "source": "Hacker News",
+          "date": "2026-06-21",
+          "primary_url": "https://github.com/anma-labs/anma",
+          "secondary_urls": [
+            {
+              "label": "HN Show new listing",
+              "url": "https://news.ycombinator.com/shownew"
+            }
+          ],
+          "summary": "ANMA defines boundary contracts between agents and their environment — explicit interface definitions for what an agent can read, write, and call — so cheaper, smaller models can execute tasks that previously required frontier models to navigate ambiguous context. The boundary contract encodes the scope reduction that makes smaller models viable for execution tasks. Directly complements the shadcn/improve pattern (expensive model for audit, cheap model for execution): ANMA provides the contract that makes cheap-model execution safe.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": {},
+          "tags": ["Agent Contracts", "Cost Optimization", "Cheap Models", "Boundary Definition"],
+          "category": "Dev Tool",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent and RAG Implementations",
+      "description": "Production-shaped agent and RAG builds worth studying, with linked code or detailed write-ups — week of June 15–21, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "impl-shadcn-improve-tiered-model-cost-pattern",
+          "title": "shadcn/improve codifies the 'expensive model audits, cheap model executes' pattern as a deployable framework",
+          "source": "GitHub",
+          "date": "2026-06-10",
+          "primary_url": "https://github.com/shadcn/improve",
+          "summary": "improve is the clearest production-ready implementation of the tiered model cost architecture that sermakarevich/fleet documented empirically two weeks ago. Where fleet is an infrastructure worktree system, improve is a framework layer: it runs an eight-dimension audit on the most capable model, produces a structured plan, then routes plan execution to a cheaper model. The cost benefit comes from the audit catching issues before the expensive model commits to a full execution pass. Created June 10, 2026; 5,006 stars within the first week.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "tags": ["Cost Architecture", "Tiered Models", "Audit-First", "Framework"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "impl-omnigent-multi-agent-shared-session",
+          "title": "omnigent-ai/omnigent — common policy layer over multiple agents with spend caps, approval gates, and cross-device session sync",
+          "source": "GitHub",
+          "date": "2026-06-11",
+          "primary_url": "https://github.com/omnigent-ai/omnigent",
+          "summary": "omnigent addresses the practical problem of running multiple agents in parallel without losing governance: a single policy layer enforces spend caps and approval gates across Claude Code, Codex, Pi, and custom agents; real-time multi-person shared sessions sync across terminal, browser, and phone; agents can be swapped or combined without rewriting. The cross-device sync means a team can supervise an agent running on a workstation from a phone — directly relevant to teams running overnight agentic coding sessions. Python; Apache-2.0; 2,736 stars in its first week.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "tags": ["Multi-Agent", "Governance", "Session Sync", "Spend Caps"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 }
+        },
+        {
+          "id": "impl-ask-hn-local-models-replace-claude-921pts",
+          "title": "Ask HN: Has anyone replaced Claude/GPT with a local model for daily coding? — 921 points, 419 comments",
+          "source": "Hacker News",
+          "date": "2026-06-16",
+          "primary_url": "https://news.ycombinator.com/",
+          "secondary_urls": [
+            {
+              "label": "AI Daily Digest — June 16 summary (senyu.blog)",
+              "url": "https://senyu.blog/posts/ai-daily-digest-2026-06-16"
+            }
+          ],
+          "summary": "The Ask HN thread 'Has anyone replaced Claude/GPT with a local model for daily coding?' scored 921 points and 419 comments on June 16 — the highest-engagement developer discussion of the week per the AI Daily Digest. The thread aggregates real production reports of local model substitution for coding tasks, providing the most current evidence base for which local models are viable for which task types and at what hardware requirements. This is a primary community-signal document for any team evaluating the local-model tier of the three-tier cost architecture.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": { "upvotes": 921, "comments": 419 },
+          "tags": ["Local LLM", "Ollama", "Cost Reduction", "Developer Survey"],
+          "category": "Agent Infrastructure",
+          "platform": "hackernews",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "n8n, Make, and custom automations with measurable outcomes from the week of June 15–21, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "automation-n8n-2270-core-reliability",
+          "title": "n8n 2.27.0 — S3 execution data storage, OpenTelemetry UI configuration, output redactor guardrail, data redaction GA (June 2026)",
+          "source": "n8n / newreleases.io",
+          "date": "2026-06-16",
+          "primary_url": "https://newreleases.io/project/github/n8n-io/n8n/release/n8n@2.27.0",
+          "secondary_urls": [
+            {
+              "label": "n8n 2.27.0 release notes",
+              "url": "https://releasebot.io/updates/n8n"
+            }
+          ],
+          "summary": "n8n 2.27.0 ships four enterprise-relevant additions: (1) S3 storage mode for execution data — workflows can now offload execution data to S3 instead of Postgres, enabling large-scale workflow history without database bloat; (2) OpenTelemetry settings configurable via UI rather than environment variables only; (3) output redactor guardrail for instance-level AI use — prevents sensitive output from appearing in execution logs; (4) data redaction enforcement now generally available (was preview). Also: workers correctly wait for module initialization before processing queued jobs, fixing a race condition in high-throughput deployments.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "results": "S3 execution data storage reduces Postgres storage requirements proportionally to workflow history volume. Data redaction moved from preview to GA — can be enforced in production deployments. Worker initialization race condition fix reduces silent job failures in high-throughput queues. Source: newreleases.io n8n@2.27.0 (fetched June 21, 2026).",
+          "tags": ["n8n", "Automation", "S3 Storage", "OpenTelemetry", "Data Redaction"],
+          "category": "Automation",
+          "platform": "n8n",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "automation-ctera-n8n-file-data-ai-workflows",
+          "title": "CTERA integrates n8n to extend enterprise file data into AI workflows — community nodes for governed AI automation over private file storage",
+          "source": "CTERA / GlobeNewswire",
+          "date": "2026-06-19",
+          "primary_url": "https://letsdatascience.com/news/ctera-integrates-n8n-to-extend-file-data-to-ai-workflows-a0e2ef67",
+          "summary": "CTERA announced on June 10 a native integration with n8n via CTERA community nodes, enabling AI workflows that act on enterprise file data stored in CTERA's on-premises or hybrid cloud infrastructure. Relevant pattern: enterprise file data (documents, CAD files, compliance records) that is too sensitive to move to a cloud AI provider can now be processed by n8n workflows running against a CTERA instance, keeping the data on-premises while connecting to AI processing via the automation layer.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "results": "Announced June 10, 2026. Enables n8n AI workflow automation over CTERA-stored enterprise file data without data leaving the on-premises or private cloud environment. Source: letsdatascience.com (fetched June 21, 2026).",
+          "tags": ["n8n", "Enterprise Files", "On-Premises", "Data Sovereignty", "AI Automation"],
+          "category": "Automation",
+          "platform": "n8n",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "automation-aws-fincops-agent-cost-observability",
+          "title": "AWS FinOps Agent preview — scheduled cost agent that surfaces optimizations, opens Jira tickets, investigates cost anomalies",
+          "source": "AWS / aiagentstore.ai",
+          "date": "2026-06-15",
+          "primary_url": "https://aiagentstore.ai/ai-agent-news/daily/2026-06-16",
+          "summary": "AWS published a June 15 roundup announcing an AWS FinOps Agent preview: a scheduled agent that answers cost questions, surfaces optimization recommendations, opens Jira tickets, and investigates cost anomalies. Paired with OpenSearch Service support for agent-friendly MCP Apps covering logs, traces, metrics, and agent observability. Directly relevant to the week's theme: as agent costs become significant (the DN42 incident from two weeks ago: $6,531 in 24 hours), cost governance tooling from cloud providers is now entering production-preview.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "results": "Preview announced June 15, 2026. Opens Jira tickets automatically for cost anomalies. OpenSearch MCP integration covers logs, traces, metrics, and agent observability. Source: aiagentstore.ai daily June 16 2026 (fetched June 21, 2026).",
+          "tags": ["AWS", "FinOps", "Cost Agent", "MCP", "Cloud Governance"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Meaningful framework releases from the week of June 15–21, 2026 — major versions or new capabilities only.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "framework-langgraph-125-126-subgraph-fix",
+          "title": "LangGraph 1.2.5 + 1.2.6 — subgraph checkpoint regression fix, stream-abort cancellation, CLI 0.4.30 (June 12–18, 2026)",
+          "source": "GitHub / Releasebot",
+          "date": "2026-06-18",
+          "primary_url": "https://releasebot.io/updates/langchain-ai",
+          "summary": "LangGraph shipped two releases this week. 1.2.5 (June 12): bug fixes, metadata merging. 1.2.6 (June 18): fixes a regression in 1.2.3 where nested subgraphs failed to inherit the parent checkpoint namespace (critical for teams using subgraph-based agent decomposition), and fixes stream abort not canceling running subgraphs. CLI 0.4.30: compatible API version range support. These are correctness fixes for production agents using checkpoint-based state persistence — teams on 1.2.3 or 1.2.4 should upgrade. Separately: LangGraph Platform now Generally Available for hosted deployment (announced this week).",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": {},
+          "tags": ["LangGraph", "Agent Framework", "Checkpointing", "Subgraph", "Bug Fix"],
+          "category": "Agent Framework",
+          "platform": "github",
+          "recurrence": "returning",
+          "recurrence_note": "Last week's framework release was LangGraph 1.2.4 (per-node timeouts, DeltaChannel); this week adds correctness fixes for the checkpoint regression introduced in 1.2.3.",
+          "score": { "total": 8, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "framework-n8n-2270-enterprise-storage",
+          "title": "n8n 2.27.0 — S3 execution storage, OTel UI config, data redaction GA, worker initialization race fix (June 16, 2026)",
+          "source": "n8n / Releasebot",
+          "date": "2026-06-16",
+          "primary_url": "https://releasebot.io/updates/n8n",
+          "summary": "n8n 2.27.0 ships enterprise-grade changes: S3 storage mode for execution data, OpenTelemetry settings via UI, output redactor guardrail GA, and worker queue initialization race condition fix. These additions move n8n closer to production-enterprise readiness — S3 execution storage is a prerequisite for many enterprise deployments where Postgres alone cannot handle multi-year workflow history. See Automation Wins for full detail.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": {},
+          "tags": ["n8n", "Automation", "S3", "OpenTelemetry", "Enterprise"],
+          "category": "Automation",
+          "platform": "n8n",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "framework-vercel-eve-agent-production-runtime",
+          "title": "Vercel ships eve — open-source production runtime for agents: durable execution, sandboxed compute, human-in-the-loop approvals, built-in evals",
+          "source": "Vercel / AI Insiders",
+          "date": "2026-06-18",
+          "primary_url": "https://www.linkedin.com/pulse/ai-news-highlights-from-18th-june-2026-ai-insiders-news-b5nlf",
+          "summary": "Vercel announced eve, an open-source production runtime for agents that bakes in durable execution, sandboxed compute, human-in-the-loop approvals, and evals so developers write agent behavior rather than infrastructure plumbing. Paired with Vercel Connect, which replaces long-lived provider secrets with runtime credential exchange (short-lived, task-scoped tokens issued per agent task). Two releases on the same day targeting the same problem: agents built on long-lived secrets and ad-hoc plumbing fail in production.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "engagement": {},
+          "tags": ["Vercel", "Agent Runtime", "Durable Execution", "Human-in-the-Loop", "Credential Management"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-source patterns observed across repos and discussions for the week of June 15–21, 2026.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "pattern-code-minimization-anti-slop-engineering-discipline",
+          "title": "Code minimization and anti-overengineering are becoming explicit engineering constraints on AI agents, not implicit expectations",
+          "source": "GitHub (multi-repo)",
+          "date": "2026-06-21",
+          "primary_url": "https://github.com/DietrichGebert/ponytail",
+          "secondary_urls": [
+            {
+              "label": "shadcn/improve",
+              "url": "https://github.com/shadcn/improve"
+            }
+          ],
+          "summary": "ponytail (80–94% less code, 3–6x faster, 47–77% cheaper), shadcn/improve (eight-dimension audit before execution), and the earlier Leonxlnx/taste-skill (anti-slop front-end quality) all represent the same underlying demand: agents that generate minimum viable code rather than maximum comprehensive implementations. The pattern is now deployable via multiple independent mechanisms — as a pre-generation checklist (ponytail), as an audit-before-execute framework (improve), or as aesthetic quality constraints (taste-skill). The community has stopped asking 'can AI generate more code?' and started asking 'how do we make AI generate less, better code?'",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "tags": ["Code Minimization", "Agent Behavior", "YAGNI", "Anti-Slop", "Engineering Discipline"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "pattern-live-internet-access-zero-api-capability-tier",
+          "title": "Zero-API-fee live internet access is becoming a standard agent capability layer, not a premium add-on",
+          "source": "GitHub (multi-repo)",
+          "date": "2026-06-21",
+          "primary_url": "https://github.com/Panniantong/Agent-Reach",
+          "secondary_urls": [
+            {
+              "label": "mvanhorn/last30days-skill",
+              "url": "https://github.com/mvanhorn/last30days-skill"
+            }
+          ],
+          "summary": "Agent-Reach (+5,873 weekly delta, #1 on two tracking sources) and last30days-skill (+9,676 weekly delta, #4 on the weekly chart) both reached high velocity this week on the same premise: agents should be able to read the live internet across 10+ platforms without requiring API keys or paid subscriptions. The approach — composing free upstream CLIs via MCP — is technically the same in both repos. Two independent implementations of the same pattern in the same week's top-10 confirms this is now a settled community expectation rather than an experimental feature.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "tags": ["Internet Access", "Zero API Cost", "MCP", "Agent Capability"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        },
+        {
+          "id": "pattern-agent-framework-cves-now-p0-patches",
+          "title": "Open-source agent frameworks now require the same patch urgency as internet-facing web applications — active exploitation is here",
+          "source": "VulnCheck / Censys / AI Weekly",
+          "date": "2026-06-19",
+          "primary_url": "https://aiweekly.co/node/3302",
+          "summary": "Langflow CVE-2026-5027 went from patch (April 15) to in-the-wild exploitation (June 9) to 7,000 exposed instances in under 60 days. The Langflow pattern — framework vulnerability to complete exploitation in one sprint cycle — is the new threat model for any self-hosted agent infrastructure. LangGraph (CVE-2025-67644) and LangChain-core (CVE-2026-34070) have public proof-of-concepts but no confirmed exploitation yet — the Langflow timeline suggests that window is short. The practical implication: AI framework dependency upgrades are now security patches, not feature updates, and must be treated with the same urgency as Apache or Node.js CVEs.",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "tags": ["Security", "CVE", "Patch Management", "Framework Vulnerabilities", "Threat Model"],
+          "category": "Agent Infrastructure",
+          "platform": "github",
+          "recurrence": "new",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 }
+        }
+      ]
+    }
+  ],
+
+  "index": [
+    {
+      "id": "idx-dietrichgebert-ponytail",
+      "title": "DietrichGebert/ponytail — code minimization plugin, 80–94% less code, 3–6x faster, 47–77% cheaper; 16.4k stars",
+      "source": "GitHub",
+      "date": "2026-06-12",
+      "primary_url": "https://github.com/DietrichGebert/ponytail",
+      "score": 9
+    },
+    {
+      "id": "idx-panniantong-agent-reach",
+      "title": "Panniantong/Agent-Reach — zero-API-fee agent internet access across 15+ platforms; +5,873 weekly delta, 31,986 total stars",
+      "source": "GitHub",
+      "date": "2026-06-15",
+      "primary_url": "https://github.com/Panniantong/Agent-Reach",
+      "score": 8
+    },
+    {
+      "id": "idx-shadcn-improve",
+      "title": "shadcn/improve — expensive model audits, cheap model executes; eight-dimension audit framework; 5,006 stars",
+      "source": "GitHub",
+      "date": "2026-06-10",
+      "primary_url": "https://github.com/shadcn/improve",
+      "score": 8
+    },
+    {
+      "id": "idx-deus-data-codebase-memory-mcp",
+      "title": "DeusData/codebase-memory-mcp — 120x token reduction code intelligence MCP, single static binary, 155 languages; 2.8k stars",
+      "source": "GitHub",
+      "date": "2026-06-15",
+      "primary_url": "https://github.com/DeusData/codebase-memory-mcp",
+      "score": 8
+    },
+    {
+      "id": "idx-langflow-langgraph-cves-patch-now",
+      "title": "Langflow CVE-2026-5027 active exploit (~7,000 instances) + LangGraph CVE-2025-67644 + LangChain-core CVE-2026-34070 — patch versions confirmed",
+      "source": "VulnCheck / Censys",
+      "date": "2026-06-19",
+      "primary_url": "https://aiweekly.co/node/3302",
+      "score": 9
+    },
+    {
+      "id": "idx-addyosmani-agent-skills-wk3",
+      "title": "addyosmani/agent-skills — +11,088 weekly delta (returning), 61,198 total; #1 weekly trending for week of June 15",
+      "source": "GitHub",
+      "date": "2026-06-15",
+      "primary_url": "https://github.com/addyosmani/agent-skills",
+      "score": 9
+    },
+    {
+      "id": "idx-chopratejas-headroom-wk3",
+      "title": "chopratejas/headroom — +10,660 weekly delta (returning), 30,002 total; monthly #1 at +26,561 stars over 30 days",
+      "source": "GitHub",
+      "date": "2026-06-15",
+      "primary_url": "https://github.com/chopratejas/headroom",
+      "score": 9
+    },
+    {
+      "id": "idx-mvanhorn-last30days-skill",
+      "title": "mvanhorn/last30days-skill — +9,676 weekly delta, 43,460 total; multi-platform AI research skill for OpenClaw",
+      "source": "GitHub",
+      "date": "2026-06-15",
+      "primary_url": "https://github.com/mvanhorn/last30days-skill",
+      "score": 8
+    },
+    {
+      "id": "idx-phuryn-pm-skills-wk2",
+      "title": "phuryn/pm-skills — +6,117 weekly delta (returning), 19,001 total; 100+ PM skills across 8 plugins",
+      "source": "GitHub",
+      "date": "2026-06-15",
+      "primary_url": "https://github.com/phuryn/pm-skills",
+      "score": 7
+    },
+    {
+      "id": "idx-nvidia-skillspector-wk2",
+      "title": "NVIDIA/SkillSpector — +4,633 weekly delta (returning), 6,973 total; 26% of skills contain vulnerabilities",
+      "source": "GitHub",
+      "date": "2026-06-15",
+      "primary_url": "https://github.com/NVIDIA/SkillSpector",
+      "score": 8
+    },
+    {
+      "id": "idx-xiaomimo-mimo-code",
+      "title": "XiaomiMiMo/MiMo-Code — Xiaomi's open-source terminal coding agent, 1M token context, local SQLite memory; 9,357 stars",
+      "source": "GitHub",
+      "date": "2026-06-10",
+      "primary_url": "https://github.com/XiaomiMiMo/MiMo-Code",
+      "score": 7
+    },
+    {
+      "id": "idx-omnigent-ai-omnigent",
+      "title": "omnigent-ai/omnigent — meta-harness over multiple agents, spend caps, cross-device session sync; 2,736 stars",
+      "source": "GitHub",
+      "date": "2026-06-11",
+      "primary_url": "https://github.com/omnigent-ai/omnigent",
+      "score": 7
+    },
+    {
+      "id": "idx-kintsugi-command-guardrail",
+      "title": "arrowassassin/kintsugi — local-first command guardrail, tamper-evident hash-chained log, undo support; Show HN June 16",
+      "source": "GitHub / HN",
+      "date": "2026-06-14",
+      "primary_url": "https://github.com/arrowassassin/kintsugi",
+      "score": 8
+    },
+    {
+      "id": "idx-promptshark-mitm-proxy",
+      "title": "apvcode/PromptShark — MitM proxy with C++ loop detector, time-travel replay for AI agents; Show HN June 16",
+      "source": "GitHub / HN",
+      "date": "2026-06-16",
+      "primary_url": "https://github.com/apvcode/PromptShark",
+      "score": 7
+    },
+    {
+      "id": "idx-anma-boundary-contracts",
+      "title": "anma-labs/anma — boundary contracts for cheaper AI coding agents; Show HN June 21",
+      "source": "GitHub / HN",
+      "date": "2026-06-21",
+      "primary_url": "https://github.com/anma-labs/anma",
+      "score": 7
+    },
+    {
+      "id": "idx-multiplayer-local-debug-agent",
+      "title": "multiplayer-app/multiplayer — local debugging agent, unsampled full-stack runtime data; Show HN June 18",
+      "source": "GitHub / HN",
+      "date": "2026-06-18",
+      "primary_url": "https://github.com/multiplayer-app/multiplayer",
+      "score": 7
+    },
+    {
+      "id": "idx-n8n-2270-s3-storage",
+      "title": "n8n 2.27.0 — S3 execution data storage, OTel UI config, data redaction GA, worker race fix",
+      "source": "n8n",
+      "date": "2026-06-16",
+      "primary_url": "https://releasebot.io/updates/n8n",
+      "score": 7
+    },
+    {
+      "id": "idx-langgraph-125-126",
+      "title": "LangGraph 1.2.5 + 1.2.6 — subgraph checkpoint regression fix, stream-abort cancellation, CLI 0.4.30",
+      "source": "GitHub / PyPI",
+      "date": "2026-06-18",
+      "primary_url": "https://releasebot.io/updates/langchain-ai",
+      "score": 8
+    },
+    {
+      "id": "idx-vercel-eve-agent-runtime",
+      "title": "Vercel/eve — open-source production runtime for agents: durable execution, sandboxed compute, HitL approvals",
+      "source": "Vercel",
+      "date": "2026-06-18",
+      "primary_url": "https://www.linkedin.com/pulse/ai-news-highlights-from-18th-june-2026-ai-insiders-news-b5nlf",
+      "score": 7
+    },
+    {
+      "id": "idx-anthropics-skills-repo",
+      "title": "anthropics/skills — Anthropic's official public agent skills repository, +519 stars June 18",
+      "source": "GitHub",
+      "date": "2026-06-15",
+      "primary_url": "https://github.com/anthropics/skills",
+      "score": 7
+    },
+    {
+      "id": "idx-chrome-devtools-mcp",
+      "title": "ChromeDevTools/chrome-devtools-mcp — official Chrome DevTools MCP server for coding agents",
+      "source": "GitHub",
+      "date": "2026-06-15",
+      "primary_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "score": 7
+    },
+    {
+      "id": "idx-levy-street-world-of-claudecraft",
+      "title": "levy-street/world-of-claudecraft — AI-built mini-MMO with nine classes and five-player dungeons; 866 stars",
+      "source": "GitHub",
+      "date": "2026-06-10",
+      "primary_url": "https://github.com/levy-street/world-of-claudecraft",
+      "score": 6
+    },
+    {
+      "id": "idx-plannotator-effective-html",
+      "title": "plannotator/effective-html — agent skills for clean self-contained HTML artifacts (plans, diagrams, visualizations)",
+      "source": "GitHub",
+      "date": "2026-06-09",
+      "primary_url": "https://github.com/plannotator/effective-html",
+      "score": 6
+    },
+    {
+      "id": "idx-joeseesun-qiaomu-goal-meta-skill",
+      "title": "joeseesun/qiaomu-goal-meta-skill — meta-skill that converts vague asks into precise agent goals; 630 stars",
+      "source": "GitHub",
+      "date": "2026-06-16",
+      "primary_url": "https://github.com/joeseesun/qiaomu-goal-meta-skill",
+      "score": 7
+    },
+    {
+      "id": "idx-ask-hn-local-models-replace-claude",
+      "title": "Ask HN: Has anyone replaced Claude/GPT with a local model for daily coding? — 921 points, 419 comments",
+      "source": "Hacker News",
+      "date": "2026-06-16",
+      "primary_url": "https://news.ycombinator.com/",
+      "score": 8
+    },
+    {
+      "id": "idx-ctera-n8n-enterprise-files",
+      "title": "CTERA integrates n8n — enterprise file data into AI workflows with data sovereignty",
+      "source": "CTERA / GlobeNewswire",
+      "date": "2026-06-10",
+      "primary_url": "https://letsdatascience.com/news/ctera-integrates-n8n-to-extend-file-data-to-ai-workflows-a0e2ef67",
+      "score": 7
+    },
+    {
+      "id": "idx-aws-fincops-agent-preview",
+      "title": "AWS FinOps Agent preview — scheduled cost agent, Jira ticket opener, anomaly investigator; OpenSearch MCP for observability",
+      "source": "AWS",
+      "date": "2026-06-15",
+      "primary_url": "https://aiagentstore.ai/ai-agent-news/daily/2026-06-16",
+      "score": 7
+    },
+    {
+      "id": "idx-pattern-code-minimization",
+      "title": "Emerging pattern: code minimization as first-class agent constraint (ponytail, improve, taste-skill)",
+      "source": "GitHub (multi-repo)",
+      "date": "2026-06-21",
+      "primary_url": "https://github.com/DietrichGebert/ponytail",
+      "score": 9
+    },
+    {
+      "id": "idx-pattern-zero-api-internet-access",
+      "title": "Emerging pattern: zero-API-fee live internet access as standard agent capability layer (Agent-Reach, last30days-skill)",
+      "source": "GitHub (multi-repo)",
+      "date": "2026-06-21",
+      "primary_url": "https://github.com/Panniantong/Agent-Reach",
+      "score": 8
+    },
+    {
+      "id": "idx-pattern-framework-cves-p0",
+      "title": "Emerging pattern: agent framework CVEs now require P0 patch urgency — Langflow exploitation confirms threat model",
+      "source": "VulnCheck / AI Weekly",
+      "date": "2026-06-19",
+      "primary_url": "https://aiweekly.co/node/3302",
+      "score": 9
+    },
+    {
+      "id": "idx-beamweaver-elixir-agent",
+      "title": "BeamWeaver — LangGraph-style agents and observability for Elixir/OTP; Show HN June 19",
+      "source": "Hacker News",
+      "date": "2026-06-19",
+      "primary_url": "https://news.ycombinator.com/item?id=48562707",
+      "score": 6
+    },
+    {
+      "id": "idx-impl-shadcn-improve-tiered-cost",
+      "title": "shadcn/improve tiered cost pattern: expensive model audits, cheap model executes — deployable framework",
+      "source": "GitHub",
+      "date": "2026-06-10",
+      "primary_url": "https://github.com/shadcn/improve",
+      "score": 8
+    },
+    {
+      "id": "idx-impl-omnigent-multi-agent-governance",
+      "title": "omnigent-ai/omnigent — policy layer over multiple agents with spend caps, approval gates, cross-device session sync",
+      "source": "GitHub",
+      "date": "2026-06-11",
+      "primary_url": "https://github.com/omnigent-ai/omnigent",
+      "score": 7
+    }
+  ],
+
+  "suggested_refinements": {
+    "sources_to_add": [
+      "arsentev.ai/github — weekly GitHub trending summaries with clean structured tables; identified W25 (June 16) and W24 repos accurately and with star counts; a reliable secondary source to cross-check shareuhack.com data",
+      "startupCorners.com daily devtools digest — captures daily star deltas for specific repos, useful for tracking single-day breakout moments (e.g., Agent-Reach +1,161 in one day on June 18)",
+      "LLM Digest (llm-digest.com/daily) — synthesizes Show HN launches and agent safety events daily; first source to capture the Kintsugi and PromptShark launches on June 16",
+      "aiweekly.co — tracks CVE and security news for AI frameworks; the only source that had a comprehensive summary of the Langflow/LangGraph/LangChain-core CVE cluster"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Agent framework CVE tracking — Langflow, LangGraph, LangChain-core, and AutoGen now have active or imminent CVEs; this should be a standing section check every week alongside trending repos",
+      "Code minimization as agent behavior constraint — ponytail and shadcn/improve both broke out this week on this theme; track whether a third independent implementation appears next week",
+      "First-party model lab skills repos — anthropics/skills landing this week signals that model labs are entering the agent skills ecosystem; watch for equivalent repos from OpenAI, Google, and Mistral",
+      "Agent cost governance tooling — AWS FinOps Agent, omnigent spend caps, and shadcn/improve tiered model pattern all converge on the same problem; this is a category to track weekly"
+    ],
+    "topics_to_drop": [],
+    "notes": "The week of June 15–21 split into two clear macro-themes: (1) code minimization and cost optimization (ponytail, improve, the tiered model cost architecture now codified in a reusable framework), and (2) agent security hardening at three layers simultaneously — pre-installation scanning (SkillSpector continuing its climb), local command guardrails (Kintsugi), and framework CVE patching (Langflow/LangGraph/LangChain-core). The governance stack from the prior two weeks is now under active pressure from real exploitation. Next week should verify: (1) whether LangGraph CVE-2025-67644 moves from proof-of-concept to in-the-wild exploitation; (2) whether ponytail's benchmark methodology withstands community scrutiny — the repo methodology is sound but the claims are striking enough to warrant watching for replication or refutation; (3) whether anthropics/skills accelerates to become the canonical first-party skills registry; (4) whether Vercel/eve gains developer adoption or gets overshadowed by the other Vercel announcement (Vercel Connect short-lived credentials)."
+  }
+}

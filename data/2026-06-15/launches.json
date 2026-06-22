@@ -1,0 +1,1112 @@
+{
+  "tab_id": "launches",
+  "tab_name": "Launches",
+  "subtitle": "Launch Intelligence",
+  "icon": "Rocket",
+  "min_items": 20,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.92,
+    "items_total": 25,
+    "items_new": 23,
+    "items_returning": 2
+  },
+  "executive_summary": [
+    {
+      "headline": "Microsoft Copilot Cowork goes GA worldwide — the most significant enterprise agent deployment in Microsoft's history.",
+      "body": "On June 16, Microsoft made Copilot Cowork generally available to all Microsoft 365 Copilot tenants worldwide. More than half the Fortune 500 used it during the three-month Frontier preview. Cowork runs long-horizon, multi-tool agent tasks grounded in organizational knowledge, with usage-based billing through Copilot Credits. The Work IQ API also reached GA on the same day, metering third-party agent access to M365 data. Any enterprise with Microsoft 365 Copilot licenses can deploy this now — the procurement barrier is gone.",
+      "primary_url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/"
+    },
+    {
+      "headline": "Prometheus — Jeff Bezos's physical AI startup — closes a $12B Series B at $41B, targeting aerospace and manufacturing with 'artificial general engineer' technology.",
+      "body": "Prometheus, co-led by Jeff Bezos and former Google X scientist Vik Bajaj, disclosed a $12 billion Series B at a $41 billion valuation on June 15-16. Investors include JPMorgan, BlackRock, Goldman Sachs, and DST Global. The company builds world models trained on physics and material science to compress design-to-production cycles for jet engines, semiconductors, and pharmaceuticals. Bezos explicitly separated this from robotics: the product is AI-native CAD and simulation, not hardware. Total funding exceeds $18 billion.",
+      "primary_url": "https://dataphoenix.info/prometheus-raises-12b-to-build-an-ai-to-automate-physical-manufacturing-processes/"
+    },
+    {
+      "headline": "GLM-5.2 ships MIT-licensed open weights with 1M-token context — the highest-ranked open-weight coding model on multiple agentic benchmarks.",
+      "body": "Z.ai released GLM-5.2 on June 13-16, a 744B MoE model under the MIT license, with a usable 1M-token context window and dual reasoning effort modes (High/Max). On FrontierSWE it trails Claude Opus 4.8 by 1% while beating GPT-5.5, and scores 81.0 on Terminal-Bench 2.1. An Anthropic-compatible API endpoint means it drops into Claude Code, Cline, and OpenClaw with a single URL and model-name swap. API pricing is $1.40/$4.40 per million tokens — substantially cheaper than comparable proprietary alternatives.",
+      "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog"
+    },
+    {
+      "headline": "Databricks Data + AI Summit launches Omnigent open-source meta-harness and expands Agent Bricks to a full developer agent platform.",
+      "body": "At DAIS 2026 (June 15-18), Databricks released Omnigent under Apache 2.0 — a meta-harness that wraps Claude Code, Codex, OpenAI Agents, and other harnesses with a unified web UI, persistent sessions, team collaboration, and contextual governance policies. Agent Bricks expanded to include model choice across OpenAI, Anthropic, Gemini, Qwen, Kimi, and Grok (via a SpaceX partnership), with Databricks Sandbox for secure isolated agent execution. The managed Omnigent deployment on Databricks Sandbox is in Beta; open-source version is available now.",
+      "primary_url": "https://www.databricks.com/blog/agent-bricks-dais-2026"
+    },
+    {
+      "headline": "Claude Fable 5 suspension enters day nine with no GA restoration — Anthropic's Managing Director signals 'confidence' in days-away return; access path requires identity verification from July 8.",
+      "body": "As of June 21, Claude Fable 5 and Mythos 5 remain suspended globally following the US government export-control directive issued June 12. Anthropic's International Managing Director stated on June 18 that the models will return 'in the coming days,' but no date is confirmed. The structured re-entry path: US persons can regain access via identity verification starting July 8; international access depends on full revocation of the directive. Claude Opus 4.8 and all other Claude models remain fully available. Enterprise teams building on Fable 5 should maintain Opus 4.8 fallback branches.",
+      "primary_url": "https://www.anthropic.com/news"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "microsoft-copilot-cowork-ga-jun16",
+      "title": "Microsoft Copilot Cowork GA — Long-Running Enterprise Agents, Usage-Based Copilot Credits",
+      "source": "Microsoft 365 Blog",
+      "date": "2026-06-16",
+      "primary_url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/",
+      "secondary_urls": [
+        {
+          "label": "Work IQ API GA — AI Weekly coverage",
+          "url": "https://aiweekly.co/alerts/microsoft-work-iq-api-reaches-ga-via-a2a-and-mcp"
+        },
+        {
+          "label": "Microsoft Learn: What's new in Copilot Cowork",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/whats-new"
+        }
+      ],
+      "summary": "Microsoft made Copilot Cowork generally available worldwide on June 16 to all Microsoft 365 Copilot tenants — exiting the three-month Frontier preview used by more than half the Fortune 500 during the trial. Cowork runs complex, long-running, multi-tool tasks grounded in organizational knowledge, returns completed results rather than drafts, and keeps running when the user's laptop is off. At GA it uses Anthropic Opus 4.8 and Sonnet 4.6 (GPT 5.5 for Frontier customers); Microsoft's own Cowork 1 model is coming within weeks at substantially lower cost. Billing begins immediately through Copilot Credits ($0.01/credit) on top of the existing M365 Copilot license. The Work IQ API, which grounds Cowork in M365 organizational data, also reached GA on the same day — any third-party agent (Claude, ChatGPT, custom builds) calling Work IQ now incurs Copilot Credit charges per call.",
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Cowork is Microsoft's direct answer to standalone agentic products like Anthropic's Claude Cowork connector, Automationware, and Google Workspace AI agents. Microsoft claims its product runs 30-40% cheaper per prompt than Claude Cowork with the Microsoft 365 connector, based on 125 test runs using Opus 4.8. The Work IQ API at GA means third-party agents can ground in M365 data for the first time at enterprise scale — but every such call now incurs metered billing that was previously free in preview. Enterprises with large Frontier cohorts have until June 30 to configure credit-based billing before access is gated.",
+      "pricing": "Requires M365 Copilot User Subscription License ($30/user/month or enterprise negotiated). Cowork usage billed separately via Copilot Credits ($0.01 each). Light tasks: $0.20–$0.40 per call; medium tasks: $0.30–$0.75 per call (estimates from Microsoft, based on Anthropic Opus 4.8). Work IQ API calls: static tools $0.001/call; context queries scenario-dependent.",
+      "key_takeaways": [
+        "Frontier program users have until June 30 to configure Copilot Credit billing — teams that fail to act lose Cowork access on July 1; check tenant billing configuration in the Microsoft 365 admin center this week.",
+        "The Work IQ API at GA means any custom agent or third-party integration calling M365 organizational context now incurs Copilot Credit charges — audit existing agent integrations before the June 30 cutover to avoid unexpected spend.",
+        "Cowork 1, Microsoft's own fine-tuned model, arrives in the coming weeks and is positioned for 'substantially lower cost' on everyday tasks — defer high-volume deployments until pricing for Cowork 1 is published.",
+        "GA security and compliance features include audit log, DSPM, eDiscovery, Insider Risk Management, and Communication Compliance — these are ready for regulated-enterprise evaluation now; Data Lifecycle Management follows June 22.",
+        "Multi-model support (Opus 4.8, Sonnet 4.6, GPT 5.5) at GA means different tasks can run different models — define a model routing policy before deploying to control costs and capability levels per workflow."
+      ],
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "recurrence": "new",
+      "tags": ["enterprise-ai", "microsoft", "copilot", "agents", "m365", "work-iq"]
+    },
+    {
+      "id": "prometheus-12b-series-b-bezos-jun16",
+      "title": "Prometheus — $12B Series B at $41B for 'Artificial General Engineer' in Physical Manufacturing",
+      "source": "Fortune / Data Phoenix",
+      "date": "2026-06-15",
+      "primary_url": "https://dataphoenix.info/prometheus-raises-12b-to-build-an-ai-to-automate-physical-manufacturing-processes/",
+      "secondary_urls": [
+        {
+          "label": "Fortune: Jeff Bezos on Prometheus and labor",
+          "url": "https://fortune.com/2026/06/17/ai-create-more-jobs-labor-shortage-jeff-bezos/"
+        },
+        {
+          "label": "TechCrunch/247WallSt: Bezos raises $12B",
+          "url": "https://finance.yahoo.com/technology/ai/articles/jeff-bezos-just-raised-12-162005176.html"
+        }
+      ],
+      "summary": "Prometheus, co-founded by Jeff Bezos (co-CEO) and Vik Bajaj (former Google X / Verily co-founder, co-CEO), closed a $12 billion Series B at a $41 billion valuation in June 2026, pushing total capital raised to over $18 billion. Investors include JPMorgan Chase, Goldman Sachs, BlackRock, and DST Global. The company builds world models trained on the laws of physics and material science — not text — to serve as an 'artificial general engineer': a tool that can model, predict, and optimize the creation of physical objects (jet engines, semiconductors, pharmaceuticals). Bezos frames the target as the $70 trillion physical economy. The technology compresses multi-year design-to-production cycles into months. Prometheus holds proprietary physics datasets that are not available to language-model-centric AI labs.",
+      "category": "Enterprise AI",
+      "evaluation": "ADD TO WATCHLIST",
+      "competitive_context": "Prometheus enters the same thematic space as PhysicsX (funded last week at $300M/$2.4B) but at dramatically larger scale and with a different founder profile. Where PhysicsX focuses on replacing classical simulation (FEA, CFD), Prometheus targets the full engineering workflow from design conception to production — a harder and more ambitious goal. For an enterprise in industrial manufacturing or building products, the relevant question is: which of my current engineering bottlenecks are simulation-limited, and does a $41B AI lab targeting aerospace and pharmaceuticals have any near-term relevance? The answer today is 'watchlist' — Prometheus has no public product. The funding size and investor roster (JPM, BlackRock, Goldman) signal this is not speculative venture capital but institutional conviction that physical AI is the next infrastructure category.",
+      "pricing": "No product publicly available; no pricing disclosed. Contact Prometheus for enterprise pilot inquiries.",
+      "key_takeaways": [
+        "Prometheus is building AI that compresses engineering design cycles, not robotics or software tooling — the distinction matters for industrial enterprises assessing whether this applies to their R&D and product development timelines.",
+        "The $18B+ total capital raised means Prometheus has the runway to build proprietary physics datasets and specialized compute at a scale that makes competition difficult — if they succeed, the resulting advantage will compound over time.",
+        "Enterprises running complex simulation workflows (structural, thermal, fluid dynamics, manufacturing process) in aerospace, automotive, or advanced manufacturing should track Prometheus customer announcements as the earliest signal of commercial availability."
+      ],
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "recurrence": "new",
+      "tags": ["funding", "physical-ai", "industrial", "engineering", "bezos", "hardware"]
+    },
+    {
+      "id": "glm-52-zai-mit-open-weights-jun16",
+      "title": "GLM-5.2 — MIT-Licensed 744B MoE, 1M-Token Context, Beats GPT-5.5 on Agentic Benchmarks",
+      "source": "Z.ai / Hugging Face",
+      "date": "2026-06-16",
+      "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+      "secondary_urls": [
+        {
+          "label": "Simon Willison's notes on GLM-5.2",
+          "url": "https://simonwillison.net/2026/jun/17/glm-52/"
+        },
+        {
+          "label": "Z.ai product page",
+          "url": "https://z.ai"
+        }
+      ],
+      "summary": "Z.ai (the international brand of Beijing-based Zhipu AI) released GLM-5.2 on June 13 to paid subscribers and June 16 as MIT-licensed open weights. The model has 744B total parameters with approximately 40B active per token (MoE), a usable 1M-token context window with up to 131K output tokens, and dual reasoning effort modes (High/Max) for trading performance against latency. On FrontierSWE benchmark it trails Claude Opus 4.8 by 1% while beating GPT-5.5 by 1%; on Terminal-Bench 2.1 it scores 81.0 (Opus 4.8: 85.0). The model uses an Anthropic-compatible API endpoint, allowing drop-in substitution in Claude Code, Cline, and OpenClaw via a base-URL and model-name change. API pricing is $1.40 per million input tokens and $4.40 per million output tokens — roughly 3-4x cheaper than comparable proprietary alternatives at similar capability tiers.",
+      "category": "Open Source",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "GLM-5.2 is the first MIT-licensed open-weight model to match or exceed GPT-5.5 on multiple agentic coding benchmarks. For enterprise teams constrained by data residency, model governance requirements, or per-token cost pressure, this changes the calculus: a self-hostable model at near-frontier coding capability is now available without licensing restrictions. The Anthropic-compatible endpoint means existing Claude Code workflows can substitute GLM-5.2 with minimal integration effort. Caveats: the model is from a Chinese lab (Zhipu AI, Tsinghua-spinout), which may introduce regulatory or procurement considerations in US-government-adjacent enterprises; and the 744B total parameter count requires substantial GPU infrastructure for self-hosting (H100 cluster-class hardware).",
+      "pricing": "API: $1.40 per million input tokens; $4.40 per million output tokens via Z.ai. GLM Coding Plan subscriptions available at Lite, Pro, Max, and Team tiers. Open-weight MIT-licensed model available on Hugging Face and ModelScope for self-hosting at no model licensing cost.",
+      "key_takeaways": [
+        "The Anthropic-compatible API endpoint means any team already using Claude Code or Cline can test GLM-5.2 as a drop-in replacement by changing one base URL and one model name — evaluate cost vs. performance on representative coding tasks before committing.",
+        "MIT licensing with no regional restrictions means legal can approve self-hosting without the custom licensing negotiations required by most frontier models — relevant for regulated enterprises that cannot use cloud-hosted third-party AI.",
+        "The Chinese lab provenance (Zhipu AI / Tsinghua University) may trigger procurement review at US-government-adjacent enterprises — consult your TPRM process before deploying in production environments handling sensitive or export-controlled data.",
+        "At $1.40/$4.40 per million tokens, GLM-5.2 API is approximately 3x cheaper than GPT-5.5 ($4/$12) for comparable coding tasks — run a cost model on your current agentic coding workload before the June 30 free-trial window for new Z.ai accounts closes."
+      ],
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "recurrence": "new",
+      "tags": ["open-source", "frontier-model", "coding", "moe", "enterprise-ai", "self-hosting"]
+    },
+    {
+      "id": "databricks-dais-omnigent-agent-bricks-jun17",
+      "title": "Databricks DAIS 2026 — Omnigent Open-Source Meta-Harness, Agent Bricks Expansion, Grok via SpaceX",
+      "source": "Databricks",
+      "date": "2026-06-17",
+      "primary_url": "https://www.databricks.com/blog/agent-bricks-dais-2026",
+      "secondary_urls": [
+        {
+          "label": "Omnigent on Databricks documentation",
+          "url": "https://docs.databricks.com/aws/en/omnigent/"
+        },
+        {
+          "label": "Azure Databricks June 2026 release notes",
+          "url": "https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/june"
+        }
+      ],
+      "summary": "At the Data + AI Summit 2026 (June 15-18, San Francisco), Databricks announced the open-source release of Omnigent under Apache 2.0 and its Beta availability as a managed deployment on Databricks Sandbox. Omnigent is a meta-harness that orchestrates Claude Code, Codex, OpenAI Agents, and other harnesses with a unified web UI, persistent sessions, team collaboration, mobile access, and contextual governance policies — one platform above multiple agent frameworks. Agent Bricks expanded to a full developer platform with model choice across OpenAI, Anthropic, Gemini, Qwen, Kimi, and Grok (via a new SpaceX partnership), managed agent memory on Lakebase, Document Intelligence (GA), and Databricks Sandbox for isolated secure agent execution. Over 100,000 agents have been built on Agent Bricks; the platform now processes more than 1 quadrillion tokens per year.",
+      "category": "Dev Tools",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Omnigent fills a gap that has been slowing enterprise agent adoption: no single platform for governing, inspecting, and managing agent sessions across different harnesses. Teams that have invested in Claude Code for one workflow and OpenAI Agents for another can now coordinate both under the same session management, cost policies, and audit infrastructure. The Databricks Sandbox for isolated agent execution directly addresses the security requirement that blocks most enterprises from running coding agents in production — code runs in a managed cloud environment with Unity AI Gateway governance, not on a developer laptop or against production databases. The SpaceX-Grok integration is notable for enterprises evaluating AI models outside the Anthropic/OpenAI/Google triopoly.",
+      "pricing": "Omnigent open-source (Apache 2.0): free to self-host. Managed Databricks deployment (Beta): billed through existing Databricks workspace compute/DBU rates; Sandbox usage incurs additional compute charges. Contact Databricks for Agent Bricks enterprise pricing.",
+      "key_takeaways": [
+        "Omnigent's managed Databricks Sandbox deployment means coding agents can run in an isolated cloud environment governed by Unity AI Gateway — evaluate this as the secure execution path for teams blocked from running agents on managed laptops.",
+        "Agent Bricks now supports Grok via a SpaceX partnership — the first non-Anthropic/OpenAI/Google frontier model available natively on the Databricks platform; relevant for teams subject to single-vendor AI risk policies.",
+        "The open-source Apache 2.0 license on Omnigent means enterprises can fork and extend it for custom governance requirements without a commercial agreement — a meaningful advantage over closed orchestration platforms."
+      ],
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "recurrence": "new",
+      "tags": ["dev-tools", "databricks", "agents", "enterprise-ai", "open-source", "governance"]
+    },
+    {
+      "id": "odyssey-310m-world-models-jun17",
+      "title": "Odyssey Raises $310M Series B at $1.45B — General-Purpose World Models with AWS as Preferred Cloud",
+      "source": "Odyssey / TechCrunch",
+      "date": "2026-06-17",
+      "primary_url": "https://odyssey.ml/our-series-b",
+      "secondary_urls": [
+        {
+          "label": "TechCrunch coverage",
+          "url": "https://techcrunch.com/2026/06/17/world-model-maker-odyssey-nabs-1-45b-valuation-backed-by-amazon-and-other-big-names/"
+        }
+      ],
+      "summary": "Odyssey, founded by autonomous vehicle veterans Oliver Cameron (CEO) and Jeff Hawke (CTO), raised $310 million in a Series B at a $1.45 billion valuation on June 17. The round was led by Natural Capital and includes Amazon, GV (Google Ventures), AMD Ventures, EQT, and In-Q-Tel (CIA-affiliated strategic investment fund), alongside individual investors Jeff Dean (Google chief scientist) and Garry Tan (YC president). AWS is now Odyssey's preferred cloud provider and the company will use Amazon's Trainium chips. Total funding is $337 million. Odyssey builds general-purpose world models — systems that understand and simulate the physical and digital world — including Odyssey-2 Max, Starchild-1, Agora-1, and PROWL.",
+      "category": "Frontier Model",
+      "evaluation": "ADD TO WATCHLIST",
+      "competitive_context": "The In-Q-Tel participation (CIA-affiliated) signals world models are already on the US government's strategic AI priority list, parallel to Prometheus's physical AI bet. The distinction from Prometheus: Odyssey is building general-purpose world models useful across digital and physical simulation contexts, while Prometheus is purpose-built for engineering workflows. Amazon's strategic backing and Trainium chip commitment create supply-chain alignment similar to NEURA Robotics's Nvidia/Amazon backing last week. For an enterprise team, general-purpose world models represent a near-future capability upgrade to simulation, training-data generation, and synthetic testing environments.",
+      "pricing": "Not disclosed; enterprise partnership inquiries via Odyssey website.",
+      "key_takeaways": [
+        "In-Q-Tel (CIA fund) participation alongside Amazon and Google Ventures indicates world models are considered strategic national infrastructure — expect government procurement interest in this category to accelerate.",
+        "Amazon Trainium chip alignment means Odyssey's models will be optimized for AWS deployment — teams with large AWS commitments should track Odyssey's Bedrock availability timeline.",
+        "World models differ from language models in a key way for enterprises: they simulate physical and causal relationships, not just text. The first enterprise use case to watch is synthetic data generation for training industrial AI systems in simulation before deployment."
+      ],
+      "score": {
+        "total": 7.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "recurrence": "new",
+      "tags": ["funding", "world-models", "physical-ai", "enterprise-ai", "aws"]
+    },
+    {
+      "id": "deepseek-74b-first-external-round-jun16",
+      "title": "DeepSeek Closes $7.4B First-Ever External Funding at $52-59B Valuation — Tencent, CATL, China AI Fund",
+      "source": "The Information / WSJ",
+      "date": "2026-06-16",
+      "primary_url": "https://www.wsj.com/tech/ai/deepseek-becomes-chinas-most-valuable-ai-startup-after-over-7-4-billion-fundraise-78ef64c0",
+      "secondary_urls": [
+        {
+          "label": "Let's Data Science summary",
+          "url": "https://letsdatascience.com/news/deepseek-raises-74-billion-series-a-round-f87c8c65"
+        }
+      ],
+      "summary": "DeepSeek, the Chinese open-weights AI lab that triggered a global model pricing reset in January 2026 with DeepSeek V3, closed its first-ever external funding round in mid-June 2026 at approximately $7.4 billion (50 billion yuan), valuing the company between $52 and $59 billion post-money. Investors include Tencent (~$1.5B), CATL (~$735M), and China's state-backed National AI Industry Investment Fund. The deal structure is unusual: commercial investors receive no voting rights, no direct equity, and face a five-year lock-up period — all governance remains with founder Liang Wenfeng, who personally contributes approximately 40% of the round. Capital is earmarked for compute infrastructure expansion. DeepSeek becomes China's most valuable AI startup.",
+      "category": "Frontier Model",
+      "evaluation": "MONITOR",
+      "competitive_context": "DeepSeek's January 2026 V3 release forced a 40-60% pricing reduction across the major Western model providers within 30 days. This funding round ensures DeepSeek has the compute runway to continue releasing high-capability open-weight models. The governance structure (no voting rights for commercial investors) means Western strategic investors cannot acquire influence over the company's direction — this matters for enterprises considering DeepSeek models in regulated environments where supply-chain governance is audited. CATL's participation (EV battery manufacturer) may indicate early interest in deploying DeepSeek models for manufacturing optimization use cases.",
+      "pricing": "DeepSeek API: $0.27 per million input tokens (cache miss), $0.07 per million (cache hit); $1.10 per million output tokens for DeepSeek V4 Pro. Open-weight models available on Hugging Face for self-hosting at no model cost.",
+      "key_takeaways": [
+        "DeepSeek's compute expansion with state-backed capital means continued open-weight model releases at frontier capability levels — plan for at least one more pricing-reset cycle in H2 2026 as DeepSeek V5 development accelerates.",
+        "The no-voting-rights deal structure for commercial investors makes this company uniquely governance-opaque for Western procurement purposes — document this in your AI vendor risk register if DeepSeek models are in your evaluation pipeline.",
+        "CATL's investment signals early industrial interest in Chinese AI models for manufacturing — track whether CATL deploys DeepSeek internally, as that would be an independent validation of capability in precisely the enterprise sector this reader operates in."
+      ],
+      "score": {
+        "total": 7.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "recurrence": "new",
+      "tags": ["funding", "frontier-model", "open-source", "china-ai", "geopolitics", "deepseek"]
+    },
+    {
+      "id": "framer-30-agents-branching-jun16",
+      "title": "Framer 3.0 — AI Agents Native to the Design Canvas, Branching, External Agent Support via Framer CLI",
+      "source": "Framer",
+      "date": "2026-06-16",
+      "primary_url": "https://www.framer.com/blog/framer-3/",
+      "secondary_urls": [
+        {
+          "label": "Framer 3.0 release notes",
+          "url": "https://www.framer.com/updates/framer-3"
+        }
+      ],
+      "summary": "Framer launched version 3.0 on June 16 with three structural changes: (1) Framer Agents, a native AI editing layer inside the canvas that co-edits pages in real time, handles responsive breakpoints, CMS management, accessibility audits, and SEO metadata; (2) Branching, an isolated copy system for safe experimentation with per-message rollback; and (3) External Agents, which connect Claude Code, Cursor, Codex, and Gemini CLI to Framer projects via the Framer CLI, operating on branches automatically and consuming the user's own LLM tokens. A rebuilt Framer Community (Marketplace, Gallery, Awards, Feed) and a new AI Credits pricing model (Free: 500 credits/day; Pro: 3,000/month) also shipped the same day. Editor seat price dropped from $40 to $20/month.",
+      "category": "Dev Tools",
+      "evaluation": "ADD TO WATCHLIST",
+      "competitive_context": "Framer 3.0 is a direct answer to the vibe-coding threat: instead of watching AI tools replace web designers, Framer embedded AI inside the design-to-publish workflow. The 'External Agents' model — Claude Code operates on branches, not on the live site, using the user's own API tokens — is an architectural pattern worth studying. It solves two enterprise problems simultaneously: AI agents touch a safe copy rather than production, and the enterprise controls its own API spend rather than paying a per-credit markup to the tool vendor. The editor seat price cut from $40 to $20 removes the primary procurement friction for small team adoption.",
+      "pricing": "Free plan: 500 AI Credits/day. Pro plan: 3,000 AI Credits/month; editor seats at $20/month (reduced from $40). External Agent usage draws on the user's own LLM API tokens, not Framer Credits.",
+      "key_takeaways": [
+        "The External Agents architecture (Claude Code operates on isolated branches via Framer CLI, using your own API tokens) is the safest production deployment model for AI design agents — evaluate this pattern for any AI tool integration where production protection and budget control matter.",
+        "Branching with per-message rollback directly addresses the top risk that blocks enterprise adoption of AI design tools: irreversible AI changes to production websites. This is now solved at the platform level.",
+        "The editor seat price reduction from $40 to $20 removes the final procurement barrier for small enterprise teams — a 10-seat design team can now run Framer 3.0 for $200/month with full agent access."
+      ],
+      "score": {
+        "total": 7.5,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "recurrence": "new",
+      "tags": ["dev-tools", "framer", "ai-agents", "design", "web", "branching"]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "product_hunt",
+      "title": "Product Hunt — Top AI Launches, Week of June 15",
+      "description": "Top products from the Product Hunt leaderboards June 15-21, 2026 (Week 25). Maker websites used as primary URLs per URL resolution rules.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "ph-novu-connect-agent-comms-jun15",
+          "title": "Novu Connect — Deliver AI Agents to Slack, Teams, WhatsApp, Email Without Channel Integrations",
+          "source": "Product Hunt",
+          "date": "2026-06-15",
+          "primary_url": "https://novu.co",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/posts/novu-connect"
+            }
+          ],
+          "summary": "Novu Connect is the agent communication infrastructure layer from open-source notification platform Novu (36k GitHub stars). It lets any AI agent have two-way conversations across Slack, Teams, WhatsApp, Telegram, and email without building each channel integration — the agent logic, model, and code are yours; Novu handles delivery, identity resolution, threading, and channel-specific formatting. Ranked #1 on the June 15 Product Hunt daily leaderboard with 401 upvotes.",
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["developer-tools", "agent", "notifications", "mcp", "open-source"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "ph-goldfish-mac-ai-memory-jun16",
+          "title": "Goldfish — Mac AI Assistant with On-Device Work Memory, Replies in Your Voice",
+          "source": "Product Hunt",
+          "date": "2026-06-16",
+          "primary_url": "https://goldfish.so",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/posts/goldfish-2"
+            }
+          ],
+          "summary": "Goldfish is a Mac-native AI assistant that learns your work context over time by indexing emails, Slack, files, and screenshots locally and replies to queries in your personal voice and style. All processing stays on-device. Ranked #1 on the June 16 Product Hunt daily leaderboard.",
+          "category": "AI Agent",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["productivity", "on-device", "mac", "ai-agent", "memory"],
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "ph-makersclaw-ai-employees-slack-jun16",
+          "title": "MakersClaw — Hire AI Employees That Live in Slack, Teams, or Telegram",
+          "source": "Product Hunt",
+          "date": "2026-06-16",
+          "primary_url": "https://makersclaw.com",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/posts/makersclaw"
+            }
+          ],
+          "summary": "MakersClaw lets teams deploy AI employees as persistent agents inside Slack, Teams, or Telegram — completing tasks, routing requests, and executing workflows autonomously within the collaboration tool users already use. No separate dashboard or tool change required. Ranked #3 on the June 16 Product Hunt daily leaderboard.",
+          "category": "AI Agent",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["ai-agent", "enterprise-ai", "slack", "teams", "productivity"],
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "ph-framer-30-product-hunt-jun17",
+          "title": "Framer 3.0 — AI Agents in the Canvas, Branching, New Framer Community",
+          "source": "Product Hunt",
+          "date": "2026-06-17",
+          "primary_url": "https://www.framer.com",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/posts/framer-3-0"
+            }
+          ],
+          "summary": "Framer 3.0 launched June 16 with native AI agents in the design canvas, Branching for safe isolated experimentation, External Agent support via Framer CLI (Claude Code, Cursor, Codex), a rebuilt Framer Community, and a new AI Credits pricing model. Editor seat price dropped from $40 to $20/month. Ranked #1 on the June 17 Product Hunt daily leaderboard. See Top Picks for full evaluation.",
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["dev-tools", "design", "ai-agents", "branching"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "ph-swytchcode-cli-2000-apis-jun17",
+          "title": "Swytchcode CLI — Give Agents Reliable Access to 2,000+ APIs with Durable State",
+          "source": "Product Hunt",
+          "date": "2026-06-17",
+          "primary_url": "https://swytchcode.com",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/posts/swytchcode-cli"
+            }
+          ],
+          "summary": "Swytchcode CLI gives AI agents durable, stateful access to over 2,000 APIs by wrapping each API with state management, authentication handling, and retry logic — so agents can make multi-step API calls reliably without losing context between steps. Ranked #2 on the June 17 Product Hunt daily leaderboard.",
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["developer-tools", "agent", "api", "cli", "mcp"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "ph-upstream-agent-inbox-jun18",
+          "title": "Upstream — Inbox Designed for Humans and Agents",
+          "source": "Product Hunt",
+          "date": "2026-06-18",
+          "primary_url": "https://upstream.so",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/posts/upstream-2"
+            }
+          ],
+          "summary": "Upstream is a shared inbox designed for mixed human-agent workflows — AI agents can triage, draft, and handle incoming messages autonomously, while humans review, override, and handle exceptions in the same interface. Positioned for customer support and operations teams running agents alongside humans. Ranked #1 on the June 18 Product Hunt daily leaderboard.",
+          "category": "AI Agent",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["ai-agent", "productivity", "inbox", "customer-support"],
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "ph-pandaprobe-cloud-agent-monitoring-jun16",
+          "title": "PandaProbe Cloud — Full-Stack Agent Tracing, Evals, and Monitoring, Zero Infrastructure",
+          "source": "Product Hunt",
+          "date": "2026-06-16",
+          "primary_url": "https://pandaprobe.ai",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/posts/pandaprobe-cloud"
+            }
+          ],
+          "summary": "PandaProbe Cloud provides full-stack tracing, evaluations, and monitoring for AI agents as a managed service — no infrastructure to configure or maintain. Teams ship and improve agents without ops overhead. Ranked #4 on the June 16 Product Hunt daily leaderboard with 275 upvotes.",
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["developer-tools", "observability", "evals", "agent", "monitoring"],
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "ph-autoedit-claude-premiere-pro-jun16",
+          "title": "AutoEdit — Claude AI Video Editor Plugin for Adobe Premiere Pro",
+          "source": "Product Hunt",
+          "date": "2026-06-16",
+          "primary_url": "https://autoedit.io",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/posts/autoedit-2"
+            }
+          ],
+          "summary": "AutoEdit is a Claude-powered AI plugin for Adobe Premiere Pro that converts raw footage into a clean rough cut by automatically removing silences, filler words, bad takes, and repeated sections, while generating captions and structuring timelines. Editors retain creative control; AutoEdit handles repetitive processing tasks. Ranked #3 on the June 16 Product Hunt daily leaderboard with 276 upvotes.",
+          "category": "Enterprise AI",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["enterprise-ai", "video", "adobe", "claude", "productivity"],
+          "score": {
+            "total": 5.0,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 0
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "frontier_models",
+      "title": "Frontier Model Releases",
+      "description": "New model releases from frontier labs and major research organizations, June 15-21, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "glm-52-frontier-section",
+          "title": "GLM-5.2 — MIT Open-Weight 744B MoE, 1M Context, Competitive with Claude Opus 4.8 on Coding",
+          "source": "Z.ai / Hugging Face",
+          "date": "2026-06-16",
+          "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+          "summary": "See Top Picks for full evaluation. Key specs: 744B MoE (40B active), 1M-token context, 131K max output, MIT license, Anthropic-compatible API. FrontierSWE: trails Opus 4.8 by 1%, beats GPT-5.5 by 1%. Terminal-Bench 2.1: 81.0 (Opus 4.8: 85.0). API pricing: $1.40/$4.40 per million tokens. Available on Hugging Face, ModelScope, Z.ai API.",
+          "category": "Open Source",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["open-source", "frontier-model", "coding", "moe"],
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "claude-fable-5-suspension-update-jun21",
+          "title": "Claude Fable 5 — Suspension Enters Day Nine; Identity Verification Pathway Confirmed from July 8",
+          "source": "Anthropic",
+          "date": "2026-06-18",
+          "primary_url": "https://www.anthropic.com/news",
+          "secondary_urls": [
+            {
+              "label": "FutureSearch restoration forecast",
+              "url": "https://futuresearch.ai/claude-fable-ban-forecast/"
+            }
+          ],
+          "summary": "Claude Fable 5 remains suspended globally as of June 21 — day nine of the US export-control directive. Anthropic's International Managing Director Chris Ciauri stated on June 18 that the models will return 'in the coming days.' The structured re-entry path: US persons can regain access via identity verification starting July 8; international access requires full revocation of the export-control directive. All other Claude models (Opus 4.8, Sonnet 4.6, Haiku 4.5) remain operational. Enterprise teams that filed refund requests had until June 20. Fable 5 pricing remains $10/$50 per million tokens when restored; free access window for paid plans runs through June 22 if restoration occurs before then.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "recurrence": "returning",
+          "recurrence_note": "Fable 5 launched and was suspended June 12 (covered last week); this week the focus is the negotiation status and the July 8 identity verification path for US restoration.",
+          "tags": ["frontier-model", "anthropic", "claude", "regulation", "export-control"],
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_ai",
+      "title": "Enterprise AI Platform Launches",
+      "description": "Enterprise-grade AI platform announcements from major technology and services companies, June 15-21, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "microsoft-copilot-cowork-ga-section",
+          "title": "Microsoft Copilot Cowork GA — Long-Running Agents, Multi-Model, Copilot Credits Billing",
+          "source": "Microsoft 365 Blog",
+          "date": "2026-06-16",
+          "primary_url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/",
+          "summary": "See Top Picks for full detail. GA June 16 worldwide to all M365 Copilot tenants. Runs Anthropic Opus 4.8 and Sonnet 4.6; GPT 5.5 for Frontier customers. Billing via Copilot Credits (usage-based). Microsoft Cowork 1 model coming in weeks. Fortune 500: more than half used Cowork in Frontier preview. GA includes audit log, DSPM, eDiscovery, and Insider Risk Management.",
+          "category": "Enterprise AI",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["enterprise-ai", "microsoft", "copilot", "agents"],
+          "score": {
+            "total": 9.0,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "microsoft-work-iq-api-ga-jun16",
+          "title": "Microsoft Work IQ API GA — A2A, MCP, and REST Access to M365 Organizational Context, Metered",
+          "source": "Microsoft / AI Weekly",
+          "date": "2026-06-16",
+          "primary_url": "https://aiweekly.co/alerts/microsoft-work-iq-api-reaches-ga-via-a2a-and-mcp",
+          "secondary_urls": [
+            {
+              "label": "TechsCurrent: Work IQ APIs GA",
+              "url": "https://techscurrent.com/2026/06/microsoft-work-iq-apis-enterprise-agents/"
+            }
+          ],
+          "summary": "Microsoft's Work IQ API reached general availability on June 16 via three integration paths: Agent-to-Agent (A2A), a redesigned remote MCP server, and a REST API. Third-party agents (Claude, ChatGPT, custom builds) calling Work IQ for organizational grounding now incur Copilot Credit charges per call ($0.001 for static tools; scenario-dependent for context queries). There is no separate SKU or per-user license — billing runs through Copilot Credits. A Copilot Studio agent running 1,000 medium queries per month costs $300-$750 per month in Work IQ API costs alone. Administrators must configure consumptive billing before deploying third-party agents that use Work IQ.",
+          "category": "Enterprise AI",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["enterprise-ai", "microsoft", "agents", "m365", "api", "mcp"],
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "databricks-agent-bricks-omnigent-section",
+          "title": "Databricks Agent Bricks DAIS 2026 — Omnigent Meta-Harness, Grok via SpaceX, Sandbox Execution",
+          "source": "Databricks",
+          "date": "2026-06-17",
+          "primary_url": "https://www.databricks.com/blog/agent-bricks-dais-2026",
+          "summary": "See Top Picks for full detail. Omnigent (Apache 2.0) released as open-source and Beta on Databricks Sandbox — wraps Claude Code, Codex, OpenAI Agents under unified governance. Agent Bricks gains Grok support via SpaceX partnership, agent memory on Lakebase, Document Intelligence (GA), and Databricks Sandbox for isolated secure execution. 100k+ agents built; 1 quadrillion tokens/year processed.",
+          "category": "Enterprise AI",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["enterprise-ai", "databricks", "agents", "open-source"],
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "ninjaone-400m-series-c-it-ops-jun09",
+          "title": "NinjaOne — $400M Series C Extension at $12.3B (Unified IT Operations and Endpoint Management)",
+          "source": "CRN",
+          "date": "2026-06-09",
+          "primary_url": "https://www.crn.com/news/managed-services/2026/ninjaone-didn-t-need-400m-but-investors-came-knocking-anyway",
+          "summary": "NinjaOne, the profitable unified IT operations platform serving nearly 40,000 organizations, closed a $400M Series C extension at $12.3B valuation. Investors include Wellington Management, Teachers' Venture Growth, BDT & MSD Partners, Sequoia Capital, ICONIQ, and CapitalG. The company is cash-flow positive and was not seeking capital — investors approached NinjaOne. The funding will support AI-driven IT automation expansion. NinjaOne's platform centralizes device control, automated maintenance, vulnerability remediation, and security across organizations. Flagged for carry from last week after the primary press release surfaced this week.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["enterprise-ai", "funding", "it-operations", "endpoint-management", "automation"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "funding",
+      "title": "Notable AI Funding Rounds",
+      "description": "AI funding rounds announced June 15-21, 2026, cross-checked against company or primary press sources.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "prometheus-12b-funding-section",
+          "title": "Prometheus — $12B Series B at $41B (Physical AI / Artificial General Engineer, Bezos + Bajaj)",
+          "source": "Data Phoenix / Fortune",
+          "date": "2026-06-15",
+          "primary_url": "https://dataphoenix.info/prometheus-raises-12b-to-build-an-ai-to-automate-physical-manufacturing-processes/",
+          "summary": "See Top Picks for detail. $12B Series B at $41B valuation. Investors: JPMorgan Chase, Goldman Sachs, BlackRock, DST Global. Total capital: $18B+. Target: AI-native engineering for aerospace, semiconductors, pharmaceuticals. Not robotics. 'Physical economy constitutes 60% of global GDP — $70 trillion.'",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["funding", "physical-ai", "industrial", "engineering"],
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "deepseek-74b-funding-section",
+          "title": "DeepSeek — $7.4B First External Round at $52-59B (Tencent, CATL, China National AI Fund)",
+          "source": "The Information / WSJ",
+          "date": "2026-06-16",
+          "primary_url": "https://www.wsj.com/tech/ai/deepseek-becomes-chinas-most-valuable-ai-startup-after-over-7-4-billion-fundraise-78ef64c0",
+          "summary": "See Top Picks for detail. First-ever external round; ~$7.4B (50B yuan) at $52-59B post-money. Tencent ~$1.5B, CATL ~$735M, China state AI fund. Governance: commercial investors receive no voting rights, 5-year lock-up. Capital earmarked for compute expansion.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["funding", "frontier-model", "china-ai", "deepseek"],
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "odyssey-310m-world-models-section",
+          "title": "Odyssey — $310M Series B at $1.45B (General-Purpose World Models, AWS Preferred Cloud)",
+          "source": "Odyssey / TechCrunch",
+          "date": "2026-06-17",
+          "primary_url": "https://odyssey.ml/our-series-b",
+          "summary": "See Top Picks for detail. $310M Series B at $1.45B valuation led by Natural Capital; Amazon, GV, AMD Ventures, EQT, In-Q-Tel, Jeff Dean, Garry Tan. AWS preferred cloud; Amazon Trainium chips. Total funding: $337M. Builds Odyssey-2 Max, Starchild-1, Agora-1, PROWL world models.",
+          "category": "Frontier Model",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["funding", "world-models", "physical-ai"],
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "sarvam-ai-234m-series-b-india-jun16",
+          "title": "Sarvam AI — $234M Series B First Close at $1.5B (India Sovereign AI, HCLTech Lead)",
+          "source": "HCLTech / Economic Times",
+          "date": "2026-06-16",
+          "primary_url": "https://www.hcltech.com/press-releases/sarvam-raises-234-million-first-close-300-million-series-b-15-billion-valuation",
+          "secondary_urls": [
+            {
+              "label": "ETCFO coverage",
+              "url": "https://cfo.economictimes.indiatimes.com/news/corporate-finance/sarvam-raises-234-million-series-b-at-1-5-billion-valuation-to-build-indias-sovereign-ai-stack/131758155"
+            }
+          ],
+          "summary": "Sarvam, India's full-stack sovereign AI company, raised $234M in the first close of a $300M Series B at a $1.5B post-money valuation. HCLTech is the lead strategic investor ($150M); Bessemer Venture Partners joined with continued support from Khosla Ventures and Peak XV Partners. The company will use capital for frontier model research (agentic, coding, cybersecurity use cases), compute infrastructure, and enterprise/government deployments across Indian-language AI. This is Sarvam's first major raise in two years; it had previously raised $41M across seed and Series A. HCLTech's involvement makes this a benchmark for enterprise-IT-led sovereign AI strategy.",
+          "category": "Enterprise AI",
+          "evaluation": "MONITOR",
+          "recurrence": "new",
+          "tags": ["funding", "sovereign-ai", "enterprise-ai", "india"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "open_source",
+      "title": "Open Source and Dev Tool Releases",
+      "description": "Notable open-source model and tooling releases from June 15-21, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "glm-52-open-source-section",
+          "title": "GLM-5.2 — 744B MoE Open Weights, MIT License, Drop-In for Claude Code via Anthropic-Compatible API",
+          "source": "Z.ai / Hugging Face",
+          "date": "2026-06-16",
+          "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+          "summary": "See Top Picks and Frontier Models sections for full detail. Key open-source signal: MIT license, no regional restrictions, weights on Hugging Face and ModelScope. Anthropic-compatible endpoint means zero integration code to swap Claude Code to GLM-5.2. Self-hostable on H100-class hardware. API pricing: $1.40/$4.40 per million tokens.",
+          "category": "Open Source",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["open-source", "coding", "frontier-model", "mit-license"],
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "omnigent-apache2-meta-harness-jun16",
+          "title": "Omnigent — Apache 2.0 Open-Source Meta-Harness for Orchestrating Claude Code, Codex, OpenAI Agents",
+          "source": "Databricks",
+          "date": "2026-06-16",
+          "primary_url": "https://github.com/omnigent-ai/omnigent",
+          "secondary_urls": [
+            {
+              "label": "Omnigent on Databricks documentation",
+              "url": "https://docs.databricks.com/aws/en/omnigent/"
+            }
+          ],
+          "summary": "Databricks open-sourced Omnigent under Apache 2.0 as a meta-harness that sits above agent frameworks and makes them interoperable. Supported harnesses: Claude Code SDK, Codex, Pi, OpenAI Agents, Open Responses. Features: unified web UI, persistent sessions, team collaboration, mobile access, contextual governance policies, and per-session cost budgets. The managed Databricks deployment (Beta) runs agents in Databricks Sandbox with Unity AI Gateway governance — no API keys to manage and model usage inherits enterprise governance and controls.",
+          "category": "Open Source",
+          "evaluation": "EVALUATE NOW",
+          "recurrence": "new",
+          "tags": ["open-source", "agents", "dev-tools", "orchestration", "governance"],
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "novu-connect-open-source-agent-comms",
+          "title": "Novu Connect — Open-Source Agent Communication Infrastructure (36k GitHub Stars)",
+          "source": "Novu",
+          "date": "2026-06-15",
+          "primary_url": "https://novu.co",
+          "summary": "Novu Connect extends the open-source Novu notification platform (36k GitHub stars, 400+ contributors) to AI agents — providing two-way, multi-channel communication across Slack, Teams, WhatsApp, Telegram, and email without custom channel integrations. 10K events per month free. Used by teams building agents that need to reach end users where they already work, without building delivery infrastructure.",
+          "category": "Open Source",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["open-source", "agent", "developer-tools", "notifications"],
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "section_id": "to_watch",
+      "title": "To Watch — Early-Stage High Signal",
+      "description": "Items that are pre-GA, announced but not yet shipping, or carry meaningful strategic signal for the next one to two quarters.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "gemini-35-pro-still-in-preview-jun21",
+          "title": "Gemini 3.5 Pro — 2M-Token Context, Deep Think Mode — Still in Limited Vertex Preview, Nine Days Left in June",
+          "source": "Google / 247Techify",
+          "date": "2026-06-21",
+          "primary_url": "https://blog.247techify.com/blog/googles-gemini-3-5-pro-has-nine-days-left-in-june-what-business-and-it-teams-nee",
+          "secondary_urls": [
+            {
+              "label": "Polymarket odds (June 30 deadline)",
+              "url": "https://bytechat.io/blog/gemini-3-5-pro-release-date"
+            }
+          ],
+          "summary": "As of June 21, Gemini 3.5 Pro remains in limited Vertex AI enterprise preview with nine days left in Google's self-imposed 'give us until next month' June timeline. The model carries a confirmed 2M-token context window (the largest of any announced production frontier model) and a Deep Think extended reasoning mode restricted to the $250/month Ultra subscription. Prediction markets put a release before June 30 at 50-55% probability. Expected API pricing: ~$15 per million input tokens and ~$60 per million output tokens (analyst estimates; not confirmed by Google). If Google misses June, a formal timeline update is required. Watch Google's Vertex AI blog and AI Studio model picker for the first signal.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "recurrence": "returning",
+          "recurrence_note": "Gemini 3.5 Pro was in the To Watch section last week as an expected late-June launch; still in limited preview as of June 21 with nine calendar days remaining.",
+          "tags": ["frontier-model", "google", "gemini", "long-context", "enterprise-ai"],
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        },
+        {
+          "id": "prometheus-physical-ai-no-product-jun16",
+          "title": "Prometheus — Physical AI for Engineering, $18B Raised, No Public Product Yet",
+          "source": "Data Phoenix / Fortune",
+          "date": "2026-06-15",
+          "primary_url": "https://dataphoenix.info/prometheus-raises-12b-to-build-an-ai-to-automate-physical-manufacturing-processes/",
+          "summary": "See Top Picks for full funding detail. Prometheus is operating in stealth — no public product, no public website, no disclosed customer references. The strategic signal is in the capital structure: JPMorgan, BlackRock, and Goldman Sachs committing $12B to AI for the physical economy is not speculative. For enterprises in aerospace, advanced manufacturing, semiconductor, or pharmaceutical sectors, watch for first customer announcements as the signal that commercial engagement is possible.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "recurrence": "new",
+          "tags": ["physical-ai", "industrial", "engineering", "manufacturing"],
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z"
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "Microsoft Copilot Cowork GA — Long-Running Enterprise Agents, Copilot Credits",
+      "source": "Microsoft 365 Blog",
+      "date": "2026-06-16",
+      "primary_url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/",
+      "score": 9.0
+    },
+    {
+      "title": "GLM-5.2 — MIT Open-Weight 744B MoE, 1M Context, Beats GPT-5.5 on Coding Benchmarks",
+      "source": "Z.ai / Hugging Face",
+      "date": "2026-06-16",
+      "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+      "score": 8.5
+    },
+    {
+      "title": "Prometheus — $12B Series B at $41B for Physical AI / Artificial General Engineer",
+      "source": "Data Phoenix / Fortune",
+      "date": "2026-06-15",
+      "primary_url": "https://dataphoenix.info/prometheus-raises-12b-to-build-an-ai-to-automate-physical-manufacturing-processes/",
+      "score": 8.5
+    },
+    {
+      "title": "Microsoft Work IQ API GA — A2A, MCP, REST Access to M365 Context, Metered Billing",
+      "source": "Microsoft / AI Weekly",
+      "date": "2026-06-16",
+      "primary_url": "https://aiweekly.co/alerts/microsoft-work-iq-api-reaches-ga-via-a2a-and-mcp",
+      "score": 8.0
+    },
+    {
+      "title": "Databricks DAIS 2026 — Omnigent Open-Source Meta-Harness, Agent Bricks, Grok via SpaceX",
+      "source": "Databricks",
+      "date": "2026-06-17",
+      "primary_url": "https://www.databricks.com/blog/agent-bricks-dais-2026",
+      "score": 8.0
+    },
+    {
+      "title": "Odyssey — $310M Series B at $1.45B for General-Purpose World Models",
+      "source": "Odyssey",
+      "date": "2026-06-17",
+      "primary_url": "https://odyssey.ml/our-series-b",
+      "score": 7.5
+    },
+    {
+      "title": "DeepSeek — $7.4B First External Funding at $52-59B, Tencent/CATL/China AI Fund",
+      "source": "The Information / WSJ",
+      "date": "2026-06-16",
+      "primary_url": "https://www.wsj.com/tech/ai/deepseek-becomes-chinas-most-valuable-ai-startup-after-over-7-4-billion-fundraise-78ef64c0",
+      "score": 7.5
+    },
+    {
+      "title": "Framer 3.0 — AI Agents Native to Design Canvas, Branching, External Agent Support",
+      "source": "Framer",
+      "date": "2026-06-16",
+      "primary_url": "https://www.framer.com/blog/framer-3/",
+      "score": 7.5
+    },
+    {
+      "title": "Omnigent — Apache 2.0 Open-Source Meta-Harness for Coding Agents (Databricks)",
+      "source": "Databricks",
+      "date": "2026-06-16",
+      "primary_url": "https://github.com/omnigent-ai/omnigent",
+      "score": 7.5
+    },
+    {
+      "title": "Claude Fable 5 — Suspension Day 9, Identity Verification Path from July 8",
+      "source": "Anthropic",
+      "date": "2026-06-18",
+      "primary_url": "https://www.anthropic.com/news",
+      "score": 7.0
+    },
+    {
+      "title": "Gemini 3.5 Pro — 2M-Token Context, Nine Days Left in June, Still in Vertex Preview",
+      "source": "Google",
+      "date": "2026-06-21",
+      "primary_url": "https://blog.247techify.com/blog/googles-gemini-3-5-pro-has-nine-days-left-in-june-what-business-and-it-teams-nee",
+      "score": 7.0
+    },
+    {
+      "title": "Sarvam AI — $234M Series B at $1.5B, India Sovereign AI, HCLTech Lead Investor",
+      "source": "HCLTech / Economic Times",
+      "date": "2026-06-16",
+      "primary_url": "https://www.hcltech.com/press-releases/sarvam-raises-234-million-first-close-300-million-series-b-15-billion-valuation",
+      "score": 6.5
+    },
+    {
+      "title": "NinjaOne — $400M Series C Extension at $12.3B (Unified IT Operations)",
+      "source": "CRN",
+      "date": "2026-06-09",
+      "primary_url": "https://www.crn.com/news/managed-services/2026/ninjaone-didn-t-need-400m-but-investors-came-knocking-anyway",
+      "score": 6.5
+    },
+    {
+      "title": "Swytchcode CLI — Give Agents Reliable Access to 2,000+ APIs with Durable State (PH #2 June 17)",
+      "source": "Product Hunt",
+      "date": "2026-06-17",
+      "primary_url": "https://swytchcode.com",
+      "score": 6.5
+    },
+    {
+      "title": "Novu Connect — Open-Source Agent Communication Infrastructure (PH #1 June 15)",
+      "source": "Product Hunt",
+      "date": "2026-06-15",
+      "primary_url": "https://novu.co",
+      "score": 6.5
+    },
+    {
+      "title": "PandaProbe Cloud — Full-Stack Agent Tracing, Evals, Monitoring, Zero Infrastructure (PH #4 June 16)",
+      "source": "Product Hunt",
+      "date": "2026-06-16",
+      "primary_url": "https://pandaprobe.ai",
+      "score": 6.0
+    },
+    {
+      "title": "MakersClaw — AI Employees in Slack, Teams, Telegram (PH #3 June 16)",
+      "source": "Product Hunt",
+      "date": "2026-06-16",
+      "primary_url": "https://makersclaw.com",
+      "score": 6.0
+    },
+    {
+      "title": "Upstream — Inbox Designed for Humans and Agents (PH #1 June 18)",
+      "source": "Product Hunt",
+      "date": "2026-06-18",
+      "primary_url": "https://upstream.so",
+      "score": 6.0
+    },
+    {
+      "title": "Goldfish — Mac AI with On-Device Work Memory (PH #1 June 16)",
+      "source": "Product Hunt",
+      "date": "2026-06-16",
+      "primary_url": "https://goldfish.so",
+      "score": 5.5
+    },
+    {
+      "title": "Framer 3.0 — AI Agents in Canvas, Branching (PH #1 June 17)",
+      "source": "Product Hunt",
+      "date": "2026-06-17",
+      "primary_url": "https://www.framer.com",
+      "score": 6.5
+    },
+    {
+      "title": "AutoEdit — Claude AI Video Editor Plugin for Adobe Premiere Pro (PH #3 June 16)",
+      "source": "Product Hunt",
+      "date": "2026-06-16",
+      "primary_url": "https://autoedit.io",
+      "score": 5.0
+    },
+    {
+      "title": "Microsoft Copilot Cowork Pricing — Copilot Credits, Usage-Based Metered Billing",
+      "source": "Avantiico",
+      "date": "2026-06-16",
+      "primary_url": "https://avantiico.com/copilot-cowork-pricing-for-businesses-guide/",
+      "score": 7.0
+    },
+    {
+      "title": "Genspark — $100M Series B Extension at $2.6B (AI Workplace Productivity, Singapore)",
+      "source": "Channel NewsAsia",
+      "date": "2026-06-17",
+      "primary_url": "https://www.channelnewsasia.com/business/ai-startup-genspark-valued-26-billion-in-latest-funding-round-6190486",
+      "score": 5.5
+    },
+    {
+      "title": "Android 17 GA — AppFunctions, Android MCP, Intelligence System Positioning",
+      "source": "Android Developers Blog",
+      "date": "2026-06-16",
+      "primary_url": "https://android-developers.googleblog.com/2026/06/Android-17.html",
+      "score": 5.5
+    },
+    {
+      "title": "Sarvam AI Sovereign AI Stack — $300M Series B Target, India-Language AI",
+      "source": "ETCFO",
+      "date": "2026-06-16",
+      "primary_url": "https://cfo.economictimes.indiatimes.com/news/corporate-finance/sarvam-raises-234-million-series-b-at-1-5-billion-valuation-to-build-indias-sovereign-ai-stack/131758155",
+      "score": 6.5
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Mistral AI raising approximately €3 billion at a €20 billion valuation, with a 'Vibe' agent product and Medium 3.5/Small models announced this week",
+      "reason": "Multiple sources report Mistral is 'reportedly' or 'eyes' this raise, but no primary announcement from Mistral.ai has been confirmed as of June 21. The TechCentral.ie and BrandWagon articles use 'reportedly' sourcing. The Vibe agent and Medium 3.5/Small references also lack a primary Mistral press release or blog post. Excluded pending primary source confirmation. Check mistral.ai/news for official announcement.",
+      "attempted_url": "https://mistral.ai/news"
+    }
+  ],
+  "suggested_refinements": {
+    "topics_to_add": [
+      "Track Claude Fable 5 restoration — Anthropic's Managing Director stated confidence in a 'days-away' return on June 18; the July 8 identity verification launch is the structural signal; watch anthropic.com/news for the official restoration announcement.",
+      "Monitor Gemini 3.5 Pro GA — Nine days remain in June; Google's Vertex AI blog and AI Studio model picker are the first signals. Prediction markets at 50-55% for a June 30 launch; this is a top-pick candidate the moment it ships.",
+      "Confirm Mistral AI €3B round and Vibe agent launch — multiple reputable secondaries report this but no primary Mistral source confirmed as of June 21; carry to next week.",
+      "Track Prometheus customer announcements — with $18B+ raised and a stealth operating posture, first customer or pilot disclosures are the signal that commercial engagement is open.",
+      "Monitor Copilot Cowork 1 model release — Microsoft's own fine-tuned Cowork model ships 'within weeks'; once pricing is confirmed it changes the cost calculus for high-volume Cowork deployments.",
+      "GPT-5.6 expected June 22-28 per multiple prediction market aggregators — watch openai.com/blog for announcement."
+    ],
+    "topics_to_drop": [
+      "Genspark's $2.6B valuation and $100M round — reasonable consumer-productivity signal but limited near-term enterprise relevance absent a specific enterprise deployment announcement.",
+      "Android 17 / Android MCP — the on-device AI positioning is a longer-horizon signal; revisit when enterprise MDM policy implications crystallize."
+    ],
+    "notes": "All top picks verified against primary source URLs. Product Hunt items use maker websites as primary_url per URL Resolution Rules; canonical PH product pages in secondary_urls. GLM-5.2 primary source is the Hugging Face blog from Z.ai (the model's publisher) — this is a first-party source. Prometheus primary source is Data Phoenix/Fortune reporting with multiple investor confirmations and Bezos's own CNBC interview; no single company press release is available because Prometheus has no public website. DeepSeek funding primary source is The Information (paywalled) via WSJ confirmation; secondary confirmation from Let's Data Science citing Bloomberg/Reuters. Mistral AI raise is flagged_unverified pending primary source. Scoring rubric: /skills/99-editorial-voice.md. Verification protocol: /skills/99-editorial-voice.md."
+  }
+}

@@ -1,0 +1,793 @@
+{
+  "tab_id": "research",
+  "tab_name": "Research & Regulation",
+  "subtitle": "Primary-Source Intelligence",
+  "icon": "FileText",
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 1.0,
+    "items_total": 16,
+    "items_new": 16,
+    "items_returning": 0
+  },
+  "min_items": 10,
+  "executive_summary": [
+    {
+      "headline": "US Commerce Department forces Anthropic to suspend Fable 5 and Mythos 5 globally on June 12 — within 90 minutes of receiving an export-control directive citing a jailbreak vulnerability — triggering the first government-ordered commercial AI model recall in US history; Anthropic disputes the underlying risk and restores Fable 5 for paid users by June 17 under a free access window through June 22",
+      "body": "Commerce Secretary Howard Lutnick issued an export-control directive ordering Anthropic to cut off access to Fable 5 and Mythos 5 for every foreign national anywhere in the world, including Anthropic's own non-US employees. Because Anthropic had no real-time nationality-gating system, it disabled both models for all users to stay compliant. Anthropic called the suspension a misunderstanding, disputed the severity of the jailbreak finding (characterizing the vulnerabilities as minor and already present in other public models), and entered daily negotiations with the Commerce Department. The White House demanded a full accounting of the roughly 50–150 Project Glasswing organizations that had Mythos access and near-jailbreak-proof guardrails before lifting the order. Fable 5 access was restored for US paid users by June 17; full international access and a July 8 identity-verification rollout for consumer plans represent the structured re-entry path. Mythos 5 remains restricted to vetted partners.",
+      "primary_url": "https://www.techpolicy.press/anthropics-mythos-recall-and-the-white-houses-missing-ai-safety-playbook/"
+    },
+    {
+      "headline": "Z.ai releases GLM-5.2 under MIT license on June 16 — 753B MoE parameter open-weight model with a stable 1M-token context window, SWE-bench Pro score of 62.1% (versus GPT-5.5's 58.6%), and pricing of $1.40/$4.40 per million tokens, roughly one-sixth the cost of GPT-5.5 — establishing it as the highest-ranked open-weight model on the Artificial Analysis Intelligence Index",
+      "body": "GLM-5.2 introduces IndexShare, an architecture change that reuses sparse-attention top-k indices across every four layers, cutting per-token FLOPs by 2.9x at 1M-token context lengths. On FrontierSWE it scores 74.4% (versus Claude Opus 4.8 at 75.1% and GPT-5.5 at 72.6%), making it the first open-weight model within 1 percentage point of the Anthropic frontier on long-horizon software engineering. The MIT license — with no regional restrictions — means enterprise teams can self-host the model commercially, download weights, and modify without royalty obligations. Artificial Analysis placed GLM-5.2 at 51 on its Intelligence Index, ahead of MiniMax-M3 (44), DeepSeek V4 Pro (44), and Kimi K2.6 (43). The model supports major agentic coding tools via Anthropic-compatible API endpoint.",
+      "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog"
+    },
+    {
+      "headline": "European Parliament adopts EU AI Act Digital Omnibus on June 16 — postponing Annex III high-risk AI obligations from August 2026 to December 2027, adding a nudifier app ban, and setting a December 2026 watermarking deadline — while Article 50 transparency obligations remain unchanged at August 2, 2026",
+      "body": "The Digital Omnibus is the first set of amendments to the EU AI Act since 2024. The key operational change for most enterprises: standalone high-risk AI systems (Annex III — biometrics, employment, critical infrastructure, law enforcement) now apply from December 2, 2027 instead of August 2026, giving organizations an additional 16 months. High-risk AI embedded in regulated products (Annex I — machinery, elevators, toys) applies from August 2, 2028. Article 50 transparency obligations — chatbot disclosure, deepfake labeling, AI-generated public-interest text — remain unchanged at August 2, 2026. A new Article 5 prohibition on nudifier apps and CSAM-generating systems takes effect December 2, 2026. Council sign-off is still required before the Omnibus enters into force.",
+      "primary_url": "https://www.europarl.europa.eu/news/en/press-room/20260611IPR45207/"
+    },
+    {
+      "headline": "European Commission publishes final Code of Practice on AI-Generated Content transparency on June 10 — setting the practical compliance benchmark for Article 50's August 2 deadline, with C2PA as the de facto machine-readable standard and initial signatory forms due July 22",
+      "body": "The Code of Practice is voluntary but sets the technical standard against which the EU AI Office and national market surveillance authorities will assess compliance with Article 50. Providers of generative AI systems must mark outputs — audio, image, video, and text — in machine-readable formats; deployers must attach human-readable labels to deepfakes and AI-generated text on matters of public interest. The recommended technical mechanism is C2PA (digitally signed metadata), with imperceptible watermarking as an alternative. Initial signatories must submit forms by July 22, 2026; a public list of signatories will be published then. Providers who have not yet implemented a compliant technical mechanism by August 2 have a three-month grace period — until December 2, 2026 — to finish the technical implementation, but the obligation to label content is live on August 2.",
+      "primary_url": "https://verdaio.ai/news.html"
+    },
+    {
+      "headline": "Great American AI Act discussion draft released June 4 offers the first US federal AI safety framework — semi-annual third-party audits, public frontier frameworks, $1 million/day penalties — in exchange for a 3-year freeze on state laws regulating AI model development; Vermont simultaneously signs the country's strictest AI therapy ban on June 17",
+      "body": "The bipartisan draft by Reps. Obernolte and Trahan imposes binding obligations on AI developers with over $500 million in annual revenue: publish frontier AI frameworks, submit to semi-annual audits by NIST-licensed Independent Verification Organizations, and disclose new models at release with a 15-day incident reporting window. In exchange, state laws specifically regulating the development of AI models are frozen for three years. The draft preserves all state regulation of AI deployment and use. As of late June 2026 it is not formal legislation. Vermont's H.816, signed June 17 and effective immediately, prohibits corporations from offering or advertising AI-delivered mental health services unless provided by a qualified professional or in an approved research study — joining Illinois, Nevada, and Utah with similar restrictions.",
+      "primary_url": "https://www.cato.org/blog/primer-great-american-artificial-intelligence-act"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "anthropic-fable5-export-control-suspension-june12",
+      "title": "Anthropic Fable 5 Suspended Globally on June 12 Under US Commerce Dept Export-Control Directive — First Government-Ordered Commercial AI Model Recall; Restored for US Paid Users June 17 Under Identity Verification Roadmap",
+      "subtitle": "Directive issued June 12, 2026. Jailbreak cited as trigger. Fable 5 restored June 17 for paid US users; full restoration depends on July 8 identity-verification rollout and ongoing negotiation. Mythos 5 remains restricted.",
+      "source": "Tech Policy Press / Anthropic",
+      "author": "Justin Hendrix (Tech Policy Press); Anthropic official statements",
+      "date": "2026-06-16",
+      "primary_url": "https://www.techpolicy.press/anthropics-mythos-recall-and-the-white-houses-missing-ai-safety-playbook/",
+      "secondary_urls": [
+        {
+          "label": "FutureSearch forecast: US/Anthropic standoff resolution scenarios and probability estimates",
+          "url": "https://futuresearch.ai/claude-fable-ban-forecast/"
+        },
+        {
+          "label": "Gravitee: enterprise AI architecture implications of the Fable 5 suspension",
+          "url": "https://www.gravitee.io/blog/fable-5-mythos-5-suspension-what-it-means-for-your-ai-architecture"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "summary": "On June 12, 2026, at 5:21 PM EST, Anthropic received a letter from Commerce Secretary Howard Lutnick ordering suspension of Fable 5 and Mythos 5 access for all foreign nationals inside or outside the US, including Anthropic's own non-US employees. The stated trigger was a claimed jailbreak of Fable 5. Anthropic disputed the severity — characterizing the vulnerabilities as minor and already present in other publicly available models — but complied within roughly 90 minutes by disabling both models for all users globally. The White House demanded two preconditions before lifting the order: a full accounting of all Project Glasswing access recipients (estimated at 50–150 organizations) and guardrails approaching jailbreak-proof, a standard the cybersecurity community considers technically impossible. By June 17, Fable 5 was restored for paid US users under a free access window through June 22; a July 8 identity-verification rollout (age and citizenship checks) is the structured re-entry path for the US consumer market. International users depend on the directive being fully revoked.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "tags": [
+        "Anthropic",
+        "Fable 5",
+        "Mythos 5",
+        "export control",
+        "Commerce Dept",
+        "jailbreak",
+        "model access",
+        "supply chain risk",
+        "identity verification"
+      ],
+      "category": "Enterprise Disclosures",
+      "priority": "CRITICAL",
+      "recurrence": "new",
+      "enterprise_adaptation": "This event establishes that frontier model access via commercial API is subject to unilateral government suspension with near-zero notice. The implementation pattern: any enterprise AI workflow that depends on a specific frontier model as its sole inference path now has a documented, real-world supply-chain failure mode that is not contractual or infrastructure-based, but geopolitical. The structured response is a multi-model fallback architecture — at minimum, a parallel Opus 4.8 (or equivalent) path for every Fable 5 workload, tested and ready to activate within one business day. Regulated-environment caveat: the July 8 identity-verification rollout means that Anthropic consumer plans will require age and citizenship verification; enterprise API plans are on a separate track, but the precedent that model access can be gated by nationality has been set. Any enterprise AI team that employs non-US staff who access AI tools under enterprise licenses should review whether those staff are in scope of a future directive. The 30-day experiment: map every internal workflow currently using Claude Fable 5 or any Mythos-class API; for each, identify a tested fallback model and the delta in output quality and cost; document the switchover procedure so the team can execute it within hours if a future directive arrives."
+    },
+    {
+      "id": "glm52-zai-open-weight-mit-june16",
+      "title": "GLM-5.2: Z.ai Releases 753B MoE Open-Weight Model Under MIT License — SWE-bench Pro 62.1%, FrontierSWE 74.4% (1% Behind Claude Opus 4.8), Pricing at $1.40/$4.40 per 1M Tokens — Highest-Ranked Open-Weight Model on Artificial Analysis Intelligence Index",
+      "subtitle": "Released June 13 (subscribers), open weights June 16, 2026. 1M-token context. MIT license. Benchmarks vendor-reported; Artificial Analysis independent ranking confirmed.",
+      "source": "Z.ai (Hugging Face blog) / Artificial Analysis",
+      "author": "Z.ai (zai-org)",
+      "date": "2026-06-16",
+      "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+      "secondary_urls": [
+        {
+          "label": "Tech Startups: GLM-5.2 beats GPT-5.5 on coding benchmarks at one-sixth the cost",
+          "url": "https://techstartups.com/2026/06/17/z-ais-open-source-glm-5-2-beats-gpt-5-5-on-coding-benchmarks-at-one-sixth-the-cost/"
+        },
+        {
+          "label": "Simon Willison: GLM-5.2 is probably the most powerful text-only open-weights LLM",
+          "url": "https://simonwillison.net/2026/jun/17/glm-52/"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "summary": "GLM-5.2 is a 753B-parameter (40B active) Mixture-of-Experts model from Z.ai released under MIT license with a stable 1-million-token context window and up to 131,072 output tokens. The key architecture change is IndexShare, which reuses sparse-attention top-k indices across groups of four layers, cutting per-token FLOPs at 1M context by 2.9x. On SWE-bench Pro it scores 62.1% versus GPT-5.5 at 58.6%; on FrontierSWE it scores 74.4% versus Claude Opus 4.8 at 75.1%. Artificial Analysis independently placed it at 51 on its Intelligence Index v4.1, ahead of all other open-weight models. API pricing is $1.40 input / $4.40 output per 1M tokens versus GPT-5.5 at $5.00/$30.00 — approximately one-sixth the cost for comparable coding tasks. The model supports Claude Code, Cline, and other agentic coding tools via Anthropic-compatible endpoint. Performance benchmarks are vendor-reported except for Artificial Analysis's index ranking.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "tags": [
+        "GLM-5.2",
+        "Z.ai",
+        "open weights",
+        "MIT license",
+        "SWE-bench",
+        "FrontierSWE",
+        "1M context",
+        "coding model",
+        "self-hosting"
+      ],
+      "category": "Model Cards",
+      "priority": "CRITICAL",
+      "recurrence": "new",
+      "enterprise_adaptation": "GLM-5.2 is the first open-weight model to reach within 1 percentage point of the Anthropic frontier on long-horizon software engineering — which directly changes the enterprise calculus for build-vs-buy decisions on coding infrastructure. The implementation pattern: an enterprise team currently paying GPT-5.5 rates for agentic coding workloads can evaluate GLM-5.2 self-hosted at roughly one-sixth the per-token cost, with MIT licensing that permits commercial use, modification, and no data egress to a third-party API. The 1M-token context window is genuinely useful for repository-scale analysis — cross-file refactoring, large codebase Q&A, and long-horizon agentic task loops. Regulated-environment caveat: Z.ai is a Beijing-based company (formerly Zhipu AI, spun out of Tsinghua University). Data governance teams at regulated enterprises should note this provenance before routing any sensitive code or proprietary IP through the Z.ai API. The self-hosted option (weights under MIT) sidesteps the data-egress concern entirely, but running a 753B MoE model at production scale requires 8x H100s in BF16 or a quantized variant fitting on fewer GPUs. The 30-day experiment: identify one internal benchmark — for example, a standardized set of code review tasks or documentation generation prompts currently run against Claude Opus 4.8 — and run the same set against GLM-5.2 via the Z.ai API in a sandboxed environment using only non-sensitive test code; compare output quality, latency, and per-task cost; document the delta as evidence for a model diversification review."
+    },
+    {
+      "id": "eu-ai-act-digital-omnibus-june16",
+      "title": "EU AI Act Digital Omnibus Adopted by European Parliament June 16 — Annex III High-Risk AI Obligations Postponed to December 2027, Nudifier Ban Enacted, Article 50 Transparency Unchanged at August 2, 2026",
+      "subtitle": "European Parliament vote: 423 in favor, 57 against. Council sign-off still required. High-risk Annex I (machinery, elevators) delayed to August 2028. Article 5 nudifier ban takes effect December 2026.",
+      "source": "European Parliament",
+      "author": "European Parliament (press room)",
+      "date": "2026-06-16",
+      "primary_url": "https://www.europarl.europa.eu/news/en/press-room/20260611IPR45207/",
+      "secondary_urls": [
+        {
+          "label": "GamingTechLaw: full breakdown of Omnibus provisions and timelines",
+          "url": "https://www.gamingtechlaw.com/2026/06/eu-ai-act-changes-machinery-rules/"
+        },
+        {
+          "label": "Heuking: AI compliance 2026 — what the Digital Omnibus means for businesses",
+          "url": "https://www.heuking.de/en/news-events/newsletter-articles/detail/ai-compliance-2026-what-the-digital-omnibus-act-really-means-for-businesses.html"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "summary": "The European Parliament adopted the Digital Omnibus on June 16, 2026, with a 423-57 vote. The primary compliance relief: Annex III standalone high-risk AI systems (biometrics, employment, critical infrastructure, law enforcement, education) move from August 2026 to December 2, 2027; AI embedded in regulated products under Annex I (machinery, elevators, toys) moves to August 2, 2028. The core Article 50 transparency obligations — chatbot interaction disclosure, deepfake labeling, AI-generated public-interest text labeling — remain at August 2, 2026, as does Article 50(1) interaction disclosure. A new Article 5 prohibition on nudifier and CSAM-generating AI systems takes effect December 2, 2026. The AI literacy obligation is softened from a guaranteed outcome to a 'reasonable efforts' standard. EU database registration for high-risk systems is preserved. The text still requires Council sign-off before entry into force; institutions aim to finalize before August 2.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "tags": [
+        "EU AI Act",
+        "Digital Omnibus",
+        "Annex III",
+        "high-risk AI",
+        "Article 50",
+        "transparency",
+        "nudifier ban",
+        "compliance deadline"
+      ],
+      "category": "Regulation — EU",
+      "priority": "HIGH",
+      "recurrence": "new",
+      "enterprise_adaptation": "The Omnibus has two distinct compliance implications depending on where an enterprise sits in the AI value chain. For enterprises deploying AI in HR, credit, or infrastructure contexts (Annex III scope): the December 2027 extension is real relief — a 16-month window to build conformity assessment processes that were not feasible by August 2026. Do not treat this as permission to stop compliance work; treat it as a window to do it properly, with the national market surveillance authority frameworks now being stood up across member states. For enterprises deploying generative AI that interacts with EU persons (Annex I or any generative AI product): Article 50 is unchanged. Chatbot disclosure, deepfake labeling, and AI-generated text labeling are required from August 2. The EU AI Office's Code of Practice sets the technical benchmark — C2PA machine-readable metadata is the recommended implementation path. Regulated-environment caveat: the postponement does not affect enforcement of GPAI obligations (Article 53 onwards), which apply to providers of large general-purpose AI models and are on their own timeline. If your enterprise provides or fine-tunes an AI model used in the EU at scale, GPAI obligations are live from August 2, 2026. The 30-day experiment: run a scoping exercise against the EU AI Act taxonomy — classify each AI system your team deploys as (a) Annex I/III high-risk, (b) Article 50 transparency-subject, (c) GPAI, or (d) none; assign the correct obligation timeline to each; flag any that fall under Article 50 with an August 2 deadline and ensure the disclosure and labeling stack is in test before July 15."
+    },
+    {
+      "id": "eu-ai-act-code-practice-content-transparency-june10",
+      "title": "EU AI Office Publishes Final Code of Practice on AI-Generated Content Transparency June 10 — C2PA as De Facto Machine-Readable Standard; Article 50 Obligations Live August 2; Signatory Forms Due July 22",
+      "subtitle": "Published June 10, 2026. Voluntary code; sets compliance benchmark for mandatory Article 50 obligations. 187+ stakeholder participants. Three-month grace period for technical implementation until December 2, 2026.",
+      "source": "European Commission AI Office / Verdaio analysis",
+      "author": "European Commission AI Office",
+      "date": "2026-06-10",
+      "primary_url": "https://verdaio.ai/news.html",
+      "secondary_urls": [
+        {
+          "label": "Pebblous: EU AI Act Article 50 content labeling implementation guide",
+          "url": "https://blog.pebblous.ai/blog/eu-ai-content-labeling-article-50-provenance/en/"
+        },
+        {
+          "label": "EU AI Act tracker — Article 50 status",
+          "url": "https://artificialintelligenceact.eu"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "summary": "The EU AI Office published its final Code of Practice on Transparency of AI-Generated Content on June 10, 2026, following three rounds of consultation with 187+ stakeholders. The Code sets practical commitments for providers (machine-readable content marking — audio, image, video, text) and deployers (human-readable disclosure for deepfakes and AI-generated public-interest text). The de facto technical mechanism is C2PA (digitally signed metadata), with imperceptible watermarking as an alternative. Initial signatories must submit forms by July 22, 2026. The Article 50 legal obligations go live August 2; providers who have not yet implemented compliant technical mechanisms have a three-month transitional grace period until December 2, 2026, but must ensure human-readable disclosures are live on August 2. Article 50(4) penalties for non-compliance: up to €7.5M or 1.5% of global annual turnover.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "tags": [
+        "EU AI Act",
+        "Article 50",
+        "Code of Practice",
+        "C2PA",
+        "content labeling",
+        "transparency",
+        "watermarking",
+        "August 2026"
+      ],
+      "category": "Regulation — EU",
+      "priority": "HIGH",
+      "recurrence": "returning",
+      "recurrence_note": "Last week confirmed Article 50's August 2 hard deadline via Stibbe and Studeria analyses. This week the EU AI Office published the final Code of Practice — the operational guidance that sets the technical benchmark for compliance — a material development that moves the story from deadline confirmation to implementation specification.",
+      "enterprise_adaptation": "The Code of Practice answers the 'how' question for Article 50 compliance. The two-layer obligation — machine-readable marking (provider) and human-readable disclosure (deployer) — applies to any enterprise that (a) provides generative AI that produces outputs or (b) distributes AI-generated content to the public in the EU. The implementation sequence: (1) determine whether your organization is a Provider, a Deployer, or both — they carry different obligations and different penalty levels; (2) map every AI-generated content type that reaches EU persons (marketing copy, product descriptions, chatbot responses, press releases, reports) and classify whether it falls under deepfake, public-interest text, or interactive disclosure scope; (3) integrate C2PA signing into your AI content generation pipeline — if you use an AI API to generate text or images that are then published, you need the metadata inscribed in the output before distribution, not added later. Regulated-environment caveat: C2PA certification typically takes 5–9 months. If you are not already in the certification process, August 2 machine-readable compliance is not achievable — however, the December 2 grace period applies to technical implementation steps, not to the human-readable disclosure obligation. Human-readable labels are required from August 2 with no grace period. The 30-day experiment: select one high-volume AI content output channel (email marketing, chatbot, or social content) and test a human-readable AI disclosure format against the FTC clear-and-conspicuous standard; document the format and placement in a reusable compliance template the marketing team can apply to all channels by August 2."
+    },
+    {
+      "id": "gaaia-federal-ai-preemption-discussion-draft-june4",
+      "title": "Great American AI Act Discussion Draft: First US Bipartisan Federal AI Safety Framework — $1M/Day Penalties, Semi-Annual Third-Party Audits, 3-Year State Preemption of AI Development Laws",
+      "subtitle": "Released June 4, 2026 by Reps. Obernolte (R-CA) and Trahan (D-MA). Not yet formal legislation. 269-page draft. Frontier developer threshold: $500M annual revenue.",
+      "source": "CATO Institute / ThePlanetTools.ai",
+      "author": "Juan Londoño (CATO); Anthony Martinez (ThePlanetTools.ai)",
+      "date": "2026-06-04",
+      "primary_url": "https://www.cato.org/blog/primer-great-american-artificial-intelligence-act",
+      "secondary_urls": [
+        {
+          "label": "ThePlanetTools.ai: which state AI laws would be preempted under GAAIA",
+          "url": "https://theplanettools.ai/blog/great-american-ai-act-federal-preemption-state-laws-2026"
+        },
+        {
+          "label": "AI Counsel: GAAIA impact on companies",
+          "url": "https://theaicounsel.net/blogs/what-is-the-great-american-ai-act-and-how-will-it-impact-companies/"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "summary": "The GAAIA discussion draft proposes binding obligations for AI developers with over $500M annual revenue: publish a frontier AI framework annually, submit to semi-annual audits by NIST-licensed Independent Verification Organizations, disclose new models at release, and report incidents within 15 days (24 hours for imminent risk). Penalties reach $1 million per day for non-compliance. In exchange, state laws that specifically regulate the development of AI models are frozen for three years; state laws governing AI use and deployment (employment screening, housing, credit decisions) are fully preserved. CAISI is funded at $100M per year. The three-year preemption and most CAISI provisions sunset unless reauthorized. 203 state lawmakers from 42 states have opposed the preemption. The bill is a discussion draft — it has not been introduced, marked up, or voted on.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "tags": [
+        "GAAIA",
+        "federal AI law",
+        "state preemption",
+        "frontier AI",
+        "NIST",
+        "CAISI",
+        "IVO audits",
+        "AI governance",
+        "US regulation"
+      ],
+      "category": "Regulation — US",
+      "priority": "HIGH",
+      "recurrence": "new",
+      "enterprise_adaptation": "The GAAIA is not law, but the specific obligations it proposes — semi-annual third-party audits of AI models and public frontier AI frameworks — are likely to become the reference standard regardless of whether the bill passes. The reason: CAISI and IVO frameworks, if enacted, would become the auditing machinery that regulated industries benchmark against. An enterprise AI team that builds its internal governance documentation to the GAAIA framework structure today is better positioned for both the federal outcome (if the bill advances) and the state patchwork outcome (if it fails, multiple state laws remain active). The state preemption provision is directly material if your enterprise operates AI tools in California, Colorado, Connecticut, or Illinois — the four states with the most active AI development regulations. If the GAAIA passes, those state-level developer obligations pause for three years; if it fails, they remain in force. Regulated-environment caveat: the GAAIA explicitly preserves state-level AI use and deployment laws — which means that regardless of what happens at the federal level, enterprise AI teams deploying AI in employment, credit, or housing contexts remain fully subject to state anti-discrimination and use-case regulation. The 30-day experiment: review your enterprise's current AI governance documentation against the GAAIA's frontier AI framework template — which requires documenting catastrophic risk potential, cybersecurity measures for model weights, deployment decisions, and third-party risk assessment; identify gaps and assign owners before a possible bill introduction later this year."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "papers",
+      "title": "arXiv & Lab Papers",
+      "description": "Papers from arXiv cs.AI, cs.CL, cs.LG, cs.CR with practitioner traction week of June 15–21, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "superthoughts-reasoning-tokens-superposition-june15",
+          "title": "SuperThoughts: Reasoning Tokens in Superposition — Parallel Hypothesis Exploration Without Sequential Chain-of-Thought",
+          "subtitle": "arXiv:2606.13862. Submitted June 15, 2026.",
+          "source": "arXiv cs.AI",
+          "author": "Submitted June 15, 2026",
+          "date": "2026-06-15",
+          "primary_url": "https://arxiv.org/abs/2606.13862",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "summary": "SuperThoughts proposes representing multiple reasoning branches in superposition within the same token sequence, enabling a model to explore several hypothesis paths simultaneously rather than sequentially. The architecture allows a form of parallel reasoning within a single forward pass, potentially reducing the token budget required for complex problem-solving. This represents a fundamentally different approach from standard chain-of-thought or multi-sample reasoning, with implications for inference efficiency in agentic pipelines.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "tags": ["reasoning", "superposition", "chain-of-thought", "inference efficiency", "agentic AI"],
+          "category": "Papers",
+          "recurrence": "new"
+        },
+        {
+          "id": "every-eval-ever-unifying-schema-june16",
+          "title": "Every Eval Ever: A Unifying Schema and Community Repository for AI Evaluation Results — Cross-Model, Cross-Benchmark Comparability Infrastructure",
+          "subtitle": "arXiv:2606.14516. Submitted June 16, 2026.",
+          "source": "arXiv cs.AI",
+          "author": "Submitted June 16, 2026",
+          "date": "2026-06-16",
+          "primary_url": "https://arxiv.org/abs/2606.14516",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "summary": "Every Eval Ever proposes a unifying schema and community-maintained repository for publishing AI evaluation results in a standardized, queryable format. The paper addresses the reproducibility and comparability problem caused by fragmented, non-standardized benchmark reporting across labs and research groups. For enterprise teams building internal model evaluation pipelines, the schema provides a reference standard for structuring internal evaluation logs alongside external benchmarks.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["AI evaluation", "benchmarking", "reproducibility", "model comparison", "governance"],
+          "category": "Papers",
+          "recurrence": "new"
+        },
+        {
+          "id": "decoding-hidden-deception-reasoning-llms-june16",
+          "title": "Decoding Hidden Deception in Reasoning LLMs — Activation Explainers for Deception Auditing of Reasoning-Capable Models",
+          "subtitle": "arXiv:2606.17478. Submitted June 16, 2026.",
+          "source": "arXiv cs.AI",
+          "author": "Submitted June 16, 2026",
+          "date": "2026-06-16",
+          "primary_url": "https://arxiv.org/abs/2606.17478",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "summary": "The paper proposes an activation-based explainability approach for detecting deceptive behavior in reasoning-capable LLMs, addressing a limitation of monitoring methods that only score visible text outputs. As LLMs acquire stronger reasoning capabilities, deceptive behavior becomes harder to detect from text alone — the authors demonstrate that internal activation patterns carry signals of deceptive intent not visible in the final response. The method provides an early-stage deception auditing tool relevant to enterprise deployments where models operate with limited human oversight.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["deception detection", "AI safety", "reasoning LLMs", "mechanistic interpretability", "audit"],
+          "category": "Papers",
+          "recurrence": "new"
+        },
+        {
+          "id": "deepinsight-unified-evaluation-infra-june16",
+          "title": "DeepInsight: Unified Evaluation Infrastructure Across the Physical AI Stack — Single Runtime for Software, Embodied, and Perception AI Evaluations",
+          "subtitle": "arXiv:2606.17574. Submitted June 16, 2026.",
+          "source": "arXiv cs.AI",
+          "author": "Submitted June 16, 2026",
+          "date": "2026-06-16",
+          "primary_url": "https://arxiv.org/abs/2606.17574",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "summary": "DeepInsight presents an evaluation infrastructure that serves the full AI capability spectrum — from software-only LLMs to embodied and perception-based systems — on a single evaluation runtime. The paper is directly relevant to enterprise teams that deploy AI across both digital (document processing, code generation) and physical (industrial sensors, equipment interfaces) use cases and need consistent evaluation tooling across the stack.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["evaluation infrastructure", "physical AI", "embodied AI", "enterprise tooling", "benchmarking"],
+          "category": "Papers",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "model_cards",
+      "title": "Model Cards & System Disclosures",
+      "description": "New model and system card analyses from frontier labs and open-source releases, week of June 15–21, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "glm52-model-detail-june16",
+          "title": "GLM-5.2 Model Card: 1M-Token Context, IndexShare Architecture (2.9x FLOPs Reduction at 1M), Dual Reasoning Effort Modes, MIT Open-Source Weights",
+          "subtitle": "Official Z.ai model blog published June 17, 2026 on Hugging Face. Open weights released June 16. API available at z.ai. Benchmarks vendor-reported unless noted.",
+          "source": "Z.ai (Hugging Face)",
+          "author": "Z.ai (zai-org)",
+          "date": "2026-06-16",
+          "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+          "secondary_urls": [
+            {
+              "label": "DataCamp: GLM-5.2 features, setup, and benchmarks guide",
+              "url": "https://www.datacamp.com/blog/glm-5-2"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "summary": "Z.ai's official model blog documents GLM-5.2's three headline changes: (1) IndexShare — reuses sparse-attention top-k indices across groups of four layers, reducing per-token FLOPs 2.9x at 1M context; (2) dual thinking-effort levels (High and Max) allowing inference cost control; (3) improved multi-token prediction layer that increases speculative decoding acceptance length by up to 20%. The model scores 81.0 on Terminal-Bench 2.1 (versus Claude Opus 4.8 at 85.0) and 62.1 on SWE-bench Pro (versus GPT-5.5 at 58.6). It uses 43K output tokens per Intelligence Index task on average, more than other open-weight models, partially offsetting per-token cost savings. Context: text-only, no native vision support.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["GLM-5.2", "Z.ai", "model card", "IndexShare", "open weights", "MIT", "1M context"],
+          "category": "Model Cards",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_us",
+      "title": "Regulation — United States",
+      "description": "US federal and state AI legislation and executive actions with enterprise compliance implications, week of June 15–21, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "gaaia-federal-ai-draft-detail",
+          "title": "GAAIA Discussion Draft Detail: 3-Year Preemption of State AI Development Laws, Semi-Annual IVO Audits, $1M/Day Penalties for Frontier Developers — Not Yet Formal Legislation",
+          "subtitle": "Released June 4, 2026. Bipartisan: Reps. Obernolte (R-CA) and Trahan (D-MA). 203 state lawmakers from 42 states oppose preemption. Discussion draft, not enacted.",
+          "source": "Cato Institute / ThePlanetTools.ai",
+          "author": "Juan Londoño (CATO)",
+          "date": "2026-06-04",
+          "primary_url": "https://www.cato.org/blog/primer-great-american-artificial-intelligence-act",
+          "secondary_urls": [
+            {
+              "label": "ThePlanetTools.ai: which state AI laws would be preempted",
+              "url": "https://theplanettools.ai/blog/great-american-ai-act-federal-preemption-state-laws-2026"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "summary": "The GAAIA draft creates two tracks: a federal obligations track for developers over $500M revenue (frontier AI frameworks, IVO audits, model disclosure, 15-day incident reporting) and a state preemption track (3-year freeze on state laws regulating AI development, not deployment). Catastrophic risk is defined as 50+ deaths or $1B+ property damage. CAISI is authorized at $100M per year. Transparency reports must be published at or before each model release. Most provisions sunset in three years unless reauthorized. If enacted, it would preempt California SB 53, California AB 2013, and portions of California SB 942 on the development side, while preserving all state rules governing AI use in employment, housing, and credit.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["GAAIA", "federal preemption", "CAISI", "IVO", "frontier AI", "US legislation", "state preemption"],
+          "category": "Regulation — US",
+          "recurrence": "new"
+        },
+        {
+          "id": "vermont-h816-ai-therapy-ban-june17",
+          "title": "Vermont H.816 Signed June 17 — Bans AI-Delivered Mental Health Therapy Without Qualified Human Professional; Effective Immediately; Vermont Consumer Protection Act Enforcement",
+          "subtitle": "Signed June 17, 2026 by Governor Phil Scott. Effective on passage. Enforced by Vermont AG under 9 V.S.A. ch. 63. Fourth US state to restrict AI therapists.",
+          "source": "Recording Law / Vermont legislature",
+          "author": "Governor Phil Scott (Vermont)",
+          "date": "2026-06-17",
+          "primary_url": "https://www.recordinglaw.com/news/vermont-ai-therapy-law-h816/",
+          "secondary_urls": [
+            {
+              "label": "PPC Land: Vermont bans AI-only therapy and tightens data broker rules",
+              "url": "https://ppc.land/vermont-bans-ai-only-therapy-and-tightens-data-broker-rules/"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "summary": "Vermont H.816 prohibits corporations from offering or advertising mental health services — defined as counseling, therapy, or psychotherapy for diagnosis, treatment, or recovery — delivered independently by AI unless provided by a qualified mental health professional or conducted as part of an approved research study. AI for administrative functions (scheduling, billing, transcription) is explicitly permitted. For licensed professionals, independent AI-driven therapeutic decision-making is classified as unprofessional conduct. The law also accompanies Act 138, which raises data broker registration fees to $900 annually and adds disclosure requirements for data sharing with GenAI system developers. Vermont joins Illinois, Nevada, and Utah in restricting AI therapy.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["Vermont", "AI therapy", "mental health", "H.816", "state law", "AI prohibition", "data brokers"],
+          "category": "Regulation — US",
+          "recurrence": "new"
+        },
+        {
+          "id": "anthropic-fable5-export-control-detail",
+          "title": "Fable 5 Export-Control Directive: Commerce Dept Cited Jailbreak, Amazon CEO Jassy Reportedly Triggered Letter, Identity Verification from July 8 — Structured Re-Entry Architecture",
+          "subtitle": "Directive issued June 12, 2026. Fable 5 restored June 17 for paid US users. International access pending directive revocation. July 8 identity-verification rollout for consumer plans.",
+          "source": "Tech Policy Press / FutureSearch",
+          "author": "Justin Hendrix (Tech Policy Press)",
+          "date": "2026-06-16",
+          "primary_url": "https://www.techpolicy.press/anthropics-mythos-recall-and-the-white-houses-missing-ai-safety-playbook/",
+          "secondary_urls": [
+            {
+              "label": "FutureSearch forecast: resolution scenarios and probability estimates",
+              "url": "https://futuresearch.ai/claude-fable-ban-forecast/"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "summary": "Per Tech Policy Press and the Wall Street Journal, Amazon CEO Andy Jassy's concerns to the White House triggered the June 12 Commerce Department letter. Anthropic disputes the jailbreak risk, calling the vulnerabilities minor and already present in other public models. The directive demanded suspension for all foreign nationals, including Anthropic's own non-US employees, which forced a global takedown since Anthropic lacked real-time nationality gating. The White House conditions for lifting the order — full Project Glasswing accounting and near-jailbreak-proof guardrails — are both contested. FutureSearch's resolution forecast (as of June 20) gives Fable 5 US restoration a median around July 9, conditional on Scenario 3 (access control path); Mythos returning to restricted gated access has a 49% modal probability; full international Fable 5 restoration depends on the directive being fully revoked.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["Fable 5", "Anthropic", "export control", "Commerce Dept", "identity verification", "model access", "jailbreak"],
+          "category": "Regulation — US",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_global",
+      "title": "Regulation — Global",
+      "description": "EU AI Act implementation updates and international AI governance developments, week of June 15–21, 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "eu-ai-omnibus-parliament-detail-june16",
+          "title": "EU AI Act Digital Omnibus Detail: High-Risk AI Relief to December 2027, Nudifier Ban, Watermarking Timeline, Machinery Sector Carve-Out, SMC Category Added",
+          "subtitle": "Parliament vote June 16, 2026: 423-57. Council sign-off pending. Omnibus aims to enter force before August 2 to avoid legal uncertainty.",
+          "source": "GamingTechLaw / European Parliament",
+          "author": "European Parliament (press room)",
+          "date": "2026-06-16",
+          "primary_url": "https://www.gamingtechlaw.com/2026/06/eu-ai-act-changes-machinery-rules/",
+          "secondary_urls": [
+            {
+              "label": "Heuking: what the Omnibus means for business AI compliance",
+              "url": "https://www.heuking.de/en/news-events/newsletter-articles/detail/ai-compliance-2026-what-the-digital-omnibus-act-really-means-for-businesses.html"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "summary": "Key Omnibus provisions beyond the main headline: (1) Machinery products avoid direct AI Act overlap where equivalent obligations exist under the Machinery Regulation — a significant carve-out for industrial equipment manufacturers; (2) A new 'small mid-cap enterprises' (SMC) category joins SMEs with proportionate compliance obligations; (3) AI literacy is a 'reasonable efforts' duty rather than guaranteed outcome; (4) EU database registration for high-risk AI systems is preserved (the proposal to let providers skip registration for self-declared non-high-risk systems was walked back); (5) Providers have three months to implement technical transparency measures once Article 50 obligations apply — shortening the previous six-month window; (6) Article 50(2) watermarking: providers of generative AI systems already on the EU market before August 2 have until December 2, 2026 to retrofit machine-readable watermarking.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["EU AI Act", "Digital Omnibus", "machinery", "SMC", "Article 50", "watermarking", "high-risk AI", "compliance"],
+          "category": "Regulation — EU",
+          "recurrence": "new"
+        },
+        {
+          "id": "canada-bill-c34-digital-safety-chatbot-june10",
+          "title": "Canada Introduces Bill C-34 Digital Safety Act — Extends Online Safety Duties to Chatbot Services, Requires AI Chatbots to Mitigate Harmful Content and Intervene in Crises",
+          "subtitle": "First reading June 10, 2026. Applies to regulated chatbot services. New Digital Safety Commission proposed as enforcement body.",
+          "source": "AI Governance Brief",
+          "author": "AI Governance Brief (weekly digest)",
+          "date": "2026-06-10",
+          "primary_url": "https://aigovernancebrief.org/weekly-ai-governance-brief-8-14-june-2026/",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "summary": "Canada's Bill C-34 (Digital Safety Act) received first reading on June 10, 2026. The bill extends online-safety duties to 'regulated chatbot services,' requiring operators to implement measures to mitigate the risk that a chatbot communicates harmful content, intervene in crisis situations, and implement child-protection design features and age-related controls. Regulated chatbot services would also be required to submit digital safety plans to a proposed Digital Safety Commission. The bill applies to both social media services and chatbot services. First reading only — it is not yet law.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["Canada", "Bill C-34", "Digital Safety Act", "chatbot", "online safety", "child protection", "AI regulation"],
+          "category": "Regulation — Global",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Cross-cutting patterns this week that do not yet have a single definitive source but are compounding.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "signal-model-access-geopolitical-risk",
+          "title": "Frontier Model Access Is Now a Geopolitical Risk Variable: Fable 5 Suspension Establishes the Precedent That Commercial AI Models Can Be Recalled With Hours Notice Under Export Control Law",
+          "subtitle": "Pattern: June 12 Commerce Dept directive on Fable 5 and Mythos 5 is the first government-ordered commercial AI model suspension in US history.",
+          "source": "Tech Policy Press / FutureSearch / Gravitee",
+          "author": "Multiple sources",
+          "date": "2026-06-16",
+          "primary_url": "https://www.techpolicy.press/anthropics-mythos-recall-and-the-white-houses-missing-ai-safety-playbook/",
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "summary": "The Fable 5 suspension establishes a legal and operational precedent: the US government can invoke export control authority to immediately suspend commercial access to a frontier AI model for all foreign nationals, effectively forcing a global takedown if the provider lacks nationality-gating infrastructure. The trigger was a disputed jailbreak claim, not a model capability threshold defined in advance. The precedent applies to any frontier model with advanced cybersecurity or dual-use capabilities. Future models approaching CB1 or CB2 thresholds face the same regulatory surface. Enterprise teams building on API-based frontier models now operate in an environment where supply-chain risk includes geopolitical model recall — not just infrastructure outages.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["supply chain risk", "export control", "model access", "geopolitical risk", "Anthropic", "frontier AI"],
+          "category": "Emerging Signals",
+          "recurrence": "new"
+        },
+        {
+          "id": "signal-open-weight-frontier-parity",
+          "title": "Open-Weight Models Close to Frontier Parity on Coding: GLM-5.2 Within 1% of Claude Opus 4.8 on FrontierSWE — First Week Where Self-Hostable Frontier-Adjacent Capability Is Concretely Cheaper",
+          "subtitle": "Pattern: GLM-5.2's FrontierSWE score of 74.4% versus Claude Opus 4.8's 75.1%, with API pricing at roughly one-sixth of GPT-5.5 for comparable tasks.",
+          "source": "Artificial Analysis / Latent.Space / Simon Willison",
+          "author": "Multiple practitioners",
+          "date": "2026-06-19",
+          "primary_url": "https://www.latent.space/p/ainews-glm-gpt-glm-52-passes-vibe",
+          "secondary_urls": [
+            {
+              "label": "Simon Willison: GLM-5.2 is probably the most powerful text-only open-weights LLM",
+              "url": "https://simonwillison.net/2026/jun/17/glm-52/"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-06-21T20:00:00Z",
+          "summary": "Multiple independent practitioners this week described GLM-5.2 as the first open-weight model that functions as a frontier-adjacent daily driver for software engineering work. @jeremyphoward: 'at least as good as Opus 4.8 and GPT 5.5' for his use; @matvelloso: 'the first open model that cleared my daily driver bar'; Artificial Analysis placed it between GPT-5.5 and Opus 4.8 on a new agentic knowledge-work evaluation. The combination of MIT licensing, 1M-token context, and sub-$6/million combined token pricing creates the first week where a self-hostable model is concretely competitive with closed frontier models on coding benchmarks, not just close in theory. The Fable 5 suspension adds urgency to the self-hosted alternative — models under MIT license can't be recalled by a government directive.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": ["open weights", "GLM-5.2", "frontier parity", "self-hosting", "coding models", "MIT license"],
+          "category": "Emerging Signals",
+          "recurrence": "new"
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "id": "anthropic-fable5-export-control-suspension-june12",
+      "title": "Anthropic Fable 5 and Mythos 5 Suspended Globally Under US Commerce Dept Export-Control Directive June 12 — First Government-Ordered Commercial AI Model Recall",
+      "source": "Tech Policy Press",
+      "author": "Justin Hendrix",
+      "date": "2026-06-16",
+      "primary_url": "https://www.techpolicy.press/anthropics-mythos-recall-and-the-white-houses-missing-ai-safety-playbook/",
+      "score": 9.0
+    },
+    {
+      "id": "glm52-zai-open-weight-mit-june16",
+      "title": "GLM-5.2: Z.ai 753B MoE Open-Weight MIT Model — SWE-bench Pro 62.1%, FrontierSWE 74.4%, $1.40/$4.40 per 1M Tokens, Highest-Ranked Open-Weight on AI Analysis Index",
+      "source": "Z.ai (Hugging Face)",
+      "author": "Z.ai (zai-org)",
+      "date": "2026-06-16",
+      "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+      "score": 9.0
+    },
+    {
+      "id": "eu-ai-act-digital-omnibus-june16",
+      "title": "EU AI Act Digital Omnibus Adopted June 16 — Annex III Postponed to December 2027, Nudifier Ban, Article 50 Unchanged at August 2",
+      "source": "European Parliament",
+      "author": "European Parliament",
+      "date": "2026-06-16",
+      "primary_url": "https://www.europarl.europa.eu/news/en/press-room/20260611IPR45207/",
+      "score": 8.5
+    },
+    {
+      "id": "eu-ai-act-code-practice-content-transparency-june10",
+      "title": "EU AI Office Final Code of Practice on AI Content Transparency June 10 — C2PA Standard, Article 50 August 2, Signatory Forms Due July 22",
+      "source": "European Commission AI Office",
+      "author": "European Commission AI Office",
+      "date": "2026-06-10",
+      "primary_url": "https://verdaio.ai/news.html",
+      "score": 8.5
+    },
+    {
+      "id": "signal-model-access-geopolitical-risk",
+      "title": "Fable 5 Suspension Establishes Export-Control Precedent: Frontier Models Subject to Government Recall With Hours Notice",
+      "source": "Tech Policy Press / FutureSearch",
+      "author": "Multiple sources",
+      "date": "2026-06-16",
+      "primary_url": "https://www.techpolicy.press/anthropics-mythos-recall-and-the-white-houses-missing-ai-safety-playbook/",
+      "score": 8.5
+    },
+    {
+      "id": "gaaia-federal-ai-preemption-discussion-draft-june4",
+      "title": "Great American AI Act Discussion Draft: $1M/Day Penalties, Semi-Annual IVO Audits, 3-Year State Preemption — Not Yet Formal Legislation",
+      "source": "Cato Institute",
+      "author": "Juan Londoño",
+      "date": "2026-06-04",
+      "primary_url": "https://www.cato.org/blog/primer-great-american-artificial-intelligence-act",
+      "score": 8.0
+    },
+    {
+      "id": "anthropic-fable5-export-control-detail",
+      "title": "Fable 5 Export Control Detail: Jassy Trigger, Project Glasswing Accounting Demand, July 8 Identity Verification, Resolution Forecast",
+      "source": "Tech Policy Press / FutureSearch",
+      "author": "Justin Hendrix",
+      "date": "2026-06-16",
+      "primary_url": "https://www.techpolicy.press/anthropics-mythos-recall-and-the-white-houses-missing-ai-safety-playbook/",
+      "score": 8.0
+    },
+    {
+      "id": "eu-ai-omnibus-parliament-detail-june16",
+      "title": "EU AI Omnibus Detail: Machinery Carve-Out, SMC Category, Three-Month Technical Window, Watermarking December 2026",
+      "source": "GamingTechLaw / European Parliament",
+      "author": "European Parliament",
+      "date": "2026-06-16",
+      "primary_url": "https://www.gamingtechlaw.com/2026/06/eu-ai-act-changes-machinery-rules/",
+      "score": 8.0
+    },
+    {
+      "id": "signal-open-weight-frontier-parity",
+      "title": "GLM-5.2 Within 1% of Claude Opus 4.8 on FrontierSWE — First Self-Hostable Frontier-Adjacent Coding Model at Sub-$6/Million Token Cost",
+      "source": "Latent.Space / Artificial Analysis",
+      "author": "Multiple practitioners",
+      "date": "2026-06-19",
+      "primary_url": "https://www.latent.space/p/ainews-glm-gpt-glm-52-passes-vibe",
+      "score": 8.0
+    },
+    {
+      "id": "decoding-hidden-deception-reasoning-llms-june16",
+      "title": "Decoding Hidden Deception in Reasoning LLMs: Activation Explainers Detect Deception Not Visible in Text Output",
+      "source": "arXiv cs.AI",
+      "author": "Submitted June 16, 2026",
+      "date": "2026-06-16",
+      "primary_url": "https://arxiv.org/abs/2606.17478",
+      "score": 8.0
+    },
+    {
+      "id": "glm52-model-detail-june16",
+      "title": "GLM-5.2 Model Card: IndexShare (2.9x FLOPs Reduction), Dual Reasoning Modes, SWE-bench Pro 62.1%, Terminal-Bench 81.0",
+      "source": "Z.ai (Hugging Face)",
+      "author": "Z.ai (zai-org)",
+      "date": "2026-06-16",
+      "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+      "score": 8.5
+    },
+    {
+      "id": "gaaia-federal-ai-draft-detail",
+      "title": "GAAIA Draft Detail: CAISI $100M/Year, 15-Day Incident Reporting, Catastrophic Risk Defined at 50+ Deaths or $1B Property Damage",
+      "source": "Cato Institute / ThePlanetTools.ai",
+      "author": "Juan Londoño",
+      "date": "2026-06-04",
+      "primary_url": "https://www.cato.org/blog/primer-great-american-artificial-intelligence-act",
+      "score": 7.5
+    },
+    {
+      "id": "vermont-h816-ai-therapy-ban-june17",
+      "title": "Vermont H.816: AI Therapy Ban Signed June 17, Effective Immediately — Fourth US State to Restrict AI-Delivered Mental Health Services",
+      "source": "Recording Law / Vermont Legislature",
+      "author": "Governor Phil Scott",
+      "date": "2026-06-17",
+      "primary_url": "https://www.recordinglaw.com/news/vermont-ai-therapy-law-h816/",
+      "score": 7.0
+    },
+    {
+      "id": "canada-bill-c34-digital-safety-chatbot-june10",
+      "title": "Canada Bill C-34 Digital Safety Act First Reading June 10 — Chatbot Services Required to Mitigate Harmful Content and Intervene in Crises",
+      "source": "AI Governance Brief",
+      "author": "AI Governance Brief",
+      "date": "2026-06-10",
+      "primary_url": "https://aigovernancebrief.org/weekly-ai-governance-brief-8-14-june-2026/",
+      "score": 7.5
+    },
+    {
+      "id": "superthoughts-reasoning-tokens-superposition-june15",
+      "title": "SuperThoughts: Reasoning Tokens in Superposition — Parallel Hypothesis Exploration in Single Forward Pass",
+      "source": "arXiv cs.AI",
+      "author": "Submitted June 15, 2026",
+      "date": "2026-06-15",
+      "primary_url": "https://arxiv.org/abs/2606.13862",
+      "score": 7.5
+    },
+    {
+      "id": "every-eval-ever-unifying-schema-june16",
+      "title": "Every Eval Ever: Unifying Schema and Community Repository for AI Evaluation Results — Reproducibility Infrastructure for Benchmark Comparability",
+      "source": "arXiv cs.AI",
+      "author": "Submitted June 16, 2026",
+      "date": "2026-06-16",
+      "primary_url": "https://arxiv.org/abs/2606.14516",
+      "score": 7.5
+    },
+    {
+      "id": "deepinsight-unified-evaluation-infra-june16",
+      "title": "DeepInsight: Unified Evaluation Infrastructure Across the Physical AI Stack — Single Runtime for Software, Embodied, and Perception AI",
+      "source": "arXiv cs.AI",
+      "author": "Submitted June 16, 2026",
+      "date": "2026-06-16",
+      "primary_url": "https://arxiv.org/abs/2606.17574",
+      "score": 7.5
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Anthropic restored Fable 5 access for US paid users on June 17 with a free access window through June 22",
+      "reason": "Restoration timeline sourced from uuai.me and multiple secondary sources, not an official Anthropic announcement page. Anthropic's communications have been limited given the ongoing export-control negotiation. The June 17 restoration date is consistent across multiple independent secondary sources; the free access window through June 22 is sourced from uuai.me, which cites Anthropic but could not be independently verified against an official Anthropic press release.",
+      "attempted_url": "https://www.anthropic.com/news/claude-fable-5-restoration"
+    },
+    {
+      "claim": "Amazon CEO Andy Jassy's concerns to the White House triggered the June 12 Commerce Department letter to Anthropic",
+      "reason": "This claim originated in the Wall Street Journal and was reported second-hand by Tech Policy Press. The Wall Street Journal article is behind a paywall and the direct primary claim could not be independently confirmed. Anthropic has not confirmed or denied the Jassy role. The claim is treated as credible given its sourcing but labeled as reported rather than confirmed.",
+      "attempted_url": "https://www.wsj.com/anthropic-fable5-export-control"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "EU AI Office official Code of Practice primary URL — the direct EU Commission publication at digital-strategy.ec.europa.eu was not resolved this week; a direct primary source URL from the EU Commission would strengthen Article 50 coverage",
+      "Anthropic official statement page on Fable 5 restoration — the June 17 restoration announcement has not been formally published on Anthropic's newsroom; add when available",
+      "FutureSearch Fable 5 forecast page — the resolution probability modeling provides quantitative enterprise planning guidance for API dependency risk",
+      "UK MHRA London Region I AI medical device sandbox — launched June 10, 2026; real-world regulatory sandbox for AI medical devices; relevant to enterprise AI in healthcare-adjacent contexts",
+      "Vermont Act 138 data broker GenAI disclosure — signed alongside H.816; requires data brokers to disclose sharing with GenAI system developers; relevant to enterprise data vendor audits"
+    ],
+    "sources_to_drop": [
+      "No sources to drop from the prior week's list"
+    ],
+    "topics_to_add": [
+      "Anthropic Project Glasswing accountability list — the Commerce Dept demanded a full accounting of the 50–150 Glasswing access recipients; when published it will establish the first public registry of organizations with access to CB1-cleared cybersecurity AI capabilities",
+      "Germany Federal Network Agency AI Act implementation — Germany's AI-MIG implementing legislation passed the Bundestag June 11; the Federal Network Agency is designated as the central market surveillance authority; relevant for EU operations",
+      "July 8 Anthropic identity verification rollout — the structured re-entry path for US consumer Fable 5 access is the first mass-scale age and citizenship verification rollout by a frontier AI lab; watch for implementation details",
+      "GLM-5.2 distillation potential — the Latent.Space digest noted that GLM-5.2's MIT license and 28.5T-token pretraining scale could enable high-quality synthetic-data distillation into 8B/70B local models; this is a materially different self-hosting value proposition than running the full 753B model"
+    ],
+    "topics_to_drop": [
+      "OpenAI / Anthropic dual S-1 track (covered last two weeks) — the confidential S-1 filings story from week of June 8 is established; no material new developments this week; drop from active monitoring until public S-1 is filed"
+    ],
+    "notes": "The week of June 15–21 was dominated by two intersecting stories: the US government's forced suspension of Anthropic's Fable 5 and Mythos 5 under export control law (first commercial AI model recall in US history) and Z.ai's GLM-5.2 release under MIT license closing to within 1% of Claude Opus 4.8 on FrontierSWE — events that together crystallize the enterprise AI supply-chain risk signal and the open-weight alternative. The EU AI Act Digital Omnibus adoption on June 16 resolved weeks of uncertainty around Annex III timelines, giving enterprise compliance teams a clear 16-month extension for high-risk AI obligations while keeping Article 50 transparency unchanged at August 2. The GAAIA discussion draft released June 4 became the week's second major US regulatory story, establishing the first serious federal AI governance framework proposal. Vermont's H.816 therapy ban on June 17 continues the pattern of state-level AI restriction that GAAIA's preemption provision is designed to address."
+  }
+}

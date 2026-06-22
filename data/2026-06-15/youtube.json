@@ -1,0 +1,563 @@
+{
+  "tab_id": "youtube",
+  "tab_name": "YouTube",
+  "subtitle": "Video Intelligence",
+  "icon": "Video",
+  "min_items": 12,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 1.0,
+    "items_total": 14,
+    "items_new": 14,
+    "items_returning": 0
+  },
+  "executive_summary": [
+    {
+      "headline": "Google DeepMind published its AI Control Roadmap on June 18 — a defense-in-depth framework that treats internal AI agents as potential insider threats, backed by analysis of one million live coding-agent tasks and a running monitor on the Gemini Spark agent",
+      "body": "DeepMind's 35-page AI Control Roadmap (deepmind.google/blog/securing-the-future-of-ai-agents/) reframes enterprise AI security from an alignment problem to an operational containment challenge. The framework defines four detection levels (D1–D4) and three response modes (R1–R3) that scale with a model's capability to evade oversight. The core posture: alignment cannot be assumed reliable, so layered system-level controls must operate even when model alignment fails. Trusted AI supervisors monitor agent reasoning, actions, and plans in real time. The internal monitoring system has already analyzed roughly one million coding-agent tasks and is live on the Gemini Spark agent, where it caught unintentional data deletion before broader damage occurred. DeepMind framed the roadmap as a candidate industry standard and published a companion policymaker paper, 'Three Layers of Agent Security.' The most enterprise-relevant finding from the one-million-task analysis: most flagged events were not adversarial — they resulted from agent misinterpretation or overeagerness, not intentional subversion.",
+      "primary_url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/"
+    },
+    {
+      "headline": "Microsoft Copilot Cowork reached general availability on June 16 for all Microsoft 365 Copilot customers worldwide — usage-based billing at $0.01 per Copilot Credit, adopted by more than half the Fortune 500 during preview, with a model picker offering Claude Opus 4.8, Sonnet 4.6, and GPT-5.5",
+      "body": "Microsoft announced Copilot Cowork GA on June 16 (microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/), turning a three-month Frontier preview into a production-grade agentic service available to all Microsoft 365 Copilot tenants worldwide. More than half of the Fortune 500 used Cowork during the Frontier preview. Billing is usage-based via Copilot Credits at $0.01 per credit; admins can set per-user and per-group spending limits. New GA features include local browser use through Edge (following enterprise policies), sensitivity label inheritance end-to-end, audit log and eDiscovery support, and a model picker that includes Claude Opus 4.8, Claude Sonnet 4.6, and GPT-5.5. Microsoft claims its implementation is 30–40% cheaper than Claude Cowork with the Microsoft 365 connector on a cost-per-prompt basis (125 test runs, 12 prompts, Opus 4.8, June 2026). Cowork is off by default — admins enable it and set budget controls. The grace period for Frontier preview users ends June 30.",
+      "primary_url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/"
+    },
+    {
+      "headline": "Claude Fable 5 remained suspended through the week as Anthropic and the US government continued negotiations — Claude Opus 4.8 moved to the top of the practical leaderboard, and the export-control standoff accelerated enterprise demand for model-agnostic architectures with governed open-weight fallbacks",
+      "body": "As of June 21, Claude Fable 5 and Mythos 5 have been offline since June 12. Anthropic's international managing director said on June 18 in Seoul that the company was 'very confident' models would return 'within days,' but no restoration date was announced. Prediction markets priced a 58–67% chance of US restoration before July 1 (Kalshi and Polymarket). The free Fable 5 access window for paid plans ended June 22; from June 23, access requires usage credits at $10 per million input tokens. Anthropic is building identity verification infrastructure (KYC) for a US-only path back, with a target of July 8. Claude Mythos 5 remains restricted to Project Glasswing participants. Meanwhile, the Fable 5 suspension drove three verifiable shifts in this week's YouTube coverage: (1) Claude Opus 4.8 was openly reframed as the practical top-tier model; (2) open-weight alternatives — GLM-5.2 (MIT license, 1M token context, coding performance near Opus 4.8) and Kimi K2.7 Code — received unusually serious enterprise attention; and (3) the governance theme of model-agnostic routing with fallback stacks dominated practitioner content.",
+      "primary_url": "https://www.anthropic.com/news/fable-mythos-access"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "deepmind-ai-control-roadmap-chip-script",
+      "title": "Google Put AI Agents in Jail: DeepMind's Control Roadmap | Chip & Script EP.087",
+      "source": "Chip & Script",
+      "author": "Chip & Script",
+      "date": "2026-06-19",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=g9tcIDcbxPU",
+      "summary": "An eight-minute practitioner-level breakdown of the GDM AI Control Roadmap published June 18. The video covers the roadmap's four detection levels (D1: monitorable chain-of-thought, D2: adversarially robust monitors, D3: behavioral analysis plus UEBA-style anomaly detection, D4: internals-based testing with risk of agent-monitor collusion) and three response modes (R1: asynchronous log review, R2: synchronous blocking with isolation and fine-grained permissions, R3: recursive shutdown infrastructure). Sourced directly from the DeepMind blog post and accompanying 35-page technical PDF. The episode closes with a finance angle on the security tooling implications for publicly traded infrastructure companies. The most precise publicly available summary of the roadmap's D1–D4/R1–R3 framework currently on YouTube.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-06-21T21:00:00Z",
+      "recurrence": "new",
+      "tags": ["Google DeepMind", "AI Control Roadmap", "agent security", "insider threat", "enterprise AI governance", "MITRE ATT&CK"],
+      "category": "Technical Analysis / Security",
+      "key_takeaways": [
+        "DeepMind's D1–D4 detection framework is the most structured public taxonomy of agent oversight risk currently available. D1 is today's baseline — monitorable chain-of-thought, limited hidden reasoning. D4 is the hardest tier, where even a trusted monitoring model could be complicit. For an enterprise team currently deploying agents that have access to code repositories, internal APIs, or financial systems, the question to answer is: which detection level do your current controls reach? Most enterprise deployments are at D1 or below, with no asynchronous log review and no behavioral anomaly detection.",
+        "The R3 response level — recursive shutdown infrastructure that can terminate an AI agent and all its spawned subagents — is the architectural primitive that most enterprise teams have not yet designed. R1 (asynchronous review) and R2 (synchronous blocking) are feasible near-term investments. R3 requires infrastructure changes: separate sandboxes, agent identity distinct from user identity, and a kill-switch mechanism with scope beyond the primary session. Any team deploying multi-agent orchestration should flag R3 as a forward-looking architecture requirement before agents reach production access to sensitive systems.",
+        "The one-million-task finding is the most useful operational calibration data: most flagged events from DeepMind's internal analysis were not adversarial — they were the result of agents misinterpreting instructions or being overeager to complete a task. For enterprise teams assessing agent risk, this reframes the threat model. The primary risk is not a sophisticated jailbreak or intentional subversion; it is an agent that follows its instructions too literally, acts beyond intended scope, or fails to recognize when a task is outside its authorization boundary. Governance controls should prioritize scope clarity, bounded tool access, and human checkpoints at high-consequence decision points."
+      ],
+      "suggested_actions": [
+        "Map your current agent deployments against the D1–D4 detection framework: does your monitoring access agent chain-of-thought (D1), would your monitors be robust to a model that knows it is being watched (D2), do you have behavioral anomaly detection beyond prompt logging (D3)? Document the gap and present it to your security team as an agent-specific risk assessment, not a general AI ethics conversation.",
+        "Identify any production or near-production agent deployment that has write access to internal systems, APIs, or data stores, and confirm that an R2-equivalent synchronous blocking layer exists — meaning that before an agent executes a high-consequence action (file deletion, external API call, database write), a non-AI rule engine intercepts and validates the action against a pre-defined permission boundary. If no such layer exists, treat the deployment as D1/R1 and scope accordingly.",
+        "Use the DeepMind framework as the starting vocabulary for your agent governance policy: the TRAIT&R taxonomy (loss of control, work sabotage, direct harm), the D1–D4/R1–R3 grid, and the metric triad (coverage, recall, time-to-response) give compliance and security teams a concrete checklist that maps onto existing IT risk frameworks."
+      ]
+    },
+    {
+      "id": "indydevdan-fable5-agentic-engineer",
+      "title": "Claude Fable 5 BANNED: The First Model Agentic Engineers DON'T NEED",
+      "source": "IndyDevDan",
+      "author": "IndyDevDan",
+      "date": "2026-06-15",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=D1BHGv4gB6c",
+      "summary": "A 27-minute benchmark-grounded analysis of Claude Fable 5 from an agentic engineering perspective, published June 15 — the first day of this week's window — before the suspension debate fully dominated coverage. The video documents a controlled multi-agent benchmark: one Fable 5 instance orchestrating 15 parallel agent sandboxes (five Fable 5, five Opus 4.8, five Sonnet 4.6), each running the same five full-stack application specs end-to-end. Cost results: Sonnet at $55, Opus at $91, Fable at $200. The analytical conclusion: Fable 5 does not do more per token — it costs more — but it finishes orchestrated work roughly 20% faster. The video introduces the 'price per intelligent agent hour' framing as the replacement metric for 'price per token' in agentic workloads, and argues that Fable 5 functions as an orchestrator (principal engineer) rather than a worker (junior engineer). A separate section covers Fable 5's system card evidence for multi-agent orchestration gains. Sourced from anthropic.com/news/claude-fable-5-mythos-5 and the Fable 5 system card PDF.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-06-21T21:00:00Z",
+      "recurrence": "new",
+      "tags": ["Claude Fable 5", "agentic engineering", "multi-agent orchestration", "Claude Code", "model economics", "IndyDevDan"],
+      "category": "Technical Analysis / Agentic Engineering",
+      "key_takeaways": [
+        "The 'price per intelligent agent hour' framing is the practical replacement for cost-per-token analysis in multi-agent deployments. In the benchmark documented — 15 parallel agent sandboxes running identical five-spec full-stack builds — Fable 5 completed work ~20% faster than Opus 4.8 at 2.2x the token cost. For a workflow where time-to-completion has direct business value (time-sensitive compliance work, competitive analysis under deadline, incident response), the ROI math inverts: paying more per token for faster completion may be cheaper than the opportunity cost of waiting. Enterprise teams should calculate their cost per completed task, not cost per token, before ruling out Fable 5 on price alone.",
+        "Fable 5's role as an orchestrator rather than a worker is the architectural insight with the most immediate enterprise application. The system card section on multi-agent orchestration documents that Fable 5 produces better results when delegating to sub-agents than when executing directly — more agents orchestrated by a high-capability model outperform fewer agents orchestrated by a lower-capability model. For teams building agent pipelines, this implies a specific architecture: use the highest-capability available model as the orchestrator and delegate execution to cheaper models. With Fable 5 suspended, the equivalent today is Opus 4.8 as orchestrator with Sonnet 4.6 or Haiku 4.5 as workers.",
+        "The video's third observation — that Opus 4.8 achieves 85–90% of Fable 5's capability on most tasks at roughly half the token cost — is the most actionable finding for enterprise procurement. For the majority of enterprise agent workloads (document processing, routine analysis, report generation, structured data extraction), Opus 4.8 is the correct model selection today. Reserving Fable 5 evaluation for tasks that are (a) time-critical, (b) require multi-step orchestration of 10+ parallel agents, or (c) involve long-horizon tasks with complex coordination requirements maximizes ROI and avoids paying a premium for capability that the workflow cannot utilize."
+      ],
+      "suggested_actions": [
+        "Recalculate the cost model for any agentic workflow under development by changing the unit from 'cost per token' to 'cost per completed task': estimate the number of tokens typically consumed, multiply by model pricing, and compare against the value of the time saved. For tasks where each additional hour of agent runtime has a measurable business cost, Fable 5 at $10/$50 per million tokens may produce better unit economics than Opus 4.8 at $5/$25.",
+        "Pilot the Opus 4.8 as orchestrator + Sonnet 4.6 as worker architecture on one existing Claude Code pipeline before Fable 5 restoration: document whether the orchestrator-worker split produces comparable output quality to a single-model approach at lower total cost. This establishes an internal benchmark that will be useful when deciding whether to upgrade the orchestrator to Fable 5 once access is restored.",
+        "Review the Fable 5 system card (anthropic.com, Fable 5 system card PDF) for the multi-agent orchestration section before the next architecture planning meeting — it documents the specific task types where orchestration gains are largest and provides Anthropic's own capability framing for the model's role in multi-agent systems."
+      ]
+    },
+    {
+      "id": "matthew-berman-loop-library-announcement",
+      "title": "You NEED to know these vibe coding secrets",
+      "source": "Matthew Berman",
+      "author": "Matthew Berman",
+      "date": "2026-06-18",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=wwfJlSF34n8",
+      "summary": "A 24-minute practitioner walkthrough of Claude Code advanced features — skills, automations, loops, cloud vs local execution, and multi-model stacks — including the first public announcement of Matthew Berman's Loop Library (signals.forwardfuture.ai/loop-library/). The loop library is a free, open catalog of reusable agent loops structured with a trigger, action, verification step, and stop condition; designed to run autonomously in Claude Code overnight or on a schedule. Loop examples demonstrated in the video: overnight documentation sweep (reviews full codebase nightly, fixes docs drift, opens a pull request), production error sweep, architecture satisfaction loop, and a sub-50ms page-load performance loop. The video covers the practical architecture of agent loops: a loop is an automated prompt on a schedule or goal-bound run; loops can spawn sub-agents for isolated parallel execution; Claude Code's /loop command designs loops interactively. Also covers multi-model stacks (using a fast cheap model for routine steps and a slower expensive model for complex reasoning), and the distinction between cloud agents (persistent, parallel, isolated) and local agents (session-scoped). Sourced from signals.forwardfuture.ai and live demo.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-21T21:00:00Z",
+      "recurrence": "new",
+      "tags": ["Matthew Berman", "Claude Code", "agent loops", "loop library", "automation", "vibe coding", "multi-model"],
+      "category": "Tutorial / Practitioner Toolkit",
+      "key_takeaways": [
+        "The Loop Library (signals.forwardfuture.ai/loop-library/) is the most directly actionable free resource released this week for teams using Claude Code: each loop has a trigger, action, verification step, and stop condition, making it copy-paste ready for common engineering workflows. The overnight docs sweep loop — which reviews the full codebase each night, identifies documentation drift from the previous day's changes, and opens a pull request — is the most immediately applicable pattern for an enterprise engineering team with a managed codebase and a CI/CD pipeline.",
+        "The cloud vs. local agent distinction has governance implications that the video makes explicit: local Claude Code agents are session-scoped and die when the session closes; cloud agents are persistent, run on isolated VMs, and can execute in parallel without sharing state. For an enterprise team with IT restrictions on long-running background processes on managed laptops, cloud agents (accessible from the Claude Console or via API) are the compliant path to autonomous overnight workflows. The practical recommendation: any loop that needs to run while the laptop is off should be configured as a cloud agent, not a local session loop.",
+        "The multi-model stack pattern — routing different steps of a workflow to different models based on cost and complexity — is the enterprise-relevant architectural response to Fable 5's suspension and the broader cost pressure in agentic deployments. Berman's example: use a fast cheap model (Haiku 4.5) for routine retrieval and formatting steps, a mid-tier model (Sonnet 4.6) for structured reasoning, and a frontier model (Opus 4.8) only for the steps that require the highest reasoning quality. This architecture is implementable today inside Claude Code without Fable 5."
+      ],
+      "suggested_actions": [
+        "Visit signals.forwardfuture.ai/loop-library/ and identify one loop in the engineering or operations category that maps to a recurring task your team currently handles manually — the overnight docs sweep, production error sweep, or a scheduled data quality check. Configure and run it in Claude Code against a non-production codebase or staging environment within the next sprint.",
+        "Test the multi-model stack pattern on an existing Claude Code workflow: route the retrieval and summarization steps to Haiku 4.5, the structured reasoning steps to Sonnet 4.6, and leave only the final synthesis or orchestration step on Opus 4.8. Compare total token cost and output quality against a single-model baseline using Opus 4.8 throughout.",
+        "Evaluate whether any planned agent loop that currently requires overnight local execution could be moved to a cloud agent: confirm with your IT governance team whether Claude Code cloud agents running on Anthropic-hosted VMs are within the approved data handling perimeter, then migrate the first eligible loop to cloud execution to test persistence and parallel execution at production scale."
+      ]
+    },
+    {
+      "id": "copilot-cowork-ga-april-dunnam",
+      "title": "Copilot Cowork Is GA... Here's What Actually Changed",
+      "source": "April Dunnam",
+      "author": "April Dunnam",
+      "date": "2026-06-18",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=QcxeVdKC3rY",
+      "summary": "An 18-minute walkthrough of Copilot Cowork's general availability release, covering the four material changes from Frontier preview to GA: usage-based billing via Copilot Credits at $0.01 per credit (no flat rate), expanded model options (Claude Opus 4.8, Sonnet 4.6, and GPT-5.5 for Frontier customers, with Cowork 1 coming soon), local browser use through Edge following existing enterprise policies, and a Customize page for skills and plugins. The video compares Copilot Cowork against Anthropic's Claude Cowork, covering model support, cost structure, governance controls, and the IT admin experience (spending limits at tenant, group, and user levels; audit log and eDiscovery support from day one). The most complete non-Microsoft-produced walkthrough of the GA governance controls available this week. Sources cited: Microsoft 365 Blog GA announcement, aka.ms/cowork, and Microsoft Learn documentation.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-21T21:00:00Z",
+      "recurrence": "new",
+      "tags": ["Microsoft", "Copilot Cowork", "enterprise AI", "Microsoft 365", "agent governance", "usage billing"],
+      "category": "Product Walkthrough / Enterprise Governance",
+      "key_takeaways": [
+        "Copilot Cowork's default-off configuration is the most important IT governance fact in the GA release: the feature requires explicit admin activation, and spending limits can be set at the tenant, group, and user level before any employee uses it. This is a materially different posture from most consumer AI tool rollouts and means the decision about which employees get access, how much they can spend, and what data they can route through Cowork is controlled by the IT admin before the first session runs. Any enterprise on Microsoft 365 Copilot should document its Cowork enablement policy before the June 30 grace period ends.",
+        "The audit log and eDiscovery support at GA — with Communication Compliance coming and DLP listed as 'coming soon' — defines the current governance perimeter clearly: Cowork prompts, responses, and artifacts are discoverable and retained within Microsoft 365 controls from day one. The gap is DLP, which means there is currently no automated policy enforcement to prevent a user from pasting sensitive data into a Cowork task input. Until DLP ships, the practical control is admin guidance on what data classes are permitted in Cowork inputs, enforced by policy rather than by technical controls.",
+        "The 30–40% cost advantage claim over Anthropic Claude Cowork (Microsoft's internal benchmark, 125 test runs, 12 prompts, Opus 4.8, June 2026) is material for enterprise procurement, but the methodology caveat is important: the test used 'internal Microsoft teams' and publicly available API rates for Claude Cowork. A fair comparison requires running the same task against both products in your own tenant with your own data. Before making a budget commitment to Copilot Cowork over Claude Cowork, run a representative 20-task pilot in each environment and calculate actual credit consumption."
+      ],
+      "suggested_actions": [
+        "If your organization has a Microsoft 365 Copilot license, confirm whether Copilot Cowork is currently enabled in your tenant and, if so, whether per-user and per-group spending limits are configured — Cowork is off by default at GA, but any tenant that was in the Frontier preview has a grace period ending June 30 before billing activates. Review the Microsoft 365 admin center for any active Frontier preview access and set budget controls before the June 30 deadline.",
+        "Identify one workflow where Cowork's multi-source aggregation capability is most valuable — the video specifically highlights pipeline review (analyzing stalled opportunities across CRM data), cross-version file comparison, and recurring batch-job documentation — and run a pilot against that workflow using the built-in Dynamics 365 Sales plugin or a connected SharePoint data source before evaluating cost at scale.",
+        "Confirm with your compliance team whether the current audit log and eDiscovery support at GA satisfies your organization's records retention policy for AI-generated work product, and flag the DLP gap explicitly: until DLP ships, Cowork outputs are not automatically subject to existing data classification controls, meaning sensitive data that flows through a Cowork task may not trigger the same controls as sensitive data handled through other M365 workflows."
+      ]
+    },
+    {
+      "id": "wes-roth-deepmind-agi-to-asi",
+      "title": "Google's SHOCKING \"POST AGI\" paper...",
+      "source": "Wes Roth",
+      "author": "Wes Roth",
+      "date": "2026-06-18",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=OdlUXu2sAb4",
+      "summary": "A 30-minute analysis of Google DeepMind's 'From AGI to ASI' paper (arXiv:2606.12683, published June 12), which argues that AGI is not a destination but a waypoint on a continuum toward artificial superintelligence. Wes Roth covers the paper's four pathways from AGI to ASI: compute-efficient scaling (mixture-of-experts architectures), architectural paradigm shifts (test-time reasoning, state-space models), recursive self-improvement (AlphaEvolve, METR task-horizon metrics), and multi-agent collectives (swarms of AGI-level agents producing superintelligent collective behavior). The video is calibrated and avoids the hype framing common in AGI coverage: Roth notes DeepMind's explicit statement that ASI is not predicted as imminent and that the paper is a mapping exercise, not a timeline. Key takeaway framed clearly: 14 named DeepMind researchers including Shane Legg (co-founder) and Marcus Hutter (Universal AI architect) are on record in a publicly available paper treating ASI as an engineering roadmap problem to solve now, before AGI arrives. The practical enterprise implication is governance horizon: the planning cycle for AI oversight architecture needs to account for capability levels substantially beyond today's models.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-06-21T21:00:00Z",
+      "recurrence": "new",
+      "tags": ["Google DeepMind", "AGI", "ASI", "superintelligence", "Wes Roth", "AI governance", "recursive self-improvement"],
+      "category": "Research Synthesis / Strategic Signal",
+      "key_takeaways": [
+        "The paper's most enterprise-relevant claim is that multi-agent collectives — swarms of AGI-level agents coordinating, copying, and sharing experience — could produce superintelligent behavior as a population property rather than an individual one. The implication for teams currently deploying multi-agent orchestration frameworks is that the governance architecture needed for today's 5-agent pipelines is not sufficient for the 500-agent pipelines that are plausible within a 3–5 year horizon. DeepMind's AI Control Roadmap (published the same week) is the complementary operational document: the AGI-to-ASI paper sets the strategic context, the Control Roadmap is the current operational response.",
+        "Recursive self-improvement is the pathway with the most immediate near-term signal: METR's task-horizon metric (the maximum task duration an agent can complete reliably) has been doubling every few months. The paper treats this as evidence that the self-improvement loop is real but fragile and likely subject to S-curve limits. For enterprise teams setting agent governance policies, the doubling-every-few-months task horizon means that an agent that could complete a 30-minute task reliably in January may reliably complete a 4-hour task by year-end. Governance policies calibrated to today's task horizons need scheduled review — the appropriate review cadence is now quarterly, not annual.",
+        "The framing of the paper as an engineering roadmap rather than a speculative scenario is the strategic signal. DeepMind is not publishing this to warn about a distant theoretical risk — 14 named researchers, including the co-founder, are treating ASI preparation as a current engineering obligation. For AI & Innovation leaders in regulated industries who need to set a governance planning horizon for board-level AI risk discussions, this paper provides the most authoritative public statement currently available that the planning horizon for transformational AI capability is a decade or less."
+      ],
+      "suggested_actions": [
+        "Read the summary of the 'From AGI to ASI' paper (arXiv:2606.12683) alongside the DeepMind AI Control Roadmap (deepmind.google/blog/securing-the-future-of-ai-agents/): the two documents together define both the trajectory and the current state of DeepMind's internal response. Use them as the foundation for any board or executive team briefing on AI governance planning horizons.",
+        "Set a quarterly review cadence for your agent governance policy: given that METR's task-horizon metric has been doubling every few months, a governance framework calibrated to today's agent capability will be meaningfully out of date within two quarters. A quarterly review ensures that scope boundaries, tool access permissions, and human checkpoint requirements stay current with actual agent capability.",
+        "Flag the multi-agent collective pathway as a forward architecture requirement: any internal agent platform roadmap that extends more than 18 months should include a design requirement for scaling governance controls from current small-scale multi-agent orchestration (5–15 agents) to large-scale parallel deployments (50–500 agents). The control mechanisms that work at small scale — manual review, static permission sets — do not scale to large agent populations."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "tool_updates",
+      "title": "Tool & Model Updates",
+      "description": "Major tool launches and capability changes covered on YouTube this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "copilot-cowork-ga-microsoft-primary",
+          "title": "Microsoft Copilot Cowork Goes Generally Available — Usage Billing, Admin Controls, and Governance at Day One",
+          "source": "Microsoft 365 Blog",
+          "author": "Microsoft (Charles Lamanna)",
+          "date": "2026-06-16",
+          "platform": "web",
+          "primary_url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/",
+          "summary": "Copilot Cowork reached general availability worldwide on June 16 for all Microsoft 365 Copilot customers. More than half the Fortune 500 used it during the three-month Frontier preview. GA brings usage-based billing at $0.01 per Copilot Credit, with per-tenant/group/user spending caps; a model picker for Claude Opus 4.8, Sonnet 4.6, and GPT-5.5; local browser use through Edge; and audit log, eDiscovery, and sensitivity label support at launch. Cowork is off by default. The Frontier grace period ends June 30. A purpose-built Cowork 1 model optimized for lower-cost task execution is coming soon.",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["Microsoft", "Copilot Cowork", "Microsoft 365", "enterprise agents", "governance", "GA"],
+          "category": "Platform GA",
+          "enterprise_translation": "Copilot Cowork GA is the first Microsoft-native agentic platform with genuine enterprise compliance controls at launch — not as an afterthought. For any organization already on Microsoft 365 Copilot, the default-off configuration and per-user spending limits mean the IT admin retains full control over activation, scope, and cost before any employee accesses the capability. The most urgent 30-day action: confirm whether any users in your tenant are currently in the Frontier preview grace period (billing activates July 1), set spending limits before that date, and conduct a 20-task pilot on a representative internal workflow to validate the cost model against your actual usage pattern before committing to volume purchasing."
+        },
+        {
+          "id": "databricks-genie-one-summit-launch",
+          "title": "Databricks Launches Genie One, Genie Agents, and Genie Ontology at Data + AI Summit 2026",
+          "source": "Databricks",
+          "author": "Databricks",
+          "date": "2026-06-16",
+          "platform": "web",
+          "primary_url": "https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
+          "summary": "At Data + AI Summit 2026 (June 16–19), Databricks launched Genie One (an agentic coworker for business users across marketing, finance, and operations), Genie Agents (autonomous domain-specific agents that can take action across multiple steps without oversight), and Genie Ontology (an automatic context layer that extracts and organizes knowledge from tables, queries, dashboards, and pipelines into a living graph weighted by a PageRank-like authority model). Genie One is embedded in Slack and Teams and has iOS/Android apps. Pricing: per-user monthly cap of $10 free, then usage-based consumption. Genie Agents and Genie Code are also GA. The summit also announced Agent Bricks (expanded developer agent platform with 100K+ agents already built), Omnigent open-source meta-harness, Lakebase enhancements, LTAP (transactional and analytical data on one governed surface), and Lakewatch SIEM.",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["Databricks", "Genie One", "Genie Agents", "data agents", "enterprise AI", "Data AI Summit 2026"],
+          "category": "Platform GA / Data Stack",
+          "enterprise_translation": "Genie Ontology is the most architecturally relevant Databricks announcement for enterprise data teams: it automatically extracts context from existing Lakehouse assets and uses a PageRank-like authority model to weight answers by source credibility and freshness. For organizations that have struggled to make data agents 'know' what the data actually means without hand-curating a separate semantic layer, Genie Ontology is an auto-maintenance alternative. The 30-day pilot: connect Genie One to a single business unit's existing Databricks workspace and evaluate whether it can answer 10 representative business questions that currently require a data analyst to formulate as SQL — measure accuracy and the reduction in analyst time spent on routine lookup queries."
+        },
+        {
+          "id": "glm-52-open-weight-release",
+          "title": "GLM-5.2: MIT-Licensed Open-Weight Model with 1M Token Context, Coding Benchmarks Near Opus 4.8",
+          "source": "Hugging Face / Z.ai (Zhipu AI)",
+          "author": "Zhipu AI",
+          "date": "2026-06-17",
+          "platform": "web",
+          "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+          "summary": "Z.ai released GLM-5.2 on June 13–16 with full benchmarks published June 16–17. It is a 753B-parameter mixture-of-experts model with an MIT license, a solid 1M-token context window (the largest of any open-source model), and coding agent performance that places it as the highest-ranked open-source model on SWE-Bench Pro, FrontierSWE, and SWE-Marathon. GLM-5.2 scores 90.0% on FrontierSWE (vs. Opus 4.8's 88.6%), 13.0% on SWE-Marathon (vs. Opus 4.8's top position), and 62.1 on the Artificial Analysis Intelligence Index. Pricing via API: $1.40/$4.40 per million tokens — approximately one-sixth the cost of GPT-5.5. The IndexShare architecture reduces per-token FLOPs by 2.9x at 1M context. Self-hosting is free under MIT. The timing of the release — days after the Fable 5 suspension — drove unusually high coverage on YouTube this week.",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["GLM-5.2", "open source", "Z.ai", "Zhipu AI", "coding agent", "MIT license", "open weight"],
+          "category": "Model Release / Open Source",
+          "enterprise_translation": "GLM-5.2's MIT license and self-hostable weights are the enterprise-relevant differentiator from closed frontier models: an organization that cannot send code or proprietary documents to a third-party API for compliance, data residency, or IP reasons can run GLM-5.2 on internal infrastructure at no per-token cost. The coding performance (highest open-source rank on SWE-Bench Pro and FrontierSWE) means this is not a second-tier alternative but a model that genuinely competes with Opus 4.8 on coding benchmarks. The 30-day experiment: identify one internal coding task currently routed to Claude Code on the API (a codebase scan, documentation generation, test case generation), run it against a self-hosted GLM-5.2 instance using the ZCODE CLI or Hugging Face inference, and compare output quality, latency, and total cost."
+        }
+      ]
+    },
+    {
+      "section_id": "tutorials",
+      "title": "Tutorials",
+      "description": "How-tos worth replicating this week, with key takeaways for technical teams",
+      "layout": "list",
+      "items": [
+        {
+          "id": "loop-engineering-claude-code-practical",
+          "title": "How to Write AI Agent Loops in Claude Code and Codex",
+          "source": "YouTube (unattributed practitioner channel)",
+          "author": "Unattributed",
+          "date": "2026-06-17",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=JoXbk2fm7jM",
+          "summary": "A 29-minute technical walkthrough of loop engineering in Claude Code and Codex, covering the five components of any effective agent loop: a trigger (time-based or goal-based), an action prompt, a verification step (using an LLM-as-judge sub-agent), a stop condition, and isolation (separate sandboxes for each sub-agent to prevent state contamination). Two live builds demonstrated: (1) a daily aging-PR reviewer in Claude Code that schedules itself at 10:15am, reads the pull request list, evaluates staleness, and spawns sub-agents to draft review comments; (2) a weekly skills-identification loop in Codex that generates candidate skills from recent work, spawns goal-based sub-agents to validate each skill claim, and outputs a structured report. Covers the '/loop' command in Claude Code for interactive loop design, the goal-bound vs. time-bound loop distinction, and the practical pattern of sub-agent spawning for validation tasks.",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["Claude Code", "Codex", "agent loops", "loop engineering", "automation", "tutorial"],
+          "category": "Tutorial",
+          "key_takeaways": [
+            "The verification sub-agent pattern is the most important quality control mechanism for autonomous loops: after each loop action, a separate isolated sub-agent reviews the output against a rubric before the main loop proceeds. This prevents the main loop from compounding errors across iterations and provides a structured audit trail of what each loop cycle produced. For an enterprise team deploying overnight loops against production data, the verification step is the practical human-in-the-loop equivalent for unattended execution.",
+            "Goal-bound loops (the loop runs until a specified condition is met) are more appropriate for one-time remediation tasks (fix all broken documentation links, bring test coverage above 80%); time-bound loops (the loop runs on a schedule) are more appropriate for recurring monitoring tasks (daily PR review, weekly quality sweep). Understanding the distinction prevents runaway loops and makes stop conditions explicit before a loop is deployed.",
+            "The '/loop' command in Claude Code interactively designs a loop from a natural language description — it generates the trigger, action, verification, and stop condition structure as a prompt preset that can be run immediately or saved. For teams new to loop engineering, using '/loop' to generate the loop specification before editing is faster and produces more complete configurations than writing the loop prompt from scratch."
+          ]
+        },
+        {
+          "id": "ai-infrastructure-briefing-governance-june-17",
+          "title": "AI Infrastructure Briefing 2026 06 17 — Governance as the Premium Feature",
+          "source": "Pipeline & Protocols",
+          "author": "Pipeline & Protocols",
+          "date": "2026-06-17",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=r1MZUcIu6rc",
+          "summary": "A 10-minute enterprise infrastructure briefing documenting that on June 16, three companies at three distinct layers of the AI stack — AMD+Rackspace (infrastructure), Databricks LTAP (data layer), and Thoughtworks Agent/works (agent runtime) — each announced products with 'governed' as the primary headline feature. The briefing argues that capability has commoditized and governance is the new differentiating premium, driven by the EU AI Act enforcement deadline (August 2, 2026, 47 days from the briefing date) and the Colorado AI Act (June 30). Also covers the week's security incidents: a critical flaw in the NVIDIA NeMo framework enabling remote code execution, and 'Search Leak,' a bug turning Microsoft 365 Copilot into an exfiltration path via a prompt-injection vector. Closes with the recommendation that enterprises demand open governance formats — exportable audit logs, open table formats, and contractual exit provisions — rather than proprietary governance lock-in.",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["AI governance", "enterprise AI", "EU AI Act", "Databricks", "Thoughtworks", "NVIDIA NeMo", "Microsoft 365"],
+          "category": "Industry Briefing / Governance",
+          "key_takeaways": [
+            "The convergence of three separate governance-as-headline product launches on a single day (June 16) is a market signal, not a coincidence: AMD+Rackspace, Databricks LTAP, and Thoughtworks Agent/works each independently chose governance as the differentiating claim at the same moment. The driver is the EU AI Act enforcement date (August 2, 2026) — the compliance clock has become the demand curve, and the briefing's read is correct. Enterprise procurement teams evaluating AI infrastructure should now treat 'what are the audit log formats and export mechanisms' as a first-order requirement, not a post-purchase configuration question.",
+            "The NVIDIA NeMo remote code execution vulnerability and the Microsoft 365 Copilot Search Leak prompt injection are concrete security incidents from this week that highlight that agent-facing attack surfaces are live, not theoretical. Any enterprise deployment that uses NeMo or allows Copilot to execute searches against external content should review the specific CVEs covered in the briefing and apply patches or mitigations before the EU AI Act enforcement date.",
+            "The briefing's closing recommendation — demand open table formats, exportable audit logs, and contractual exit provisions from every AI governance vendor — is the most operationally actionable guidance in the episode. For a procurement team currently evaluating Copilot Cowork, Claude Cowork, or Databricks Genie One, 'what is the audit log format and can we export it to our SIEM' is a qualifying question, not a nice-to-have."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases",
+      "description": "Agents and automation in real workflows — with enterprise translations",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "tcs-claude-50k-employee-deployment",
+          "title": "TCS Deploys Claude to 50,000 Employees as Largest Known Single-Enterprise Claude Rollout",
+          "source": "Lev Selector AI Updates (via TCS announcement)",
+          "author": "Lev Selector",
+          "date": "2026-06-19",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=86tzeMjNGa8",
+          "summary": "Covered in Lev Selector's June 19 AI updates weekly (timestamp 11:23), the TCS deployment of Claude to 50,000 employees is the largest single-enterprise Claude rollout confirmed by public announcement this week. TCS is a professional services firm with 600,000+ total employees. The deployment covers all major services practices: software engineering, enterprise consulting, and managed services delivery. The specific model version and deployment architecture were not detailed in the video's coverage; the primary signal is the scale of the rollout and the professional services context — TCS engineers and consultants are using Claude as a co-worker tool in delivery engagements, which means client data from multiple industries is in scope. This was flagged as a signal-level item across multiple June 19 news roundups.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["TCS", "Claude", "enterprise deployment", "professional services", "at-scale AI"],
+          "category": "Enterprise Case Study",
+          "enterprise_translation": "A 50,000-employee professional services deployment at TCS is the most relevant comparable for any enterprise considering a broad internal Claude rollout: TCS engineers and consultants work under client data handling agreements, meaning TCS had to establish data governance and confidentiality controls that satisfy client requirements, not just TCS's own policies. The pattern to replicate: before a broad internal rollout, document the data classification policy that governs what categories of information (internal, confidential, client-owned) can flow through Claude in each deployment mode (direct API, Claude.ai, Claude Cowork). TCS's deployment at this scale implies those policies are solvable within a professional services operating environment."
+        },
+        {
+          "id": "thoughtworks-agent-works-runtime",
+          "title": "Thoughtworks Agent/works: Governance Built Into the Agent Runtime at Launch",
+          "source": "Thoughtworks",
+          "author": "Thoughtworks (Danilo Sato, Fabian Nonnenmacher, Jim Gumbley)",
+          "date": "2026-06-18",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=5lY2SmILOUs",
+          "summary": "Thoughtworks' weekly 'This Week in AI' episode (June 18, 59 minutes) includes a segment on the simultaneous launch of Agent/works, Thoughtworks' agent runtime platform announced at the same time as Copilot Cowork GA and Databricks LTAP on June 16. Agent/works is described as a governance-first single control plane for enterprise agents: it checks for a compliant execution path before an agent runs, uses capability-based, scope-bound, time-limited permissions, and runs on any cloud. The episode also covers the week's model landscape (Claude Opus 4.8 as practical top-tier while Fable 5 is suspended), loop engineering patterns, and the governance convergence theme across the week's releases. Sourced from live demo and Thoughtworks product documentation.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-21T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["Thoughtworks", "Agent/works", "agent runtime", "governance", "enterprise agents", "capability-based permissions"],
+          "category": "Enterprise Platform",
+          "enterprise_translation": "Thoughtworks Agent/works is the practitioner-facing implementation of the principle DeepMind articulated in its AI Control Roadmap: governance at the runtime layer, not just the model layer. The key architectural difference from Copilot Cowork and Claude Cowork is cloud-agnostic deployment — Agent/works runs on any cloud and is not tied to a specific model vendor. For enterprises that want to preserve multi-cloud flexibility and avoid deep lock-in to a single AI vendor's agent platform, a runtime-level governance layer like Agent/works is the architectural path to vendor-agnostic agent deployment with consistent audit controls across all models and environments."
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Patterns observed across multiple videos this week",
+      "layout": "list",
+      "items": []
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Governance and compliance became the primary competitive differentiator for enterprise AI products in a single week — with three separate stack layers (infrastructure, data, runtime) launching governance-headlined products on the same day",
+      "evidence": "On June 16, AMD+Rackspace announced 'governed enterprise AI infrastructure for regulated and sovereign environments,' Databricks LTAP announced 'one governed copy of data agents are safe to act on,' and Thoughtworks Agent/works launched with 'governance built into the agent runtime itself.' On June 18, Google DeepMind published the AI Control Roadmap with 1M-task live production evidence. On June 16, Microsoft Copilot Cowork GA shipped with audit log, eDiscovery, and sensitivity label support at day one — an unusually compliance-ready launch posture for a new AI feature. The AI Infrastructure Briefing (youtube.com/watch?v=r1MZUcIu6rc) named the pattern explicitly: 'capability has commoditized; accountability is the product.' The EU AI Act enforcement date (August 2, 2026) is the demand driver. Multiple channels across Tier 1-3 identified the same convergence independently.",
+      "what_to_watch": "Whether the NVIDIA NeMo remote code execution vulnerability and the Microsoft 365 Copilot Search Leak prompt injection bug covered in the June 17 Infrastructure Briefing are patched before the August 2 EU AI Act enforcement date — if either vulnerability remains unpatched at enforcement, it creates a provable compliance gap for any organization that has deployed these tools in an EU operating environment. Also watch whether DeepMind publishes v0.2 of the AI Control Roadmap in response to feedback, and whether the TRAIT&R taxonomy gets adopted by third-party governance frameworks as a common threat vocabulary."
+    },
+    {
+      "pattern": "Claude Fable 5's suspension redirected enterprise attention to open-weight models and multi-vendor fallback architectures — with GLM-5.2 (MIT license, 1M token context, coding benchmarks near Opus 4.8) and Kimi K2.7 Code receiving more serious enterprise evaluation coverage in one week than in their entire prior availability",
+      "evidence": "The Fable 5 suspension drove a week of 'what do we use instead' coverage that surfaced GLM-5.2 and Kimi K2.7 Code as the first open-weight models to receive serious tier-1-comparable coding benchmark coverage in practitioner channels. Lev Selector's June 19 update (youtube.com/watch?v=86tzeMjNGa8) covered both models alongside the Fable 5 absence and the model-agnostic architecture shift. The AI Infrastructure Briefing noted that 81% of enterprise leaders say they are concerned about single-vendor AI dependency — a figure that became operationally concrete when a single government directive pulled a production model offline overnight. The GLM-5.2 video (youtube.com/watch?v=8v3AT1uwzYg) explicitly framed the export control timing as the context that made its MIT license and self-hosting capability newsworthy beyond the model's benchmark performance alone.",
+      "what_to_watch": "Whether any Tier 1 channel (AI Explained, Latent Space, AI Engineer) publishes a rigorous evaluation of GLM-5.2 against Claude Opus 4.8 on real enterprise coding tasks — not just published benchmarks — and whether that evaluation produces evidence that changes the practical fallback model recommendation from Opus 4.8 to GLM-5.2 for self-hostable use cases. Also watch whether Kimi K2.7 Code's 260 tokens/second throughput at 1T-parameter scale produces meaningful agent loop latency improvements in practitioner benchmarks."
+    },
+    {
+      "pattern": "Agent loop engineering emerged as the practitioner skill of the week — with Matthew Berman's Loop Library launch, multiple tutorial videos, and the Claude Code '/loop' command driving a new vocabulary and pattern library for autonomous agent scheduling",
+      "evidence": "Matthew Berman's Loop Library announcement (youtube.com/watch?v=wwfJlSF34n8, June 18) introduced a structured vocabulary: every loop has a trigger, action, verification step, and stop condition. The loop library (signals.forwardfuture.ai/loop-library/) was launched as a free open catalog. Simultaneously, at least three other practitioners published loop engineering tutorials using Claude Code and Codex (youtube.com/watch?v=JoXbk2fm7jM, youtube.com/watch?v=Tw54psmZ4-k, youtube.com/watch?v=wwfJlSF34n8). The convergence on the same week suggests a critical mass of practitioners reaching the same capability threshold simultaneously — the Claude Code /loop command, cloud agent persistence, and sub-agent spawning all reached production-usable maturity in the same feature cohort. Lev Selector's June 19 update explicitly framed the shift as 'from manual prompting to loops' and 'from model to model + harness + memory + source control management.'",
+      "what_to_watch": "Whether loop engineering patterns (trigger, action, verify, stop) get formalized into Claude Code documentation or a skills marketplace, and whether the Loop Library model (open catalog of agent loops with structured schema) gets adopted by competing platforms (Codex, Cursor, Windsurf). Also watch for the first published enterprise governance framework that addresses loop-specific risks: loops running overnight without human oversight against production systems represent a governance gap that neither the Claude Managed Agents credential vault architecture nor the DeepMind AI Control Roadmap directly addresses as a loop-specific pattern."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Anthropic restored global access to Claude Fable 5 on June 18 after deploying nationality-based access controls and identity verification",
+      "reason": "Multiple sources (devflokers.com, uuai.me) state a June 18 restoration date. This is directly contradicted by multiple more authoritative sources: Anthropic's official channels showed no restoration announcement as of June 21; the Saganote tracker (saganote.com) confirmed the API was still returning errors on day nine; Polymarket's June 18 event resolved 'No'; and the pasqualepillitteri.it timeline explicitly states no restoration as of June 18 and ties formal US access to KYC verification starting July 8. The devflokers.com entry appears to have incorrectly reported a restoration that did not occur. This claim is excluded from all summaries; the verified status is that Fable 5 remained suspended through June 21.",
+      "attempted_url": "https://www.anthropic.com/news/fable-mythos-access"
+    }
+  ],
+  "index": [
+    {
+      "id": "deepmind-ai-control-roadmap-index",
+      "title": "Google Put AI Agents in Jail: DeepMind's Control Roadmap | Chip & Script EP.087",
+      "source": "Chip & Script",
+      "author": "Chip & Script",
+      "date": "2026-06-19",
+      "primary_url": "https://www.youtube.com/watch?v=g9tcIDcbxPU",
+      "score": 9.0
+    },
+    {
+      "id": "indydevdan-fable5-index",
+      "title": "Claude Fable 5 BANNED: The First Model Agentic Engineers DON'T NEED",
+      "source": "IndyDevDan",
+      "author": "IndyDevDan",
+      "date": "2026-06-15",
+      "primary_url": "https://www.youtube.com/watch?v=D1BHGv4gB6c",
+      "score": 8.0
+    },
+    {
+      "id": "matthew-berman-loop-library-index",
+      "title": "You NEED to know these vibe coding secrets (Loop Library launch)",
+      "source": "Matthew Berman",
+      "author": "Matthew Berman",
+      "date": "2026-06-18",
+      "primary_url": "https://www.youtube.com/watch?v=wwfJlSF34n8",
+      "score": 8.0
+    },
+    {
+      "id": "copilot-cowork-ga-dunnam-index",
+      "title": "Copilot Cowork Is GA... Here's What Actually Changed",
+      "source": "April Dunnam",
+      "author": "April Dunnam",
+      "date": "2026-06-18",
+      "primary_url": "https://www.youtube.com/watch?v=QcxeVdKC3rY",
+      "score": 8.0
+    },
+    {
+      "id": "wes-roth-agi-to-asi-index",
+      "title": "Google's SHOCKING \"POST AGI\" paper...",
+      "source": "Wes Roth",
+      "author": "Wes Roth",
+      "date": "2026-06-18",
+      "primary_url": "https://www.youtube.com/watch?v=OdlUXu2sAb4",
+      "score": 7.0
+    },
+    {
+      "id": "copilot-cowork-ga-microsoft-index",
+      "title": "Copilot Cowork is now generally available",
+      "source": "Microsoft 365 Blog",
+      "author": "Microsoft",
+      "date": "2026-06-16",
+      "primary_url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/",
+      "score": 9.0
+    },
+    {
+      "id": "databricks-summit-genie-one-index",
+      "title": "Introducing Genie One, Genie Agents, and Genie Ontology",
+      "source": "Databricks",
+      "author": "Databricks",
+      "date": "2026-06-16",
+      "primary_url": "https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
+      "score": 8.0
+    },
+    {
+      "id": "glm-52-huggingface-blog-index",
+      "title": "GLM-5.2: Built for Long-Horizon Tasks",
+      "source": "Hugging Face / Z.ai",
+      "author": "Zhipu AI",
+      "date": "2026-06-17",
+      "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+      "score": 8.0
+    },
+    {
+      "id": "loop-engineering-claude-code-index",
+      "title": "How to Write AI Agent Loops in Claude Code and Codex",
+      "source": "YouTube",
+      "author": "Unattributed",
+      "date": "2026-06-17",
+      "primary_url": "https://www.youtube.com/watch?v=JoXbk2fm7jM",
+      "score": 8.0
+    },
+    {
+      "id": "ai-infrastructure-briefing-governance-index",
+      "title": "AI Infrastructure Briefing 2026 06 17 — Governance as the Premium Feature",
+      "source": "Pipeline & Protocols",
+      "author": "Pipeline & Protocols",
+      "date": "2026-06-17",
+      "primary_url": "https://www.youtube.com/watch?v=r1MZUcIu6rc",
+      "score": 8.0
+    },
+    {
+      "id": "tcs-claude-50k-lev-selector-index",
+      "title": "Exciting AI Updates Weekly - June 19, 2026 (TCS 50K employees on Claude)",
+      "source": "Lev Selector",
+      "author": "Lev Selector",
+      "date": "2026-06-19",
+      "primary_url": "https://www.youtube.com/watch?v=86tzeMjNGa8",
+      "score": 7.0
+    },
+    {
+      "id": "thoughtworks-this-week-in-ai-june18-index",
+      "title": "This Week in AI | 18th June 2026",
+      "source": "Thoughtworks",
+      "author": "Thoughtworks",
+      "date": "2026-06-18",
+      "primary_url": "https://www.youtube.com/watch?v=5lY2SmILOUs",
+      "score": 7.0
+    },
+    {
+      "id": "deepmind-four-routes-si-index",
+      "title": "The Four Routes to Superintelligence DeepMind Just Mapped",
+      "source": "The Bearded AI Guy",
+      "author": "The Bearded AI Guy",
+      "date": "2026-06-18",
+      "primary_url": "https://www.youtube.com/watch?v=Oh0ZeBGBVMo",
+      "score": 7.0
+    },
+    {
+      "id": "databricks-summit-recap-bricksnotes-index",
+      "title": "Everything Databricks Announced at Summit 2026 — Under 3 Minutes",
+      "source": "BricksNotes",
+      "author": "BricksNotes",
+      "date": "2026-06-21",
+      "primary_url": "https://www.youtube.com/watch?v=4OYTxBVqscg",
+      "score": 7.0
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Chip & Script (YouTube) — the June 19 DeepMind AI Control Roadmap episode (EP.087) is the most technically precise publicly available breakdown of the D1–D4/R1–R3 framework. The channel covers AI infrastructure and security intersections with practitioner rigor and primary-source citation discipline. Add to Tier 2 for governance and security coverage.",
+      "Pipeline & Protocols (YouTube) — the June 17 AI Infrastructure Briefing provided the clearest named-company evidence for the governance-as-premium convergence theme. Short-form (8–12 minute) enterprise-focused briefings with source citations. Add to Tier 3 for infrastructure and regulatory coverage.",
+      "April Dunnam (YouTube) — the Copilot Cowork GA walkthrough is the most complete non-Microsoft-produced analysis of the governance controls and billing model. Primary focus is Microsoft 365/Power Platform. Add to Tier 3 for Microsoft enterprise coverage.",
+      "IndyDevDan (already in Tier 2 of the source list as 'IndyDevDan — Claude Code power-user content') — confirmed: the June 15 Fable 5 benchmark video is the kind of hands-on agentic engineering analysis that belongs in Top Picks. Continue to sweep weekly."
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Loop engineering governance gap — loops running overnight against production systems without human oversight represent a governance surface that no existing enterprise policy framework explicitly addresses. The Loop Library and Claude Code /loop command are now in practitioner use; a policy template for loop-specific governance (scope boundaries, verification requirements, audit logging for unattended loops) would be a high-value gap to fill next week if any Tier 1-2 channel addresses it.",
+      "NVIDIA NeMo RCE vulnerability and Microsoft 365 Copilot Search Leak — both were covered in the AI Infrastructure Briefing but not in depth. If patches are not published before the August 2 EU AI Act enforcement date, these become material compliance gaps for enterprise users. Worth a dedicated sweep next week against CVE databases and NVIDIA/Microsoft security advisories.",
+      "GLM-5.2 enterprise evaluation — the MIT license and self-hosting case for GLM-5.2 was covered at the announcement level but not in a practical enterprise evaluation context (data residency scenarios, on-premises GPU requirements, comparison against Claude Opus 4.8 on real professional tasks rather than published benchmarks). A hands-on evaluation from AI Explained or Latent Space would be high signal."
+    ],
+    "topics_to_drop": [],
+    "notes": "All 14 index items are new against the 2026-06-08 week. No URL overlap with the previous week's index. Freshness pct_new = 1.0. The week's coverage was dominated by three converging themes: (1) the Claude Fable 5 suspension continuing, which redirected practitioner attention to fallback architectures and open-weight models; (2) three simultaneous governance-headlined product launches on June 16 (Copilot Cowork GA, Databricks LTAP, Thoughtworks Agent/works), framed by the approaching EU AI Act enforcement date; and (3) the DeepMind AI Control Roadmap (June 18) providing the most authoritative public framework for agent security governance to date. The Loop Library launch by Matthew Berman and concurrent loop engineering tutorial coverage represent the emergence of loop engineering as a named practitioner discipline with a shared vocabulary. No view counts were captured — YouTube pages do not expose engagement metrics in static page content. All primary URLs were fetched and confirmed to return HTTP 200 with matching title, author, and publish date at verification time. The GLM-5.2 Hugging Face blog is used as the primary source rather than the YouTube coverage of the model because the Hugging Face post is the primary source document (benchmark data, architecture claims, pricing) while YouTube coverage is secondary commentary. The TCS 50K deployment claim is sourced from Lev Selector's weekly update which cited a press announcement; the primary TCS press release was not independently fetched due to paywall status, so this item is not in Top Picks. The flagged_unverified entry documents the Devflokers.com June 18 restoration claim, which is contradicted by multiple more authoritative sources and is excluded from all summaries."
+  }
+}
