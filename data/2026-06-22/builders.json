@@ -1,0 +1,939 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.91,
+    "items_total": 35,
+    "items_new": 32,
+    "items_returning": 3,
+    "empty_week_note": ""
+  },
+
+  "executive_summary": [
+    {
+      "headline": "headroomlabs-ai/headroom breaks 53k stars with a concrete claim: compress tool outputs and RAG chunks before they reach the LLM, 60–95% fewer tokens, same answers — and this week shipped v0.27.0 with a one-command wrap for every major coding agent",
+      "body": "headroom sits between the agent and the model as a pure token-compression layer: library, proxy, or MCP server. It supports a cross-agent shared memory store (Claude, Codex, Gemini), a `headroom learn` loop that mines failed sessions and writes corrections back to CLAUDE.local.md, and output-token reduction on what the model writes back. The Jun 28 fixes resolved a token-mode regression on frozen prefixes (#1489) and made `headroom_retrieve` a hash-only full-content lookup. An enterprise AI team running internal agents against large codebases or document corpora can deploy headroom as an HTTP proxy with zero code changes — and the benchmark claim (60–95% fewer tokens) is testable in a non-production environment in a day.",
+      "primary_url": "https://github.com/headroomlabs-ai/headroom"
+    },
+    {
+      "headline": "DeusData/codebase-memory-mcp adds 8k+ weekly stars — the #2 weekly riser — by indexing an entire codebase into a persistent knowledge graph in milliseconds and answering structural queries at sub-millisecond latency with 99% fewer tokens",
+      "body": "codebase-memory-mcp ships as a single static binary with zero dependencies, supports 155 languages via tree-sitter, and provides 14 MCP tools including search, trace, architecture analysis, impact analysis, Cypher queries, dead-code detection, and ADR management. The design is a structural analysis backend for MCP clients, not an LLM — it uses BLAKE3 content hashing and hybrid LSP-style type resolution for Go, C/C++, and TypeScript/JSX. The jump to the top of weekly trending (per the syusodo.co.jp W26 ranking and the ForkCast Top 10 video) signals that teams building long-context coding agents are hitting context-window ceilings and reaching for persistent memory alternatives.",
+      "primary_url": "https://github.com/DeusData/codebase-memory-mcp"
+    },
+    {
+      "headline": "OpenMontage from calesthio lands at #1 on the GitHub weekly chart with +15,793 stars in its debut week: it positions itself as the first open-source agentic video production system, converting an AI coding assistant into a video studio via 12 pipelines and 500+ agent skills",
+      "body": "OpenMontage is structured as a skill-first video pipeline: it researches topics, generates images, writes and narrates scripts, finds royalty-free music, burns subtitles, and renders final video — all from a single agent session using the agentskills.io standard. The approach sidesteps a dedicated video editor UI entirely; the agent drives the whole pipeline via skill invocations. The pattern is relevant for an enterprise comms or training team that already runs Claude Code internally: the same agent can produce a documentary-style explainer or screen demo without a separate media platform purchase.",
+      "primary_url": "https://github.com/calesthio/OpenMontage"
+    },
+    {
+      "headline": "Key takeaway: the week of June 22–28 established three clear themes — codebase memory as production infrastructure (DeusData/codebase-memory-mcp, headroom), agent skills as a mature ecosystem (mattpocock/skills at 112k stars, Anthropic-Cybersecurity-Skills at 21.9k, VoltAgent/awesome-agent-skills at 26k), and agentic application frameworks converging on a shared architecture (BuilderIO/agent-native, Vercel Eve). Oak, the Git alternative designed for agents, and wayfinder-router, a deterministic LLM routing CLI, signal two new infrastructure layers builders are starting to standardize on.",
+      "body": "The agent skills ecosystem crossed a threshold this week: the agentskills.io standard now underpins roughly 40 products including Codex, Copilot, Cursor, Gemini CLI, and VS Code. Skills have become portable across competing coding agents in the same way npm packages are portable across runtimes. For an enterprise AI team, the practical implication is that investing in writing good internal skills is now durable — not locked to one vendor. The security signal from mukul975/Anthropic-Cybersecurity-Skills (817 skills mapped to MITRE ATT&CK, NIST CSF 2.0, NIST AI RMF) is a direct response to this maturity: when agents are handling security workflows, structured skills with framework mappings become an audit and governance requirement, not a nice-to-have."
+    }
+  ],
+
+  "top_picks": [
+    {
+      "id": "headroomlabs-ai-headroom-context-compression",
+      "title": "headroomlabs-ai/headroom",
+      "subtitle": "Context compression layer for AI agents — 60–95% fewer tokens, same answers; library, proxy, and MCP server in one; v0.27.0 with agent-wrap for all major coding tools; 53.1k stars",
+      "source": "GitHub",
+      "author": "headroomlabs-ai",
+      "date": "2026-06-22",
+      "primary_url": "https://github.com/headroomlabs-ai/headroom",
+      "summary": "headroom compresses tool outputs, logs, files, and RAG chunks before they reach the LLM — claiming 60–95% fewer tokens with the same answers. It ships as a Python/TypeScript library, a transparent HTTP proxy (zero code changes), and an MCP server with three tools (headroom_compress, headroom_retrieve, headroom_stats). v0.27.0 shipped Jun 22, 2026; Jun 28 fixes resolved a token-mode regression on frozen prefixes and made headroom_retrieve a hash-only full-content lookup. Supported via `headroom wrap` for Claude Code, Codex, Cursor, Copilot, Aider, OpenCode, Cline, Continue, Goose, OpenHands, and OpenClaw. Python 79.6%, Rust 15.7%; 53.1k stars, 3.8k forks, 152 contributors, 1,781 commits.",
+      "verified": true,
+      "verified_at": "2026-06-28T21:00:00Z",
+      "key_takeaways": [
+        "The proxy mode (headroom proxy --port 8787) requires zero code changes in the agent or the application — it intercepts calls on a local port and compresses before forwarding to the model endpoint. An enterprise team can deploy this alongside any existing agent setup without touching the agent code at all.",
+        "headroom learn mines failed agent sessions and writes corrections to CLAUDE.local.md (gitignored by default) or to AGENTS.md/GEMINI.md. This creates a private, local memory of what went wrong in past sessions without sending that data to any external service — directly relevant for teams running agents against confidential internal codebases.",
+        "The cross-agent shared memory store (dedup across Claude, Codex, Gemini) means a team that runs multiple coding agents across different workstations can share a context store without a cloud intermediary. The Jun 28 hash-only `headroom_retrieve` fix means the retrieval path is now deterministic and auditable — a requirement for any regulated environment where you need to trace what context an agent had access to."
+      ],
+      "results": "53.1k GitHub stars; 3.8k forks; 152 contributors; v0.27.0 (Jun 22, 2026); Jun 28 patch release. Benchmark claim: 60–95% fewer tokens, same answers (per the repo README at github.com/headroomlabs-ai/headroom, fetched Jun 28, 2026). The benchmark methodology is in the `benchmarks/` directory of the repo.",
+      "enterprise_adaptation": "Implementation pattern: Deploy headroom as a proxy on a developer workstation or internal VM — `headroom proxy --port 8787` — and point the existing coding agent's API base URL at the local proxy endpoint. No model subscription changes, no new services. The proxy intercepts, compresses, and forwards; the agent and the model see no difference except reduced token counts on the metered API calls. | Regulated-environment caveats: headroom's compression and memory operations run locally (Python/Rust binary); no data is sent to headroom servers. Review the `headroom_learn` output files (CLAUDE.local.md by default) before committing to a shared repo — they may contain information from failed agent sessions that is not appropriate for the main branch. Pin the package version in the internal developer provisioning script and verify the SBOM published in the Jun 27 `fix(deps): remediate dependency CVEs and publish SBOM` commit before fleet deployment. The CCR (Reversible Compression) cache stores originals on disk — confirm the cache location is inside the org's approved data-at-rest boundary. | 30-day experiment: Select two developers with active coding-agent workloads. Install headroom proxy on one workstation (treatment), leave the other as baseline. Measure: API token spend per developer per sprint (from the model provider's usage dashboard), and subjective answer quality using a shared checklist of five reference prompts. Run `headroom stats` weekly to get per-session compression ratios. After 30 days, compare cost and evaluate whether quality parity holds on the team's actual internal codebase — not the repo's benchmark tasks.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 16858
+      },
+      "tags": ["Context Compression", "MCP Server", "Agent Infrastructure", "Token Optimization", "Proxy"],
+      "category": "Dev Tool",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "deusdata-codebase-memory-mcp-code-intelligence",
+      "title": "DeusData/codebase-memory-mcp",
+      "subtitle": "High-performance code intelligence MCP server — persistent knowledge graph, 155 languages, sub-ms queries, 99% fewer tokens; single static binary; +8k weekly stars, #2 weekly riser",
+      "source": "GitHub",
+      "author": "DeusData",
+      "date": "2026-06-22",
+      "primary_url": "https://github.com/DeusData/codebase-memory-mcp",
+      "secondary_urls": [
+        {
+          "label": "ForkCast Top 10 AI GitHub Repos — Week of Jun 22 (#1 pick)",
+          "url": "https://www.youtube.com/watch?v=xkdXf2tccIw"
+        }
+      ],
+      "summary": "codebase-memory-mcp indexes an entire codebase into a persistent knowledge graph using BLAKE3 content hashing and tree-sitter AST analysis across 155 languages. It ships as a single static binary (C 87.2%) with zero dependencies and provides 14 MCP tools for structural queries: search, trace, architecture analysis, impact analysis, Cypher queries, dead-code detection, cross-service HTTP linking, and ADR management. The key claim is sub-millisecond queries with 99% fewer tokens versus querying a model directly. Per the ForkCast weekly tracking and syusodo.co.jp W26 ranking, it added over 8,000 stars this week, climbing to #2 on the weekly leaderboard. Latest release v0.6.1 (May 4, 2026); latest commit refactored the LSP pipeline to always run, removing the opt-in advanced mode.",
+      "verified": true,
+      "verified_at": "2026-06-28T21:00:00Z",
+      "key_takeaways": [
+        "The 14 MCP tools cover structural code analysis rather than text generation — the server answers 'what calls this function', 'what would break if I change this interface', 'where is this token used across services' at the AST level. This is qualitatively different from a RAG-over-code approach: AST-level answers are exact, not probabilistic.",
+        "Shipping as a single static binary with zero dependencies means deployment into an enterprise environment is a file copy, not a package install — no Python environment management, no npm dependencies, no runtime to pin. This is a concrete advantage in IT-governed environments where installing dependencies on developer machines requires a change-management ticket.",
+        "The ADR management tooling (Architecture Decision Records as first-class MCP resources) is significant for teams with governance requirements: it means the agent can read, reference, and propose ADRs as part of code analysis, creating a traceable link between code changes and architectural decisions."
+      ],
+      "results": "2.8k total stars per page fetch (Jun 28, 2026); +8,024 weekly stars per syusodo.co.jp W26 ranking (Jun 26, 2026). Claim: sub-ms queries, 99% fewer tokens versus direct model querying (repo README, fetched Jun 28, 2026). Single binary confirmed — C 87.2% per GitHub language breakdown.",
+      "enterprise_adaptation": "Implementation pattern: Install the codebase-memory-mcp binary on developer workstations or an internal CI server and register it as an MCP server in the coding agent's `.mcp.json` or equivalent configuration. Point it at the internal monorepo or a specific service boundary. The agent then uses the 14 structural MCP tools to answer architecture questions rather than loading entire files into context — reducing both token cost and exposure of confidential code to model inference. | Regulated-environment caveats: The binary runs entirely on the local machine — no code is sent to external services by the MCP server itself. Review the LSP hybrid resolver behavior for TypeScript/JavaScript: it runs locally but may spawn subprocesses that could be flagged by endpoint security tools. The Cypher query tool allows arbitrary graph queries against the codebase knowledge graph — scope the agent's access to the tools it actually needs rather than enabling all 14 by default, per least-privilege principles. Confirm the binary's SBOM and sign chain before fleet deployment; the repo is under a DeusData organization without a disclosed company affiliation. | 30-day experiment: Install on one developer machine working on a large internal TypeScript or Go codebase. Enable the search, trace, and impact-analysis tools only. Ask the agent to perform three representative tasks: locate all callers of a changed interface, identify dead code in a service, and generate an architecture summary of a module. Compare token usage and time-to-answer against the baseline (loading file contents directly). Document the accuracy of the structural answers against what a senior engineer would say.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 8024
+      },
+      "tags": ["MCP Server", "Code Intelligence", "Knowledge Graph", "AST Analysis", "Context Reduction"],
+      "category": "MCP Server",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "calesthio-openmontage-agentic-video",
+      "title": "calesthio/OpenMontage",
+      "subtitle": "First open-source agentic video production system — 12 pipelines, 52 tools, 500+ agent skills; turn a coding assistant into a video studio; +15,793 weekly stars, #1 weekly riser",
+      "source": "GitHub",
+      "author": "calesthio",
+      "date": "2026-06-22",
+      "primary_url": "https://github.com/calesthio/OpenMontage",
+      "secondary_urls": [
+        {
+          "label": "GitHub Trending W26 — #1 pick (syusodo.co.jp weekly ranking)",
+          "url": "https://syusodo.co.jp/tech-blog/articles/github-trending-2026-w26"
+        }
+      ],
+      "summary": "OpenMontage converts an AI coding assistant into a full video production pipeline using the agentskills.io standard. It ships 12 named pipeline types (Animated Explainer, Avatar Spokesperson, Cinematic, Clip Factory, Documentary Montage, Podcast Repurpose, Screen Demo, Talking Head, and others), 52 tools, and 500+ agent skills. The agent handles: topic research with live web search, AI image generation, script writing, voice narration, royalty-free music selection, word-level subtitle burning, and final render. Supports Remotion and HyperFrames composition plus FFmpeg post-production. Python 62.6%, HTML 25.3%; 26.5k total stars; +15,793 weekly delta as #1 on the W26 weekly chart (per syusodo.co.jp and dzosoft.com trending trackers, Jun 23, 2026).",
+      "verified": true,
+      "verified_at": "2026-06-28T21:00:00Z",
+      "key_takeaways": [
+        "The pipeline is structured as a sequence of skill invocations, not a monolithic script — which means an enterprise team can take individual skills (e.g., the subtitle-burning skill or the royalty-free music selection skill) and compose them into an existing internal video workflow without adopting the entire system.",
+        "The Screen Demo pipeline is directly applicable for internal knowledge transfer: it converts a described workflow or tool into a narrated screen-demo video via agent-driven scripting and rendering, removing the manual effort of recording and editing demo content.",
+        "The 500+ skills follow the agentskills.io open standard, making them portable to any supporting coding agent. This means skills developed by the OpenMontage community are available without vendor lock-in — and internal modifications remain portable if the team switches from Claude Code to a different agent."
+      ],
+      "results": "26.5k total GitHub stars; +15,793 weekly delta per dzosoft.com and syusodo.co.jp (fetched Jun 23–28, 2026); 12 production pipelines; 52 tools; 500+ agent skills (per repo README at github.com/calesthio/OpenMontage, fetched Jun 28, 2026).",
+      "enterprise_adaptation": "Implementation pattern: Install OpenMontage's skill set into the team's coding agent configuration (Claude Code, Codex, or equivalent) and restrict usage to the Screen Demo and Documentary Montage pipelines as a starting scope. The agent handles script generation and rendering locally using FFmpeg; no video data needs to leave the corporate network if the image and TTS providers are self-hosted or on-premises (Voicebox, a local TTS engine, or Azure AI Speech). | Regulated-environment caveats: The live web search step (topic research) calls external search APIs — disable or replace with an internal search endpoint to keep the pipeline air-gapped. The AI image generation step calls an external image model by default; substitute with a self-hosted diffusion model or disable the step if image generation is blocked by policy. Review the 500+ skills before fleet deployment — they are open-source contributions and should be audited against the org's acceptable-use policy for AI-generated content. | 30-day experiment: Task one internal communications or training team member with producing a 3-minute Screen Demo explainer for a new internal tool, using OpenMontage versus their current process (screen recording + manual editing). Measure: time from brief to final video, number of revision cycles, and subjective quality score from three stakeholder reviewers. The experiment requires only a developer machine with Claude Code, FFmpeg, and a free Unsplash or Pixabay API key for royalty-free images.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 15793
+      },
+      "tags": ["Agent Skills", "Video Production", "Agentic Pipeline", "agentskills.io", "Content Creation"],
+      "category": "Agent Skill",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "mukul975-anthropic-cybersecurity-skills-framework",
+      "title": "mukul975/Anthropic-Cybersecurity-Skills",
+      "subtitle": "817 structured cybersecurity skills for AI agents — mapped to MITRE ATT&CK, NIST CSF 2.0, NIST AI RMF, and 3 other frameworks; agentskills.io standard; v1.3.0 ships Jun 22; 21.9k stars",
+      "source": "GitHub",
+      "author": "mukul975",
+      "date": "2026-06-22",
+      "primary_url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "secondary_urls": [
+        {
+          "label": "dzosoft GitHub Trend Explorer — trending Jun 23, 2026",
+          "url": "https://www.dzosoft.com/github-trend-explorer"
+        }
+      ],
+      "summary": "Anthropic-Cybersecurity-Skills is a library of 817 structured cybersecurity skills for AI agents, described as the largest open-source cybersecurity skills library in this domain. Skills are organized across 29 security domains and follow the agentskills.io open standard — each skill is YAML frontmatter plus Markdown workflow content, discoverable and executable by any supporting agent. The library maps every skill to six security frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, MITRE D3FEND, NIST AI RMF, and MITRE Fight Fraud Framework (F3). Compatible with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI, and 20+ other platforms. v1.3.0 shipped Jun 22, 2026; Python 99.6%; 21.9k stars; Jun 26 commit fixed the skill validator to register hardware-firmware-security subdomain.",
+      "verified": true,
+      "verified_at": "2026-06-28T21:00:00Z",
+      "key_takeaways": [
+        "The mapping to NIST AI RMF and MITRE ATLAS (AI-specific threat framework) distinguishes this from general security skill libraries — it covers the attack surface of AI systems themselves (model theft, adversarial inputs, supply chain attacks on model weights) in addition to conventional infrastructure security domains.",
+        "The agentskills.io standard means these 817 skills are portable across coding agents without modification. An enterprise team can install a subset of skills — for example, only the NIST CSF 2.0-mapped skills — into their approved coding agent and get structured security workflows that align with their existing compliance framework.",
+        "The v1.3.0 release (Jun 22) adds the hardware-firmware-security subdomain to the validator — a signal that the library is growing beyond software vulnerabilities into hardware attack surfaces, which is relevant for organizations with OT/ICS environments."
+      ],
+      "results": "21.9k GitHub stars; v1.3.0 released Jun 22, 2026; 817 skills across 29 domains; 6 framework mappings (per repo README at github.com/mukul975/Anthropic-Cybersecurity-Skills, fetched Jun 28, 2026). Compatibility confirmed for Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI.",
+      "enterprise_adaptation": "Implementation pattern: Install the framework-relevant skill subset into the internal coding agent configuration. For a publicly traded enterprise in a regulated sector, the most relevant starting subset is the NIST CSF 2.0-mapped skills (Identify, Protect, Detect, Respond, Recover categories) plus the NIST AI RMF-mapped skills if the organization has AI governance requirements. Use the agentskills.io standard's selective installation capability to enable only the domains matching the organization's current security control priorities. | Regulated-environment caveats: These skills execute security workflows inside the agent — they don't send data outside the agent session unless a skill explicitly calls an external tool. Review the 817 skills before fleet deployment; each is a YAML+Markdown file and can be read in a text editor. The MITRE D3FEND and ATT&CK mappings are useful for aligning agent-assisted security work with SOC documentation requirements, but they don't substitute for official MITRE tooling in compliance-critical environments. Pin the library to v1.3.0 internally rather than using main, to avoid unreviewed new skills entering the fleet. | 30-day experiment: Pick one security domain the team actively works in (e.g., access control review, dependency vulnerability scanning). Install the corresponding NIST CSF 2.0-mapped skills on one developer's workstation. Have them run the skills on a non-production internal system for one sprint. Compare the structured output from the agent against the team's current manual checklist for the same domain — measure completeness, accuracy of framework references, and time saved.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "stars": 956
+      },
+      "tags": ["Agent Skills", "Cybersecurity", "MITRE ATT&CK", "NIST AI RMF", "agentskills.io"],
+      "category": "Agent Skill",
+      "platform": "github",
+      "recurrence": "new"
+    },
+    {
+      "id": "mattpocock-skills-real-engineers",
+      "title": "mattpocock/skills",
+      "subtitle": "Real-engineer agent skills straight from a working .claude directory — small, composable, model-agnostic; 112k stars; individually maintained by Matt Pocock",
+      "source": "GitHub",
+      "author": "mattpocock",
+      "date": "2026-02-03",
+      "primary_url": "https://github.com/mattpocock/skills",
+      "secondary_urls": [
+        {
+          "label": "Shareuhack GitHub Trending Weekly 2026-06-24 — #1 by weekly delta (+11,782)",
+          "url": "https://www.shareuhack.com/zh-TW/posts/github-trending-weekly-2026-06-24"
+        }
+      ],
+      "summary": "mattpocock/skills is a public collection of agent skills Matt Pocock uses in daily engineering work — described as 'not vibe coding'. Skills are small, composable Shell files compatible with any model or coding agent. The library covers engineering patterns (diagnose, tdd, improve-codebase-architecture, triage, to-issues, to-prd, zoom-out), productivity patterns (caveman ultra-compressed communication mode, grill-me, handoff), and workflow tools (git-guardrails-claude-code, setup-pre-commit). Per the shareuhack W26 report, the repo added +11,782 stars in the week of Jun 16–24, reaching 112k+ total stars. Shell 100%; individually maintained by mattpocock (2 contributors including Claude). MIT license.",
+      "verified": true,
+      "verified_at": "2026-06-28T21:00:00Z",
+      "key_takeaways": [
+        "The `caveman` skill cuts token usage ~75% by switching the agent to ultra-compressed communication mode — useful for budget-constrained agent runs or when operating near context limits. It maintains full technical accuracy while dropping filler language.",
+        "The `handoff` skill compacts the current conversation into a structured handoff document so another agent or human can continue the work — directly solves the context-loss problem when a coding session runs long and needs to be resumed in a fresh context window.",
+        "The `diagnose` skill implements a disciplined debug loop (reproduce → minimise → hypothesise → instrument → fix → regression-test) rather than ad-hoc prompting — it structures the agent's debugging behaviour around a proven engineering process rather than hoping the model will follow best practices spontaneously."
+      ],
+      "results": "112k GitHub stars (page fetch Jun 28, 2026); +11,782 stars in week of Jun 16–24 per shareuhack W26 ranking. MIT license; 2 contributors; actively maintained. Last commit May 28, 2026 (CONTEXT-FORMAT.md refinement).",
+      "enterprise_adaptation": "Implementation pattern: Fork or clone the skill library into the team's internal skills registry (whether that is a shared Git repo, an internal agentskills.io-compatible directory, or a file share). Select the skills relevant to the team's workflow — at minimum, `triage` (for managing issue queues), `diagnose` (for debugging sessions), and `handoff` (for context management across sessions). The skills are plain Shell/Markdown files with no dependencies — installation is a file copy into the agent configuration directory. | Regulated-environment caveats: Review all skills before internal deployment; they are individually-contributed files and some reference external services (e.g., `git-guardrails-claude-code` installs Claude Code hooks). The `setup-pre-commit` skill installs Husky and lint-staged — confirm these are compatible with the internal Git hosting policy before enabling. The `to-issues` and `to-prd` skills reference GitHub issues; substitute the internal issue tracker URL if the team uses Jira, Azure DevOps, or ServiceNow. | 30-day experiment: Install the `diagnose`, `triage`, and `handoff` skills on the workstations of three developers with active agent-assisted debugging workloads. Have them use the structured skills for all debugging sessions for one sprint. At the end, survey: did the structured loop produce faster root-cause identification? Did the handoff skill reduce context loss between sessions? Compare sprint velocity against the prior sprint as a rough baseline.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "stars": 11782
+      },
+      "tags": ["Agent Skills", "Engineering Workflow", "Productivity", "Claude Code", "Model-Agnostic"],
+      "category": "Agent Skill",
+      "platform": "github",
+      "recurrence": "new"
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "Top AI-relevant GitHub repos ranked by weekly star delta, week of Jun 22–28 2026. Weekly star delta is the signal; total stars are context.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "trending-calesthio-openmontage",
+          "title": "calesthio/OpenMontage",
+          "subtitle": "#1 weekly — agentic video production system, 12 pipelines, 500+ agent skills",
+          "source": "GitHub Trending",
+          "date": "2026-06-22",
+          "primary_url": "https://github.com/calesthio/OpenMontage",
+          "summary": "World's first open-source agentic video production system. Converts a coding assistant into a full video studio. Python 62.6%; +15,793 weekly stars; 26.5k total. Active commits through Jun 28, 2026.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7.5, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 15793 },
+          "tags": ["Video Production", "Agent Skills", "agentic pipeline"],
+          "category": "Agent Skill",
+          "recurrence": "new"
+        },
+        {
+          "id": "trending-headroomlabs-headroom",
+          "title": "headroomlabs-ai/headroom",
+          "subtitle": "#2 weekly — context compression layer for AI agents; 60–95% fewer tokens; v0.27.0",
+          "source": "GitHub Trending",
+          "date": "2026-06-22",
+          "primary_url": "https://github.com/headroomlabs-ai/headroom",
+          "summary": "Context compression for AI agents — library, proxy, and MCP server. 60–95% fewer tokens claimed. Python 79.6%, Rust 15.7%; +16,858 weekly stars per gitstar.co.kr; 53.1k total stars; v0.27.0 (Jun 22). Active commits Jun 28.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 9, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "engagement": { "stars": 16858 },
+          "tags": ["Context Compression", "MCP Server", "Token Optimization"],
+          "category": "Dev Tool",
+          "recurrence": "new"
+        },
+        {
+          "id": "trending-mattpocock-skills",
+          "title": "mattpocock/skills",
+          "subtitle": "#3 weekly — real-engineer agent skills; +11,782 weekly delta; 112k total stars",
+          "source": "GitHub Trending",
+          "date": "2026-06-02",
+          "primary_url": "https://github.com/mattpocock/skills",
+          "summary": "Agent skills straight from a working .claude directory — composable Shell files for diagnose, triage, handoff, caveman, tdd, and 12 other patterns. Shell 100%; +11,782 weekly stars; 112k total stars. MIT; individually maintained by Matt Pocock.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "engagement": { "stars": 11782 },
+          "tags": ["Agent Skills", "Workflow", "Claude Code"],
+          "category": "Agent Skill",
+          "recurrence": "new"
+        },
+        {
+          "id": "trending-panniantong-agent-reach",
+          "title": "Panniantong/Agent-Reach",
+          "subtitle": "#4 weekly (returning) — zero-API-fee multi-platform agent internet access; +8,108 this week; 38.6k total",
+          "source": "GitHub Trending",
+          "date": "2026-02-24",
+          "primary_url": "https://github.com/Panniantong/Agent-Reach",
+          "summary": "One-command installer giving agents read/search access to Twitter, Reddit, YouTube, GitHub, Bilibili, LinkedIn, and 9+ other platforms with zero API fees via composited free CLIs. Python 94.7%; +8,108 weekly stars (week of Jun 22–28); 38.6k total stars per shareuhack W26 data. Continues rising from last week's #1 position.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "engagement": { "stars": 8108 },
+          "tags": ["Internet Access", "MCP", "Zero API", "Agent Tooling"],
+          "category": "Dev Tool",
+          "recurrence": "returning",
+          "recurrence_note": "Was #1 last week (+5,873 delta). Still trending at #4 this week with +8,108 — accelerating, not decelerating."
+        },
+        {
+          "id": "trending-deusdata-codebase-memory-mcp",
+          "title": "DeusData/codebase-memory-mcp",
+          "subtitle": "#5 weekly — code intelligence MCP server; +8,024 this week; 2.8k total stars",
+          "source": "GitHub Trending",
+          "date": "2026-02-24",
+          "primary_url": "https://github.com/DeusData/codebase-memory-mcp",
+          "summary": "Persistent knowledge graph for AI coding agents — indexes codebases in milliseconds, 155 languages, 14 MCP tools, sub-ms queries, 99% fewer tokens claimed. Single static binary (C 87.2%); +8,024 weekly stars; 2.8k total. v0.6.1 (May 4, 2026). #1 in ForkCast Top 10 week of Jun 22.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 8024 },
+          "tags": ["MCP Server", "Code Intelligence", "Knowledge Graph", "Context Reduction"],
+          "category": "MCP Server",
+          "recurrence": "new"
+        },
+        {
+          "id": "trending-bytedance-deer-flow",
+          "title": "bytedance/deer-flow",
+          "subtitle": "#6 weekly — open-source long-horizon super-agent harness; sandboxes, memory, subagents; 75k total stars",
+          "source": "GitHub Trending",
+          "date": "2026-01-01",
+          "primary_url": "https://github.com/bytedance/deer-flow",
+          "summary": "Long-horizon agent harness from ByteDance — spins up sandboxes for code execution, maintains long-term memory, delegates to subagents via a message gateway, and can turn a deep search dive into a finished podcast. Python; 75k stars. MIT. Featured in ForkCast Top 10 week of Jun 22 at #7.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 3200 },
+          "tags": ["Agent Harness", "Long-Horizon Tasks", "Subagents", "Sandboxes"],
+          "category": "Agent Framework",
+          "recurrence": "new"
+        },
+        {
+          "id": "trending-stablyai-orca",
+          "title": "stablyai/orca",
+          "subtitle": "#7 weekly — parallel coding agent fleet IDE; each agent in its own git worktree; desktop + mobile; 3.7k stars",
+          "source": "GitHub Trending",
+          "date": "2026-03-17",
+          "primary_url": "https://github.com/stablyai/orca",
+          "summary": "Orca is an IDE for running a fleet of parallel coding agents — Claude Code, Codex, Grok, Antigravity, OpenCode — each in its own git worktree, tracked in one place. TypeScript 97.3%; 3.7k stars; v1.4.35 (May 29, 2026); 490 releases. YC-backed, MIT-licensed. Mobile companion pings when an agent finishes.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 2100 },
+          "tags": ["Parallel Agents", "IDE", "Fleet", "Worktrees"],
+          "category": "Dev Tool",
+          "recurrence": "new"
+        },
+        {
+          "id": "trending-koala73-worldmonitor",
+          "title": "koala73/worldmonitor",
+          "subtitle": "#8 weekly — real-time global intelligence dashboard; AI news aggregation + geopolitical + finance radar; 60.2k stars",
+          "source": "GitHub Trending",
+          "date": "2026-01-08",
+          "primary_url": "https://github.com/koala73/worldmonitor",
+          "summary": "Open-source real-time global intelligence dashboard — 500+ curated news feeds, Country Instability Index for 31 countries, 29 stock exchanges, commodities, and crypto. Local AI via Ollama, no API keys. TypeScript 56%; 60.2k stars. Active commits Jun 27, 2026. Tauri 2 native desktop app.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 },
+          "engagement": { "stars": 2800 },
+          "tags": ["Intelligence Dashboard", "Local AI", "Geopolitical", "Finance"],
+          "category": "Dev Tool",
+          "recurrence": "new"
+        },
+        {
+          "id": "trending-zhulisen-daily-stock-analysis",
+          "title": "ZhuLinsen/daily_stock_analysis",
+          "subtitle": "#9 weekly — LLM-powered multi-market stock analysis; daily decision dashboard with auto-push; 50k stars, 44k forks",
+          "source": "GitHub Trending",
+          "date": "2026-01-10",
+          "primary_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+          "summary": "LLM-powered daily stock analysis system covering A-share, Hong Kong, US, Japanese, and Korean markets — multi-source data, real-time news, decision dashboard, and automated push to Slack/Telegram/WeChat. Python 76%; 50k stars, 44k forks. Taiwan market brought to first-class status in Jun 26 commit (v3.23.0 Jun 20, 2026). Free to run on GitHub Actions.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 6.5, "signal": 1, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 4200 },
+          "tags": ["Finance", "LLM Automation", "Stock Analysis", "Scheduled Agent"],
+          "category": "Automation",
+          "recurrence": "new"
+        },
+        {
+          "id": "trending-jamiepine-voicebox",
+          "title": "jamiepine/voicebox",
+          "subtitle": "#10 weekly — open-source AI voice studio; clone, dictate, create; local-first; 29k stars",
+          "source": "GitHub Trending",
+          "date": "2026-01-25",
+          "primary_url": "https://github.com/jamiepine/voicebox",
+          "summary": "Local-first open-source voice studio — voice cloning, speech generation in 23 languages across 7 TTS engines, global-hotkey dictation into any app, MCP-aware AI agent voice I/O. Runs entirely on-device (Apple Silicon via MLX, NVIDIA CUDA). TypeScript 54.7%, Python 33.6%, Rust 9.2%; 29k stars; v0.5.0 (Apr 25, 2026).",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 3100 },
+          "tags": ["Voice AI", "Local-First", "TTS", "MCP", "Privacy"],
+          "category": "Dev Tool",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Skills & MCP Servers",
+      "description": "Newly published or significantly updated agent skills, MCP servers, prompt libraries, and eval frameworks — week of Jun 22–28 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "skills-anthropic-cybersecurity-817",
+          "title": "mukul975/Anthropic-Cybersecurity-Skills",
+          "subtitle": "817 cybersecurity skills for agents — MITRE ATT&CK, NIST CSF 2.0, NIST AI RMF mappings; v1.3.0; 21.9k stars",
+          "source": "GitHub",
+          "author": "mukul975",
+          "date": "2026-06-22",
+          "primary_url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+          "summary": "817 structured cybersecurity skills across 29 domains, mapped to 6 frameworks (MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, MITRE D3FEND, NIST AI RMF, MITRE F3). agentskills.io standard. Compatible with Claude Code, Copilot, Codex CLI, Cursor, Gemini CLI. v1.3.0 released Jun 22, 2026.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 956 },
+          "tags": ["Cybersecurity", "Agent Skills", "MITRE", "NIST AI RMF"],
+          "category": "Agent Skill",
+          "recurrence": "new"
+        },
+        {
+          "id": "skills-deusdata-codebase-memory-mcp-server",
+          "title": "DeusData/codebase-memory-mcp",
+          "subtitle": "Code intelligence MCP server — 14 MCP tools, knowledge graph, 155 languages, single binary",
+          "source": "GitHub",
+          "date": "2026-06-22",
+          "primary_url": "https://github.com/DeusData/codebase-memory-mcp",
+          "summary": "High-performance MCP server providing 14 code-intelligence tools — search, trace, architecture analysis, impact analysis, Cypher queries, dead-code detection, ADR management. Single C binary, zero dependencies, sub-ms queries. 2.8k stars; v0.6.1.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 8024 },
+          "tags": ["MCP Server", "Code Intelligence", "AST", "Architecture"],
+          "category": "MCP Server",
+          "recurrence": "new"
+        },
+        {
+          "id": "skills-headroom-mcp-server",
+          "title": "headroomlabs-ai/headroom (MCP mode)",
+          "subtitle": "Context compression as an MCP server — headroom_compress, headroom_retrieve, headroom_stats tools",
+          "source": "GitHub",
+          "date": "2026-06-22",
+          "primary_url": "https://github.com/headroomlabs-ai/headroom",
+          "summary": "headroom ships three MCP tools alongside its library and proxy modes: headroom_compress (compresses any message array), headroom_retrieve (hash-only full-content retrieval), and headroom_stats (per-session compression ratios). Works with any MCP client. v0.27.0.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "engagement": { "stars": 16858 },
+          "tags": ["MCP Server", "Context Compression", "Tokens"],
+          "category": "MCP Server",
+          "recurrence": "new"
+        },
+        {
+          "id": "skills-openmontage-skills-library",
+          "title": "calesthio/OpenMontage (500+ agentskills.io skills)",
+          "subtitle": "500+ agent skills for video production — agentskills.io standard; portable across coding agents",
+          "source": "GitHub",
+          "date": "2026-06-22",
+          "primary_url": "https://github.com/calesthio/OpenMontage",
+          "summary": "OpenMontage ships 500+ agent skills using the agentskills.io open standard — covering research, image generation, script writing, narration, subtitle burning, and rendering workflows. Skills are individually portable to any agentskills.io-compatible agent. Part of the 12-pipeline, 52-tool video production system.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 15793 },
+          "tags": ["Agent Skills", "Video", "agentskills.io", "Content Creation"],
+          "category": "Agent Skill",
+          "recurrence": "new"
+        },
+        {
+          "id": "skills-volta-awesome-agent-skills",
+          "title": "VoltAgent/awesome-agent-skills",
+          "subtitle": "Curated agent skills registry — 26k stars; skills and MCP/plugin configuration maintainability",
+          "source": "GitHub",
+          "date": "2026-06-01",
+          "primary_url": "https://github.com/VoltAgent/awesome-agent-skills",
+          "summary": "Curated registry of agent skills and MCP/plugin configurations. 26k stars per zengineer.blog W25 API snapshot (Jun 22, 2026). Functions as the community's go-to index for finding, comparing, and contributing agent skills across the agentskills.io ecosystem.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "engagement": { "stars": 1200 },
+          "tags": ["Agent Skills", "Registry", "MCP", "Curation"],
+          "category": "Agent Skill",
+          "recurrence": "new"
+        },
+        {
+          "id": "skills-itsthelore-wayfinder-router",
+          "title": "itsthelore/wayfinder-router",
+          "subtitle": "Deterministic LLM routing CLI — routes prompts to local or cloud model offline, no model call to decide; v2026.6.9",
+          "source": "GitHub",
+          "author": "tcballard",
+          "date": "2026-06-17",
+          "primary_url": "https://github.com/itsthelore/wayfinder-router",
+          "secondary_urls": [
+            {
+              "label": "HN discussion — featured Jun 28 DTF episode",
+              "url": "https://news.ycombinator.com/item?id=48704373"
+            }
+          ],
+          "summary": "Wayfinder analyzes prompt structure (length, headings, lists, code) and wording (proofs, math, hard constraints) in microseconds to route each prompt to the appropriate model tier — local small model vs. cloud large model — with no model call involved in the decision. Python 93.1%; 189 stars; v2026.6.9 (Jun 28, 2026). Apache 2.0; solo-maintained by Tom Ballard.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 189 },
+          "tags": ["LLM Routing", "Local Model", "Cost Optimization", "CLI"],
+          "category": "Dev Tool",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN & Indie Builds",
+      "description": "Show HN posts and side-project standouts from Hacker News, week of Jun 22–28 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "hn-oak-git-for-agents",
+          "title": "Show HN: Oak – Git alternative designed for agents",
+          "subtitle": "Rust VCS with branch-per-session design and content-addressed lazy mounts — agents edit any repo in seconds; v0.100.0 public beta",
+          "source": "Hacker News",
+          "author": "mrmrs",
+          "date": "2026-06-23",
+          "primary_url": "https://oak.space/oak/oak",
+          "secondary_urls": [
+            {
+              "label": "HN discussion — Show HN: Oak – Git alternative designed for agents",
+              "url": "https://news.ycombinator.com/item?id=48631726"
+            }
+          ],
+          "summary": "Oak is a version control system designed around how agents actually work: branch-per-session as the unit of work (no per-commit messages), content-addressed lazy mounts that hydrate on demand, and sub-second repo cloning for any size repo. Built in Rust (oakvcs-core + oakvcs-cli Cargo crates); v0.100.0 public beta; available for macOS (Apple Silicon), Linux (x86_64), and Windows (ProjFS). Featured in the HN front page digest for Jun 23, 2026.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7.5, "signal": 3, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["Version Control", "Agents", "Rust", "VCS", "Dev Infrastructure"],
+          "category": "Dev Tool",
+          "recurrence": "new"
+        },
+        {
+          "id": "hn-peerd-browser-agent-harness",
+          "title": "Show HN: peerd – AI agent harness that runs entirely in your browser",
+          "subtitle": "Chrome/Firefox extension; BYOK; no backend; runs JS notebooks, WASM Linux VMs, client-side apps; p2p A2A via WebRTC; 60 points",
+          "source": "Hacker News",
+          "author": "NotASithLord",
+          "date": "2026-06-24",
+          "primary_url": "https://github.com/NotASithLord/peerd",
+          "secondary_urls": [
+            {
+              "label": "HN discussion (60 points, 22 comments)",
+              "url": "https://news.ycombinator.com/item?id=48646165"
+            }
+          ],
+          "summary": "peerd is a browser extension that runs the full AI agent loop inside the browser — BYOK (Anthropic, OpenRouter, Ollama, or experimental WebGPU Gemma), no backend, no telemetry. Spins up isolated sandboxes as browser tabs/workers for headless JS compute, visual JS notebooks, WASM Linux VMs with full HTTP networking, and client-side apps. Includes a rudimentary p2p network via WebRTC for decentralized agent-to-agent communication. 222 GitHub stars; v0.1.5 (Jun 26, 2026). JavaScript 73.3%, TypeScript 21.9%. Very early — Chrome Store and AMO submission pending.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 1 },
+          "engagement": { "upvotes": 60, "comments": 22, "stars": 222 },
+          "tags": ["Browser Agent", "BYOK", "WebAssembly", "P2P", "Sandboxing"],
+          "category": "Agent Framework",
+          "recurrence": "new"
+        },
+        {
+          "id": "hn-halo-rlm-agent-trace-debugger",
+          "title": "Show HN: HALO – RLM-based local debugger for AI agent traces",
+          "subtitle": "Recursive language model loops over OTEL traces to find cross-run failure patterns; local desktop app; no signup; MIT OASYS lab",
+          "source": "Hacker News",
+          "author": "alexzhang13",
+          "date": "2026-06-24",
+          "primary_url": "https://github.com/alexzhang13/rlm",
+          "secondary_urls": [
+            {
+              "label": "HN discussion — Show HN: RLM-based local debugger for AI agent traces",
+              "url": "https://news.ycombinator.com/item?id=48649137"
+            }
+          ],
+          "summary": "HALO is a local agent-trace debugger: feed it OTEL-compliant traces from Langfuse, Arize/OpenInference, or plain JSONL, and the Recursive Language Model (RLM) engine decomposes the trace data recursively, identifies cross-run failure patterns, and generates a structured report with fix recommendations. Runs as a local desktop app, no signup. Based on the MIT OASYS lab's RLM paper (processes inputs up to 2 orders of magnitude beyond model context windows). Python 99.3%; 1.3k stars.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7.5, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 1300 },
+          "tags": ["Agent Debugging", "Observability", "OTEL", "RLM", "Trace Analysis"],
+          "category": "Eval Framework",
+          "recurrence": "new"
+        },
+        {
+          "id": "hn-openknowledge-ai-first-notes",
+          "title": "Show HN: OpenKnowledge – open source AI-first alternative to Obsidian/Notion",
+          "subtitle": "372 points, 170 comments on HN — local-first knowledge management with native AI agent integration",
+          "source": "Hacker News",
+          "date": "2026-06-23",
+          "primary_url": "https://github.com/inkeep/openknowledge",
+          "secondary_urls": [
+            {
+              "label": "HN discussion (372 points, 170 comments)",
+              "url": "https://news.ycombinator.com/item?id=48671826"
+            }
+          ],
+          "summary": "OpenKnowledge is an open-source, AI-first alternative to Obsidian and Notion — featured on HN front page Jun 23–25, 2026 with 372 points and 170 comments. Designed for knowledge management where AI agents can read from and write to the workspace natively via a filesystem model. Reached #11 on the HN front page Jun 25.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "engagement": { "upvotes": 372, "comments": 170 },
+          "tags": ["Knowledge Management", "Local-First", "AI-Native", "Open Source"],
+          "category": "Dev Tool",
+          "recurrence": "new"
+        },
+        {
+          "id": "hn-wayfinder-router-llm-routing",
+          "title": "Wayfinder Router – deterministic routing of queries between local and hosted LLM",
+          "subtitle": "Featured HN Jun 28 — offline, microsecond routing CLI; no model call to decide; v2026.6.9",
+          "source": "Hacker News",
+          "author": "tcballard",
+          "date": "2026-06-28",
+          "primary_url": "https://github.com/itsthelore/wayfinder-router",
+          "secondary_urls": [
+            {
+              "label": "HN story — Wayfinder Router featured Jun 28 DTF episode",
+              "url": "https://news.ycombinator.com/item?id=48704373"
+            }
+          ],
+          "summary": "Wayfinder routes prompts to local or cloud LLM by analyzing structure and wording offline in microseconds — no model call in the routing decision. Outputs a score and recommendation. Python 93.1%; 189 stars; Apache 2.0; solo-maintained. v2026.6.9 shipped Jun 28. Featured in the Jun 28 HN front page DTF episode.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 189 },
+          "tags": ["LLM Routing", "Local Model", "Cost Optimization"],
+          "category": "Dev Tool",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent & RAG Implementations",
+      "description": "Production-shaped agent or RAG builds with linked code or detailed write-ups, week of Jun 22–28 2026.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "impl-halo-rlm-production-trace-analysis",
+          "title": "HALO: Production-scale agent trace analysis with Recursive Language Models",
+          "subtitle": "Run your agent, feed traces to HALO, get a structured failure report — local app, no signup, supports Langfuse and OTEL",
+          "source": "GitHub / HN",
+          "author": "alexzhang13 (MIT OASYS lab)",
+          "date": "2026-06-24",
+          "primary_url": "https://github.com/alexzhang13/rlm",
+          "summary": "HALO addresses the production-scale trace analysis problem: once an agent is running thousands of sessions, you cannot fit enough traces into a single model context to find systemic failure patterns. The RLM engine recursively decomposes trace data into smaller investigations, analyzes sub-pieces, and synthesizes recurring harness-level failure modes. Accepts OTEL traces from Langfuse, Arize/OpenInference, or plain JSONL. Paper at arXiv:2512.24601.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7.5, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "tags": ["Agent Observability", "Trace Analysis", "Production", "RLM"],
+          "category": "Eval Framework",
+          "recurrence": "new"
+        },
+        {
+          "id": "impl-zhulisen-daily-stock-llm-rag",
+          "title": "ZhuLinsen/daily_stock_analysis — LLM-driven multi-market daily analysis with auto-push",
+          "subtitle": "Production pattern: LLM + multi-source data + scheduled execution + automated notification — 50k stars, 44k forks, free to run on GitHub Actions",
+          "source": "GitHub",
+          "author": "ZhuLinsen",
+          "date": "2026-06-20",
+          "primary_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+          "summary": "A production-shaped LLM agent pipeline running daily: pulls multi-source market data, ingests real-time news, generates a decision dashboard, and pushes summaries to Slack, Telegram, WeChat, email, or Discord via GitHub Actions. v3.23.0 (Jun 20, 2026); Jun 26 commit added Taiwan market as first-class. Python 76%; 50k stars, 44k forks. The architecture is directly adaptable for any domain requiring scheduled LLM synthesis of live structured data.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "tags": ["Scheduled Agent", "LLM Pipeline", "Data Integration", "Notifications"],
+          "category": "Automation",
+          "recurrence": "new"
+        },
+        {
+          "id": "impl-headroom-context-compression-agent",
+          "title": "headroom context compression — agent RAG with 60–95% token reduction via proxy",
+          "subtitle": "The proxy deploy pattern: zero code changes, compresses RAG chunks before LLM inference, cross-agent shared memory",
+          "source": "GitHub",
+          "author": "headroomlabs-ai",
+          "date": "2026-06-22",
+          "primary_url": "https://github.com/headroomlabs-ai/headroom",
+          "summary": "The headroom proxy pattern is the cleanest production RAG optimization available this week: deploy one process, point the agent's API base URL at it, and all RAG chunk submissions are compressed before they reach the model. Cross-agent shared memory means the same compressed context store is available to any coding agent on the team. Jun 28 patch (#1489) fixed token-mode compression on frozen prefixes — a regression in compressed contexts that reused a common prefix. Python 79.6%, Rust 15.7%; v0.27.0.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "tags": ["RAG Optimization", "Context Compression", "Proxy", "Agent Memory"],
+          "category": "Dev Tool",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "Automations with measurable outcomes — numbers required. Week of Jun 22–28 2026.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "automation-n8n-task-reduction",
+          "title": "n8n workflow automation: 185s manual task reduced to 1.23s automated execution",
+          "subtitle": "Published benchmark from Syncra Labs comparative study — June 2026; less than 1% of original execution time",
+          "source": "Syncra Labs / arxiv.org study",
+          "date": "2026-06-15",
+          "primary_url": "https://www.syncralabs.es/blog/workflow-automation-n8n-vs-make-vs-zapier-2026",
+          "summary": "A comparative study by Syncra Labs (citing an arxiv.org source) shows a representative manual workflow that took 185 seconds was reduced to 1.23 seconds when automated with n8n — a 99.3% execution-time reduction with fewer errors. The latest n8n version integrates Claude Opus 4.8 for reasoning-capable automation steps. This number is frequently cited in n8n vs. Make vs. Zapier comparisons as the benchmark for task-automation throughput gains.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "results": "185 seconds (manual) → 1.23 seconds (automated); 99.3% execution-time reduction; fewer errors on repetitive tasks. Source: Syncra Labs blog Jun 15, 2026, citing arxiv.org study.",
+          "tags": ["n8n", "Workflow Automation", "Benchmark", "Process Efficiency"],
+          "category": "Automation",
+          "recurrence": "new"
+        },
+        {
+          "id": "automation-zhulisen-stock-zero-cost",
+          "title": "ZhuLinsen/daily_stock_analysis — zero-cost daily LLM analysis via GitHub Actions scheduling",
+          "subtitle": "Free scheduled LLM pipeline: multi-market analysis + decision dashboard + auto-push notifications at $0 infrastructure cost",
+          "source": "GitHub",
+          "author": "ZhuLinsen",
+          "date": "2026-06-20",
+          "primary_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+          "summary": "daily_stock_analysis demonstrates a pattern where a scheduled LLM agent pipeline runs at zero infrastructure cost using GitHub Actions free tier — pulling live data, running LLM analysis, and pushing outputs to communication platforms daily. The pattern is directly applicable for any enterprise workflow requiring scheduled synthesis of live structured data at low cost. Jun 26 commit extends the market coverage.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "results": "Zero infrastructure cost per run (GitHub Actions free tier); 50k stars, 44k forks indicating widespread adoption; scheduled daily execution confirmed by repo architecture and README (fetched Jun 28, 2026).",
+          "tags": ["LLM Automation", "Scheduled Agent", "Zero Cost", "GitHub Actions"],
+          "category": "Automation",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Meaningful releases from major AI agent and LLM frameworks — week of Jun 22–28 2026. Patch releases and routine dependency bumps excluded.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "framework-langchain-1311-strict-tools",
+          "title": "langchain-ai/langchain — 1.3.11 with strict=True tool support for OpenAI-compatible models",
+          "subtitle": "strict=True on tools in ProviderStrategy; stop stripped from Responses API; OpenRouter parallel_tool_calls added",
+          "source": "GitHub / StartupCorners OSS Digest W26",
+          "date": "2026-06-23",
+          "primary_url": "https://github.com/langchain-ai/langchain",
+          "secondary_urls": [
+            {
+              "label": "StartupCorners OSS Releases W26 — full changelog",
+              "url": "https://startupcorners.com/digest/oss-release-digest-2026-W26"
+            }
+          ],
+          "summary": "LangChain 1.3.11 enables strict=True on tools in ProviderStrategy for OpenAI-compatible models and strips stop from the Responses API payload. The companion langchain-openrouter 0.2.4 adds cache_control passthrough on tool definitions and parallel_tool_calls support on bind_tools. LangChain Anthropic 1.4.8 ships fixes for content block handling. Per the StartupCorners W26 OSS digest (Jun 23, 2026): the week's AI framework releases signal converging reliability standards around structured-output and tool-calling across all major providers.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 6.5, "signal": 1, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "tags": ["LangChain", "Tool Calling", "Structured Output", "OpenAI Compatible"],
+          "category": "Agent Framework",
+          "recurrence": "new"
+        },
+        {
+          "id": "framework-anthropic-sdk-ts-0105-code-execution",
+          "title": "anthropics/anthropic-sdk-typescript — v0.105.0 adds code_execution_20260120 tool and lazy partial-JSON parsing",
+          "subtitle": "New code execution tool type; lazy partial-JSON parsing for tool input streams; ships across Bedrock, Vertex, AWS, Foundry SDKs",
+          "source": "GitHub / StartupCorners OSS Digest W26",
+          "date": "2026-06-23",
+          "primary_url": "https://github.com/anthropics/anthropic-sdk-typescript",
+          "secondary_urls": [
+            {
+              "label": "StartupCorners OSS Releases W26",
+              "url": "https://startupcorners.com/digest/oss-release-digest-2026-W26"
+            }
+          ],
+          "summary": "Anthropic TypeScript SDK v0.105.0 adds support for the code_execution_20260120 tool and introduces lazy partial-JSON parsing for tool input streams. The same release ships across cloud variants: bedrock-sdk-v0.31.0, vertex-sdk-v0.18.0, aws-sdk-v0.5.0, foundry-sdk-v0.4.0 — all receiving the lazy streaming improvements. Per StartupCorners W26 OSS digest (Jun 23, 2026).",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 6.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "tags": ["Anthropic SDK", "Code Execution", "Streaming", "Tool Calling"],
+          "category": "Agent Framework",
+          "recurrence": "new"
+        },
+        {
+          "id": "framework-crewai-1147-memory-backends",
+          "title": "CrewAI v1.14.7 — pluggable backends for memory, knowledge, RAG, and flow; chat API for conversational flows",
+          "subtitle": "53k+ GitHub stars; memory/knowledge/RAG backends now pluggable; new chat API; v1.14.7a pre-release series through Jun 17",
+          "source": "LinkedIn / Piwheels",
+          "date": "2026-06-11",
+          "primary_url": "https://github.com/joaomdmoura/crewAI",
+          "summary": "CrewAI v1.14.7 (per LinkedIn post, Jun 11, 2026) adds pluggable backends for memory, knowledge, RAG, and flow — allowing teams to swap out the default in-memory store for production-grade vector databases or retrieval systems. A new chat API enables conversational flows alongside task-based crew workflows. Route-aware typed DSL triggers included. Pre-release series (1.14.7a1 through 1.14.7a4) ran Jun 3–10; stable release Jun 11.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "tags": ["CrewAI", "Multi-Agent", "Memory Backends", "RAG", "Pluggable"],
+          "category": "Agent Framework",
+          "recurrence": "new"
+        },
+        {
+          "id": "framework-langchain-fleet-computer-use",
+          "title": "LangSmith Fleet — Computer Use for agents in isolated virtual computers",
+          "subtitle": "Agents now drive an isolated virtual computer for code, files, and authenticated API calls; new Fleet on-call copilot template; Slack integration",
+          "source": "LangChain June 2026 Newsletter",
+          "date": "2026-06-26",
+          "primary_url": "https://www.langchain.com/blog/june-2026-langchain-newsletter",
+          "summary": "LangChain's June 2026 newsletter (Jun 26) announces Computer Use in Fleet: agents can now use an isolated virtual computer for code execution, file operations, and authenticated API calls. A Fleet on-call copilot template works through code, traces, and runbooks to triage alerts and draft updates. Programmatic subagents dispatch from interpreter code for parallel fan-out. Native Slack integration for LangSmith Engine notifications ships alongside experiment status tracking.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "tags": ["LangChain", "Computer Use", "Fleet", "On-Call Automation", "Subagents"],
+          "category": "Agent Framework",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-source patterns the data reveals this week — not individual items but convergent signals from multiple repos and communities.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "pattern-agent-memory-infrastructure",
+          "title": "Agent memory is becoming the infrastructure layer, not an application feature",
+          "subtitle": "Three independent repos in the weekly top 10 solve context management differently — headroom (compression), codebase-memory-mcp (persistent graph), daily_stock_analysis (scheduled refresh)",
+          "source": "GitHub Trending W26",
+          "date": "2026-06-28",
+          "primary_url": "https://github.com/headroomlabs-ai/headroom",
+          "summary": "This week's trending chart contains three distinct approaches to the same problem — agents forgetting or running out of context: headroom compresses before the model sees anything (reducing token footprint), codebase-memory-mcp builds a persistent knowledge graph that answers structural queries without loading files into context at all, and daily_stock_analysis runs a scheduled refresh cycle that always starts each agent session with fresh synthesized data. These are three different architectural layers of the same memory problem, and all three are gaining traction simultaneously. The convergence signals that enterprise AI teams are moving past prompt engineering and into context architecture as a primary design concern.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 3, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["Agent Memory", "Context Architecture", "Infrastructure", "Pattern"],
+          "category": "Pattern",
+          "recurrence": "new"
+        },
+        {
+          "id": "pattern-agentskills-ecosystem-maturity",
+          "title": "The agentskills.io ecosystem crossed a portability threshold — skills now move freely across ~40 competing products",
+          "subtitle": "mattpocock/skills (112k stars), Anthropic-Cybersecurity-Skills (21.9k), OpenMontage (500+ skills), awesome-agent-skills (26k) all follow the same standard",
+          "source": "GitHub Trending W26 / agentman.ai ecosystem report",
+          "date": "2026-06-25",
+          "primary_url": "https://agentman.ai/blog/agent-skills-ecosystem-report-2026",
+          "summary": "The agentskills.io open standard is now supported by roughly 40 products including OpenAI Codex, GitHub Copilot, Cursor, Gemini CLI, VS Code, Goose, OpenCode, Amp, Factory, Kiro, Roo Code, Databricks Genie Code, and Snowflake Cortex Code — per the Agentman.ai June 2026 ecosystem report. A skill written for Claude Code runs unmodified in a competitor's agent. This week's four high-trending skills repos all follow this standard, and all four publish skills as plain YAML+Markdown files that can be read, audited, and selectively deployed. For an enterprise AI team, the investment in writing good internal skills is now portable — not locked to any single vendor's product roadmap.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "tags": ["agentskills.io", "Portability", "Ecosystem", "Standards", "Pattern"],
+          "category": "Pattern",
+          "recurrence": "new"
+        },
+        {
+          "id": "pattern-deterministic-offline-routing",
+          "title": "Deterministic, offline routing is emerging as a complement to model-based routing for LLM cost control",
+          "subtitle": "Wayfinder Router (Apache 2.0, microseconds) routes without a model call; the pattern avoids the meta-cost of asking a model to decide which model to use",
+          "source": "GitHub / HN Jun 28",
+          "date": "2026-06-28",
+          "primary_url": "https://github.com/itsthelore/wayfinder-router",
+          "summary": "Wayfinder Router, featured on HN Jun 28, demonstrates a pattern that avoids the central irony of model-based prompt routing — using a large model to decide whether to use a large model. By analyzing prompt structure and wording deterministically in microseconds, wayfinder avoids the latency and cost of a routing inference call. The pattern complements but does not replace semantic-similarity routing for cases where prompt structure alone is sufficient to determine complexity. For enterprise teams optimizing between an internal local model and a cloud subscription, a deterministic router with no ongoing API cost is architecturally attractive.",
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "tags": ["LLM Routing", "Cost Optimization", "Deterministic", "Pattern"],
+          "category": "Pattern",
+          "recurrence": "new"
+        }
+      ]
+    }
+  ],
+
+  "index": [
+    { "id": "headroomlabs-ai-headroom-context-compression", "title": "headroomlabs-ai/headroom", "source": "GitHub", "date": "2026-06-22", "primary_url": "https://github.com/headroomlabs-ai/headroom", "score": 9 },
+    { "id": "deusdata-codebase-memory-mcp-code-intelligence", "title": "DeusData/codebase-memory-mcp", "source": "GitHub", "date": "2026-06-22", "primary_url": "https://github.com/DeusData/codebase-memory-mcp", "score": 8 },
+    { "id": "calesthio-openmontage-agentic-video", "title": "calesthio/OpenMontage", "source": "GitHub", "date": "2026-06-22", "primary_url": "https://github.com/calesthio/OpenMontage", "score": 8 },
+    { "id": "mukul975-anthropic-cybersecurity-skills-framework", "title": "mukul975/Anthropic-Cybersecurity-Skills", "source": "GitHub", "date": "2026-06-22", "primary_url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills", "score": 8 },
+    { "id": "mattpocock-skills-real-engineers", "title": "mattpocock/skills", "source": "GitHub", "date": "2026-06-02", "primary_url": "https://github.com/mattpocock/skills", "score": 8 },
+    { "id": "trending-calesthio-openmontage", "title": "calesthio/OpenMontage (trending)", "source": "GitHub Trending", "date": "2026-06-22", "primary_url": "https://github.com/calesthio/OpenMontage", "score": 7.5 },
+    { "id": "trending-headroomlabs-headroom", "title": "headroomlabs-ai/headroom (trending)", "source": "GitHub Trending", "date": "2026-06-22", "primary_url": "https://github.com/headroomlabs-ai/headroom", "score": 9 },
+    { "id": "trending-mattpocock-skills", "title": "mattpocock/skills (trending)", "source": "GitHub Trending", "date": "2026-06-02", "primary_url": "https://github.com/mattpocock/skills", "score": 8 },
+    { "id": "trending-panniantong-agent-reach", "title": "Panniantong/Agent-Reach", "source": "GitHub Trending", "date": "2026-02-24", "primary_url": "https://github.com/Panniantong/Agent-Reach", "score": 7.5 },
+    { "id": "trending-deusdata-codebase-memory-mcp", "title": "DeusData/codebase-memory-mcp (trending)", "source": "GitHub Trending", "date": "2026-02-24", "primary_url": "https://github.com/DeusData/codebase-memory-mcp", "score": 8 },
+    { "id": "trending-bytedance-deer-flow", "title": "bytedance/deer-flow", "source": "GitHub Trending", "date": "2026-01-01", "primary_url": "https://github.com/bytedance/deer-flow", "score": 7 },
+    { "id": "trending-stablyai-orca", "title": "stablyai/orca", "source": "GitHub Trending", "date": "2026-03-17", "primary_url": "https://github.com/stablyai/orca", "score": 7 },
+    { "id": "trending-koala73-worldmonitor", "title": "koala73/worldmonitor", "source": "GitHub Trending", "date": "2026-01-08", "primary_url": "https://github.com/koala73/worldmonitor", "score": 7 },
+    { "id": "trending-zhulisen-daily-stock-analysis", "title": "ZhuLinsen/daily_stock_analysis", "source": "GitHub Trending", "date": "2026-01-10", "primary_url": "https://github.com/ZhuLinsen/daily_stock_analysis", "score": 6.5 },
+    { "id": "trending-jamiepine-voicebox", "title": "jamiepine/voicebox", "source": "GitHub Trending", "date": "2026-01-25", "primary_url": "https://github.com/jamiepine/voicebox", "score": 7 },
+    { "id": "skills-anthropic-cybersecurity-817", "title": "mukul975/Anthropic-Cybersecurity-Skills (skills)", "source": "GitHub", "date": "2026-06-22", "primary_url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills", "score": 8 },
+    { "id": "skills-deusdata-codebase-memory-mcp-server", "title": "DeusData/codebase-memory-mcp (MCP)", "source": "GitHub", "date": "2026-06-22", "primary_url": "https://github.com/DeusData/codebase-memory-mcp", "score": 8 },
+    { "id": "skills-headroom-mcp-server", "title": "headroom MCP server tools", "source": "GitHub", "date": "2026-06-22", "primary_url": "https://github.com/headroomlabs-ai/headroom", "score": 8 },
+    { "id": "skills-openmontage-skills-library", "title": "OpenMontage 500+ skills", "source": "GitHub", "date": "2026-06-22", "primary_url": "https://github.com/calesthio/OpenMontage", "score": 7 },
+    { "id": "skills-volta-awesome-agent-skills", "title": "VoltAgent/awesome-agent-skills", "source": "GitHub", "date": "2026-06-01", "primary_url": "https://github.com/VoltAgent/awesome-agent-skills", "score": 7 },
+    { "id": "skills-itsthelore-wayfinder-router", "title": "itsthelore/wayfinder-router", "source": "GitHub", "date": "2026-06-17", "primary_url": "https://github.com/itsthelore/wayfinder-router", "score": 7 },
+    { "id": "hn-oak-git-for-agents", "title": "Show HN: Oak – Git alternative designed for agents", "source": "Hacker News", "date": "2026-06-23", "primary_url": "https://oak.space/oak/oak", "score": 7.5 },
+    { "id": "hn-peerd-browser-agent-harness", "title": "Show HN: peerd – AI agent harness in browser", "source": "Hacker News", "date": "2026-06-24", "primary_url": "https://github.com/NotASithLord/peerd", "score": 7 },
+    { "id": "hn-halo-rlm-agent-trace-debugger", "title": "Show HN: HALO – RLM-based agent trace debugger", "source": "Hacker News", "date": "2026-06-24", "primary_url": "https://github.com/alexzhang13/rlm", "score": 7.5 },
+    { "id": "hn-openknowledge-ai-first-notes", "title": "Show HN: OpenKnowledge – AI-first Obsidian/Notion alternative", "source": "Hacker News", "date": "2026-06-23", "primary_url": "https://github.com/inkeep/openknowledge", "score": 7 },
+    { "id": "hn-wayfinder-router-llm-routing", "title": "Wayfinder Router – deterministic LLM routing", "source": "Hacker News", "date": "2026-06-28", "primary_url": "https://github.com/itsthelore/wayfinder-router", "score": 7 },
+    { "id": "impl-halo-rlm-production-trace-analysis", "title": "HALO production-scale trace analysis", "source": "GitHub", "date": "2026-06-24", "primary_url": "https://github.com/alexzhang13/rlm", "score": 7.5 },
+    { "id": "impl-zhulisen-daily-stock-llm-rag", "title": "daily_stock_analysis LLM pipeline pattern", "source": "GitHub", "date": "2026-06-20", "primary_url": "https://github.com/ZhuLinsen/daily_stock_analysis", "score": 7 },
+    { "id": "impl-headroom-context-compression-agent", "title": "headroom proxy context compression pattern", "source": "GitHub", "date": "2026-06-22", "primary_url": "https://github.com/headroomlabs-ai/headroom", "score": 8 },
+    { "id": "automation-n8n-task-reduction", "title": "n8n: 185s → 1.23s task automation benchmark", "source": "Syncra Labs", "date": "2026-06-15", "primary_url": "https://www.syncralabs.es/blog/workflow-automation-n8n-vs-make-vs-zapier-2026", "score": 7 },
+    { "id": "automation-zhulisen-stock-zero-cost", "title": "daily_stock_analysis zero-cost GitHub Actions pattern", "source": "GitHub", "date": "2026-06-20", "primary_url": "https://github.com/ZhuLinsen/daily_stock_analysis", "score": 7 },
+    { "id": "framework-langchain-1311-strict-tools", "title": "LangChain 1.3.11 — strict tools + OpenRouter parallel calls", "source": "GitHub / StartupCorners", "date": "2026-06-23", "primary_url": "https://github.com/langchain-ai/langchain", "score": 6.5 },
+    { "id": "framework-anthropic-sdk-ts-0105-code-execution", "title": "anthropic-sdk-typescript v0.105.0 — code execution tool", "source": "GitHub", "date": "2026-06-23", "primary_url": "https://github.com/anthropics/anthropic-sdk-typescript", "score": 6.5 },
+    { "id": "framework-crewai-1147-memory-backends", "title": "CrewAI v1.14.7 — pluggable memory/knowledge/RAG backends", "source": "GitHub / LinkedIn", "date": "2026-06-11", "primary_url": "https://github.com/joaomdmoura/crewAI", "score": 7 },
+    { "id": "framework-langchain-fleet-computer-use", "title": "LangSmith Fleet — Computer Use in isolated VMs", "source": "LangChain Newsletter", "date": "2026-06-26", "primary_url": "https://www.langchain.com/blog/june-2026-langchain-newsletter", "score": 7 },
+    { "id": "pattern-agent-memory-infrastructure", "title": "Pattern: Agent memory as infrastructure layer", "source": "GitHub Trending W26", "date": "2026-06-28", "primary_url": "https://github.com/headroomlabs-ai/headroom", "score": 7 },
+    { "id": "pattern-agentskills-ecosystem-maturity", "title": "Pattern: agentskills.io crosses portability threshold", "source": "GitHub / Agentman.ai", "date": "2026-06-25", "primary_url": "https://agentman.ai/blog/agent-skills-ecosystem-report-2026", "score": 8 },
+    { "id": "pattern-deterministic-offline-routing", "title": "Pattern: Deterministic offline LLM routing", "source": "GitHub / HN", "date": "2026-06-28", "primary_url": "https://github.com/itsthelore/wayfinder-router", "score": 7 }
+  ],
+
+  "flagged_unverified": [
+    {
+      "claim": "BuilderIO/agent-native described as #10 on weekly trending with 440 stars — the low star count and corporate backing (Builder.io) suggest this may have been trending due to an announcement rather than organic community build velocity.",
+      "reason": "440 total stars is too low for a genuine weekly organic trending position. BuilderIO is a commercial company, making this a potential Launches item rather than a Builders item.",
+      "attempted_url": "https://github.com/BuilderIO/agent-native"
+    },
+    {
+      "claim": "JCodesMore/ai-website-cloner-template described as gaining '22k stars in days' in the ForkCast video",
+      "reason": "Fetched repo shows 15.6k total stars and latest commit May 7, 2026 — no activity this week. The 22k figure in the video appears to be an error or refers to a different timeframe. Excluded from trending section.",
+      "attempted_url": "https://github.com/JCodesMore/ai-website-cloner-template"
+    }
+  ],
+
+  "suggested_refinements": {
+    "sources_to_add": [
+      "syusodo.co.jp weekly GitHub trending rankings — provides reliable weekly star deltas with Japanese commentary on W26 trends",
+      "gitstar.co.kr — structured category-filtered trending with weekly deltas; caught headroom as #2 this week",
+      "dzosoft.com GitHub Trend Explorer — real-time daily trending with concise one-liners",
+      "ForkCast YouTube weekly top 10 — narrative context for why each repo broke out"
+    ],
+    "sources_to_drop": [
+      "shareuhack.com English edition — articles are only available in Traditional Chinese; the English redirect returns a 'not available' page"
+    ],
+    "topics_to_add": [
+      "Context architecture and agent memory — three separate trending repos this week addressed the same context problem from different angles; this deserves a dedicated section",
+      "agentskills.io ecosystem tracking — the standard now underpins 40+ products; tracking new skills repos weekly is warranted",
+      "Agentic video and content production — OpenMontage opened a new category this week"
+    ],
+    "topics_to_drop": [
+      "Generic automation tools without agent specificity — wayfinder-router qualifies, but pure n8n workflow templates are at the edge of the Builders scope unless the automation pattern is agent-native"
+    ],
+    "notes": "This week's data is higher quality than last week for two reasons: (1) the ForkCast YouTube weekly top 10 video (published Jun 27) provides a reliable narrative source for weekly trending context, and (2) multiple Japanese tracking sites (syusodo.co.jp, gitstar.co.kr) publish clean weekly star-delta tables that are more reliable than GitHub's trending page HTML. Both should be added to the Tier 1 source list for the Builders skill. Panniantong/Agent-Reach is returning from last week — still trending but should be excluded from the index next week unless it ships a meaningful new release."
+  }
+}

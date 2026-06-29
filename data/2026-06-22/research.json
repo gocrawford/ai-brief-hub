@@ -1,0 +1,315 @@
+{
+  "tab_id": "research",
+  "tab_name": "Research & Regulation",
+  "subtitle": "Primary-Source Intelligence",
+  "icon": "FileText",
+  "min_items": 10,
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 1.0,
+    "items_total": 0,
+    "items_new": 0,
+    "items_returning": 0,
+    "empty_week_note": "No major new developments this week."
+  },
+  "executive_summary": [
+    {
+      "headline": "No major new developments this week.",
+      "body": "This tab has not yet been populated for the week of 2026-06-22."
+    },
+    {
+      "headline": "Stub placeholder",
+      "body": "Stub placeholder for validation."
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "anthropic-fable5-export-control-suspension-june12",
+      "title": "Anthropic Fable 5 Suspended Globally on June 12 Under US Commerce Dept Export-Control Directive \u2014 First Government-Ordered Commercial AI Model Recall; Restored for US Paid Users June 17 Under Identity Verification Roadmap",
+      "subtitle": "Directive issued June 12, 2026. Jailbreak cited as trigger. Fable 5 restored June 17 for paid US users; full restoration depends on July 8 identity-verification rollout and ongoing negotiation. Mythos 5 remains restricted.",
+      "source": "Tech Policy Press / Anthropic",
+      "author": "Justin Hendrix (Tech Policy Press); Anthropic official statements",
+      "date": "2026-06-16",
+      "primary_url": "https://www.techpolicy.press/anthropics-mythos-recall-and-the-white-houses-missing-ai-safety-playbook/",
+      "secondary_urls": [
+        {
+          "label": "FutureSearch forecast: US/Anthropic standoff resolution scenarios and probability estimates",
+          "url": "https://futuresearch.ai/claude-fable-ban-forecast/"
+        },
+        {
+          "label": "Gravitee: enterprise AI architecture implications of the Fable 5 suspension",
+          "url": "https://www.gravitee.io/blog/fable-5-mythos-5-suspension-what-it-means-for-your-ai-architecture"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "summary": "On June 12, 2026, at 5:21 PM EST, Anthropic received a letter from Commerce Secretary Howard Lutnick ordering suspension of Fable 5 and Mythos 5 access for all foreign nationals inside or outside the US, including Anthropic's own non-US employees. The stated trigger was a claimed jailbreak of Fable 5. Anthropic disputed the severity \u2014 characterizing the vulnerabilities as minor and already present in other publicly available models \u2014 but complied within roughly 90 minutes by disabling both models for all users globally. The White House demanded two preconditions before lifting the order: a full accounting of all Project Glasswing access recipients (estimated at 50\u2013150 organizations) and guardrails approaching jailbreak-proof, a standard the cybersecurity community considers technically impossible. By June 17, Fable 5 was restored for paid US users under a free access window through June 22; a July 8 identity-verification rollout (age and citizenship checks) is the structured re-entry path for the US consumer market. International users depend on the directive being fully revoked.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "tags": [
+        "Anthropic",
+        "Fable 5",
+        "Mythos 5",
+        "export control",
+        "Commerce Dept",
+        "jailbreak",
+        "model access",
+        "supply chain risk",
+        "identity verification"
+      ],
+      "category": "Enterprise Disclosures",
+      "priority": "CRITICAL",
+      "recurrence": "new",
+      "enterprise_adaptation": "This event establishes that frontier model access via commercial API is subject to unilateral government suspension with near-zero notice. The implementation pattern: any enterprise AI workflow that depends on a specific frontier model as its sole inference path now has a documented, real-world supply-chain failure mode that is not contractual or infrastructure-based, but geopolitical. The structured response is a multi-model fallback architecture \u2014 at minimum, a parallel Opus 4.8 (or equivalent) path for every Fable 5 workload, tested and ready to activate within one business day. Regulated-environment caveat: the July 8 identity-verification rollout means that Anthropic consumer plans will require age and citizenship verification; enterprise API plans are on a separate track, but the precedent that model access can be gated by nationality has been set. Any enterprise AI team that employs non-US staff who access AI tools under enterprise licenses should review whether those staff are in scope of a future directive. The 30-day experiment: map every internal workflow currently using Claude Fable 5 or any Mythos-class API; for each, identify a tested fallback model and the delta in output quality and cost; document the switchover procedure so the team can execute it within hours if a future directive arrives."
+    },
+    {
+      "id": "glm52-zai-open-weight-mit-june16",
+      "title": "GLM-5.2: Z.ai Releases 753B MoE Open-Weight Model Under MIT License \u2014 SWE-bench Pro 62.1%, FrontierSWE 74.4% (1% Behind Claude Opus 4.8), Pricing at $1.40/$4.40 per 1M Tokens \u2014 Highest-Ranked Open-Weight Model on Artificial Analysis Intelligence Index",
+      "subtitle": "Released June 13 (subscribers), open weights June 16, 2026. 1M-token context. MIT license. Benchmarks vendor-reported; Artificial Analysis independent ranking confirmed.",
+      "source": "Z.ai (Hugging Face blog) / Artificial Analysis",
+      "author": "Z.ai (zai-org)",
+      "date": "2026-06-16",
+      "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+      "secondary_urls": [
+        {
+          "label": "Tech Startups: GLM-5.2 beats GPT-5.5 on coding benchmarks at one-sixth the cost",
+          "url": "https://techstartups.com/2026/06/17/z-ais-open-source-glm-5-2-beats-gpt-5-5-on-coding-benchmarks-at-one-sixth-the-cost/"
+        },
+        {
+          "label": "Simon Willison: GLM-5.2 is probably the most powerful text-only open-weights LLM",
+          "url": "https://simonwillison.net/2026/jun/17/glm-52/"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "summary": "GLM-5.2 is a 753B-parameter (40B active) Mixture-of-Experts model from Z.ai released under MIT license with a stable 1-million-token context window and up to 131,072 output tokens. The key architecture change is IndexShare, which reuses sparse-attention top-k indices across groups of four layers, cutting per-token FLOPs at 1M context by 2.9x. On SWE-bench Pro it scores 62.1% versus GPT-5.5 at 58.6%; on FrontierSWE it scores 74.4% versus Claude Opus 4.8 at 75.1%. Artificial Analysis independently placed it at 51 on its Intelligence Index v4.1, ahead of all other open-weight models. API pricing is $1.40 input / $4.40 output per 1M tokens versus GPT-5.5 at $5.00/$30.00 \u2014 approximately one-sixth the cost for comparable coding tasks. The model supports Claude Code, Cline, and other agentic coding tools via Anthropic-compatible endpoint. Performance benchmarks are vendor-reported except for Artificial Analysis's index ranking.",
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "tags": [
+        "GLM-5.2",
+        "Z.ai",
+        "open weights",
+        "MIT license",
+        "SWE-bench",
+        "FrontierSWE",
+        "1M context",
+        "coding model",
+        "self-hosting"
+      ],
+      "category": "Model Cards",
+      "priority": "CRITICAL",
+      "recurrence": "new",
+      "enterprise_adaptation": "GLM-5.2 is the first open-weight model to reach within 1 percentage point of the Anthropic frontier on long-horizon software engineering \u2014 which directly changes the enterprise calculus for build-vs-buy decisions on coding infrastructure. The implementation pattern: an enterprise team currently paying GPT-5.5 rates for agentic coding workloads can evaluate GLM-5.2 self-hosted at roughly one-sixth the per-token cost, with MIT licensing that permits commercial use, modification, and no data egress to a third-party API. The 1M-token context window is genuinely useful for repository-scale analysis \u2014 cross-file refactoring, large codebase Q&A, and long-horizon agentic task loops. Regulated-environment caveat: Z.ai is a Beijing-based company (formerly Zhipu AI, spun out of Tsinghua University). Data governance teams at regulated enterprises should note this provenance before routing any sensitive code or proprietary IP through the Z.ai API. The self-hosted option (weights under MIT) sidesteps the data-egress concern entirely, but running a 753B MoE model at production scale requires 8x H100s in BF16 or a quantized variant fitting on fewer GPUs. The 30-day experiment: identify one internal benchmark \u2014 for example, a standardized set of code review tasks or documentation generation prompts currently run against Claude Opus 4.8 \u2014 and run the same set against GLM-5.2 via the Z.ai API in a sandboxed environment using only non-sensitive test code; compare output quality, latency, and per-task cost; document the delta as evidence for a model diversification review."
+    },
+    {
+      "id": "eu-ai-act-digital-omnibus-june16",
+      "title": "EU AI Act Digital Omnibus Adopted by European Parliament June 16 \u2014 Annex III High-Risk AI Obligations Postponed to December 2027, Nudifier Ban Enacted, Article 50 Transparency Unchanged at August 2, 2026",
+      "subtitle": "European Parliament vote: 423 in favor, 57 against. Council sign-off still required. High-risk Annex I (machinery, elevators) delayed to August 2028. Article 5 nudifier ban takes effect December 2026.",
+      "source": "European Parliament",
+      "author": "European Parliament (press room)",
+      "date": "2026-06-16",
+      "primary_url": "https://www.europarl.europa.eu/news/en/press-room/20260611IPR45207/",
+      "secondary_urls": [
+        {
+          "label": "GamingTechLaw: full breakdown of Omnibus provisions and timelines",
+          "url": "https://www.gamingtechlaw.com/2026/06/eu-ai-act-changes-machinery-rules/"
+        },
+        {
+          "label": "Heuking: AI compliance 2026 \u2014 what the Digital Omnibus means for businesses",
+          "url": "https://www.heuking.de/en/news-events/newsletter-articles/detail/ai-compliance-2026-what-the-digital-omnibus-act-really-means-for-businesses.html"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-06-21T20:00:00Z",
+      "summary": "The European Parliament adopted the Digital Omnibus on June 16, 2026, with a 423-57 vote. The primary compliance relief: Annex III standalone high-risk AI systems (biometrics, employment, critical infrastructure, law enforcement, education) move from August 2026 to December 2, 2027; AI embedded in regulated products under Annex I (machinery, elevators, toys) moves to August 2, 2028. The core Article 50 transparency obligations \u2014 chatbot interaction disclosure, deepfake labeling, AI-generated public-interest text labeling \u2014 remain at August 2, 2026, as does Article 50(1) interaction disclosure. A new Article 5 prohibition on nudifier and CSAM-generating AI systems takes effect December 2, 2026. The AI literacy obligation is softened from a guaranteed outcome to a 'reasonable efforts' standard. EU database registration for high-risk systems is preserved. The text still requires Council sign-off before entry into force; institutions aim to finalize before August 2.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "tags": [
+        "EU AI Act",
+        "Digital Omnibus",
+        "Annex III",
+        "high-risk AI",
+        "Article 50",
+        "transparency",
+        "nudifier ban",
+        "compliance deadline"
+      ],
+      "category": "Regulation \u2014 EU",
+      "priority": "HIGH",
+      "recurrence": "new",
+      "enterprise_adaptation": "The Omnibus has two distinct compliance implications depending on where an enterprise sits in the AI value chain. For enterprises deploying AI in HR, credit, or infrastructure contexts (Annex III scope): the December 2027 extension is real relief \u2014 a 16-month window to build conformity assessment processes that were not feasible by August 2026. Do not treat this as permission to stop compliance work; treat it as a window to do it properly, with the national market surveillance authority frameworks now being stood up across member states. For enterprises deploying generative AI that interacts with EU persons (Annex I or any generative AI product): Article 50 is unchanged. Chatbot disclosure, deepfake labeling, and AI-generated text labeling are required from August 2. The EU AI Office's Code of Practice sets the technical benchmark \u2014 C2PA machine-readable metadata is the recommended implementation path. Regulated-environment caveat: the postponement does not affect enforcement of GPAI obligations (Article 53 onwards), which apply to providers of large general-purpose AI models and are on their own timeline. If your enterprise provides or fine-tunes an AI model used in the EU at scale, GPAI obligations are live from August 2, 2026. The 30-day experiment: run a scoping exercise against the EU AI Act taxonomy \u2014 classify each AI system your team deploys as (a) Annex I/III high-risk, (b) Article 50 transparency-subject, (c) GPAI, or (d) none; assign the correct obligation timeline to each; flag any that fall under Article 50 with an August 2 deadline and ensure the disclosure and labeling stack is in test before July 15."
+    }
+  ],
+  "sections": [],
+  "index": [
+    {
+      "id": "anthropic-fable5-export-control-suspension-june12",
+      "title": "Anthropic Fable 5 and Mythos 5 Suspended Globally Under US Commerce Dept Export-Control Directive June 12 \u2014 First Government-Ordered Commercial AI Model Recall",
+      "source": "Tech Policy Press",
+      "author": "Justin Hendrix",
+      "date": "2026-06-16",
+      "primary_url": "https://www.techpolicy.press/anthropics-mythos-recall-and-the-white-houses-missing-ai-safety-playbook/",
+      "score": 9.0
+    },
+    {
+      "id": "glm52-zai-open-weight-mit-june16",
+      "title": "GLM-5.2: Z.ai 753B MoE Open-Weight MIT Model \u2014 SWE-bench Pro 62.1%, FrontierSWE 74.4%, $1.40/$4.40 per 1M Tokens, Highest-Ranked Open-Weight on AI Analysis Index",
+      "source": "Z.ai (Hugging Face)",
+      "author": "Z.ai (zai-org)",
+      "date": "2026-06-16",
+      "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+      "score": 9.0
+    },
+    {
+      "id": "eu-ai-act-digital-omnibus-june16",
+      "title": "EU AI Act Digital Omnibus Adopted June 16 \u2014 Annex III Postponed to December 2027, Nudifier Ban, Article 50 Unchanged at August 2",
+      "source": "European Parliament",
+      "author": "European Parliament",
+      "date": "2026-06-16",
+      "primary_url": "https://www.europarl.europa.eu/news/en/press-room/20260611IPR45207/",
+      "score": 8.5
+    },
+    {
+      "id": "eu-ai-act-code-practice-content-transparency-june10",
+      "title": "EU AI Office Final Code of Practice on AI Content Transparency June 10 \u2014 C2PA Standard, Article 50 August 2, Signatory Forms Due July 22",
+      "source": "European Commission AI Office",
+      "author": "European Commission AI Office",
+      "date": "2026-06-10",
+      "primary_url": "https://verdaio.ai/news.html",
+      "score": 8.5
+    },
+    {
+      "id": "signal-model-access-geopolitical-risk",
+      "title": "Fable 5 Suspension Establishes Export-Control Precedent: Frontier Models Subject to Government Recall With Hours Notice",
+      "source": "Tech Policy Press / FutureSearch",
+      "author": "Multiple sources",
+      "date": "2026-06-16",
+      "primary_url": "https://www.techpolicy.press/anthropics-mythos-recall-and-the-white-houses-missing-ai-safety-playbook/",
+      "score": 8.5
+    },
+    {
+      "id": "gaaia-federal-ai-preemption-discussion-draft-june4",
+      "title": "Great American AI Act Discussion Draft: $1M/Day Penalties, Semi-Annual IVO Audits, 3-Year State Preemption \u2014 Not Yet Formal Legislation",
+      "source": "Cato Institute",
+      "author": "Juan Londo\u00f1o",
+      "date": "2026-06-04",
+      "primary_url": "https://www.cato.org/blog/primer-great-american-artificial-intelligence-act",
+      "score": 8.0
+    },
+    {
+      "id": "anthropic-fable5-export-control-detail",
+      "title": "Fable 5 Export Control Detail: Jassy Trigger, Project Glasswing Accounting Demand, July 8 Identity Verification, Resolution Forecast",
+      "source": "Tech Policy Press / FutureSearch",
+      "author": "Justin Hendrix",
+      "date": "2026-06-16",
+      "primary_url": "https://www.techpolicy.press/anthropics-mythos-recall-and-the-white-houses-missing-ai-safety-playbook/",
+      "score": 8.0
+    },
+    {
+      "id": "eu-ai-omnibus-parliament-detail-june16",
+      "title": "EU AI Omnibus Detail: Machinery Carve-Out, SMC Category, Three-Month Technical Window, Watermarking December 2026",
+      "source": "GamingTechLaw / European Parliament",
+      "author": "European Parliament",
+      "date": "2026-06-16",
+      "primary_url": "https://www.gamingtechlaw.com/2026/06/eu-ai-act-changes-machinery-rules/",
+      "score": 8.0
+    },
+    {
+      "id": "signal-open-weight-frontier-parity",
+      "title": "GLM-5.2 Within 1% of Claude Opus 4.8 on FrontierSWE \u2014 First Self-Hostable Frontier-Adjacent Coding Model at Sub-$6/Million Token Cost",
+      "source": "Latent.Space / Artificial Analysis",
+      "author": "Multiple practitioners",
+      "date": "2026-06-19",
+      "primary_url": "https://www.latent.space/p/ainews-glm-gpt-glm-52-passes-vibe",
+      "score": 8.0
+    },
+    {
+      "id": "decoding-hidden-deception-reasoning-llms-june16",
+      "title": "Decoding Hidden Deception in Reasoning LLMs: Activation Explainers Detect Deception Not Visible in Text Output",
+      "source": "arXiv cs.AI",
+      "author": "Submitted June 16, 2026",
+      "date": "2026-06-16",
+      "primary_url": "https://arxiv.org/abs/2606.17478",
+      "score": 8.0
+    },
+    {
+      "id": "glm52-model-detail-june16",
+      "title": "GLM-5.2 Model Card: IndexShare (2.9x FLOPs Reduction), Dual Reasoning Modes, SWE-bench Pro 62.1%, Terminal-Bench 81.0",
+      "source": "Z.ai (Hugging Face)",
+      "author": "Z.ai (zai-org)",
+      "date": "2026-06-16",
+      "primary_url": "https://huggingface.co/blog/zai-org/glm-52-blog",
+      "score": 8.5
+    },
+    {
+      "id": "gaaia-federal-ai-draft-detail",
+      "title": "GAAIA Draft Detail: CAISI $100M/Year, 15-Day Incident Reporting, Catastrophic Risk Defined at 50+ Deaths or $1B Property Damage",
+      "source": "Cato Institute / ThePlanetTools.ai",
+      "author": "Juan Londo\u00f1o",
+      "date": "2026-06-04",
+      "primary_url": "https://www.cato.org/blog/primer-great-american-artificial-intelligence-act",
+      "score": 7.5
+    },
+    {
+      "id": "vermont-h816-ai-therapy-ban-june17",
+      "title": "Vermont H.816: AI Therapy Ban Signed June 17, Effective Immediately \u2014 Fourth US State to Restrict AI-Delivered Mental Health Services",
+      "source": "Recording Law / Vermont Legislature",
+      "author": "Governor Phil Scott",
+      "date": "2026-06-17",
+      "primary_url": "https://www.recordinglaw.com/news/vermont-ai-therapy-law-h816/",
+      "score": 7.0
+    },
+    {
+      "id": "canada-bill-c34-digital-safety-chatbot-june10",
+      "title": "Canada Bill C-34 Digital Safety Act First Reading June 10 \u2014 Chatbot Services Required to Mitigate Harmful Content and Intervene in Crises",
+      "source": "AI Governance Brief",
+      "author": "AI Governance Brief",
+      "date": "2026-06-10",
+      "primary_url": "https://aigovernancebrief.org/weekly-ai-governance-brief-8-14-june-2026/",
+      "score": 7.5
+    },
+    {
+      "id": "superthoughts-reasoning-tokens-superposition-june15",
+      "title": "SuperThoughts: Reasoning Tokens in Superposition \u2014 Parallel Hypothesis Exploration in Single Forward Pass",
+      "source": "arXiv cs.AI",
+      "author": "Submitted June 15, 2026",
+      "date": "2026-06-15",
+      "primary_url": "https://arxiv.org/abs/2606.13862",
+      "score": 7.5
+    },
+    {
+      "id": "every-eval-ever-unifying-schema-june16",
+      "title": "Every Eval Ever: Unifying Schema and Community Repository for AI Evaluation Results \u2014 Reproducibility Infrastructure for Benchmark Comparability",
+      "source": "arXiv cs.AI",
+      "author": "Submitted June 16, 2026",
+      "date": "2026-06-16",
+      "primary_url": "https://arxiv.org/abs/2606.14516",
+      "score": 7.5
+    },
+    {
+      "id": "deepinsight-unified-evaluation-infra-june16",
+      "title": "DeepInsight: Unified Evaluation Infrastructure Across the Physical AI Stack \u2014 Single Runtime for Software, Embodied, and Perception AI",
+      "source": "arXiv cs.AI",
+      "author": "Submitted June 16, 2026",
+      "date": "2026-06-16",
+      "primary_url": "https://arxiv.org/abs/2606.17574",
+      "score": 7.5
+    }
+  ],
+  "suggested_refinements": {}
+}

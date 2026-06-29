@@ -1,0 +1,908 @@
+{
+  "tab_id": "launches",
+  "tab_name": "Launches",
+  "subtitle": "Launch Intelligence",
+  "icon": "Rocket",
+  "min_items": 20,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.90,
+    "items_total": 30,
+    "items_new": 27,
+    "items_returning": 3
+  },
+  "executive_summary": [
+    {
+      "headline": "US government pre-clearance for frontier AI is now a two-week pattern, not an exception.",
+      "body": "For the second consecutive week, a frontier lab shipped under government access controls. Anthropic's Mythos 5 was partially restored June 27 to ~100 critical infrastructure organizations after a Commerce Department letter from Secretary Lutnick — Fable 5 remains suspended. OpenAI launched GPT-5.6 Sol/Terra/Luna on June 26 with access limited to ~20 trusted partners at US government request, while publicly stating it opposes making this process permanent. Both events establish a new operating norm for enterprise AI procurement: approved-organization lists, government review gates, and uncertain timelines to general availability.",
+      "primary_url": "https://community.openai.com/t/introducing-gpt-5-6-series-sol-terra-and-luna/1384931"
+    },
+    {
+      "headline": "Mistral ships OCR 4 with structural document output — the capability gap between open and proprietary document AI closes.",
+      "body": "Released June 23, Mistral OCR 4 returns bounding boxes, block classification, and inline confidence scores alongside extracted text — not just a flat text dump. At $4 per 1,000 pages API ($2 batch), 85.20 on OlmOCRBench, 170 languages, and full self-hosting in a single container, it undercuts proprietary document AI on price while matching performance. Available now on Mistral Studio, Amazon SageMaker, and Microsoft Foundry.",
+      "primary_url": "https://mistral.ai/news/ocr-4/"
+    },
+    {
+      "headline": "MAI-Code-1-Flash goes GA for Copilot Business and Enterprise — but admins must opt in.",
+      "body": "Microsoft's in-house coding model is generally available in GitHub Copilot Business and Enterprise as of June 26. It requires explicit admin policy enablement before users can access it. Purpose-built for high-volume, iterative agentic coding workflows with fast, low-latency responses. Billed at provider list pricing under usage-based billing.",
+      "primary_url": "https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise/"
+    },
+    {
+      "headline": "Baseten and Airwallex close $1.5B and $320M rounds respectively, both at enterprise scale.",
+      "body": "Baseten raised $1.5B Series F led by Altimeter, Conviction, and Spark Capital at a $13B valuation on June 22, targeting AI inference infrastructure for open-weight models. Airwallex raised $320M Series H at $11B on June 26, led by Addition, with $1.3B annualized revenue growing 74% year-over-year. Both rounds signal durable institutional conviction in AI infrastructure and agentic finance at production scale.",
+      "primary_url": "https://www.businesswire.com/news/home/20260622645563/en/Baseten-Raises-$1.5-Billion-to-Power-the-Next-Era-of-AI-Inference"
+    },
+    {
+      "headline": "Product Hunt week: agent infrastructure tools dominate; MCP ecosystem tooling accelerates.",
+      "body": "The week of June 22 on Product Hunt was defined by agent infrastructure, not AI applications. Tencent EdgeOne Makers (#1 weekly, 562 upvotes), AgentX evaluation framework (#4, 553), Skybridge MCP React framework (#5, 534), BrowserAct (#3, 536), and Bluerails Discovery (#2, 621) all landed in the top 5 — four of five are developer infrastructure for building, deploying, or discovering AI agents. Consumer AI apps were notably absent from the top slots.",
+      "primary_url": "https://www.producthunt.com/leaderboard/weekly/2026/26"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "gpt-56-sol-terra-luna-jun26",
+      "title": "GPT-5.6 Sol, Terra, and Luna — Government-Gated Frontier Preview, Terminal-Bench 2.1 SOTA",
+      "source": "OpenAI Community Forum / MacRumors",
+      "date": "2026-06-26",
+      "primary_url": "https://community.openai.com/t/introducing-gpt-5-6-series-sol-terra-and-luna/1384931",
+      "secondary_urls": [
+        {
+          "label": "MacRumors: GPT-5.6 Sol, Terra, Luna limited preview",
+          "url": "https://www.macrumors.com/2026/06/26/openai-gpt-5-6-sol/"
+        },
+        {
+          "label": "ExplainX: GPT-5.6 pricing and benchmarks",
+          "url": "https://explainx.ai/blog/gpt-5-6-release-date-features-benchmarks-2026"
+        }
+      ],
+      "summary": "OpenAI previewed GPT-5.6 Sol (flagship), Terra (balanced, 2x cheaper than GPT-5.5), and Luna (fastest, lowest cost) on June 26. Sol sets a new SOTA on Terminal-Bench 2.1, with Sol Ultra reaching 91.9% and Sol reaching 88.8%. Access is limited to approximately 20 trusted partners via API and Codex at US government request — OpenAI has publicly stated it opposes this access model becoming permanent. General availability is expected in coming weeks.",
+      "category": "Frontier Model",
+      "evaluation": "ADD TO WATCHLIST",
+      "competitive_context": "Sol's Terminal-Bench 2.1 score of 88.8% places it above Claude Mythos 5 on OpenAI's chosen benchmark. Terra at 2x lower cost than GPT-5.5 is the commercially relevant tier for most enterprise teams — GPT-5.5-level performance at half the price changes the cost model for high-volume agentic workflows. The government access gate is the defining constraint: enterprise teams cannot evaluate Sol directly until general availability. Monitor OpenAI's stated timeline of 'coming weeks.'",
+      "pricing": "Sol: $5 per million input / $30 per million output. Terra: approximately $2.50/$15 (2x cheaper than GPT-5.5 at $5/$15 output). Luna: OpenAI's lowest pricing tier. Exact Luna pricing not disclosed at preview. Preview access restricted to ~20 trusted partners; GA pricing to be confirmed at launch.",
+      "key_takeaways": [
+        "Sol is not accessible to enterprise teams outside the ~20 pre-approved partner organizations during preview — do not plan agentic deployments around Sol until GA is confirmed.",
+        "Terra is the tier to evaluate: GPT-5.5-equivalent performance at half the cost. If your current workflows run GPT-5.5, Terra offers an immediate cost reduction on the same capability tier once GA.",
+        "OpenAI's public opposition to government access gates as a permanent practice signals this may be a one-time review — but two consecutive weeks of government-managed model releases (with Anthropic's Mythos 5 the prior week) makes the pattern worth tracking for enterprise AI governance implications.",
+        "Sol's cybersecurity capabilities (ExploitBench competitive, biology/pathogen benchmarks ~9 points above GPT-5.5) are the government's stated concern — enterprises in critical infrastructure or defense-adjacent roles should anticipate Mythos 5-style restricted access conditions when Sol goes GA."
+      ],
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-28T21:00:00Z",
+      "recurrence": "new",
+      "tags": ["frontier-model", "openai", "government-gate", "agents", "coding", "pricing"]
+    },
+    {
+      "id": "claude-mythos5-partial-restoration-jun27",
+      "title": "Claude Mythos 5 Partially Restored — ~100 US Critical Infrastructure Orgs, Fable 5 Still Suspended",
+      "source": "Anthropic / Business Insider / Bregg",
+      "date": "2026-06-27",
+      "primary_url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "secondary_urls": [
+        {
+          "label": "Business Insider: Anthropic Mythos 5 limited carveout",
+          "url": "https://www.businessinsider.com/anthropic-mythos-5-us-restrictions-fable-5-openai-gpt-2026-6"
+        },
+        {
+          "label": "Bregg: Commerce Secretary Lutnick letter details",
+          "url": "https://bregg.com/blog/anthropic-mythos5-restored-critical-infrastructure-2026-06-27"
+        }
+      ],
+      "summary": "On June 27, Commerce Secretary Howard Lutnick sent a letter to Anthropic authorizing redeployment of Claude Mythos 5 to approximately 100 US organizations that operate and defend critical infrastructure. Fable 5 remains suspended pending further government negotiations. Mythos 5 was suspended June 12 with 90 minutes of notice; the partial restoration came 15 days later. Anthropic stated it is continuing to work with the government on expanding Mythos 5 access and restoring Fable 5.",
+      "category": "Frontier Model",
+      "evaluation": "MONITOR",
+      "competitive_context": "The Mythos 5 restoration is structurally identical to OpenAI's GPT-5.6 situation: government-managed approved-organization lists for the most capable frontier models. For enterprise teams not in critical infrastructure, neither model is accessible. Fable 5 — which was positioned as the general-use version of Mythos 5 — remains off the market entirely. Teams that built workflow plans around Fable 5 GA have no confirmed restoration date. Axiom: treat Fable 5's restoration as the relevant milestone, not Mythos 5's, since Mythos 5 is a cybersecurity-specialist model with restricted deployment scope.",
+      "pricing": "Mythos 5 pricing not published for the limited restoration cohort. Pre-suspension pricing: $15/$75 per million tokens. Fable 5 pricing was $3/$15 per million tokens. No public pricing available during restricted access period.",
+      "key_takeaways": [
+        "Fable 5 — not Mythos 5 — is the model that was targeted for general enterprise use; its continued suspension is the operative constraint for enterprise AI teams with Anthropic dependency.",
+        "The Commerce Department authorization via named letter to a specific company establishes the governance template: frontier models with dual-use capability may require a named government authorization before general deployment, regardless of lab intent.",
+        "Enterprises in critical infrastructure categories (energy, water, financial services, communications, manufacturing) should check whether their organization qualifies for the ~100 authorized cohort directly with Anthropic.",
+        "Fable 5 restoration is reported by Axios as potentially occurring the week of June 29 — set a monitoring trigger for Anthropic's news page that week."
+      ],
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-28T21:00:00Z",
+      "recurrence": "returning",
+      "recurrence_note": "Fable 5 suspension entered week 3; Mythos 5 partially restored June 27 after Commerce Department letter. Status has changed materially from last week.",
+      "tags": ["frontier-model", "anthropic", "government-gate", "enterprise-ai", "fable5", "mythos5"]
+    },
+    {
+      "id": "mistral-ocr-4-jun23",
+      "title": "Mistral OCR 4 — Structural Document AI, 85.20 OlmOCRBench, Self-Hostable, $4/1,000 Pages",
+      "source": "Mistral AI",
+      "date": "2026-06-23",
+      "primary_url": "https://mistral.ai/news/ocr-4/",
+      "secondary_urls": [
+        {
+          "label": "Mistral Docs: OCR 4 model card",
+          "url": "https://docs.mistral.ai/models/model-cards/ocr-4-0"
+        },
+        {
+          "label": "Microsoft Foundry: Mistral OCR 4 and Medium 3.5 availability",
+          "url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/mistral-document-ai-with-ocr-4-and-mistral-medium-3-5-arrive-in-microsoft-foundr/4529863"
+        }
+      ],
+      "summary": "Mistral released OCR 4 on June 23, moving document AI from flat text extraction to structural output: bounding boxes, typed block classification (titles, tables, equations, signatures), and per-page and per-word confidence scores across 170 languages. Scores 85.20 on OlmOCRBench and 93.07 on OmniDocBench. Independent annotators preferred it over every competing OCR and document AI system at 72% average win rate. Available via Mistral Studio API, Amazon SageMaker, and Microsoft Foundry. Fully self-hostable in a single container for data residency requirements.",
+      "category": "Open Source",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "OCR 4 changes the enterprise document AI calculation on three axes: (1) structural output vs. text dump — competitors return text; OCR 4 returns the document's semantic structure, which matters for RAG pipelines and agent document reasoning; (2) pricing — $4 per 1,000 pages API ($2 batch) undercuts most proprietary document AI by 50-70%; (3) self-hosting — single-container deployment with no model licensing restrictions removes the cloud-dependency that blocks document AI in regulated environments with strict data residency. The integration with Microsoft Foundry means Microsoft-shop enterprises can access OCR 4 through existing Azure procurement channels without a separate Mistral account.",
+      "pricing": "API: $4 per 1,000 pages. Batch API: $2 per 1,000 pages (50% discount). Document AI (Mistral Studio no-code): $5 per 1,000 pages. Self-hosted enterprise deployment: available; pricing via Mistral enterprise contact.",
+      "key_takeaways": [
+        "The structural output — bounding boxes plus block type plus confidence scores — makes OCR 4 directly compatible with agentic document pipelines that need to know where a signature, table, or equation appears on a page, not just what the text says.",
+        "Single-container self-hosting means regulated enterprises (financial services, healthcare, government-adjacent) can deploy OCR 4 without sending document content to a third-party cloud — evaluate against your data residency policy before ruling it out.",
+        "Microsoft Foundry integration means this is accessible today through Azure procurement if your organization already has a Foundry contract — no separate Mistral Studio account required.",
+        "The 72% human win rate is a head-to-head claim, not a benchmark — verify it on your own document corpus before committing to a migration from your current OCR stack."
+      ],
+      "score": {
+        "total": 9.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-28T21:00:00Z",
+      "recurrence": "new",
+      "tags": ["open-source", "document-ai", "ocr", "mistral", "enterprise-ai", "self-hosting", "rag"]
+    },
+    {
+      "id": "mai-code-1-flash-copilot-ga-jun26",
+      "title": "MAI-Code-1-Flash GA for GitHub Copilot Business and Enterprise — Admin Policy Required",
+      "source": "GitHub Changelog",
+      "date": "2026-06-26",
+      "primary_url": "https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise/",
+      "secondary_urls": [],
+      "summary": "Microsoft's in-house coding model MAI-Code-1-Flash is generally available in GitHub Copilot Business and Enterprise as of June 26. Purpose-built for coding and optimized for high-volume, iterative agentic workflows with fast, low-latency responses. Access requires explicit admin policy enablement in Copilot settings — users cannot access it until an admin turns it on. Billed at provider list pricing under usage-based billing.",
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "MAI-Code-1-Flash is Microsoft's answer to the GPT-5.5 and Claude models that have been powering GitHub Copilot's agentic coding features. The explicit admin policy gate means IT and AI governance teams can evaluate it in a controlled cohort before general rollout — an unusually clean deployment control for a new model in an existing product. The 'fast, low-latency' positioning targets iterative agentic coding loops where round-trip latency matters more than raw benchmark performance, directly competing with Claude Sonnet models at the speed-vs-capability tradeoff point.",
+      "pricing": "Billed at provider list pricing under GitHub Copilot usage-based billing. Specific per-token rates referenced in Copilot's pricing for models and requests documentation — not stated in the changelog announcement.",
+      "key_takeaways": [
+        "Admin policy enablement is required before any user can access MAI-Code-1-Flash — check your Copilot Enterprise settings today; it is not on by default.",
+        "The admin gate is also an evaluation opportunity: enable it for a pilot group of developers, run it on your existing Copilot agentic coding tasks for 2-3 weeks, and compare cost and latency to the current default model before a broad rollout.",
+        "Microsoft's in-house model signals a long-term intent to reduce dependency on Anthropic and OpenAI for Copilot capabilities — track model performance parity as MAI models receive updates.",
+        "For organizations with Copilot Enterprise, this is a zero-incremental-cost evaluation path: same license, new model option, controlled by policy."
+      ],
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-28T21:00:00Z",
+      "recurrence": "new",
+      "tags": ["enterprise-ai", "microsoft", "github-copilot", "coding", "agents", "m365"]
+    },
+    {
+      "id": "baseten-series-f-1-5b-jun22",
+      "title": "Baseten $1.5B Series F at $13B — AI Inference Infrastructure for Open-Weight Models",
+      "source": "Business Wire (primary)",
+      "date": "2026-06-22",
+      "primary_url": "https://www.businesswire.com/news/home/20260622645563/en/Baseten-Raises-$1.5-Billion-to-Power-the-Next-Era-of-AI-Inference",
+      "secondary_urls": [
+        {
+          "label": "Bloomberg: AI-Services Startup Baseten Nabs $13 Billion Valuation",
+          "url": "https://www.bloomberg.com/news/videos/2026-06-22/ai-services-startup-baseten-nabs-13-billion-valuation-video"
+        }
+      ],
+      "summary": "Baseten raised $1.5B Series F led by Altimeter Capital, Conviction, and Spark Capital, with co-leads Sands Capital and Wellington Management, closing June 22. The round spans two tranches at $13B and $11B valuations respectively. Baseten builds systems software running the full workload for AI applications — GPUs, autoscaling, observability, billing, and developer tools — enabling a multi-model strategy combining frontier and custom open-weight models. Capital will fund talent (tripling headcount), compute, and enterprise go-to-market.",
+      "category": "Funding",
+      "evaluation": "MONITOR",
+      "competitive_context": "Baseten is the infrastructure layer for enterprises that want to run open-weight models (Llama, Mistral, custom fine-tunes) at production scale without building GPU orchestration internally. The $13B valuation at $1.5B Series F signals institutional conviction that open-weight AI inference is a durable infrastructure category, not a transitional workaround until proprietary models improve. For enterprises evaluating a model-agnostic architecture — particularly after the Fable 5 suspension — Baseten's position as a managed inference platform for open-weight models becomes more strategically relevant.",
+      "pricing": "Pricing on Baseten is workload-based; contact Baseten for enterprise inference contracts. No public per-token list pricing.",
+      "key_takeaways": [
+        "The Fable 5 suspension and GPT-5.6 access gate strengthen the case for a model-agnostic inference architecture — Baseten's platform is explicitly designed for multi-model strategies that don't lock to a single provider.",
+        "Baseten is tripling headcount and accelerating enterprise go-to-market — expect increased sales outreach to enterprise teams running significant AI inference workloads in the next two quarters.",
+        "The two-tranche valuation ($13B and $11B) reflects a structured deal rather than a single round; both tranches are closed and the company is funded through a substantial growth phase."
+      ],
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-28T21:00:00Z",
+      "recurrence": "new",
+      "tags": ["funding", "inference", "open-source", "enterprise-ai", "infrastructure"]
+    },
+    {
+      "id": "airwallex-series-h-320m-jun26",
+      "title": "Airwallex $320M Series H at $11B — Agentic Finance Platform, 74% Revenue Growth",
+      "source": "Airwallex Newsroom / TechNode Global",
+      "date": "2026-06-26",
+      "primary_url": "https://technode.global/2026/06/26/airwallex-raises-320-million-series-h-valuation-jumps-to-11b/",
+      "secondary_urls": [
+        {
+          "label": "Airwallex official newsroom announcement",
+          "url": "https://www.airwallex.com/zh-hk/newsroom/airwallex-secures-320-million-in-series-h-funding-valuation-hits-11-billion"
+        }
+      ],
+      "summary": "Airwallex raised $320M Series H at an $11B valuation on June 26, led by returning investor Addition with participation from Baillie Gifford, QED Investors, T. Rowe Price, and Amex Ventures. The company reported $1.3B annualized revenue in March 2026, up 74% year-over-year, and $287B annualized transaction volume, up over 120% year-over-year. The investment targets product development in autonomous finance and agentic commerce, infrastructure expansion, and AI-native financial software.",
+      "category": "Funding",
+      "evaluation": "MONITOR",
+      "competitive_context": "Airwallex's 'autonomous finance and agentic commerce' positioning signals it is building toward a future where AI agents execute financial transactions on behalf of enterprises — not just humans using a payments platform. The $287B annualized transaction volume at 120% growth places it firmly in the institutional payments infrastructure category. For enterprise teams exploring agentic workflows that involve payment execution, procurement, or financial reconciliation, Airwallex's platform trajectory is worth tracking.",
+      "pricing": "Enterprise and business pricing via Airwallex.com. Consumer wallet (Airi) pricing not disclosed at funding announcement.",
+      "key_takeaways": [
+        "The 'autonomous finance and agentic commerce' product direction is not yet in general availability — the funding announcement describes a product roadmap, not a launched product; treat as watchlist for enterprise agentic payment use cases.",
+        "$1.3B annualized revenue at 74% growth and institutional investors (T. Rowe Price, Amex Ventures, Baillie Gifford) signal a company on a durable public-market trajectory, not a venture bet."
+      ],
+      "score": {
+        "total": 7.5,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-06-28T21:00:00Z",
+      "recurrence": "new",
+      "tags": ["funding", "fintech", "agents", "enterprise-ai", "payments"]
+    },
+    {
+      "id": "agentx-eval-framework-ph1-jun22",
+      "title": "AgentX Evaluation Framework — CI/CD for AI Agents, #1 Product Hunt June 22 (553 upvotes)",
+      "source": "AgentX / Product Hunt",
+      "date": "2026-06-22",
+      "primary_url": "https://www.agentx.so",
+      "secondary_urls": [
+        {
+          "label": "View on Product Hunt",
+          "url": "https://www.producthunt.com/products/agentx"
+        },
+        {
+          "label": "AgentX launch announcement blog",
+          "url": "https://www.agentx.so/mcp/blog/agentx-launches-ai-evaluation-framework"
+        }
+      ],
+      "summary": "AgentX launched its evaluation framework on Product Hunt June 22, earning #1 product of the day with 553 upvotes. The framework provides pre-deployment agent validation (auto-generated test sets from real data, accuracy scoring, multiple LLM judge evaluation) and post-deployment continuous monitoring (drift detection, regression testing, automated incident response). Teams can benchmark agent performance across different LLM providers on cost, latency, and accuracy from a single interface. Positioned as a CI/CD gate for AI agent deployment.",
+      "category": "Dev Tools",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "AgentX enters a sparse but fast-growing market: structured evaluation tooling for AI agents. The CI/CD framing — evaluate before deploy, monitor after — maps directly onto how regulated enterprises should be treating AI agents going into production workflows. The multi-LLM benchmarking capability (test the same agent task across Claude, GPT, Gemini, Llama, Grok) is a differentiated feature for teams managing model selection and cost governance.",
+      "pricing": "Free tier for solo builders. White-label plans for agencies and teams — pricing on request via agentx.so.",
+      "key_takeaways": [
+        "Pre-deployment evaluation gates are a governance requirement for regulated enterprises deploying AI agents in production workflows — AgentX provides the tooling; the policy to mandate it is a separate internal decision.",
+        "The multi-LLM comparison feature addresses a real operational need: as model options multiply, teams need a structured way to evaluate cost vs. performance tradeoffs on their own workloads, not benchmark suites."
+      ],
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-06-28T21:00:00Z",
+      "recurrence": "new",
+      "tags": ["dev-tools", "agents", "evaluation", "product-hunt", "mlops", "governance"]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "frontier_models",
+      "title": "Frontier Model Releases",
+      "description": "New model releases from frontier labs. Includes gated and limited-access launches.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "gemini-35-pro-delay-confirmed-jun25",
+          "title": "Gemini 3.5 Pro — 2M-Token Context Confirmed, GA Delayed to July",
+          "source": "Pondero AI / Google (confirmed delay)",
+          "date": "2026-06-25",
+          "primary_url": "https://pondero.ai/news/2026-06-25-gemini-35-pro-delay/",
+          "summary": "Google confirmed Gemini 3.5 Pro general availability slips to July. The model remains in Vertex AI preview. 2M-token context window and multimodal capabilities are confirmed features. Enterprise teams waiting on Gemini 3.5 Pro for production deployment should plan for early-to-mid July at the earliest.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "recurrence": "returning",
+          "recurrence_note": "Was in last week's To Watch section as 'nine days left in June.' Delay confirmed this week — GA now targeted for July.",
+          "tags": ["frontier-model", "google", "gemini", "vertex-ai"]
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_ai",
+      "title": "Enterprise AI Platform Updates",
+      "description": "Platform-level GA launches, pricing changes, and feature drops from major enterprise AI vendors.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "cloudflare-temporary-accounts-jun22",
+          "title": "Cloudflare Temporary Accounts — Agents Deploy Workers Without OAuth or Signup",
+          "source": "Cloudflare Changelog",
+          "date": "2026-06-22",
+          "primary_url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+          "secondary_urls": [
+            {
+              "label": "Cloudflare Docs: Claim deployments (temporary accounts)",
+              "url": "https://developers.cloudflare.com/workers/platform/claim-deployments/"
+            },
+            {
+              "label": "View on Product Hunt (#6 June 22)",
+              "url": "https://www.producthunt.com/products/cloudflare-temporary-accounts"
+            }
+          ],
+          "summary": "Cloudflare shipped Temporary Accounts for Workers on June 19 (surfaced on Product Hunt June 22). Any AI agent can run `wrangler deploy --temporary` to get a live Worker on workers.dev in seconds, without OAuth or account creation. A claim URL valid for 60 minutes is generated; if unclaimed, the account and all resources auto-delete. Wrangler 4.102.0 or later required.",
+          "category": "Dev Tools",
+          "evaluation": "EVALUATE NOW",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["dev-tools", "cloudflare", "agents", "mcp", "infrastructure"]
+        }
+      ]
+    },
+    {
+      "section_id": "product_hunt",
+      "title": "Product Hunt Week — June 22–28",
+      "description": "Top launches from Product Hunt for the week. Ranked by weekly upvotes. Primary URLs are maker websites; PH links in secondary_urls.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "tencent-edgeone-makers-jun24-ph1",
+          "title": "Tencent EdgeOne Makers — Ship AI Agents Like Web Apps in Minutes (#1 Week, 562 upvotes)",
+          "source": "Tencent EdgeOne",
+          "date": "2026-06-24",
+          "primary_url": "https://edgeone.ai",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/tencent-edgeone-makers"
+            }
+          ],
+          "summary": "Tencent EdgeOne Makers is a web and AI agent development and deployment platform built on Tencent's global edge network. Supports OpenAI Agents SDK, LangGraph, Claude Agent SDK, CrewAI, and standard web frameworks (Next.js, React, Nuxt) with zero-configuration deployment. Built-in sandbox, conversational memory, observability, and model gateway — no platform SDK required in agent code. Earned #1 on Product Hunt weekly leaderboard for June 22–28 with 562 upvotes.",
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["dev-tools", "agents", "edge-computing", "tencent", "deployment", "product-hunt"]
+        },
+        {
+          "id": "bluerails-discovery-jun23-ph2",
+          "title": "Bluerails Discovery — AI Agent Readiness Scoring and Discovery Infrastructure (#2 Week, 621 upvotes)",
+          "source": "Bluerails",
+          "date": "2026-06-23",
+          "primary_url": "https://www.bluerails.com",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/bluerails-discovery"
+            }
+          ],
+          "summary": "Bluerails Discovery scans any website and returns a peer-reviewed agent-readiness score measuring discoverability, readability, and payability by AI agents. Generates llms.txt and schema fixes to make sites agent-bookable. Positioned as infrastructure for the layer between AI agents and commercial websites — including agent identity, agent-readable checkout, and settlement rails. Free scanner; paid visibility plans at €119/month or €99/month annual.",
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["dev-tools", "agents", "mcp", "discovery", "commerce", "product-hunt"]
+        },
+        {
+          "id": "browseract-jun25-ph3",
+          "title": "BrowserAct — Web Browser Automation for AI Agents (#3 Week, 536 upvotes)",
+          "source": "BrowserAct",
+          "date": "2026-06-25",
+          "primary_url": "https://www.browseract.com",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/browseract"
+            },
+            {
+              "label": "BrowserAct GitHub open-source skills",
+              "url": "https://github.com/browser-act/skills"
+            }
+          ],
+          "summary": "BrowserAct gives AI agents real browser control — anti-detection, CAPTCHA solving, Chrome Takeover, Remote Assist for human handoff, and reusable skill scripts. Two core skills are open-source on GitHub. Agent-native design: agents describe what they want done, not how to navigate. MCP server integration allows Claude and ChatGPT to trigger browser workflows directly.",
+          "category": "Dev Tools",
+          "evaluation": "EVALUATE NOW",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["dev-tools", "agents", "browser-automation", "open-source", "mcp", "product-hunt"]
+        },
+        {
+          "id": "skybridge-mcp-framework-jun22-ph5",
+          "title": "Skybridge — Full-Stack React Framework for MCP Apps (#5 Week, 534 upvotes)",
+          "source": "Skybridge / alpic-ai",
+          "date": "2026-06-22",
+          "primary_url": "https://www.skybridge.tech",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/skybridge"
+            },
+            {
+              "label": "Skybridge GitHub (MIT)",
+              "url": "https://github.com/alpic-ai/skybridge"
+            }
+          ],
+          "summary": "Skybridge is a MIT-licensed full-stack TypeScript framework for building MCP Apps and MCP Servers — interactive UI views rendered inside AI conversations in Claude, ChatGPT, VSCode, and any MCP client. Abstracts client implementation differences so a single app runs across all MCP-compatible surfaces. Ships with DevTools (local test, hot reload, theme preview), a live LLM playground tunnel, and one-command deploy to Alpic Cloud or self-hosted Node.js.",
+          "category": "Dev Tools",
+          "evaluation": "EVALUATE NOW",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["dev-tools", "mcp", "open-source", "typescript", "react", "product-hunt"]
+        },
+        {
+          "id": "propane-customer-context-jun25-ph6",
+          "title": "Propane — Automatic Customer Context for Product Teams and Agents (#6 Week, 516 upvotes)",
+          "source": "Propane",
+          "date": "2026-06-25",
+          "primary_url": "https://propane.so",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/propane"
+            }
+          ],
+          "summary": "Propane automatically surfaces structured customer context for product teams and their agents — pulling from existing data sources so product managers and agents see relevant customer history without manual lookup. 516 upvotes on Product Hunt weekly leaderboard.",
+          "category": "AI Agent",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["agents", "product-management", "customer-context", "product-hunt"]
+        }
+      ]
+    },
+    {
+      "section_id": "open_source",
+      "title": "Open Source and Dev Tool Releases",
+      "description": "Notable open-source model releases and developer tooling that surfaced this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "mistral-medium-35-foundry-jun24",
+          "title": "Mistral Medium 3.5 Now on Microsoft Foundry — 128B Open-Weight, $1.50/$7.50 per Million Tokens",
+          "source": "Microsoft Azure AI Foundry Blog",
+          "date": "2026-06-24",
+          "primary_url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/mistral-document-ai-with-ocr-4-and-mistral-medium-3-5-arrive-in-microsoft-foundr/4529863",
+          "secondary_urls": [
+            {
+              "label": "Mistral Medium 3.5 model card on Hugging Face",
+              "url": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B"
+            }
+          ],
+          "summary": "Mistral Medium 3.5 (128B dense, 256K context) arrived in Microsoft Foundry this week alongside OCR 4. API pricing on Foundry: $1.50 per million input / $7.50 per million output tokens. The model supports 77.6% on SWE-Bench Verified, long-horizon agentic tooling, and is the default model powering remote agents in Mistral Vibe. Available as open weights on Hugging Face (Mistral Research License).",
+          "category": "Open Source",
+          "evaluation": "EVALUATE NOW",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["open-source", "frontier-model", "mistral", "azure", "agentic", "coding"]
+        }
+      ]
+    },
+    {
+      "section_id": "funding",
+      "title": "Funding Rounds",
+      "description": "Verified AI funding rounds announced this week. All numbers cross-checked against company primary sources.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "oxlo-ai-model-gateway-ph7",
+          "title": "Oxlo.ai — 45+ Frontier Models via OpenAI-Compatible API, Privacy-First Pricing (#7 Week, 496 upvotes)",
+          "source": "Oxlo.ai / Product Hunt",
+          "date": "2026-06-25",
+          "primary_url": "https://oxlo.ai",
+          "secondary_urls": [
+            {
+              "label": "View on Product Hunt",
+              "url": "https://www.producthunt.com/products/oxlo-ai"
+            }
+          ],
+          "summary": "Oxlo.ai provides access to 45+ frontier models (including proprietary and open-weight) through a single OpenAI-compatible API. Request-based pricing and a privacy-first pitch for teams that want model diversity without managing separate API accounts. 496 upvotes on the June 22–28 Product Hunt weekly leaderboard.",
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["dev-tools", "model-gateway", "openai-compatible", "privacy", "product-hunt"]
+        }
+      ]
+    },
+    {
+      "section_id": "to_watch",
+      "title": "To Watch Next Week",
+      "description": "Early signals and continuing stories to monitor for the week of June 29.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "fable-5-restoration-watch-jun29",
+          "title": "Fable 5 Restoration — Anthropic Targeting Week of June 29 per Axios",
+          "source": "Axios",
+          "date": "2026-06-27",
+          "primary_url": "https://www.anthropic.com/news",
+          "summary": "Multiple reports cite Axios sourcing that Fable 5 — Claude's general-use frontier model suspended June 12 — may be restored the week of June 29. This is the operative milestone for enterprise teams: Mythos 5 is a specialist cybersecurity model; Fable 5 was the broadly deployable version. Monitor Anthropic's news page.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "recurrence": "returning",
+          "recurrence_note": "Fable 5 suspension has been tracked for three consecutive weeks. Potential restoration is the pending milestone.",
+          "tags": ["frontier-model", "anthropic", "fable5", "government-gate"]
+        },
+        {
+          "id": "gpt-56-ga-timeline-watch",
+          "title": "GPT-5.6 GA Timeline — OpenAI Targeting 'Coming Weeks,' No Calendar Date",
+          "source": "OpenAI",
+          "date": "2026-06-26",
+          "primary_url": "https://community.openai.com/t/introducing-gpt-5-6-series-sol-terra-and-luna/1384931",
+          "summary": "OpenAI has not specified a GA date for GPT-5.6 Sol, Terra, or Luna. Terra is the commercially relevant tier (GPT-5.5 performance at 2x lower cost). Monitor OpenAI's blog and API changelog for the GA announcement.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-06-28T21:00:00Z",
+          "recurrence": "new",
+          "tags": ["frontier-model", "openai", "gpt-56", "government-gate"]
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "id": "gpt-56-sol-terra-luna-jun26-idx",
+      "title": "GPT-5.6 Sol, Terra, Luna — Government-Gated Frontier Preview",
+      "source": "OpenAI",
+      "date": "2026-06-26",
+      "primary_url": "https://community.openai.com/t/introducing-gpt-5-6-series-sol-terra-and-luna/1384931",
+      "score": 9.0
+    },
+    {
+      "id": "mistral-ocr-4-jun23-idx",
+      "title": "Mistral OCR 4 — Structural Document AI, 85.20 OlmOCRBench, Self-Hostable",
+      "source": "Mistral AI",
+      "date": "2026-06-23",
+      "primary_url": "https://mistral.ai/news/ocr-4/",
+      "score": 9.0
+    },
+    {
+      "id": "claude-mythos5-partial-restoration-jun27-idx",
+      "title": "Claude Mythos 5 Partially Restored — ~100 US Critical Infrastructure Orgs",
+      "source": "Anthropic / Business Insider",
+      "date": "2026-06-27",
+      "primary_url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "score": 8.5
+    },
+    {
+      "id": "mai-code-1-flash-copilot-ga-jun26-idx",
+      "title": "MAI-Code-1-Flash GA for GitHub Copilot Business and Enterprise",
+      "source": "GitHub Changelog",
+      "date": "2026-06-26",
+      "primary_url": "https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise/",
+      "score": 8.5
+    },
+    {
+      "id": "baseten-series-f-1-5b-jun22-idx",
+      "title": "Baseten $1.5B Series F at $13B — AI Inference Infrastructure",
+      "source": "Business Wire",
+      "date": "2026-06-22",
+      "primary_url": "https://www.businesswire.com/news/home/20260622645563/en/Baseten-Raises-$1.5-Billion-to-Power-the-Next-Era-of-AI-Inference",
+      "score": 8.0
+    },
+    {
+      "id": "agentx-eval-framework-ph1-jun22-idx",
+      "title": "AgentX Evaluation Framework — CI/CD for AI Agents, #1 Product Hunt June 22",
+      "source": "AgentX",
+      "date": "2026-06-22",
+      "primary_url": "https://www.agentx.so",
+      "score": 8.0
+    },
+    {
+      "id": "cloudflare-temporary-accounts-jun22-idx",
+      "title": "Cloudflare Temporary Accounts — Agents Deploy Workers Without OAuth",
+      "source": "Cloudflare",
+      "date": "2026-06-22",
+      "primary_url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+      "score": 8.0
+    },
+    {
+      "id": "airwallex-series-h-320m-jun26-idx",
+      "title": "Airwallex $320M Series H at $11B — Agentic Finance Platform",
+      "source": "Airwallex / TechNode",
+      "date": "2026-06-26",
+      "primary_url": "https://technode.global/2026/06/26/airwallex-raises-320-million-series-h-valuation-jumps-to-11b/",
+      "score": 7.5
+    },
+    {
+      "id": "tencent-edgeone-makers-jun24-ph1-idx",
+      "title": "Tencent EdgeOne Makers — Ship AI Agents Like Web Apps (#1 PH Week)",
+      "source": "Tencent EdgeOne",
+      "date": "2026-06-24",
+      "primary_url": "https://edgeone.ai",
+      "score": 7.5
+    },
+    {
+      "id": "bluerails-discovery-jun23-ph2-idx",
+      "title": "Bluerails Discovery — AI Agent Readiness Scoring (#2 PH Week, 621 upvotes)",
+      "source": "Bluerails",
+      "date": "2026-06-23",
+      "primary_url": "https://www.bluerails.com",
+      "score": 7.5
+    },
+    {
+      "id": "skybridge-mcp-framework-jun22-ph5-idx",
+      "title": "Skybridge — Full-Stack React Framework for MCP Apps (#5 PH Week)",
+      "source": "Skybridge",
+      "date": "2026-06-22",
+      "primary_url": "https://www.skybridge.tech",
+      "score": 7.5
+    },
+    {
+      "id": "browseract-jun25-ph3-idx",
+      "title": "BrowserAct — Web Browser Automation for AI Agents (#3 PH Week)",
+      "source": "BrowserAct",
+      "date": "2026-06-25",
+      "primary_url": "https://www.browseract.com",
+      "score": 7.5
+    },
+    {
+      "id": "mistral-medium-35-foundry-jun24-idx",
+      "title": "Mistral Medium 3.5 on Microsoft Foundry — 128B Open-Weight, $1.50/$7.50",
+      "source": "Microsoft Azure AI Foundry",
+      "date": "2026-06-24",
+      "primary_url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/mistral-document-ai-with-ocr-4-and-mistral-medium-3-5-arrive-in-microsoft-foundr/4529863",
+      "score": 7.5
+    },
+    {
+      "id": "fable-5-restoration-watch-jun29-idx",
+      "title": "Fable 5 Suspension — Week 3, Restoration Targeting Week of June 29",
+      "source": "Anthropic / Axios",
+      "date": "2026-06-27",
+      "primary_url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "score": 7.0
+    },
+    {
+      "id": "gemini-35-pro-delay-confirmed-jun25-idx",
+      "title": "Gemini 3.5 Pro GA Delayed to July — Confirmed",
+      "source": "Google / Pondero AI",
+      "date": "2026-06-25",
+      "primary_url": "https://pondero.ai/news/2026-06-25-gemini-35-pro-delay/",
+      "score": 7.0
+    },
+    {
+      "id": "propane-customer-context-jun25-ph6-idx",
+      "title": "Propane — Automatic Customer Context for Teams and Agents (#6 PH Week)",
+      "source": "Propane",
+      "date": "2026-06-25",
+      "primary_url": "https://propane.so",
+      "score": 6.5
+    },
+    {
+      "id": "oxlo-ai-model-gateway-ph7-idx",
+      "title": "Oxlo.ai — 45+ Models via OpenAI-Compatible API (#7 PH Week)",
+      "source": "Oxlo.ai",
+      "date": "2026-06-25",
+      "primary_url": "https://oxlo.ai",
+      "score": 6.5
+    },
+    {
+      "id": "zaro-no-code-agents-ph8-idx",
+      "title": "Zaro — Build Agents and Apps on Top of Your Context with One Prompt (#8 PH Week)",
+      "source": "Zaro",
+      "date": "2026-06-25",
+      "primary_url": "https://zaro.ai",
+      "score": 6.5
+    },
+    {
+      "id": "latitude-agent-debugger-ph11-idx",
+      "title": "Latitude — Fix What's Breaking in Your AI Agent (#11 PH Week)",
+      "source": "Latitude",
+      "date": "2026-06-22",
+      "primary_url": "https://latitude.so",
+      "score": 6.5
+    },
+    {
+      "id": "agent-arena-ph-jun27-idx",
+      "title": "Agent Arena — First Public Arena for AI Agent Benchmarking (#1 PH June 27)",
+      "source": "Agent Arena / Product Hunt",
+      "date": "2026-06-27",
+      "primary_url": "https://agentarena.ai",
+      "score": 6.5
+    },
+    {
+      "id": "openart-director-ph9-idx",
+      "title": "OpenArt Director — Direct Cinematic Videos Through Chat (#9 PH Week)",
+      "source": "OpenArt",
+      "date": "2026-06-24",
+      "primary_url": "https://openart.ai/director",
+      "score": 6.0
+    },
+    {
+      "id": "folio-ai-powerpoint-ph15-idx",
+      "title": "Folio AI — Claude for PowerPoint, On Steroids (#15 PH Week)",
+      "source": "Folio AI",
+      "date": "2026-06-27",
+      "primary_url": "https://folioai.so",
+      "score": 6.0
+    },
+    {
+      "id": "gemini-spark-ph-jun27-idx",
+      "title": "Gemini Spark — 24/7 Personal AI Agent for Continuous Task Management (313 upvotes Jun 27)",
+      "source": "Gemini Spark / Product Hunt",
+      "date": "2026-06-27",
+      "primary_url": "https://geminispark.ai",
+      "score": 6.0
+    },
+    {
+      "id": "wispr-flow-ph1-jun26-idx",
+      "title": "Wispr Flow — Mac Dictation App, Writes in Your Style Across All Apps (#1 PH June 26)",
+      "source": "Wispr Flow",
+      "date": "2026-06-26",
+      "primary_url": "https://wispr.ai",
+      "score": 6.0
+    },
+    {
+      "id": "browseract-open-source-skills-idx",
+      "title": "BrowserAct Open-Source Skills — Free CAPTCHA Solving, Chrome Takeover for AI Agents",
+      "source": "BrowserAct / GlobeNewswire",
+      "date": "2026-06-22",
+      "primary_url": "https://github.com/browser-act/skills",
+      "score": 7.0
+    },
+    {
+      "id": "mistral-ocr-4-changelog-jun22-idx",
+      "title": "Mistral Changelog: OCR 4 (mistral-ocr-4-0) — mistral-ocr-latest Now Points to v4",
+      "source": "Mistral Docs",
+      "date": "2026-06-22",
+      "primary_url": "https://docs.mistral.ai/resources/changelogs",
+      "score": 8.5
+    },
+    {
+      "id": "discode-ai-100-models-ph1-jun28-idx",
+      "title": "discode.ai — 100+ AI Models, One Interface, Eco-Friendly (#1 PH June 28, 300 upvotes)",
+      "source": "discode.ai / Product Hunt",
+      "date": "2026-06-28",
+      "primary_url": "https://discode.ai",
+      "score": 6.0
+    },
+    {
+      "id": "alai-20-design-partner-jun22-idx",
+      "title": "Alai 2.0 — AI Design Partner for Presentations and Social Posts (#4 PH June 22)",
+      "source": "Alai",
+      "date": "2026-06-22",
+      "primary_url": "https://alai.ai",
+      "score": 5.5
+    },
+    {
+      "id": "brain-squared-clickup-ph-jun25-idx",
+      "title": "Brain² by ClickUp — One AI That Knows Your Entire Company and Acts on It (#5 PH June 25)",
+      "source": "ClickUp / Product Hunt",
+      "date": "2026-06-25",
+      "primary_url": "https://clickup.com/brain",
+      "score": 6.5
+    },
+    {
+      "id": "figma-motion-ph-jun25-idx",
+      "title": "Figma Motion — Figma Canvas Now Has a Timeline (#4 PH June 25, 287 upvotes)",
+      "source": "Figma",
+      "date": "2026-06-25",
+      "primary_url": "https://www.figma.com/motion",
+      "score": 6.0
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "GPT-5.5-Cyber / 'Daybreak' / 'Patch the Planet' — OpenAI cybersecurity-focused model",
+      "reason": "Aggregator confusion with GPT-5.6 Sol's cybersecurity benchmark results. No primary OpenAI source for a distinct GPT-5.5-Cyber or 'Daybreak' or 'Patch the Planet' model naming. All cybersecurity capability claims trace back to GPT-5.6 Sol's ExploitBench results.",
+      "attempted_url": "https://openai.com/blog"
+    },
+    {
+      "claim": "Command A+ from Cohere released this week",
+      "reason": "Cohere Command A+ (Command A 2025-03) was released May 20, 2026, not June 22–28. Multiple aggregators misattributed it to this week. Primary source (cohere.com/blog) confirms May release.",
+      "attempted_url": "https://cohere.com/blog"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Axios AI reporting for government AI access policy developments — proved most accurate on Fable 5/Mythos 5 restoration timeline",
+      "Commerce Department NTIA AI policy tracker for structured access rule developments",
+      "Semafor AI desk — surfaced Mythos 5 restoration detail before most outlets"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Government-managed AI access controls — now a recurring weekly story requiring a dedicated tracking methodology",
+      "Agent evaluation and observability tooling — AgentX and Latitude both landed this week; the category is accelerating"
+    ],
+    "topics_to_drop": [
+      "Consumer app launches below 300 PH upvotes — low enterprise signal relative to the dev infrastructure items dominating this week"
+    ],
+    "notes": "Top theme this week: government-managed frontier AI access. Both OpenAI (GPT-5.6) and Anthropic (Mythos 5) shipped under US government access controls in the same week. This is no longer a one-time anomaly — it requires a standing coverage methodology. Recommend adding a Government AI Access tracker section if this pattern continues into week 3 (week of June 29). MCP ecosystem tooling is the second major theme: Skybridge, BrowserAct, Cloudflare Temporary Accounts, and Bluerails Discovery all address different layers of the MCP infrastructure stack. The 2026-06-15 week's Prometheus and GLM-5.2 items from the prior session context were June 15–16 launches and should not appear in this week's tab — they were correctly excluded."
+  }
+}
