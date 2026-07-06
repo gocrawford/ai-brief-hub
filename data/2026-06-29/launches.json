@@ -1,0 +1,613 @@
+{
+  "tab_id": "launches",
+  "tab_name": "Launches",
+  "subtitle": "Launch Intelligence",
+  "icon": "Rocket",
+  "min_items": 20,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.87,
+    "items_total": 23,
+    "items_new": 20,
+    "items_returning": 3
+  },
+  "executive_summary": [
+    {
+      "headline": "Anthropic's export-control standoff ends: Fable 5 restored globally, Mythos 5 restored only to ~100 vetted critical-infrastructure orgs.",
+      "body": "Commerce lifted the June export controls on June 30; Anthropic restored Fable 5 across Claude.ai, the API, Claude Code, and Claude Cowork on July 1 with a new safety classifier blocking the reported jailbreak technique in over 99% of attempts. Mythos 5 stayed gated to roughly 100 vetted US critical-infrastructure organizations under Project Glasswing. This is the story of the week: a 19-day involuntary rollback followed by a two-tier restoration that treats frontier capability as a licensable resource, not a product SKU.",
+      "primary_url": "https://www.anthropic.com/news/redeploying-fable-5"
+    },
+    {
+      "headline": "Claude Sonnet 5 ships with a 1M-token context window and cybersecurity refusals on by default.",
+      "body": "Anthropic's June 30 release hits 85.2% on SWE-Bench Verified at Sonnet-tier pricing ($2/M input, $10/M output through August, rising to $3/$15 after). It is immediately available on the Anthropic API, AWS Bedrock, and Google Vertex AI, with Microsoft Foundry in preview. The new tokenizer generates up to 35% more tokens per input than Sonnet 4.6 — a real cost variable enterprise teams should model before assuming a like-for-like swap.",
+      "primary_url": "https://www.anthropic.com/news/claude-sonnet-5"
+    },
+    {
+      "headline": "Google ships an agentic \"computer use\" tool and a stable Interactions API for agent builders in the same week.",
+      "body": "Gemini 3.5 Flash's computer-use capability (public preview, June 24) scores 78.4 on OSWorld-Verified, competitive with GPT-5.5 and Claude Opus 4.7 on the same benchmark, and ships with no premium surcharge. Separately, the Interactions API reached general availability June 29 and is now Google's recommended interface for all new Gemini agent builds — the API surface enterprise teams should standardize on going forward.",
+      "primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/"
+    },
+    {
+      "headline": "Together AI raises $800M at $8.3B, more than doubling its valuation from earlier this year — capital is still chasing GPU-cloud and inference infrastructure, not just model labs.",
+      "body": "The Series C, announced July 1 with Aramco Ventures among the backers, values Together AI at $8.3B versus $3.3B at the start of 2025. Read alongside Crusoe Energy's reported talks for a $3B raise (unconfirmed, Bloomberg via Reuters), the infrastructure layer is where the largest checks are still being written this week, not at the model layer.",
+      "primary_url": "https://www.together.ai/blog/announcing-our-series-c"
+    },
+    {
+      "headline": "Anthropic's Claude Tag turns Slack into a shared-identity agent surface — a pattern worth testing before the vendor-specific version arrives.",
+      "body": "Claude Tag (beta, launched June 23 for Enterprise/Team customers) gives a single '@Claude' agent persistent memory, ambient proactive updates, and async multi-day task execution inside a shared Slack channel, replacing the old point-in-time 'Claude in Slack' app (retiring August 3). Anthropic says 65% of its own internal code is now generated via this pattern — a credible enterprise signal, source is the vendor's own usage claim rather than a third party.",
+      "primary_url": "https://www.anthropic.com/news/introducing-claude-tag"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "fable-5-mythos-5-restoration-jul1",
+      "title": "Fable 5 and Mythos 5 Restored — Two-Tier Access After 19-Day Export-Control Shutdown",
+      "source": "Anthropic",
+      "date": "2026-07-01",
+      "primary_url": "https://www.anthropic.com/news/redeploying-fable-5",
+      "secondary_urls": [
+        { "label": "Anthropic: Claude Fable 5 and Mythos 5", "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5" },
+        { "label": "The Hacker News: Anthropic restores Claude Fable 5", "url": "https://thehackernews.com/2026/07/anthropic-restores-claude-fable-5-after.html" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00Z",
+      "summary": "After the US Commerce Department lifted its June export controls on June 30, Anthropic restored Fable 5 globally on July 1 across Claude.ai, the API, Claude Code, and Claude Cowork, with a new safety classifier blocking the reported jailbreak technique in over 99% of cases (falling back to Opus 4.8 otherwise). Mythos 5, the more capable model, was restored only to roughly 100 vetted US critical-infrastructure organizations via the invite-only Project Glasswing program — not a global GA. Anthropic is including up to 50% of weekly usage limits through July 7 for Pro/Max/Team/select Enterprise customers before usage credits apply.",
+      "category": "Frontier Model",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "This is the first time a frontier lab has shipped a two-tier release explicitly gated by government-defined critical-infrastructure status rather than by price or contract tier. Enterprise teams in regulated but non-critical-infrastructure sectors get Fable 5, not Mythos 5 — plan model selection accordingly rather than assuming the top-shelf model will be available on request.",
+      "pricing": "Fable 5: $10/M input tokens, $50/M output tokens. Mythos 5 pricing not published (invite-only access).",
+      "key_takeaways": [
+        "Export-control policy is now a live variable in frontier-model availability planning, not a background risk.",
+        "Fable 5's new safety classifier is a meaningful mitigation, not a full fix — >99% block rate implies a nonzero bypass rate at scale.",
+        "AWS Bedrock, GCP Vertex, and Microsoft Foundry access for Fable 5 is explicitly \"to follow\" — do not assume immediate cloud-platform parity."
+      ],
+      "score": { "total": 9.2, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 2 },
+      "tags": ["frontier-model", "export-controls", "anthropic", "government-access", "regulatory"],
+      "recurrence": "new"
+    },
+    {
+      "id": "claude-sonnet-5-launch-jun30",
+      "title": "Claude Sonnet 5 — 1M-Token Context, 85.2% SWE-Bench, Cybersecurity Refusals by Default",
+      "source": "Anthropic",
+      "date": "2026-06-30",
+      "primary_url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "secondary_urls": [
+        { "label": "AWS: Introducing Claude Sonnet 5 on AWS", "url": "https://aws.amazon.com/blogs/machine-learning/" },
+        { "label": "Constellation Research: Anthropic launches Claude Sonnet 5", "url": "https://www.constellationr.com/insights/news/anthropic-launches-claude-sonnet-5" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00Z",
+      "summary": "Claude Sonnet 5 is Anthropic's most agentic Sonnet-tier model yet, reaching near-Opus-4.8 performance at Sonnet cost with a 1M-token context window (5x Sonnet 4.6) and 128K max output tokens. It scores 85.2% on SWE-Bench Verified and is the first Sonnet-tier model to ship cybersecurity safeguards on by default, with refusals returning HTTP 200 and stop_reason:\"refusal\" rather than an error. It is immediately available via the Anthropic API, AWS Bedrock, and Google Vertex AI, with Microsoft Foundry in preview, and became the default model for Free/Pro Claude.ai users on July 1.",
+      "category": "Frontier Model",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Direct competitor to GPT-5.5 and Gemini 3.1 Pro at the mid-tier price point. The 30-35% higher token generation per input (new tokenizer) is a real cost offset against the lower per-token price — model migration should be benchmarked on total spend, not sticker price.",
+      "pricing": "Introductory: $2/M input, $10/M output through August 31, 2026. Standard from September 1: $3/M input, $15/M output.",
+      "key_takeaways": [
+        "1M-token context makes Sonnet 5 viable for large-codebase or long-document agentic workflows that previously required Opus.",
+        "Cybersecurity refusal behavior changes API error-handling expectations — integrate a check for stop_reason:\"refusal\" before assuming HTTP 200 means success.",
+        "Multi-cloud availability at launch (Bedrock + Vertex, Foundry in preview) reduces platform lock-in risk relative to prior Anthropic releases."
+      ],
+      "score": { "total": 8.8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
+      "tags": ["frontier-model", "anthropic", "claude", "swe-bench", "enterprise-ai"],
+      "recurrence": "new"
+    },
+    {
+      "id": "gemini-35-flash-computer-use-jun24",
+      "title": "Gemini 3.5 Flash Computer Use — Public Preview, 78.4 on OSWorld-Verified",
+      "source": "Google",
+      "date": "2026-06-24",
+      "primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/",
+      "secondary_urls": [
+        { "label": "Forbes: Google Gemini computer-use agent", "url": "https://www.forbes.com/sites/paulmonckton/2026/06/27/google-gemini-computer-use-agent/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00Z",
+      "summary": "Google's built-in computer-use tool lets Gemini 3.5 Flash see, reason about, and act on browser, mobile, and desktop UIs without a separate agent framework. It is available via the Gemini API and the Gemini Enterprise Agent Platform at no premium surcharge, and scores 78.4 on OSWorld-Verified — within a point of GPT-5.5 (78.7) and ahead of Claude Opus 4.7 (78.0) on the same benchmark.",
+      "category": "AI Agent",
+      "evaluation": "ADD TO WATCHLIST",
+      "competitive_context": "Three-way benchmark parity (Google, OpenAI, Anthropic all in the high 70s on OSWorld-Verified) signals computer-use agents have hit a capability plateau at current model generations — differentiation will come from tooling, guardrails, and integration depth, not raw task-completion rate.",
+      "pricing": "No premium surcharge over standard Gemini 3.5 Flash API pricing.",
+      "key_takeaways": [
+        "No separate pricing tier lowers the bar for a 30-day pilot on a bounded internal workflow (e.g., internal portal data entry).",
+        "Developer/enterprise-only access — not exposed in the consumer Gemini app, so this is squarely an enterprise-evaluation signal.",
+        "Benchmark parity across three labs means vendor choice should hinge on existing cloud/data relationships, not this benchmark alone."
+      ],
+      "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
+      "tags": ["ai-agent", "google", "gemini", "computer-use", "automation"],
+      "recurrence": "new"
+    },
+    {
+      "id": "claude-tag-slack-agent-jun23",
+      "title": "Claude Tag — Shared-Identity Agentic Teammate in Slack",
+      "source": "Anthropic",
+      "date": "2026-06-23",
+      "primary_url": "https://www.anthropic.com/news/introducing-claude-tag",
+      "secondary_urls": [
+        { "label": "Reuters: Anthropic launches Claude Tag research preview", "url": "https://www.reuters.com/technology/anthropic-launches-claude-tag-research-preview-slack-users-2026-06-23/" },
+        { "label": "Fortune: Anthropic Claude Tag virtual employee tool", "url": "https://fortune.com/2026/06/23/anthropic-claude-tag-virtual-employee-tool-slack/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00Z",
+      "summary": "Claude Tag is a beta agentic teammate for Slack, available to Claude Enterprise and Team customers, that runs on Opus 4.8 with a shared team identity, persistent context memory, ambient proactive updates, and async multi-day task execution. Admins get scoped tool/channel/data access, token-spend limits, and audit logging. It replaces the older point-in-time \"Claude in Slack\" app, which retires August 3 with a 30-day admin migration window. Anthropic states 65% of its own internal code is now generated via this internal version of the tool.",
+      "category": "AI Agent",
+      "evaluation": "EVALUATE NOW",
+      "competitive_context": "Positions against Microsoft Copilot's taskbar-agent and Slack's own native AI features. The shared-identity, multiplayer design (one @Claude per channel, not per-user) is the differentiated pattern worth testing against single-user assistant models.",
+      "pricing": "Included with Claude Enterprise/Team plans. Launch credits: $25,000 for eligible Enterprise orgs, $2,500 for Team orgs (10+ seats), expiring September 1, 2026.",
+      "key_takeaways": [
+        "Migration deadline (August 3 retirement of the old Slack app) creates a hard near-term action item for any org already using Claude in Slack.",
+        "Async multi-day task execution moves Slack from a chat surface to a persistent task-tracking surface — governance implications for audit and data retention policy.",
+        "The 65% internal-code-generation figure is Anthropic's own claim about its own team, not an independent benchmark — treat as directional, not comparative."
+      ],
+      "score": { "total": 8.1, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
+      "tags": ["ai-agent", "anthropic", "slack", "enterprise-ai", "collaboration"],
+      "recurrence": "new"
+    },
+    {
+      "id": "together-ai-series-c-jul1",
+      "title": "Together AI Raises $800M Series C at $8.3B Valuation",
+      "source": "Together AI",
+      "date": "2026-07-01",
+      "primary_url": "https://www.together.ai/blog/announcing-our-series-c",
+      "secondary_urls": [
+        { "label": "Reuters: Together AI raises $800M", "url": "https://www.reuters.com/legal/transactional/together-ai-raises-800-million-83-billion-valuation-2026-07-01/" },
+        { "label": "NYT DealBook: Together AI funding", "url": "https://www.nytimes.com/2026/07/01/business/dealbook/together-ai-funding.html" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00Z",
+      "summary": "Together AI's Series C, backed in part by Aramco Ventures, values the GPU-cloud and inference platform at $8.3B — up from $3.3B at the start of 2025, a 2.5x increase in roughly 18 months. The company positions itself as neutral infrastructure for running open and frontier models at scale, competing with hyperscaler-native inference offerings.",
+      "category": "Funding",
+      "evaluation": "MONITOR",
+      "competitive_context": "Sovereign-wealth-adjacent capital (Aramco Ventures) entering AI infrastructure funding is a notable capital-source shift worth tracking for supply-chain and geopolitical risk assessment on any vendor relationship.",
+      "pricing": "N/A — funding round.",
+      "key_takeaways": [
+        "Infrastructure-layer valuations are compounding faster than most model-layer valuations this year — relevant to build-vs-buy compute sourcing decisions.",
+        "Aramco Ventures participation adds a geopolitical dimension worth flagging in vendor risk reviews if evaluating Together AI as an inference provider."
+      ],
+      "score": { "total": 7.6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 },
+      "tags": ["funding", "infrastructure", "gpu-cloud", "series-c"],
+      "recurrence": "new"
+    },
+    {
+      "id": "patronus-ai-series-b-jun25",
+      "title": "Patronus AI Raises $50M Series B, Unveils Digital World Models for Agent Testing",
+      "source": "Patronus AI",
+      "date": "2026-06-25",
+      "primary_url": "https://www.patronus.ai/announcements/announcing-our-50m-series-b",
+      "secondary_urls": [
+        { "label": "TechCrunch: Patronus AI lands $50M to build digital worlds", "url": "https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00Z",
+      "summary": "Patronus AI raised a $50M Series B led by Greenfield Partners, with participation from Lightspeed, Notable Capital, Datadog, Samsung, Factorial Capital, and Gokul Rajaram, bringing total capital to $70M. The round funds \"Digital World Models\" — large-scale simulation environments for training and evaluating AI agents before production deployment. TechCrunch reports the company's revenue grew 15x over the past year.",
+      "category": "Funding",
+      "evaluation": "ADD TO WATCHLIST",
+      "competitive_context": "Digital World Models address a real gap: most agent-evaluation tooling tests single-turn outputs, not multi-step task completion in a realistic environment. Datadog's participation as a strategic investor signals observability vendors see agent-simulation testing as adjacent to their core product.",
+      "pricing": "Not publicly disclosed; enterprise sales-led.",
+      "key_takeaways": [
+        "Pre-production agent simulation testing is an emerging category worth a scoping call before any large-scale internal agent rollout.",
+        "15x revenue growth (TechCrunch, not independently audited) suggests real enterprise demand for agent-evaluation tooling, not just hype."
+      ],
+      "score": { "total": 7.7, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 2 },
+      "tags": ["funding", "agent-evaluation", "series-b", "testing"],
+      "recurrence": "new"
+    },
+    {
+      "id": "cursor-ios-mobile-app-jun29",
+      "title": "Cursor for iOS — Native Mobile App for Steering Coding Agents",
+      "source": "Cursor (Anysphere)",
+      "date": "2026-06-29",
+      "primary_url": "https://cursor.com/blog/ios-mobile-app",
+      "secondary_urls": [
+        { "label": "TechCrunch: Cursor now has a mobile app", "url": "https://techcrunch.com/2026/06/29/cursor-now-has-a-mobile-app-for-guiding-your-coding-agent-on-the-go/" },
+        { "label": "9to5Mac: Cursor releases iPhone and iPad app", "url": "https://9to5mac.com/2026/06/29/cursor-releases-iphone-and-ipad-app-following-recent-acquisition-by-spacex/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00Z",
+      "summary": "Cursor shipped a native iOS app (public beta, all paid plans) that lets developers launch always-on cloud agents or remotely steer agents already running on a desktop, with Live Activities support for lock-screen progress tracking. The release lands two weeks after SpaceX's acquisition of Anysphere and includes a 75%-off Composer 2.5 promotion through July 5. It ranked #5 on Product Hunt's weekly leaderboard for the week of June 29 with 565 upvotes on launch day.",
+      "category": "Dev Tools",
+      "evaluation": "MONITOR",
+      "competitive_context": "Mobile agent-steering is a UX pattern, not a new capability — the underlying agent infrastructure is unchanged from Cursor 2.0. Relevant mainly as a signal that agent workflows are being designed for asynchronous, non-desk-bound supervision.",
+      "pricing": "Included in all paid Cursor plans ($20/mo Pro and up); no separate mobile charge.",
+      "key_takeaways": [
+        "Async, phone-based approval of agent-generated code changes raises a governance question: what approval controls exist before a mobile-approved PR merges to a protected branch?",
+        "Public beta gated to paid plans and iOS 26+ — not yet a stable enterprise-rollout candidate."
+      ],
+      "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+      "tags": ["dev-tools", "cursor", "mobile", "coding-agent"],
+      "recurrence": "new"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "frontier_models",
+      "title": "Frontier Model Releases",
+      "description": "New model releases and material status changes from frontier labs this week, beyond the Top Picks above.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "gpt-56-sol-gated-preview-status-jun26",
+          "title": "GPT-5.6 Sol/Terra/Luna — Still Gated to ~20 Partners, No ChatGPT Access Yet",
+          "source": "OpenAI",
+          "date": "2026-06-26",
+          "primary_url": "https://openai.com/index/previewing-gpt-5-6-sol/",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "OpenAI's GPT-5.6 series (Sol, Terra, Luna) remains limited to roughly 20 government-approved partner organizations via the API and Codex only — no ChatGPT access as of this week. Terra claims GPT-5.5-competitive performance at half the cost; Sol does not cross OpenAI's Cyber Critical threshold under its Preparedness Framework. GA is promised \"in coming weeks,\" against an August 1, 2026 executive-order deadline. No material change from last week's coverage.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.8, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 },
+          "tags": ["frontier-model", "openai", "gpt-5.6", "government-access"],
+          "recurrence": "returning",
+          "recurrence_note": "Covered last week (2026-06-22) as a new preview; no GA and no new access tier this week — status-only update, moved out of Top Picks."
+        },
+        {
+          "id": "gemini-35-pro-ga-delay-continues",
+          "title": "Gemini 3.5 Pro — GA Delay to July Still Holding",
+          "source": "Pondero AI",
+          "date": "2026-06-25",
+          "primary_url": "https://pondero.ai/news/2026-06-25-gemini-35-pro-delay/",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Gemini 3.5 Pro remains in Vertex AI enterprise preview only, with general availability still slated for July and not yet shipped as of July 5. Announced (not yet live) pricing is approximately $15/M input and $60/M output tokens, with a 2M-token context window and a Deep Think reasoning mode.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["frontier-model", "google", "gemini", "delayed-launch"],
+          "recurrence": "returning",
+          "recurrence_note": "Same delay reported last week; no new GA date confirmed this week."
+        },
+        {
+          "id": "google-interactions-api-ga-jun29",
+          "title": "Google Interactions API Reaches General Availability",
+          "source": "Google",
+          "date": "2026-06-29",
+          "primary_url": "https://ai.google.dev/gemini-api/docs/interactions-overview",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Google's Interactions API is now generally available and is the company's recommended interface for all new Gemini agent projects going forward, consolidating agent-session state handling that previously required custom implementation.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.2, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "tags": ["api", "google", "gemini", "agent-infrastructure"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_ai",
+      "title": "Enterprise AI Platform Updates",
+      "description": "Cloud and productivity-platform AI feature launches relevant to Microsoft-centric enterprise stacks.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "m365-copilot-batch-jul1",
+          "title": "Microsoft 365 Copilot — Watermarks, Taskbar Agent Status, Notebook-to-Office Generation",
+          "source": "Microsoft",
+          "date": "2026-07-01",
+          "primary_url": "https://www.microsoft.com/en-us/microsoft-365/roadmap",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Microsoft's July 1 Copilot batch adds AI content watermarks for generated video/audio, long-running agent task status in the Windows taskbar, scheduled recurring prompts for declarative agents, and direct PowerPoint/Word/Excel generation from Copilot Notebooks with mind-map support. Generated files auto-inherit sensitivity labels, and Copilot Search now matches on department metadata.",
+          "category": "Enterprise AI",
+          "evaluation": "EVALUATE NOW",
+          "score": { "total": 7.8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "tags": ["microsoft", "copilot", "m365", "enterprise-ai", "governance"],
+          "recurrence": "new"
+        },
+        {
+          "id": "aws-bedrock-govcloud-oss-jul1",
+          "title": "AWS Bedrock Adds GPT OSS and NVIDIA Nemotron Models to GovCloud",
+          "source": "AWS",
+          "date": "2026-07-01",
+          "primary_url": "https://aws.amazon.com/blogs/machine-learning/",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "AWS GovCloud (US) now supports GPT OSS (120B/20B) and NVIDIA Nemotron models (Nano 9B v2, Nano 12B v2, Nano 30B, Super 120B) on Bedrock, alongside the same-week Claude Sonnet 5 GA. This extends open-weight and open-license model access to government and regulated-industry Bedrock customers who require GovCloud data residency.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.3, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["aws", "bedrock", "govcloud", "open-source", "nvidia"],
+          "recurrence": "new"
+        },
+        {
+          "id": "google-cloud-ai-monthly-roundup-jun30",
+          "title": "Google Cloud: Nano Banana 2/Pro GA, Claude Opus 4.6 and Sonnet 4.6 Now on Vertex AI",
+          "source": "Google Cloud",
+          "date": "2026-06-30",
+          "primary_url": "https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Google Cloud's monthly AI roundup confirms Nano Banana 2 and Nano Banana Pro reached general availability on the Gemini Enterprise Agent Platform, Gemini 3.1 Pro entered preview on Vertex AI, and Claude Opus 4.6 plus Claude Sonnet 4.6 reached GA on Vertex AI — giving Vertex customers cross-lab model choice without leaving the platform.",
+          "category": "Enterprise AI",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.9, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 },
+          "tags": ["google-cloud", "vertex-ai", "multi-model", "enterprise-ai"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "product_hunt",
+      "title": "Product Hunt — Top Launches This Week",
+      "description": "Top-ranked Product Hunt launches with AI relevance for the week of June 29, sorted by leaderboard rank.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "ph-cursor-ios-jun29",
+          "title": "Cursor for iOS",
+          "source": "Product Hunt",
+          "date": "2026-06-29",
+          "primary_url": "https://cursor.com/blog/ios-mobile-app",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/cursor-for-ios" }],
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Native iOS app for launching and steering Cursor coding agents remotely. #1 on the daily leaderboard June 29 with 565 upvotes; see Top Picks for full detail.",
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "upvotes": 565, "comments": 62 },
+          "tags": ["product-hunt", "cursor", "mobile"],
+          "recurrence": "new"
+        },
+        {
+          "id": "ph-claude-sonnet-5-jun30",
+          "title": "Claude Sonnet 5",
+          "source": "Product Hunt",
+          "date": "2026-06-30",
+          "primary_url": "https://www.anthropic.com/news/claude-sonnet-5",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/claude-sonnet-5" }],
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Anthropic's Sonnet 5 launch also charted on Product Hunt's weekly leaderboard at #12; see Top Picks for full detail.",
+          "category": "Frontier Model",
+          "evaluation": "EVALUATE NOW",
+          "score": { "total": 8.8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "tags": ["product-hunt", "anthropic", "frontier-model"],
+          "recurrence": "new"
+        },
+        {
+          "id": "ph-context-dev",
+          "title": "Context.dev",
+          "source": "Product Hunt",
+          "date": "2026-06-29",
+          "primary_url": "https://context.dev/?ref=producthunt",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/context-dev" }],
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Developer tool for managing and versioning LLM context/prompt state across agent workflows, ranked in the top 3 on Product Hunt's weekly AI leaderboard.",
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.4, "signal": 1, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "tags": ["product-hunt", "dev-tools", "llm-context"],
+          "recurrence": "new"
+        },
+        {
+          "id": "ph-glaze-raycast",
+          "title": "Glaze by Raycast",
+          "source": "Product Hunt",
+          "date": "2026-06-30",
+          "primary_url": "https://www.raycast.com/?ref=producthunt",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/glaze-by-raycast" }],
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Raycast's AI-native launcher extension charted at #4 on the weekly leaderboard, extending Raycast's push into agentic desktop workflows.",
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.2, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "tags": ["product-hunt", "raycast", "productivity"],
+          "recurrence": "new"
+        },
+        {
+          "id": "ph-databox-skills-marketplace",
+          "title": "Skills Marketplace by Databox",
+          "source": "Product Hunt",
+          "date": "2026-07-01",
+          "primary_url": "https://databox.com/?ref=producthunt",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/skills-marketplace-by-databox" }],
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "A marketplace for pre-built dashboard/analytics \"skills\" that plug into Databox's BI platform, ranked #9 on the weekly leaderboard — directly relevant to teams building internal dashboard tooling.",
+          "category": "Vertical SaaS",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 6.8, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "tags": ["product-hunt", "business-intelligence", "dashboards"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "yc_and_startups",
+      "title": "YC and Notable Startups",
+      "description": "Y Combinator batch companies and notable independent startup launches with AI relevance this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "yc-diligence-automation-jul2",
+          "title": "Due-Diligence Automation Startup Raises $9M Seed at $57M Valuation",
+          "source": "TechFundingNews / Index Ventures",
+          "date": "2026-07-02",
+          "primary_url": "https://www.indexventures.com/perspectives/",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "An Index Ventures-backed startup founded by a Harvard dropout raised a $9M seed at a $57M valuation to automate financial and legal due-diligence document review with LLMs. Included for category signal on AI-driven back-office automation; individual company name and terms should be re-verified against Index Ventures' own portfolio page before citing externally.",
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "score": { "total": 5.8, "signal": 1, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["startup", "funding", "due-diligence", "legal-tech"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "funding",
+      "title": "Funding Rounds",
+      "description": "Notable AI funding announcements this week, cross-checked against company sources where possible.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "crusoe-energy-talks-3b-jul2",
+          "title": "Crusoe Energy Reportedly in Talks for $3B Raise",
+          "source": "Reuters (via Bloomberg)",
+          "date": "2026-07-02",
+          "primary_url": "https://www.reuters.com/technology/crusoe-talks-raise-3-billion-funding-bloomberg-news-reports-2026-07-02/",
+          "secondary_urls": [{ "label": "Yahoo Finance: Crusoe in talks to raise $3 billion", "url": "https://finance.yahoo.com/technology/ai/articles/crusoe-talks-raise-3-billion-215816435.html" }],
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Crusoe Energy is reportedly in talks to raise $3B for AI infrastructure and compute buildout, per Bloomberg reporting relayed by Reuters. This is unconfirmed by the company as of this week — not a closed round — and is flagged here as a reported/pending deal rather than a verified close.",
+          "category": "Funding",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.0, "signal": 2, "novelty": 1, "actionability": 0, "source_quality": 1 },
+          "tags": ["funding", "infrastructure", "unconfirmed", "compute"],
+          "recurrence": "new"
+        },
+        {
+          "id": "kredosai-series-a-jun30",
+          "title": "KredosAI Raises $7M Series A from BMW i Ventures",
+          "source": "TechFundingNews",
+          "date": "2026-06-30",
+          "primary_url": "https://www.bmwiventures.com/",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "KredosAI raised a $7M Series A led by BMW i Ventures for AI-driven supply-chain risk and credit scoring in industrial manufacturing — an automotive-adjacent vertical AI application worth a watchlist entry given industrial-sector relevance.",
+          "category": "Vertical SaaS",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 6.3, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["funding", "series-a", "industrial", "supply-chain"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "open_source",
+      "title": "Open Source and Dev Tool Releases",
+      "description": "Notable open-weight model or dev-tool releases this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "gpt-oss-nemotron-govcloud-jul1",
+          "title": "GPT OSS and NVIDIA Nemotron Reach AWS GovCloud",
+          "source": "AWS / NVIDIA",
+          "date": "2026-07-01",
+          "primary_url": "https://aws.amazon.com/blogs/machine-learning/",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Open-weight GPT OSS (120B/20B) and NVIDIA's Nemotron family became available in AWS GovCloud this week — see Enterprise AI section for full detail. Listed here for open-source/open-weight visibility.",
+          "category": "Open Source",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.0, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["open-source", "govcloud", "nvidia", "nemotron"],
+          "recurrence": "new"
+        },
+        {
+          "id": "webmcp-persona-js-jun30",
+          "title": "Persona.js — Open-Source WebMCP Library for Browser Agents",
+          "source": "GitHub / Product Hunt",
+          "date": "2026-06-30",
+          "primary_url": "https://github.com/persona-js/persona-js",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Persona.js is an open-source JavaScript library implementing the WebMCP pattern, letting web apps expose structured tool interfaces directly to browser-based AI agents without a separate backend integration layer.",
+          "category": "Open Source",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.1, "signal": 1, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["open-source", "webmcp", "browser-agents", "javascript"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "to_watch",
+      "title": "To Watch",
+      "description": "Early-stage or unresolved stories with high potential signal but not yet actionable.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "meta-contractors-teen-persona-controversy-jun29",
+          "title": "Meta Contractors Reportedly Posed as Teens to Test Rival Chatbots",
+          "source": "Business Insider / multiple outlets",
+          "date": "2026-06-29",
+          "primary_url": "https://www.businessinsider.com/",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Reports allege Meta contractors used teen personas to test competitor chatbot products for safety and compliance gaps between June 29 and July 1. If substantiated, this raises platform-testing-ethics and potential regulatory-exposure questions relevant to any enterprise evaluating chatbot vendors' internal red-teaming practices. Not yet independently confirmed by Meta.",
+          "category": "AI Agent",
+          "evaluation": "MONITOR",
+          "score": { "total": 5.5, "signal": 2, "novelty": 1, "actionability": 0, "source_quality": 1 },
+          "tags": ["controversy", "meta", "chatbot-safety", "unconfirmed"],
+          "recurrence": "new"
+        },
+        {
+          "id": "gemini-31-pro-vertex-preview-jun30",
+          "title": "Gemini 3.1 Pro Enters Preview on Vertex AI",
+          "source": "Google Cloud",
+          "date": "2026-06-30",
+          "primary_url": "https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "summary": "Gemini 3.1 Pro entered limited preview on Vertex AI this week, a step below the still-delayed Gemini 3.5 Pro GA — worth tracking as a possible interim option for teams that can't wait for 3.5 Pro.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.0, "signal": 1, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["google", "gemini", "preview", "vertex-ai"],
+          "recurrence": "new"
+        }
+      ]
+    }
+  ],
+  "index": [
+    { "title": "Fable 5 and Mythos 5 Restored — Two-Tier Access After 19-Day Export-Control Shutdown", "source": "Anthropic", "date": "2026-07-01", "primary_url": "https://www.anthropic.com/news/redeploying-fable-5", "score": 9.2 },
+    { "title": "Claude Sonnet 5 — 1M-Token Context, 85.2% SWE-Bench, Cybersecurity Refusals by Default", "source": "Anthropic", "date": "2026-06-30", "primary_url": "https://www.anthropic.com/news/claude-sonnet-5", "score": 8.8 },
+    { "title": "Gemini 3.5 Flash Computer Use — Public Preview, 78.4 on OSWorld-Verified", "source": "Google", "date": "2026-06-24", "primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/", "score": 8.0 },
+    { "title": "Claude Tag — Shared-Identity Agentic Teammate in Slack", "source": "Anthropic", "date": "2026-06-23", "primary_url": "https://www.anthropic.com/news/introducing-claude-tag", "score": 8.1 },
+    { "title": "Together AI Raises $800M Series C at $8.3B Valuation", "source": "Together AI", "date": "2026-07-01", "primary_url": "https://www.together.ai/blog/announcing-our-series-c", "score": 7.6 },
+    { "title": "Patronus AI Raises $50M Series B, Unveils Digital World Models", "source": "Patronus AI", "date": "2026-06-25", "primary_url": "https://www.patronus.ai/announcements/announcing-our-50m-series-b", "score": 7.7 },
+    { "title": "Cursor for iOS — Native Mobile App for Steering Coding Agents", "source": "Cursor (Anysphere)", "date": "2026-06-29", "primary_url": "https://cursor.com/blog/ios-mobile-app", "score": 7.5 },
+    { "title": "GPT-5.6 Sol/Terra/Luna — Still Gated to ~20 Partners", "source": "OpenAI", "date": "2026-06-26", "primary_url": "https://openai.com/index/previewing-gpt-5-6-sol/", "score": 6.8 },
+    { "title": "Gemini 3.5 Pro — GA Delay to July Still Holding", "source": "Pondero AI", "date": "2026-06-25", "primary_url": "https://pondero.ai/news/2026-06-25-gemini-35-pro-delay/", "score": 6.5 },
+    { "title": "Google Interactions API Reaches General Availability", "source": "Google", "date": "2026-06-29", "primary_url": "https://ai.google.dev/gemini-api/docs/interactions-overview", "score": 7.2 },
+    { "title": "Microsoft 365 Copilot — Watermarks, Taskbar Agent Status, Notebook-to-Office Generation", "source": "Microsoft", "date": "2026-07-01", "primary_url": "https://www.microsoft.com/en-us/microsoft-365/roadmap", "score": 7.8 },
+    { "title": "AWS Bedrock Adds GPT OSS and NVIDIA Nemotron Models to GovCloud", "source": "AWS", "date": "2026-07-01", "primary_url": "https://aws.amazon.com/blogs/machine-learning/", "score": 7.3 },
+    { "title": "Google Cloud: Nano Banana 2/Pro GA, Claude Opus 4.6 and Sonnet 4.6 Now on Vertex AI", "source": "Google Cloud", "date": "2026-06-30", "primary_url": "https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month", "score": 6.9 },
+    { "title": "Cursor for iOS (Product Hunt #1)", "source": "Product Hunt", "date": "2026-06-29", "primary_url": "https://cursor.com/blog/ios-mobile-app", "score": 7.5 },
+    { "title": "Claude Sonnet 5 (Product Hunt #12)", "source": "Product Hunt", "date": "2026-06-30", "primary_url": "https://www.anthropic.com/news/claude-sonnet-5", "score": 8.8 },
+    { "title": "Context.dev (Product Hunt)", "source": "Product Hunt", "date": "2026-06-29", "primary_url": "https://context.dev/?ref=producthunt", "score": 6.4 },
+    { "title": "Glaze by Raycast (Product Hunt)", "source": "Product Hunt", "date": "2026-06-30", "primary_url": "https://www.raycast.com/?ref=producthunt", "score": 6.2 },
+    { "title": "Skills Marketplace by Databox (Product Hunt)", "source": "Product Hunt", "date": "2026-07-01", "primary_url": "https://databox.com/?ref=producthunt", "score": 6.8 },
+    { "title": "Due-Diligence Automation Startup Raises $9M Seed at $57M Valuation", "source": "Index Ventures", "date": "2026-07-02", "primary_url": "https://www.indexventures.com/perspectives/", "score": 5.8 },
+    { "title": "Crusoe Energy Reportedly in Talks for $3B Raise", "source": "Reuters", "date": "2026-07-02", "primary_url": "https://www.reuters.com/technology/crusoe-talks-raise-3-billion-funding-bloomberg-news-reports-2026-07-02/", "score": 6.0 },
+    { "title": "KredosAI Raises $7M Series A from BMW i Ventures", "source": "TechFundingNews", "date": "2026-06-30", "primary_url": "https://www.bmwiventures.com/", "score": 6.3 },
+    { "title": "GPT OSS and NVIDIA Nemotron Reach AWS GovCloud", "source": "AWS / NVIDIA", "date": "2026-07-01", "primary_url": "https://aws.amazon.com/blogs/machine-learning/", "score": 7.0 },
+    { "title": "Persona.js — Open-Source WebMCP Library for Browser Agents", "source": "GitHub", "date": "2026-06-30", "primary_url": "https://github.com/persona-js/persona-js", "score": 6.1 },
+    { "title": "Meta Contractors Reportedly Posed as Teens to Test Rival Chatbots", "source": "Business Insider", "date": "2026-06-29", "primary_url": "https://www.businessinsider.com/", "score": 5.5 },
+    { "title": "Gemini 3.1 Pro Enters Preview on Vertex AI", "source": "Google Cloud", "date": "2026-06-30", "primary_url": "https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month", "score": 6.0 }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Crusoe Energy is closing a $3B funding round.",
+      "reason": "Reported by Bloomberg via Reuters as talks in progress, not a confirmed close. No company press release found as of fetch time. Treated as MONITOR-only, excluded from Top Picks.",
+      "attempted_url": "https://www.reuters.com/technology/crusoe-talks-raise-3-billion-funding-bloomberg-news-reports-2026-07-02/"
+    },
+    {
+      "claim": "Specific name and full terms of the Index Ventures-backed due-diligence automation startup.",
+      "reason": "Aggregator digest (aifunding.me) named the funding amount and valuation but company name could not be independently confirmed on Index Ventures' own site within this research window.",
+      "attempted_url": "https://www.indexventures.com/perspectives/"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Anthropic's own model-status page for tracking Fable 5 / Mythos 5 cloud-platform rollout (Bedrock/Vertex/Foundry) week over week",
+      "Direct company press pages for funding rounds reported only via Bloomberg/Reuters paywalled links, to avoid 401/403 verification gaps"
+    ],
+    "sources_to_drop": [
+      "Aggregator funding digests (e.g. aifunding.me) as primary sources — use only to identify leads, then verify against the company's own announcement before publishing"
+    ],
+    "topics_to_add": [
+      "Cloud-platform rollout tracking for Fable 5 (Bedrock/Vertex/Foundry availability dates) as a recurring watch item",
+      "Industrial/manufacturing-vertical AI funding rounds (e.g. KredosAI) given reader sector relevance"
+    ],
+    "topics_to_drop": [
+      "GPT-5.6 Sol/Terra/Luna gated-preview status — now three weeks of no material change; drop to a single index-line item unless GA ships"
+    ],
+    "notes": "Fable 5/Mythos 5 restoration and Claude Sonnet 5 dominate this week; Product Hunt leaderboard is thinner on genuinely novel AI products than prior weeks. Next week should verify whether Fable 5 lands on AWS Bedrock/Vertex/Foundry as promised, and whether Gemini 3.5 Pro finally ships GA."
+  }
+}

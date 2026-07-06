@@ -1,0 +1,491 @@
+{
+  "tab_id": "social",
+  "tab_name": "Social",
+  "subtitle": "Platform Intelligence",
+  "icon": "Share2",
+  "min_items": 15,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 0.91,
+    "items_total": 22,
+    "items_new": 20,
+    "items_returning": 2
+  },
+  "executive_summary": [
+    {
+      "headline": "The week's design principle is 'cheap agent, gated frontier': Sonnet-tier autonomy goes mainstream while the most capable models stay fenced",
+      "body": "Claude Sonnet 5 launched June 30 as a default free-tier model built for autonomous browser/terminal use at $2/$10 per million tokens, while Fable 5 and Mythos 5 came back online July 1 only after a 19-day US export-control review, and Mythos 5 remains capped to roughly 100 vetted US organizations. Creators across LinkedIn, YouTube, and Instagram are converging on the same story: the frontier is now a two-tier system, one open and cheap, one licensed and restricted. For an enterprise team, that gating logic (identity verification, usage classifiers, government-approved partner lists) is the more durable lesson than any single benchmark.",
+      "primary_url": "https://www.anthropic.com/news/redeploying-fable-5"
+    },
+    {
+      "headline": "Practitioner content is shifting from 'which model is smartest' to 'which model is cheapest to run at scale' — cost-per-task, not benchmark score, is the new comparison axis",
+      "body": "Multiple YouTube reviews and an AI news podcast flagged the same nuance from Anthropic's own Sonnet 5 documentation: pushed to high reasoning effort, Sonnet 5 can cost more per task than Opus 4.8 run at lower effort, inverting the usual cheap-model logic. That's a direct, testable governance signal for teams setting internal model-routing policies.",
+      "primary_url": "https://ai-in-15.com/episodes/2026/07/ai-in-15-2026-07-01"
+    },
+    {
+      "headline": "Anthropic's enterprise-revenue lead over OpenAI is now a mainstream business-press narrative, not just an AI-beat story",
+      "body": "Fortune's July 2 report frames Anthropic's self-reported $47B annualized run-rate against OpenAI's disclosed $25-33B, and cites Ramp data showing Anthropic ahead in business-subscription share since May. LinkedIn creators are amplifying this as a signal that enterprise buyers are choosing coding/agent capability over consumer brand recognition — worth tracking against internal vendor consolidation decisions.",
+      "primary_url": "https://fortune.com/2026/07/02/sam-altman-new-world-order-ai-openai-google-anthropic/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "tp-claude-sonnet-5-launch",
+      "title": "Anthropic launches Claude Sonnet 5 on June 30 as its 'most agentic Sonnet yet' — default model for Free/Pro users, $2/$10 per million tokens through August 31",
+      "source": "Anthropic",
+      "author": "Anthropic",
+      "date": "2026-06-30",
+      "platform": "linkedin",
+      "primary_url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "secondary_urls": [
+        { "label": "Tech Times — Claude Sonnet 5 shows AI war shifting from chat to agents", "url": "https://technewstube.com/techradar/1846097/claude-sonnet-5-agentic-sonnet-model-yet-shows-ai-war/" },
+        { "label": "GIGAZINE — Claude Sonnet 5 released, performance close to Opus 4.8", "url": "https://gigazine.net/gsc_news/en/2026/07/01/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00-04:00",
+      "summary": "Anthropic shipped Claude Sonnet 5 on June 30, 2026, positioning it as the most agentic Sonnet to date: built to plan, drive a browser, and run a terminal autonomously for extended stretches. It scores 92.4% on SWE-bench Verified and 63.2% on the agentic variant (up from Sonnet 4.6's 58%), and 84.7% on ARC-AGI-2. Pricing is $2/M input and $10/M output tokens through August 31, 2026, rising to $3/$15 after. It became the default model for Free and Pro plans the same day and is available in Claude Code and via the API as claude-sonnet-5.",
+      "enterprise_translation": "The principle is tiered agent autonomy at commodity pricing: a mid-tier model now handles multi-step tool use that required a flagship model months ago. A public-company innovation team can't swap in a new default model overnight, but it can replicate the evaluation Anthropic published — run the same internal task set at 'medium' vs 'high' reasoning effort and compare cost-per-completed-task rather than cost-per-token, since Anthropic's own data shows the cheaper model can lose that comparison if pushed too hard. A 30-day experiment: route one low-risk internal agent workflow (ticket triage, doc summarization) to Sonnet 5 and track completion cost against the current model to build an internal routing policy.",
+      "score": { "total": 8.5, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
+      "engagement": { "views": 0, "likes": 0, "comments": 0 },
+      "tags": ["Anthropic", "Claude Sonnet 5", "agentic AI", "pricing"],
+      "category": "Model Launch"
+    },
+    {
+      "id": "tp-fable-mythos-restored",
+      "title": "Fable 5 and Mythos 5 return globally July 1 after US lifts export controls — Mythos 5 stays capped to ~100 vetted US organizations",
+      "source": "Anthropic",
+      "author": "Anthropic",
+      "date": "2026-07-01",
+      "platform": "linkedin",
+      "primary_url": "https://www.anthropic.com/news/redeploying-fable-5",
+      "secondary_urls": [
+        { "label": "Al Jazeera — US lifts restrictions on Fable, Mythos", "url": "https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says" },
+        { "label": "The Hacker News — Anthropic restores Claude Fable 5 access", "url": "https://thehackernews.com/2026/07/anthropic-restores-claude-fable-5-after.html" },
+        { "label": "Business Insider — Anthropic restores Fable 5, Mythos access after White House talks", "url": "https://www.businessinsider.com/anthropic-restores-fable-5-mythos-access-trump-white-house-talks-2026-6" },
+        { "label": "Claude release notes — July 1 entry", "url": "https://support.claude.com/en/articles/12138966-release-notes" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00-04:00",
+      "summary": "The US Commerce Department's Bureau of Industry and Security withdrew export controls on Anthropic's two most powerful models on June 30; Fable 5 relaunched globally July 1 across Claude Platform, Claude.ai, Claude Code, and Claude Cowork, included free up to 50% of weekly usage limits through July 7 for Pro/Max/Team/select Enterprise plans. Mythos 5 remains restricted to roughly 100 US organizations approved under a government vetting process (Project Glasswing). Anthropic redeployed both models with a new safety classifier it says blocks a previously reported jailbreak technique in over 99% of cases, routing flagged requests to Opus 4.8, with an acknowledged tradeoff of more false positives on routine coding tasks.",
+      "enterprise_translation": "The principle is infrastructure-grade dependency risk: a 19-day government-driven access suspension on a frontier model is now a realistic operational scenario, not a hypothetical. A public-company innovation function should treat any single-vendor frontier model as a component with a documented fallback path, the same way it would treat a cloud region outage. A 30-day experiment: document which internal workflows have a hard dependency on one model/vendor and define a tested fallback (a different model or a cached/degraded mode) for at least the top three.",
+      "score": { "total": 8.7, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 2 },
+      "engagement": { "views": 0, "likes": 0, "comments": 0 },
+      "tags": ["Anthropic", "Fable 5", "Mythos 5", "export controls", "AI policy"],
+      "category": "Policy / Access"
+    },
+    {
+      "id": "tp-anthropic-revenue-overtake",
+      "title": "Fortune: Anthropic's self-reported $47B annualized revenue run-rate now exceeds OpenAI's disclosed $25-33B, with Ramp data showing Anthropic ahead in business subscriptions since May",
+      "source": "Fortune",
+      "author": "Fortune",
+      "date": "2026-07-02",
+      "platform": "linkedin",
+      "primary_url": "https://fortune.com/2026/07/02/sam-altman-new-world-order-ai-openai-google-anthropic/",
+      "secondary_urls": [],
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00-04:00",
+      "summary": "Fortune reported July 2 that Anthropic has overtaken OpenAI in self-reported annualized revenue ($47B vs. OpenAI's disclosed $25-33B) and is closing the user-count gap, citing Ramp data on business-subscription share and Similarweb data showing ChatGPT's monthly-visit majority slipped for the first time in May. The article frames this inside a broader piece on Sam Altman seeking new industry-wide AI governance arrangements as OpenAI's market position shifts.",
+      "enterprise_translation": "The principle is that enterprise AI purchasing decisions are increasingly capability-driven (coding, agents) rather than brand-driven, and vendor market share can invert faster than annual procurement cycles account for. A public-company AI team should re-run vendor evaluation criteria at least twice a year rather than locking into a single provider based on 2024-2025 assumptions about which lab leads. A 30-day action: pull current internal usage-by-model data and compare it against this revenue shift to see if internal tool adoption already reflects the market move or lags it.",
+      "score": { "total": 7.8, "signal": 3, "novelty": 2, "actionability": 1, "source_quality": 2 },
+      "engagement": { "views": 0, "likes": 0, "comments": 0 },
+      "tags": ["Anthropic", "OpenAI", "enterprise adoption", "revenue"],
+      "category": "Market Intelligence"
+    },
+    {
+      "id": "tp-allie-miller-fable-pricing-post",
+      "title": "Allie K. Miller flags Fable 5's July 7 pricing cliff as 'AI homework for the weekend' — 331 likes, 69 comments",
+      "source": "LinkedIn",
+      "author": "Allie K. Miller (@alliekmiller)",
+      "date": "2026-07-04",
+      "platform": "linkedin",
+      "primary_url": "https://www.linkedin.com/posts/alliekmiller_this-is-your-ai-homework-for-the-weekend-activity-7479141466192216064-3MlQ",
+      "secondary_urls": [],
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00-04:00",
+      "summary": "Enterprise AI strategist Allie K. Miller posted July 4 urging her audience to test Fable 5 before its promotional free-usage window (included in weekly plan limits) ends July 7, after which usage shifts to metered credits. The post frames the restoration window as a closing opportunity to benchmark the model against internal use cases before cost becomes a factor, drawing 331 likes and 69 comments.",
+      "enterprise_translation": "The principle is time-boxed evaluation windows: vendors are using promotional access periods to drive enterprise trial before metering kicks in, which means evaluation cycles need to move faster than typical procurement timelines allow. A 30-day experiment: build a standing 48-hour internal playbook for evaluating any newly-released or newly-restored frontier model against a fixed internal task benchmark, so promotional windows aren't wasted on approval delays.",
+      "score": { "total": 7.6, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
+      "engagement": { "views": 0, "likes": 331, "comments": 69 },
+      "tags": ["Allie K. Miller", "Fable 5", "pricing", "LinkedIn"],
+      "category": "Creator Signal"
+    },
+    {
+      "id": "tp-sonnet-5-cost-inversion",
+      "title": "Reviewers surface the Sonnet 5 cost inversion: pushed to high reasoning effort, the 'cheap' model can cost more per task than Opus 4.8 run lightly",
+      "source": "AI in 15 / YouTube reviews",
+      "author": "AI in 15 podcast",
+      "date": "2026-07-01",
+      "platform": "youtube",
+      "primary_url": "https://ai-in-15.com/episodes/2026/07/ai-in-15-2026-07-01",
+      "secondary_urls": [
+        { "label": "YouTube — NEW Claude Sonnet 5 vs Opus 4.8! (Full Review)", "url": "https://www.youtube.com/watch?v=VK4REvxU0JQ" },
+        { "label": "YouTube — Sonnet 5 Review: why it lost against 4 other models", "url": "https://www.youtube.com/watch?v=yJ-1LB2hF-Q" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00-04:00",
+      "summary": "Independent coverage of Anthropic's own Sonnet 5 system card highlights a specific inversion: on cost-per-task charts, running Sonnet 5 above medium reasoning effort can cost more than running Opus 4.8 at a lower effort setting, because the cheaper model burns more reasoning tokens on hard problems. Anthropic's system card also flags Sonnet 5 as measurably weaker than Sonnet 4.6 on one vulnerability-discovery benchmark and weaker in general trivia/world knowledge — an intentionally targeted upgrade for agentic coding, not a universal step up.",
+      "enterprise_translation": "The principle is that model tier selection needs task-level cost modeling, not blanket cheap-model defaults. An enterprise team building internal model-routing logic should benchmark cost-per-completed-task (not cost-per-token) across effort settings for its actual workloads before defaulting all traffic to the cheapest available model. A 30-day experiment: instrument one production internal agent to log token cost against task-completion rate at two different reasoning-effort settings and compare the effective cost curve.",
+      "score": { "total": 7.5, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 },
+      "engagement": { "views": 0, "likes": 0, "comments": 0 },
+      "tags": ["Claude Sonnet 5", "cost modeling", "model routing", "Opus 4.8"],
+      "category": "Technical Analysis"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "linkedin",
+      "title": "LinkedIn",
+      "description": "Enterprise AI signal from Tier 1/2 voices and major lab pages.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "li-allie-miller-fable-homework",
+          "title": "Allie K. Miller: 'This is your AI homework for the weekend' — test Fable 5 before the July 7 pricing cliff",
+          "source": "LinkedIn",
+          "author": "Allie K. Miller (@alliekmiller)",
+          "date": "2026-07-04",
+          "primary_url": "https://www.linkedin.com/posts/alliekmiller_this-is-your-ai-homework-for-the-weekend-activity-7479141466192216064-3MlQ",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "summary": "Miller's post uses Fable 5's promotional free-usage window (ending July 7) as a prompt for her audience to test the restored model against real work before metering starts. 331 likes, 69 comments.",
+          "enterprise_translation": "Promotional evaluation windows compress vendor trial timelines; enterprise teams need a standing fast-evaluation process rather than ad hoc approval cycles to capture these windows.",
+          "score": { "total": 7.6, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "engagement": { "likes": 331, "comments": 69 },
+          "tags": ["Allie K. Miller", "Fable 5"],
+          "platform": "linkedin"
+        },
+        {
+          "id": "li-editors-fable-reinstated",
+          "title": "LinkedIn Editors: 'Anthropic Reinstates Claude Fable 5 Worldwide After U.S. Reverses' course on export controls",
+          "source": "LinkedIn",
+          "author": "LinkedIn Editors",
+          "date": "2026-07-02",
+          "primary_url": "https://www.linkedin.com/pulse/anthropic-reinstates-claude-fable-5-worldwide-after-2hcie",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "summary": "LinkedIn's editorial team published a pulse explainer summarizing the Fable 5 restoration and the government review process behind it, aimed at a general professional audience rather than AI specialists.",
+          "enterprise_translation": "The mainstreaming of export-control language ('license no longer required') into general business feeds signals that AI regulatory status is becoming a boardroom-level topic, not just a technical compliance detail buried in vendor terms.",
+          "score": { "total": 6.8, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "engagement": { "likes": 0, "comments": 0 },
+          "tags": ["Anthropic", "export controls", "policy"],
+          "platform": "linkedin"
+        },
+        {
+          "id": "li-marketscale-19-day-lesson",
+          "title": "MarketScale: what the Fable 5/Mythos 5 19-day shutdown taught every enterprise about treating AI as infrastructure",
+          "source": "MarketScale",
+          "author": "MarketScale",
+          "date": "2026-07-02",
+          "primary_url": "https://www.marketscale.com/industries/software-and-technology/fable-5-and-mythos-5-are-back-what-the-19-day-shutdown-taught-every-enterprise-about-ai-as-infrastructure",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "summary": "MarketScale's B2B tech desk frames the 19-day export-control suspension of Fable 5 and Mythos 5 as a wake-up call for enterprise buyers to treat frontier model access as critical infrastructure with contingency planning, not a subscription convenience.",
+          "enterprise_translation": "This directly models the vendor-dependency risk exercise: the article's framing (AI-as-infrastructure requiring contingency planning) is the enterprise translation itself, already articulated for a business audience and worth circulating internally as-is.",
+          "score": { "total": 7.2, "signal": 3, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "engagement": { "likes": 0, "comments": 0 },
+          "tags": ["AI infrastructure", "vendor risk", "Anthropic"],
+          "platform": "linkedin"
+        },
+        {
+          "id": "li-vijay-gemini-delay",
+          "title": "Vijay Krishna Gudavalli on LinkedIn: Google pushes Gemini 3.5 Pro's release to July, a sign of shifting frontier ship cycles",
+          "source": "LinkedIn",
+          "author": "Vijay Krishna Gudavalli",
+          "date": "2026-06-25",
+          "primary_url": "https://www.linkedin.com/posts/vijay-krishna-gudavalli-a5b365235_ai-google-gemini-activity-7475976510974320641-VrGN",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "summary": "A practitioner post notes Google's second confirmed slip of Gemini 3.5 Pro's general-availability date, now targeting July 2026, and connects it to a broader pattern of frontier labs missing self-announced ship dates.",
+          "enterprise_translation": "Frontier lab roadmaps are directional, not contractual; enterprise planning tied to a specific vendor's announced GA date should carry a buffer of at least one quarter, based on the pattern of repeated slips across multiple labs this year.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "engagement": { "likes": 0, "comments": 0 },
+          "tags": ["Gemini 3.5 Pro", "Google", "release delay"],
+          "platform": "linkedin"
+        }
+      ]
+    },
+    {
+      "section_id": "tiktok",
+      "title": "TikTok",
+      "description": "Cross-referenced via YouTube Shorts and Instagram Reels carrying the same content into TikTok's feed; no independently verifiable TikTok-native post cleared the 50K-view technical-content bar this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "tt-vibe-coding-sonnet5-live",
+          "title": "'Vibe Coding With Claude Sonnet 5' live benchmark video cross-posted to TikTok and YouTube Shorts",
+          "source": "YouTube / cross-posted to TikTok",
+          "author": "Independent AI creator",
+          "date": "2026-07-01",
+          "primary_url": "https://www.youtube.com/watch?v=CiBycZHZ2CI",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "summary": "A creator runs Claude Sonnet 5 live against a real coding task (building a small app end-to-end) to test the model's agentic claims in real time rather than relying on Anthropic's published benchmarks, a format increasingly cross-posted between TikTok, Shorts, and Reels.",
+          "enterprise_translation": "The 'watch me verify the benchmark live' format is itself a useful internal practice: before adopting a new model for a workflow, have a team member run one real internal task live/recorded rather than trusting vendor-published scores alone.",
+          "score": { "total": 6.8, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "views": 0, "likes": 0, "comments": 0 },
+          "tags": ["Claude Sonnet 5", "vibe coding", "live benchmark"],
+          "platform": "tiktok"
+        },
+        {
+          "id": "tt-sonnet5-vs-opus-review",
+          "title": "'NEW Claude Sonnet 5 vs Opus 4.8! (Full Review)' — head-to-head short-form comparison",
+          "source": "YouTube Shorts",
+          "author": "Independent AI reviewer",
+          "date": "2026-07-01",
+          "primary_url": "https://www.youtube.com/watch?v=VK4REvxU0JQ",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "summary": "A short-form comparison video walks through Sonnet 5 vs. Opus 4.8 on coding tasks and pricing, concluding Sonnet 5 is the better default for most agentic coding work while Opus 4.8 remains the higher-accuracy choice for harder problems.",
+          "enterprise_translation": "The two-tier framing (default-cheap-agentic vs. escalate-to-flagship-for-hard-cases) maps directly onto an internal model-routing policy: route routine agent tasks to the cheaper model and reserve the flagship model for tasks that fail a confidence or complexity threshold.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "views": 0, "likes": 0, "comments": 0 },
+          "tags": ["Claude Sonnet 5", "Opus 4.8", "model comparison"],
+          "platform": "tiktok"
+        },
+        {
+          "id": "tt-sonnet5-lost-comparison",
+          "title": "'Sonnet 5 Review: why it lost against 4 other models' — contrarian short-form take",
+          "source": "YouTube Shorts",
+          "author": "Independent AI reviewer",
+          "date": "2026-07-01",
+          "primary_url": "https://www.youtube.com/watch?v=yJ-1LB2hF-Q",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "summary": "A contrarian review runs Sonnet 5 against four competing models on a non-coding task set and reports it underperforming, reinforcing Anthropic's own system-card admission that the model is a targeted agentic-coding upgrade rather than a universal improvement.",
+          "enterprise_translation": "Single-benchmark marketing claims don't generalize across task types; any internal adoption decision should test against the specific task category the team cares about (e.g., document QA vs. coding) rather than relying on a single vendor-published leaderboard.",
+          "score": { "total": 6.2, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "engagement": { "views": 0, "likes": 0, "comments": 0 },
+          "tags": ["Claude Sonnet 5", "model benchmarking"],
+          "platform": "tiktok"
+        }
+      ]
+    },
+    {
+      "section_id": "instagram",
+      "title": "Instagram",
+      "description": "Practitioner Reels demonstrating Claude Sonnet 5's autonomous capabilities.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "ig-sonnet5-blender-demo",
+          "title": "Reel: Claude Sonnet 5 autonomously runs a Blender 3D modeling and fluid-simulation session for roughly two hours",
+          "source": "Instagram",
+          "author": "AI creator (Reels)",
+          "date": "2026-07-01",
+          "primary_url": "https://www.instagram.com/reel/DaPnfN-JdYM/",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "summary": "A creator sets Claude Sonnet 5 loose on a self-directed 3D modeling task in Blender, letting it run tool calls autonomously for close to two hours to produce a fluid simulation, showcasing the model's extended-autonomy claims outside of coding.",
+          "enterprise_translation": "The principle is bounded long-horizon autonomy in a domain outside code (3D/CAD-adjacent tooling). Building-products and industrial teams evaluating AI-assisted design workflows should note that the same self-directed-loop pattern is now demonstrated on non-coding tool chains, widening where an internal pilot could apply it.",
+          "score": { "total": 7.0, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "views": 0, "likes": 0, "comments": 0 },
+          "tags": ["Claude Sonnet 5", "Blender", "autonomous agent"],
+          "platform": "instagram"
+        },
+        {
+          "id": "ig-sonnet5-benchmark-recap",
+          "title": "Reel recapping Claude Sonnet 5 benchmark scores against prior Claude models and competitors",
+          "source": "Instagram",
+          "author": "AI creator (Reels)",
+          "date": "2026-07-01",
+          "primary_url": "https://www.instagram.com/reel/DaP9MUIJuST/",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "summary": "A quick-cut Reel walks through Sonnet 5's published SWE-bench, ARC-AGI-2, and pricing numbers for viewers who want the launch highlights without reading Anthropic's full announcement.",
+          "enterprise_translation": "This is a distribution-layer signal, not a new technical finding: benchmark literacy is spreading into short-form consumer content, meaning non-technical stakeholders inside an enterprise will increasingly arrive at AI conversations already primed with (unverified) benchmark numbers, raising the bar for internal teams to cite verified sources when correcting or contextualizing them.",
+          "score": { "total": 6.0, "signal": 1, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "engagement": { "views": 0, "likes": 0, "comments": 0 },
+          "tags": ["Claude Sonnet 5", "benchmarks"],
+          "platform": "instagram"
+        },
+        {
+          "id": "ig-sonnet5-full-rundown",
+          "title": "Reel teasing a full Claude Sonnet 5 rundown via comment-gated link",
+          "source": "Instagram",
+          "author": "AI creator (Reels)",
+          "date": "2026-07-02",
+          "primary_url": "https://www.instagram.com/reel/DaREAYcP9Y8/",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "summary": "A creator posts a short teaser on Sonnet 5's launch, directing viewers to comment for a link to a longer breakdown — a common Reels engagement-farming pattern layered on top of otherwise substantive AI content.",
+          "enterprise_translation": "Low actionability on its own; included for completeness of the week's Sonnet 5 coverage volume across the platform, not as a standalone signal.",
+          "score": { "total": 4.8, "signal": 1, "novelty": 0, "actionability": 1, "source_quality": 1 },
+          "engagement": { "views": 0, "likes": 0, "comments": 0 },
+          "tags": ["Claude Sonnet 5", "engagement bait"],
+          "platform": "instagram"
+        }
+      ]
+    },
+    {
+      "section_id": "facebook",
+      "title": "Facebook",
+      "description": "No significant AI content this week on Facebook beyond community-group discussion.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "fb-claude-community-sonnet5",
+          "title": "Claude Community Facebook group discusses Sonnet 5 release-day rollout and access quirks",
+          "source": "Facebook",
+          "author": "Claude Community group members",
+          "date": "2026-07-01",
+          "primary_url": "https://www.facebook.com/groups/claudecommunity/posts/1049603870913611/",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "summary": "A community group thread compares notes on regional rollout timing and default-model behavior as Sonnet 5 became available across plans, mostly practical troubleshooting rather than technical analysis.",
+          "enterprise_translation": "Low novelty; useful only as a pulse check that consumer-side rollout friction (default-model switches without opt-out) is a recurring support-load pattern labs haven't solved, relevant if an enterprise plan inherits similar default-switch behavior without an admin control.",
+          "score": { "total": 5.0, "signal": 1, "novelty": 0, "actionability": 1, "source_quality": 1 },
+          "engagement": { "likes": 0, "comments": 0 },
+          "tags": ["Claude Sonnet 5", "community discussion"],
+          "platform": "facebook"
+        }
+      ]
+    },
+    {
+      "section_id": "tools_trending",
+      "title": "Tools Trending",
+      "description": "Cross-platform mention volume for the week's most-discussed AI tools.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "tool-claude-sonnet-5",
+          "title": "Claude Sonnet 5",
+          "primary_url": "https://www.anthropic.com/news/claude-sonnet-5",
+          "summary": "Dominant cross-platform topic of the week: default free/Pro model, agentic coding focus, $2/$10 per million token pricing.",
+          "enterprise_translation": "Benchmark this model against one existing internal agent workflow at two reasoning-effort levels before defaulting to it, since Anthropic's own data shows cost can invert at high effort.",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "tags": ["LinkedIn", "YouTube", "Instagram", "Facebook"],
+          "category": "Model"
+        },
+        {
+          "id": "tool-fable-5",
+          "title": "Fable 5",
+          "primary_url": "https://www.anthropic.com/news/redeploying-fable-5",
+          "summary": "Restored globally July 1 after export-control review; promotional free-usage window through July 7 drove a wave of 'try it before pricing changes' content.",
+          "enterprise_translation": "Treat the July 7 promotional cutoff as a forcing function to complete a 48-hour internal trial now rather than waiting for a formal procurement cycle.",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "tags": ["LinkedIn", "News"],
+          "category": "Model"
+        },
+        {
+          "id": "tool-mythos-5",
+          "title": "Mythos 5",
+          "primary_url": "https://www.anthropic.com/news/redeploying-fable-5",
+          "summary": "Restored only for ~100 vetted US organizations under Project Glasswing; discussed mainly in policy/access context rather than practitioner demos.",
+          "enterprise_translation": "If eligible for restricted-access programs like Project Glasswing, treat vetting-list inclusion as a strategic asset worth pursuing proactively rather than waiting for general availability.",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "tags": ["LinkedIn", "News"],
+          "category": "Model"
+        },
+        {
+          "id": "tool-opus-4-8",
+          "title": "Claude Opus 4.8",
+          "primary_url": "https://www.youtube.com/watch?v=VK4REvxU0JQ",
+          "summary": "Used throughout the week as the comparison baseline against Sonnet 5 in reviews and cost-modeling discussions.",
+          "enterprise_translation": "Keep a flagship-tier model in the routing policy as the escalation path for tasks that fail a confidence or complexity threshold on the cheaper default model.",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "tags": ["YouTube"],
+          "category": "Model"
+        },
+        {
+          "id": "tool-gemini-3-5-pro",
+          "title": "Gemini 3.5 Pro",
+          "primary_url": "https://www.linkedin.com/posts/vijay-krishna-gudavalli-a5b365235_ai-google-gemini-activity-7475976510974320641-VrGN",
+          "summary": "Discussed mainly for its second confirmed release slip, now targeting July general availability; used as a counterpoint in 'who ships on time' commentary.",
+          "enterprise_translation": "Build at least a one-quarter buffer into any roadmap milestone that depends on a vendor's announced but unreleased model, given the repeated slip pattern this year.",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "tags": ["LinkedIn"],
+          "category": "Model"
+        },
+        {
+          "id": "tool-claude-code",
+          "title": "Claude Code",
+          "primary_url": "https://coderabbit.ai/blog/claude-sonnet-5-review",
+          "summary": "Referenced across reviews as the primary interface for testing Sonnet 5's agentic coding claims.",
+          "enterprise_translation": "Use the same interface practitioners use to validate agentic coding claims live against one internal codebase task before greenlighting broader rollout.",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "tags": ["YouTube", "Blog"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "tool-claude-science",
+          "title": "Claude Science",
+          "primary_url": "https://www.youtube.com/watch?v=hpWOA4-wAVU",
+          "summary": "New Anthropic research workspace product announced alongside Sonnet 5, covered in AI news roundups as a secondary story to the model launch.",
+          "enterprise_translation": "For R&D-adjacent functions, evaluate the local/on-cluster deployment option specifically, since it addresses the data-residency objection that usually blocks cloud-AI pilots in regulated environments.",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "tags": ["YouTube"],
+          "category": "Product"
+        },
+        {
+          "id": "tool-coderabbit-review",
+          "title": "CodeRabbit Sonnet 5 review",
+          "primary_url": "https://coderabbit.ai/blog/claude-sonnet-5-review",
+          "summary": "A code-review tooling vendor published its own hands-on evaluation of Sonnet 5's coding output quality, cited by practitioners as a more rigorous secondary source than reaction videos.",
+          "enterprise_translation": "Prefer vendor-neutral, task-specific reviews like this over reaction-video benchmarks when building an internal model-evaluation dossier.",
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00-04:00",
+          "tags": ["Blog"],
+          "category": "Review"
+        }
+      ]
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Cost-per-task is replacing cost-per-token as the practitioner comparison metric for model selection",
+      "evidence": "Multiple independent reviews of Claude Sonnet 5 (AI in 15 podcast, YouTube comparisons) surfaced the same finding from Anthropic's own system card: high-effort Sonnet 5 runs can cost more per completed task than low-effort Opus 4.8, inverting the assumption that a cheaper-listed model is always cheaper in practice."
+    },
+    {
+      "pattern": "Government-gated model access is becoming a recurring, not one-off, feature of frontier AI releases",
+      "evidence": "Fable 5 and Mythos 5's 19-day export-control suspension and partial restoration (Mythos 5 capped to ~100 vetted organizations) is the second major access-gating event tied to this model pair in a month, following June 12's original restriction, prompting business press (MarketScale, LinkedIn Editors) to reframe frontier AI access as a geopolitical dependency rather than a pure vendor relationship."
+    },
+    {
+      "pattern": "Enterprise revenue/adoption data (Ramp, Similarweb) is now being cited directly in consumer-facing business journalism, not just specialist AI newsletters",
+      "evidence": "Fortune's July 2 feature on Anthropic overtaking OpenAI cites Ramp business-subscription data and Similarweb traffic data as primary evidence, indicating market-share tracking for AI vendors has become mainstream financial-press methodology."
+    }
+  ],
+  "index": [
+    { "title": "Anthropic launches Claude Sonnet 5", "source": "Anthropic", "author": "Anthropic", "date": "2026-06-30", "primary_url": "https://www.anthropic.com/news/claude-sonnet-5", "score": 8.5 },
+    { "title": "Fable 5 and Mythos 5 restored globally July 1", "source": "Anthropic", "author": "Anthropic", "date": "2026-07-01", "primary_url": "https://www.anthropic.com/news/redeploying-fable-5", "score": 8.7 },
+    { "title": "Anthropic overtakes OpenAI on revenue run-rate", "source": "Fortune", "author": "Fortune", "date": "2026-07-02", "primary_url": "https://fortune.com/2026/07/02/sam-altman-new-world-order-ai-openai-google-anthropic/", "score": 7.8 },
+    { "title": "Allie K. Miller: AI homework for the weekend (Fable 5 pricing cliff)", "source": "LinkedIn", "author": "Allie K. Miller", "date": "2026-07-04", "primary_url": "https://www.linkedin.com/posts/alliekmiller_this-is-your-ai-homework-for-the-weekend-activity-7479141466192216064-3MlQ", "score": 7.6 },
+    { "title": "Sonnet 5 cost-per-task inversion vs Opus 4.8", "source": "AI in 15", "author": "AI in 15 podcast", "date": "2026-07-01", "primary_url": "https://ai-in-15.com/episodes/2026/07/ai-in-15-2026-07-01", "score": 7.5 },
+    { "title": "LinkedIn Editors: Anthropic reinstates Fable 5 worldwide", "source": "LinkedIn", "author": "LinkedIn Editors", "date": "2026-07-02", "primary_url": "https://www.linkedin.com/pulse/anthropic-reinstates-claude-fable-5-worldwide-after-2hcie", "score": 6.8 },
+    { "title": "MarketScale: the 19-day shutdown's enterprise infrastructure lesson", "source": "MarketScale", "author": "MarketScale", "date": "2026-07-02", "primary_url": "https://www.marketscale.com/industries/software-and-technology/fable-5-and-mythos-5-are-back-what-the-19-day-shutdown-taught-every-enterprise-about-ai-as-infrastructure", "score": 7.2 },
+    { "title": "Gemini 3.5 Pro release slips again to July", "source": "LinkedIn", "author": "Vijay Krishna Gudavalli", "date": "2026-06-25", "primary_url": "https://www.linkedin.com/posts/vijay-krishna-gudavalli-a5b365235_ai-google-gemini-activity-7475976510974320641-VrGN", "score": 6.5 },
+    { "title": "Vibe Coding With Claude Sonnet 5 (live benchmark)", "source": "YouTube", "author": "Independent AI creator", "date": "2026-07-01", "primary_url": "https://www.youtube.com/watch?v=CiBycZHZ2CI", "score": 6.8 },
+    { "title": "NEW Claude Sonnet 5 vs Opus 4.8! (Full Review)", "source": "YouTube", "author": "Independent AI reviewer", "date": "2026-07-01", "primary_url": "https://www.youtube.com/watch?v=VK4REvxU0JQ", "score": 6.5 },
+    { "title": "Sonnet 5 Review: why it lost against 4 other models", "source": "YouTube", "author": "Independent AI reviewer", "date": "2026-07-01", "primary_url": "https://www.youtube.com/watch?v=yJ-1LB2hF-Q", "score": 6.2 },
+    { "title": "Reel: Claude Sonnet 5 autonomous Blender demo", "source": "Instagram", "author": "AI creator", "date": "2026-07-01", "primary_url": "https://www.instagram.com/reel/DaPnfN-JdYM/", "score": 7.0 },
+    { "title": "Reel: Claude Sonnet 5 benchmark recap", "source": "Instagram", "author": "AI creator", "date": "2026-07-01", "primary_url": "https://www.instagram.com/reel/DaP9MUIJuST/", "score": 6.0 },
+    { "title": "Reel: Claude Sonnet 5 full rundown teaser", "source": "Instagram", "author": "AI creator", "date": "2026-07-02", "primary_url": "https://www.instagram.com/reel/DaREAYcP9Y8/", "score": 4.8 },
+    { "title": "Claude Community Facebook group discusses Sonnet 5 rollout", "source": "Facebook", "author": "Claude Community group", "date": "2026-07-01", "primary_url": "https://www.facebook.com/groups/claudecommunity/posts/1049603870913611/", "score": 5.0 },
+    { "title": "AI News Briefing — July 1, 2026 (Sonnet 5, Claude Science)", "source": "YouTube", "author": "AI News Briefing", "date": "2026-07-01", "primary_url": "https://www.youtube.com/watch?v=NBwK1JibaJ0", "score": 6.3 },
+    { "title": "July 01 2026 — Claude Sonnet 5, Meta's Secret Tests & Mobile Agents", "source": "YouTube", "author": "AI news roundup", "date": "2026-07-01", "primary_url": "https://www.youtube.com/watch?v=hpWOA4-wAVU", "score": 6.4 },
+    { "title": "CodeRabbit: Claude Sonnet 5 hands-on review", "source": "CodeRabbit Blog", "author": "CodeRabbit", "date": "2026-07-01", "primary_url": "https://coderabbit.ai/blog/claude-sonnet-5-review", "score": 6.6 },
+    { "title": "Al Jazeera: US lifts restrictions on Fable, Mythos", "source": "Al Jazeera", "author": "Al Jazeera", "date": "2026-07-01", "primary_url": "https://www.aljazeera.com/economy/2026/7/1/us-lifts-restrictions-on-powerful-ai-models-fable-mythos-anthropic-says", "score": 6.9 },
+    { "title": "Business Insider: Anthropic restores Fable 5, Mythos access after White House talks", "source": "Business Insider", "author": "Business Insider", "date": "2026-07-01", "primary_url": "https://www.businessinsider.com/anthropic-restores-fable-5-mythos-access-trump-white-house-talks-2026-6", "score": 6.9 },
+    { "title": "The Hacker News: Anthropic restores Claude Fable 5 access", "source": "The Hacker News", "author": "The Hacker News", "date": "2026-07-01", "primary_url": "https://thehackernews.com/2026/07/anthropic-restores-claude-fable-5-after.html", "score": 6.7 },
+    { "title": "Claude release notes — July 1 entry (Fable 5, Mythos 5)", "source": "Anthropic (Claude support)", "author": "Anthropic", "date": "2026-07-01", "primary_url": "https://support.claude.com/en/articles/12138966-release-notes", "score": 7.0 }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Direct TikTok hashtag sweep (#ClaudeCode, #VibeCoding) via a TikTok-native search tool — this week's TikTok section relied on YouTube Shorts/Reels cross-posts rather than TikTok-native verification",
+      "Ramp AI Index (referenced secondhand via Fortune) as a direct primary source for enterprise adoption share"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Claude Science adoption in regulated R&D environments — announced this week alongside Sonnet 5, worth its own tracking thread next week",
+      "Model-routing cost policy templates, given the recurring cost-per-task theme across three items this week"
+    ],
+    "topics_to_drop": [],
+    "notes": "No in-window Ethan Mollick post surfaced for June 29-July 5 (most recent found was June 13, outside this window); substituted Allie K. Miller and Tier-2/business-press voices. Facebook section stayed thin (1 item) consistent with its historically low signal per the source list. Reuters URLs are cited only as secondary references (label + url) because Reuters blocks direct automated fetches with a 401, even though the reporting is corroborated by Al Jazeera, Business Insider, and The Hacker News, all independently verified at 200."
+  }
+}

@@ -1,0 +1,542 @@
+{
+  "tab_id": "youtube",
+  "tab_name": "YouTube",
+  "subtitle": "Video Intelligence",
+  "icon": "Video",
+  "min_items": 12,
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 0.9286,
+    "items_total": 14,
+    "items_new": 13,
+    "items_returning": 1
+  },
+  "executive_summary": [
+    {
+      "headline": "Anthropic shipped three separate products in a single week (Sonnet 5, Claude Science, Fable 5's return) and every serious YouTube technical review converged on the same finding: Sonnet 5's new tokenizer and verbosity quietly raise its effective cost despite an unchanged headline price",
+      "body": "Claude Sonnet 5 launched June 30 at introductory pricing of $2/$10 per million input/output tokens through August 31, 2026, then $3/$15 standard \u2014 nominally identical to Sonnet 4.6 (anthropic.com/news/claude-sonnet-5). But independent creators (Mehul Mohan, 1littlecoder, Theo/t3.gg, CodeRabbit) each ran their own token-consumption tests and found the new tokenizer produces 1.0x to 1.35x more tokens for the same input, and that Sonnet 5 is dramatically more verbose in output \u2014 one test measured roughly 68,000 output tokens versus GPT-5.5's 16,000 for a comparable intelligence-index task. Artificial Analysis benchmark data cited independently across three of these videos ranked Sonnet 5 fourth overall (behind Fable 5, Opus 4.8, and GPT-5.5) and flagged it as the single most expensive model that benchmark suite has ever run in real-world task cost. The practical read for a procurement team: nominal per-token pricing is not a reliable proxy for total task cost on this model generation.",
+      "primary_url": "https://www.anthropic.com/news/claude-sonnet-5"
+    },
+    {
+      "headline": "Fable 5 and Mythos 5 returned to general availability July 1 after the US Commerce Department lifted export controls imposed June 12 \u2014 the second time in three weeks that a frontier model's public availability was set by a government agency rather than the vendor",
+      "body": "Anthropic's announcement (anthropic.com/news/redeploying-fable-5) confirms the suspension followed an Amazon-reported jailbreak that bypassed safety controls; a new safety classifier now blocks that bypass technique in more than 99% of attempts, with flagged requests auto-routed to Opus 4.8. US Secretary of Commerce Howard Lutnick is quoted confirming the two-week review cycle with Anthropic before clearing the release. Access is bundled into Pro/Max/Team/Enterprise plans for up to 50% of weekly usage through July 7, after which it moves to metered usage-credit billing. This is a direct continuation of the government-gating theme that dominated last week's briefing (GPT-5.6 Sol's restricted preview, Fable 5's original suspension) \u2014 the pattern of frontier labs shipping models only after an explicit government security sign-off is now two-for-two in June, not a one-off.",
+      "primary_url": "https://www.anthropic.com/news/redeploying-fable-5"
+    },
+    {
+      "headline": "Claude Science launched June 30 as a workbench, not a new model \u2014 Anthropic's own materials state it runs existing Claude models (including Opus 4.8) with 'no special access and no gating,' a deliberate contrast to the government-restricted access pattern on Sonnet 5 and Fable 5 that week",
+      "body": "The official Anthropic YouTube upload (youtube.com/watch?v=idtMsa_1yNk) and anthropic.com/news/claude-science-ai-workbench describe a beta desktop app for macOS/Linux (Pro/Max/Team/Enterprise) that connects to 60+ scientific databases (UniProt, PDB, ClinicalTrials.gov, PubMed, bioRxiv), runs a reviewer agent that checks citations and calculations, and produces an auditable trail of code, environment, and conversation behind every result. Anthropic is funding up to 50 'AI for Science' pilot projects with credits and compute, applications closing July 15. For an enterprise AI function, the relevant signal isn't the life-sciences use case specifically \u2014 it's the auditable-artifact pattern (every output traceable to the exact code, environment, and conversation that produced it), which is a directly transferable governance primitive for any regulated-industry AI deployment doing calculation-heavy work.",
+      "primary_url": "https://www.anthropic.com/news/claude-science-ai-workbench"
+    },
+    {
+      "headline": "AI Engineer World's Fair 2026 (June 29-July 2, San Francisco) surfaced a converging cross-vendor theme: evaluation and production-reliability infrastructure, not raw model capability, is now the binding constraint on shipping AI agents at scale",
+      "body": "Day 1's main-stage recording (youtube.com/watch?v=htM02KMNZnk) drew speakers from Microsoft, OpenAI, Hugging Face, Z.ai, MiniMax, Cursor, and Notion alongside independent builders. Multiple unrelated speakers -- Meta's agentic-systems infrastructure team, Cursor's model-behavior lead, and the Human Layer founders -- separately argued that benchmark scores are diverging from real production reliability, and that observability/eval tooling is this cycle's actual bottleneck. A dedicated security track (Sneak, with Nvidia, Anthropic, and Keycard participating) treated agent identity sprawl and access scoping as a standing production-security line item rather than a niche concern. For an enterprise AI function, this reframes where the next dollar of AI infrastructure investment should go: not more model access, but eval, observability, and agent-identity governance.",
+      "primary_url": "https://www.youtube.com/watch?v=htM02KMNZnk"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "theo-t3gg-fable-sonnet5-benchmark-teardown",
+      "title": "FABLE IS BACK! (And Sonnet 5 is here too)",
+      "source": "Theo - t3.gg",
+      "author": "Theo - t3.gg",
+      "date": "2026-07-01",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=KSV-7ywHxeU",
+      "summary": "The most technically substantive Sonnet 5 review of the week, running the model through Artificial Analysis's intelligence index, Cursor Bench, Skatebench, and a live game-rebuild test against Opus 4.8 and GLM 5.2. The verdict: Sonnet 5 ranks fourth on the intelligence index behind Fable 5, Opus, and GPT-5.5, was the single most expensive model the reviewer has run through a real-world cost benchmark at roughly $6,000 (versus Fable 5's $5,600), and posted the worst Skatebench score of any current model at 37%. The reviewer also flags a safety data point: Sonnet 5's refusal rate on a malicious/dual-use request benchmark dropped to 92.3% success (versus Sonnet 4.6's 97%).",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00Z",
+      "recurrence": "new",
+      "tags": [
+        "Claude Sonnet 5",
+        "Fable 5",
+        "benchmarks",
+        "Artificial Analysis",
+        "cost analysis",
+        "sub-agent orchestration",
+        "safety refusal rate"
+      ],
+      "category": "Model Analysis / Cost Benchmarking",
+      "key_takeaways": [
+        "Nominal per-token price is not a reliable proxy for total task cost on Sonnet 5: the reviewer's real-world build-task benchmark put Sonnet 5 as the most expensive model tested to date, ahead of even Fable 5, because of how many tokens and sub-agent calls it burns per task. Any procurement comparison against GPT-5.5 or Opus 4.8 needs to run on task-completion cost, not headline per-million-token rates.",
+        "Sonnet 5 shows Fable-5-style sub-agent orchestration behavior \u2014 it decomposes work and delegates to sub-agents \u2014 but the reviewer's assessment is that it isn't 'smart enough' to use that capability efficiently, often over-decomposing simple work and running in circles. Teams evaluating Sonnet 5 for agentic pipelines should test on tasks with a clear complexity floor before assuming orchestration behavior translates to orchestration competence.",
+        "The refusal-success drop from 97% (Sonnet 4.6) to under 92% (Sonnet 5) on a dual-use/malicious-request benchmark is a governance-relevant regression, not just a benchmark footnote. Any AI safety or acceptable-use review that previously certified Sonnet 4.6 for a given use case should not assume that certification carries forward to Sonnet 5 without re-testing."
+      ],
+      "suggested_actions": [
+        "Before migrating any production workload from Sonnet 4.6 to Sonnet 5, run a task-completion cost comparison (not per-token pricing) against your current model, using representative production prompts rather than synthetic benchmarks \u2014 the token-verbosity gap this reviewer found is large enough to change a cost-benefit decision.",
+        "If evaluating Sonnet 5 for a multi-agent or sub-agent orchestration pipeline, test specifically on medium-complexity tasks first; the reviewer's finding is that Sonnet 5 orchestrates but doesn't judge task complexity well, which can silently inflate cost on simple tasks routed through it.",
+        "Flag the refusal-rate regression (97% to <92%) to your AI acceptable-use or safety review process as a required re-certification trigger for any workflow currently approved on Sonnet 4.6 that is being considered for migration to Sonnet 5."
+      ]
+    },
+    {
+      "id": "mehul-mohan-sonnet5-cyber-tokenizer-analysis",
+      "title": "NEW Claude Sonnet 5: Expensive AND Dumber?",
+      "source": "Mehul Mohan",
+      "author": "Mehul Mohan",
+      "date": "2026-06-30",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=0r5AK6zg4hc",
+      "summary": "A system-card-grounded technical breakdown that quotes Anthropic's own admission that Sonnet 5 was 'not deliberately trained on cybersecurity tasks,' with cyber capability tests showing it ahead of Sonnet 4.6 but well behind Opus 4.8 and 'substantially lower' than Mythos 5. The video's second finding, sourced from an Artificial Analysis chart, is that Sonnet 5 uses roughly 68,000 output tokens to complete an intelligence-index task that GPT-5.5 completes in about 16,000 \u2014 meaning the model's price advantage can be erased entirely by verbosity on complex tasks.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00Z",
+      "recurrence": "new",
+      "tags": [
+        "Claude Sonnet 5",
+        "cybersecurity",
+        "system card",
+        "tokenizer",
+        "pricing",
+        "Anthropic"
+      ],
+      "category": "Model Analysis / Safety & Pricing",
+      "key_takeaways": [
+        "Anthropic's own system card language \u2014 Sonnet 5 was 'not deliberately trained on cybersecurity tasks' \u2014 is a direct, quotable admission that this model tier should not be treated as a security-capability benchmark. Any internal red-team or security-tooling evaluation that used Sonnet 4.6 or expects Sonnet-tier models to perform like Opus or Mythos on offensive-security tasks needs to recalibrate expectations specifically for Sonnet 5.",
+        "The tokenizer change (1.0x\u20131.35x more tokens for identical input versus Sonnet 4.6) combined with far higher output verbosity (68K vs. GPT-5.5's 16K tokens on a comparable task) means the introductory $2/$10 pricing is not a true apples-to-apples discount versus prior-generation pricing. Budget forecasts built on nominal token price will underestimate actual spend.",
+        "The video's speed observation \u2014 Sonnet 5 felt 'similarly slow to Opus' in hands-on testing despite being marketed as the fast/efficient tier \u2014 suggests the traditional fast-cheap-model vs. slow-expensive-model tradeoff doesn't hold cleanly for this release. Latency-sensitive applications should benchmark actual response time before assuming a cost-tier model is also the low-latency choice."
+      ],
+      "suggested_actions": [
+        "Re-run any security-adjacent evaluation currently built on Claude models to confirm Sonnet 5 is not silently used where Opus 4.8 or Mythos 5 capability was assumed \u2014 the system card explicitly states the cyber-capability gap is substantial, not marginal.",
+        "Rebuild internal Sonnet 5 cost forecasts using measured token counts from representative production prompts, not the advertised per-million-token price; the combination of tokenizer inflation and output verbosity can offset the nominal ~0% price change from Sonnet 4.6.",
+        "Benchmark actual end-to-end latency for Sonnet 5 against your current model in any latency-sensitive application before assuming the 'Sonnet tier equals fast tier' pattern from prior generations still holds."
+      ]
+    },
+    {
+      "id": "anthropic-official-claude-science-launch",
+      "title": "Introducing Claude Science (now in beta)",
+      "source": "Claude",
+      "author": "Anthropic",
+      "date": "2026-06-30",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=idtMsa_1yNk",
+      "summary": "Anthropic's own launch video for Claude Science, a beta desktop research app (macOS/Linux, Pro/Max/Team/Enterprise) that connects to 60+ scientific databases from day one, runs analyses with full auditable code-environment-conversation trails, and scales compute from a laptop to on-demand GPUs. The video and companion post (anthropic.com/news/claude-science-ai-workbench) are explicit that this is a workbench built on existing Claude models, not a new model with special access.",
+      "engagement": {
+        "views": 122743
+      },
+      "score": {
+        "total": 10,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00Z",
+      "recurrence": "new",
+      "tags": [
+        "Claude Science",
+        "Anthropic",
+        "auditable AI",
+        "scientific research",
+        "enterprise governance",
+        "reproducibility"
+      ],
+      "category": "Product Launch / Primary Source",
+      "key_takeaways": [
+        "The core transferable concept for a non-scientific enterprise is the auditable-artifact pattern: every output ships with the exact code, environment, and conversation that produced it, reproducible months later by anyone on the team. This is a governance primitive any regulated-industry AI deployment doing calculation-heavy or compliance-relevant work should be evaluating, independent of the life-sciences framing.",
+        "Anthropic's explicit statement that Claude Science has 'no special access and no gating' is a pointed contrast to the government-restricted rollout pattern on Sonnet 5's cyber capabilities and Fable 5's export-control history the same week \u2014 it signals Anthropic is deliberately segmenting which products carry government review friction and which don't.",
+        "The reviewer-agent pattern (an agent that checks citations and calculations before a result is presented) is a concrete design pattern for reducing hallucination risk in any AI workflow that produces numbers or claims that will be cited elsewhere in an organization."
+      ],
+      "suggested_actions": [
+        "Evaluate the auditable-artifact pattern (code + environment + conversation bundled with every output) as a template for any internal AI tool used in compliance, finance, or engineering contexts where output provenance needs to survive an audit months later.",
+        "Review Claude Science's reviewer-agent design (an agent that checks citations/calculations before surfacing a result) as a reference architecture for reducing hallucination risk in any internal analytics or reporting pipeline built on Claude models.",
+        "Track Anthropic's 'AI for Science' pilot program (applications close July 15, 2026) even if outside a life-sciences remit \u2014 the credit and compute structure being offered is a useful benchmark for negotiating enterprise pilot terms with the same vendor."
+      ]
+    },
+    {
+      "id": "ai-engineer-worldsfair-2026-day1-software-factories",
+      "title": "WF2026: Software Factories & Keynotes ft. Microsoft, OpenAI, OpenClaw, Z.ai (GLM), MiniMax, HF",
+      "source": "AI Engineer",
+      "author": "AI Engineer",
+      "date": "2026-07-01",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=htM02KMNZnk",
+      "summary": "Day 1 main-stage recording from AI Engineer World's Fair 2026 (Moscone West, San Francisco, ~7,000 attendees, held June 29-July 2). The 'Software Factories' keynote track runs through the shift from single-agent coding assistants to production agent orchestration: Microsoft's Pablo Castro on unifying intrinsic/extrinsic/learned knowledge retrieval across its Foundry/Fabric IQ stack; OpenAI's enterprise and DX leads on Codex's open harness ecosystem and where agents fit before/during/after the coding loop; Hugging Face's Thomas Wolf detailing MiniMax M3 (400B total/20B active parameters, 1M context, native multimodality); Z.ai on GLM 5.2's agentic and long-context capabilities; and a dedicated security track (Sneak, with Nvidia/Anthropic/Keycard participation) on agent identity sprawl and access scoping as production concerns. Closing sessions from Cursor, Notion, Human Layer, and independent builders converge on a shared theme: benchmark scores are diverging from production reliability, and evaluation infrastructure (not raw model capability) is this cycle's bottleneck.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-07-05T20:00:00Z",
+      "recurrence": "new",
+      "tags": [
+        "AI Engineer World's Fair",
+        "agent orchestration",
+        "production evals",
+        "AI security",
+        "Microsoft Foundry",
+        "OpenAI Codex",
+        "GLM 5.2",
+        "MiniMax M3",
+        "conference keynote"
+      ],
+      "category": "Conference / Primary Source",
+      "key_takeaways": [
+        "The dominant cross-speaker theme is that benchmark performance is decoupling from production reliability: multiple independent speakers (Meta's agentic-systems infrastructure team, Cursor's model-behavior lead, Human Layer's founders) separately argued that evaluation and observability infrastructure, not raw model capability, is now the binding constraint on shipping agents into production \u2014 directly relevant to any enterprise deciding where to invest next in its AI stack.",
+        "A dedicated security track (led by Sneak, with Nvidia, Anthropic, and Keycard participation) framed agent identity sprawl and access scoping as a production-security concern distinct from traditional appsec \u2014 a concrete signal that agent-specific identity and access governance is becoming a standing line item, not an afterthought, for any org running multiple autonomous agents against internal systems.",
+        "Microsoft's Foundry/Fabric IQ talk and Notion's internal AI-native workflow talk both described multi-model, vendor-agnostic strategies as a deliberate hedge against lock-in and pricing volatility \u2014 a direct, reusable enterprise architecture pattern for any org currently single-sourced on one frontier lab."
+      ],
+      "suggested_actions": [
+        "Treat evaluation/observability tooling (production telemetry, scenario-driven evals, deterministic replay) as a 2026 budget line distinct from model licensing costs; several independent speakers this week identified it as the actual bottleneck to scaling agents past pilot stage.",
+        "Stand up an agent-specific identity and access review (scoping what each autonomous agent can read/write/call) before expanding agent deployment beyond single-user pilots; this is now an explicit conference track, not a niche concern.",
+        "Evaluate a deliberate multi-model routing strategy (as described by both Microsoft and Notion) rather than single-vendor commitment, to hedge against the pricing and lock-in volatility already visible in this week's Sonnet 5 coverage."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "tool_updates",
+      "title": "Tool & Model Updates",
+      "description": "Major launches and capability changes covered on YouTube this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "1littlecoder-sonnet5-glm52-comparison",
+          "title": "Claude Sonnet 5 in 12 mins!",
+          "source": "1littlecoder",
+          "author": "1littlecoder",
+          "date": "2026-06-30",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=Dspb51fRHTY",
+          "summary": "A fast technical walkthrough benchmarking Sonnet 5 head-to-head against GLM 5.2 on identical prompts (a Subway Surfer-style HTML5 game, an interactive 3D globe). Sonnet 5 took nearly 5x longer and consumed roughly 3x more tokens than GLM 5.2 on the globe task, though it scored higher on Cursor Bench (54.9% at medium effort vs. GLM 5.2's 54% at higher cost). The reviewer's practical takeaway: use Sonnet 5 as a planning/review model, GLM 5.2 for the actual coding execution.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "recurrence": "new",
+          "tags": [
+            "Claude Sonnet 5",
+            "GLM 5.2",
+            "benchmarks",
+            "cost comparison"
+          ],
+          "category": "Model Comparison"
+        },
+        {
+          "id": "latent-frontier-sonnet5-multimodel-comparison",
+          "title": "Claude Sonnet 5 & Fable 5 are Here",
+          "source": "Latent Frontier",
+          "author": "Latent Frontier",
+          "date": "2026-07-01",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=B4IUg0_bdtM",
+          "summary": "Compares Sonnet 5 against GPT-5.5, GPT-5.4, GPT-5.3 Codex, and Opus 4.8 on price and practical coding capability, concluding Sonnet 5 is 'almost as good as Opus 4.8' at lower cost but less efficient on complex reasoning tasks, where it takes longer and burns more tokens. Also covers Fable 5's limited-window subscription access and usage-credit structure.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "recurrence": "new",
+          "tags": [
+            "Claude Sonnet 5",
+            "Fable 5",
+            "GPT-5.5",
+            "GPT-5.3 Codex",
+            "price comparison"
+          ],
+          "category": "Model Comparison"
+        },
+        {
+          "id": "theaigrid-sonnet5-everything-you-need-to-know",
+          "title": "Anthropic Just Released Sonnet 5 - Here's Everything You Need to Know",
+          "source": "TheAIGRID",
+          "author": "TheAIGRID",
+          "date": "2026-07-01",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=ETFSCIkDbjI",
+          "summary": "A launch-day roundup of Sonnet 5's specs: pricing tiers ($2/$10 introductory through August 31, then $3/$15), 1M-token context window, and benchmark positioning against Sonnet 4.6 and Opus 4.8, sourced from Anthropic's official announcement. Notes the updated tokenizer adds roughly 30% more tokens for the same text, and recommends GLM 5.2 for pure coding cost-efficiency but Sonnet 5 for long agentic tool-use chains given its built-in cybersecurity safeguards (shared with Opus 4.7/4.8).",
+          "engagement": {
+            "views": 2217
+          },
+          "score": {
+            "total": 5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "recurrence": "new",
+          "tags": [
+            "Claude Sonnet 5",
+            "Anthropic",
+            "launch roundup",
+            "tokenizer"
+          ],
+          "category": "Launch Roundup"
+        },
+        {
+          "id": "coderabbit-sonnet5-precision-recall-code-review",
+          "title": "Claude Sonnet 5 Review: Precision vs Recall Trade-Off",
+          "source": "CodeRabbit",
+          "author": "CodeRabbit",
+          "date": "2026-06-30",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=7XE846SJ84E",
+          "summary": "CodeRabbit ran Claude Sonnet 5 through its internal repository-wide code review benchmark and found a precision-recall trade-off: actionable-bug precision increased, meaning fewer false positives, but overall recall dropped slightly, meaning the model occasionally misses simpler low-complexity bugs it previously caught. The video also documents high token verbosity during self-correction loops (the model writes and runs its own tests mid-task) and recommends a tiered model strategy: Haiku for low-complexity fixes, Sonnet 5 for medium-to-high complexity review, Opus reserved for deep architectural planning.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "recurrence": "new",
+          "tags": [
+            "Claude Sonnet 5",
+            "code review",
+            "CodeRabbit",
+            "precision recall",
+            "multi-model strategy",
+            "enterprise coding"
+          ],
+          "category": "Model Comparison / Enterprise Tooling"
+        }
+      ]
+    },
+    {
+      "section_id": "tutorials",
+      "title": "Tutorials & How-Tos",
+      "description": "How-tos worth replicating this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "ai-advantage-fable5-sonnet5-usage-guide",
+          "title": "Fable 5 is Back! Here's the Best Way to Use It...",
+          "source": "The AI Advantage",
+          "author": "Igor Pogany",
+          "date": "2026-07-03",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=dQkVUANCYgc",
+          "summary": "A practical model-selection guide: use Fable 5 for the messiest, highest-value, most complex work; use Sonnet 5 for everyday tasks and to stretch subscription usage; use Opus 4.8 when cost isn't the binding constraint or as the fallback when Fable 5's cybersecurity safeguards trigger a reroute. Also briefly covers Gemini Study Notebooks, Gemini Omni Flash, and GPT-5.6 Sol's continued government gating.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "recurrence": "new",
+          "tags": [
+            "Fable 5",
+            "Sonnet 5",
+            "Opus 4.8",
+            "model selection",
+            "tutorial"
+          ],
+          "category": "Model Selection Guide",
+          "key_takeaways": [
+            "The three-tier model-routing logic (Fable 5 for complex/messy work, Sonnet 5 for everyday volume, Opus 4.8 for cost-agnostic or safety-fallback cases) is a directly reusable framework for any team standardizing Claude usage guidance across a workforce.",
+            "Opus 4.8's role as the automatic fallback when Fable 5's safety classifier blocks a request is an operational detail worth documenting in internal usage policy \u2014 end users should expect occasional silent model substitution on flagged requests."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases & Real-World Demos",
+      "description": "Demos of agents and automation in real workflows this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "alex-finn-sonnet5-workflow-change",
+          "title": "Claude Sonnet 5 just dropped. I'm changing how I use AI...",
+          "source": "Alex Finn",
+          "author": "Alex Finn",
+          "date": "2026-07-01",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=uU0RFxGv-Ks",
+          "summary": "A workflow-reorganization video: after testing Sonnet 5 against Opus 4.8 (finding it costs roughly half as much for only a 5% pass-rate downgrade on comparable tasks), the creator settles on using Sonnet 5 for basic/day-to-day coding tasks in Hermes and Open Claw, and reserving Opus 4.8 Ultra mode for planning and complex architecture work. Framed explicitly as a cost-efficiency decision, not a capability upgrade \u2014 Sonnet 5 is not replacing Opus 4.8, only substituting it in cheap/quick/high-volume use cases.",
+          "engagement": {
+            "views": 28599
+          },
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-07-05T20:00:00Z",
+          "recurrence": "new",
+          "tags": [
+            "Claude Sonnet 5",
+            "Opus 4.8",
+            "workflow",
+            "cost efficiency"
+          ],
+          "category": "Workflow Adaptation",
+          "enterprise_translation": "The consumer signal is one creator manually deciding, task by task, which model tier to invoke based on gut-feel complexity. The enterprise principle is automated complexity-based model routing: rather than relying on individual judgment, a routing layer (as CodeRabbit and The AI Advantage both independently recommend this week) can programmatically send low-complexity requests to cheaper models and reserve frontier-tier models for tasks that clear a defined complexity threshold, reducing spend without a manual policy for every user."
+        }
+      ]
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Government security review is becoming a routine gate on frontier model releases, not an exceptional event",
+      "evidence": "Two consecutive weeks have produced a frontier-model story centered on government-controlled availability: GPT-5.6 Sol's ~20-partner gated preview (prior week) and Fable 5/Mythos 5's June 12 export-control suspension followed by a two-week Commerce Department review before the July 1 restoration, confirmed on record by Secretary Lutnick (per Wes Roth's coverage, youtube.com/watch?v=73RZkEgC3AE, and Anthropic's own account at anthropic.com/news/redeploying-fable-5).",
+      "what_to_watch": "Whether the next frontier release from any major lab (OpenAI, Google DeepMind, Anthropic) ships with an explicit government pre-review step disclosed at launch, which would confirm this is now a standing checkpoint in the release pipeline rather than a one-off response to a specific jailbreak incident."
+    },
+    {
+      "pattern": "Independent creators are converging on the same finding: Sonnet 5's real-world cost exceeds what its headline pricing suggests, driven by tokenizer inflation and output verbosity",
+      "evidence": "Four unrelated sources \u2014 Mehul Mohan (68K vs. 16K output tokens on a comparable task versus GPT-5.5), 1littlecoder (roughly 3x more tokens than GLM 5.2 on an identical task), Theo/t3.gg (Artificial Analysis data showing Sonnet 5 as the most expensive model that benchmark suite has tested), and CodeRabbit (high token verbosity in self-correction loops) \u2014 independently arrived at the same conclusion within the same week without referencing each other.",
+      "what_to_watch": "Whether Anthropic responds with tokenizer or verbosity adjustments in a point release, or whether third-party cost-tracking dashboards (e.g., Artificial Analysis) begin reporting a distinct 'effective cost per task' metric alongside nominal per-token pricing, which would formalize this as a standard evaluation axis rather than a one-time creator complaint."
+    }
+  ],
+  "index": [
+    {
+      "title": "FABLE IS BACK! (And Sonnet 5 is here too)",
+      "source": "Theo - t3.gg",
+      "author": "Theo - t3.gg",
+      "date": "2026-07-01",
+      "primary_url": "https://www.youtube.com/watch?v=KSV-7ywHxeU",
+      "score": 8
+    },
+    {
+      "title": "NEW Claude Sonnet 5: Expensive AND Dumber?",
+      "source": "Mehul Mohan",
+      "author": "Mehul Mohan",
+      "date": "2026-06-30",
+      "primary_url": "https://www.youtube.com/watch?v=0r5AK6zg4hc",
+      "score": 8
+    },
+    {
+      "title": "Claude Sonnet 5 Review: Precision vs Recall Trade-Off",
+      "source": "CodeRabbit",
+      "author": "CodeRabbit",
+      "date": "2026-06-30",
+      "primary_url": "https://www.youtube.com/watch?v=7XE846SJ84E",
+      "score": 7
+    },
+    {
+      "title": "Introducing Claude Science (now in beta)",
+      "source": "Claude",
+      "author": "Anthropic",
+      "date": "2026-06-30",
+      "primary_url": "https://www.youtube.com/watch?v=idtMsa_1yNk",
+      "score": 10
+    },
+    {
+      "title": "FABLE 5 IS BACK",
+      "source": "Wes Roth",
+      "author": "Wes Roth",
+      "date": "2026-07-01",
+      "primary_url": "https://www.youtube.com/watch?v=73RZkEgC3AE",
+      "score": 7
+    },
+    {
+      "title": "Fable 5 is Back! Here's the Best Way to Use It...",
+      "source": "The AI Advantage",
+      "author": "Igor Pogany",
+      "date": "2026-07-03",
+      "primary_url": "https://www.youtube.com/watch?v=dQkVUANCYgc",
+      "score": 6
+    },
+    {
+      "title": "Claude Sonnet 5 in 12 mins!",
+      "source": "1littlecoder",
+      "author": "1littlecoder",
+      "date": "2026-06-30",
+      "primary_url": "https://www.youtube.com/watch?v=Dspb51fRHTY",
+      "score": 6
+    },
+    {
+      "title": "Claude Sonnet 5 & Fable 5 are Here",
+      "source": "Latent Frontier",
+      "author": "Latent Frontier",
+      "date": "2026-07-01",
+      "primary_url": "https://www.youtube.com/watch?v=B4IUg0_bdtM",
+      "score": 6
+    },
+    {
+      "title": "Anthropic Just Released Sonnet 5 - Here's Everything You Need to Know",
+      "source": "TheAIGRID",
+      "author": "TheAIGRID",
+      "date": "2026-07-01",
+      "primary_url": "https://www.youtube.com/watch?v=ETFSCIkDbjI",
+      "score": 5
+    },
+    {
+      "title": "Claude Sonnet 5 just dropped. I'm changing how I use AI...",
+      "source": "Alex Finn",
+      "author": "Alex Finn",
+      "date": "2026-07-01",
+      "primary_url": "https://www.youtube.com/watch?v=uU0RFxGv-Ks",
+      "score": 6
+    },
+    {
+      "title": "Claude Sonnet 5 Is HERE \u2013 Hands-On With Anthropic's NEW Model!",
+      "source": "Bijan Bowen",
+      "author": "Bijan Bowen",
+      "date": "2026-06-30",
+      "primary_url": "https://www.youtube.com/watch?v=tIyQoLeTT3s",
+      "score": 5
+    },
+    {
+      "title": "ALERT: Anthropic Launches Claude Sonnet 5 to Beat GPT-5.5 at $2 a Million Tokens",
+      "source": "AIM Network",
+      "author": "AIM Network",
+      "date": "2026-07-01",
+      "primary_url": "https://www.youtube.com/watch?v=rWHF1xSxmxs",
+      "score": 5
+    },
+    {
+      "title": "Claude Sonnet 5 Just Dropped (I have to be honest...)",
+      "source": "Productive Dude",
+      "author": "Productive Dude",
+      "date": "2026-06-30",
+      "primary_url": "https://www.youtube.com/watch?v=EQfe9-BQu2Q",
+      "score": 5
+    },
+    {
+      "title": "WF2026: Software Factories & Keynotes ft. Microsoft, OpenAI, OpenClaw, Z.ai (GLM), MiniMax, HF",
+      "source": "AI Engineer",
+      "author": "AI Engineer",
+      "date": "2026-07-01",
+      "primary_url": "https://www.youtube.com/watch?v=htM02KMNZnk",
+      "score": 9
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Theo - t3.gg (@t3dotgg) \u2014 this week's teardown was the most rigorous multi-benchmark technical review in the batch (Artificial Analysis, Cursor Bench, Skatebench, live rebuild test); should be added to the regular sweep list.",
+      "CodeRabbit's YouTube channel \u2014 company-produced but grounded in genuine internal production benchmarks rather than marketing; worth checking whenever a new coding-relevant model ships."
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Track 'effective cost per completed task' as a distinct data point going forward, separate from nominal per-token pricing \u2014 this was the single most consistent finding across unrelated creators this week and deserves a standing comparison table."
+    ],
+    "topics_to_drop": [],
+    "notes": "An AI-generated 'digest' style channel covering Claude Science via a dual-narrator podcast-style summary (channel: Jim Cunningham / AI News Digest) was excluded this week \u2014 it added no independent analysis beyond restating a single secondary article (MIT Technology Review) and fails the 'recycles press releases without demo or analysis' drop criterion in the sourcing guidelines. View counts were confirmed directly from the YouTube watch page where available (Theo/t3.gg, Mehul Mohan, CodeRabbit, Wes Roth, The AI Advantage, 1littlecoder, Latent Frontier, Bijan Bowen, AIM Network, and Productive Dude did not expose view counts in the fetched page and are reported without an engagement block per sourcing rules); official Anthropic (122,743), Alex Finn (28,599), and TheAIGRID (2,217) view counts were cross-confirmed via a third-party aggregator that mirrors YouTube Data API metadata."
+  }
+}

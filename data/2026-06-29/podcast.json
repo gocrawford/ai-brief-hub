@@ -1,0 +1,331 @@
+{
+  "week_start": "2026-06-29",
+  "week_end": "2026-07-05",
+  "title": "AI Brief Hub — Week of June 29, 2026",
+  "headline": "Fable 5 and Mythos 5 came back from export-control suspension this week, but GPT-5.6 Sol stayed capped near twenty approved firms — proof that government-gated access is now a standing design constraint, not a one-off event.",
+  "week_signal": "full",
+  "estimated_duration_seconds": 1440,
+  "coherence_map": {
+    "fable5_mythos5_restoration": {
+      "owner": "launches",
+      "owner_character": "Diego Alvarez",
+      "secondary_mentions": [
+        {
+          "character": "Sam Whitaker",
+          "segment": "reddit",
+          "angle": "community backlash over the six-day half-quota promo terms, not the restoration mechanics"
+        },
+        {
+          "character": "Lena Park",
+          "segment": "social",
+          "angle": "two-tier cheap-agent-vs-gated-frontier cultural framing, not the product details"
+        }
+      ]
+    },
+    "sonnet_5_tokenizer_cost": {
+      "owner": "youtube",
+      "owner_character": "Marcus Chen",
+      "secondary_mentions": [
+        {
+          "character": "Dr. Aaron Vogel",
+          "segment": "research",
+          "angle": "deliberate cyber-capability suppression relative to Opus 4.8, a distinct angle from the cost/tokenizer story"
+        },
+        {
+          "character": "Lena Park",
+          "segment": "social",
+          "angle": "cost-inversion framing at high reasoning effort — name-check only"
+        },
+        {
+          "character": "Sam Whitaker",
+          "segment": "reddit",
+          "angle": "Opus 4.8 verbosity complaint is a related but separate practitioner thread, not the Sonnet 5 story"
+        }
+      ]
+    },
+    "benchmark_trust_erosion": {
+      "owner": "reddit",
+      "owner_character": "Sam Whitaker",
+      "secondary_mentions": [
+        {
+          "character": "Priya Shah",
+          "segment": "x",
+          "angle": "unverified capability claims from Musk and Meta — a parallel trust problem, different source"
+        }
+      ]
+    },
+    "unverified_capability_claims": {
+      "owner": "x",
+      "owner_character": "Priya Shah",
+      "secondary_mentions": []
+    },
+    "agent_security_exploit_surface": {
+      "owner": "builders",
+      "owner_character": "Maya Okonkwo",
+      "secondary_mentions": []
+    },
+    "claude_code_jurisdiction_detection": {
+      "owner": "reddit",
+      "owner_character": "Sam Whitaker",
+      "secondary_mentions": []
+    },
+    "agent_memory_infrastructure": {
+      "owner": "builders",
+      "owner_character": "Maya Okonkwo",
+      "secondary_mentions": []
+    },
+    "janus_permission_management": {
+      "owner": "research",
+      "owner_character": "Dr. Aaron Vogel",
+      "secondary_mentions": [
+        {
+          "character": "Maya Okonkwo",
+          "segment": "builders",
+          "angle": "name-checks the paper as validation for memory/permission convergence, doesn't retell findings"
+        }
+      ]
+    },
+    "eu_digital_omnibus_final": {
+      "owner": "research",
+      "owner_character": "Dr. Aaron Vogel",
+      "secondary_mentions": []
+    },
+    "claude_tag_together_ai_launches": {
+      "owner": "launches",
+      "owner_character": "Diego Alvarez",
+      "secondary_mentions": []
+    },
+    "anthropic_revenue_overtake": {
+      "owner": "social",
+      "owner_character": "Lena Park",
+      "secondary_mentions": []
+    }
+  },
+  "segments": [
+    {
+      "id": "cold_open",
+      "speaker": "anchor",
+      "character": "Jordan Reeves",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "text": "Fable 5 came back this week. Nineteen days gone, and on July 1st, Anthropic flipped it back on worldwide. Mythos 5 came back too — but only for about a hundred vetted organizations. And here's the number that tells you the real story: GPT-5.6 Sol, OpenAI's flagship, is still capped to roughly twenty government-approved companies, a full week after it launched. Two labs, two different outcomes, same government hand on the switch. Access tiering isn't the exception anymore. It's the operating model. And while that was happening, the internet caught Anthropic quietly editing its own benchmark chart overnight — no announcement, no changelog, just a different number the next morning. Full week. From the AI Brief Hub, I'm Jordan Reeves. Let's get into it.",
+      "post_silence_ms": "400"
+    },
+    {
+      "id": "intro_music",
+      "speaker": "music",
+      "asset": "intro_bed",
+      "duration_ms": "6000"
+    },
+    {
+      "id": "handoff_youtube",
+      "speaker": "anchor",
+      "character": "Jordan Reeves",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "text": "Marcus, take us to YouTube — where the real technical teardown of Sonnet 5 happened this week."
+    },
+    {
+      "id": "sting_youtube",
+      "speaker": "music",
+      "asset": "sting",
+      "duration_ms": "1500"
+    },
+    {
+      "id": "youtube_segment",
+      "speaker": "youtube_correspondent",
+      "character": "Marcus Chen",
+      "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+      "text": "Yeah Jordan, and okay — biggest YouTube story this week wasn't a launch video. It was the receipts on that launch. Claude Sonnet 5 shipped June 30th at two dollars in, ten dollars out per million tokens — nominally the same price as Sonnet 4.6. Nominally. Theo, from t3.gg, ran it through Artificial Analysis's intelligence index, Cursor Bench, and a live game-rebuild test against Opus 4.8 and GLM 5.2. His finding: Sonnet 5 landed fourth overall, behind Fable 5, Opus, and GPT-5.5 — and it was the single most expensive model he's ever run through a real cost benchmark. About six thousand dollars for the task. More than Fable 5.\n\nHere's why. Mehul Mohan dug into the tokenizer and found it burns one-point-oh to one-point-three-five times more tokens than Sonnet 4.6 for identical input. And on output, it's dramatically more verbose — one test measured roughly sixty-eight thousand output tokens for a task GPT-5.5 finished in sixteen thousand. So the headline price is the same, but the actual task cost isn't close. Three separate creators — Mohan, Theo, and CodeRabbit — independently landed on the same number. That's not noise, that's a pattern.\n\nAnd there's a second wrinkle in Mohan's video worth flagging. He pulled the actual line from Anthropic's own system card: Sonnet 5 was, quote, 'not deliberately trained on cybersecurity tasks.' That's the vendor admitting the gap outright, not a reviewer inferring it. Cyber capability sits ahead of Sonnet 4.6, but well behind Opus 4.8 and Mythos 5 — Aaron's got more on that suppression on the research side. Mohan also flagged a speed surprise: hands-on, Sonnet 5 felt 'similarly slow to Opus,' despite being marketed as the fast, efficient tier. So the usual fast-cheap versus slow-expensive tradeoff doesn't hold cleanly for this release either. The practical read for anyone doing procurement: stop comparing per-token pricing, stop assuming tier position predicts latency, and start measuring cost and speed per completed task, on your own representative prompts. This model generation broke both shortcuts at once.\n\nSecond thing, quick hit — the AI Engineer World's Fair ran all week in San Francisco, and the through-line across Microsoft, OpenAI, Hugging Face, and independent builders was the same: benchmark scores are diverging from production reliability. Multiple unrelated speakers said the actual bottleneck right now isn't model capability, it's evaluation and observability tooling. If you're deciding where the next AI infrastructure dollar goes, that's the signal — not more model access, better eval.\n\nBack to you, Jordan.",
+      "post_silence_ms": "300"
+    },
+    {
+      "id": "handback_youtube",
+      "speaker": "youtube_correspondent",
+      "character": "Marcus Chen",
+      "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+      "text": "Back to you, Jordan."
+    },
+    {
+      "id": "handoff_x",
+      "speaker": "anchor",
+      "character": "Jordan Reeves",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "text": "Priya, your turn. What was the discourse on X this week?"
+    },
+    {
+      "id": "sting_x",
+      "speaker": "music",
+      "asset": "sting",
+      "duration_ms": "1500"
+    },
+    {
+      "id": "x_segment",
+      "speaker": "x_correspondent",
+      "character": "Priya Shah",
+      "voice_id": "cgSgspJ2msm6clMCkdW9",
+      "text": "This week on X, everybody had a bigger model than they could prove. Let me start with the one that's real, then get to the ones that aren't.\n\nMeituan dropped LongCat-2.0. One point six trillion parameters, mixture of experts, MIT-licensed, open weight. Turns out it's the model that's been quietly running as 'Owl Alpha' on OpenRouter — top three in global daily volume, first place on Hermes Agent, and nobody knew whose it was. The twist: it's trained end to end on a fifty-thousand card cluster of domestic Chinese accelerators. No Nvidia. It edges GPT-5.5 on SWE-bench Pro, though it trails Opus badly on knowledge-heavy benchmarks. Sam's got the Reddit debate over whether the domestic-chip claim holds up — my angle is just: this is real, it's shipping, and it's the first credible frontier-scale model to make that hardware claim in public.\n\nNow the part that's not real, or at least not verified. Musk posted that Grok 4.5 is already in private beta at SpaceX and Tesla, performance 'close to, perhaps exceeding' Opus. Seven point seven million views. No public benchmark. No API. It's SpaceX and Tesla grading their own homework. Same week, Business Insider reported that Meta's Alexandr Wang told staff internally that the in-training 'Watermelon' model has matched GPT-5.5 — using, quote, an order of magnitude more compute than its predecessor. Also no numbers, no system card, no ship date. Two labs, two unverified internal claims, same week. Treat both as marketing until somebody publishes a number a third party can check.\n\nOne more, smaller but useful — X shipped a hosted MCP server June 30th. No new capability, it just removes the self-hosting step for connecting Claude, Cursor, or Grok Build to your X account through existing read and search permissions. No write access, no autonomous posting. Plumbing, not news, but if your team is already using MCP as the integration layer for internal agents, X just joined the list of platforms that plug in without a custom bridge.\n\nJordan, back to you.",
+      "post_silence_ms": "300"
+    },
+    {
+      "id": "handback_x",
+      "speaker": "x_correspondent",
+      "character": "Priya Shah",
+      "voice_id": "cgSgspJ2msm6clMCkdW9",
+      "text": "Jordan, back to you."
+    },
+    {
+      "id": "handoff_reddit",
+      "speaker": "anchor",
+      "character": "Jordan Reeves",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "text": "That benchmark-trust problem Priya just flagged with Musk and Meta — Sam, there's a version of that same story that happened at Anthropic itself this week. What's burning on Reddit?"
+    },
+    {
+      "id": "sting_reddit",
+      "speaker": "music",
+      "asset": "sting",
+      "duration_ms": "1500"
+    },
+    {
+      "id": "reddit_segment",
+      "speaker": "reddit_correspondent",
+      "character": "Sam Whitaker",
+      "voice_id": "CwhRBWXzGAHq8TQ4Fs17",
+      "text": "Yeah, and this one's got receipts. Someone on r/ClaudeAI noticed Anthropic quietly updated the Sonnet 5 'agentic search' benchmark graph overnight. No announcement. The revised version nearly doubled the stated cost-per-task for every model on the chart. Anthropic's explanation was that they shifted from a 'simpler methodology' to their 'standard methodology' — which, fine, maybe. But the community's not buying the timing. Nine hundred ninety-seven upvotes, top comment at four hundred three: 'This is precisely why I refer to those as trust-me-bro graphs.' Priya just told you about Musk and Meta making capability claims nobody can verify. This is the same problem, except it's coming from inside the house — a lab quietly editing its own chart after the fact. If you're citing vendor benchmark charts in a procurement deck, this is the week to stop and go find the independent numbers instead.\n\nSecond thing, and it's a genuinely weird one. A post on r/Btechtards claimed Anthropic embedded, quote, 'spyware' in Claude Code — versions since 2.1.91 apparently checked for China-based proxy usage and specific timezones, encoded through curly-quote formatting tricks and XOR-obfuscated logic, before it got quietly disabled in a later version. That cross-posted to over seven hundred upvotes on r/ClaudeCode. Now — top comments were skeptical of the 'spyware' framing, and honestly, so am I. This looks a lot more like a jurisdiction-detection check tied to export-control compliance than covert data collection. But here's the actual enterprise problem, whatever you call it: if Claude Code's behavior silently varies based on detected location, and that's not documented anywhere, that's a live issue for any team with distributed engineering staff who travel or use a VPN. Worth an independent security review before you assume the tool behaves identically everywhere your people log in from.\n\nAnd because it's the Anthropic-does-everything-at-once week — Fable 5 came back Tuesday, but read the fine print. It's a six-day, fifty-percent-quota promotion with no usage reset, not a full restoration. Multiple threads this week are already calling it a metered trial dressed up as good news. Diego's got the actual product mechanics — my point is just: don't build your rollout plan assuming July 7th pricing looks anything like this week's promo.\n\nOne more from the trenches, and it's a smaller thing but it'll bite someone. A four hundred fifty-three upvote thread on r/ClaudeAI is just people complaining that Opus 4.8 is exhausting — verbose, ignores brevity instructions even when they're written straight into the CLAUDE.md config file. Some people are reverting to Opus 4.6 for routine work, others are jumping to GPT-5.5 entirely. Here's the actual lesson: CLAUDE.md is the standard way enterprise teams encode team-wide behavioral rules into Claude Code. If brevity instructions stop being honored after a model version bump, that's a silent regression in a control your team is relying on. Test your CLAUDE.md constraints every time you take a model update — don't assume they carry forward.\n\nBack to you, Jordan.",
+      "post_silence_ms": "300"
+    },
+    {
+      "id": "handback_reddit",
+      "speaker": "reddit_correspondent",
+      "character": "Sam Whitaker",
+      "voice_id": "CwhRBWXzGAHq8TQ4Fs17",
+      "text": "Back to you, Jordan."
+    },
+    {
+      "id": "handoff_builders",
+      "speaker": "anchor",
+      "character": "Jordan Reeves",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "text": "Speaking of things nobody's watching closely enough — Maya, builders shipped some serious security infrastructure this week. What rose to the top?"
+    },
+    {
+      "id": "sting_builders",
+      "speaker": "music",
+      "asset": "sting",
+      "duration_ms": "1500"
+    },
+    {
+      "id": "builders_segment",
+      "speaker": "builders_correspondent",
+      "character": "Maya Okonkwo",
+      "voice_id": "XrExE9yKIg1WjnnlVkGX",
+      "text": "Builders this week — and I want to start with the one that should worry you a little. A report surfaced describing what's being called the first confirmed agent-type ransomware. It's named JadePuffer. It exploits a known Langflow vulnerability to hijack agent infrastructure directly, not just steal data — it takes over the agent's execution. Same week, a separate technique called 'agentjacking' showed up: fake Sentry error reports crafted to hijack Claude Code and Cursor agents, eighty-five percent success rate in controlled testing. The pattern here is prompt injection through a source the agent already trusts — an error report, a log file, something that looks like normal input but is actually an instruction. If your agents read error logs, ticket systems, or any external data source automatically, that's now a demonstrated attack surface, not a theoretical one.\n\nThe response side moved fast too. usestrix slash strix — an open-source AI penetration-testing agent — sits at twenty-seven thousand two hundred stars and a stable one-point-oh-point-four release. It doesn't just scan for vulnerabilities, it proposes fixes, which changes the workflow from 'security team triages a report' to 'security team reviews a proposed patch.' The obvious catch: an autonomous agent probing for vulnerabilities needs to run in an isolated, non-production environment with no real customer data — the tool's value is exactly proportional to how tightly you scope its blast radius.\n\nSecond category this week — memory. topoteretes slash cognee, twenty-six thousand eight hundred stars, gives agents persistent long-term memory by combining a self-hosted knowledge graph with vector retrieval in one store, instead of stitching together separate systems. Self-hosted matters here — no third-party memory vendor sees your internal documents. And it's not a one-week spike — release June 26th, commit July 2nd, active maintenance. Pair that with DeusData slash codebase-memory-mcp, which just ran a benchmark indexing the entire twenty-eight-million-line Linux kernel in three minutes, and LangChain's new Dynamic Subagents feature — agents writing actual JavaScript to orchestrate subtasks instead of chaining tool calls. There's a University of Washington paper out this week benchmarking permission designs for exactly this kind of autonomous delegation — Aaron's covering that on the research side. My read: memory and permissions are becoming the infrastructure decision that matters as much as which model you pick, not an afterthought bolted on later.\n\nJordan, back to you.",
+      "post_silence_ms": "300"
+    },
+    {
+      "id": "handback_builders",
+      "speaker": "builders_correspondent",
+      "character": "Maya Okonkwo",
+      "voice_id": "XrExE9yKIg1WjnnlVkGX",
+      "text": "Jordan, back to you."
+    },
+    {
+      "id": "handoff_launches",
+      "speaker": "anchor",
+      "character": "Jordan Reeves",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "text": "Diego, Sam already flagged the fine print on Fable 5's return — you've got the actual mechanics. What launched this week?"
+    },
+    {
+      "id": "sting_launches",
+      "speaker": "music",
+      "asset": "sting",
+      "duration_ms": "1500"
+    },
+    {
+      "id": "launches_segment",
+      "speaker": "launches_correspondent",
+      "character": "Diego Alvarez",
+      "voice_id": "IKne3meq5aSn9XLyUdCD",
+      "text": "The story of the week is the restoration, so let's start there and get the facts straight. Commerce lifted the export controls June 30th. Anthropic redeployed Fable 5 globally July 1st — Claude Platform, Claude.ai, Claude Code, Claude Cowork, all of it, worldwide. Mythos 5 did not get the same treatment. It's restored only to roughly a hundred vetted US critical-infrastructure organizations under something called Project Glasswing. Two-tier restoration. Both models ship with a new safety classifier that Anthropic says blocks the reported jailbreak technique in over ninety-nine percent of attempts, with flagged cybersecurity-adjacent requests now auto-routing to Opus 4.8 instead. Sam already told you about the fine print on the promo — fifty percent weekly usage bundled in through July 7th, then it moves to metered billing. Build your evaluation now, before that window closes.\n\nSonnet 5 also shipped this week, June 30th — a million-token context window, eighty-five point two percent on SWE-Bench Verified, at Sonnet-tier pricing. Marcus already gave you the real cost story on the tokenizer side, so I won't repeat it — just know it's live now on the Anthropic API, AWS Bedrock, and Google Vertex, with Microsoft Foundry in preview.\n\nThree more things actually worth your attention. Google shipped an agentic computer-use tool in Gemini 3.5 Flash — public preview, scores seventy-eight point four on OSWorld-Verified, competitive with GPT-5.5 and Opus 4.7, and no premium surcharge. Their Interactions API also hit general availability this week and is now Google's recommended interface for new Gemini agent builds going forward — if you're building on Gemini, that's the API to standardize on.\n\nAnd on the money side: Together AI raised eight hundred million dollars at an eight-point-three-billion-dollar valuation — more than double where they started last year. Read that next to Crusoe Energy's reported talks for a three-billion-dollar raise, and the pattern is clear: the biggest checks right now are going to GPU-cloud and inference infrastructure, not new model labs. Meanwhile Anthropic's Claude Tag — the shared-identity Slack agent from a couple weeks back — keeps building momentum ahead of its old integration's August 3rd retirement. Worth testing now if you're on Enterprise or Team, before that migration deadline forces the decision. And Patronus AI closed a fifty-million-dollar Series B this week to build digital world models specifically for testing agents before they touch production — a sign that agent-testing infrastructure is becoming its own funded category, not a feature bolted onto a model provider.\n\nBack to you, Jordan.",
+      "post_silence_ms": "300"
+    },
+    {
+      "id": "handback_launches",
+      "speaker": "launches_correspondent",
+      "character": "Diego Alvarez",
+      "voice_id": "IKne3meq5aSn9XLyUdCD",
+      "text": "Back to you, Jordan."
+    },
+    {
+      "id": "handoff_social",
+      "speaker": "anchor",
+      "character": "Jordan Reeves",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "text": "Lena, Diego just walked through the two-tier restoration in detail. You've got the bigger cultural story it's part of."
+    },
+    {
+      "id": "sting_social",
+      "speaker": "music",
+      "asset": "sting",
+      "duration_ms": "1500"
+    },
+    {
+      "id": "social_segment",
+      "speaker": "social_correspondent",
+      "character": "Lena Park",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "text": "What broke through this week was a design principle, not a single launch — and once you see it, you can't unsee it. Cheap agent, gated frontier. Sonnet 5 launched as the new default free-tier model, built for autonomous browser and terminal use, two dollars and ten dollars per million tokens. Same week, Fable 5 and Mythos 5 came back only after a nineteen-day government review, and Mythos 5 is still capped to about a hundred organizations. Creators across LinkedIn, YouTube, and Instagram all landed on the same read this week: the frontier is now a two-speed system. One tier is open and cheap and everywhere. The other is licensed, restricted, and rationed. Diego walked you through the mechanics — the thing I want you to sit with is that this isn't a temporary state anymore. It's the shape enterprise AI access is going to have for a while. Budget and governance planning both need a line item for 'what if our top-tier model gets paused by a government review,' the same way you'd plan for a cloud region outage.\n\nSecond — and this connects to what Marcus found on YouTube — multiple reviewers this week surfaced a genuine inversion: pushed to high reasoning effort, Sonnet 5, the supposedly cheap model, can cost more per task than Opus 4.8 run lightly. That breaks the normal assumption that the smaller model is always the budget option. If your team is building automatic model-routing logic, this is the week to stop routing by sticker price and start routing by measured cost per completed task.\n\nThird — and this one's bigger than it looks. Fortune reported July 2nd that Anthropic's self-reported annualized revenue run-rate has hit forty-seven billion dollars, ahead of OpenAI's disclosed twenty-five to thirty-three billion. Ramp's own spending data backs it up — Anthropic's been ahead in business-subscription share since May. This is now a mainstream business-press story, not just an AI-beat story, and the signal underneath it is that enterprise buyers are picking based on coding and agent capability, not brand recognition. If your vendor evaluation criteria haven't been refreshed since last year's assumptions about who's winning, this is the prompt to redo that exercise. And on a lighter note — one creator flagged Fable 5's July 7th pricing cliff as, quote, 'AI homework for the weekend.' Not wrong. If you haven't run your own evaluation by then, you're making the decision blind.\n\nJordan, back to you.",
+      "post_silence_ms": "300"
+    },
+    {
+      "id": "handback_social",
+      "speaker": "social_correspondent",
+      "character": "Lena Park",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "text": "Jordan, back to you."
+    },
+    {
+      "id": "handoff_research",
+      "speaker": "anchor",
+      "character": "Jordan Reeves",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "text": "Aaron, your turn — Sonnet 5's cyber capability, a new EU deadline that just became law, and a paper on agent permissions that Maya already teased."
+    },
+    {
+      "id": "sting_research",
+      "speaker": "music",
+      "asset": "sting",
+      "duration_ms": "1500"
+    },
+    {
+      "id": "research_segment",
+      "speaker": "research_correspondent",
+      "character": "Dr. Aaron Vogel",
+      "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+      "text": "Three items, all with a thirty-day action attached.\n\nFirst, Sonnet 5 — and this is a different angle than the cost story Marcus and Lena already covered. Anthropic's own documentation says the model posts lower hallucination and sycophancy rates than Sonnet 4.6, better refusal of malicious requests, stronger prompt-injection resistance. But on cybersecurity specifically, Anthropic deliberately did not train it for offensive tasks. In their own browser-exploit evaluation, it never produced a single working exploit. That's not a capability gap that happened by accident — it's a design choice, and Anthropic is explicit that teams needing full red-teaming capability should stay on Opus 4.8. If any internal security evaluation assumed Sonnet-tier models track Opus on offensive capability, that assumption needs to be retested specifically for this release.\n\nSecond — the EU Digital Omnibus is no longer pending. The Council gave it final adoption June 29th, completing the process Parliament passed six-sixteen. Here's the part worth writing down: there are now two compliance clocks running in parallel, and they moved in opposite directions. The high-risk obligations under Annex Three — biometrics, employment, credit, critical infrastructure — got real relief, pushed out to December 2027. But Article 50 — chatbot disclosure, deepfake labeling, AI-generated text labeling — did not move. August 2nd, five weeks away, no grace period. Don't let the Annex Three relief create a false sense that everything got easier. If your organization generates AI content reaching EU persons, the Article 50 scoping exercise is the thing due in five weeks, not eighteen months.\n\nThird — Maya mentioned the Janus paper on the builders side, and here's what it actually found. Researchers at the University of Washington benchmarked six different designs for user-involved agent permission management — should the agent ask before every action, batch permissions, or auto-execute with a rollback option — across three scenarios. The central finding: no single design wins across all contexts. That's directly usable. It means the permission model you choose for a customer-facing agent shouldn't be the same one you use for an internal batch-processing agent, and the paper's open-source code and benchmark harness on GitHub give you a starting point to test your own use case rather than guessing.\n\nOne more, briefly — the Treasury-led AI cybersecurity clearinghouse deadline under the June executive order landed July 2nd. No agency has confirmed it's actually stood up yet. Worth watching for the readout if you're in a critical-infrastructure-adjacent sector, but treat it as a deadline reached, not a milestone confirmed.\n\nBack to you, Jordan.",
+      "post_silence_ms": "300"
+    },
+    {
+      "id": "handback_research",
+      "speaker": "research_correspondent",
+      "character": "Dr. Aaron Vogel",
+      "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+      "text": "Back to you, Jordan."
+    },
+    {
+      "id": "what_to_watch",
+      "speaker": "anchor",
+      "character": "Jordan Reeves",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "text": "Three things to watch next week. First: July 7th. That's when Fable 5's promotional half-quota bundle expires and metered billing kicks in — model your worst-case token spend before that switch flips, not after. Second: GPT-5.6 Sol's access list. It's been stuck near twenty companies for two weeks now — watch for whether OpenAI expands it or whether this becomes as durable a restriction as Mythos 5's hundred-organization cap. Third: the EU's Article 50 deadline, August 2nd. Five weeks out, no grace period, and it's easy to confuse with the Annex Three relief that just kicked in — they are not the same clock. If you haven't scoped your AI-generated content disclosure obligations, that's this week's task.",
+      "post_silence_ms": "400"
+    },
+    {
+      "id": "sign_off",
+      "speaker": "anchor",
+      "character": "Jordan Reeves",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "text": "That's your week. Full breakdown, every link, every source — at the AI Brief Hub. I'm Jordan Reeves. Back next Sunday."
+    }
+  ]
+}
