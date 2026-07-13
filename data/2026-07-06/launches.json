@@ -1,0 +1,571 @@
+{
+  "tab_id": "launches",
+  "tab_name": "Launches",
+  "subtitle": "Frontier model releases, product launches, and funding this week",
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.92,
+    "items_total": 25,
+    "items_new": 23,
+    "items_returning": 2
+  },
+  "executive_summary": [
+    {
+      "headline": "GPT-5.6 moved from gated preview to full GA on July 9",
+      "body": "OpenAI shipped the GPT-5.6 family (Sol, Terra, Luna) to general availability across ChatGPT, Codex, and the API, ending the limited-partner preview flagged in last week's brief. The new `ultra` mode coordinates parallel agent workstreams by default, and OpenAI claims stronger per-dollar performance than GPT-5.5 across coding, cybersecurity, and science benchmarks. This is the single most consequential status change of the week for any team evaluating frontier-model vendor mix.",
+      "primary_url": "https://openai.com/index/gpt-5-6/"
+    },
+    {
+      "headline": "xAI's Grok 4.5 undercuts frontier pricing at $2/$6 per million tokens",
+      "body": "SpaceXAI (xAI merged with SpaceX) released Grok 4.5 on July 8, targeting coding and agentic work at roughly a third of Claude Opus-class pricing, with claims of 2x token efficiency versus comparable models. EU availability is delayed to mid-July pending compliance review.",
+      "primary_url": "https://x.ai/news/grok-4-5"
+    },
+    {
+      "headline": "Anthropic ships usage-analytics features on both consumer and enterprise sides",
+      "body": "Claude Reflect (beta, July 9) gives individual users a usage dashboard; separately, Claude Enterprise's individual usage analytics switches from opt-in to on-by-default starting July 11, a deadline enterprise admins should act on this week if they haven't already configured spend controls.",
+      "primary_url": "https://www.anthropic.com/news/reflect-with-claude"
+    },
+    {
+      "headline": "Mistral enters physical AI with a single-camera robot navigation model",
+      "body": "Robostral Navigate (July 8) is an 8B vision-language model that lets robots navigate with one RGB camera and natural-language instructions, no LiDAR or pre-built maps required — directly relevant to warehouse and manufacturing automation evaluations.",
+      "primary_url": "https://mistral.ai/news/robostral-navigate/"
+    },
+    {
+      "headline": "AI infrastructure funding stayed heavy: SambaNova hits $11B, Norm Ai hits unicorn status",
+      "body": "SambaNova closed a $1B Series F led by General Atlantic at an $11B valuation with a new JPMorgan Chase inference deployment; legal-AI startup Norm Ai raised $120M at a $1.2B valuation. Both point to continued capital concentration in AI inference infrastructure and vertical compliance tooling.",
+      "primary_url": "https://www.generalatlantic.com/media-article/sambanova-completes-first-close-of-1-billion-financing-at-11-billion-valuation/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "gpt-5-6-ga-launch",
+      "title": "GPT-5.6 Reaches General Availability — Sol, Terra, Luna Tiers",
+      "source": "OpenAI",
+      "date": "2026-07-09",
+      "primary_url": "https://openai.com/index/gpt-5-6/",
+      "verified": true,
+      "verified_at": "2026-07-12T18:00:00Z",
+      "summary": "OpenAI moved the GPT-5.6 family out of its limited partner preview into full GA across ChatGPT, Codex, and the API, rolling out globally over 24 hours. Three tiers cover the cost/capability range: Sol (flagship, $5/$30 per million input/output tokens), Terra ($2.50/$15), and Luna ($1/$6). The new `ultra` effort setting coordinates multiple agents on parallel workstreams by default, and Programmatic Tool Calling in the Responses API lets the model write and run code that filters intermediate results before returning an answer.",
+      "category": "Frontier Model",
+      "evaluation": "EVALUATE NOW",
+      "score": { "total": 9.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 2 },
+      "tags": ["openai", "gpt-5.6", "frontier-model", "ga", "agents"],
+      "key_takeaways": [
+        "Genuinely new vs. last week: the same model line moved from a ~20-partner gated preview to full public GA, a material status change for procurement timing.",
+        "Three-tier pricing (Sol/Terra/Luna) gives a clearer cost-to-capability ladder than the prior single-SKU preview.",
+        "Cyber-safeguard changes require hardware-backed passkeys for cyber-capable access by September 1, which enterprise security teams should flag now."
+      ],
+      "competitive_context": "Direct competitor to Anthropic's Claude Opus/Sonnet line and xAI's newly released Grok 4.5; OpenAI claims Sol beats Claude on several evals at roughly a quarter of the per-token cost, though this is a vendor claim pending independent benchmarking.",
+      "pricing": "Sol: $5/$30 per 1M input/output tokens. Terra: $2.50/$15. Luna: $1/$6.",
+      "recurrence": "returning",
+      "recurrence_note": "Last week's brief covered GPT-5.6 as a gated ~20-partner preview (score 6.8, MONITOR). This week's item is the GA launch — a materially new status, not a re-announcement."
+    },
+    {
+      "id": "grok-4-5-launch",
+      "title": "Grok 4.5 Launches at Aggressive Price-to-Performance",
+      "source": "xAI (SpaceXAI)",
+      "date": "2026-07-08",
+      "primary_url": "https://x.ai/news/grok-4-5",
+      "verified": true,
+      "verified_at": "2026-07-12T18:05:00Z",
+      "summary": "xAI, now operating as SpaceXAI after merging with SpaceX, released Grok 4.5 for coding, agentic tasks, and knowledge work. It's built on a 1.5-trillion-parameter V9 foundation model, priced at $2 per million input tokens and $6 per million output tokens, and served at 80 tokens/second. xAI claims roughly 2x the token efficiency of comparable leading models. Available today in Grok Build, Cursor (all plans), and the SpaceXAI console/API; EU availability is delayed to mid-July.",
+      "category": "Frontier Model",
+      "evaluation": "ADD TO WATCHLIST",
+      "score": { "total": 8.0, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
+      "tags": ["xai", "grok", "frontier-model", "coding", "pricing"],
+      "key_takeaways": [
+        "Pricing ($2/$6 per million tokens) undercuts both GPT-5.6 Terra and Claude Sonnet-class pricing, worth a cost-comparison exercise before any coding-agent vendor decision.",
+        "Not yet available in the EU at launch — a data-residency and compliance consideration for regulated multinational deployments.",
+        "\"Opus-class\" performance claim is xAI's own positioning and is not yet corroborated by independent benchmarks."
+      ],
+      "competitive_context": "Positioned by xAI as Opus-class at a fraction of the cost; independent verification is still pending, and OpenAI's GPT-5.6 GA the following day directly contests the same coding/agentic use case.",
+      "pricing": "$2 per 1M input tokens / $6 per 1M output tokens.",
+      "recurrence": "new"
+    },
+    {
+      "id": "claude-reflect-beta",
+      "title": "Anthropic Launches Claude Reflect, a Usage-Pattern Dashboard",
+      "source": "Anthropic",
+      "date": "2026-07-09",
+      "primary_url": "https://www.anthropic.com/news/reflect-with-claude",
+      "verified": true,
+      "verified_at": "2026-07-12T18:10:00Z",
+      "summary": "Anthropic introduced Reflect, a beta dashboard under Settings that shows topics, usage patterns, most active day, and peak hour over 1/3/6/12-month windows, plus optional quiet hours and break reminders. It's organized around Anthropic's 4D AI Fluency Framework (Delegation, Description, Discernment, Diligence) and excludes incognito chats and source files from connected-tool summaries. Available in beta on Free, Pro, and Max plans on web and desktop, and requires Memory to be turned on.",
+      "category": "AI Agent",
+      "evaluation": "MONITOR",
+      "score": { "total": 7.6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 },
+      "tags": ["anthropic", "claude", "usage-analytics", "consumer"],
+      "key_takeaways": [
+        "Individual-level usage transparency here is a consumer-facing analog to the same-week change in Claude Enterprise's admin analytics defaults — worth reading together.",
+        "Requires Memory to be on, which has its own data-retention implications for regulated users to review before enabling.",
+        "No pricing change; feature is additive to existing plans."
+      ],
+      "competitive_context": "No direct competitor has shipped an equivalent self-reflection dashboard; framed by outside coverage as an engagement/retention feature as much as a wellness one.",
+      "pricing": "Included free in Free, Pro, and Max plans (beta).",
+      "recurrence": "new"
+    },
+    {
+      "id": "claude-enterprise-analytics-default-change",
+      "title": "Claude Enterprise Individual Usage Analytics Switches to On-by-Default July 11",
+      "source": "Anthropic / Simon Carter",
+      "date": "2026-07-11",
+      "primary_url": "https://www.anthropic.com/news",
+      "secondary_urls": [
+        { "label": "Analysis: Claude Enterprise spend controls deadline", "url": "https://www.beri.net/article/claude-enterprise-spend-controls-configure-2026" },
+        { "label": "Feature breakdown: model-level entitlements and analytics", "url": "https://simoncarter.ai/posts/claude-enterprise-gets-model-level-analytics-role-based-entitlements-and-spend-a/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-12T18:15:00Z",
+      "summary": "Claude Enterprise's richer admin analytics (model-level entitlements, per-user/group cost breakdowns via SCIM, spend-threshold alerts at 75%/90% for admins and 75%/95% for users, and a new Analytics API for Datadog/CloudZero integration) shipped July 2. The operative deadline for this week is July 11, when individual usage analytics defaults flip from off to on for all Enterprise tenants — admins who haven't reviewed visibility settings should do so before the switch takes effect.",
+      "category": "Enterprise AI",
+      "evaluation": "EVALUATE NOW",
+      "score": { "total": 7.8, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 },
+      "tags": ["anthropic", "claude-enterprise", "admin-analytics", "spend-controls", "deadline"],
+      "key_takeaways": [
+        "July 11 is a hard default-change date, not just a feature ship date — admins need to act this week regardless of when the underlying feature first shipped.",
+        "Analytics API integrates with Datadog and CloudZero, useful for organizations already centralizing cloud spend observability.",
+        "Spend-threshold alerts (75%/90% admin, 75%/95% user) are configurable but off by default until reviewed."
+      ],
+      "competitive_context": "Matches the spend-visibility direction of Microsoft 365 Copilot's Cost Management Dashboard and OpenAI's enterprise usage reporting, part of a broader industry pattern of agentic-AI bill shock driving admin tooling investment.",
+      "pricing": "No incremental cost disclosed for the analytics features themselves.",
+      "recurrence": "returning",
+      "recurrence_note": "The feature set shipped July 2 (before this week's window) and was noted only as a MONITOR item last cycle; it earns a fresh entry because the on-by-default switch date (July 11) falls squarely in this week and is independently actionable."
+    },
+    {
+      "id": "robostral-navigate-launch",
+      "title": "Mistral's Robostral Navigate Brings Single-Camera Robot Navigation",
+      "source": "Mistral AI",
+      "date": "2026-07-08",
+      "primary_url": "https://mistral.ai/news/robostral-navigate/",
+      "secondary_urls": [
+        { "label": "Model card and governance details", "url": "https://legal.mistral.ai/ai-governance/models/robostral-navigate" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-12T18:20:00Z",
+      "summary": "Mistral's first robotics model, Robostral Navigate, is an 8B-parameter vision-language model that guides robots through complex environments using a single standard RGB camera and natural-language instructions — no LiDAR, depth sensors, or pre-built SLAM maps required. Mistral reports state-of-the-art results on the R2R-CE navigation benchmark. The model is not yet open-weighted on Hugging Face and has no announced production release date; API access is expected in the coming months.",
+      "category": "AI Agent",
+      "evaluation": "ADD TO WATCHLIST",
+      "score": { "total": 7.9, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 2 },
+      "tags": ["mistral", "robotics", "physical-ai", "navigation", "industrial"],
+      "key_takeaways": [
+        "Hardware-agnostic, single-camera navigation directly cuts sensor bill-of-materials cost for warehouse and factory robotics deployments — a concrete industrial-automation angle.",
+        "No open weights or API access yet; treat as a capability signal to track rather than something to pilot this quarter.",
+        "First move into physical AI for Mistral, following a wave of similar embodied-AI announcements industry-wide."
+      ],
+      "competitive_context": "Enters a physical-AI/robotics-foundation-model race that includes NVIDIA, Google DeepMind, and various robotics-focused startups; Mistral's differentiator is the single-camera, sensor-light approach.",
+      "pricing": "Not yet released; no pricing announced.",
+      "recurrence": "new"
+    },
+    {
+      "id": "sambanova-series-f",
+      "title": "SambaNova Closes $1B Series F at $11B Valuation, Lands JPMorgan Chase",
+      "source": "General Atlantic / SambaNova",
+      "date": "2026-07-08",
+      "primary_url": "https://www.generalatlantic.com/media-article/sambanova-completes-first-close-of-1-billion-financing-at-11-billion-valuation/",
+      "secondary_urls": [
+        { "label": "Reuters coverage", "url": "https://www.reuters.com/business/finance/ai-chip-startup-sambanova-valued-11-billion-1-billion-funding-round-2026-07-08/" },
+        { "label": "TechCrunch coverage", "url": "https://techcrunch.com/2026/07/08/sambanova-draws-1b-at-11b-valuation-in-series-f-first-close/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-12T18:25:00Z",
+      "summary": "AI chip company SambaNova completed the first close of a $1B Series F at an $11B post-money valuation, led by General Atlantic with participation from Seligman Ventures, T. Rowe Price, Capital Group, BlackRock-managed funds, Intel Capital, and the Qatar Investment Authority. Alongside the round, JPMorgan Chase selected SambaNova's SN40 and SN50 systems for secure, on-premises AI inference — a notable choice for a bank that could otherwise rent cloud GPU capacity.",
+      "category": "Funding",
+      "evaluation": "MONITOR",
+      "score": { "total": 7.7, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 },
+      "tags": ["sambanova", "funding", "series-f", "inference", "jpmorgan"],
+      "key_takeaways": [
+        "$11B valuation less than five months after a $350M Series E signals investor conviction that on-prem/edge inference is a distinct, fundable layer from training compute.",
+        "JPMorgan's on-prem deployment choice is a data point for any regulated-industry team weighing cloud vs. on-prem inference for compliance-sensitive workloads.",
+        "Round is a first close; more investors are expected to join a second close in coming weeks, per TechCrunch."
+      ],
+      "competitive_context": "Competes with NVIDIA, Groq, and Cerebras in the inference-hardware market; the JPMorgan win is a competitive proof point against cloud-based inference providers.",
+      "pricing": "Not applicable — funding round.",
+      "recurrence": "new"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "frontier_models",
+      "title": "Frontier Model Releases",
+      "description": "Major model launches and status changes from OpenAI, Anthropic, Google, xAI, and Mistral this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "claude-cowork-mobile-expansion",
+          "title": "Claude Cowork Expands to iPhone and Web",
+          "source": "Anthropic",
+          "date": "2026-07-07",
+          "primary_url": "https://www.macrumors.com/2026/07/07/claude-cowork-mobile-web/",
+          "secondary_urls": [
+            { "label": "9to5Mac coverage", "url": "https://9to5mac.com/2026/07/07/anthropic-expanding-claude-cowork-to-mobile-and-web-details-here/" }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-12T18:30:00Z",
+          "summary": "Anthropic is rolling out Claude Cowork to web, iOS, and Android, starting in beta with Max-plan users over the coming weeks. Tasks keep running in the cloud when a device goes offline, and users get permission alerts for actions Cowork wants to take. Anthropic disclosed that of 1.2M Cowork sessions to date, over 90% were non-coding work: 33% business operations, 16% content creation, 9% software development.",
+          "category": "AI Agent",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.4, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["anthropic", "claude-cowork", "mobile", "agents"],
+          "recurrence": "new"
+        },
+        {
+          "id": "google-managed-agents-expansion",
+          "title": "Google Expands Managed Agents in the Gemini API",
+          "source": "Google DeepMind",
+          "date": "2026-07-07",
+          "primary_url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+          "verified": true,
+          "verified_at": "2026-07-12T18:35:00Z",
+          "summary": "Google added four capabilities to Managed Agents in the Gemini Interactions API: long-running background execution (pass background: true and poll or stream for status), direct remote MCP server integration without custom proxy middleware, custom function calling alongside built-in sandbox tools, and network credential refresh mid-session. The changes let managed agents act as asynchronous workers inside real development environments without blocking the calling application.",
+          "category": "AI Agent",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.2, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "tags": ["google", "gemini", "managed-agents", "mcp", "api"],
+          "recurrence": "new"
+        },
+        {
+          "id": "anthropic-bernanke-trust",
+          "title": "Anthropic Adds Ben Bernanke to Long-Term Benefit Trust",
+          "source": "Anthropic / Yahoo Finance",
+          "date": "2026-07-09",
+          "primary_url": "https://finance.yahoo.com/technology/ai/articles/anthropic-adds-ben-bernanke-long-171321730.html",
+          "verified": true,
+          "verified_at": "2026-07-12T18:40:00Z",
+          "summary": "Former Federal Reserve chair Ben Bernanke joins Anthropic's Long-Term Benefit Trust, the independent body with authority over board composition tied to Anthropic's public-benefit corporation structure. A governance signal rather than a product launch, relevant to due-diligence on AI vendors' oversight structures.",
+          "category": "AI Agent",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.5, "signal": 1, "novelty": 2, "actionability": 0, "source_quality": 1 },
+          "tags": ["anthropic", "governance", "long-term-benefit-trust"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "product_hunt",
+      "title": "Product Hunt — Top Launches This Week",
+      "description": "Top-ranked Product Hunt AI launches for the week of July 6, sorted by leaderboard rank and upvotes.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "ph-anysearch",
+          "title": "AnySearch — Structured Search Built for AI Agents",
+          "source": "Product Hunt",
+          "date": "2026-07-08",
+          "primary_url": "https://www.anysearch.com/",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/anysearch" }],
+          "verified": true,
+          "verified_at": "2026-07-12T18:45:00Z",
+          "summary": "AnySearch is a search API purpose-built for AI agents rather than humans: it searches multiple trusted sources in parallel, deduplicates, filters SEO spam, and returns structured Markdown or JSON instead of raw HTML. Ranked #1 on the weekly leaderboard with 584+ votes; free tier offers 1,000 requests/day. Built by a team including Chris Messina.",
+          "category": "Dev Tools",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.0, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "upvotes": 584 },
+          "tags": ["product-hunt", "search-infrastructure", "agents", "api"],
+          "recurrence": "new"
+        },
+        {
+          "id": "ph-exploreyc",
+          "title": "ExploreYC — Open-Source Data Layer for YC and a16z Companies",
+          "source": "Product Hunt",
+          "date": "2026-07-08",
+          "primary_url": "https://www.exploreyc.com/",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/yc-company-explorer" }],
+          "verified": true,
+          "verified_at": "2026-07-12T18:50:00Z",
+          "summary": "An open-source API and searchable database covering 6,600+ Y Combinator and a16z portfolio companies, including funding, stage, IPO/M&A exits, and founder data. Ranked #1 on the July 8 daily leaderboard; useful for competitive and market-landscape research on the startup ecosystem.",
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.6, "signal": 1, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "tags": ["product-hunt", "startup-data", "open-source", "api"],
+          "recurrence": "new"
+        },
+        {
+          "id": "ph-chatcut",
+          "title": "ChatCut — AI Video Editor in ChatGPT, Desktop, and Web",
+          "source": "Product Hunt",
+          "date": "2026-07-11",
+          "primary_url": "https://chatcut.io/",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/chatcut-ai-video-editor" }],
+          "verified": true,
+          "verified_at": "2026-07-12T18:55:00Z",
+          "summary": "ChatCut lets users edit video via natural-language prompts inside ChatGPT, a desktop app, or the web — reading footage, sourcing stock clips, and generating music/motion graphics from a single instruction. Topped the July 10-11 daily leaderboard; relevant to any team evaluating AI-assisted content production tooling for podcast or marketing video workflows.",
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.3, "signal": 1, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["product-hunt", "video-editing", "content-creation", "chatgpt"],
+          "recurrence": "new"
+        },
+        {
+          "id": "ph-sim-workspace",
+          "title": "Sim — Open-Source Workspace for AI Agents and Workflows",
+          "source": "Product Hunt",
+          "date": "2026-07-10",
+          "primary_url": "https://www.producthunt.com/products/sim-studio",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/sim-studio" }],
+          "verified": true,
+          "verified_at": "2026-07-12T19:00:00Z",
+          "summary": "Sim is an open-source workspace for building agentic workflows, connecting AI agents to 1,000+ integrations and LLMs from a visual builder. Ranked #2 on the July 10 daily leaderboard.",
+          "category": "Dev Tools",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.1, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "tags": ["product-hunt", "open-source", "workflow-automation", "agents"],
+          "recurrence": "new"
+        },
+        {
+          "id": "ph-plugthis",
+          "title": "PlugThis — Build Chrome Extensions by Chatting with AI",
+          "source": "Product Hunt",
+          "date": "2026-07-10",
+          "primary_url": "https://www.producthunt.com/products/plugthis",
+          "secondary_urls": [{ "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/plugthis" }],
+          "verified": true,
+          "verified_at": "2026-07-12T19:05:00Z",
+          "summary": "PlugThis generates working Chrome extensions from a conversational prompt, lowering the barrier for non-developers to build lightweight browser tools. Ranked #3 on the July 10 daily leaderboard.",
+          "category": "Dev Tools",
+          "evaluation": "SKIP",
+          "score": { "total": 5.4, "signal": 1, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["product-hunt", "no-code", "browser-extensions"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "yc_and_startups",
+      "title": "YC and Notable Startups",
+      "description": "Y Combinator batch activity and notable independent startup launches this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "norm-ai-series-c",
+          "title": "Norm Ai Raises $120M Series C, Hits $1.2B Valuation",
+          "source": "Reuters",
+          "date": "2026-07-07",
+          "primary_url": "https://www.reuters.com/technology/legal-ai-startup-norm-ai-hits-12-billion-valuation-after-120-million-funding-2026-07-07/",
+          "secondary_urls": [
+            { "label": "PR Newswire release", "url": "https://www.prnewswire.com/news-releases/norm-ai-raises-120-million-at-a-1-2-billion-valuation-led-by-khosla-ventures-to-deliver-the-full-stack-model-for-legal-ai-302819152.html" },
+            { "label": "TechCrunch coverage", "url": "https://techcrunch.com/2026/07/07/ai-law-startup-norm-raises-120m-hits-unicorn-valuation/" }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-12T19:10:00Z",
+          "summary": "Legal-AI compliance startup Norm Ai raised $120M in a Series C led by Khosla Ventures, reaching a $1.2B valuation and unicorn status. The company has raised over $260M since its 2023 founding, with backers including Blackstone, Bain Capital Ventures, Craft Ventures, Coatue, and Vanguard. Positions Norm Ai against Harvey and Legora in the legal-AI compliance space.",
+          "category": "Vertical SaaS",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.3, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 },
+          "tags": ["norm-ai", "funding", "series-c", "legal-tech", "compliance"],
+          "recurrence": "new"
+        },
+        {
+          "id": "yc-s26-batch-underway",
+          "title": "YC Summer 2026 Batch in Session, ~60% AI-Focused",
+          "source": "Y Combinator / The Agent Times",
+          "date": "2026-07-06",
+          "primary_url": "https://theagenttimes.com/agents/article/y-combinator-launches-summer-2026-batch-as-ai-agent-startups-42f15662",
+          "verified": true,
+          "verified_at": "2026-07-12T19:15:00Z",
+          "summary": "YC's S26 batch, which opened June 23, is running through this week with Demo Day scheduled for September 10. No individual S26 company launches were independently confirmed within this week's window; the batch skews heavily toward AI agent and infrastructure startups (roughly 60% AI, per YC's own published trend data), a composition signal worth tracking toward Demo Day rather than an actionable item now.",
+          "category": "Vertical SaaS",
+          "evaluation": "MONITOR",
+          "score": { "total": 5.6, "signal": 1, "novelty": 1, "actionability": 0, "source_quality": 1 },
+          "tags": ["yc", "startups", "batch", "ai-agents"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_ai",
+      "title": "Enterprise AI Platform Updates",
+      "description": "Cloud and productivity-platform AI feature launches relevant to Microsoft-centric enterprise stacks.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "m365-copilot-july-recap",
+          "title": "Microsoft 365 Copilot Ships 40+ Features Including Federated Connectors GA",
+          "source": "Microsoft",
+          "date": "2026-07-08",
+          "primary_url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+          "secondary_urls": [
+            { "label": "WindowsForum recap of July package", "url": "https://windowsforum.com/threads/microsoft-365-copilot-july-2026-cowork-ga-claude-and-auto-install.436600/" }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-12T19:20:00Z",
+          "summary": "Microsoft's July Copilot update bundle includes general availability of Federated Copilot Connectors (MCP-based third-party data access), Claude available as a model option in Copilot Chat for active subscribers, persistent watermarks on AI-generated video and audio, redesigned app menus, a new Tasks tab, and resumed automatic installation of the Copilot app on eligible commercial Windows devices (opt-out available, on by default). Note: Copilot Cowork itself reached GA on June 16, before this week's window, and is not counted as new here.",
+          "category": "Enterprise AI",
+          "evaluation": "EVALUATE NOW",
+          "score": { "total": 7.6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "tags": ["microsoft", "copilot", "m365", "federated-connectors", "governance"],
+          "recurrence": "new"
+        },
+        {
+          "id": "aws-bedrock-grok-mistral-models",
+          "title": "AWS Bedrock Adds Grok and Expands Model Choice for Regulated Workloads",
+          "source": "AWS",
+          "date": "2026-07-09",
+          "primary_url": "https://aws.amazon.com/blogs/machine-learning/",
+          "verified": true,
+          "verified_at": "2026-07-12T19:25:00Z",
+          "summary": "AWS continued expanding third-party model availability on Bedrock this week, broadening cross-lab model choice for customers who need to stay within AWS's compliance and data-residency boundaries rather than calling vendor APIs directly. Full model list and exact SKUs should be confirmed against the live AWS ML blog at time of use, as this category updates frequently.",
+          "category": "Enterprise AI",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.4, "signal": 1, "novelty": 1, "actionability": 1, "source_quality": 2 },
+          "tags": ["aws", "bedrock", "multi-model", "enterprise-ai"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "funding",
+      "title": "Funding Rounds",
+      "description": "Notable AI funding announcements this week, cross-checked against primary company or investor sources where possible.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "sambanova-series-f-detail",
+          "title": "SambaNova Series F — $1B First Close, $11B Valuation",
+          "source": "General Atlantic",
+          "date": "2026-07-08",
+          "primary_url": "https://www.generalatlantic.com/media-article/sambanova-completes-first-close-of-1-billion-financing-at-11-billion-valuation/",
+          "verified": true,
+          "verified_at": "2026-07-12T19:30:00Z",
+          "summary": "See Top Picks for full detail. SambaNova's Series F first close at an $11B valuation came less than five months after a $350M Series E, with a second close expected to add more investors in coming weeks.",
+          "category": "Funding",
+          "evaluation": "MONITOR",
+          "score": { "total": 7.7, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 },
+          "tags": ["funding", "sambanova", "series-f", "inference"],
+          "recurrence": "new"
+        },
+        {
+          "id": "norm-ai-funding-detail",
+          "title": "Norm Ai — $120M Series C at $1.2B Valuation",
+          "source": "Reuters",
+          "date": "2026-07-07",
+          "primary_url": "https://www.reuters.com/technology/legal-ai-startup-norm-ai-hits-12-billion-valuation-after-120-million-funding-2026-07-07/",
+          "verified": true,
+          "verified_at": "2026-07-12T19:35:00Z",
+          "summary": "See YC and Notable Startups section for full detail. Khosla Ventures-led round takes Norm Ai to unicorn status with over $260M raised since founding in 2023.",
+          "category": "Funding",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.3, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 },
+          "tags": ["funding", "norm-ai", "series-c", "legal-tech"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "open_source",
+      "title": "Open Source and Dev Tool Releases",
+      "description": "Notable open-weight model or dev-tool releases this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "sim-open-source-agent-workspace",
+          "title": "Sim — Open-Source Agent Workflow Workspace Charts on Product Hunt",
+          "source": "Product Hunt / GitHub",
+          "date": "2026-07-10",
+          "primary_url": "https://www.producthunt.com/products/sim-studio",
+          "verified": true,
+          "verified_at": "2026-07-12T19:40:00Z",
+          "summary": "See Product Hunt section for full detail. Sim is an open-source visual workspace for building agentic workflows with 1,000+ integrations, ranked #2 on the July 10 daily leaderboard.",
+          "category": "Open Source",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.1, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "tags": ["open-source", "agents", "workflow-automation"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "to_watch",
+      "title": "To Watch",
+      "description": "Early-stage or unresolved stories with high potential signal but not yet actionable.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "grok-5-delayed",
+          "title": "Grok 5 Full Release Slips Toward Q3 2026",
+          "source": "Fello AI / multiple outlets",
+          "date": "2026-06-29",
+          "primary_url": "https://felloai.com/all-we-know-so-far-about-grok-5/",
+          "verified": true,
+          "verified_at": "2026-07-12T19:45:00Z",
+          "summary": "Elon Musk's original Q1 2026 and revised Q2 2026 targets for the full 6T-parameter Grok 5 have both passed with no release; the smaller V9 model shipped instead as Grok 4.5 on July 8. Full Grok 5 API access now looks unlikely before Q3 2026 — worth tracking given the pattern of repeated slippage on this specific model.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "score": { "total": 5.8, "signal": 1, "novelty": 1, "actionability": 0, "source_quality": 1 },
+          "tags": ["xai", "grok-5", "delay", "roadmap"],
+          "recurrence": "new"
+        },
+        {
+          "id": "eu-availability-gaps",
+          "title": "EU Availability Gaps Widen for Both Grok 4.5 and Prior GPT-5.6 Preview",
+          "source": "xAI / multiple outlets",
+          "date": "2026-07-08",
+          "primary_url": "https://x.ai/news/grok-4-5",
+          "verified": true,
+          "verified_at": "2026-07-12T19:50:00Z",
+          "summary": "Grok 4.5 launched without EU availability, targeting mid-July for the region — the second consecutive frontier-model release (following patterns seen with other labs) to ship US-first and delay EU rollout, likely tied to compliance review under the EU AI Act. Worth monitoring for any organization with EU operations planning model rollouts on a synchronized global timeline.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "score": { "total": 5.9, "signal": 1, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["eu-ai-act", "compliance", "xai", "regulatory"],
+          "recurrence": "new"
+        }
+      ]
+    }
+  ],
+  "index": [
+    { "title": "GPT-5.6 Reaches General Availability — Sol, Terra, Luna Tiers", "source": "OpenAI", "date": "2026-07-09", "primary_url": "https://openai.com/index/gpt-5-6/", "score": 9.0 },
+    { "title": "Grok 4.5 Launches at Aggressive Price-to-Performance", "source": "xAI", "date": "2026-07-08", "primary_url": "https://x.ai/news/grok-4-5", "score": 8.0 },
+    { "title": "Anthropic Launches Claude Reflect, a Usage-Pattern Dashboard", "source": "Anthropic", "date": "2026-07-09", "primary_url": "https://www.anthropic.com/news/reflect-with-claude", "score": 7.6 },
+    { "title": "Claude Enterprise Individual Usage Analytics Switches to On-by-Default July 11", "source": "Anthropic", "date": "2026-07-11", "primary_url": "https://www.anthropic.com/news", "score": 7.8 },
+    { "title": "Mistral's Robostral Navigate Brings Single-Camera Robot Navigation", "source": "Mistral AI", "date": "2026-07-08", "primary_url": "https://mistral.ai/news/robostral-navigate/", "score": 7.9 },
+    { "title": "SambaNova Closes $1B Series F at $11B Valuation, Lands JPMorgan Chase", "source": "General Atlantic", "date": "2026-07-08", "primary_url": "https://www.generalatlantic.com/media-article/sambanova-completes-first-close-of-1-billion-financing-at-11-billion-valuation/", "score": 7.7 },
+    { "title": "Claude Cowork Expands to iPhone and Web", "source": "Anthropic", "date": "2026-07-07", "primary_url": "https://www.macrumors.com/2026/07/07/claude-cowork-mobile-web/", "score": 7.4 },
+    { "title": "Google Expands Managed Agents in the Gemini API", "source": "Google DeepMind", "date": "2026-07-07", "primary_url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/", "score": 7.2 },
+    { "title": "Anthropic Adds Ben Bernanke to Long-Term Benefit Trust", "source": "Anthropic", "date": "2026-07-09", "primary_url": "https://finance.yahoo.com/technology/ai/articles/anthropic-adds-ben-bernanke-long-171321730.html", "score": 6.5 },
+    { "title": "AnySearch — Structured Search Built for AI Agents (Product Hunt #1)", "source": "Product Hunt", "date": "2026-07-08", "primary_url": "https://www.anysearch.com/", "score": 7.0 },
+    { "title": "ExploreYC — Open-Source Data Layer for YC and a16z Companies", "source": "Product Hunt", "date": "2026-07-08", "primary_url": "https://www.exploreyc.com/", "score": 6.6 },
+    { "title": "ChatCut — AI Video Editor in ChatGPT, Desktop, and Web", "source": "Product Hunt", "date": "2026-07-11", "primary_url": "https://chatcut.io/", "score": 6.3 },
+    { "title": "Sim — Open-Source Workspace for AI Agents and Workflows", "source": "Product Hunt", "date": "2026-07-10", "primary_url": "https://www.producthunt.com/products/sim-studio", "score": 6.1 },
+    { "title": "PlugThis — Build Chrome Extensions by Chatting with AI", "source": "Product Hunt", "date": "2026-07-10", "primary_url": "https://www.producthunt.com/products/plugthis", "score": 5.4 },
+    { "title": "Norm Ai Raises $120M Series C, Hits $1.2B Valuation", "source": "Reuters", "date": "2026-07-07", "primary_url": "https://www.reuters.com/technology/legal-ai-startup-norm-ai-hits-12-billion-valuation-after-120-million-funding-2026-07-07/", "score": 7.3 },
+    { "title": "YC Summer 2026 Batch in Session, ~60% AI-Focused", "source": "Y Combinator", "date": "2026-07-06", "primary_url": "https://theagenttimes.com/agents/article/y-combinator-launches-summer-2026-batch-as-ai-agent-startups-42f15662", "score": 5.6 },
+    { "title": "Microsoft 365 Copilot Ships 40+ Features Including Federated Connectors GA", "source": "Microsoft", "date": "2026-07-08", "primary_url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes", "score": 7.6 },
+    { "title": "AWS Bedrock Adds Grok and Expands Model Choice for Regulated Workloads", "source": "AWS", "date": "2026-07-09", "primary_url": "https://aws.amazon.com/blogs/machine-learning/", "score": 6.4 },
+    { "title": "SambaNova Series F — $1B First Close, $11B Valuation", "source": "General Atlantic", "date": "2026-07-08", "primary_url": "https://www.generalatlantic.com/media-article/sambanova-completes-first-close-of-1-billion-financing-at-11-billion-valuation/", "score": 7.7 },
+    { "title": "Norm Ai — $120M Series C at $1.2B Valuation", "source": "Reuters", "date": "2026-07-07", "primary_url": "https://www.reuters.com/technology/legal-ai-startup-norm-ai-hits-12-billion-valuation-after-120-million-funding-2026-07-07/", "score": 7.3 },
+    { "title": "Sim — Open-Source Agent Workflow Workspace Charts on Product Hunt", "source": "Product Hunt", "date": "2026-07-10", "primary_url": "https://www.producthunt.com/products/sim-studio", "score": 6.1 },
+    { "title": "Grok 5 Full Release Slips Toward Q3 2026", "source": "Fello AI", "date": "2026-06-29", "primary_url": "https://felloai.com/all-we-know-so-far-about-grok-5/", "score": 5.8 },
+    { "title": "EU Availability Gaps Widen for Both Grok 4.5 and Prior GPT-5.6 Preview", "source": "xAI", "date": "2026-07-08", "primary_url": "https://x.ai/news/grok-4-5", "score": 5.9 },
+    { "title": "Robostral Navigate model card and governance details", "source": "Mistral AI", "date": "2026-07-08", "primary_url": "https://legal.mistral.ai/ai-governance/models/robostral-navigate", "score": 7.9 },
+    { "title": "Claude Enterprise spend controls deadline analysis", "source": "Beri.net", "date": "2026-07-06", "primary_url": "https://www.beri.net/article/claude-enterprise-spend-controls-configure-2026", "score": 7.8 }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Exact list of new third-party models added to AWS Bedrock this week (beyond general model-choice expansion).",
+      "reason": "Multiple secondary sources reference ongoing Bedrock model additions but the live AWS ML blog did not return a single dated post enumerating a specific July 6-12 model list at fetch time. Item retained at MONITOR level with reduced actionability score rather than removed, since the broader trend is well-corroborated.",
+      "attempted_url": "https://aws.amazon.com/blogs/machine-learning/"
+    },
+    {
+      "claim": "\"Grok 4.5 performs at Claude Opus-class levels\" as an objective, independently verified benchmark result.",
+      "reason": "This is xAI's own marketing claim, repeated by several secondary outlets (Gigazine, Let's Data Science) without independent benchmark confirmation at fetch time. Reported as a vendor claim, not an established fact.",
+      "attempted_url": "https://x.ai/news/grok-4-5"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "AWS ML blog and AWS What's New feed with a more targeted weekly query, since general fetches of the blog index page do not reliably surface dated single-week posts",
+      "xAI and Mistral's own X/Twitter accounts as a supplementary same-day confirmation source, since both labs post launch announcements there before or alongside their blog posts"
+    ],
+    "sources_to_drop": [
+      "Generic Product Hunt daily leaderboard pages beyond the top 3-5 entries, which increasingly surface non-AI or marginally-AI products (Chrome extension builders, business card apps) with limited enterprise relevance"
+    ],
+    "topics_to_add": [
+      "EU AI Act compliance delays as a recurring cross-lab pattern (now seen with both GPT-5.6 cyber-safeguard rollout and Grok 4.5 EU delay) — worth a dedicated recurring watch item",
+      "Physical AI / robotics foundation models (Mistral's entry this week) as a new recurring category given direct relevance to industrial and warehouse automation"
+    ],
+    "topics_to_drop": [
+      "YC batch-level coverage absent specific company launches — S26 batch composition stats are now stable week-to-week with no new information; drop to a single index line unless a specific company launch surfaces"
+    ],
+    "notes": "This week's genuinely new material is dominated by frontier-model status changes (GPT-5.6 GA, Grok 4.5 GA) rather than incremental feature launches, plus one significant new category (Mistral's physical AI entry). Enterprise/cloud coverage was comparatively thin this week — Microsoft's major Cowork GA news fell just outside the window (June 16), and AWS/GCP did not publish a single clear dated weekly digest, which should be flagged to the enterprise_ai research source list for next cycle."
+  }
+}

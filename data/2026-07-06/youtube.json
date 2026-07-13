@@ -1,0 +1,524 @@
+{
+  "tab_id": "youtube",
+  "tab_name": "YouTube",
+  "subtitle": "Video Intelligence",
+  "icon": "Video",
+  "min_items": 12,
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 1.0,
+    "items_total": 15,
+    "items_new": 15,
+    "items_returning": 0
+  },
+  "executive_summary": [
+    {
+      "headline": "OpenAI shipped its most consequential product change of the year in one week: GPT-5.6 (Sol, Terra, Luna) went public July 9 after a government-mandated customer-by-customer preview, and Codex was folded into a single ChatGPT desktop app alongside a new agent called ChatGPT Work",
+      "body": "OpenAI's own launch video confirms the merged app runs Chat, Codex, and Work from one interface, powered by GPT-5.6 (youtube.com/watch?v=Wq45rvPGNHs). Independent testers converged fast: Claire Vo's How I AI benchmark found Sol beat Claude Fable 5 on a weighted index across PRDs, prototypes, and agentic-voice tasks (youtube.com/watch?v=gAWbvEwUoiI), while AICodeKing's KingBench 3 scored Sol at 78.6% versus Terra's 62.9% and Luna's 44.3%, still behind Fable 5 overall but closing the gap at roughly a third of the price (youtube.com/watch?v=xDXX2M5DrO0). For a public-company AI team, the practical read is that OpenAI now has a three-tier pricing ladder (Sol/Terra/Luna) that mirrors Anthropic's Opus/Fable/Sonnet structure, and the two labs are now feature-matched on agent orchestration, computer use, and enterprise governance controls in the same week.",
+      "primary_url": "https://www.youtube.com/watch?v=Wq45rvPGNHs"
+    },
+    {
+      "headline": "Reaction to the Codex-into-ChatGPT merger split sharply along one axis: convenience for casual users versus lost precision for engineering teams that had built workflows around a dedicated Codex surface",
+      "body": "Theo (t3.gg) framed the change as the end of Codex as a distinct product: 'Codex is gone and has been renamed to ChatGPT Codex and ChatGPT Work under a single unified app' (youtube.com/watch?v=zl_Z5TNJB3U, sourced from openai.com/chatgpt-work/). Riley Brown took the opposite framing, arguing the merger plus GPT-5.6 gives 'nearly a billion people access to an AI that can actually do work' and pushes every company toward agent-native software design (youtube.com/watch?v=Fv0XfyLT3xU). AI LABS ran Sol against Fable 5 inside Codex for four days on production software and found Sol consumed only 48% of their Codex usage limit versus 87% for Claude Code on the same workload, but recommends keeping it on a tight leash: branch and commit before granting write access, and skip Ultra mode unless the task truly needs multi-agent split-work (youtube.com/watch?v=STczJBYJf7w). The split is a genuine signal, not just content-creator disagreement: any team that standardized internal tooling on the old Codex CLI/app boundary needs to re-map that workflow before the old surface disappears entirely.",
+      "primary_url": "https://www.youtube.com/watch?v=zl_Z5TNJB3U"
+    },
+    {
+      "headline": "OpenAI also shipped GPT-Live, a full-duplex voice model, the same week, extending its 2026 pattern of bundling a model launch with a new interaction surface rather than shipping model and product separately",
+      "body": "OpenAI's official demo (youtube.com/watch?v=EAN5Cj347PY) shows GPT-Live handling interruptions and back-and-forth turn-taking without the usual push-to-talk lag. Independent stress-testing from Jason Fleagle ran the model through barge-in tests, live translation, and noisy environments, concluding it survives real conversation rather than just sounding human in a demo, with clear business use cases for field teams and support operations (youtube.com/watch?v=1cDm_5etZGU). Combined with ChatGPT Work and the Codex merger, this is the third distinct product surface OpenAI has shipped in a single week alongside one model family, a release cadence that itself carries operational risk: any enterprise IT function tracking new attack surface or acceptable-use policy updates now has three new interaction modes to evaluate at once rather than one.",
+      "primary_url": "https://www.youtube.com/watch?v=EAN5Cj347PY"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "matthew-berman-gpt56-sol-launch-review",
+      "title": "GPT-5.6 SOL is HERE",
+      "source": "Matthew Berman",
+      "author": "Matthew Berman",
+      "date": "2026-07-09",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=roGmNXASYOM",
+      "summary": "A hands-on first look at GPT-5.6's flagship tier the day of public launch, testing Sol's browser and computer-use capability directly against the prior GPT-5.5 baseline and against Claude Fable 5 on identical tasks. Berman's assessment is that the three-tier Sol/Terra/Luna structure is a deliberate pricing response to Anthropic's Opus/Fable/Sonnet ladder, not a one-off model refresh.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-07-12T18:00:00Z",
+      "recurrence": "new",
+      "tags": ["GPT-5.6", "Sol", "Terra", "Luna", "OpenAI", "model launch", "computer use"],
+      "category": "Model Analysis / Launch Review",
+      "key_takeaways": [
+        "The Sol/Terra/Luna three-tier structure is a direct pricing and capability response to Anthropic's Opus/Fable/Sonnet ladder; any procurement comparison between OpenAI and Anthropic now needs to map tier-to-tier rather than treating either lineup as a single flagship price point.",
+        "Sol's computer-use and browser-automation behavior is now close enough to Fable 5's that model choice inside an agent pipeline should be driven by task-specific benchmarks, not brand default.",
+        "Because GPT-5.6 launched publicly only after a government-mandated customer-by-customer preview period, enterprise adoption timelines for frontier models should now build in a compliance-review buffer as a standing assumption, not an exception."
+      ],
+      "suggested_actions": [
+        "Map current Anthropic model-tier usage (Opus/Fable/Sonnet) to the equivalent OpenAI tier (Sol/Terra/Luna) and re-run cost comparisons using representative internal workloads rather than published list pricing.",
+        "Pilot Sol specifically on a bounded computer-use task (e.g., internal dashboard testing) in a non-production sandbox before considering it for any workflow currently running Fable 5 or Opus 4.8.",
+        "Add a standing compliance-review checkpoint to the internal model-evaluation process for any future frontier launch, given two consecutive OpenAI/Anthropic releases have now shipped only after government sign-off."
+      ]
+    },
+    {
+      "id": "how-i-ai-claire-vo-gpt56-sol-benchmark",
+      "title": "GPT-5.6 Sol: Better AND cheaper than Fable",
+      "source": "How I AI",
+      "author": "Claire Vo",
+      "date": "2026-07-09",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=gAWbvEwUoiI",
+      "summary": "A rigorous product-management-oriented benchmark (the 'Claire Weighted Index': 70% qualitative product judgment, 30% Terminal Bench 2.1) that runs GPT-5.6 Sol, Terra, Luna, Claude Fable 5, and Sonnet 5 across PRDs, prototypes, wireframes, debugging, and agentic voice. Sol won by a meaningful margin overall, though Sonnet 5 remained the reviewer's preferred model for agentic voice specifically, and Fable 5's 'pedantry' made it harder to collaborate with on ambiguous product-spec tasks where Sol pushed through.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-07-12T18:00:00Z",
+      "recurrence": "new",
+      "tags": ["GPT-5.6", "Sol", "Fable 5", "Sonnet 5", "benchmark", "PRD", "product management"],
+      "category": "Model Analysis / Cost Benchmarking",
+      "key_takeaways": [
+        "No single model won every task category: Sol led on PRDs and prototypes, Sonnet 5 remained the preferred choice for agentic voice work, meaning a single-model default policy leaves measurable quality on the table for teams running mixed workloads.",
+        "Fable 5's tendency toward precision and pedantry on ambiguous specs is a concrete, task-specific weakness, not a general capability gap; teams using Fable 5 for early-stage product definition work should test whether a less rigid model produces more usable first drafts.",
+        "The benchmark's public weighting methodology (70% qualitative judgment, 30% automated Terminal Bench score) is a reusable pattern for any team that wants a defensible, repeatable model-selection process rather than ad hoc anecdotal testing."
+      ],
+      "suggested_actions": [
+        "Adopt a weighted, multi-task benchmark (qualitative judgment plus an automated coding benchmark) before standardizing on a single default model for a given function, rather than relying on a single overall leaderboard score.",
+        "Test Sol specifically for early-stage product-definition and prototyping tasks where Fable 5's precision has previously produced friction, using a real internal PRD as the test case.",
+        "Keep Sonnet 5 in the evaluation set for agentic-voice or conversational-agent use cases even after adopting Sol elsewhere; this benchmark found no single model dominant across all task types."
+      ]
+    },
+    {
+      "id": "ai-labs-gpt56-sol-seven-rules-codex",
+      "title": "You're Using GPT 5.6 Sol Wrong (7 Rules)",
+      "source": "AI LABS",
+      "author": "AI LABS",
+      "date": "2026-07-12",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=STczJBYJf7w",
+      "summary": "A software company's four-day production test of GPT-5.6 Sol against Claude Fable 5 inside Codex, running both models on their own live products rather than synthetic benchmarks. Sol used 48% of the team's Codex usage limit versus 87% used by Claude Code on comparable work, and OpenAI's own prompt-restructuring guidance produced 10-15% better results with 41-66% fewer tokens once redundant instructions were removed.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-07-12T18:00:00Z",
+      "recurrence": "new",
+      "tags": ["GPT-5.6", "Sol", "Codex", "Fable 5", "prompt engineering", "production testing", "token efficiency"],
+      "category": "Tutorial / Production Testing",
+      "key_takeaways": [
+        "Sol's token efficiency advantage is large enough to change usage-limit math directly: the reviewer's team burned 48% of their Codex allocation on Sol versus 87% for Claude Code running comparable production work, a difference that affects real subscription-tier planning, not just per-token pricing.",
+        "Prompt restructuring matters more with Sol than with prior models: removing instructions the model already follows by default (rather than adding more constraints) produced a measured 10-15% quality gain with 41-66% fewer tokens per OpenAI's own guidance, which the reviewer's team confirmed independently.",
+        "Ultra mode's multi-agent split-work only produced two to three points of benchmark gain in this team's testing, meaning it should be reserved for tasks that specifically need parallel decomposition rather than treated as a default 'more powerful' setting."
+      ],
+      "suggested_actions": [
+        "Set autonomous-agent approval to 'never' and sandbox scope to workspace-write (not full access) as the default posture for any Sol deployment that can take repeated actions without human checkpoints, per this team's four-day production test.",
+        "Audit existing Sol/Codex prompts for redundant instructions the model already follows by default; the reviewer's team found meaningful token savings simply by trimming prompts rather than rewriting them.",
+        "Reserve Ultra mode for tasks with a demonstrated need for parallel multi-agent decomposition; this team's real-workload testing found only marginal gains relative to the added token cost for typical tasks."
+      ]
+    },
+    {
+      "id": "openai-official-chatgpt-work-gpt56-launch",
+      "title": "Introducing ChatGPT Work, powered by Codex and GPT-5.6",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-07-09",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=Wq45rvPGNHs",
+      "summary": "OpenAI's own launch presentation for ChatGPT Work, a new agent built on GPT-5.6 that operates across a user's apps, files, and browser to convert a stated goal into finished deliverables (spreadsheets, presentations, reports, sites). The same session confirms Codex has been folded into a single unified ChatGPT desktop app rather than remaining a standalone surface.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-07-12T18:00:00Z",
+      "recurrence": "new",
+      "tags": ["ChatGPT Work", "GPT-5.6", "Codex", "OpenAI", "agent", "enterprise", "primary source"],
+      "category": "Product Launch / Primary Source",
+      "key_takeaways": [
+        "ChatGPT Work is OpenAI's direct competitive response to Anthropic's Claude Cowork, launched in the same window as GPT-5.6, confirming both labs now treat 'an agent that finishes deliverables across your apps' as a standard product category, not a differentiator.",
+        "The Codex-into-ChatGPT merger changes the enterprise integration surface: any internal tooling, documentation, or governance policy that referenced Codex as a standalone app needs to be re-pointed to the unified ChatGPT app before the old surface is fully retired.",
+        "OpenAI's rollout structure, staged first to Pro/Enterprise/Edu with a two-week admin-controlled preview window before default-on, is a concrete rollout pattern worth studying for any internal team planning its own phased agent deployment."
+      ],
+      "suggested_actions": [
+        "Inventory any internal workflow, script, or documentation that assumes a standalone Codex app or CLI surface, and confirm continuity under the unified ChatGPT Work interface before the transition completes.",
+        "Evaluate ChatGPT Work against Claude Cowork on the same representative internal task (e.g., a recurring reporting or data-consolidation workflow) rather than assuming feature parity from the launch materials alone.",
+        "Review OpenAI's staged, admin-controlled preview rollout (opt-out during a defined window, default-on afterward) as a template for how a regulated enterprise might phase in its own internal agent deployments."
+      ]
+    },
+    {
+      "id": "theo-t3gg-death-of-codex-chatgpt-merger",
+      "title": "The unexpected death of Codex",
+      "source": "Theo - t3.gg",
+      "author": "Theo",
+      "date": "2026-07-11",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=zl_Z5TNJB3U",
+      "summary": "A developer-focused teardown of OpenAI's decision to fold the standalone Codex app into the unified ChatGPT interface, sourced directly from OpenAI's own announcement and posts. Theo argues this removes a purpose-built engineering surface in favor of a consumer-facing default, a meaningful loss for teams that had built workflows specifically around the old Codex boundary, even as it lowers the barrier to entry for non-engineers.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-07-12T18:00:00Z",
+      "recurrence": "new",
+      "tags": ["Codex", "ChatGPT Work", "GPT-5.6", "developer tools", "product strategy"],
+      "category": "Developer Analysis / Product Strategy",
+      "key_takeaways": [
+        "The Codex-to-ChatGPT merger is a genuine product-strategy inflection, not a rebrand: OpenAI is explicitly trading a dedicated engineering surface for a single consumer-facing app, which changes how engineering teams should expect to interact with the tool going forward.",
+        "Any internal documentation, CI integration, or team runbook that assumes a standalone Codex CLI or desktop app needs review now, since the underlying product boundary that documentation assumed no longer exists as a separate surface.",
+        "The move mirrors a broader 2026 pattern (also visible in Anthropic's Claude Cowork rollout) of frontier labs converging chat and agentic-coding interfaces into one product, suggesting this consolidation is a category-wide trend rather than an OpenAI-specific decision."
+      ],
+      "suggested_actions": [
+        "Audit internal engineering workflows, CI hooks, and documentation for hard dependencies on the standalone Codex app or CLI boundary, and update before the legacy surface is fully deprecated.",
+        "Track whether Anthropic makes an equivalent consolidation move with Claude Code and Cowork; if the pattern repeats, treat 'unified chat-plus-agent interface' as the new baseline expectation when evaluating any frontier-lab product roadmap.",
+        "Re-evaluate any team policy that routed engineers to a dedicated Codex-only license or seat, since the merged app changes what a single seat now includes."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "tool_updates",
+      "title": "Tool & Model Updates",
+      "description": "Major launches and capability changes covered on YouTube this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "nerd-snipe-gpt56-sol-early-test",
+          "title": "We Tested GPT 5.6 Sol Early",
+          "source": "Nerd Snipe",
+          "author": "Nerd Snipe",
+          "date": "2026-07-09",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=sQ07OcRzMqo",
+          "summary": "A production-engineering deep dive that reports spending six figures in tokens testing Sol against Fable 5, documenting a code-quality gap, why the hosts moved their agents to Linux boxes, and a Codex-versus-Claude-Code subagent UX gap the hosts describe as now larger than the underlying model gap.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-07-12T18:00:00Z",
+          "recurrence": "new",
+          "tags": ["GPT-5.6", "Sol", "Fable 5", "subagents", "infrastructure"],
+          "category": "Model Comparison / Infrastructure"
+        },
+        {
+          "id": "aicodeking-gpt56-kingbench3-results",
+          "title": "GPT-5.6 SOL,TERRA,LUNA (Fully Tested): I GOT EARLY ACCESS & Here's my thoughts.",
+          "source": "AICodeKing",
+          "author": "AICodeKing",
+          "date": "2026-07-09",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=xDXX2M5DrO0",
+          "summary": "A structured benchmark run (KingBench 3) scoring Sol at 78.57%, Terra at 62.9%, and Luna at 44.3%, with Sol and Terra hitting perfect scores on a hard math task and all three models scoring perfectly on a long-horizon agentic fine-tuning task. Fable 5 still leads overall on the same benchmark, but Sol closes much of the gap at roughly a third of the price ($5/$30 per million tokens versus Fable's published rates).",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-07-12T18:00:00Z",
+          "recurrence": "new",
+          "tags": ["GPT-5.6", "Sol", "Terra", "Luna", "benchmark", "pricing"],
+          "category": "Model Comparison / Benchmarking"
+        },
+        {
+          "id": "ai-advantage-openai-rebuilt-chatgpt",
+          "title": "OpenAI Just Rebuilt ChatGPT",
+          "source": "The AI Advantage",
+          "author": "Igor Pogany",
+          "date": "2026-07-10",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=gRH1dv9VGN4",
+          "summary": "A roundup covering the full scope of OpenAI's week: the public release of GPT-5.6, the ChatGPT Work app merging Codex and ChatGPT, a new voice mode (GPT-Live), and improvements to speech-to-text dictation, framed against Anthropic's concurrent Claude Cowork web/mobile expansion.",
+          "score": {
+            "total": 5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-07-12T18:00:00Z",
+          "recurrence": "new",
+          "tags": ["GPT-5.6", "ChatGPT Work", "GPT-Live", "launch roundup"],
+          "category": "Launch Roundup"
+        },
+        {
+          "id": "openai-official-gpt-live-voice-demo",
+          "title": "This is the new ChatGPT Voice, powered by GPT-Live",
+          "source": "OpenAI",
+          "author": "OpenAI",
+          "date": "2026-07-08",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=EAN5Cj347PY",
+          "summary": "OpenAI's own demo of GPT-Live, a full-duplex voice model that listens and speaks simultaneously, powering the new ChatGPT Voice experience across paid (GPT-Live-1) and free (GPT-Live-1 mini) tiers.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-07-12T18:00:00Z",
+          "recurrence": "new",
+          "tags": ["GPT-Live", "voice AI", "ChatGPT Voice", "OpenAI", "primary source"],
+          "category": "Product Launch / Primary Source"
+        },
+        {
+          "id": "worldofai-gpt56-full-benchmark-review",
+          "title": "GPT-5.6 IS HERE! BEST AI Model Ever? Beats Fable, Faster, & Cheaper! (Fully Tested)",
+          "source": "WorldofAI",
+          "author": "WorldofAI",
+          "date": "2026-07-10",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=FU0cl9_3DUQ",
+          "summary": "A multi-model benchmark run using the creator's own testing tool, comparing GPT-5.6 against Claude Fable 5, Grok 4.5, and GLM 5.2 across coding, frontend generation, agentic workflows, and 3D web app tasks, plus a walkthrough of the new Ultra Mode setting.",
+          "score": {
+            "total": 5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-07-12T18:00:00Z",
+          "recurrence": "new",
+          "tags": ["GPT-5.6", "Fable 5", "Grok 4.5", "GLM 5.2", "benchmark"],
+          "category": "Model Comparison"
+        }
+      ]
+    },
+    {
+      "section_id": "tutorials",
+      "title": "Tutorials & How-Tos",
+      "description": "How-tos worth replicating this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "skill-leap-ai-chatgpt-work-prompts",
+          "title": "ChatGPT Work Just Changed Everything (5 Prompts to Try First)",
+          "source": "Skill Leap AI",
+          "author": "Skill Leap AI",
+          "date": "2026-07-10",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=TUu5SuFcf44",
+          "summary": "A step-by-step walkthrough of ChatGPT Work covering data cleaning, dashboard creation, trip planning, presentation building, and daily command-center setup, with explicit guidance on when to route a task to Sol, Terra, or Luna based on complexity and turnaround needs.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-07-12T18:00:00Z",
+          "recurrence": "new",
+          "tags": ["ChatGPT Work", "GPT-5.6", "tutorial", "model selection"],
+          "category": "Tutorial / Model Selection Guide",
+          "key_takeaways": [
+            "The demonstrated model-routing logic (Sol for complex/high-value tasks, Terra for balanced everyday work, Luna for fast/cheap turnaround) is a directly reusable framework for any team standardizing ChatGPT usage guidance across a workforce, mirroring the same pattern already seen with Claude's Opus/Fable/Sonnet tiers.",
+            "ChatGPT Work's ability to operate on local files and folders via the desktop app (not just cloud-hosted content) is a relevant capability for any team evaluating it against Claude Cowork's file-handling model."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases & Real-World Demos",
+      "description": "Demos of agents and automation in real workflows this week",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "riley-brown-openai-merged-chatgpt-codex",
+          "title": "OpenAI Just Merged ChatGPT and Codex. This Changes Everything.",
+          "source": "Riley Brown",
+          "author": "Riley Brown",
+          "date": "2026-07-12",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=Fv0XfyLT3xU",
+          "summary": "A workflow-focused walkthrough (with guest Ras Mic) of the merged ChatGPT/Codex app covering computer use, agent loops, multi-threaded task management, and a new 'building block economy' pattern for composing reusable agent tools, framed around the argument that every company should now be designing software to be agent-native rather than human-first.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-07-12T18:00:00Z",
+          "recurrence": "new",
+          "tags": ["ChatGPT Work", "Codex", "GPT-5.6", "agent loops", "workflow"],
+          "category": "Workflow Adaptation",
+          "enterprise_translation": "The consumer signal is a solo creator manually wiring together agent loops, multi-threaded tasks, and reusable 'building block' tools inside a single consumer app. The enterprise principle is composable agent tooling: rather than one monolithic agent doing everything, a regulated organization can define a small library of vetted, reusable internal tools (data-lookup, formatting, approval-routing) that any internally-hosted agent can call, giving the same reusability benefit without exposing proprietary data to a consumer-facing tool ecosystem."
+        }
+      ]
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Frontier labs are converging on a single unified chat-plus-agent interface rather than keeping chat, coding-agent, and voice products as separate surfaces",
+      "evidence": "OpenAI folded Codex into the main ChatGPT desktop app the same week it launched ChatGPT Work and GPT-Live voice (youtube.com/watch?v=Wq45rvPGNHs, youtube.com/watch?v=EAN5Cj347PY), while Theo's analysis (youtube.com/watch?v=zl_Z5TNJB3U) and The AI Advantage's roundup (youtube.com/watch?v=gRH1dv9VGN4) both note this directly parallels Anthropic's concurrent Claude Cowork web/mobile expansion that consolidates Chat and Cowork into one shared home.",
+      "what_to_watch": "Whether Anthropic makes an equivalent move to fold Claude Code into a single consumer-facing surface alongside Cowork and Chat; if both major labs complete this consolidation within the same quarter, it confirms unified chat-plus-agent interfaces are now the standard product architecture rather than an OpenAI-specific bet."
+    },
+    {
+      "pattern": "Independent benchmarks consistently place GPT-5.6 Sol behind Claude Fable 5 on raw capability but ahead on cost-efficiency, reproducing the same price-versus-capability tradeoff pattern seen in the Sonnet 5 cycle two weeks earlier",
+      "evidence": "AICodeKing's KingBench 3 has Fable 5 leading overall with Sol closing the gap at roughly a third of the price (youtube.com/watch?v=xDXX2M5DrO0); AI LABS' four-day production test found Sol used 48% of a Codex usage allocation versus 87% for Claude Code on comparable work (youtube.com/watch?v=STczJBYJf7w); How I AI's benchmark found Sol winning on PRDs and prototypes specifically while Sonnet 5 remained preferred for agentic voice (youtube.com/watch?v=gAWbvEwUoiI).",
+      "what_to_watch": "Whether Anthropic responds with a Fable-tier price cut or a new mid-tier model, given that three independent sources this week found GPT-5.6's main advantage is cost-efficiency rather than raw capability superiority."
+    }
+  ],
+  "index": [
+    {
+      "title": "GPT-5.6 SOL is HERE",
+      "source": "Matthew Berman",
+      "author": "Matthew Berman",
+      "date": "2026-07-09",
+      "primary_url": "https://www.youtube.com/watch?v=roGmNXASYOM",
+      "score": 8
+    },
+    {
+      "title": "GPT-5.6 Sol: Better AND cheaper than Fable",
+      "source": "How I AI",
+      "author": "Claire Vo",
+      "date": "2026-07-09",
+      "primary_url": "https://www.youtube.com/watch?v=gAWbvEwUoiI",
+      "score": 8
+    },
+    {
+      "title": "You're Using GPT 5.6 Sol Wrong (7 Rules)",
+      "source": "AI LABS",
+      "author": "AI LABS",
+      "date": "2026-07-12",
+      "primary_url": "https://www.youtube.com/watch?v=STczJBYJf7w",
+      "score": 8
+    },
+    {
+      "title": "Introducing ChatGPT Work, powered by Codex and GPT-5.6",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-07-09",
+      "primary_url": "https://www.youtube.com/watch?v=Wq45rvPGNHs",
+      "score": 9
+    },
+    {
+      "title": "The unexpected death of Codex",
+      "source": "Theo - t3.gg",
+      "author": "Theo",
+      "date": "2026-07-11",
+      "primary_url": "https://www.youtube.com/watch?v=zl_Z5TNJB3U",
+      "score": 8
+    },
+    {
+      "title": "We Tested GPT 5.6 Sol Early",
+      "source": "Nerd Snipe",
+      "author": "Nerd Snipe",
+      "date": "2026-07-09",
+      "primary_url": "https://www.youtube.com/watch?v=sQ07OcRzMqo",
+      "score": 6
+    },
+    {
+      "title": "GPT-5.6 SOL,TERRA,LUNA (Fully Tested): I GOT EARLY ACCESS & Here's my thoughts.",
+      "source": "AICodeKing",
+      "author": "AICodeKing",
+      "date": "2026-07-09",
+      "primary_url": "https://www.youtube.com/watch?v=xDXX2M5DrO0",
+      "score": 6
+    },
+    {
+      "title": "OpenAI Just Rebuilt ChatGPT",
+      "source": "The AI Advantage",
+      "author": "Igor Pogany",
+      "date": "2026-07-10",
+      "primary_url": "https://www.youtube.com/watch?v=gRH1dv9VGN4",
+      "score": 5
+    },
+    {
+      "title": "This is the new ChatGPT Voice, powered by GPT-Live",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-07-08",
+      "primary_url": "https://www.youtube.com/watch?v=EAN5Cj347PY",
+      "score": 6
+    },
+    {
+      "title": "GPT-5.6 IS HERE! BEST AI Model Ever? Beats Fable, Faster, & Cheaper! (Fully Tested)",
+      "source": "WorldofAI",
+      "author": "WorldofAI",
+      "date": "2026-07-10",
+      "primary_url": "https://www.youtube.com/watch?v=FU0cl9_3DUQ",
+      "score": 5
+    },
+    {
+      "title": "ChatGPT Work Just Changed Everything (5 Prompts to Try First)",
+      "source": "Skill Leap AI",
+      "author": "Skill Leap AI",
+      "date": "2026-07-10",
+      "primary_url": "https://www.youtube.com/watch?v=TUu5SuFcf44",
+      "score": 6
+    },
+    {
+      "title": "OpenAI Just Merged ChatGPT and Codex. This Changes Everything.",
+      "source": "Riley Brown",
+      "author": "Riley Brown",
+      "date": "2026-07-12",
+      "primary_url": "https://www.youtube.com/watch?v=Fv0XfyLT3xU",
+      "score": 6
+    },
+    {
+      "title": "I Gave GPT-5.6 Sol and Claude Fable 5 The SAME 4 Prompts (Not Close)",
+      "source": "AI Edge",
+      "author": "AI Edge",
+      "date": "2026-07-11",
+      "primary_url": "https://www.youtube.com/watch?v=aI58Ji_s_cg",
+      "score": 5
+    },
+    {
+      "title": "I Tested ChatGPT GPT-Live Voice So You Don't Have To (ChatGPT New Voice Mode)",
+      "source": "Jason Fleagle | AI Tutorials | AI News",
+      "author": "Jason Fleagle",
+      "date": "2026-07-09",
+      "primary_url": "https://www.youtube.com/watch?v=1cDm_5etZGU",
+      "score": 5
+    },
+    {
+      "title": "GPT-5.6 Sol Explained: Why You Can't Actually Use It Yet",
+      "source": "BitBiasedAI",
+      "author": "BitBiasedAI",
+      "date": "2026-07-08",
+      "primary_url": "https://www.youtube.com/watch?v=eX_FUan-Zvo",
+      "score": 4
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "AI LABS — this week's four-day production test against real software (not synthetic benchmarks) was the most operationally useful item in the batch; worth adding to the regular sweep list.",
+      "How I AI (Claire Vo) — a rare product-management-specific benchmark methodology (PRDs, prototypes, wireframes) that fills a gap the existing sweep list doesn't cover well."
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Track the Codex-to-ChatGPT consolidation and any equivalent move by Anthropic (Claude Code into Cowork) as a standing theme — this is now a two-lab pattern, not an isolated OpenAI decision."
+    ],
+    "topics_to_drop": [],
+    "notes": "This week's coverage was dominated almost entirely by GPT-5.6/ChatGPT Work/GPT-Live, all launched July 8-9; no Anthropic, Google DeepMind, or open-source model news broke through as a comparably weighted independent story in the Tier 1/2 channel sweep this week. View counts were not exposed in the fetched YouTube watch-page content for any item in this batch and are therefore omitted per sourcing rules rather than estimated. All 15 items are net-new versus last week's index (no primary_url overlap with data/2026-06-29/youtube.json)."
+  }
+}

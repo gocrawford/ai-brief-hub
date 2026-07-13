@@ -1,0 +1,691 @@
+{
+  "tab_id": "research",
+  "tab_name": "Research & Regulation",
+  "subtitle": "Primary-Source Intelligence",
+  "icon": "FileText",
+  "min_items": 10,
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 0.83,
+    "items_total": 12,
+    "items_new": 10,
+    "items_returning": 2,
+    "empty_week_note": "No new AI-specific disclosure surfaced in industrial-sector peer filings this week."
+  },
+  "executive_summary": [
+    {
+      "headline": "OpenAI takes GPT-5.6 global after the US lifts export-style access restrictions — the Sol/Terra/Luna tier structure is the actionable part, not the benchmark wins.",
+      "body": "GA landed July 9 following a limited preview restricted to roughly 20 Commerce-Department-approved organizations. Three tiers (Sol $5/$30, Terra $2.50/$15, Luna $1/$6 per million tokens) let teams match capability to task cost instead of defaulting to the flagship. Cybersecurity is the real story: ExploitBench moved from 47.9% (GPT-5.5) to 73.5%, and OpenAI now requires hardware passkeys by September 1 for continued access to its most cyber-capable models — a concrete near-term action item for any team with API access provisioned under a shared account.",
+      "primary_url": "https://openai.com/index/gpt-5-6/"
+    },
+    {
+      "headline": "Two arXiv papers this week independently show that binary pass/fail red-teaming metrics hide real harm — both are directly usable for agent-deployment risk scoring.",
+      "body": "A severity-scale paper (arXiv:2607.07474) found a defense reporting a 0% attack-success rate while still allowing a cross-scope data leak, and proposes a 7-level ordinal harm scale as the fix. A separate multi-agent control paper (arXiv:2607.07368) found that per-agent monitoring catches proportionally fewer attackers as more agents coordinate — the 'fragmentation effect.' Neither is a lab press release; both ship code and are reproducible.",
+      "primary_url": "https://arxiv.org/abs/2607.07474"
+    },
+    {
+      "headline": "FTC published a Federal Register policy statement targeting undisclosed ideological steering in AI outputs as potential Section 5 deception — comment window closes July 31.",
+      "body": "The notice (Federal Register Vol. 91, No. 128, File No. P264200, dated July 7) frames AI providers that tune model outputs toward undisclosed viewpoints without disclosure as a potential unfair-or-deceptive-practice risk, and explicitly flags tension with Colorado's AI Act. This is a policy statement, not a rule — no enforcement action yet — but it signals where FTC scrutiny of model behavior is heading.",
+      "primary_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-07/pdf/2026-13628.pdf"
+    },
+    {
+      "headline": "The EU AI Act Digital Omnibus is still not in the Official Journal — now more overdue than it was last week, with no new legal effect.",
+      "body": "Council adoption (June 29) and Parliament passage (June 16) are both final, but three independent trackers checked this week — dated July 6, 8, and 9 — all confirm publication has not happened. The practical read for compliance planning is unchanged from last week: the original August 2, 2026 high-risk deadline remains the technically binding law until the Official Journal entry lands.",
+      "primary_url": "https://www.pinsentmasons.com/out-law/news/law-delaying-eu-high-risk-ai-rules-finalised"
+    },
+    {
+      "headline": "No new AI disclosure surfaced in industrial-sector peer SEC filings this week; Carlisle's peer cluster reports Q2 earnings starting late July.",
+      "body": "A targeted review of 8-K activity across public-company industrial issuers in the building-products space found nothing AI-specific filed July 6–July 12. Direct EDGAR full-text search queries were blocked by robots.txt during this review; findings rely on secondary aggregator monitoring instead. Late-July Q2 earnings calls are the next checkpoint where AI capex or capability commentary is likely to surface.",
+      "primary_url": "https://www.sec.gov/edgar/search/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "openai-gpt-5-6-global-ga-july9",
+      "title": "OpenAI Takes GPT-5.6 Global After US Lifts Access Restrictions — Three-Tier Pricing Replaces One-Size-Fits-All Flagship Deployment",
+      "subtitle": "Sol/Terra/Luna tiers at $5/$30, $2.50/$15, and $1/$6 per million tokens. Hardware passkey required by Sept 1, 2026 for continued access to the most cyber-capable tier.",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-07-09",
+      "primary_url": "https://openai.com/index/gpt-5-6/",
+      "secondary_urls": [
+        {
+          "label": "India Today: OpenAI announces global release of GPT-5.6 after US lifts restrictions",
+          "url": "https://www.indiatoday.in/amp/technology/news/story/openai-announces-global-release-of-gpt-56-models-after-us-lifts-restrictions-2943179-2026-07-08"
+        },
+        {
+          "label": "Build Fast with AI: AI news roundup, July 9, 2026",
+          "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-9-2026"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-12T20:00:00Z",
+      "summary": "GPT-5.6 moved from a preview restricted to roughly 20 Commerce-Department-approved organizations to global general availability on July 9, following the US lifting the access restrictions around July 8. The family ships in three tiers — Sol (flagship), Terra, and Luna — priced to let enterprises route work by capability need rather than defaulting to the top tier. Benchmark gains are real (Artificial Analysis Coding Agent Index v1.1 at 80, OSWorld 2.0 at 62.6%, BrowseComp at 90.4%) but the more consequential change is cybersecurity posture: ExploitBench success climbed from 47.9% under GPT-5.5 to 73.5%, paired with safeguards OpenAI says block roughly 10x more harmful activity attempts, a new Trusted Access for Cyber program, and a hardware-passkey requirement landing September 1, 2026 for continued access to the most cyber-capable models. OpenAI states the family does not cross its 'Critical' threshold in biology or cybersecurity, backed by roughly 700,000 A100e GPU-hours of red-teaming.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "tags": [
+        "OpenAI",
+        "GPT-5.6",
+        "model card",
+        "cybersecurity",
+        "export controls",
+        "pricing",
+        "tiered deployment"
+      ],
+      "category": "Model Cards",
+      "priority": "HIGH",
+      "recurrence": "new",
+      "enterprise_adaptation": "The implementation pattern: map current GPT-4o/5.x workloads to the tier that actually needs the capability — Luna or Terra for high-volume drafting, retrieval, and internal tooling; reserve Sol for coding-agent or high-stakes reasoning work where the Coding Agent Index and OSWorld gains matter. This is a direct cost-control lever, not just a capability upgrade. Regulated-environment caveat: if your organization's API access sits behind a shared service account, the September 1 hardware-passkey mandate for cyber-capable-tier access will break that account structure — confirm with IT security now whether current API key provisioning supports per-user hardware passkeys, since a shared-account workaround will likely fail compliance review once enforced. The 30-day experiment: run a cost/capability audit on your three highest-volume GPT-based workflows, route each to the lowest tier that holds accuracy within an acceptable margin on a 50-prompt held-out test set, and quantify the per-token savings before the next budget cycle."
+    },
+    {
+      "id": "arxiv-severity-scale-agentic-redteam-july8",
+      "title": "arXiv Paper Shows Binary Attack-Success Metrics Miss Real Harm — Proposes 7-Level Severity Scale After Finding a Defense With 0% Attack-Success Still Leaked Data",
+      "subtitle": "arXiv:2607.07474, submitted July 8, 2026. Tested on AgentDojo across 4 victim models and 2 defenses; LLM-judge panel reaches Krippendorff's alpha = 0.91 against a deterministic oracle.",
+      "source": "arXiv cs.CR / cs.AI",
+      "author": "Harry Owiredu-Ashley",
+      "date": "2026-07-08",
+      "primary_url": "https://arxiv.org/abs/2607.07474",
+      "verified": true,
+      "verified_at": "2026-07-12T20:00:00Z",
+      "summary": "The paper introduces an ordinal harm-severity scale (L0 through L6) for agentic red-teaming as a replacement for the binary attack-success-rate metric most tool-using-agent safety evaluations report today. Tested against the AgentDojo workspace benchmark suite across four victim models and two defenses, the authors found a case where a defense reported a 0% attack-success rate under the standard binary metric while still permitting a cross-scope data leak — a failure the binary metric structurally cannot surface. An LLM-judge panel used to apply the severity scale at scale reaches near-perfect agreement with a deterministic ground-truth oracle (Krippendorff's alpha = 0.91), and all code, prompts, and evaluation logs are released publicly, making the result independently reproducible.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "tags": [
+        "arXiv",
+        "AI safety",
+        "red-teaming",
+        "agentic AI",
+        "evaluation methodology",
+        "AgentDojo"
+      ],
+      "category": "Research",
+      "priority": "HIGH",
+      "recurrence": "new",
+      "enterprise_adaptation": "The implementation pattern: if any internal or vendor red-teaming report for an agentic tool cites only an attack-success rate, treat that number as insufficient evidence of safety — request or build a severity-graded breakdown before approving production deployment, since this paper demonstrates a real case where a 0%-success defense still leaked scoped data. Regulated-environment caveat: procurement and security-review checklists that currently gate agent deployment on a single pass/fail red-team score should be updated to require severity-level detail, particularly for agents with any access to customer or financial data where a 'contained' leak still carries disclosure obligations. The 30-day experiment: take your most recently red-teamed internal agent (or your vendor's most recent report), request the underlying per-incident severity breakdown rather than the summary attack-success number, and identify whether any 'blocked' incidents in that report would register above L2 on this paper's scale."
+    },
+    {
+      "id": "arxiv-multi-agent-fragmentation-effect-july8",
+      "title": "arXiv Paper: Coordinated Multi-Agent Attacks Defeat Per-Agent Monitoring — the 'Fragmentation Effect' Is a Direct Warning for Multi-Agent Enterprise Deployments",
+      "subtitle": "arXiv:2607.07368, submitted July 8, 2026. Introduces FakeLab, a synthetic AI-lab codebase (9 services, 86 benign tasks, 4 attack objectives); explicit planner raises attack completion up to sevenfold.",
+      "source": "arXiv cs.LG / cs.AI / cs.MA",
+      "author": "Oliver Makins, Orazio Angelini, Zohreh Shams, Mary Phuong",
+      "date": "2026-07-08",
+      "primary_url": "https://arxiv.org/abs/2607.07368",
+      "verified": true,
+      "verified_at": "2026-07-12T20:00:00Z",
+      "summary": "This is the first empirical study of multi-agent AI control, formalizing 'distributed attacks' where several coordinating agents jointly pursue a malicious goal that no single agent could accomplish alone. Using FakeLab, a synthetic AI-lab codebase built for the study, the authors find a 'fragmentation effect': as more agents coordinate on an attack, per-agent monitoring becomes systematically less likely to catch any individual attacker, and this is not explained by the ratio of benign to malicious code — it tracks model capability instead. An explicit planner role amplifies the effect further, raising attack-completion rates up to sevenfold. A stronger 'trusted' monitor cuts undetected success by more than an order of magnitude versus a weak monitor but remains imperfect. Submitted to NeurIPS; the authors are sharing FakeLab with safety researchers on request.",
+      "score": {
+        "total": 7.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "tags": [
+        "arXiv",
+        "multi-agent systems",
+        "AI control",
+        "AI safety",
+        "monitoring",
+        "NeurIPS"
+      ],
+      "category": "Research",
+      "priority": "HIGH",
+      "recurrence": "new",
+      "enterprise_adaptation": "The implementation pattern: any deployment running more than one autonomous agent against shared infrastructure or a shared codebase should not assume that per-agent monitoring coverage scales linearly — this paper's central finding is that it degrades as agent count and coordination increase. Architectures relying on independent per-agent guardrails as the sole control should add a cross-agent correlation layer (shared action logs reviewed jointly, not per-agent) before scaling from single-agent pilots to multi-agent production. Regulated-environment caveat: if your compliance sign-off for an agentic system was based on a single-agent red-team, that approval does not transfer once a second or third coordinating agent is added to the workflow — treat multi-agent expansion as requiring a fresh control review, not an incremental one. The 30-day experiment: inventory every production or pilot workflow currently running two or more agents against the same data store or codebase, and check whether monitoring/audit logging operates per-agent or across the full agent set; for any workflow with per-agent-only logging, prioritize adding a joint cross-agent audit view."
+    },
+    {
+      "id": "ftc-ai-accuracy-suppression-policy-statement-july7",
+      "title": "FTC Publishes Federal Register Policy Statement Targeting Undisclosed Ideological Steering in AI Outputs as Potential Section 5 Deception",
+      "subtitle": "Federal Register Vol. 91, No. 128, File No. P264200, published July 7, 2026. Public comment period closes July 31, 2026; explicitly notes tension with Colorado's AI Act.",
+      "source": "Federal Trade Commission / Federal Register",
+      "author": "Federal Trade Commission",
+      "date": "2026-07-07",
+      "primary_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-07/pdf/2026-13628.pdf",
+      "secondary_urls": [
+        {
+          "label": "FTC press release: FTC seeks public comment on policy statement addressing AI accuracy",
+          "url": "https://www.ftc.gov/news-events/news/press-releases/2026/07/ftc-seeks-public-comment-policy-statement-addressing-ai-accuracy"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-12T20:00:00Z",
+      "summary": "The FTC's Federal Register notice sets out a policy statement addressing what it calls the suppression of accuracy in AI systems — specifically, AI providers steering model outputs toward undisclosed ideological or political objectives without disclosing that steering to users. The Commission frames this as a potential unfair-or-deceptive-practice violation under Section 5 of the FTC Act, citing Executive Order 14365 as policy context. The notice explicitly acknowledges tension between this federal approach and Colorado's AI Act, which takes a different regulatory posture toward algorithmic bias and disclosure. This is a policy statement opened for public comment (closing July 31, 2026), not a final rule or enforcement action — it signals FTC intent and invites input rather than creating an immediate compliance obligation.",
+      "score": {
+        "total": 7.5,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "tags": [
+        "FTC",
+        "Section 5",
+        "AI accuracy",
+        "algorithmic transparency",
+        "Colorado AI Act",
+        "US regulation"
+      ],
+      "category": "Regulation — US",
+      "priority": "MEDIUM",
+      "recurrence": "new",
+      "enterprise_adaptation": "The implementation pattern: this is not yet a rule, but it previews the disclosure standard the FTC is likely to apply to any AI system your organization deploys that materially shapes outputs toward a viewpoint or business objective (recommendation engines, AI-assisted content moderation, internal AI-generated policy guidance) — start documenting what steering or weighting logic exists in any customer-facing AI tool now, before a rule requires it. Regulated-environment caveat: the explicitly flagged conflict with Colorado's AI Act means multi-state operators should not assume a single disclosure approach satisfies both regimes; legal should track how this policy statement and Colorado's law get reconciled rather than picking one standard unilaterally. The 30-day experiment: submit or have legal review a comment before the July 31 deadline if your organization operates any customer-facing generative AI tool, and separately, run an internal audit of one customer-facing AI feature to document any undisclosed output-steering logic (brand-safety filters, tone constraints, recommendation weighting) as a readiness exercise."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "papers",
+      "title": "Papers",
+      "description": "arXiv and lab papers with genuine practitioner traction — code released, reproducible, or under active discussion.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "arxiv-severity-scale-agentic-redteam-july8",
+          "title": "Beyond Attack-Success Rate: An Action-Graded Severity Scale for Tool-Using AI Agents",
+          "subtitle": "7-level ordinal harm scale (L0–L6); found a 0%-attack-success defense that still leaked scoped data.",
+          "source": "arXiv cs.CR / cs.AI",
+          "author": "Harry Owiredu-Ashley",
+          "date": "2026-07-08",
+          "primary_url": "https://arxiv.org/abs/2607.07474",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00Z",
+          "summary": "Proposes a graded harm-severity scale for agentic red-teaming to replace binary attack-success metrics; LLM-judge panel reaches Krippendorff's alpha = 0.91 versus a deterministic oracle. Code, prompts, and logs publicly released.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "arXiv",
+            "AI safety",
+            "red-teaming",
+            "evaluation methodology"
+          ],
+          "category": "Research",
+          "recurrence": "new"
+        },
+        {
+          "id": "arxiv-multi-agent-fragmentation-effect-july8",
+          "title": "Multi-Agent AI Control: Distributed Attacks Hamper Per-Instance Monitors",
+          "subtitle": "Introduces FakeLab; finds coordinated agents evade per-agent monitoring at a systematically higher rate.",
+          "source": "arXiv cs.LG / cs.AI / cs.MA",
+          "author": "Oliver Makins, Orazio Angelini, Zohreh Shams, Mary Phuong",
+          "date": "2026-07-08",
+          "primary_url": "https://arxiv.org/abs/2607.07368",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00Z",
+          "summary": "First empirical study of multi-agent AI control; documents a 'fragmentation effect' where per-agent monitoring coverage degrades as coordinating agent count rises, amplified up to sevenfold by an explicit planner role. Submitted to NeurIPS.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "arXiv",
+            "multi-agent systems",
+            "AI control",
+            "AI safety"
+          ],
+          "category": "Research",
+          "recurrence": "new"
+        },
+        {
+          "id": "arxiv-institutional-redteaming-deployment-rules-july8",
+          "title": "Institutional Red-Teaming: Deployment Rules, Not Just Models, Causally Shape Multi-Agent AI Safety",
+          "subtitle": "IABench-CA benchmark: 228 contexts, 5 rules, 7 model populations, 33,924 games.",
+          "source": "arXiv cs.AI / cs.MA",
+          "author": "Yujiao Chen",
+          "date": "2026-07-08",
+          "primary_url": "https://arxiv.org/abs/2607.07695",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00Z",
+          "summary": "Introduces an 'institutional red-teaming' methodology showing deployment rules causally shift mean fatality outcomes by 22–58 percentage points in multi-agent safety simulations; identity-salience manipulation drives targeted elimination of the most exploitable model population from 22% to 81% of games. Argues governance-layer design, not just model-layer alignment, determines multi-agent safety outcomes.",
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "arXiv",
+            "multi-agent systems",
+            "AI governance",
+            "AI safety",
+            "benchmark"
+          ],
+          "category": "Research",
+          "recurrence": "new"
+        },
+        {
+          "id": "arxiv-agentic-ai-governance-preliminary-assessment-july8",
+          "title": "Towards Agentic AI Governance: A Preliminary Assessment",
+          "subtitle": "Systematic literature review synthesizing agentic-AI governance priorities, mechanisms, and stakeholder roles.",
+          "source": "arXiv cs.CY / cs.AI",
+          "author": "Mubarak Raji, Masooda Bashir",
+          "date": "2026-07-08",
+          "primary_url": "https://arxiv.org/abs/2607.07612",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00Z",
+          "summary": "A systematic review of emerging literature on agentic AI governance, identifying what distinguishes agentic systems from traditional AI for governance purposes and synthesizing prevailing governance mechanisms and stakeholder roles. Positioned as groundwork for a future governance roadmap rather than a novel framework itself.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "tags": [
+            "arXiv",
+            "agentic AI",
+            "AI governance",
+            "literature review"
+          ],
+          "category": "Research",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "model_cards",
+      "title": "Model Cards",
+      "description": "New frontier model and system card analyses published this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "openai-gpt-5-6-global-ga-july9",
+          "title": "GPT-5.6 (Sol/Terra/Luna) Reaches Global General Availability",
+          "subtitle": "GA July 9, 2026, following a Commerce-Department-restricted preview. Three pricing tiers; ExploitBench up from 47.9% to 73.5%.",
+          "source": "OpenAI",
+          "author": "OpenAI",
+          "date": "2026-07-09",
+          "primary_url": "https://openai.com/index/gpt-5-6/",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00Z",
+          "summary": "GA launch of the three-tier GPT-5.6 family after US restrictions on the limited preview were lifted. New SOTA on Artificial Analysis Coding Agent Index v1.1, Terminal-Bench 2.1, OSWorld 2.0, and BrowseComp; hardware-passkey requirement lands September 1, 2026 for continued access to the most cyber-capable tier.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "OpenAI",
+            "GPT-5.6",
+            "model card",
+            "cybersecurity"
+          ],
+          "category": "Model Cards",
+          "recurrence": "new"
+        },
+        {
+          "id": "minimax-2-7-trillion-parameter-model-plan-july8",
+          "title": "MiniMax Plans 2.7 Trillion Parameter Open-Weight Model, Possibly the Largest Released to Date",
+          "subtitle": "Reuters reporting, sourced to a person with direct knowledge; MiniMax declined to comment. Expected release as early as Q3 2026.",
+          "source": "Reuters",
+          "author": "Reuters",
+          "date": "2026-07-08",
+          "primary_url": "https://www.reuters.com/world/asia-pacific/chinas-minimax-plans-launch-giant-27-trillion-parameter-model-2026-07-08/",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00Z",
+          "summary": "MiniMax Group is reportedly developing a 2.7 trillion parameter large language model using a Mixture-of-Experts architecture, which would be the largest open-weight model released by a Chinese firm and possibly globally. This is sourced reporting, not a confirmed lab announcement — MiniMax has not commented — so treat scale claims as provisional pending an official model card.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "tags": [
+            "MiniMax",
+            "open-weight",
+            "China",
+            "large language model"
+          ],
+          "category": "Model Cards",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_us",
+      "title": "US Regulation",
+      "description": "Federal and state AI regulatory activity this week.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "ftc-ai-accuracy-suppression-policy-statement-july7",
+          "title": "FTC Publishes Policy Statement on Suppression of Accuracy in AI Systems",
+          "subtitle": "Federal Register, July 7, 2026. Public comment closes July 31; flags tension with Colorado's AI Act.",
+          "source": "Federal Trade Commission / Federal Register",
+          "author": "Federal Trade Commission",
+          "date": "2026-07-07",
+          "primary_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-07/pdf/2026-13628.pdf",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00Z",
+          "summary": "Policy statement framing undisclosed ideological steering of AI outputs as potential Section 5 deception under the FTC Act. Not a final rule; public comment period runs through July 31, 2026.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "FTC",
+            "Section 5",
+            "AI accuracy",
+            "US regulation"
+          ],
+          "category": "Regulation — US",
+          "recurrence": "new"
+        },
+        {
+          "id": "state-ai-legislation-midyear-tally-july6",
+          "title": "State AI Legislation Midyear Tally: 109 Laws Enacted Across 29 States as of July 1, Trailing 2025's Pace",
+          "subtitle": "NYU Center on Technology Policy analysis. Comparable point last year: 121 laws across 39 states.",
+          "source": "Tech Policy Press",
+          "author": "Scott Babwah Brennen",
+          "date": "2026-07-06",
+          "primary_url": "https://techpolicy.press/where-state-ai-legislation-stands-half-way-into-2026",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00Z",
+          "summary": "As of July 1, 2026, US states have enacted 109 AI laws and 28 data center laws across 29 states, with 21 states not yet acting and 10 of those still in session. Both figures trail the same point in 2025 (121 AI laws, 39 states), suggesting a slower but still active state legislative pace for AI this year.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "tags": [
+            "state legislation",
+            "US regulation",
+            "AI law",
+            "policy tracking"
+          ],
+          "category": "Regulation — US",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_global",
+      "title": "EU & Global Regulation",
+      "description": "EU AI Act implementation milestones and other global regulatory developments.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "eu-digital-omnibus-oj-publication-still-pending-july6",
+          "title": "EU AI Act Digital Omnibus Still Not Published in the Official Journal — Now More Overdue Than Last Week",
+          "subtitle": "Confirmed still-pending status via three independent trackers dated July 6, 8, and 9, 2026.",
+          "source": "Pinsent Masons (Out-Law)",
+          "author": "Pinsent Masons",
+          "date": "2026-07-06",
+          "primary_url": "https://www.pinsentmasons.com/out-law/news/law-delaying-eu-high-risk-ai-rules-finalised",
+          "secondary_urls": [
+            {
+              "label": "aiactdeadlines.com: July 2026 update — publication expected imminently",
+              "url": "https://aiactdeadlines.com/updates/july-2026/"
+            },
+            {
+              "label": "CloseIT: EU AI Act Digital Omnibus — what changed",
+              "url": "https://www.closeit.co/post/eu-ai-act-digital-omnibus-what-changed/"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00Z",
+          "summary": "Council adoption (June 29) and Parliament passage (June 16) of the Digital Omnibus on AI are both final, but as of this week the law is still awaiting Official Journal publication before entering into force. Multiple trackers describe publication as 'expected imminently' or 'in the coming days,' language that is functionally unchanged from last week's coverage, meaning no new compliance-relevant milestone occurred this week despite continued anticipation.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "EU AI Act",
+            "Digital Omnibus",
+            "Official Journal",
+            "compliance deadline"
+          ],
+          "category": "Regulation — EU",
+          "recurrence": "returning",
+          "recurrence_note": "Last week's tab covered the Council's June 29 final legislative adoption as a Top Pick, on the expectation that Official Journal publication would follow in mid-to-late July. This week's check confirms publication has still not occurred as of July 9 — no new legal effect, but the delay is now a data point in itself for anyone timing compliance work to the Omnibus taking effect."
+        },
+        {
+          "id": "china-cac-anthropomorphic-ai-measures-effective-july15",
+          "title": "China's CAC Anthropomorphic AI Interactive Services Measures Take Effect July 15 — Outside This Week's Window but Imminent",
+          "subtitle": "Finalized April 10, 2026; bans virtual intimate-relationship AI services for under-14 users and mandates addiction-monitoring and 2-hour usage warnings.",
+          "source": "AI Safety China (secondary summary of CAC measures)",
+          "author": "AI Safety China",
+          "date": "2026-05-06",
+          "primary_url": "https://aisafetychina.substack.com/p/china-bans-ai-partners-for-minors",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00Z",
+          "summary": "China's Cyberspace Administration finalized measures governing anthropomorphic AI interactive services in April 2026; they become effective July 15, 2026, three days after this week's window closes. Requirements include mandatory AI-identity disclosure, a ban on virtual intimate-relationship services marketed to users under 14, addiction-monitoring and emotion-management obligations, and usage-time warnings after two hours of continuous use. Included here as an imminent milestone rather than an in-window event; a primary CAC.gov.cn source with an in-window publication date was not located during this review.",
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "tags": [
+            "China",
+            "CAC",
+            "AI regulation",
+            "minors",
+            "companion AI"
+          ],
+          "category": "Regulation — Global",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_disclosures",
+      "title": "Enterprise Disclosures",
+      "description": "AI mentions in public-company industrial-sector filings this week.",
+      "layout": "table",
+      "items": []
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Patterns worth tracking heading into next week.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "signal-severity-graded-redteaming-momentum",
+          "title": "Red-teaming methodology is shifting from binary pass/fail toward graded harm severity, and from single-agent to multi-agent threat models",
+          "subtitle": "Two independent arXiv papers this week (severity scale; multi-agent fragmentation effect) converge on the same conclusion from different angles: current agentic-AI safety evaluation standards understate real risk.",
+          "source": "arXiv cross-paper synthesis",
+          "author": "Research synthesis",
+          "date": "2026-07-08",
+          "primary_url": "https://arxiv.org/abs/2607.07474",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00Z",
+          "summary": "Both papers this week independently demonstrate that today's dominant agentic red-teaming metric (binary attack-success rate, evaluated per-agent) is insufficient: one shows it hides a real cross-scope data leak, the other shows detection coverage degrades as coordinating agent count rises. Vendor and internal security-review checklists built solely on attack-success-rate summaries should be treated as incomplete evidence of safety going forward.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "tags": [
+            "AI safety",
+            "red-teaming",
+            "multi-agent systems",
+            "evaluation methodology"
+          ],
+          "category": "Emerging Signals",
+          "recurrence": "new"
+        }
+      ]
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Frontier labs are moving to tiered, cost-differentiated model families with capability-gated security requirements rather than one flagship model per release.",
+      "evidence": "GPT-5.6's Sol/Terra/Luna structure ties pricing to capability tier and adds a hardware-passkey requirement specifically for access to the most cyber-capable tier, a materially more granular access-control model than prior GPT releases.",
+      "what_to_watch": "Whether enterprise procurement processes begin formally mapping internal workflows to model tiers as a cost and risk-control practice, and whether the September 1 passkey deadline surfaces friction for organizations with shared or legacy API provisioning."
+    },
+    {
+      "pattern": "Agentic-AI safety research is converging on the view that current evaluation standards — binary attack-success rate, single-agent threat models — systematically understate real-world risk in multi-agent deployments.",
+      "evidence": "Two independently authored arXiv papers published the same day (July 8) each demonstrate a distinct failure mode of current evaluation practice: one shows a 0%-attack-success defense that still leaked data, the other shows monitoring coverage degrading as coordinating agent count increases.",
+      "what_to_watch": "Whether AgentDojo or comparable benchmarks formally adopt graded-severity or multi-agent evaluation as a standard, and whether any vendor publishes a security disclosure using either paper's methodology."
+    }
+  ],
+  "index": [
+    {
+      "id": "openai-gpt-5-6-global-ga-july9",
+      "title": "GPT-5.6 (Sol/Terra/Luna) Reaches Global General Availability After US Lifts Access Restrictions",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-07-09",
+      "primary_url": "https://openai.com/index/gpt-5-6/",
+      "score": 8.5
+    },
+    {
+      "id": "arxiv-severity-scale-agentic-redteam-july8",
+      "title": "Beyond Attack-Success Rate: An Action-Graded Severity Scale for Tool-Using AI Agents",
+      "source": "arXiv cs.CR / cs.AI",
+      "author": "Harry Owiredu-Ashley",
+      "date": "2026-07-08",
+      "primary_url": "https://arxiv.org/abs/2607.07474",
+      "score": 8.0
+    },
+    {
+      "id": "arxiv-multi-agent-fragmentation-effect-july8",
+      "title": "Multi-Agent AI Control: Distributed Attacks Hamper Per-Instance Monitors",
+      "source": "arXiv cs.LG / cs.AI / cs.MA",
+      "author": "Oliver Makins, Orazio Angelini, Zohreh Shams, Mary Phuong",
+      "date": "2026-07-08",
+      "primary_url": "https://arxiv.org/abs/2607.07368",
+      "score": 7.5
+    },
+    {
+      "id": "ftc-ai-accuracy-suppression-policy-statement-july7",
+      "title": "FTC Publishes Policy Statement on Suppression of Accuracy in AI Systems",
+      "source": "Federal Trade Commission / Federal Register",
+      "author": "Federal Trade Commission",
+      "date": "2026-07-07",
+      "primary_url": "https://www.govinfo.gov/content/pkg/FR-2026-07-07/pdf/2026-13628.pdf",
+      "score": 7.5
+    },
+    {
+      "id": "arxiv-institutional-redteaming-deployment-rules-july8",
+      "title": "Institutional Red-Teaming: Deployment Rules, Not Just Models, Causally Shape Multi-Agent AI Safety",
+      "source": "arXiv cs.AI / cs.MA",
+      "author": "Yujiao Chen",
+      "date": "2026-07-08",
+      "primary_url": "https://arxiv.org/abs/2607.07695",
+      "score": 7.0
+    },
+    {
+      "id": "state-ai-legislation-midyear-tally-july6",
+      "title": "State AI Legislation Midyear Tally: 109 Laws Enacted Across 29 States as of July 1",
+      "source": "Tech Policy Press",
+      "author": "Scott Babwah Brennen",
+      "date": "2026-07-06",
+      "primary_url": "https://techpolicy.press/where-state-ai-legislation-stands-half-way-into-2026",
+      "score": 6.5
+    },
+    {
+      "id": "minimax-2-7-trillion-parameter-model-plan-july8",
+      "title": "MiniMax Plans 2.7 Trillion Parameter Open-Weight Model",
+      "source": "Reuters",
+      "author": "Reuters",
+      "date": "2026-07-08",
+      "primary_url": "https://www.reuters.com/world/asia-pacific/chinas-minimax-plans-launch-giant-27-trillion-parameter-model-2026-07-08/",
+      "score": 6.5
+    },
+    {
+      "id": "signal-severity-graded-redteaming-momentum",
+      "title": "Red-Teaming Methodology Shifts Toward Graded Severity and Multi-Agent Threat Models",
+      "source": "arXiv cross-paper synthesis",
+      "author": "Research synthesis",
+      "date": "2026-07-08",
+      "primary_url": "https://arxiv.org/abs/2607.07474",
+      "score": 6.5
+    },
+    {
+      "id": "eu-digital-omnibus-oj-publication-still-pending-july6",
+      "title": "EU AI Act Digital Omnibus Still Not Published in the Official Journal",
+      "source": "Pinsent Masons (Out-Law)",
+      "author": "Pinsent Masons",
+      "date": "2026-07-06",
+      "primary_url": "https://www.pinsentmasons.com/out-law/news/law-delaying-eu-high-risk-ai-rules-finalised",
+      "score": 6.0
+    },
+    {
+      "id": "arxiv-agentic-ai-governance-preliminary-assessment-july8",
+      "title": "Towards Agentic AI Governance: A Preliminary Assessment",
+      "source": "arXiv cs.CY / cs.AI",
+      "author": "Mubarak Raji, Masooda Bashir",
+      "date": "2026-07-08",
+      "primary_url": "https://arxiv.org/abs/2607.07612",
+      "score": 6.0
+    },
+    {
+      "id": "china-cac-anthropomorphic-ai-measures-effective-july15",
+      "title": "China's CAC Anthropomorphic AI Interactive Services Measures Take Effect July 15",
+      "source": "AI Safety China",
+      "author": "AI Safety China",
+      "date": "2026-05-06",
+      "primary_url": "https://aisafetychina.substack.com/p/china-bans-ai-partners-for-minors",
+      "score": 5.5
+    },
+    {
+      "id": "sec-edgar-industrial-peer-scan-no-ai-mention-week-july12",
+      "title": "SEC EDGAR Scan: No New AI-Specific Disclosure in Industrial-Sector Peer Filings This Week",
+      "source": "SEC EDGAR full-text search",
+      "author": "SEC EDGAR",
+      "date": "2026-07-12",
+      "primary_url": "https://www.sec.gov/edgar/search/",
+      "score": 5.0
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "MiniMax's planned 2.7 trillion parameter open-weight model, reported by Reuters via a single anonymous source with direct knowledge; MiniMax declined to comment.",
+      "reason": "No official MiniMax announcement, model card, or benchmark data exists yet — this is sourced reporting on a future release, not a confirmed model launch. Treat scale and timing (Q3 2026) as provisional until MiniMax publishes primary documentation.",
+      "attempted_url": "https://www.reuters.com/world/asia-pacific/chinas-minimax-plans-launch-giant-27-trillion-parameter-model-2026-07-08/"
+    },
+    {
+      "claim": "China's CAC Anthropomorphic AI Interactive Services Measures as an in-window regulatory event for the July 6–12 period.",
+      "reason": "The measures were finalized April 10, 2026, and take effect July 15, 2026 — three days after this week's window closes. No primary CAC.gov.cn source with an in-window publication or enforcement-action date was located; included in regulation_global as an imminent-milestone item rather than an in-window event, sourced only from a secondary substack summary dated May 6.",
+      "attempted_url": "https://aisafetychina.substack.com/p/china-bans-ai-partners-for-minors"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "CAC.gov.cn primary source monitoring — to replace the secondary substack citation used this week for the Anthropomorphic AI Interactive Services Measures ahead of their July 15 effective date",
+      "EU Official Journal direct feed — to catch Digital Omnibus publication the day it happens rather than relying on third-party trackers"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Follow-up on China's CAC Anthropomorphic AI Interactive Services Measures once they take effect July 15, 2026",
+      "FTC AI-accuracy policy statement comment period outcome after it closes July 31, 2026"
+    ],
+    "topics_to_drop": [],
+    "notes": "No AI-specific disclosure surfaced in industrial-sector peer 8-K filings this week; direct EDGAR full-text search queries were blocked by robots.txt during this review, so findings rely on secondary aggregator monitoring rather than a direct EDGAR query. Q2 earnings calls for this peer cluster begin in late July, which is the next natural checkpoint for enterprise_disclosures content. The EU AI Act Digital Omnibus Official Journal publication remains the single most-watched pending milestone carried over from prior weeks."
+  }
+}

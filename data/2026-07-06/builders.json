@@ -1,0 +1,653 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.9,
+    "items_total": 20,
+    "items_new": 18,
+    "items_returning": 2
+  },
+  "executive_summary": [
+    {
+      "headline": "A one-person C engine now runs a 744B-parameter model on a $700 laptop",
+      "body": "JustVugg's Colibri streams GLM-5.2's 21,504 routed experts from disk instead of holding them in RAM, fitting a 744B MoE model into 25GB of memory on consumer hardware. It hit 769 Hacker News points and passed 5,800 GitHub stars within three days, and it is not a demo trick — an OpenAI-compatible serving endpoint and benchmark harness ship in the same 1,300-line C file.",
+      "primary_url": "https://github.com/JustVugg/colibri"
+    },
+    {
+      "headline": "Coding-agent tooling is consolidating around research and video, not chat",
+      "body": "This week's fastest-growing new repos are not chatbots: a research-synthesis skill (last30days-skill), a codebase-to-knowledge-graph tool (Graphify), and an agent-drivable video editor (FableCut) all crossed meaningful star or point thresholds in days. The common thread is agents given a bounded, auditable data source to act on rather than open-ended autonomy.",
+      "primary_url": "https://github.com/mvanhorn/last30days-skill"
+    },
+    {
+      "headline": "Agent governance tooling is becoming a category, not a feature",
+      "body": "Three independent projects shipped this week addressing the same gap: knowing what an agent can do before it does it. NVIDIA's SkillSpector scans agent skills for malicious patterns, MakerChecker enforces separation-of-duties on agent tool calls, and Microsoft's SkillOpt trains versioned, auditable natural-language skills instead of ad hoc prompts.",
+      "primary_url": "https://www.makerchecker.ai/scan/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "colibri-glm-consumer-hardware",
+      "title": "Colibri: a 744B-parameter model runs on a 25GB consumer laptop",
+      "subtitle": "Pure-C inference engine streams MoE experts from disk, no GPU required",
+      "source": "JustVugg/colibri",
+      "author": "JustVugg (independent)",
+      "date": "2026-07-09",
+      "primary_url": "https://github.com/JustVugg/colibri",
+      "secondary_urls": [
+        { "label": "Show HN discussion (769 points)", "url": "https://news.ycombinator.com/item?id=48842459" },
+        { "label": "Technical writeup", "url": "https://ai-tldr.dev/releases/justvugg-colibri/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-12T20:00:00-04:00",
+      "summary": "Colibri is a 1,300-line pure-C inference engine that keeps GLM-5.2's dense layers (~9.9GB at int4) resident in RAM while streaming its 21,504 routed experts from NVMe disk on demand, letting the full 744B-parameter mixture-of-experts model run on a 25GB-RAM consumer machine with no GPU. It posted to Show HN on July 9, hit 769 points, and passed 5,800 GitHub stars within three days.",
+      "score": { "total": 9.0, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 },
+      "engagement": { "stars": 5800, "upvotes": 769 },
+      "tags": ["local-inference", "moe", "open-weight", "cpu-inference"],
+      "category": "Dev Tool",
+      "key_takeaways": [
+        "Dense layers (~17B params) stay resident in RAM at int4; the 21,504 routed experts stream from disk with a per-layer LRU cache",
+        "Cold decode runs at 0.05-0.1 tok/s on the author's 12-core/25GB WSL2 baseline; community reports ~1.06 tok/s on an Apple M5 Max with 128GB RAM",
+        "Zero runtime dependencies: no CUDA, no PyTorch, no BLAS library, ships an OpenAI-compatible HTTP gateway and a HellaSwag/ARC/MMLU bench harness"
+      ],
+      "results": "5,800+ GitHub stars and 769 Hacker News points within 72 hours of launch; runs a 744B MoE model end-to-end on hardware costing under $1,000 (per author's Show HN post and independent GIGAZINE coverage)",
+      "enterprise_adaptation": "The implementation pattern is disk-tiered expert streaming: only the active parameters for a given token sit in fast memory, letting a frontier-scale open-weight model run on commodity hardware instead of a GPU cluster. In a regulated enterprise, this argues for evaluating a local-only inference tier for low-throughput, high-sensitivity workloads (e.g., document classification on hardware that never touches the network) where sub-1-tok/s latency is acceptable in exchange for zero data egress and no vendor API dependency. A 30-day experiment: stand up Colibri with a smaller open-weight MoE model on an air-gapped test machine, benchmark it against an existing cloud-hosted model on a fixed internal QA set, and document the latency/cost/data-residency tradeoff before considering any production use — this is unaudited, single-maintainer code and should not touch production data during evaluation.",
+      "why_it_matters": "Verified via GitHub (HTTP 200, 5.8k stars, Apache-2.0, C 56%, last commit July 12, 2026) and the live Show HN thread (769 points). This is the clearest evidence this year that consumer hardware can run frontier-scale open-weight models when the serving architecture, not the GPU budget, is the bottleneck."
+    },
+    {
+      "id": "fablecut-agent-driven-video-editor",
+      "title": "FableCut turns a browser video editor's timeline into an agent-readable JSON API",
+      "subtitle": "Zero-dependency editor with a built-in MCP server lets Claude Code and Claude Desktop cut video directly",
+      "source": "ronak-create/FableCut",
+      "author": "Ronak Parmar (independent)",
+      "date": "2026-07-06",
+      "primary_url": "https://github.com/ronak-create/FableCut",
+      "secondary_urls": [
+        { "label": "Show HN thread", "url": "https://news.ycombinator.com/item?id=48845422" },
+        { "label": "Author's technical writeup", "url": "https://dev.to/ronak_parmar_033c50d168b5/the-project-file-is-the-interface-letting-ai-agents-drive-a-video-editor-58hd" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-12T20:00:00-04:00",
+      "summary": "FableCut is a Premiere-style, non-linear video editor that runs entirely in the browser off a single zero-dependency Node server, storing the entire project (media, clips, tracks, effects, transitions) as one JSON document. It exposes that document through an MCP server, a REST API, and direct file edits, so an agent like Claude Code can cut video while a human watches the timeline hot-reload in the browser.",
+      "score": { "total": 8.0, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 0 },
+      "engagement": { "stars": 373 },
+      "tags": ["mcp-server", "video-editing", "agent-tooling"],
+      "category": "Dev Tool",
+      "key_takeaways": [
+        "The entire editor state is one project.json file; MCP tools (fablecut_get_project, fablecut_patch_project, fablecut_import_media) let an agent read and mutate it directly instead of driving a GUI",
+        "MIT-licensed, zero npm dependencies, runs on a single node server.js plus a Chromium browser and optional ffmpeg for export",
+        "Shipped v1.3.0 on July 9, three days after the initial repo went public, adding reference-image remake and a demo video"
+      ],
+      "results": "373 GitHub stars and a Show HN thread within a week of publishing; author reports the design choice (state-as-API rather than GUI automation) as the deliberate alternative to fragile screen-coordinate clicking",
+      "enterprise_adaptation": "The pattern worth studying is state-as-API: instead of teaching an agent to click through a GUI, expose the application's full state as a single readable/writable document and let the agent manipulate that directly while a human observes the rendered result. For a public enterprise producing training or marketing video internally, this argues against off-the-shelf GUI-automation video tooling and toward evaluating whether internal creative tools could expose an equivalent JSON-state interface. A 30-day experiment: fork FableCut in an internal sandbox, connect it to a governed LLM endpoint (not the public Claude Desktop app), and test whether a content team can produce one real deliverable through the MCP interface without touching the timeline UI directly — flag before production use that the project has a single maintainer and no formal security review.",
+      "why_it_matters": "Verified via GitHub (HTTP 200, 373 stars, JavaScript 88.4%, v1.3.0 released July 9, 2026, MIT license) and the author's own technical writeup. Small star count relative to other picks, but the state-as-API design pattern is the signal, not the popularity."
+    },
+    {
+      "id": "last30days-skill-research-synthesis",
+      "title": "An open-source agent skill synthesizes grounded research across six platforms at once",
+      "subtitle": "last30days-skill queries Reddit, X, YouTube, HN, Polymarket, and the web, then writes a sourced summary",
+      "source": "mvanhorn/last30days-skill",
+      "author": "mvanhorn (independent)",
+      "date": "2026-07-07",
+      "primary_url": "https://github.com/mvanhorn/last30days-skill",
+      "verified": true,
+      "verified_at": "2026-07-12T20:00:00-04:00",
+      "summary": "last30days-skill is a Claude/agent skill that researches any topic across Reddit, X, YouTube, Hacker News, Polymarket, and the general web, then synthesizes a single grounded summary with citations. It shipped v3.11.1 on July 7 and had a commit on July 9, both inside this week, while its star count climbed past 51,000.",
+      "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
+      "engagement": { "stars": 51200 },
+      "tags": ["agent-skill", "research", "multi-source-synthesis"],
+      "category": "Agent Skill",
+      "key_takeaways": [
+        "Pulls from six distinct source types (Reddit, X, YouTube, HN, Polymarket, web) and produces one synthesized, cited output rather than six separate dumps",
+        "Python 97.2%, v3.11.1 released July 7, 2026 with a follow-up commit July 9, 2026 — active maintenance inside the target week",
+        "Positions itself against single-source research skills by weighting prediction-market data (Polymarket) alongside social discussion, a less common combination"
+      ],
+      "results": "51,200+ GitHub stars as of this week, with a shipped release and commit inside the target week confirming active maintenance rather than a stale trending artifact",
+      "enterprise_adaptation": "The implementation pattern is bounded multi-source retrieval with mandatory citation — the skill does not answer from memory, it fetches from named sources and attributes every claim. For a public-company market-research or competitive-intelligence function, the adaptation is to fork the retrieval logic but swap in internally-approved sources (analyst reports, filed documents, an internal knowledge base) rather than the public social platforms the skill defaults to. A 30-day experiment: run the skill unmodified in a sandboxed environment against public sources for one recurring internal research task (e.g., weekly competitor monitoring), and score its citations for accuracy before deciding whether to build an internal-source variant — do not connect it to any internal data store during the trial given it is unaudited third-party code.",
+      "why_it_matters": "Verified via GitHub (HTTP 200, 51.2k stars, Python 97.2%, release v3.11.1 July 7, 2026, commit July 9, 2026). Both dates land inside the target week, distinguishing this from repos merely riding a star-count updraft from unrelated coverage."
+    },
+    {
+      "id": "graphify-codebase-knowledge-graph",
+      "title": "Graphify turns any codebase or document folder into a queryable knowledge graph for coding agents",
+      "subtitle": "Works across Claude Code, Codex, OpenCode, Cursor, and Gemini CLI",
+      "source": "Graphify-Labs/graphify",
+      "author": "Graphify-Labs",
+      "date": "2026-07-10",
+      "primary_url": "https://github.com/Graphify-Labs/graphify",
+      "verified": true,
+      "verified_at": "2026-07-12T20:00:00-04:00",
+      "summary": "Graphify is an AI coding-assistant skill that ingests a folder of code, SQL schemas, scripts, docs, papers, images, or videos and turns it into a queryable knowledge graph that agents can traverse instead of re-reading raw files each session. It shipped v0.9.12 on July 10, inside the target week, and has passed 82,000 stars.",
+      "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+      "engagement": { "stars": 82500 },
+      "tags": ["agent-skill", "knowledge-graph", "codebase-context"],
+      "category": "Agent Skill",
+      "key_takeaways": [
+        "Compatible with Claude Code, Codex, OpenCode, Cursor, and Gemini CLI — not locked to one agent runtime",
+        "Ingests heterogeneous inputs beyond code: SQL schemas, R and shell scripts, docs, papers, images, and video",
+        "Python 100%, release v0.9.12 and last commit both dated July 10, 2026, inside the target week"
+      ],
+      "results": "82,500+ GitHub stars with an in-week release, indicating sustained rather than one-off growth",
+      "enterprise_adaptation": "The pattern is persistent structured context: instead of an agent re-reading a repository from scratch every session, it queries a pre-built graph of relationships across code and documentation. For an enterprise engineering or facilities-documentation team, this suggests building an internal knowledge graph over specification documents, code, and technical drawings that agents query rather than re-ingest. A 30-day experiment: point Graphify at one non-sensitive internal repository plus its documentation, measure whether agent responses on codebase questions improve versus raw-file retrieval, and evaluate the tool's data-handling before ever pointing it at anything containing customer or regulated data.",
+      "why_it_matters": "Verified via GitHub (HTTP 200, 82.5k stars, Python 100%, v0.9.12 released and last commit both July 10, 2026). Cross-agent compatibility (five different coding-agent runtimes) suggests the knowledge-graph pattern, not the specific tool, is what is spreading."
+    },
+    {
+      "id": "makerchecker-agent-separation-of-duties",
+      "title": "MakerChecker enforces separation-of-duties on AI agents before they touch production",
+      "subtitle": "Free, offline, read-only CLI flags every agent tool call that has no human check",
+      "source": "makerchecker.ai",
+      "author": "MakerChecker (independent)",
+      "date": "2026-07-06",
+      "primary_url": "https://www.makerchecker.ai/scan/",
+      "secondary_urls": [
+        { "label": "Show HN thread", "url": "https://news.ycombinator.com/item?id=48804182" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-12T20:00:00-04:00",
+      "summary": "MakerChecker's `mc scan` is a free, read-only, offline CLI that reads an agent's tool definitions (OpenAI function schemas, MCP tools/list output, or bare parameter arrays) and flags every call the agent can make with no human checking, naming each against a real incident where that exact gap caused harm. It posted to Show HN on July 6-7 and can fail CI builds when it finds an ungoverned catastrophic capability.",
+      "score": { "total": 7.5, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 0 },
+      "engagement": { "upvotes": 44 },
+      "tags": ["agent-governance", "security-scanner", "separation-of-duties"],
+      "category": "Dev Tool",
+      "key_takeaways": [
+        "Runs entirely offline and read-only by default; no telemetry, nothing leaves the machine, no signup required",
+        "Reads OpenAI function/tools schemas and MCP tools/list output directly, so it works against real deployed agent configs, not synthetic examples",
+        "Built around a 'two-key run record' pattern: maker role, checker role, granted skill version, limit, approval gate, and a chained audit event, aimed explicitly at regulated-industry agent adoption"
+      ],
+      "results": "44-point Show HN thread and independent write-up from BaristaLabs analyzing the separation-of-duties model in detail as of this week",
+      "enterprise_adaptation": "This is the most directly applicable governance tool of the week for a regulated public company: the core pattern (no single agent role can both propose and approve its own action) maps onto existing internal-controls language auditors already understand. The offline, no-telemetry design also removes the usual data-exfiltration objection IT raises against new scanning tools. A 30-day experiment: run `mc scan` against the tool definitions of one existing internal agent pilot (not production), map its flagged gaps to the SoD framework already used for financial controls, and use the output to decide which agent capabilities need a human approval gate before that pilot is allowed to touch a production system.",
+      "why_it_matters": "Verified via makerchecker.ai/scan/ (HTTP 200, full tool description) and the live Show HN thread dated July 7, 2026. The offline, no-telemetry design directly answers the IT objection that usually blocks new agent-scanning tools from regulated environments."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "Top AI/agent repos by weekly star delta, filtered to genuinely active projects (release or commit inside the target week where verifiable).",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "graphify-trending",
+          "title": "Graphify-Labs/graphify",
+          "source": "GitHub",
+          "date": "2026-07-10",
+          "primary_url": "https://github.com/Graphify-Labs/graphify",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Coding-assistant skill that turns a folder of code, docs, schemas, or media into a queryable knowledge graph for agents. v0.9.12 released and last commit both July 10, 2026.",
+          "score": { "total": 7.0, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 82500 },
+          "category": "Agent Skill",
+          "recurrence": "new"
+        },
+        {
+          "id": "last30days-skill-trending",
+          "title": "mvanhorn/last30days-skill",
+          "source": "GitHub",
+          "date": "2026-07-07",
+          "primary_url": "https://github.com/mvanhorn/last30days-skill",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Agent skill that researches a topic across Reddit, X, YouTube, HN, Polymarket, and the web, then synthesizes one cited summary. v3.11.1 released July 7, 2026; commit July 9, 2026.",
+          "score": { "total": 7.0, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 51200 },
+          "category": "Agent Skill",
+          "recurrence": "new"
+        },
+        {
+          "id": "tradingagents-trending",
+          "title": "TauricResearch/TradingAgents",
+          "source": "GitHub",
+          "date": "2026-07-05",
+          "primary_url": "https://github.com/TauricResearch/TradingAgents",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Multi-agent LLM framework that mirrors real trading-firm roles, with specialized agents evaluating market conditions to inform trades. v0.3.1 released July 5, 2026, one day before the target week opened.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 92500 },
+          "category": "Agent Framework",
+          "recurrence": "new"
+        },
+        {
+          "id": "oh-my-pi-trending",
+          "title": "can1357/oh-my-pi",
+          "source": "GitHub",
+          "date": "2026-07-11",
+          "primary_url": "https://github.com/can1357/oh-my-pi",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Terminal AI coding agent with hash-anchored edits, LSP integration, and subagent support. v16.4.5 released July 11, 2026; last commit July 12, 2026, both inside the target week.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 17300 },
+          "category": "Dev Tool",
+          "recurrence": "new"
+        },
+        {
+          "id": "skillopt-trending",
+          "title": "microsoft/SkillOpt",
+          "source": "GitHub",
+          "date": "2026-07-02",
+          "primary_url": "https://github.com/microsoft/SkillOpt",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits and validation-gated updates. v0.2.0 released and last commit both July 2, 2026, just before the target week.",
+          "score": { "total": 6.0, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 12100 },
+          "category": "Agent Framework",
+          "recurrence": "new"
+        },
+        {
+          "id": "skillspector-trending",
+          "title": "NVIDIA/SkillSpector",
+          "source": "GitHub",
+          "date": "2026-07-09",
+          "primary_url": "https://github.com/NVIDIA/SkillSpector",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Security scanner that detects vulnerabilities and malicious patterns in AI agent skills before installation. 13k stars, Python 97.7%.",
+          "score": { "total": 6.0, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 13000 },
+          "category": "Security Tool",
+          "recurrence": "new"
+        },
+        {
+          "id": "tencentdb-agent-memory-trending",
+          "title": "TencentCloud/TencentDB-Agent-Memory",
+          "source": "GitHub",
+          "date": "2026-06-26",
+          "primary_url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Fully local, long-term agent memory via a 4-tier progressive pipeline with zero external API dependencies. 8.4k stars, last commit June 26, 2026, gaining star velocity into this week.",
+          "score": { "total": 5.5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 8400 },
+          "category": "Agent Framework",
+          "recurrence": "new"
+        },
+        {
+          "id": "cubesandbox-trending",
+          "title": "TencentCloud/CubeSandbox",
+          "source": "GitHub",
+          "date": "2026-05-27",
+          "primary_url": "https://github.com/TencentCloud/CubeSandbox",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Instant, concurrent, secure lightweight sandbox for AI agents, built on RustVMM and KVM. 6k stars, last commit May 27, 2026, star growth continuing into this week.",
+          "score": { "total": 5.0, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 6000 },
+          "category": "Dev Tool",
+          "recurrence": "new"
+        },
+        {
+          "id": "colibri-trending",
+          "title": "JustVugg/colibri",
+          "source": "GitHub",
+          "date": "2026-07-09",
+          "primary_url": "https://github.com/JustVugg/colibri",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Pure-C engine runs GLM-5.2 (744B MoE) on a 25GB-RAM consumer machine by streaming routed experts from disk. Also a Top Pick this week; last commit July 12, 2026.",
+          "score": { "total": 7.5, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 5800 },
+          "category": "Dev Tool",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Skills & MCP Servers",
+      "description": "Newly published agent skills, MCP servers, and prompt/eval libraries surfacing this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "fablecut-mcp-server",
+          "title": "FableCut MCP server",
+          "source": "GitHub",
+          "date": "2026-07-06",
+          "primary_url": "https://github.com/ronak-create/FableCut",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Built-in MCP server (fablecut_get_project, fablecut_patch_project, fablecut_import_media) exposes a browser video editor's entire state to any MCP-speaking agent. Also a Top Pick this week.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 0 },
+          "engagement": { "stars": 373 },
+          "category": "MCP Server",
+          "recurrence": "new"
+        },
+        {
+          "id": "last30days-agent-skill",
+          "title": "last30days-skill",
+          "source": "GitHub",
+          "date": "2026-07-07",
+          "primary_url": "https://github.com/mvanhorn/last30days-skill",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Agent skill for grounded, multi-source topic research (Reddit, X, YouTube, HN, Polymarket, web). Also a Top Pick this week.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 0 },
+          "engagement": { "stars": 51200 },
+          "category": "Agent Skill",
+          "recurrence": "new"
+        },
+        {
+          "id": "graphify-agent-skill",
+          "title": "Graphify",
+          "source": "GitHub",
+          "date": "2026-07-10",
+          "primary_url": "https://github.com/Graphify-Labs/graphify",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Coding-assistant skill turning a codebase or docs folder into a queryable knowledge graph. Also a Top Pick this week.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 0 },
+          "engagement": { "stars": 82500 },
+          "category": "Agent Skill",
+          "recurrence": "new"
+        },
+        {
+          "id": "skillopt-microsoft",
+          "title": "SkillOpt",
+          "source": "GitHub",
+          "date": "2026-07-02",
+          "primary_url": "https://github.com/microsoft/SkillOpt",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Trains reusable natural-language agent skills for frozen LLMs through trajectory-driven edits and validation-gated updates, producing a deployable best_skill.md artifact instead of an ad hoc prompt.",
+          "score": { "total": 6.0, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 12100 },
+          "category": "Agent Skill",
+          "recurrence": "new"
+        },
+        {
+          "id": "skillspector-nvidia",
+          "title": "SkillSpector",
+          "source": "GitHub",
+          "date": "2026-07-09",
+          "primary_url": "https://github.com/NVIDIA/SkillSpector",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Security scanner purpose-built for agent skills — flags vulnerabilities and malicious patterns before a skill is installed, rather than scanning general application code.",
+          "score": { "total": 6.0, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 13000 },
+          "category": "Security Tool",
+          "recurrence": "new"
+        },
+        {
+          "id": "makerchecker-scan-cli",
+          "title": "MakerChecker mc scan",
+          "source": "makerchecker.ai",
+          "date": "2026-07-06",
+          "primary_url": "https://www.makerchecker.ai/scan/",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Offline, read-only CLI that scans agent tool definitions and flags ungoverned capabilities against real incident precedents. Also a Top Pick this week.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 0 },
+          "engagement": { "upvotes": 44 },
+          "category": "Security Tool",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN & Indie Builds",
+      "description": "Show HN posts with working repos or live demos, and indie side-project standouts, from the target week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "show-hn-colibri",
+          "title": "Show HN: Getting GLM 5.2 running on my slow computer",
+          "source": "Hacker News",
+          "author": "JustVugg",
+          "date": "2026-07-09",
+          "primary_url": "https://news.ycombinator.com/item?id=48842459",
+          "secondary_urls": [{ "label": "Repo", "url": "https://github.com/JustVugg/colibri" }],
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "769-point Show HN thread where the author, running the project alone on a 12-core, 25GB laptop, walks through the disk-streaming design that lets a 744B model run without a GPU. Also this week's top pick.",
+          "score": { "total": 7.0, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 0 },
+          "engagement": { "upvotes": 769 },
+          "category": "Show HN",
+          "recurrence": "new"
+        },
+        {
+          "id": "show-hn-fablecut",
+          "title": "Show HN: FableCut - a browser video editor AI agents can drive (zero deps)",
+          "source": "Hacker News",
+          "author": "Ronak Parmar",
+          "date": "2026-07-09",
+          "primary_url": "https://news.ycombinator.com/item?id=48845422",
+          "secondary_urls": [{ "label": "Repo", "url": "https://github.com/ronak-create/FableCut" }],
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Show HN thread for the state-as-API video editor. Also this week's top pick.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 0 },
+          "engagement": { "upvotes": 95 },
+          "category": "Show HN",
+          "recurrence": "new"
+        },
+        {
+          "id": "show-hn-rowboat",
+          "title": "Show HN: Rowboat - open-source, local-first alternative to Claude Desktop",
+          "source": "Hacker News",
+          "date": "2026-07-08",
+          "primary_url": "https://news.ycombinator.com/item?id=48819808",
+          "secondary_urls": [{ "label": "Repo", "url": "https://github.com/rowboatlabs/rowboat" }],
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Rowboat is a local-first AI coworker storing all data as plain Markdown files, with dedicated 'work surfaces' for email, meetings, notes, browser, and parallel coding sessions, built with an Agent Client Protocol client so it can orchestrate Claude Code and Codex directly. 217-point Show HN thread.",
+          "score": { "total": 6.0, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 0 },
+          "engagement": { "upvotes": 217 },
+          "category": "Show HN",
+          "recurrence": "new"
+        },
+        {
+          "id": "show-hn-makerchecker",
+          "title": "Show HN: Scan your AI agents for dangerous capabilities",
+          "source": "Hacker News",
+          "date": "2026-07-07",
+          "primary_url": "https://news.ycombinator.com/item?id=48804182",
+          "secondary_urls": [{ "label": "Product", "url": "https://www.makerchecker.ai/scan/" }],
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Show HN thread for the MakerChecker offline agent-capability scanner. Also this week's top pick.",
+          "score": { "total": 6.0, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 0 },
+          "engagement": { "upvotes": 44 },
+          "category": "Show HN",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent & RAG Implementations",
+      "description": "Production-shaped agent or RAG builds worth studying, with linked code or a detailed technical write-up.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "langchain-nvidia-nemoclaw-blueprint",
+          "title": "LangChain and NVIDIA's NemoClaw blueprint benchmarks a 10x cost cut on agent evals",
+          "source": "LangChain",
+          "date": "2026-07-08",
+          "primary_url": "https://www.langchain.com/blog/langchain-and-nvidia-launch-the-nemoclaw-deep-agents-blueprint",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "The NemoClaw blueprint pairs LangChain Deep Agents Code with NVIDIA's Nemotron 3 Ultra model and the OpenShell sandboxed runtime. In LangChain's own agent eval suite, Nemotron 3 Ultra scored 0.86 aggregate at $4.48 per run, versus $43.48 for the next closest-performing model — roughly a 10x inference-cost reduction at comparable quality.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "category": "Agent Framework",
+          "recurrence": "new",
+          "why_it_matters": "This is a vendor-published benchmark, not an independent one, but it is a concrete, numbered eval on a named benchmark suite rather than a marketing claim — the kind of result an enterprise team can attempt to reproduce internally before trusting it."
+        },
+        {
+          "id": "tradingagents-multiagent-framework",
+          "title": "TradingAgents mirrors real trading-desk roles with specialized LLM agents",
+          "source": "GitHub",
+          "date": "2026-07-05",
+          "primary_url": "https://github.com/TauricResearch/TradingAgents",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "TradingAgents assigns distinct LLM-powered agent roles (analyst, researcher, trader, risk manager) that mirror the structure of a real trading firm, evaluating market conditions collaboratively before a trade decision. v0.3.1 shipped July 5, 2026, just ahead of the target week, with 92,500 GitHub stars.",
+          "score": { "total": 6.0, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 92500 },
+          "category": "Agent Framework",
+          "recurrence": "new",
+          "why_it_matters": "Role-specialized multi-agent decomposition (separate analyst/trader/risk agents rather than one generalist) is a pattern directly transferable to non-financial approval workflows that need the same separation of judgment."
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "n8n, Make, and custom automation implementations with measurable outcomes reported this week.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "n8n-case-study-system-ai-whatsapp",
+          "title": "n8n WhatsApp-to-CRM automation cuts real estate admin time by over 90%",
+          "source": "n8n case studies",
+          "date": "2026-03-04",
+          "primary_url": "https://n8n.io/case-studies/system-ai/",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "System AI built an n8n workflow that turns WhatsApp messages into structured Zoho CRM and Google Sheets updates via Twilio, removing the need for a virtual-assistant intermediary.",
+          "score": { "total": 5.5, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "results": "Reduced admin task time from 4-5 minutes to 10-20 seconds (over 90% reduction), saving about a day per week; cut onboarding-to-sale time from 62 to 44 days, per n8n's published case study.",
+          "category": "Automation",
+          "recurrence": "returning_pattern",
+          "recurrence_note": "n8n case studies with measurable outcomes have appeared in prior weeks' Automation Wins; this is a distinct customer example (System AI/Srama Group) not previously covered."
+        },
+        {
+          "id": "n8n-case-study-tup-internal-automation",
+          "title": "n8n internal automation runs at 0.94% failure rate across 1,282 executions in 30 days",
+          "source": "n8n case studies",
+          "date": "2026-03-05",
+          "primary_url": "https://n8n.io/case-studies/tup/",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "TUP automated sick-leave handling, remote-work request checks, and an internal knowledge chatbot using n8n as the orchestration layer across email, calendar, and OpenWebUI.",
+          "score": { "total": 5.0, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "results": "1,282 workflow executions in 30 days with only 12 failures (0.94% failure rate) and 26 hours of work saved, per n8n's published case study.",
+          "category": "Automation",
+          "recurrence": "returning_pattern",
+          "recurrence_note": "Distinct customer example (TUP) with its own reliability numbers, not previously covered in this dashboard."
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Meaningful releases from major agent and LLM frameworks this week — new capabilities only, not patch releases.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "langchain-nemoclaw-blueprint-release",
+          "title": "LangChain ships the NemoClaw Deep Agents blueprint with NVIDIA",
+          "source": "LangChain",
+          "date": "2026-07-08",
+          "primary_url": "https://www.langchain.com/blog/langchain-and-nvidia-launch-the-nemoclaw-deep-agents-blueprint",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "New reference blueprint combining LangChain Deep Agents Code, NVIDIA Nemotron 3 Ultra, and the OpenShell governed runtime, positioned for enterprises that need to tune, sandbox, and audit agent execution rather than call a black-box API.",
+          "score": { "total": 6.0, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "category": "Framework Release",
+          "recurrence": "new"
+        },
+        {
+          "id": "langchain-recursive-language-models",
+          "title": "LangChain details Recursive Language Models to fight context rot in Deep Agents",
+          "source": "LangChain",
+          "date": "2026-07-02",
+          "primary_url": "https://www.my2cents.ai/news/2026-07-02-langchain/",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "LangChain's Sydney Runkle described pairing Deep Agents with a code interpreter so a model writes orchestration scripts that recursively dispatch subagents over context pieces, rather than relying on judgment alone to manage long context.",
+          "score": { "total": 5.5, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 0 },
+          "results": "On the OOLONG benchmark at 128k tokens, the RLM-enabled approach scored 0.79 versus 0.44 for traditional agents, per LangChain's published account.",
+          "category": "Framework Release",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-source patterns observed across this week's builder activity.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "pattern-state-as-api",
+          "title": "Application state as the agent interface, not GUI automation",
+          "source": "Cross-source analysis",
+          "date": "2026-07-12",
+          "primary_url": "https://github.com/ronak-create/FableCut",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "FableCut's JSON-timeline-as-API design and Rowboat's Agent Client Protocol client both avoid teaching an agent to click through a GUI, instead exposing application state directly for the agent to read and mutate. This is a more auditable, more reliable pattern than screen-coordinate automation and is worth tracking as a design default for internal tool-building.",
+          "score": { "total": 5.0, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 0 },
+          "category": "Pattern",
+          "recurrence": "new"
+        },
+        {
+          "id": "pattern-agent-governance-tooling",
+          "title": "Agent capability governance is becoming its own tooling category",
+          "source": "Cross-source analysis",
+          "date": "2026-07-12",
+          "primary_url": "https://www.makerchecker.ai/scan/",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Three independent projects this week (MakerChecker's separation-of-duties scanner, NVIDIA's SkillSpector, Microsoft's SkillOpt) each address knowing and constraining what an agent can do, rather than making it do more. This is a distinct trend from prior weeks' focus on raw capability growth.",
+          "score": { "total": 5.0, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 0 },
+          "category": "Pattern",
+          "recurrence": "new"
+        },
+        {
+          "id": "pattern-disk-tiered-local-inference",
+          "title": "Disk-tiered expert streaming makes frontier open-weight models runnable without a GPU",
+          "source": "Cross-source analysis",
+          "date": "2026-07-12",
+          "primary_url": "https://github.com/JustVugg/colibri",
+          "verified": true,
+          "verified_at": "2026-07-12T20:00:00-04:00",
+          "summary": "Colibri's success streaming a 744B MoE model's experts from NVMe rather than holding them all in RAM suggests a broader pattern: as open models grow into the trillion-parameter MoE range, disk-tiered serving architectures may matter more than raw GPU count for cost-sensitive, latency-tolerant workloads.",
+          "score": { "total": 5.0, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 0 },
+          "category": "Pattern",
+          "recurrence": "new"
+        }
+      ]
+    }
+  ],
+  "index": [
+    { "title": "Colibri: 744B-parameter model runs on a 25GB consumer laptop", "source": "GitHub", "author": "JustVugg", "date": "2026-07-09", "primary_url": "https://github.com/JustVugg/colibri", "score": 9.0 },
+    { "title": "FableCut turns a browser video editor into an agent-readable JSON API", "source": "GitHub", "author": "Ronak Parmar", "date": "2026-07-06", "primary_url": "https://github.com/ronak-create/FableCut", "score": 8.0 },
+    { "title": "last30days-skill: multi-source research synthesis agent skill", "source": "GitHub", "author": "mvanhorn", "date": "2026-07-07", "primary_url": "https://github.com/mvanhorn/last30days-skill", "score": 8.0 },
+    { "title": "Graphify: codebase and docs to knowledge graph for agents", "source": "GitHub", "author": "Graphify-Labs", "date": "2026-07-10", "primary_url": "https://github.com/Graphify-Labs/graphify", "score": 7.5 },
+    { "title": "MakerChecker: separation-of-duties scanner for AI agents", "source": "makerchecker.ai", "date": "2026-07-06", "primary_url": "https://www.makerchecker.ai/scan/", "score": 7.5 },
+    { "title": "TradingAgents: multi-agent LLM financial trading framework", "source": "GitHub", "author": "TauricResearch", "date": "2026-07-05", "primary_url": "https://github.com/TauricResearch/TradingAgents", "score": 6.5 },
+    { "title": "oh-my-pi: terminal AI coding agent with hash-anchored edits", "source": "GitHub", "author": "can1357", "date": "2026-07-11", "primary_url": "https://github.com/can1357/oh-my-pi", "score": 6.5 },
+    { "title": "SkillOpt: text-space optimizer for reusable LLM agent skills", "source": "GitHub", "author": "microsoft", "date": "2026-07-02", "primary_url": "https://github.com/microsoft/SkillOpt", "score": 6.0 },
+    { "title": "SkillSpector: security scanner for AI agent skills", "source": "GitHub", "author": "NVIDIA", "date": "2026-07-09", "primary_url": "https://github.com/NVIDIA/SkillSpector", "score": 6.0 },
+    { "title": "TencentDB Agent Memory: fully local long-term agent memory", "source": "GitHub", "author": "TencentCloud", "date": "2026-06-26", "primary_url": "https://github.com/TencentCloud/TencentDB-Agent-Memory", "score": 5.5 },
+    { "title": "CubeSandbox: instant, concurrent lightweight sandbox for AI agents", "source": "GitHub", "author": "TencentCloud", "date": "2026-05-27", "primary_url": "https://github.com/TencentCloud/CubeSandbox", "score": 5.0 },
+    { "title": "Show HN: Getting GLM 5.2 running on my slow computer", "source": "Hacker News", "author": "JustVugg", "date": "2026-07-09", "primary_url": "https://news.ycombinator.com/item?id=48842459", "score": 7.0 },
+    { "title": "Show HN: FableCut - a browser video editor AI agents can drive", "source": "Hacker News", "author": "Ronak Parmar", "date": "2026-07-09", "primary_url": "https://news.ycombinator.com/item?id=48845422", "score": 6.5 },
+    { "title": "Show HN: Rowboat - local-first alternative to Claude Desktop", "source": "Hacker News", "date": "2026-07-08", "primary_url": "https://news.ycombinator.com/item?id=48819808", "score": 6.0 },
+    { "title": "Show HN: Scan your AI agents for dangerous capabilities", "source": "Hacker News", "date": "2026-07-07", "primary_url": "https://news.ycombinator.com/item?id=48804182", "score": 6.0 },
+    { "title": "LangChain and NVIDIA launch the NemoClaw Deep Agents blueprint", "source": "LangChain", "date": "2026-07-08", "primary_url": "https://www.langchain.com/blog/langchain-and-nvidia-launch-the-nemoclaw-deep-agents-blueprint", "score": 6.5 },
+    { "title": "TradingAgents multi-agent role specialization for trading decisions", "source": "GitHub", "author": "TauricResearch", "date": "2026-07-05", "primary_url": "https://github.com/TauricResearch/TradingAgents", "score": 6.0 },
+    { "title": "n8n WhatsApp-to-CRM automation cuts real estate admin time 90%+", "source": "n8n case studies", "date": "2026-03-04", "primary_url": "https://n8n.io/case-studies/system-ai/", "score": 5.5 },
+    { "title": "n8n internal automation: 0.94% failure rate across 1,282 executions", "source": "n8n case studies", "date": "2026-03-05", "primary_url": "https://n8n.io/case-studies/tup/", "score": 5.0 },
+    { "title": "LangChain details Recursive Language Models for context rot", "source": "LangChain", "date": "2026-07-02", "primary_url": "https://www.my2cents.ai/news/2026-07-02-langchain/", "score": 5.5 }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "trendshift.io for cross-checking GitHub trending star velocity against a second source",
+      "Direct Hacker News Show listing (news.ycombinator.com/shownew) to catch borderline-scoring indie builds before third-party digests summarize them"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Agent capability governance and separation-of-duties tooling — emerged as a distinct category this week and deserves sustained tracking"
+    ],
+    "topics_to_drop": [],
+    "notes": "Several high-star-delta repos this week (herdr, strix, meetily, voicebox, orca, page-agent, OmniRoute, RuView) were excluded from this edition because their most recent commits and releases predate the target week by weeks to months — their star growth this week appears to be secondary attention (aggregator coverage, list inclusion) rather than active development, and several were already covered as Top Picks in the prior week's edition. Prioritized repos and posts with a verifiable release or commit dated inside 2026-07-06 to 2026-07-12."
+  }
+}
