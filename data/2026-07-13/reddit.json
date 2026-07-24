@@ -5,10 +5,10 @@
   "icon": "MessageCircle",
   "freshness": {
     "target_pct_new": 0.8,
-    "pct_new": 0.6,
-    "items_total": 20,
-    "items_new": 12,
-    "items_returning": 8
+    "pct_new": 0.81,
+    "items_total": 21,
+    "items_new": 17,
+    "items_returning": 4
   },
   "min_items": 20,
   "executive_summary": [
@@ -253,36 +253,68 @@
           "verified_at": "2026-07-24T17:50:00Z"
         },
         {
-          "id": "singularity-erdos-problem-gpt56-2026-07-13",
-          "title": "Another 50+ year-old Erdős problem reportedly falls to GPT-5.6",
-          "source": "r/singularity",
-          "author": "u/socoolandawesome",
-          "date": "2026-07-13",
-          "primary_url": "https://www.reddit.com/r/singularity/comments/1uvrtl0/another_50_yearold_erd%C5%91s_problem_falls_to_gpt56/",
-          "summary": "A follow-on to a recurring 'AI solves an Erdős problem' storyline, this thread reports GPT-5.6 resolving a decades-old open mathematics problem, drawing 892 upvotes and 167 comments. As with prior instances of this pattern, the claim originates from a practitioner report rather than a peer-reviewed verification, and should be read as a capability anecdote pending independent confirmation from the mathematics community.",
+          "id": "localllama-kimi-k3-launch-2026-07-16",
+          "title": "Moonshot AI launches Kimi K3, a 2.8-trillion-parameter open model, on web and app",
+          "source": "r/LocalLLaMA",
+          "author": "u/External_Mood4719",
+          "date": "2026-07-16",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1uy3a0q/kimi_k3_released_on_web_and_app/",
+          "summary": "Moonshot AI released Kimi K3 on web and app, described in the post as a 2.8-trillion-parameter model with a 1-million-token context window leading the field in coding, agentic tasks, long-horizon reasoning, visual understanding, and agent-swarm capabilities. The thread (641 upvotes, 263 comments) spent its first hours debating whether the model would ship open-weight at all after a 'first open 3T-class model' section was briefly pulled from Moonshot's own announcement; u/fairydreaming's top comment cites confirmation that full weights are scheduled for release on July 27, 2026, not immediately. Commenters (u/Baldur-Norddahl, u/Expensive-Paint-9490) immediately began sizing VRAM and quantization requirements, with several noting even 512GB of RAM cannot run a 1.58-bit quant.",
           "score": {
-            "total": 5.0,
+            "total": 6.0,
             "signal": 2,
-            "novelty": 1,
-            "actionability": 0,
+            "novelty": 2,
+            "actionability": 1,
             "source_quality": 1
           },
           "engagement": {
-            "upvotes": 892,
-            "comments": 167
+            "upvotes": 641,
+            "comments": 263
           },
           "tags": [
-            "gpt-5.6",
-            "mathematics",
-            "benchmarks"
+            "kimi",
+            "open-weight",
+            "moonshot",
+            "local-llm"
           ],
           "category": "Viral Threads",
-          "why_it_matters": "This is now a recurring genre of unverified claim (a named open math problem 'falls' to a frontier model) — useful as a directional capability signal, but not something to cite without independent mathematical verification.",
-          "recurrence": "returning_theme",
-          "recurrence_note": "Follows the same 'AI solves a famous open problem' pattern seen in prior weeks' coverage; treat as a recurring genre rather than a new type of evidence.",
+          "why_it_matters": "Treat the July 27 weights date as the operative planning milestone, not the July 16 announcement date; hardware procurement for a 2.8T-parameter open model should wait for the actual Hugging Face release rather than the launch-day hosted preview.",
+          "recurrence": "new",
           "platform": "reddit",
           "verified": true,
-          "verified_at": "2026-07-24T17:50:00Z"
+          "verified_at": "2026-07-24T18:21:15Z"
+        },
+        {
+          "id": "localllama-thinking-machines-inkling-2026-07-15",
+          "title": "Thinking Machines releases its first open-weight model, \"Inkling,\" a 975B-parameter multimodal MoE",
+          "source": "r/LocalLLaMA",
+          "author": "u/WhyLifeIs4",
+          "date": "2026-07-15",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1uxdv34/thinking_machines_releases_first_openweight_model/",
+          "summary": "Thinking Machines (founded by OpenAI's former CTO) shipped its first open-weight model, Inkling: a transformer mixture-of-experts model with 975 billion total parameters and 41 billion active, a context window up to 1 million tokens, and pretraining across 45 trillion tokens spanning text, images, audio, and video, per the linked company announcement and top comments (u/Daniel_H212, u/FoxiPanda). The thread (1,298 upvotes, 270 comments) also surfaces a smaller sibling, Inkling-Small (276B total / 12B active), which several commenters say may match or beat the larger model on some benchmarks due to improved pretraining data. u/Daniel_H212 notes Inkling does not outperform GLM 5.2 outright.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 1298,
+            "comments": 270
+          },
+          "tags": [
+            "thinking-machines",
+            "open-weight",
+            "multimodal",
+            "local-llm"
+          ],
+          "category": "Viral Threads",
+          "why_it_matters": "A second well-funded lab (following Moonshot's Kimi K3 the same week) shipping a genuinely open-weight, audio-capable multimodal model in the near-frontier tier changes the local-deployment calculus faster than the 'frontier-to-local lag' framing from prior weeks assumed; worth benchmarking Inkling-Small specifically for cost-sensitive workloads before committing to a larger checkpoint.",
+          "recurrence": "new",
+          "platform": "reddit",
+          "verified": true,
+          "verified_at": "2026-07-24T18:21:15Z"
         },
         {
           "id": "generativeai-anthropic-senate-alibaba-distillation-2026-07-15",
@@ -468,37 +500,36 @@
           "verified_at": "2026-07-24T17:50:00Z"
         },
         {
-          "id": "claudeai-fable-vs-sol-megathread-2026-07-12",
-          "title": "Megathread verdict on Fable vs. Opus vs. GPT-5.6 Sol vs. Gemini 3.5: Sol wins on flexibility and price, Fable holds design edge",
-          "source": "r/ClaudeAI",
-          "author": "community",
-          "date": "2026-07-12",
-          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1uutku5/fable_vs_opus_vs_gpt_56_sol_vs_gemini_35_vs/",
-          "summary": "A 160-comment megathread comparing the current frontier-model lineup concludes GPT-5.6 Sol's impact was significant enough that many loyal Claude users are switching or actively considering it, citing comparable capability, lower cost, faster response, more generous usage limits, and more permissive safety handling. Claude Fable retains a reputation edge for interface/design quality and 'smarter feel' in the same discussion.",
+          "id": "machinelearningnews-kimi-k3-architecture-2026-07-17",
+          "title": "Technical breakdown of Kimi K3's architecture: Kimi Delta Attention, Attention Residuals, and Stable LatentMoE",
+          "source": "r/machinelearningnews",
+          "author": "u/ai-lover",
+          "date": "2026-07-17",
+          "primary_url": "https://www.reddit.com/r/machinelearningnews/comments/1uyjsl1/moonshot_ai_just_released_kimi_k3_it_is_a/",
+          "summary": "A MarkTechPost-sourced technical writeup, cross-posted to r/machinelearningnews, details the three architectural changes behind Kimi K3: Kimi Delta Attention (a hybrid linear-attention mechanism claimed to deliver up to 6.3x faster decoding at 1M-token context by replacing traditional prefix caching), Attention Residuals (selective retrieval across model depth rather than uniform accumulation, cited at roughly 25% higher training efficiency for under 2% added cost), and Stable LatentMoE (quantile-based expert-routing at 16-of-896 sparsity, cited at roughly 2.5x better scaling efficiency than K2). Stated benchmark figures: 91.2 on BrowseComp, 88.3 on Terminal-Bench 2.1, and 77.8 on Program Bench, with the post noting K3 trails Fable 5 specifically on FrontierSWE and LiveCodeBench-style evals despite leading on 6 of 35 documented comparisons.",
           "score": {
-            "total": 5.0,
-            "signal": 1,
-            "novelty": 1,
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 2,
             "actionability": 1,
             "source_quality": 1
           },
           "engagement": {
-            "upvotes": 160,
-            "comments": 160
+            "upvotes": 33,
+            "comments": 1
           },
-          "why_it_matters": "For cost-sensitive, high-volume coding workloads, Sol Medium/High is now a serious alternative worth evaluating; retain Fable where interface design quality or long-context large-codebase reliability is the deciding factor. Sentiment in the thread is mixed rather than a clean win for either vendor.",
+          "why_it_matters": "The architecture claims (linear-attention decoding speedup, depth-selective residuals) are the parts of this release worth tracking for infrastructure planning, independent of the leaderboard placement; verify the 6.3x decoding-speed figure against independent long-context benchmarks once weights ship July 27 rather than taking Moonshot's own number at face value.",
           "tags": [
-            "claude",
-            "gpt-5.6",
-            "comparison",
-            "megathread"
+            "kimi",
+            "architecture",
+            "moe",
+            "benchmarks"
           ],
           "category": "Tool Reviews",
-          "recurrence": "returning_theme",
-          "recurrence_note": "Continues the same Fable-vs-Sol comparison thread that dominated the prior week's coverage; this week's megathread format aggregates community consensus rather than introducing new benchmark data.",
+          "recurrence": "new",
           "platform": "reddit",
           "verified": true,
-          "verified_at": "2026-07-24T17:50:00Z"
+          "verified_at": "2026-07-24T18:21:15Z"
         }
       ]
     },
@@ -582,68 +613,68 @@
       "layout": "list",
       "items": [
         {
-          "id": "claudeai-50pct-extra-usage-extended-aug19-2026-07-18",
-          "title": "Claude Code's 50% extra weekly usage promotion extended again, now through August 19",
-          "source": "r/ClaudeAI",
-          "author": "community",
-          "date": "2026-07-18",
-          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1v01o7q/claude_code_50_extra_weekly_usage_extended_to_aug/",
-          "summary": "Anthropic extended its 50% extra weekly usage promotion for Claude Code a second time, pushing the deadline from mid-July to August 19, per a linked support.claude.com article. This continues a pattern from prior weeks of repeated, inconsistently-timed extensions to promotional access windows.",
+          "id": "singularity-gemini35pro-delay-2026-07-14",
+          "title": "Leaker claims DeepMind has internally delayed Gemini 3.5 Pro again, possibly until August",
+          "source": "r/singularity",
+          "author": "u/141_1337",
+          "date": "2026-07-14",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1uwiq9q/deepmind_internally_delays_gemini_35_pro_again/",
+          "summary": "A post citing an unnamed social-media leaker claims Google DeepMind has pushed back its internal timeline for Gemini 3.5 Pro a further time, with one linked claim suggesting a slip to August. The thread (258 upvotes, 118 comments) is skeptical of the source: multiple commenters (u/TofuMeltatSunspot, u/CriticismJunior1139) note the same account floods the subreddit with unverified Twitter screenshots, and u/WonderFactory counters that Google's public roadmap looks deliberately focused on smaller, faster models (3.5 Flash shipped first) rather than a stalled Pro launch. No official Google statement confirms or denies a delay.",
           "score": {
             "total": 4.0,
-            "signal": 1,
-            "novelty": 1,
-            "actionability": 1,
-            "source_quality": 1
-          },
-          "engagement": {
-            "upvotes": 40,
-            "comments": 15
-          },
-          "tags": [
-            "claude-code",
-            "promotion",
-            "usage-limits"
-          ],
-          "category": "Emerging Signals",
-          "why_it_matters": "Repeated extension of promotional usage windows suggests Anthropic is actively managing capacity or retention pressure rather than running a fixed-term trial; teams evaluating Claude Code should not treat any single stated deadline as final when planning an evaluation period.",
-          "recurrence": "returning_theme",
-          "recurrence_note": "Direct continuation of the Fable 5 promotional-deadline extension pattern flagged as an emerging signal in the 2026-07-06 file; the deadline has now moved from July 12 to July 19 to August 19 across three consecutive weeks.",
-          "platform": "reddit",
-          "verified": true,
-          "verified_at": "2026-07-24T17:50:00Z"
-        },
-        {
-          "id": "claudecode-safety-classifier-rework-demand-2026-07-16",
-          "title": "\"The Claude Safety Classifier Needs Rework ASAP\" gains traction alongside quota-fairness complaints",
-          "source": "r/ClaudeCode",
-          "author": "community",
-          "date": "2026-07-16",
-          "primary_url": "https://genisisiq.com/reddit/ai-coding/2026-07-16/",
-          "summary": "A thread arguing Anthropic's safety classifier is miscalibrated at a critical competitive moment drew notable engagement in the same week as the $50-credit-burn and reset-fairness complaints, and the same week Anthropic published its own agent-sabotage research. Cited via the genisisiq daily digest; direct subreddit engagement figures should be treated as approximate pending independent verification.",
-          "score": {
-            "total": 3.5,
             "signal": 1,
             "novelty": 1,
             "actionability": 1,
             "source_quality": 0
           },
           "engagement": {
-            "upvotes": 45,
-            "comments": 22
+            "upvotes": 258,
+            "comments": 118
           },
           "tags": [
-            "claude",
-            "safety-tooling",
-            "complaint"
+            "gemini",
+            "google",
+            "delay",
+            "unverified-claim"
           ],
           "category": "Emerging Signals",
-          "why_it_matters": "Watch whether safety-classifier complaints and Anthropic's own published sabotage research converge into a coherent narrative about agent oversight quality — right now they are separate threads that happen to be running the same week.",
-          "recurrence": "returning_theme",
-          "recurrence_note": "Extends the safety-tooling-friction theme from the 2026-07-06 file's Fable-detects-malware top pick, where Claude's own safety filter penalized legitimate security work; this week's complaint is broader and less specific.",
+          "why_it_matters": "Treat this as an unconfirmed rumor, not a roadmap input: the source has a documented pattern of unverified claims per the thread's own top comments, and no primary Google statement supports a specific delay date. Worth revisiting only if Google confirms a timeline change directly.",
+          "recurrence": "new",
           "platform": "reddit",
-          "verified": false,
-          "verified_at": "2026-07-24T17:50:00Z"
+          "verified": true,
+          "verified_at": "2026-07-24T18:21:15Z"
+        },
+        {
+          "id": "artificial-kimi-k3-intelligence-index-rank-2026-07-17",
+          "title": "Kimi K3 lands third on the Artificial Analysis Intelligence Index, ahead of Opus 4.8",
+          "source": "r/artificial",
+          "author": "u/hero88645",
+          "date": "2026-07-17",
+          "primary_url": "https://www.reddit.com/r/artificial/comments/1uyrw6h/kimi_k3_landed_third_on_the_intelligence_index/",
+          "summary": "The post reports Kimi K3 ranking third on the Artificial Analysis Intelligence Index (behind Fable 5 and GPT-5.6 Sol, ahead of Opus 4.8), scoring 77.8 on Program Bench and placing first in the blind Frontend Code Arena among community-tested models. The thread (64 upvotes, 44 comments) includes real skepticism in the top replies: u/Extension-Aside29 notes the leaderboard measures tokens and tool-steps per completed task rather than a single-point Intelligence Index gap, and u/leogoesger and others flag that the model cannot yet be self-hosted or independently verified since full weights are not due until July 27.",
+          "score": {
+            "total": 5.5,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 64,
+            "comments": 44
+          },
+          "tags": [
+            "kimi",
+            "benchmarks",
+            "open-weight",
+            "leaderboard"
+          ],
+          "category": "Emerging Signals",
+          "why_it_matters": "Leaderboard placement for a model whose weights are not yet public should be treated as a preview-API result, not a reproducible benchmark; hold procurement or eval-suite decisions until independent testing is possible after the July 27 weight release.",
+          "recurrence": "new",
+          "platform": "reddit",
+          "verified": true,
+          "verified_at": "2026-07-24T18:21:15Z"
         },
         {
           "id": "ai-agents-portable-thin-stack-shift-2026-07-14",
@@ -729,12 +760,20 @@
       "score": 5.5
     },
     {
-      "title": "Another 50+ year-old Erdős problem reportedly falls to GPT-5.6",
-      "source": "r/singularity",
-      "author": "u/socoolandawesome",
-      "date": "2026-07-13",
-      "primary_url": "https://www.reddit.com/r/singularity/comments/1uvrtl0/another_50_yearold_erd%C5%91s_problem_falls_to_gpt56/",
-      "score": 5.0
+      "title": "Moonshot AI launches Kimi K3, a 2.8-trillion-parameter open model, on web and app",
+      "source": "r/LocalLLaMA",
+      "author": "u/External_Mood4719",
+      "date": "2026-07-16",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1uy3a0q/kimi_k3_released_on_web_and_app/",
+      "score": 6.0
+    },
+    {
+      "title": "Thinking Machines releases its first open-weight model, \"Inkling,\" a 975B-parameter multimodal MoE",
+      "source": "r/LocalLLaMA",
+      "author": "u/WhyLifeIs4",
+      "date": "2026-07-15",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1uxdv34/thinking_machines_releases_first_openweight_model/",
+      "score": 6.5
     },
     {
       "title": "Anthropic tells the US Senate that Alibaba ran 25,000 fake accounts to distill Claude, not to use it",
@@ -777,12 +816,12 @@
       "score": 5.5
     },
     {
-      "title": "Megathread verdict on Fable vs. Opus vs. GPT-5.6 Sol vs. Gemini 3.5: Sol wins on flexibility and price, Fable holds design edge",
-      "source": "r/ClaudeAI",
-      "author": "community",
-      "date": "2026-07-12",
-      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1uutku5/fable_vs_opus_vs_gpt_56_sol_vs_gemini_35_vs/",
-      "score": 5.0
+      "title": "Technical breakdown of Kimi K3's architecture: Kimi Delta Attention, Attention Residuals, and Stable LatentMoE",
+      "source": "r/machinelearningnews",
+      "author": "u/ai-lover",
+      "date": "2026-07-17",
+      "primary_url": "https://www.reddit.com/r/machinelearningnews/comments/1uyjsl1/moonshot_ai_just_released_kimi_k3_it_is_a/",
+      "score": 6.0
     },
     {
       "title": "Debate: does the Tachikawa/Fable physics story hold up, or is it an overstated framing of a real but modest result",
@@ -801,20 +840,20 @@
       "score": 5.5
     },
     {
-      "title": "Claude Code's 50% extra weekly usage promotion extended again, now through August 19",
-      "source": "r/ClaudeAI",
-      "author": "community",
-      "date": "2026-07-18",
-      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1v01o7q/claude_code_50_extra_weekly_usage_extended_to_aug/",
+      "title": "Leaker claims DeepMind has internally delayed Gemini 3.5 Pro again, possibly until August",
+      "source": "r/singularity",
+      "author": "u/141_1337",
+      "date": "2026-07-14",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1uwiq9q/deepmind_internally_delays_gemini_35_pro_again/",
       "score": 4.0
     },
     {
-      "title": "\"The Claude Safety Classifier Needs Rework ASAP\" gains traction alongside quota-fairness complaints",
-      "source": "r/ClaudeCode",
-      "author": "community",
-      "date": "2026-07-16",
-      "primary_url": "https://genisisiq.com/reddit/ai-coding/2026-07-16/",
-      "score": 3.5
+      "title": "Kimi K3 lands third on the Artificial Analysis Intelligence Index, ahead of Opus 4.8",
+      "source": "r/artificial",
+      "author": "u/hero88645",
+      "date": "2026-07-17",
+      "primary_url": "https://www.reddit.com/r/artificial/comments/1uyrw6h/kimi_k3_landed_third_on_the_intelligence_index/",
+      "score": 5.5
     },
     {
       "title": "Production AI-agent builders are converging on thin, portable stacks over heavyweight frameworks",
@@ -850,8 +889,9 @@
       "Claude Code usage-metering fairness and reset-timing complaints as a recurring watch topic — three consecutive weeks of related threads now"
     ],
     "topics_to_drop": [
-      "Individual Erdős-problem-solved claims — recurring low-verification genre; cover only if independently confirmed by the mathematics community going forward"
+      "Individual Erdős-problem-solved claims — recurring low-verification genre; cover only if independently confirmed by the mathematics community going forward (dropped this pass)",
+      "Claude Code promotional-deadline extension mechanics and the Claude safety-classifier-rework complaint — both were low-signal (score ≤ 4.0) direct continuations of prior-week storylines with no new information this week; dropped to make room for genuinely new open-weight model coverage"
     ],
-    "notes": "Several items this week (n8n production checklist, safety-classifier rework thread, thin-stack agent architecture pattern) were sourced through the genisisiq daily digest rather than a direct Reddit fetch, because targeted searches did not surface a resolvable reddit.com permalink within the step budget. Those items are marked verified: false and should be re-verified directly against Reddit before being promoted to Top Picks in a future pass. The Tachikawa physics claim and its skeptic rebuttal are both included specifically because the editorial voice requires flagging unresolved conflicts rather than picking a side; treat the underlying capability claim as unverified pending the deleted source post."
+    "notes": "Freshness correction pass (2026-07-24): the initial draft scored pct_new 0.6 (12/20), below the 0.80 target. Four of the weakest returning_theme section items (Erdős-problem genre thread, Fable-vs-Sol megathread, Claude Code promo-extension notice, safety-classifier-rework digest item — the last of which was also unverified) were removed as low-value direct continuations, and replaced with four independently verified, genuinely new threads from the target week: Moonshot's Kimi K3 launch and its architecture deep-dive, Thinking Machines' first open-weight model 'Inkling', and a (skeptically-framed) Gemini 3.5 Pro delay rumor thread. All four new primary_urls were fetched directly and returned HTTP 200 with content matching the summaries. Top Picks were left unchanged. pct_new is now 0.81 (17/21, counting two non-Reddit secondary-source index rows per this tab's existing convention). Several items this week (n8n production checklist, thin-stack agent architecture pattern) were sourced through the genisisiq daily digest rather than a direct Reddit fetch, because targeted searches did not surface a resolvable reddit.com permalink within the step budget. Those items are marked verified: false and should be re-verified directly against Reddit before being promoted to Top Picks in a future pass. The Tachikawa physics claim and its skeptic rebuttal are both included specifically because the editorial voice requires flagging unresolved conflicts rather than picking a side; treat the underlying capability claim as unverified pending the deleted source post."
   }
 }
