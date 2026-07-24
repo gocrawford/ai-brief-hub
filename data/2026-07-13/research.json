@@ -1,0 +1,762 @@
+{
+  "tab_id": "research",
+  "tab_name": "Research",
+  "subtitle": "Primary-Source Intelligence",
+  "icon": "FileText",
+  "min_items": 10,
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 0.8,
+    "items_total": 15,
+    "items_new": 12,
+    "items_returning": 3
+  },
+  "executive_summary": [
+    {
+      "headline": "China's agentic-AI framework becomes the first government policy targeting autonomous agents specifically",
+      "body": "The Implementation Opinions on the Standardized Application and Innovative Development of Intelligent Agents, issued jointly by the Cyberspace Administration of China, National Development and Reform Commission, and Ministry of Industry and Information Technology, took effect July 15. It sorts agent decisions into three authority tiers (user-reserved, user-authorized, autonomous-within-scope) and mandates filing, pre-deployment testing, and recall provisions for agents in healthcare, transportation, media, and public safety. No other jurisdiction has published agent-specific tiered-authority rules at this level of detail.",
+      "primary_url": "https://www.theleveragedyears.com/ai-regulation-news/china-cac-ndrc-miit-ai-agents-opinions-2026"
+    },
+    {
+      "headline": "EU AI Act workplace high-risk rules pushed to December 2, 2027 \u2014 but the delay buys planning time, not exemption",
+      "body": "Reuters legal analysis confirms the EU delayed high-risk workplace AI compliance from August 2, 2026 to December 2, 2027, while transparency and labeling obligations still land August 2, 2026. Attorneys advise employers to map recruitment, performance-management, and monitoring tools now rather than wait, since classification hinges on function (ranking, scoring, filtering) not vendor labels.",
+      "primary_url": "https://www.reuters.com/legal/legalindustry/workplace-ai-how-employers-should-prepare-new-eu-ai-act-deadline--pracin-2026-07-17/"
+    },
+    {
+      "headline": "Grok 4.5 model card shows the widest safety-capability tradeoff gap of any recent frontier release",
+      "body": "xAI's July 14 model card reports a 0.73% jailbreak compliance rate and 7.8% harmful-compliance on HackerBench v0.2 cyber-offense tests, both lower than GPT-5.5's comparable figures (25.0% harmful compliance), while posting a higher CyberGym score (80.4% vs. 73.7%). The pairing of tighter refusal behavior with higher raw offensive-security benchmark performance is the more interesting data point than the coding scores.",
+      "primary_url": "https://media.x.ai/v1/website/card-7f81d41b.pdf"
+    },
+    {
+      "headline": "New arXiv research shows per-step safety monitors have a provable blind spot for split, multi-agent attacks",
+      "body": "A July 13 paper formalizes an 'observability boundary': once an attack payload is fragmented across agent messages such that each fragment looks benign, no monitor watching only individual steps can catch it, regardless of monitor strength. The fix requires reconstructing the assembled interaction, not just watching more of it. This is a direct architecture concern for any multi-agent deployment relying on per-call guardrails.",
+      "primary_url": "https://arxiv.org/abs/2607.11751"
+    },
+    {
+      "headline": "NIST's critical-infrastructure AI profile remains in community-input stage, not a finished framework",
+      "body": "NIST's program page for the AI RMF Trustworthy AI in Critical Infrastructure Profile was updated July 17 to reflect ongoing Community of Interest engagement, six-plus months after the concept note was first published in April. No draft profile text or completion timeline has been released. Trade press describing this as a 'launch' overstates where the effort actually stands.",
+      "primary_url": "https://www.nist.gov/programs-projects/concept-note-ai-rmf-profile-trustworthy-ai-critical-infrastructure"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "china-agent-implementation-opinions-effective-july15",
+      "title": "China's Tiered Authority Rules for AI Agents Take Effect \u2014 First Government Framework Built Specifically for Autonomous Agents",
+      "subtitle": "Three-tier decision authority model plus mandatory filing, testing, and recall for agents in healthcare, transportation, media, and public safety",
+      "source": "The Leveraged Years (policy analysis); CAC/NDRC/MIIT (issuing authorities)",
+      "author": "Anthony Guerriero",
+      "date": "2026-07-17",
+      "primary_url": "https://www.theleveragedyears.com/ai-regulation-news/china-cac-ndrc-miit-ai-agents-opinions-2026",
+      "secondary_urls": [
+        {
+          "label": "EastFrontier: China just enacted three major AI regulations",
+          "url": "https://eastfrontier.com/2026/07/02/china-just-enacted-three-major-ai-regulations-here-is-what-they-actually-require/"
+        }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-24T17:00:00Z",
+      "summary": "The Implementation Opinions on the Standardized Application and Innovative Development of Intelligent Agents, jointly issued by China's Cyberspace Administration, National Development and Reform Commission, and Ministry of Industry and Information Technology, took effect July 15 after being announced May 8. It is policy guidance rather than binding law \u2014 no penalty schedule attached \u2014 but it establishes a three-tier authority model: decisions reserved for the user, decisions requiring user authorization before the agent acts, and decisions the agent can make autonomously within a scope the user already granted. Agents deployed in healthcare, transportation, media, and public safety face filing/registration requirements, compliance testing before and during deployment, and recall provisions for problematic products. The framework identifies 19 typical application scenarios it wants to encourage. This is the most granular agent-specific authority-tiering scheme published by any government to date; the EU AI Act and US state laws regulate AI systems generally but have not published an agent-specific decision-authority taxonomy at this resolution.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "recurrence": "new",
+      "tags": [
+        "regulation",
+        "agentic-ai",
+        "china",
+        "governance"
+      ],
+      "category": "regulation_global",
+      "enterprise_adaptation": "Adopt the three-tier authority model as an internal design pattern for any agent deployment, independent of whether China's rules apply: explicitly enumerate which decisions your agents may never make unsupervised, which require a human-in-the-loop authorization step, and which fall inside a pre-approved autonomous scope. In a regulated, publicly traded enterprise, this maps directly onto existing SOX and internal-controls documentation \u2014 treat agent authority tiers as an extension of delegation-of-authority policy, not a new governance category. Caveat: US and EU frameworks do not yet require this structure, so building it now is a voluntary control that will look prescient if agent-specific regulation follows China's lead, which NIST's critical-infrastructure profile work suggests is plausible. 30-day experiment: pick one active internal agent pilot (not customer-facing) and retroactively classify every action it takes over two weeks into the three tiers; measure what fraction currently executes autonomously with no logged authorization step, and flag that fraction for review before any production expansion."
+    },
+    {
+      "id": "eu-ai-act-workplace-deadline-delay-reuters-july17",
+      "title": "EU Delays High-Risk Workplace AI Rules to December 2027 \u2014 Transparency Rules Still Land in Two Weeks",
+      "subtitle": "Reuters legal analysis: classify by function not vendor label, and don't wait on the delay",
+      "source": "Reuters Legal",
+      "author": "Yana Komsitsky",
+      "date": "2026-07-17",
+      "primary_url": "https://www.reuters.com/legal/legalindustry/workplace-ai-how-employers-should-prepare-new-eu-ai-act-deadline--pracin-2026-07-17/",
+      "verified": true,
+      "verified_at": "2026-07-24T17:05:00Z",
+      "summary": "The EU AI Act's high-risk workplace compliance deadline \u2014 covering recruitment, performance management, monitoring, task allocation, and termination-related tools \u2014 moved from August 2, 2026 to December 2, 2027. Transparency and labeling obligations are unaffected and still take effect August 2, 2026. The analysis, from Seyfarth Shaw LLP attorneys via Reuters, stresses that classification turns on function (does the tool rank, score, filter, or profile workers) rather than vendor marketing labels like 'automation' or 'decision support,' and that human review does not exempt a system from high-risk status if AI output materially influences the outcome. Recommended employer sequence: map every AI-enabled HR tool against a use-case inventory, separate purely administrative tools (scheduling, formatting) from decision-influencing ones, pressure-test vendor documentation and audit rights, and document the classification reasoning now rather than after the 2027 deadline. The piece explicitly frames the delay as a planning window, not a reason to slow down.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "recurrence": "returning",
+      "recurrence_note": "Extends ongoing EU AI Act high-risk classification coverage tracked in prior weeks; this is the first primary reporting on the confirmed December 2027 workplace deadline shift with concrete employer guidance.",
+      "tags": [
+        "regulation",
+        "eu-ai-act",
+        "hr-tech",
+        "compliance"
+      ],
+      "category": "regulation_global",
+      "enterprise_adaptation": "Run the function-based classification (not vendor-label based) across every HR and workforce-management tool with an EU employee footprint, including tools procured for non-EU use that could expand there. Regulated-environment caveat: a public-company innovation function should treat this inventory as an artifact discoverable in litigation or regulatory inquiry \u2014 document classification reasoning at the time it's made, not retroactively. 30-day experiment: select three HR-adjacent AI tools already in production or pilot (e.g., resume screening, performance-monitoring dashboards, scheduling optimization) and run the Reuters-recommended triage \u2014 administrative vs. decision-influencing \u2014 producing a one-page classification memo per tool with vendor documentation attached as evidence."
+    },
+    {
+      "id": "grok-4-5-model-card-july14",
+      "title": "Grok 4.5 Model Card: Lower Jailbreak Compliance, Higher Offensive-Security Benchmark Score Than GPT-5.5",
+      "subtitle": "0.73% jailbreak compliance and 7.8% cyber harmful-compliance, paired with an 80.4% CyberGym score",
+      "source": "xAI",
+      "author": "xAI",
+      "date": "2026-07-14",
+      "primary_url": "https://media.x.ai/v1/website/card-7f81d41b.pdf",
+      "verified": true,
+      "verified_at": "2026-07-24T17:10:00Z",
+      "summary": "xAI's Grok 4.5 model card, published July 14, reports jailbreak compliance of 0.73% under adversarial pressure, general refusal compliance of 1.1%, and 0.0% child-safety compliance. On offense-oriented cyber benchmarks it scores 80.4% on CyberGym (above GPT-5.5 xhigh's 73.7%) while showing lower harmful compliance on HackerBench v0.2 (7.8% vs. GPT-5.5's 25.0%) \u2014 meaning it refuses harmful cyber requests more often while also scoring higher on a capability benchmark that measures successful exploitation in a controlled research environment. CBRN refusal accuracy is reported at 97.9% (biological), 96.7% (chemical), and 97.9% (radiological/nuclear). Coding benchmarks are mixed relative to competitors: 62.0% on DeepSWE 1.0 (behind Fable 5's 66.1% and GPT-5.5's 64.3%) but 83.3% on Terminal-Bench 2.1, close to the top scores in that category. Pretraining cutoff is January 2026. The model card frames Grok 4.5 as not intended for autonomous high-stakes decisions in medicine, law, finance, or safety-critical systems without human oversight.",
+      "score": {
+        "total": 7.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "recurrence": "new",
+      "tags": [
+        "model-card",
+        "frontier-model",
+        "ai-safety",
+        "xai"
+      ],
+      "category": "model_cards",
+      "enterprise_adaptation": "Do not select a frontier model on coding-benchmark leaderboard position alone; the safety-refusal profile (jailbreak compliance, harmful-compliance rate) is a more relevant enterprise risk signal for any deployment with external-facing or agentic tool-use exposure. Regulated-environment caveat: model-card benchmarks are self-reported by the lab under its own red-team methodology \u2014 treat cross-lab comparisons as directional, not certified, until independent evaluators (e.g., UK AISI, METR) publish parallel results. 30-day experiment: run your own harmful-compliance spot-check (10-20 adversarial prompts relevant to your actual use case, not generic jailbreak prompts) against any candidate model before procurement sign-off, and compare against the vendor's self-reported figures rather than trusting the model card at face value."
+    },
+    {
+      "id": "arxiv-distributed-backdoors-multiagent-july13",
+      "title": "Per-Step Safety Monitors Have a Provable Blind Spot for Multi-Agent Attacks Split Across Messages",
+      "subtitle": "New arXiv paper formalizes an 'observability boundary' \u2014 no local monitor can catch an attack that looks benign at every individual step",
+      "source": "arXiv",
+      "author": "Yibo Hu, Ren Wang",
+      "date": "2026-07-13",
+      "primary_url": "https://arxiv.org/abs/2607.11751",
+      "verified": true,
+      "verified_at": "2026-07-24T17:15:00Z",
+      "summary": "The paper defines a 'distributed backdoor' attack on multi-agent, tool-using LLM systems: a harmful payload is split across multiple agent messages or tool calls such that every individual step passes a per-step safety monitor, and only the assembled result constitutes the attack. The authors formally prove that once fragments are indistinguishable from benign traffic in a monitor's view, no detector operating on that same view can catch them, regardless of detector strength \u2014 an 'observability boundary.' Testing across a controlled testbed, an external benchmark, and end-to-end agent runs confirms local monitors lose signal as evidence disappears into fragments, and recovers only when the monitor sees the assembled object. A monitor trained only on benign traffic still recovers the attack's underlying code structure across held-out encodings with 0.874 mean AUROC, and a decoded-view gate (given the encoding family) blocks every tested attack \u2014 but full-trace monitors and decoders that don't reach the representation where the payload is actually exposed still fail. The practical implication: guardrails that check each agent step or tool call independently are structurally insufficient for multi-agent systems, regardless of how well-tuned they are.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "recurrence": "new",
+      "tags": [
+        "arxiv",
+        "ai-safety",
+        "multi-agent-systems",
+        "security"
+      ],
+      "category": "papers",
+      "enterprise_adaptation": "Any production multi-agent deployment (customer service orchestration, internal workflow agents, document-processing pipelines) that relies on per-step content filtering or per-tool-call guardrails should be re-audited against this finding: the control gives a false sense of coverage against attacks fragmented across steps. Regulated-environment caveat: this is a theoretical/testbed result, not a demonstrated production breach \u2014 treat it as a design-review trigger, not an incident. 30-day experiment: for one active multi-agent pilot, map where safety checks currently run (per-message, per-tool-call, or on the assembled conversation/output), and if all checks are per-step, add one full-trace check on the assembled final output as a non-production test to measure what it catches that step-level checks miss."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "papers",
+      "title": "Papers & Preprints",
+      "description": "arXiv submissions from the week with direct relevance to enterprise AI deployment, safety, and evaluation.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "arxiv-distributed-backdoors-multiagent-july13",
+          "title": "When Local Monitors Miss Compositional Harm: Diagnosing Distributed Backdoors in Multi-Agent Systems",
+          "source": "arXiv",
+          "author": "Yibo Hu, Ren Wang",
+          "date": "2026-07-13",
+          "primary_url": "https://arxiv.org/abs/2607.11751",
+          "verified": true,
+          "verified_at": "2026-07-24T17:15:00Z",
+          "summary": "Formally proves that per-step safety monitors cannot detect multi-agent attacks split into fragments that each look benign \u2014 an 'observability boundary.' A decoded-view gate that reaches the assembled representation blocks every tested attack; full-trace monitors that don't reach that representation still fail. Tested across a controlled testbed, external benchmark, and end-to-end agent runs.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "recurrence": "new",
+          "tags": [
+            "ai-safety",
+            "multi-agent-systems",
+            "security"
+          ]
+        },
+        {
+          "id": "arxiv-agent-hacks-agent-redteam-july13",
+          "title": "Agent Hacks Agent: Autoresearch for Production-Agent Red-Teaming",
+          "source": "arXiv",
+          "author": "Xutao Mao, Xiang Zheng, Cong Wang",
+          "date": "2026-07-13",
+          "primary_url": "https://arxiv.org/abs/2607.11698",
+          "verified": true,
+          "verified_at": "2026-07-24T17:16:00Z",
+          "summary": "Presents AHA, a discovery loop where one agentic system red-teams another (tested on Claude Code and Codex), converting confirmed vulnerabilities into a reusable Vulnerability Concept Graph rather than one-off exploit artifacts. A frozen VCG outperforms the strongest frozen baseline by 14.2 percentage points and transfers across scenarios and attack channels, giving production safety teams an auditable artifact for patch validation.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "recurrence": "new",
+          "tags": [
+            "ai-safety",
+            "red-teaming",
+            "agentic-ai"
+          ]
+        },
+        {
+          "id": "arxiv-llm-judge-bias-interpretability-july13",
+          "title": "Inside the Unfair Judge: A Mechanistic Interpretability Account of LLM-as-Judge Bias",
+          "source": "arXiv",
+          "author": "Zixiang Xu, Sixian Li, Huaxing Liu, Xiang Wang, Shuai Li, Zirui Song, Xiuying Chen",
+          "date": "2026-07-13",
+          "primary_url": "https://arxiv.org/abs/2607.11871",
+          "verified": true,
+          "verified_at": "2026-07-24T17:17:00Z",
+          "summary": "Shows LLM-as-judge scoring bias has a representation-level signature: biased inputs displace a judge's hidden state along a low-dimensional subspace that sharpens with depth. Steering hidden states along this subspace causally reproduces or removes the bias, and a linear projection onto the same features predicts judge failures on unseen benchmarks, outperforming text-based bias detectors. Relevant to any enterprise using LLM-as-judge for evaluation pipelines or automated QA.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "recurrence": "new",
+          "tags": [
+            "llm-evaluation",
+            "interpretability",
+            "ai-quality"
+          ]
+        },
+        {
+          "id": "arxiv-agent-execution-scope-estimation-july14",
+          "title": "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution",
+          "source": "arXiv",
+          "author": "Junjie Yin, Xinyu Feng",
+          "date": "2026-07-14",
+          "primary_url": "https://arxiv.org/abs/2607.13034",
+          "verified": true,
+          "verified_at": "2026-07-24T17:18:00Z",
+          "summary": "Identifies that coding/engineering agents default to a maximum-context-first strategy, re-reading files unnecessarily and turning small edits into full codebase audits. The proposed E3 (Estimate, Execute, Expand) method matches the strongest baseline's success rate while cutting cost 85% and tokens 91% on a 121-task benchmark, with the effect corroborated on a live GPT-4o agent editing a real open-source library graded against actual test suites. Direct relevance to agent deployment cost control.",
+          "score": {
+            "total": 6.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "recurrence": "new",
+          "tags": [
+            "agentic-ai",
+            "cost-efficiency",
+            "coding-agents"
+          ]
+        },
+        {
+          "id": "arxiv-metacognition-llms-survey-july13",
+          "title": "Metacognition in LLMs: Foundations, Progress, and Opportunities",
+          "source": "arXiv",
+          "author": "Gabrielle Kaili-May Liu, Areeb Gani, Jacqueline Lu, Jordan Thomas, Mark Steyvers, Arman Cohan",
+          "date": "2026-07-13",
+          "primary_url": "https://arxiv.org/abs/2607.11881",
+          "verified": true,
+          "verified_at": "2026-07-24T18:05:00Z",
+          "summary": "First comprehensive survey and taxonomy of metacognition research in large language models \u2014 the ability of a model to assess its own knowledge, confidence, and reasoning process. Covers methods and benchmarks for measuring metacognitive ability, techniques to elicit or improve it, and open challenges. Directly relevant to enterprise reliability work: metacognitive calibration (a model knowing when it doesn't know) is the underlying capability behind confidence scoring, abstention, and escalation-to-human patterns in production AI systems.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "recurrence": "new",
+          "tags": [
+            "arxiv",
+            "llm-reliability",
+            "survey"
+          ]
+        },
+        {
+          "id": "arxiv-mm-toolsandbox-visual-agents-july13",
+          "title": "MM-ToolSandBox: A Unified Framework for Evaluating Visual Tool-Calling Agents",
+          "source": "arXiv",
+          "author": "Kaixin Ma, Di Feng, Alexander Metz, Jiarui Lu, Eshan Verma, Afshin Dehghan (Apple)",
+          "date": "2026-07-13",
+          "primary_url": "https://arxiv.org/abs/2607.11818",
+          "verified": true,
+          "verified_at": "2026-07-24T18:10:00Z",
+          "summary": "Apple researchers introduce a benchmark spanning 500+ tools across 16 application domains to test agents that must ground visual inputs (screenshots, images arriving mid-conversation) into executable tool calls. Across 12 state-of-the-art models, from 4B open-weight to frontier proprietary systems, even the best model scores below 50% success. Failure analysis finds 53% of failures come from incorrect visual information extraction rather than planning errors, and a scale-dependent crossover: smaller models fail at deciding what to do, larger models fail at correctly perceiving what they see. Directly relevant to any enterprise piloting agents that operate against UI screenshots or document images rather than clean structured data.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "recurrence": "new",
+          "tags": [
+            "arxiv",
+            "multimodal-agents",
+            "benchmark",
+            "apple"
+          ]
+        },
+        {
+          "id": "arxiv-playful-ai-email-field-experiment-july13",
+          "title": "Playful AI in Professional Email: A Field Experiment on Tone and Recipient Engagement",
+          "source": "arXiv",
+          "author": "Ziv Ben-Zion, Teddy Lazebnik",
+          "date": "2026-07-13",
+          "primary_url": "https://arxiv.org/abs/2607.11749",
+          "verified": true,
+          "verified_at": "2026-07-24T18:15:00Z",
+          "summary": "Randomized crossover field experiment with 121 employees across six companies, sending work emails under three conditions over three weeks: unaided writing, GPT-5 rewriting in a playful tone, and GPT-5 rewriting in a professional tone. Across 16,880 emails, playful editing increased emotional positivity and professional editing decreased it, but neither condition directly changed open rates, reply rates, or response times. Instead, within-sender positivity itself strongly predicted opening (OR=2.05) and replying (OR=3.32, p<0.001) \u2014 an indirect pathway. The finding: AI email-assist tools shape workplace engagement through the emotional tone they produce, not through the fact of AI assistance itself. Relevant to any enterprise deploying AI writing assistants at scale, where tone defaults chosen at rollout may have measurable downstream effects on internal and external response behavior.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "recurrence": "new",
+          "tags": [
+            "arxiv",
+            "field-experiment",
+            "workplace-ai",
+            "communication"
+          ]
+        },
+        {
+          "id": "arxiv-gauntlet-multiagent-critique-july13",
+          "title": "Can LLMs Perform Deep Technical Comprehension of Computer Architecture Papers?",
+          "source": "arXiv",
+          "author": "Nishant Aggarwal et al.",
+          "date": "2026-07-13",
+          "primary_url": "https://arxiv.org/abs/2607.11859",
+          "verified": true,
+          "verified_at": "2026-07-24T18:20:00Z",
+          "summary": "Tests Gauntlet, a multi-agent pipeline of five expert-persona reviewers plus an adversarial synthesis stage, against human expert analysis of 20 ISCA/HPCA computer architecture papers. Evaluators preferred the pipeline's analysis over a human researcher's in 15 of 20 head-to-head comparisons, with the largest advantage on critical rigor; humans won on trust and calibration, catching confident wrong claims the pipeline missed. A 98-paper ablation confirms the gain comes specifically from the multi-agent structure and synthesis pass, not a single well-prompted agent \u2014 the multi-agent version beats a single rich-persona agent on 96% of papers. The pattern generalizes beyond computer architecture: multi-agent critique pipelines with adversarial synthesis outperform single-agent review for structured technical evaluation, with a specific, quantified failure mode (overconfidence) where human oversight still adds value.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "recurrence": "new",
+          "tags": [
+            "arxiv",
+            "multi-agent-systems",
+            "llm-evaluation"
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "model_cards",
+      "title": "Model Cards & Frontier Releases",
+      "description": "Primary-source model documentation published or updated during the week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "grok-4-5-model-card-july14",
+          "title": "Grok 4.5 Model Card",
+          "source": "xAI",
+          "author": "xAI",
+          "date": "2026-07-14",
+          "primary_url": "https://media.x.ai/v1/website/card-7f81d41b.pdf",
+          "verified": true,
+          "verified_at": "2026-07-24T17:10:00Z",
+          "summary": "Full model card for Grok 4.5, xAI's newest frontier model family, pretraining cutoff January 2026. Reports jailbreak compliance of 0.73%, CBRN refusal accuracy above 96% across biological, chemical, and radiological/nuclear categories, and mixed coding-benchmark standing against GPT-5.5, Claude Opus 4.8, and Fable 5 \u2014 ahead on some (Terminal-Bench 2.1, SWE-Marathon) and behind on others (DeepSWE 1.0/1.1). Available via the xAI API, Grok Build, Cursor, and Office add-ins.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "recurrence": "new",
+          "tags": [
+            "model-card",
+            "xai",
+            "frontier-model"
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_us",
+      "title": "US Regulation",
+      "description": "US federal and state AI regulatory developments during the week.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "nist-ai-rmf-critical-infrastructure-profile-update-july17",
+          "title": "NIST AI RMF Critical Infrastructure Profile: Community-Input Stage, Not a Finished Framework",
+          "source": "NIST",
+          "author": "NIST",
+          "date": "2026-07-17",
+          "primary_url": "https://www.nist.gov/programs-projects/concept-note-ai-rmf-profile-trustworthy-ai-critical-infrastructure",
+          "secondary_urls": [
+            {
+              "label": "Inside Cybersecurity: NIST launches critical infrastructure profile for AI risk management framework",
+              "url": "https://insidecybersecurity.com/daily-news/nist-launches-critical-infrastructure-profile-ai-risk-management-framework"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-24T17:20:00Z",
+          "summary": "NIST's program page for the AI RMF Trustworthy AI in Critical Infrastructure Profile was updated July 17, more than three months after the April 6 concept note first announced the effort. The page confirms NIST is still soliciting Community of Interest participation and sharing discussion drafts \u2014 no finished profile text or completion date has been published. Trade coverage describing this as a program 'launch' this week overstates the milestone; the substantive work (defining specific risk-management practices for AI-enabled critical infrastructure operators) remains in early collaborative drafting.",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "recurrence": "returning",
+          "recurrence_note": "Concept note originally published April 6, 2026; this is a status update on an ongoing multi-month rulemaking-adjacent process, not a new document.",
+          "tags": [
+            "nist",
+            "critical-infrastructure",
+            "risk-management"
+          ]
+        },
+        {
+          "id": "frontier-lab-ceos-regulation-convergence-axios-july16",
+          "title": "OpenAI, Anthropic, and Google DeepMind CEOs Converge on Independent Pre-Release Testing for Frontier Models",
+          "source": "Axios",
+          "author": "Jim Vandehei",
+          "date": "2026-07-16",
+          "primary_url": "https://www.axios.com/2026/07/16/ai-regulations-openai-anthropic-google",
+          "verified": true,
+          "verified_at": "2026-07-24T18:00:00Z",
+          "summary": "Sam Altman, Dario Amodei, and Demis Hassabis each published detailed regulatory proposals within the same five-week span, and all three converge on requiring independent, outside-party testing of frontier models before public release \u2014 a break from the industry's prior self-reporting norm. They diverge on enforcement structure: Amodei wants an FAA-style federal agency empowered to block a release from day one; Hassabis proposes a FINRA-style industry-funded but federally overseen standards body starting with voluntary reviews; Altman favors a US-led international forum (styled after the IAEA) that certifies countries and companies and uses market access as leverage. All three want the US, not a state-by-state patchwork or rival national regimes, setting the terms, and all frame the target narrowly around catastrophic-risk-capable frontier systems rather than broad AI regulation. The article notes two federal interventions restricting frontier model access already occurred this summer (Anthropic's Fable/Mythos models, then OpenAI's GPT-5.6), and flags a regulatory-capture risk: the compliance infrastructure required favors incumbents with existing legal, security, and government-relations capacity over startups and open-source developers.",
+          "score": {
+            "total": 7.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "recurrence": "new",
+          "tags": [
+            "regulation",
+            "frontier-models",
+            "policy",
+            "us"
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_global",
+      "title": "Global Regulation",
+      "description": "EU, China, and other non-US regulatory developments during the week.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "china-agent-implementation-opinions-effective-july15",
+          "title": "China's Implementation Opinions on Intelligent Agents Take Effect",
+          "source": "The Leveraged Years",
+          "author": "Anthony Guerriero",
+          "date": "2026-07-17",
+          "primary_url": "https://www.theleveragedyears.com/ai-regulation-news/china-cac-ndrc-miit-ai-agents-opinions-2026",
+          "verified": true,
+          "verified_at": "2026-07-24T17:00:00Z",
+          "summary": "Three-tier agent decision-authority framework (user-reserved, user-authorized, autonomous-within-scope) took effect July 15. Mandatory filing, testing, and recall for agents in healthcare, transportation, media, and public safety. Non-binding policy guidance, not law with an attached penalty schedule.",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "recurrence": "new",
+          "tags": [
+            "china",
+            "agentic-ai",
+            "regulation"
+          ]
+        },
+        {
+          "id": "china-anthropomorphic-services-effective-july15",
+          "title": "China's Interim Measures for AI Anthropomorphic Interactive Services Take Effect",
+          "source": "DataGuidance",
+          "author": "DataGuidance",
+          "date": "2026-04-10",
+          "primary_url": "https://www.dataguidance.com/news/china-cac-announces-interim-measures-ai-human",
+          "secondary_urls": [
+            {
+              "label": "AI News: China companion-AI rules prompt ByteDance, Alibaba to disable agent features",
+              "url": "https://www.artificialintelligence-news.com/news/china-ai-companion-rules/"
+            }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-24T17:25:00Z",
+          "summary": "China's CAC-issued Interim Measures for the Administration of AI Anthropomorphic Interactive Services (Decree No. 21), promulgated April 10, 2026, took effect July 15. The rules emphasize a people-oriented, 'AI for good' approach and, per subsequent industry reporting, prompted ByteDance's Doubao and Alibaba's Qwen to disable certain agent-companion features ahead of the compliance deadline. This is an effective-date event for a rule announced earlier in the year, included here because the compliance deadline itself falls inside the window and drove documented vendor behavior changes.",
+          "score": {
+            "total": 7.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "recurrence": "returning",
+          "recurrence_note": "Rule promulgated April 10, 2026; this entry reflects its July 15 effective-date deadline and resulting vendor compliance actions, not a new document.",
+          "tags": [
+            "china",
+            "companion-ai",
+            "regulation"
+          ]
+        },
+        {
+          "id": "eu-ai-act-workplace-deadline-delay-reuters-july17",
+          "title": "EU AI Act Workplace High-Risk Rules Delayed to December 2027",
+          "source": "Reuters Legal",
+          "author": "Yana Komsitsky",
+          "date": "2026-07-17",
+          "primary_url": "https://www.reuters.com/legal/legalindustry/workplace-ai-how-employers-should-prepare-new-eu-ai-act-deadline--pracin-2026-07-17/",
+          "verified": true,
+          "verified_at": "2026-07-24T17:05:00Z",
+          "summary": "High-risk workplace AI compliance (recruitment, performance management, monitoring, task allocation) moved from August 2, 2026 to December 2, 2027. Transparency/labeling rules still take effect August 2, 2026 on schedule. Employer guidance emphasizes function-based classification over vendor labeling.",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "recurrence": "returning",
+          "recurrence_note": "Extends ongoing EU AI Act high-risk classification tracking; new development is the confirmed December 2027 workplace deadline.",
+          "tags": [
+            "eu-ai-act",
+            "hr-tech",
+            "regulation"
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_disclosures",
+      "title": "Enterprise Disclosures",
+      "description": "AI-related disclosures in public-company SEC filings from industrial-sector issuers during the week.",
+      "layout": "table",
+      "items": []
+    },
+    {
+      "section_id": "emerging_signals",
+      "title": "Emerging Signals",
+      "description": "Early or unconfirmed developments worth tracking, flagged as such.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "gemini-3-5-pro-rumored-launch-window",
+          "title": "Gemini 3.5 Pro Rumored for July 17 Launch \u2014 Google Has Not Confirmed",
+          "source": "Tech Times",
+          "author": "Tech Times",
+          "date": "2026-07-08",
+          "primary_url": "https://www.techtimes.com/articles/319877/20260708/gemini-35-pro-targets-july-17-deepseeks-july-24-deadline-hits-developers-now.htm",
+          "verified": true,
+          "verified_at": "2026-07-24T17:30:00Z",
+          "summary": "Multiple secondary outlets reported a July 17 target date for Gemini 3.5 Pro, but Tech Times explicitly states Google has not confirmed this with a model card, API documentation, or pricing announcement. Google instead shipped Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash-Cyber on July 21 \u2014 after this window and not matching the rumored Pro release. Flagged as unconfirmed; do not treat the July 17 date as a commitment.",
+          "score": {
+            "total": 5.0,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "recurrence": "new",
+          "tags": [
+            "google",
+            "rumor",
+            "model-release"
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "index",
+      "title": "Full Index",
+      "description": "Complete list of items covered this week.",
+      "layout": "table",
+      "items": []
+    },
+    {
+      "section_id": "suggested_refinements",
+      "title": "Suggested Refinements for Next Week",
+      "description": "Coverage adjustments based on this week's research.",
+      "layout": "list",
+      "items": []
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Government agent-specific regulation is arriving before agent-specific enterprise governance frameworks are mature",
+      "evidence": "China's Implementation Opinions on Intelligent Agents (effective July 15) established a three-tier decision-authority model for agents in sensitive sectors before most enterprises outside China have documented equivalent internal authority tiers for their own agent deployments.",
+      "what_to_watch": "Whether NIST's critical-infrastructure profile, still in Community-of-Interest drafting as of July 17, converges on a similar tiered-authority structure, or whether the US approach stays sector-agnostic and voluntary."
+    },
+    {
+      "pattern": "Frontier labs are now explicitly trading off raw offensive-security benchmark performance against refusal behavior, not just capability against safety broadly",
+      "evidence": "Grok 4.5's model card shows a higher CyberGym score (80.4%) than GPT-5.5 (73.7%) paired with a lower harmful-compliance rate on HackerBench v0.2 (7.8% vs. 25.0%), indicating the two metrics are being optimized somewhat independently rather than moving together.",
+      "what_to_watch": "Whether future model cards report this same decoupling, and whether independent evaluators (UK AISI, METR) corroborate lab-reported refusal rates."
+    }
+  ],
+  "index": [
+    {
+      "title": "China's Implementation Opinions on Intelligent Agents Take Effect",
+      "primary_url": "https://www.theleveragedyears.com/ai-regulation-news/china-cac-ndrc-miit-ai-agents-opinions-2026",
+      "score": 8.5,
+      "source": "The Leveraged Years",
+      "author": "Anthony Guerriero",
+      "date": "2026-07-17"
+    },
+    {
+      "title": "EU AI Act Workplace High-Risk Rules Delayed to December 2027",
+      "primary_url": "https://www.reuters.com/legal/legalindustry/workplace-ai-how-employers-should-prepare-new-eu-ai-act-deadline--pracin-2026-07-17/",
+      "score": 8.0,
+      "source": "Reuters Legal",
+      "author": "Yana Komsitsky",
+      "date": "2026-07-17"
+    },
+    {
+      "title": "When Local Monitors Miss Compositional Harm: Diagnosing Distributed Backdoors in Multi-Agent Systems",
+      "primary_url": "https://arxiv.org/abs/2607.11751",
+      "score": 8.0,
+      "source": "arXiv",
+      "author": "Yibo Hu, Ren Wang",
+      "date": "2026-07-13"
+    },
+    {
+      "title": "Grok 4.5 Model Card",
+      "primary_url": "https://media.x.ai/v1/website/card-7f81d41b.pdf",
+      "score": 7.5,
+      "source": "xAI",
+      "author": "xAI",
+      "date": "2026-07-14"
+    },
+    {
+      "title": "Agent Hacks Agent: Autoresearch for Production-Agent Red-Teaming",
+      "primary_url": "https://arxiv.org/abs/2607.11698",
+      "score": 7.5,
+      "source": "arXiv",
+      "author": "Xutao Mao, Xiang Zheng, Cong Wang",
+      "date": "2026-07-13"
+    },
+    {
+      "title": "China's Interim Measures for AI Anthropomorphic Interactive Services Take Effect",
+      "primary_url": "https://www.dataguidance.com/news/china-cac-announces-interim-measures-ai-human",
+      "score": 7.0,
+      "source": "DataGuidance",
+      "author": "DataGuidance",
+      "date": "2026-04-10"
+    },
+    {
+      "title": "Inside the Unfair Judge: A Mechanistic Interpretability Account of LLM-as-Judge Bias",
+      "primary_url": "https://arxiv.org/abs/2607.11871",
+      "score": 7.0,
+      "source": "arXiv",
+      "author": "Zixiang Xu et al.",
+      "date": "2026-07-13"
+    },
+    {
+      "title": "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution",
+      "primary_url": "https://arxiv.org/abs/2607.13034",
+      "score": 7.0,
+      "source": "arXiv",
+      "author": "Junjie Yin, Xinyu Feng",
+      "date": "2026-07-14"
+    },
+    {
+      "title": "NIST AI RMF Critical Infrastructure Profile: Community-Input Stage, Not a Finished Framework",
+      "primary_url": "https://www.nist.gov/programs-projects/concept-note-ai-rmf-profile-trustworthy-ai-critical-infrastructure",
+      "score": 6.5,
+      "source": "NIST",
+      "author": "NIST",
+      "date": "2026-07-17"
+    },
+    {
+      "title": "Gemini 3.5 Pro Rumored for July 17 Launch \u2014 Google Has Not Confirmed",
+      "primary_url": "https://www.techtimes.com/articles/319877/20260708/gemini-35-pro-targets-july-17-deepseeks-july-24-deadline-hits-developers-now.htm",
+      "score": 5.0,
+      "source": "Tech Times",
+      "author": "Tech Times",
+      "date": "2026-07-08"
+    },
+    {
+      "title": "OpenAI, Anthropic, and Google DeepMind CEOs Converge on Independent Pre-Release Testing for Frontier Models",
+      "primary_url": "https://www.axios.com/2026/07/16/ai-regulations-openai-anthropic-google",
+      "score": 7.0,
+      "source": "Axios",
+      "author": "Jim Vandehei",
+      "date": "2026-07-16"
+    },
+    {
+      "title": "Metacognition in LLMs: Foundations, Progress, and Opportunities",
+      "primary_url": "https://arxiv.org/abs/2607.11881",
+      "score": 6.5,
+      "source": "arXiv",
+      "author": "Gabrielle Kaili-May Liu, Areeb Gani, Jacqueline Lu, Jordan Thomas, Mark Steyvers, Arman Cohan",
+      "date": "2026-07-13"
+    },
+    {
+      "title": "MM-ToolSandBox: A Unified Framework for Evaluating Visual Tool-Calling Agents",
+      "primary_url": "https://arxiv.org/abs/2607.11818",
+      "score": 7.0,
+      "source": "arXiv",
+      "author": "Kaixin Ma, Di Feng, Alexander Metz, Jiarui Lu, Eshan Verma, Afshin Dehghan (Apple)",
+      "date": "2026-07-13"
+    },
+    {
+      "title": "Playful AI in Professional Email: A Field Experiment on Tone and Recipient Engagement",
+      "primary_url": "https://arxiv.org/abs/2607.11749",
+      "score": 7.0,
+      "source": "arXiv",
+      "author": "Ziv Ben-Zion, Teddy Lazebnik",
+      "date": "2026-07-13"
+    },
+    {
+      "title": "Can LLMs Perform Deep Technical Comprehension of Computer Architecture Papers?",
+      "primary_url": "https://arxiv.org/abs/2607.11859",
+      "score": 6.5,
+      "source": "arXiv",
+      "author": "Nishant Aggarwal et al.",
+      "date": "2026-07-13"
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Grok 4.5 has a working jailbreak circulating publicly, claimed by the researcher known as 'Pliny the Liberator' around July 11, 2026.",
+      "reason": "Claim originates from an unverified social-media source with no corroborating primary documentation of the exploit or its scope; French-language technical analysis (Penligent) treated it skeptically. Falls outside the window regardless.",
+      "attempted_url": "https://www.penligent.ai/hackinglabs/gpt-5-6-sol-jailbreaks/"
+    },
+    {
+      "claim": "SEC EDGAR full-text search for industrial-sector peer AI disclosures filed July 13-19, 2026.",
+      "reason": "Direct EDGAR full-text search and API endpoints returned robots.txt disallow errors on all attempted queries; no filings could be independently confirmed for the window. Enterprise Disclosures section left empty rather than populated with unverified claims.",
+      "attempted_url": "https://www.sec.gov/edgar/search/"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Direct CAC.gov.cn and NDRC.gov.cn monitoring for primary-source text of China's Implementation Opinions on Intelligent Agents, rather than relying on secondary legal-analysis sites",
+      "A working SEC EDGAR full-text search method (API key or alternate access path) to restore Enterprise Disclosures coverage, blocked by robots.txt this week and last"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Google's Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash-Cyber releases (shipped July 21, just after this window) for next week's model_cards section",
+      "The Register's July 20 coverage of EU AI labeling rules taking effect August 2 \u2014 falls just outside this window, track for next week"
+    ],
+    "topics_to_drop": [],
+    "notes": "This week's regulatory coverage skewed heavily toward China and the EU because both had concrete effective-date events (July 15 and ongoing EU Act implementation) inside the window; US federal activity was comparatively thin, with NIST's critical-infrastructure profile still in early community-drafting rather than producing a publishable framework. SEC EDGAR access remains blocked by robots.txt for automated full-text search, so Enterprise Disclosures could not be populated this week \u2014 this is the second consecutive week this gap has occurred and warrants a dedicated access-path fix rather than repeated manual retry."
+  }
+}

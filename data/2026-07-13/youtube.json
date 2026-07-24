@@ -1,0 +1,384 @@
+{
+  "tab_id": "youtube",
+  "tab_name": "YouTube",
+  "subtitle": "Video Intelligence",
+  "icon": "Video",
+  "min_items": 12,
+  "freshness": {
+    "target_pct_new": 0.80,
+    "pct_new": 1.0,
+    "items_total": 13,
+    "items_new": 13,
+    "items_returning": 0
+  },
+  "executive_summary": [
+    {
+      "headline": "Two open-weight frontier-class models shipped in the same 48 hours, and both immediately became the default subject of every serious AI channel's testing content",
+      "body": "Moonshot AI released Kimi K3 on July 16, a 2.8-trillion-parameter mixture-of-experts model (16 of 896 experts active per token, 1M context) that AICodeKing's KingBench scored at 77.5%, ahead of GLM 5.2 and GPT-5.6 Sol but behind Fable 5 and Opus 4.8 (youtube.com/watch?v=JnC2MuAEOiQ). The same day, Thinking Machines Lab (Mira Murati's startup) released Inkling, a ~975B/41B active-parameter multimodal MoE under an Apache-2.0-style open license, covered in a Hugging Face-hosted interview with co-founders John Schulman and Soumith Chintala (youtube.com/watch?v=EOK_haQSMIA). For a public-company AI team, the practical read is that open-weight models with frontier-adjacent benchmarks are now shipping on a roughly weekly cadence from multiple labs, which changes the make-vs-buy calculus for any workload where data residency or model-weight control matters more than shaving the last few points of benchmark score.",
+      "primary_url": "https://www.youtube.com/watch?v=JnC2MuAEOiQ"
+    },
+    {
+      "headline": "xAI open-sourced its Grok Build coding agent under pressure, after independent security research caught it exfiltrating entire Git repositories through a channel the privacy toggle didn't control",
+      "body": "Prism Labs' wire-level teardown found Grok Build was uploading complete commit histories, deleted files, and previously-removed secrets to an xAI-controlled cloud bucket at roughly 27,800 times the data volume a coding prompt requires, and that the user-facing privacy toggle had no effect on this channel (youtube.com/watch?v=ePbqdlP7Mqk). xAI's response, 72 hours after the finding, was to open-source the 844,530-line Rust codebase under Apache 2.0, but Prism Labs notes the upload code is still present in the published binary, gated only by a server-side flag xAI could flip back on without a code change. Gary Explains corroborates the timeline and frames the open-sourcing explicitly as a trust-repair move rather than a community-development one, since xAI does not accept outside contributions to the repo (youtube.com/watch?v=ofARXN_Wnzo). This is a direct governance signal: any evaluation of an agentic coding tool now needs a wire-level data-flow audit, not just a read of the published privacy policy, before it touches a real codebase.",
+      "primary_url": "https://www.youtube.com/watch?v=ePbqdlP7Mqk"
+    },
+    {
+      "headline": "Google's Gemini 3.5 Pro missed its third public deadline this week, and the market treated the non-event as material information",
+      "body": "Bloomberg's July 16 report, that the flagship model is running months behind schedule because it falls short of internal coding benchmarks, drove Alphabet shares down roughly 4% the same day, a reaction covered same-day by TechSnap (youtube.com/watch?v=erVKA4D5_7M). Wes Roth's weekly roundup places the Gemini miss alongside the Kimi K3 and Inkling releases and OpenAI's GPT-Red red-teaming model launch, arguing the frontier lab race is now being decided as much by shipping cadence and transparency about delays as by benchmark leadership (youtube.com/watch?v=OPuD-UeQGY8). For a public enterprise tracking multiple model vendors, the takeaway is not to build roadmap dependencies on any single vendor's announced-but-unshipped flagship, regardless of how confidently a launch date circulates in pre-release coverage.",
+      "primary_url": "https://www.youtube.com/watch?v=erVKA4D5_7M"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "aicodeking-kimi-k3-kingbench-fable-comparison",
+      "title": "Kimi K3 (Fully Tested): AN OPEN MODEL BEATS FABLE?!",
+      "source": "AICodeKing",
+      "author": "AICodeKing",
+      "date": "2026-07-16",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=JnC2MuAEOiQ",
+      "summary": "A same-day hands-on test of Moonshot's Kimi K3 against Fable 5, Opus 4.8, GLM 5.2, GPT-5.6 Sol, and Grok 4.5 on the creator's KingBench suite. Kimi K3 scored 77.5%, ahead of GLM 5.2 (75%) and GPT-5.6 Sol (71.25%) but behind Opus 4.8 (80%) and Fable 5 (82.5%), establishing it as the strongest open-weight coding model tested to date.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-07-24T17:00:00Z",
+      "recurrence": "new",
+      "tags": ["Kimi K3", "Moonshot AI", "open-weight", "KingBench", "benchmark", "coding model"],
+      "category": "Model Analysis / Benchmark",
+      "key_takeaways": [
+        "Kimi K3 is now the top-scoring open-weight coding model on KingBench, closing most of the gap to Opus 4.8 while remaining materially behind Fable 5, which should reset the baseline for any 'good enough open model' evaluation.",
+        "The benchmark spread between GLM 5.2, GPT-5.6 Sol, and Kimi K3 is under 7 points, meaning model choice inside a cost-sensitive coding pipeline should now be driven by task-specific testing rather than a single leaderboard ranking.",
+        "Full weights are not due until July 27, so any self-hosting or fine-tuning evaluation has to wait even though API access is live now via OpenRouter, Bedrock, and Vercel."
+      ],
+      "suggested_actions": [
+        "Run a bounded internal coding benchmark (5-10 representative tasks) against Kimi K3's API before the July 27 weight release, to have a baseline ready the moment self-hosting becomes possible.",
+        "Add Kimi K3 to the model-comparison matrix for any coding-assistant pilot currently limited to Fable 5 or GPT-5.6, given its lower price point at similar quality on several task types."
+      ]
+    },
+    {
+      "id": "huggingface-inkling-model-launch-interview",
+      "title": "New Model: Inkling by Thinking Machine on Hugging Face",
+      "source": "Hugging Face",
+      "author": "Hugging Face",
+      "date": "2026-07-16",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=EOK_haQSMIA",
+      "summary": "Hugging Face's own launch coverage of Inkling, Thinking Machines Lab's first open-weight release, including commentary from the model team on the ~975B/41B-active MoE architecture, 1M-token context, and multimodal (text/image/audio) training from scratch. This is a primary-source-adjacent video: it is hosted on Hugging Face's official channel at the moment of the model card going live, not third-party reaction content.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-07-24T17:00:00Z",
+      "recurrence": "new",
+      "tags": ["Inkling", "Thinking Machines Lab", "Mira Murati", "open-weight", "multimodal", "primary source"],
+      "category": "Product Launch / Primary Source",
+      "key_takeaways": [
+        "Inkling is Thinking Machines Lab's first shipped model since its founding, and it chose to open-weight a near-trillion-parameter multimodal model rather than start with a closed API, a deliberate strategic bet distinct from OpenAI's and Anthropic's playbooks.",
+        "The model is explicitly positioned as a base for fine-tuning via the paired Tinker API, not as a chat-first consumer product, which changes how an enterprise should evaluate it: as infrastructure to build on, not a drop-in assistant replacement.",
+        "Benchmark performance is not state-of-the-art overall; Prompt Engineering's independent testing (below) found it strong on multimodal and design tasks specifically but not a leaderboard leader broadly."
+      ],
+      "suggested_actions": [
+        "Evaluate Inkling plus Tinker as a fine-tuning substrate for a narrow, high-value internal task (e.g., document classification or defect-image triage) rather than as a general chat assistant.",
+        "Track Inkling Small (276B/12B active, reportedly upcoming) as the more deployment-realistic variant for teams without large-scale inference infrastructure."
+      ]
+    },
+    {
+      "id": "prism-labs-grok-build-security-teardown",
+      "title": "Grok Build Is Now Open Source [After Uploading Your Repos]",
+      "source": "Prism Labs",
+      "author": "Prism Labs",
+      "date": "2026-07-17",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=ePbqdlP7Mqk",
+      "summary": "A wire-level security teardown of xAI's Grok Build coding agent, sourced from independent researcher Cereblab's binary analysis. The video documents a second, undisclosed data channel that uploaded complete Git repositories (including purged secrets still present in commit history) to xAI-controlled storage at roughly 27,800x the volume a coding prompt requires, and shows that the privacy toggle never controlled this channel. xAI open-sourced the 844,530-line Rust codebase under Apache 2.0 72 hours after the finding, but the upload logic remains in the published binary, gated only by a server-side flag.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "verified": true,
+      "verified_at": "2026-07-24T17:00:00Z",
+      "recurrence": "new",
+      "tags": ["Grok Build", "xAI", "security", "data exfiltration", "open source", "governance"],
+      "category": "Security / Governance",
+      "key_takeaways": [
+        "A published privacy toggle controlled only one of two data-collection channels; the second, higher-volume channel operated regardless of user settings, which is a governance failure mode that a written privacy policy review alone would not have caught.",
+        "Open-sourcing the client does not remove the risk: the upload capability remains in the binary and is disabled only by a server-side flag the vendor controls unilaterally, so 'open source' here does not equal 'auditable behavior' without ongoing monitoring.",
+        "Deleted files and purged secrets were still present in the uploaded Git history, meaning a repository's visible current state understates what any connected tool can access."
+      ],
+      "suggested_actions": [
+        "Before connecting Grok Build (or any newly open-sourced agent CLI) to a real repository, require a network-traffic audit of the actual binary in use, not just a policy read, given the gap this teardown documents between stated and actual behavior.",
+        "Add 'server-side kill switches that can silently re-enable removed behavior' as a standing risk category in vendor security reviews for agentic dev tools.",
+        "Purge secrets from Git history (not just current-state removal) as a standing hygiene requirement before granting any third-party coding agent repository access."
+      ]
+    },
+    {
+      "id": "wes-roth-kimi-k3-inkling-gemini-anthropic-endgame",
+      "title": "INSANE AI News: GPT-RED, Kimi K3, Gemini 3.5 Pro and Anthropic's 'END GAME'",
+      "source": "Wes Roth",
+      "author": "Wes Roth",
+      "date": "2026-07-16",
+      "platform": "youtube",
+      "primary_url": "https://www.youtube.com/watch?v=OPuD-UeQGY8",
+      "summary": "A same-week synthesis tying together four separate stories: OpenAI's GPT-Red automated red-teaming model, Moonshot's Kimi K3 launch, Google's Gemini 3.5 Pro delay, and reporting on Anthropic's internal model roadmap. The value here is connective, not a single scoop: it frames the week as a coordinated inflection point across labs rather than four unrelated news items.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-07-24T17:00:00Z",
+      "recurrence": "new",
+      "tags": ["GPT-Red", "Kimi K3", "Gemini 3.5 Pro", "Anthropic", "weekly roundup", "frontier labs"],
+      "category": "News Synthesis",
+      "key_takeaways": [
+        "GPT-Red, OpenAI's automated adversarial red-teaming model, reportedly achieved an 84% attack success rate versus 13% for human red teamers in internal testing, a large enough gap to change how automated security testing gets budgeted relative to human pen-testing.",
+        "Four separate frontier-lab events landed in the same seven-day window (GPT-Red, Kimi K3, the Gemini 3.5 Pro delay, and Anthropic roadmap reporting), reinforcing that AI-program monitoring now needs weekly cadence rather than monthly review cycles to stay current.",
+        "The Gemini 3.5 Pro delay is treated here as a competitive opening for OpenAI and Moonshot rather than a neutral scheduling event, consistent with the market's own reaction (Alphabet -4% same day)."
+      ],
+      "suggested_actions": [
+        "Track GPT-Red's claimed attack-success-rate methodology once OpenAI publishes technical detail, to assess whether automated red-teaming can supplement (not replace) a human security review process for internally deployed models.",
+        "Use this roundup format (multi-story weekly synthesis) as a template for an internal AI-program status update, given how much ground shifted in a single week."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "tool_updates",
+      "title": "Tool Updates",
+      "description": "Major model and tool releases demoed on YouTube this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "developers-digest-kimi-k3-overview",
+          "title": "Kimi K3 in 10 Minutes",
+          "source": "Developers Digest",
+          "author": "Developers Digest",
+          "date": "2026-07-17",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=gO_21NC7O-s",
+          "summary": "A concise release overview of Kimi K3: near-3T-parameter multimodal MoE, 1M context, Kimi Delta attention architecture, and a self-evolving kernel-optimization demo that cut runtime from 283ms to 114ms over 15 hours of autonomous iteration. States pricing at $3/M input, $15/M output, $0.30/M cached, with open weights due July 27.",
+          "verified": true,
+          "verified_at": "2026-07-24T17:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["Kimi K3", "Moonshot AI", "pricing", "architecture"],
+          "category": "Model Overview"
+        },
+        {
+          "id": "gary-explains-grok-build-privacy-open-source",
+          "title": "Privacy Disaster Pushes xAI to Open-Source Grok Build",
+          "source": "Gary Explains",
+          "author": "Gary Explains",
+          "date": "2026-07-16",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=ofARXN_Wnzo",
+          "summary": "Follow-up coverage confirming xAI's decision to open-source Grok Build under Apache 2.0 as a direct response to the prior day's repo-upload disclosure. Notes the project does not accept outside contributions, framing the release as a transparency gesture rather than a community project.",
+          "verified": true,
+          "verified_at": "2026-07-24T17:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 2 },
+          "tags": ["Grok Build", "xAI", "open source", "governance"],
+          "category": "Governance / Product Update"
+        },
+        {
+          "id": "techsnap-gemini-35-pro-delay-market-reaction",
+          "title": "GOOGLE AI DELAYED: Gemini 3.5 Pro Trouble",
+          "source": "TechSnap",
+          "author": "TechSnap",
+          "date": "2026-07-16",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=erVKA4D5_7M",
+          "summary": "Same-day coverage of the Bloomberg report on Gemini 3.5 Pro's coding-performance shortfall and Alphabet's roughly 4% single-day share decline. Cites Alphabet's statement that it is testing 3.5 Pro and an upgraded Flash model with partners, with no new date given.",
+          "verified": true,
+          "verified_at": "2026-07-24T17:00:00Z",
+          "score": { "total": 5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["Gemini 3.5 Pro", "Google DeepMind", "delay", "Alphabet"],
+          "category": "Market Reaction"
+        }
+      ]
+    },
+    {
+      "section_id": "tutorials",
+      "title": "Tutorials",
+      "description": "How-tos and technical walkthroughs worth replicating this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "prompt-engineering-inkling-architecture-walkthrough",
+          "title": "Inkling: Why Thinky's Open Model May Change \"Everything\"",
+          "source": "Prompt Engineering",
+          "author": "Prompt Engineering",
+          "date": "2026-07-16",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=IB53DUrnYgI",
+          "summary": "A technical architecture walkthrough of Inkling covering its 256-expert MoE structure, 41B active parameters, Tinker fine-tuning platform, and hands-on playground demos including a website-generation pass and a live ISS-tracker coding task. Notes the model is a strong multimodal generalist but not state-of-the-art on most raw benchmarks, and flags pricing as above the open-weight-model norm.",
+          "verified": true,
+          "verified_at": "2026-07-24T17:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "key_takeaways": [
+            "Tinker's post-training-as-a-service model means fine-tuning Inkling doesn't require owning GPU infrastructure, lowering the barrier for a team wanting a customized model without a training pipeline.",
+            "The playground caps context at 256K tokens (not the full 1M) and disables image/audio/video by default in the base system prompt, so production evaluation needs to test the API directly, not just the hosted playground.",
+            "Design-arena benchmark placement (just behind frontier models and GLM 5.2) suggests Inkling is a reasonable fit for UI/design-generation tasks specifically, not a general-purpose flagship replacement."
+          ],
+          "tags": ["Inkling", "Thinking Machines Lab", "Tinker", "fine-tuning", "MoE architecture"],
+          "category": "Technical Deep-Dive"
+        },
+        {
+          "id": "julian-goldie-kimi-k3-full-course",
+          "title": "Kimi K3 AI Full COURSE 1 HOUR (Build & Automate Anything)",
+          "source": "Julian Goldie SEO",
+          "author": "Julian Goldie SEO",
+          "date": "2026-07-17",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=iyXDidb8IG8",
+          "summary": "A one-hour walkthrough of Kimi K3's full workflow surface: agentic website building via kimi.com, Swarms (multi-agent task decomposition), Goal Mode's autonomous judge-loop, Kimi Code CLI, WebBridge browser automation, and scheduled cloud-agent tasks. Positions Kimi K3 as a lower-cost, open alternative for automation-heavy workflows rather than a chat-first assistant.",
+          "verified": true,
+          "verified_at": "2026-07-24T17:00:00Z",
+          "score": { "total": 5, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "key_takeaways": [
+            "Goal Mode's judge-loop pattern (agent iterates against its own evaluator until a task passes) is a reusable autonomous-completion pattern independent of which underlying model runs it.",
+            "Swarms recruit sub-agents dynamically for large tasks, which is functionally similar to Claude's subagent pattern and Grok Build's parallel worktrees, suggesting this is converging into a standard agentic-tooling feature rather than a differentiator.",
+            "Scheduled cloud-agent tasks plus WebBridge browser control point toward always-on background automation as the near-term default UX for these tools, not just interactive chat."
+          ],
+          "tags": ["Kimi K3", "tutorial", "agent swarms", "automation", "Goal Mode"],
+          "category": "Tutorial / Course"
+        },
+        {
+          "id": "ai-with-eric-grok-build-local-secure-fork",
+          "title": "xAI Open-Sourced Grok Build - I Secured It, Offline Local AI Only",
+          "source": "AI with Eric",
+          "author": "AI with Eric",
+          "date": "2026-07-18",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=6ZmkuL5wB6c",
+          "summary": "A hands-on remediation tutorial: forking Grok Build's open-sourced Rust codebase, disabling xAI login, telemetry, trace uploads, and hosted integrations, then running it fully offline against local models (HY3, DeepSeek V4 Flash) via an OpenAI-compatible API. Demonstrates arena-mode best-of-N coding across parallel Git worktrees as a technique that works especially well once token cost is no longer a constraint.",
+          "verified": true,
+          "verified_at": "2026-07-24T17:00:00Z",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 0 },
+          "key_takeaways": [
+            "A step-by-step remediation exists for the exact vulnerability Prism Labs and Gary Explains documented: disable login, telemetry, trace uploads, and hosted integrations before pointing the forked binary at any real repository.",
+            "Running an open-sourced agent CLI fully local against self-hosted or third-party open-weight models (not the vendor's own backend) removes the vendor-controlled kill-switch risk entirely, at the cost of losing hosted convenience features.",
+            "Arena-mode (parallel worktrees, best-of-N judged output) is a technique worth testing independent of Grok Build specifically, since token cost stops being the limiting factor once inference is local."
+          ],
+          "tags": ["Grok Build", "local AI", "security remediation", "self-hosted", "open source"],
+          "category": "Security Remediation Tutorial"
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases",
+      "description": "Real-world tests and demos of new models in practical workflows.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "nick-saraev-kimi-k3-tested",
+          "title": "I Tested Kimi K3 So You Don't Have To...",
+          "source": "Nick Saraev",
+          "author": "Nick Saraev",
+          "date": "2026-07-16",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=To0kYStFS3I",
+          "summary": "An automation-specialist's hands-on test of Kimi K3 against real n8n and agent-building workflows, evaluated on the same criteria the creator uses for client automation work rather than synthetic coding benchmarks.",
+          "verified": true,
+          "verified_at": "2026-07-24T17:00:00Z",
+          "score": { "total": 5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 0 },
+          "enterprise_translation": "The consumer signal is a solo automation builder stress-testing a new open model against real client workflows within a day of release. The enterprise pattern is a standing, low-cost model-evaluation harness that any new frontier or open-weight release gets run against automatically, so a team's model choice is based on measured fit for its actual workload rather than published leaderboard position.",
+          "tags": ["Kimi K3", "automation", "n8n", "hands-on test"],
+          "category": "Practical Test"
+        },
+        {
+          "id": "ai-coding-daily-kimi-k3-25-prompts",
+          "title": "I Tested NEW Kimi K3 with 25 Coding Prompts",
+          "source": "AI Coding Daily",
+          "author": "AI Coding Daily",
+          "date": "2026-07-18",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=Q71dZpsYsf8",
+          "summary": "A structured 25-prompt coding benchmark (5 projects x 5 prompts, automated scoring) putting Kimi K3 at 22.5/25, ahead of Kimi K2.7 by 2.5 points and roughly matching Opus/GPT-5.6 quality at similar pricing, but noted as slow and prone to timeouts during testing.",
+          "verified": true,
+          "verified_at": "2026-07-24T17:00:00Z",
+          "score": { "total": 5, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "enterprise_translation": "The consumer signal is an individual creator building a repeatable personal benchmark harness to evaluate every new model release consistently. The enterprise pattern is the same idea at team scale: a standing internal benchmark of representative production tasks that every new model candidate runs through before any procurement or migration decision, rather than relying on vendor-published benchmarks alone.",
+          "tags": ["Kimi K3", "benchmark", "coding test", "pricing comparison"],
+          "category": "Practical Test"
+        },
+        {
+          "id": "superbash-kimi-k3-real-world-review",
+          "title": "Kimi K3 is INSANELY STRONG! (Real Tests and Review)",
+          "source": "Superbash (BoxminingAI)",
+          "author": "Superbash",
+          "date": "2026-07-17",
+          "platform": "youtube",
+          "primary_url": "https://www.youtube.com/watch?v=UMd8yzJ-kuk",
+          "summary": "A creative and agentic-coding stress test across ten scenarios (3D game builds, UI recreation, agent-swarm orchestration) with Fable 5 acting as an automated judge, scoring Kimi K3 at 8.6 versus GPT-5.6 Sol's 7.3 and finding it wins on creative commitment and agent-swarm coordination but has UX gaps around thinking-history sensitivity and excessive proactiveness.",
+          "verified": true,
+          "verified_at": "2026-07-24T17:00:00Z",
+          "score": { "total": 5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 0 },
+          "enterprise_translation": "The consumer signal is a hobbyist using one model to judge another model's creative and agentic output at scale. The enterprise pattern is model-as-judge evaluation pipelines: using a strong reference model to automatically score a candidate model's outputs on a rubric, which scales quality assessment beyond what a human review team can manually check for high-volume agentic workflows.",
+          "tags": ["Kimi K3", "agent swarm", "model-as-judge", "creative benchmark"],
+          "category": "Practical Test"
+        }
+      ]
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Security research is now moving faster than agentic-coding-tool vendors' own disclosure cycles, and vendors are responding with open-sourcing rather than patches alone",
+      "evidence": "Independent researcher Cereblab's binary-level analysis of Grok Build surfaced an undisclosed data-exfiltration channel that the published privacy toggle did not control; xAI's response within 72 hours was to open-source the codebase under Apache 2.0 rather than issue a conventional security patch and advisory (Prism Labs, youtube.com/watch?v=ePbqdlP7Mqk; Gary Explains, youtube.com/watch?v=ofARXN_Wnzo).",
+      "what_to_watch": "Whether other agentic coding-CLI vendors (Claude Code, Codex, Cursor) face similar independent wire-level audits, and whether 'open-sourcing after a security finding' becomes a standard crisis-response pattern rather than an xAI-specific move."
+    },
+    {
+      "pattern": "Open-weight models are now landing within a day of each other from different labs, compressing the evaluation window enterprises have before the next release resets the comparison",
+      "evidence": "Kimi K3 (Moonshot) and Inkling (Thinking Machines Lab) both launched July 15-16, 2026, prompting near-simultaneous independent benchmarking from AICodeKing, Developers Digest, Superbash, Nick Saraev, and Prompt Engineering within 48 hours (multiple sources cited above).",
+      "what_to_watch": "Whether Kimi K3's full open-weight release on July 27 and any subsequent Thinking Machines Lab follow-up model compress this cadence further, and whether independent benchmark creators can keep pace with reliable, non-superficial testing at this release velocity."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "OpenAI's GPT-Red achieved an 84% automated attack success rate versus 13% for human red-teamers",
+      "reason": "Figure is cited secondhand inside Wes Roth's roundup video without a linked primary OpenAI technical report; OpenAI's own announcement (Instagram, July 16) confirms GPT-Red's existence and purpose but the specific percentages were not independently verified against an OpenAI primary source at fetch time.",
+      "attempted_url": "https://www.youtube.com/watch?v=OPuD-UeQGY8"
+    }
+  ],
+  "index": [
+    { "title": "Kimi K3 (Fully Tested): AN OPEN MODEL BEATS FABLE?!", "source": "AICodeKing", "author": "AICodeKing", "date": "2026-07-16", "primary_url": "https://www.youtube.com/watch?v=JnC2MuAEOiQ", "score": 8 },
+    { "title": "New Model: Inkling by Thinking Machine on Hugging Face", "source": "Hugging Face", "author": "Hugging Face", "date": "2026-07-16", "primary_url": "https://www.youtube.com/watch?v=EOK_haQSMIA", "score": 9 },
+    { "title": "Grok Build Is Now Open Source [After Uploading Your Repos]", "source": "Prism Labs", "author": "Prism Labs", "date": "2026-07-17", "primary_url": "https://www.youtube.com/watch?v=ePbqdlP7Mqk", "score": 8 },
+    { "title": "INSANE AI News: GPT-RED, Kimi K3, Gemini 3.5 Pro and Anthropic's 'END GAME'", "source": "Wes Roth", "author": "Wes Roth", "date": "2026-07-16", "primary_url": "https://www.youtube.com/watch?v=OPuD-UeQGY8", "score": 8 },
+    { "title": "Kimi K3 in 10 Minutes", "source": "Developers Digest", "author": "Developers Digest", "date": "2026-07-17", "primary_url": "https://www.youtube.com/watch?v=gO_21NC7O-s", "score": 6 },
+    { "title": "Privacy Disaster Pushes xAI to Open-Source Grok Build", "source": "Gary Explains", "author": "Gary Explains", "date": "2026-07-16", "primary_url": "https://www.youtube.com/watch?v=ofARXN_Wnzo", "score": 6 },
+    { "title": "GOOGLE AI DELAYED: Gemini 3.5 Pro Trouble", "source": "TechSnap", "author": "TechSnap", "date": "2026-07-16", "primary_url": "https://www.youtube.com/watch?v=erVKA4D5_7M", "score": 5 },
+    { "title": "Inkling: Why Thinky's Open Model May Change \"Everything\"", "source": "Prompt Engineering", "author": "Prompt Engineering", "date": "2026-07-16", "primary_url": "https://www.youtube.com/watch?v=IB53DUrnYgI", "score": 6 },
+    { "title": "Kimi K3 AI Full COURSE 1 HOUR (Build & Automate Anything)", "source": "Julian Goldie SEO", "author": "Julian Goldie SEO", "date": "2026-07-17", "primary_url": "https://www.youtube.com/watch?v=iyXDidb8IG8", "score": 5 },
+    { "title": "xAI Open-Sourced Grok Build - I Secured It, Offline Local AI Only", "source": "AI with Eric", "author": "AI with Eric", "date": "2026-07-18", "primary_url": "https://www.youtube.com/watch?v=6ZmkuL5wB6c", "score": 6 },
+    { "title": "I Tested Kimi K3 So You Don't Have To...", "source": "Nick Saraev", "author": "Nick Saraev", "date": "2026-07-16", "primary_url": "https://www.youtube.com/watch?v=To0kYStFS3I", "score": 5 },
+    { "title": "I Tested NEW Kimi K3 with 25 Coding Prompts", "source": "AI Coding Daily", "author": "AI Coding Daily", "date": "2026-07-18", "primary_url": "https://www.youtube.com/watch?v=Q71dZpsYsf8", "score": 5 },
+    { "title": "Kimi K3 is INSANELY STRONG! (Real Tests and Review)", "source": "Superbash (BoxminingAI)", "author": "Superbash", "date": "2026-07-17", "primary_url": "https://www.youtube.com/watch?v=UMd8yzJ-kuk", "score": 5 }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Prism Labs — wire-level/security-focused AI tooling coverage; broke the Grok Build data-exfiltration story with primary technical detail no Tier 1/2 channel matched this week.",
+      "Cereblab (researcher, not a YouTube channel but cited across multiple videos) — track as a named primary source for agentic-tool security findings."
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Agentic coding-tool security audits (data flow, telemetry, server-side kill switches) as a standing coverage category, not a one-off story.",
+      "Open-weight model release cadence tracking — a running tally of days-between-releases across Moonshot, Thinking Machines Lab, Z.ai/GLM, and DeepSeek."
+    ],
+    "topics_to_drop": [],
+    "notes": "This week's highest-signal story (Grok Build's data-exfiltration channel and forced open-sourcing) came from a security-focused channel (Prism Labs) outside the standard Tier 1/2 list, alongside corroboration from Gary Explains and a remediation tutorial from AI with Eric. Tier 1 channels (AI Explained, Matthew Berman, Latent Space, official lab channels) did not surface distinct in-window content this week beyond the Hugging Face-hosted Inkling interview; Matthew Berman's and AI Explained's most recent uploads in this window either fell outside July 13-19 or did not clear the 4-minute/substance bar. Consider a dedicated 'security research' watchlist for AI tooling given how material this story was relative to standard model-launch coverage."
+  }
+}

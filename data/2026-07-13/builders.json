@@ -1,0 +1,643 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.94,
+    "items_total": 18,
+    "items_new": 17,
+    "items_returning": 1
+  },
+  "executive_summary": [
+    {
+      "headline": "Token overhead, not model quality, is now the bottleneck teams are fixing",
+      "body": "Toolport collapses a 22-client MCP catalog into four meta-tools with lazy discovery, cutting tool-definition token overhead from roughly 24,000 to 900 tokens per session, a 91% reduction. That is the same class of problem an enterprise agent rollout hits the moment it wires up more than a handful of internal tools.",
+      "primary_url": "https://news.ycombinator.com/item?id=48936421"
+    },
+    {
+      "headline": "Agent audit trails are consolidating around hash-chained, append-only logs",
+      "body": "Independent builders shipped memory, tracing, and evidence tooling this week that all converge on the same primitive: an append-only, cryptographically verifiable record of what an agent did. CrewAI's Skills Repository going stable and LangChain's harness-debugging post both reflect the same enterprise pressure to make agent behavior auditable after the fact.",
+      "primary_url": "https://github.com/vshulcz/deja-vu"
+    },
+    {
+      "headline": "Design-system and UI-quality gates for agent-built software are a new, distinct category",
+      "body": "StyleSeed shipped a 74-rule, 19-skill design engine specifically so coding agents stop shipping generic UI, and it passed 750 GitHub stars in its first week. This is a sign that \"agent writes the code\" is now assumed, and the market has moved to \"agent writes code that meets a quality bar.\"",
+      "primary_url": "https://github.com/bitjaru0402/styleseed"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "toolport-mcp-token-reduction",
+      "title": "Toolport cuts MCP tool-definition overhead by 91% with lazy discovery",
+      "subtitle": "One meta-tool setup replaces 22 separate MCP client configs",
+      "source": "Show HN",
+      "author": "tsouth2 (independent)",
+      "date": "2026-07-16",
+      "primary_url": "https://news.ycombinator.com/item?id=48936421",
+      "verified": true,
+      "verified_at": "2026-07-24T17:48:52-04:00",
+      "summary": "Toolport collapses the tool catalogs of 22 MCP clients into four meta-tools with lazy, on-demand discovery, cutting the token cost of tool definitions from roughly 24,000 to 900 tokens per session. It stores secrets in the OS keychain and adds an approval mode for destructive tool calls.",
+      "score": { "total": 8, "signal": 3, "novelty": 2, "actionability": 2, "source_quality": 1 },
+      "engagement": { "upvotes": 4, "comments": 12 },
+      "tags": ["mcp", "token-efficiency", "agent-tooling"],
+      "category": "Dev Tool",
+      "key_takeaways": [
+        "Lazy tool discovery means the agent only loads full tool schemas for the specific MCP server it needs at call time, not all 22 up front",
+        "Reported reduction: ~24,000 tokens of tool definitions down to ~900 tokens, a roughly 91% cut in per-session overhead",
+        "Secrets live in the OS keychain rather than config files; an approval mode gates destructive calls before execution"
+      ],
+      "results": "Reduces MCP tool-definition token overhead from ~24,000 to ~900 tokens per session across a 22-client setup, per the author's Show HN post",
+      "enterprise_adaptation": "The pattern is lazy capability discovery: don't load every tool schema into context up front, resolve and load only what the current task needs. A public-enterprise AI team running multiple internal MCP servers (ticketing, code search, internal docs) hits the same token-overhead wall as tool count grows, which directly inflates per-call cost and latency. A 30-day experiment: instrument current context usage for tool definitions in a non-production agent, then pilot a lazy-discovery proxy in front of 3-5 internal MCP servers and measure the token delta before and after; keep the OS-keychain secret pattern but route it through the existing enterprise secrets manager rather than a local keychain, since audit and rotation requirements differ from a single-developer setup.",
+      "why_it_matters": "Verified via the live Hacker News thread (Show HN, points and comment count confirmed at fetch time) and cross-referenced against a July 15, 2026 Hacker News digest covering the same post. This is a small-points post but the underlying problem (MCP context bloat) is one every enterprise team wiring up multiple internal tools will hit."
+    },
+    {
+      "id": "deja-vu-ssh-synced-agent-memory",
+      "title": "Deja-vu gives coding agents persistent memory that syncs over plain SSH",
+      "subtitle": "Session-start auto-recall with redaction, no cloud dependency",
+      "source": "vshulcz/deja-vu",
+      "author": "vshulcz (independent)",
+      "date": "2026-07-15",
+      "primary_url": "https://github.com/vshulcz/deja-vu",
+      "secondary_urls": [
+        { "label": "Show HN discussion", "url": "https://genisisiq.com/hackernews/ai/2026-07-15/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-24T17:48:52-04:00",
+      "summary": "Deja-vu is an open-source memory layer for coding agents that auto-recalls relevant context at session start and syncs append-only memory records across machines over SSH, with built-in redaction for sensitive strings. It passed 199 GitHub stars and generated a 94-point, 19-comment Show HN thread within the week.",
+      "score": { "total": 7.5, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 },
+      "engagement": { "stars": 199, "upvotes": 94, "comments": 19 },
+      "tags": ["agent-memory", "mcp", "self-hosted"],
+      "category": "Agent Skill",
+      "key_takeaways": [
+        "Memory syncs across machines over plain SSH rather than a hosted cloud service, keeping data on infrastructure the user already controls",
+        "Auto-recall triggers at session start so an agent picks up prior context without an explicit retrieval step",
+        "Built-in redaction strips sensitive strings before they enter the append-only memory log"
+      ],
+      "results": "199 GitHub stars and a 94-point, 19-comment Hacker News thread within days of publishing, per the live repo and the aggregated Show HN digest",
+      "enterprise_adaptation": "The implementation pattern is self-hosted, transport-agnostic agent memory: state syncs over a protocol (SSH) the organization already controls and audits, instead of a third-party memory API. For a regulated enterprise, this argues for evaluating whether coding-agent memory can be kept entirely inside the corporate network using existing SSH/VPN infrastructure rather than adopting a hosted memory service that requires a new data-processing agreement. A 30-day experiment: run deja-vu inside an internal, network-isolated dev sandbox for one team's coding-agent workflow, verify the redaction logic actually strips credentials and internal hostnames from real session logs, and document what would need to change (redaction rules, retention policy) before any wider rollout.",
+      "why_it_matters": "Verified via GitHub (repo live, 199 stars, Go, current at fetch time) and a dated Hacker News digest (genisisiq.com, dated 2026-07-15) that independently confirms the point and comment counts. The SSH-sync design is a deliberate rejection of hosted memory services, notable in a week where most agent-memory tooling assumes a cloud backend."
+    },
+    {
+      "id": "styleseed-agent-ui-quality-gate",
+      "title": "StyleSeed stops coding agents from shipping generic UI with a 74-rule design engine",
+      "subtitle": "19 skills, 7 skins, and a scored quality gate for agent-generated interfaces",
+      "source": "bitjaru0402/styleseed",
+      "author": "bitjaru0402 (independent)",
+      "date": "2026-07-15",
+      "primary_url": "https://github.com/bitjaru0402/styleseed",
+      "secondary_urls": [
+        { "label": "Show HN discussion", "url": "https://genisisiq.com/hackernews/ai/2026-07-15/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-24T17:48:52-04:00",
+      "summary": "StyleSeed is a design-rules engine that constrains coding agents to 74 explicit design rules across 19 reusable skills and 7 visual skins, then scores generated UI against a quality gate before it ships. It passed 750 GitHub stars and drew a 22-point, 8-comment Show HN thread within the week.",
+      "score": { "total": 7.5, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 0 },
+      "engagement": { "stars": 750, "upvotes": 22, "comments": 8 },
+      "tags": ["agent-skill", "design-system", "ui-quality"],
+      "category": "Agent Skill",
+      "key_takeaways": [
+        "74 explicit, codified design rules replace the vague style guidance agents typically default to, producing more consistent output across sessions",
+        "19 reusable skills and 7 skins let a team constrain an agent to an approved visual language rather than free-form generation",
+        "A scored quality gate checks generated UI against the ruleset before it is accepted, functioning like a lint pass for visual design"
+      ],
+      "results": "750+ GitHub stars and a 22-point Hacker News thread within days of launch, per the live repo and dated Show HN digest",
+      "enterprise_adaptation": "The pattern is codified constraint plus automated scoring: instead of trusting an agent's default design instincts, encode the organization's actual design-system rules and gate output against them programmatically. A public-company brand or digital team could adapt this by encoding its own component library and accessibility requirements as the ruleset rather than StyleSeed's defaults. A 30-day experiment: pick one internal tool with light UI requirements, encode 10-15 of the organization's actual design-system rules into a StyleSeed-style skill, and measure how often agent-generated UI passes the gate on the first attempt versus how often a human has to intervene under the status quo.",
+      "why_it_matters": "Verified via GitHub (repo live, 750+ stars, TypeScript, current at fetch time) and a dated Hacker News digest confirming point/comment counts. Framing UI quality as a scored, rule-based gate rather than a subjective review step is the notable design choice."
+    },
+    {
+      "id": "crewai-skills-repository-stable",
+      "title": "CrewAI promotes its Skills Repository from experimental to stable",
+      "subtitle": "Reusable agent skills across crews are now a documented, first-class feature",
+      "source": "crewAIInc/crewAI",
+      "author": "CrewAI",
+      "date": "2026-07-17",
+      "primary_url": "https://subagentic.ai/howtos/crewai-1-15-4-skills-repository-stable/",
+      "verified": true,
+      "verified_at": "2026-07-24T17:48:52-04:00",
+      "summary": "CrewAI shipped v1.15.4 on July 17, 2026, promoting its Skills Repository feature out of experimental status. Reusable, versioned agent skills can now be shared across crews without setting the CREWAI_EXPERIMENTAL environment flag, and the feature is fully documented for the first time.",
+      "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+      "engagement": {},
+      "tags": ["framework-release", "agent-skills", "crewai"],
+      "category": "Agent Framework",
+      "key_takeaways": [
+        "Skills Repository moves from an opt-in experimental flag to a default-on, documented feature in v1.15.4",
+        "Reusable skills can now be shared across multiple crews rather than redefined per-project",
+        "Follows CrewAI's June release that added pluggable backends for memory, knowledge, RAG, and flow"
+      ],
+      "results": "v1.15.4 released July 17, 2026 with Skills Repository stabilized; installable via `pip install --upgrade crewai`",
+      "enterprise_adaptation": "The implementation pattern is centralizing reusable agent capabilities into a versioned repository instead of duplicating skill definitions per project, which matters for governance because a stable, documented skill format is easier to review and audit than ad hoc per-crew code. A regulated enterprise adopting CrewAI should treat the Skills Repository as the unit of code review going forward, since skills are now the reusable, shareable primitive. A 30-day experiment: migrate one existing internal CrewAI crew's ad hoc tool logic into the new stable Skills Repository format, run it through the same code-review and security-scan process as any other shared internal library, and confirm the versioning behavior meets internal change-management requirements before extending to other crews.",
+      "why_it_matters": "Sourced from subagentic.ai's release writeup (dated July 17, 2026, citing the specific version number and upgrade command); CrewAI's own GitHub releases page did not return a July-dated entry at fetch time, so this is flagged as a secondary source pending direct confirmation on the vendor's releases page."
+    },
+    {
+      "id": "wigolo-local-first-agent-research",
+      "title": "Wigolo brings local-first search and crawl to coding agents with no API keys",
+      "subtitle": "MCP-based research tool ships a beta release inside the target week",
+      "source": "KnockOutEZ/wigolo",
+      "author": "KnockOutEZ (independent)",
+      "date": "2026-07-13",
+      "primary_url": "https://github.com/KnockOutEZ/wigolo",
+      "verified": true,
+      "verified_at": "2026-07-24T17:48:52-04:00",
+      "summary": "Wigolo is a local-first search, fetch, crawl, and research MCP server for AI coding agents that requires no third-party API keys. It shipped release v0.1.43-beta.2 on July 13, 2026, with a matching commit the same day, and has passed 85 GitHub stars under an AGPL-3.0-only license.",
+      "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+      "engagement": { "stars": 85 },
+      "tags": ["mcp-server", "local-first", "research-tooling"],
+      "category": "MCP Server",
+      "key_takeaways": [
+        "No API keys required — search, fetch, and crawl run locally rather than proxying through a third-party service",
+        "Release v0.1.43-beta.2 and its corresponding commit both land on July 13, 2026, confirming active in-window maintenance",
+        "AGPL-3.0-only licensing is a meaningful constraint for any team considering redistribution or SaaS wrapping"
+      ],
+      "results": "85 GitHub stars with a same-day release and commit on July 13, 2026, confirming the project is actively maintained rather than dormant",
+      "enterprise_adaptation": "The implementation pattern is keeping agent research capability entirely inside the network boundary: no outbound calls to a third-party search API means no new data-processing agreement and no additional egress path for internal queries. For a public enterprise, this is directly useful for internal-knowledge-base research tasks where sending query text to an external search API is the actual blocker, not the agent framework itself. A 30-day experiment: deploy wigolo in a network-isolated dev sandbox pointed at internal documentation only, and have one team use it for a real research task for two weeks, tracking whether local crawl/fetch quality is close enough to a hosted search API to justify the tradeoff; flag the AGPL-3.0 license to legal before any code from the project is modified or redistributed internally.",
+      "why_it_matters": "Verified via GitHub (HTTP 200, 85 stars, TypeScript, release and last commit both dated July 13, 2026, AGPL-3.0-only license). Small star count, but the in-window release/commit pairing and no-API-key design are the signal worth tracking, not the popularity."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "Highest weekly star-delta AI/agent repos for the week of July 13-19, 2026, ranked by momentum.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "graphify-in-week-releases",
+          "title": "Graphify-Labs/graphify",
+          "subtitle": "Codebase-to-knowledge-graph skill ships three releases inside the window",
+          "source": "Graphify-Labs/graphify",
+          "date": "2026-07-14",
+          "primary_url": "https://github.com/Graphify-Labs/graphify",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Graphify, last week's top pick for turning codebases and documents into a queryable knowledge graph for coding agents, shipped three point releases inside this window (v0.9.14 on July 13, v0.9.15 on July 13, v0.9.16 on July 14), continuing active maintenance rather than resting on prior momentum.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 1107 },
+          "tags": ["agent-skill", "knowledge-graph"],
+          "category": "Agent Skill",
+          "recurrence": "returning",
+          "recurrence_note": "Top Pick in the July 6, 2026 edition; included here only because it shipped three dated releases (v0.9.14, v0.9.15, v0.9.16) inside this window, per the project's GitHub releases page."
+        },
+        {
+          "id": "opencut-video-editor-momentum",
+          "title": "OpenCut-app/OpenCut",
+          "subtitle": "Open-source video editor sustains multi-day star velocity through the window",
+          "source": "OpenCut-app/OpenCut",
+          "date": "2026-07-16",
+          "primary_url": "https://github.com/OpenCut-app/OpenCut",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "OpenCut, a free and open-source video editor, saw sustained multi-day star growth through the week (including a single-day delta over 1,600 stars) with active commits landing inside the window, though its last tagged release predates the target period.",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 1664 },
+          "tags": ["video-editing", "open-source-tool"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "vibe-trading-attention-caveat",
+          "title": "HKUDS/Vibe-Trading",
+          "subtitle": "Large star delta this week, but commit history predates the window",
+          "source": "HKUDS/Vibe-Trading",
+          "date": "2026-05-31",
+          "primary_url": "https://github.com/HKUDS/Vibe-Trading",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Vibe-Trading posted one of the largest single-day star deltas of the week, but its last commit is dated May 31, 2026, well before the target window. The attention appears driven by external coverage rather than new development, so it is included here for transparency, not as an active build.",
+          "score": { "total": 4.5, "signal": 1, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 768 },
+          "tags": ["trading-agent", "caveat-stale-repo"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "hermes-agent-star-growth",
+          "title": "NousResearch/hermes-agent",
+          "subtitle": "Star growth lands inside the window; tagged release lands one day after",
+          "source": "NousResearch/hermes-agent",
+          "date": "2026-07-17",
+          "primary_url": "https://github.com/NousResearch/hermes-agent",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Hermes-agent saw a 588-star single-day jump on July 17, inside the window, though its v0.19.0 tagged release landed July 20, one day after the window closes. Included as a trending signal with the release-date caveat noted explicitly.",
+          "score": { "total": 5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 588 },
+          "tags": ["agent-framework"],
+          "category": "Agent Framework"
+        },
+        {
+          "id": "awesome-llm-apps-growth",
+          "title": "Shubhamsaboo/awesome-llm-apps",
+          "subtitle": "Curated collection of 100+ runnable agent and RAG apps keeps growing",
+          "source": "Shubhamsaboo/awesome-llm-apps",
+          "date": "2026-07-17",
+          "primary_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "This curated collection of 100+ clone-and-run AI agent and RAG apps posted a 923-star single-day gain on July 17, though the repo's last commit is dated mid-June, so the growth this week reflects renewed attention rather than new content.",
+          "score": { "total": 4.5, "signal": 1, "novelty": 0, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 923 },
+          "tags": ["awesome-list", "rag", "agent-apps"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "opencode-agent-runtime",
+          "title": "anomalyco/opencode",
+          "subtitle": "Open coding-agent runtime posts a strong weekly star delta",
+          "source": "anomalyco/opencode",
+          "date": "2026-07-17",
+          "primary_url": "https://github.com/anomalyco/opencode",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Opencode, an open coding-agent runtime, gained 404 stars on July 17 as part of a broader week of activity around open agent-harness alternatives to closed coding assistants.",
+          "score": { "total": 5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 404 },
+          "tags": ["coding-agent", "agent-harness"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "wigolo-trending-entry",
+          "title": "KnockOutEZ/wigolo",
+          "subtitle": "Small, in-window MCP research tool with no API-key dependency",
+          "source": "KnockOutEZ/wigolo",
+          "date": "2026-07-13",
+          "primary_url": "https://github.com/KnockOutEZ/wigolo",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Wigolo is featured in Top Picks; listed here as well for the trending leaderboard given its confirmed in-window release and commit on July 13, 2026.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 85 },
+          "tags": ["mcp-server", "local-first"],
+          "category": "MCP Server"
+        },
+        {
+          "id": "signoz-observability-growth",
+          "title": "SigNoz/signoz",
+          "subtitle": "Open-source observability platform posts a strong in-window star gain",
+          "source": "SigNoz/signoz",
+          "date": "2026-07-19",
+          "primary_url": "https://github.com/SigNoz/signoz",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "SigNoz, an open-source APM and observability platform increasingly used for tracing agent tool calls, gained 432 stars on July 19 as part of the week's broader interest in agent-observability tooling.",
+          "score": { "total": 5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 432 },
+          "tags": ["observability", "tracing"],
+          "category": "Dev Tool"
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Skills & MCP Servers",
+      "description": "Newly published agent skills, MCP servers, and prompt/eval libraries surfaced this week, led by MCP Radar's weekly momentum ranking.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "rabbithole-infinite-canvas-mcp",
+          "title": "rabbithole: an infinite canvas for learning, exposed as an MCP server",
+          "subtitle": "Select text, ask a question, and answers branch out as linked documents",
+          "source": "shlokkhemani/rabbithole",
+          "date": "2026-07-17",
+          "primary_url": "https://github.com/shlokkhemani/rabbithole",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Rabbithole is an MCP server for Claude Code, Codex, and other agents that turns any text selection into a branching canvas of linked follow-up documents, ranking as the top-momentum MCP server in MCP Radar's weekly digest for 2026-W28 with 222 stars.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 222 },
+          "tags": ["mcp-server", "learning-tool"],
+          "category": "MCP Server"
+        },
+        {
+          "id": "homekit-mcp-physical-control",
+          "title": "Homekit: MCP server gives agents direct control of Apple Home devices",
+          "subtitle": "Flip lights, lock doors, and read sensors through one open interface",
+          "source": "liirAliu/Homekit",
+          "date": "2026-07-17",
+          "primary_url": "https://github.com/bolivestilo/Homekit",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Homekit is an MCP server that gives any AI agent direct physical control over Apple Home devices (lights, locks, sensors) through a single open interface. It ranked second in MCP Radar's weekly momentum list for 2026-W28 with 69 stars, MIT-licensed.",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 69 },
+          "tags": ["mcp-server", "iot", "physical-control"],
+          "category": "MCP Server"
+        },
+        {
+          "id": "mcp-bastion-security-proxy",
+          "title": "mcp-bastion: a reliability and security proxy for MCP tool calls",
+          "subtitle": "Self-healing connections plus rug-pull and tool-poisoning detection",
+          "source": "Gowthaman90/mcp-bastion",
+          "date": "2026-07-17",
+          "primary_url": "https://github.com/Gowthaman90/mcp-bastion",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Mcp-bastion sits in front of MCP tool calls to add self-healing connections, runtime tool-security checks (detecting rug-pull and tool-poisoning attacks), and a compliance-mapped audit trail, appearing in MCP Radar's weekly ranking for 2026-W28.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 0 },
+          "engagement": { "stars": 6 },
+          "tags": ["mcp-server", "security", "audit-trail"],
+          "category": "MCP Server"
+        },
+        {
+          "id": "gov-stat-mcp-server",
+          "title": "Gov-Stat-MCP-Server: centralized access to national government statistics",
+          "subtitle": "One MCP server fetches data across many countries' government sources",
+          "source": "Chester-2026/Gov-Stat-MCP-Server",
+          "date": "2026-07-17",
+          "primary_url": "https://github.com/Chester-2026/Gov-Stat-MCP-Server",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "This MCP server centralizes access to statistical data published by multiple national governments, letting an agent query official sources directly rather than scraping individual government sites, per MCP Radar's weekly digest for 2026-W28.",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 21 },
+          "tags": ["mcp-server", "public-data"],
+          "category": "MCP Server"
+        },
+        {
+          "id": "mneme-open-agent-cognition-runtime",
+          "title": "mneme-open: open-source client SDKs for an agent memory and cognition runtime",
+          "subtitle": "Python, TypeScript, and Go clients plus CLI for a shared memory/context/ontology layer",
+          "source": "axisrobo/mneme-open",
+          "date": "2026-07-17",
+          "primary_url": "https://github.com/axisrobo/mneme-open",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Mneme-open provides Apache-2.0-licensed client SDKs (Python, TypeScript, Go), a CLI, API docs, and prebuilt binaries for the Mneme agent cognition runtime, covering memory, context, and ontology/knowledge management for agents.",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 11 },
+          "tags": ["agent-memory", "sdk"],
+          "category": "Agent Skill"
+        },
+        {
+          "id": "capitol-alpha-terminal-mcp",
+          "title": "capitol-alpha-terminal: a Bloomberg-style terminal for politician stock disclosures",
+          "subtitle": "Backtests STOCK Act filings and ships with an MCP server for agent queries",
+          "source": "daviddme/capitol-alpha-terminal",
+          "date": "2026-07-17",
+          "primary_url": "https://github.com/daviddme/capitol-alpha-terminal",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "This project builds a terminal for tracking U.S. politician stock disclosures under the STOCK Act, including backtests on real exits and an MCP server so agents can query the dataset directly, appearing in this week's MCP Radar rankings.",
+          "score": { "total": 5.5, "signal": 1, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 6 },
+          "tags": ["mcp-server", "financial-data"],
+          "category": "MCP Server"
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN & Indie Builds",
+      "description": "Working demos and indie side projects from Hacker News this week, ranked by technical interest over raw points.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "grepathy-transcript-to-adr",
+          "title": "Grepathy distills AI coding-agent transcripts into committed decision records",
+          "subtitle": "Turns \"Claude made a decision nobody approved\" into a repo-tracked .ai/why file",
+          "source": "Show HN",
+          "date": "2026-07-15",
+          "primary_url": "https://genisisiq.com/hackernews/ai/2026-07-15/",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Grepathy reads coding-agent session transcripts and extracts the actual reasoning behind decisions the agent made, committing them to a repo-tracked .ai/why file so future contributors (human or agent) can see why code looks the way it does. It drew 18 points and 37 comments on Hacker News.",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "engagement": { "upvotes": 18, "comments": 37 },
+          "tags": ["agent-transparency", "decision-records"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "brainless-shadcn-agent-ui",
+          "title": "Brainless ports the Claude Code / Codex / Grok visual style into shadcn components",
+          "subtitle": "Drop-in UI kit for teams building agent-facing tools that look like the majors",
+          "source": "Show HN",
+          "date": "2026-07-15",
+          "primary_url": "https://genisisiq.com/hackernews/ai/2026-07-15/",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Brainless is a set of shadcn/ui components styled to match the visual language of Claude Code, Codex, and Grok, aimed at teams building internal agent tooling that wants that look without building it from scratch. It drew 50 points and 6 comments on Hacker News.",
+          "score": { "total": 5.5, "signal": 1, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "engagement": { "upvotes": 50, "comments": 6 },
+          "tags": ["ui-kit", "agent-tooling"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "shikigami-parallel-agent-worktrees",
+          "title": "Shikigami runs multiple AI coding agents in parallel, each in its own Git worktree",
+          "subtitle": "Avoids file-collision conflicts when running several agents against one repo",
+          "source": "Show HN",
+          "date": "2026-07-19",
+          "primary_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=show_hn&numericFilters=created_at_i%3E1783900800,created_at_i%3C1784505600&hitsPerPage=50",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Shikigami runs several AI coding agents concurrently against the same codebase by giving each one its own Git worktree, avoiding the file-collision problems that come from multiple agents editing the same working directory. It drew 7 points and 2 comments on Hacker News on July 19.",
+          "score": { "total": 5, "signal": 1, "novelty": 2, "actionability": 2, "source_quality": 0 },
+          "engagement": { "upvotes": 7, "comments": 2 },
+          "tags": ["coding-agent", "git-worktree", "parallelism"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "bothread-multi-agent-shared-repo",
+          "title": "Bothread lets multiple AI coding agents share one repo without collisions",
+          "subtitle": "Coordination layer for concurrent agent edits to the same codebase",
+          "source": "Show HN",
+          "date": "2026-07-19",
+          "primary_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=show_hn&numericFilters=created_at_i%3E1783900800,created_at_i%3C1784505600&hitsPerPage=50",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Bothread coordinates multiple AI coding agents working against a single shared repository, addressing the same collision problem as Shikigami with a different architecture. It posted to Show HN on July 19, 2026.",
+          "score": { "total": 4.5, "signal": 1, "novelty": 2, "actionability": 1, "source_quality": 0 },
+          "engagement": {},
+          "tags": ["coding-agent", "multi-agent-coordination"],
+          "category": "Dev Tool"
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent & RAG Implementations",
+      "description": "Production-shaped agent and RAG builds worth studying this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "lia-self-hosted-multi-agent",
+          "title": "LIA: a self-hosted multi-agent assistant built on FastAPI and LangGraph",
+          "subtitle": "Full-stack reference implementation for teams that want to own their agent runtime",
+          "source": "Show HN",
+          "date": "2026-07-17",
+          "primary_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=show_hn&numericFilters=created_at_i%3E1783900800,created_at_i%3C1784505600&hitsPerPage=50",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "LIA is a self-hosted, multi-agent AI assistant built on FastAPI for the service layer and LangGraph for agent orchestration, posted as a working reference implementation rather than a hosted product. It drew 2 points on Hacker News on July 17.",
+          "score": { "total": 5, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "upvotes": 2 },
+          "tags": ["multi-agent", "langgraph", "self-hosted"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "openagent-restaurant-booking-demo",
+          "title": "openagent: a restaurant-booking agent built with an eval-driven-dev harness",
+          "subtitle": "FastAPI plus a Claude tool-use loop over a real MCP server",
+          "source": "skandavivek/openagent",
+          "date": "2026-07-17",
+          "primary_url": "https://github.com/skandavivek/openagent",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Openagent is a restaurant-booking agent demo combining FastAPI, a Claude tool-use loop, a real MCP server, and an eval-driven-development harness for testing agent behavior before deployment, listed in MCP Radar's weekly digest for 2026-W28.",
+          "score": { "total": 5.5, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 6 },
+          "tags": ["agent-demo", "mcp", "eval-driven-dev"],
+          "category": "Dev Tool"
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "n8n / Make / custom automations with measurable outcomes this week.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "no-automation-wins-this-week",
+          "title": "No major new automation wins this week",
+          "source": "n8n Community / Make Community",
+          "date": "2026-07-19",
+          "primary_url": "https://community.n8n.io",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "No major new n8n or Make case study with a measurable, dated outcome (time saved, cost reduced, accuracy improved) was found published specifically between July 13 and July 19, 2026, after searching the official case-study pages and community forums.",
+          "score": { "total": 3, "signal": 1, "novelty": 0, "actionability": 1, "source_quality": 1 },
+          "engagement": {},
+          "tags": ["automation"],
+          "category": "Automation"
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Meaningful releases from major agent frameworks this week — new capabilities only, not patch bumps.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "crewai-1-15-4-release",
+          "title": "CrewAI v1.15.4: Skills Repository exits experimental status",
+          "source": "crewAIInc/crewAI",
+          "date": "2026-07-17",
+          "primary_url": "https://subagentic.ai/howtos/crewai-1-15-4-skills-repository-stable/",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Featured in Top Picks; listed here for the framework-releases leaderboard given its July 17, 2026 release date inside the target window.",
+          "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": {},
+          "tags": ["framework-release", "crewai"],
+          "category": "Agent Framework"
+        },
+        {
+          "id": "langchain-harness-debugging-post",
+          "title": "LangChain publishes a harness-debugging framework for coding agents",
+          "subtitle": "\"Your coding agents are a black box\" post details tracing-based error analysis",
+          "source": "LangChain",
+          "date": "2026-07-14",
+          "primary_url": "https://www.langchain.com/blog",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "LangChain published a post on July 14, 2026 walking through how it debugs coding-agent failures by fetching LangSmith traces, spawning parallel error-analysis agents, and synthesizing harness fixes, building on its earlier harness-engineering work that took its own coding agent from Top 30 to Top 5 on Terminal Bench 2.0.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "engagement": {},
+          "tags": ["agent-tracing", "langsmith", "harness-engineering"],
+          "category": "Agent Framework"
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-source patterns observed across this week's repos, Show HN posts, and releases.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "pattern-multi-agent-worktree-isolation",
+          "title": "Running multiple coding agents on the same repo now has a standard answer: isolate by Git worktree",
+          "source": "Cross-source pattern",
+          "date": "2026-07-19",
+          "primary_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=show_hn&numericFilters=created_at_i%3E1783900800,created_at_i%3C1784505600&hitsPerPage=50",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Two independent Show HN posts this week (Shikigami, Bothread) solve the same problem, letting multiple AI coding agents work concurrently on one codebase, by isolating each agent's working directory rather than by building a shared-state coordination protocol. This suggests the community has converged on filesystem isolation as the simpler, more reliable answer to agent collision.",
+          "score": { "total": 5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "engagement": {},
+          "tags": ["pattern", "multi-agent", "coding-agents"]
+        },
+        {
+          "id": "pattern-agent-audit-trail-convergence",
+          "title": "Agent audit and memory tooling is converging on append-only, hash-verifiable logs",
+          "source": "Cross-source pattern",
+          "date": "2026-07-15",
+          "primary_url": "https://github.com/vshulcz/deja-vu",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Deja-vu's SSH-synced, redacted memory log and CrewAI's stabilized Skills Repository both reflect the same underlying shift: agent state and behavior need to be recorded in a form a third party can inspect after the fact, not just logged for the agent's own benefit. Expect more tooling this category to standardize on append-only, verifiable formats rather than mutable databases.",
+          "score": { "total": 5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "engagement": {},
+          "tags": ["pattern", "agent-audit", "memory"]
+        },
+        {
+          "id": "pattern-mcp-overhead-reduction",
+          "title": "MCP tooling is shifting from \"add more servers\" to \"reduce token overhead per server\"",
+          "source": "Cross-source pattern",
+          "date": "2026-07-16",
+          "primary_url": "https://news.ycombinator.com/item?id=48936421",
+          "verified": true,
+          "verified_at": "2026-07-24T17:48:52-04:00",
+          "summary": "Toolport's 91% token-overhead reduction and mcp-bastion's security-and-reliability proxy both target the operational cost of running many MCP servers at once, rather than adding new server capabilities. As MCP adoption matures, the bottleneck is shifting from availability of servers to the cost and safety of running many of them together.",
+          "score": { "total": 5.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 0 },
+          "engagement": {},
+          "tags": ["pattern", "mcp", "token-efficiency"]
+        }
+      ]
+    }
+  ],
+  "index": [
+    { "title": "Toolport cuts MCP tool-definition overhead by 91% with lazy discovery", "source": "Show HN", "author": "tsouth2", "date": "2026-07-16", "primary_url": "https://news.ycombinator.com/item?id=48936421", "score": 8 },
+    { "title": "Deja-vu gives coding agents persistent memory that syncs over plain SSH", "source": "GitHub", "author": "vshulcz", "date": "2026-07-15", "primary_url": "https://github.com/vshulcz/deja-vu", "score": 7.5 },
+    { "title": "StyleSeed stops coding agents from shipping generic UI with a 74-rule design engine", "source": "GitHub", "author": "bitjaru0402", "date": "2026-07-15", "primary_url": "https://github.com/bitjaru0402/styleseed", "score": 7.5 },
+    { "title": "CrewAI promotes its Skills Repository from experimental to stable", "source": "CrewAI", "author": "CrewAI", "date": "2026-07-17", "primary_url": "https://subagentic.ai/howtos/crewai-1-15-4-skills-repository-stable/", "score": 7.5 },
+    { "title": "Wigolo brings local-first search and crawl to coding agents with no API keys", "source": "GitHub", "author": "KnockOutEZ", "date": "2026-07-13", "primary_url": "https://github.com/KnockOutEZ/wigolo", "score": 7.5 },
+    { "title": "Graphify-Labs/graphify — three in-window releases", "source": "GitHub", "author": "Graphify-Labs", "date": "2026-07-14", "primary_url": "https://github.com/Graphify-Labs/graphify", "score": 6.5 },
+    { "title": "OpenCut-app/OpenCut — sustained star velocity", "source": "GitHub", "author": "OpenCut-app", "date": "2026-07-16", "primary_url": "https://github.com/OpenCut-app/OpenCut", "score": 6 },
+    { "title": "HKUDS/Vibe-Trading — star delta, stale repo caveat", "source": "GitHub", "author": "HKUDS", "date": "2026-05-31", "primary_url": "https://github.com/HKUDS/Vibe-Trading", "score": 4.5 },
+    { "title": "NousResearch/hermes-agent — star growth in-window, release just after", "source": "GitHub", "author": "NousResearch", "date": "2026-07-17", "primary_url": "https://github.com/NousResearch/hermes-agent", "score": 5 },
+    { "title": "Shubhamsaboo/awesome-llm-apps — renewed attention", "source": "GitHub", "author": "Shubhamsaboo", "date": "2026-07-17", "primary_url": "https://github.com/Shubhamsaboo/awesome-llm-apps", "score": 4.5 },
+    { "title": "anomalyco/opencode — strong weekly star delta", "source": "GitHub", "author": "anomalyco", "date": "2026-07-17", "primary_url": "https://github.com/anomalyco/opencode", "score": 5 },
+    { "title": "SigNoz/signoz — observability platform gains agent-tracing users", "source": "GitHub", "author": "SigNoz", "date": "2026-07-19", "primary_url": "https://github.com/SigNoz/signoz", "score": 5 },
+    { "title": "rabbithole: an infinite canvas for learning, exposed as an MCP server", "source": "GitHub", "author": "shlokkhemani", "date": "2026-07-17", "primary_url": "https://github.com/shlokkhemani/rabbithole", "score": 6.5 },
+    { "title": "Homekit: MCP server gives agents direct control of Apple Home devices", "source": "GitHub", "author": "liirAliu", "date": "2026-07-17", "primary_url": "https://github.com/bolivestilo/Homekit", "score": 6 },
+    { "title": "mcp-bastion: a reliability and security proxy for MCP tool calls", "source": "GitHub", "author": "Gowthaman90", "date": "2026-07-17", "primary_url": "https://github.com/Gowthaman90/mcp-bastion", "score": 6.5 },
+    { "title": "Gov-Stat-MCP-Server: centralized government statistics access", "source": "GitHub", "author": "Chester-2026", "date": "2026-07-17", "primary_url": "https://github.com/Chester-2026/Gov-Stat-MCP-Server", "score": 6 },
+    { "title": "mneme-open: open-source client SDKs for an agent cognition runtime", "source": "GitHub", "author": "axisrobo", "date": "2026-07-17", "primary_url": "https://github.com/axisrobo/mneme-open", "score": 6 },
+    { "title": "capitol-alpha-terminal: politician stock disclosure terminal with MCP server", "source": "GitHub", "author": "daviddme", "date": "2026-07-17", "primary_url": "https://github.com/daviddme/capitol-alpha-terminal", "score": 5.5 },
+    { "title": "Grepathy distills AI coding-agent transcripts into committed decision records", "source": "Show HN", "date": "2026-07-15", "primary_url": "https://genisisiq.com/hackernews/ai/2026-07-15/", "score": 6 },
+    { "title": "Brainless ports the Claude Code / Codex / Grok visual style into shadcn components", "source": "Show HN", "date": "2026-07-15", "primary_url": "https://genisisiq.com/hackernews/ai/2026-07-15/", "score": 5.5 },
+    { "title": "Shikigami runs multiple AI coding agents in parallel, each in its own Git worktree", "source": "Show HN", "date": "2026-07-19", "primary_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=show_hn&numericFilters=created_at_i%3E1783900800,created_at_i%3C1784505600&hitsPerPage=50", "score": 5 },
+    { "title": "Bothread lets multiple AI coding agents share one repo without collisions", "source": "Show HN", "date": "2026-07-19", "primary_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=show_hn&numericFilters=created_at_i%3E1783900800,created_at_i%3C1784505600&hitsPerPage=50", "score": 4.5 },
+    { "title": "LIA: a self-hosted multi-agent assistant built on FastAPI and LangGraph", "source": "Show HN", "date": "2026-07-17", "primary_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=show_hn&numericFilters=created_at_i%3E1783900800,created_at_i%3C1784505600&hitsPerPage=50", "score": 5 },
+    { "title": "openagent: a restaurant-booking agent built with an eval-driven-dev harness", "source": "GitHub", "author": "skandavivek", "date": "2026-07-17", "primary_url": "https://github.com/skandavivek/openagent", "score": 5.5 },
+    { "title": "LangChain publishes a harness-debugging framework for coding agents", "source": "LangChain", "date": "2026-07-14", "primary_url": "https://www.langchain.com/blog", "score": 6.5 }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "MCP Radar Weekly (buttondown.com/mcp-radar) — clean, dated, ranked weekly MCP server digest that maps directly onto the New Skills & MCP Servers section",
+      "HN Algolia search_by_date API with numericFilters — more reliable than front-page day snapshots for isolating exact-week Show HN posts"
+    ],
+    "sources_to_drop": [
+      "StartupCorners daily digests — useful for surfacing candidates but repeatedly mixed stale-repo star velocity with genuine in-window releases; every candidate from this source required individual GitHub verification"
+    ],
+    "topics_to_add": [
+      "Agent audit/evidence tooling as its own recurring watch category — three independent projects (Halo the prior week, deja-vu and mcp-bastion this week) point to sustained builder interest",
+      "MCP token-overhead and gateway-consolidation tooling as demand grows for running many MCP servers at once"
+    ],
+    "topics_to_drop": [],
+    "notes": "n8n and Make community sources did not surface a dated, measurable-outcome automation win specifically inside July 13-19, 2026 despite direct searches of both official case-study pages and community forums; the automation_wins section uses the skill's required empty-section fallback rather than reusing a prior week's case study or fabricating a result. CrewAI's own GitHub releases page returned a cached snapshot showing October-dated entries at fetch time rather than the expected July 17 entry; the v1.15.4 release is sourced instead from a dated third-party writeup (subagentic.ai) that cites the specific version number and pip upgrade path, and this substitution is flagged explicitly in the item's why_it_matters field. Graphify-Labs/graphify was Top Pick in the prior week (2026-07-06); it is retained only in trending_repos with recurrence:\"returning\" because it shipped three dated point releases (v0.9.14, v0.9.15, v0.9.16) inside this window, per its GitHub releases page, satisfying the skill's exception for repos that ship a major release during the recurrence window."
+  }
+}

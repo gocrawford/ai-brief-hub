@@ -1,0 +1,700 @@
+{
+  "tab_id": "launches",
+  "tab_name": "Launches",
+  "subtitle": "Launch Intelligence",
+  "icon": "Rocket",
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.913,
+    "items_total": 23,
+    "items_new": 21,
+    "items_returning": 2
+  },
+  "min_items": 20,
+  "executive_summary": [
+    {
+      "headline": "Moonshot AI's Kimi K3 claims the first open 3T-class model, with full weights still pending",
+      "body": "Kimi K3 launched July 14 as a 2.8T-parameter open MoE model with a 1M-token context window and native vision, available now on Kimi.com, Kimi Work, Kimi Code, and the Kimi API at $3.00/M input (cache miss) and $15.00/M output. The catch: full open weights are promised only by July 27 — a week after this brief's window closes — so the 'open' claim is not yet independently verifiable and should be tracked, not acted on.",
+      "primary_url": "https://www.kimi.com/blog/kimi-k3"
+    },
+    {
+      "headline": "Fireworks AI's $1.5B round at $17.5B is the clearest inference-infrastructure signal of the week",
+      "body": "Fireworks closed a $1.505B Series D on July 16 at a $17.5B post-money valuation — roughly 4x its October mark — led by Atreides Management, Index Ventures, and TCV, with Nvidia participating. Annualized revenue passed $1B, up 5x year-over-year, evidence that enterprise demand for cheaper, customized model serving (versus frontier-API-only strategies) is accelerating.",
+      "primary_url": "https://www.cnbc.com/2026/07/16/fireworks-nvidia-cloud-ai-startup-value.html"
+    },
+    {
+      "headline": "Anthropic pushes Claude Cowork from desktop-only to phone and browser",
+      "body": "Cowork, Anthropic's background-agent feature, is expanding via beta from the desktop app to iPhone, iPad, Android, and claude.ai starting the week of July 13, with a gradual rollout beginning on the Max plan. Anthropic is extending doubled Cowork usage limits through August 5 to cover the transition — a low-risk moment to pilot cross-device agent handoff for knowledge-work tasks.",
+      "primary_url": "https://9to5mac.com/2026/07/13/anthropic-expanding-claude-cowork-to-mobile-and-web-details-here/"
+    },
+    {
+      "headline": "xAI shipped two product moves in one week: open-sourced Grok Build, launched Automations",
+      "body": "Following a privacy scandal over uploading users' private repos, xAI open-sourced the ~844,530-line Grok Build codebase under Apache 2.0 on July 15-16. Separately, on July 16 xAI shipped Grok Automations — natural-language scheduled and email-triggered agent tasks on grok.com and the iOS/Android apps, with email triggers gated to SuperGrok subscribers.",
+      "primary_url": "https://blockchain.news/news/grok-automations-scheduled-tasks"
+    },
+    {
+      "headline": "Industrial-relevant funding: InstaLILY's Series B pulls in Home Depot Ventures and United Rentals",
+      "body": "InstaLILY, which builds AI 'engineers' for physical-goods distributors and field-service workflows, closed a $60M Series B on July 14 led by Energize Capital, with Insight Partners increasing its stake and Home Depot Ventures and United Rentals joining as new strategic investors — a direct signal of enterprise AI investment converging on building-products and industrial distribution use cases.",
+      "primary_url": "https://instalily.ai/research/the-engineer-that-never-leaves"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "kimi-k3-launch",
+      "title": "Kimi K3 Launches as First Open 3T-Class Model — Full Weights Pending",
+      "source": "Moonshot AI",
+      "date": "2026-07-14",
+      "primary_url": "https://www.kimi.com/blog/kimi-k3",
+      "secondary_urls": [
+        { "label": "DataCamp technical overview", "url": "https://www.datacamp.com/blog/kimi-k3" },
+        { "label": "Cloudflare model documentation", "url": "https://developers.cloudflare.com/ai/models/moonshotai/kimi-k3/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-24T16:00:00Z",
+      "summary": "Moonshot AI released Kimi K3, a 2.8T-parameter open mixture-of-experts model with native vision and a 1M-token context window, calling it the world's first open 3T-class model. It's live now on Kimi.com, Kimi Work, Kimi Code, and the Kimi API (model id kimi-k3) at $3.00/M input (cache miss), $0.30/M (cache hit), and $15.00/M output, but full open weights are not promised until July 27 — after this brief's window — so the open-source claim is currently unverifiable against real weights.",
+      "category": "Frontier Model",
+      "evaluation": "ADD TO WATCHLIST",
+      "score": { "total": 8.3, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 2 },
+      "tags": ["moonshot-ai", "kimi-k3", "open-source", "frontier-model", "moe"],
+      "key_takeaways": [
+        "Parameter count (2.8T) and context window (1M tokens) are the largest claimed for any model billed as open-weight, but the weights themselves are not out yet — treat the 'open' framing as provisional until July 27.",
+        "API pricing ($3/$0.30/$15 per M tokens) is already live and usable for evaluation independent of the weights release.",
+        "Kimi Delta Attention architecture is a genuinely new mechanism, not an incremental tune of a prior Kimi release."
+      ],
+      "competitive_context": "Directly challenges DeepSeek and Llama as the reference open-weight frontier model; if the July 27 weights release holds, it would be the largest open-weight model available for self-hosting, a relevant option for regulated enterprises wanting data-residency control over frontier-class capability.",
+      "pricing": "$3.00/M input tokens (cache miss), $0.30/M (cache hit), $15.00/M output tokens via Kimi API.",
+      "recurrence": "new"
+    },
+    {
+      "id": "fireworks-ai-series-d",
+      "title": "Fireworks AI Raises $1.505B Series D at $17.5B Valuation",
+      "source": "Fireworks AI",
+      "date": "2026-07-16",
+      "primary_url": "https://www.cnbc.com/2026/07/16/fireworks-nvidia-cloud-ai-startup-value.html",
+      "secondary_urls": [
+        { "label": "Orrick legal announcement", "url": "https://www.orrick.com/en/News/2026/07/Fireworks-AI-Closes-Over-1-5-Billion-in-Series-D-Funding" },
+        { "label": "SiliconANGLE coverage", "url": "https://siliconangle.com/2026/07/16/ai-infrastructure-startup-fireworks-closes-1-5b-round-17-5b-valuation/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-24T16:05:00Z",
+      "summary": "Fireworks AI closed a $1.505B Series D at a $17.5B post-money valuation, led by Atreides Management, Index Ventures, and TCV, with Nvidia, Lightspeed, Bessemer, Menlo, and others participating. The company's annualized revenue passed $1B, a roughly 5x year-over-year increase, and the valuation is roughly 4x its prior mark from about seven months earlier.",
+      "category": "Funding",
+      "evaluation": "MONITOR",
+      "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 1, "source_quality": 2 },
+      "tags": ["fireworks-ai", "funding", "series-d", "inference-infrastructure", "nvidia"],
+      "key_takeaways": [
+        "4x valuation increase in ~7 months signals investor conviction that custom/specialized model serving is a durable category, not just a frontier-API arbitrage play.",
+        "Customer base (Uber, Shopify per Fireworks' own materials) shows real enterprise production usage, not just developer-tier adoption.",
+        "Worth benchmarking against direct-API costs for any team running high-volume inference on open-weight models."
+      ],
+      "competitive_context": "Competes with Together AI, Baseten, and hyperscaler-native inference (AWS Bedrock, Azure AI Foundry) for enterprises seeking cheaper alternatives to frontier-lab APIs; Nvidia's participation continues a pattern of the chipmaker investing directly in its largest inference customers.",
+      "pricing": "Not disclosed as part of the funding announcement.",
+      "recurrence": "new"
+    },
+    {
+      "id": "claude-cowork-mobile-web-expansion",
+      "title": "Claude Cowork Expands From Desktop-Only to iPhone, Android, and Web",
+      "source": "Anthropic",
+      "date": "2026-07-13",
+      "primary_url": "https://9to5mac.com/2026/07/13/anthropic-expanding-claude-cowork-to-mobile-and-web-details-here/",
+      "verified": true,
+      "verified_at": "2026-07-24T16:10:00Z",
+      "summary": "Anthropic is expanding Claude Cowork, its background-agent feature, from the desktop app to iPhone, iPad, Android, and claude.ai. The rollout is a beta starting with the Max plan, with more plans to follow over several weeks; scheduled tasks now run with no device online, and Anthropic is extending its doubled Cowork usage limits through August 5 to cover the transition.",
+      "category": "AI Agent",
+      "evaluation": "ADD TO WATCHLIST",
+      "score": { "total": 7.6, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+      "tags": ["anthropic", "claude", "cowork", "mobile", "agents"],
+      "key_takeaways": [
+        "Cross-device task handoff (start at desk, check on phone, review before shipping) is a meaningful workflow change for knowledge workers who use Claude for multi-step tasks.",
+        "Approval gating is preserved: Anthropic states nothing ships until a human reviews it, relevant for any team piloting this under existing AI-use policies.",
+        "Beta gated to Max plan first — broader plan availability timeline is not yet fixed, so budget for a phased pilot rather than org-wide rollout."
+      ],
+      "competitive_context": "Matches the general industry direction of persistent, cross-device background agents seen in OpenAI's and Google's own agent products; Anthropic's differentiation is the explicit human-approval checkpoint before any output ships.",
+      "pricing": "No new cost; included in existing paid Claude plans during beta, starting with Max.",
+      "recurrence": "new"
+    },
+    {
+      "id": "grok-build-open-source",
+      "title": "xAI Open-Sources Grok Build Codebase After Privacy Scandal",
+      "source": "xAI (SpaceXAI)",
+      "date": "2026-07-16",
+      "primary_url": "https://github.com/xai-org/grok-build",
+      "verified": true,
+      "verified_at": "2026-07-24T16:15:00Z",
+      "summary": "xAI published the roughly 844,530-line Rust codebase behind Grok Build on GitHub under an Apache 2.0 license, days after disclosures that the coding-agent product had been uploading users' private repository contents without adequate disclosure. Open-sourcing the codebase is presented as a transparency response to the incident.",
+      "category": "Open Source",
+      "evaluation": "MONITOR",
+      "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 },
+      "tags": ["xai", "grok-build", "open-source", "privacy", "coding-agent"],
+      "key_takeaways": [
+        "The open-sourcing follows a privacy incident, not a proactive strategy shift — treat the trust rebuild as unproven until independent audits confirm no residual data-handling issues.",
+        "Apache 2.0 licensing allows commercial forks and internal deployment, relevant if evaluating a self-hosted coding-agent stack.",
+        "Any prior enterprise pilot of Grok Build should re-review data-handling terms given the incident that prompted this release."
+      ],
+      "competitive_context": "Contrasts with closed coding-agent competitors (Cursor, GitHub Copilot); the incident itself is a cautionary data point for procurement teams evaluating any AI coding tool's repo-access permissions.",
+      "pricing": "Free and open source (Apache 2.0); underlying Grok model API usage still billed separately.",
+      "recurrence": "new"
+    },
+    {
+      "id": "instalily-series-b",
+      "title": "InstaLILY Raises $60M Series B With Home Depot Ventures and United Rentals",
+      "source": "InstaLILY AI",
+      "date": "2026-07-14",
+      "primary_url": "https://instalily.ai/research/the-engineer-that-never-leaves",
+      "secondary_urls": [
+        { "label": "Funding round detail (Sahm Capital)", "url": "https://www.sahmcapital.com/news/content/energize-capital-leads-60-million-series-b-financing-for-instalily-2026-07-14" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-24T16:20:00Z",
+      "summary": "InstaLILY, which builds AI 'teammates' that automate business-specific workflows for physical-goods distributors and field-service organizations, raised a $60M Series B led by Energize Capital. Insight Partners increased its existing investment, and Home Depot Ventures and United Rentals joined as new strategic investors, bringing total funding to nearly $100M following a year of 5x revenue growth.",
+      "category": "Funding",
+      "evaluation": "EVALUATE NOW",
+      "score": { "total": 7.8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
+      "tags": ["instalily", "funding", "series-b", "industrial-ai", "distribution"],
+      "key_takeaways": [
+        "Strategic investors (Home Depot Ventures, United Rentals) are direct customers in building-products distribution and equipment rental, a strong signal this vendor's use cases map to industrial/building-materials workflows.",
+        "5x revenue growth in the prior year suggests real production deployment, not just pilot activity, among physical-goods distributors.",
+        "Worth a direct vendor briefing given the overlap between InstaLILY's target customer profile and enterprise building-products distribution operations."
+      ],
+      "competitive_context": "Competes in the emerging 'AI teammate for vertical operations' category alongside Sierra and Decagon, but InstaLILY's specific focus on distributors and field service differentiates it from more general customer-support-oriented agent vendors.",
+      "pricing": "Not disclosed.",
+      "recurrence": "new"
+    },
+    {
+      "id": "grok-automations-launch",
+      "title": "xAI Launches Grok Automations for Scheduled and Email-Triggered Agent Tasks",
+      "source": "xAI",
+      "date": "2026-07-16",
+      "primary_url": "https://blockchain.news/news/grok-automations-scheduled-tasks",
+      "secondary_urls": [
+        { "label": "StreetInsider coverage", "url": "https://www.streetinsider.com/Corporate+News/Grok+launches+automated+task+scheduling+with+email+triggers/26780420.html" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-24T16:25:00Z",
+      "summary": "xAI launched Grok Automations, letting users describe a task once and run it on a schedule (daily, weekday, weekly, monthly, yearly) or trigger it from matching incoming emails. Available now on grok.com and the Grok app for iOS and Android; scheduled automations are free for all users, while email-triggered automations require a SuperGrok subscription. Grok can connect to Gmail, Google Calendar, Google Drive, Outlook, GitHub, Linear, Notion, Vercel, and custom MCP connectors.",
+      "category": "AI Agent",
+      "evaluation": "ADD TO WATCHLIST",
+      "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+      "tags": ["xai", "grok", "automation", "agents", "scheduling"],
+      "key_takeaways": [
+        "MCP connector support means automations can be extended to internal tools without waiting for xAI to ship first-party integrations.",
+        "Email-trigger automations are gated behind SuperGrok, a real cost consideration for team-wide rollout versus per-user experimentation.",
+        "Positions Grok as a lightweight scheduled-agent layer competing directly with Zapier-plus-LLM stacks rather than just a chat interface."
+      ],
+      "competitive_context": "Directly comparable to OpenAI's scheduled tasks in ChatGPT and Anthropic's Claude Cowork background agents launched the same week — three major labs converged on persistent/scheduled agent execution within days of each other.",
+      "pricing": "Scheduled automations free; email-triggered automations require SuperGrok subscription.",
+      "recurrence": "new"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "frontier_models",
+      "title": "Frontier Models",
+      "description": "Major model releases and status changes from the leading labs this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "kimi-k3-frontier-entry",
+          "title": "Kimi K3: 2.8T-Parameter Open MoE With 1M-Token Context",
+          "source": "Moonshot AI",
+          "date": "2026-07-14",
+          "primary_url": "https://www.kimi.com/blog/kimi-k3",
+          "verified": true,
+          "verified_at": "2026-07-24T16:00:00Z",
+          "summary": "Moonshot AI's Kimi K3 launched with native vision, a 1M-token context window, and a new Kimi Delta Attention architecture; API access is live but full open weights are not due until July 27.",
+          "category": "Frontier Model",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 8.3, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 2 },
+          "tags": ["moonshot-ai", "open-source", "frontier-model"],
+          "recurrence": "new"
+        },
+        {
+          "id": "claude-cowork-mobile-entry",
+          "title": "Claude Cowork Expands to iPhone, Android, and Web",
+          "source": "Anthropic",
+          "date": "2026-07-13",
+          "primary_url": "https://9to5mac.com/2026/07/13/anthropic-expanding-claude-cowork-to-mobile-and-web-details-here/",
+          "verified": true,
+          "verified_at": "2026-07-24T16:10:00Z",
+          "summary": "Anthropic's background-agent feature moves from desktop-only to a cross-device beta, with doubled usage limits extended through August 5 to cover the transition.",
+          "category": "AI Agent",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.6, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "tags": ["anthropic", "claude", "mobile"],
+          "recurrence": "new"
+        },
+        {
+          "id": "claude-fable-5-deadline-extension",
+          "title": "Claude Fable 5 Free-Access Deadline Extended a Second Time to July 19",
+          "source": "Anthropic",
+          "date": "2026-07-13",
+          "primary_url": "https://www.androidauthority.com/claude-fable-5-access-extended-3686668/",
+          "secondary_urls": [
+            { "label": "Republic World coverage", "url": "https://www.republicworld.com/tech/anthropic-pushes-back-claude-fable-5-s-free-access-deadline-to-july-19-2026-07-13-132118" }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-24T16:30:00Z",
+          "summary": "Anthropic pushed back the cutoff for free Claude Fable 5 access on Pro, Max, and Team plans a second time, to July 19 at 11:59:59 PM Pacific, ahead of an expected shift to pay-per-use pricing.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.5, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 2 },
+          "tags": ["anthropic", "claude-fable", "pricing"],
+          "recurrence": "new"
+        },
+        {
+          "id": "grok-build-open-source-entry",
+          "title": "Grok Build Codebase Open-Sourced Under Apache 2.0",
+          "source": "xAI",
+          "date": "2026-07-16",
+          "primary_url": "https://github.com/xai-org/grok-build",
+          "verified": true,
+          "verified_at": "2026-07-24T16:15:00Z",
+          "summary": "xAI published the ~844,530-line Rust codebase for its coding agent following a privacy incident involving unauthorized repository uploads.",
+          "category": "Open Source",
+          "evaluation": "MONITOR",
+          "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 },
+          "tags": ["xai", "open-source", "coding-agent"],
+          "recurrence": "new"
+        },
+        {
+          "id": "grok-automations-entry",
+          "title": "Grok Automations: Scheduled and Email-Triggered Agent Tasks",
+          "source": "xAI",
+          "date": "2026-07-16",
+          "primary_url": "https://blockchain.news/news/grok-automations-scheduled-tasks",
+          "verified": true,
+          "verified_at": "2026-07-24T16:25:00Z",
+          "summary": "xAI shipped Grok Automations on grok.com and mobile apps, letting users schedule or email-trigger recurring agent tasks, with email triggers gated to SuperGrok.",
+          "category": "AI Agent",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "tags": ["xai", "grok", "automation"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "product_hunt",
+      "title": "Product Hunt",
+      "description": "Top-ranked launches from Product Hunt's weekly leaderboard (week 29, July 13-19, 2026) with enterprise relevance.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "clawteams-ph-launch",
+          "title": "ClawTeams: Goal-Driven Proactive AI Team for E-Commerce",
+          "source": "Product Hunt",
+          "date": "2026-07-14",
+          "primary_url": "https://clawteams.ai/",
+          "secondary_urls": [
+            { "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/clawteams" }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-24T17:00:00Z",
+          "summary": "ClawTeams ranked #1 on Product Hunt's week-29 leaderboard, positioning itself as the first goal-driven, proactive AI team built for e-commerce operations rather than a single-task assistant.",
+          "category": "Product Hunt",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.8, "signal": 1, "novelty": 2, "actionability": 1, "source_quality": 2 },
+          "tags": ["product-hunt", "e-commerce", "ai-agent"],
+          "platform": "producthunt",
+          "recurrence": "new"
+        },
+        {
+          "id": "agentkey-ph-launch",
+          "title": "AgentKey: Live Data Marketplace for AI Agents",
+          "source": "Product Hunt",
+          "date": "2026-07-15",
+          "primary_url": "https://agentkey.app/",
+          "secondary_urls": [
+            { "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/agentkey" }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-24T17:05:00Z",
+          "summary": "AgentKey ranked #5 on the week-29 Product Hunt leaderboard, offering a plugin-based live external data marketplace for Claude Code, Codex, and MCP-compatible agents.",
+          "category": "Product Hunt",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.5, "signal": 1, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["product-hunt", "mcp", "data-marketplace"],
+          "platform": "producthunt",
+          "recurrence": "new"
+        },
+        {
+          "id": "osaurus-ph-launch",
+          "title": "Osaurus: Open-Source Local AI Agent Runtime for Mac",
+          "source": "Product Hunt",
+          "date": "2026-07-14",
+          "primary_url": "https://osaurus.ai/",
+          "secondary_urls": [
+            { "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/osaurus" },
+            { "label": "GitHub repository", "url": "https://github.com/osaurus-ai/osaurus" }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-24T17:10:00Z",
+          "summary": "Osaurus, a native Swift macOS harness for running open-weight AI models entirely offline, took Product of the Day #2 on Product Hunt and passed 7,300 GitHub stars by July 20, per Business Insider syndication of the launch coverage.",
+          "category": "Product Hunt",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.3, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 },
+          "tags": ["product-hunt", "open-source", "local-ai", "macos"],
+          "platform": "producthunt",
+          "engagement": { "stars": 7300 },
+          "recurrence": "new"
+        },
+        {
+          "id": "unabyss-claude-ph-launch",
+          "title": "Unabyss for Claude: Shared Memory Across Apps and LLMs",
+          "source": "Product Hunt",
+          "date": "2026-07-17",
+          "primary_url": "https://unabyss.com/",
+          "secondary_urls": [
+            { "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/unabyss" },
+            { "label": "Maker blog post", "url": "https://unabyss.com/blog/openclaw-claude-shared-memory" }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-24T17:15:00Z",
+          "summary": "Unabyss for Claude ranked #11 on the week-29 leaderboard, giving Claude and other LLM clients a shared memory layer that persists context across separate apps.",
+          "category": "Product Hunt",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.3, "signal": 1, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["product-hunt", "claude", "memory"],
+          "platform": "producthunt",
+          "recurrence": "new"
+        },
+        {
+          "id": "zro-private-inference-ph-launch",
+          "title": "Zro: Private Inference Endpoint for Coding Agents",
+          "source": "Product Hunt",
+          "date": "2026-07-15",
+          "primary_url": "https://zro.moonmath.ai/",
+          "secondary_urls": [
+            { "label": "View on Product Hunt", "url": "https://www.producthunt.com/products/zro/launches/zro" }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-24T17:20:00Z",
+          "summary": "Zro, built by MoonMath, offers a zero-retention private inference endpoint for open-weight coding models with direct Cursor integration, tied #14 on the week-29 leaderboard.",
+          "category": "Product Hunt",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.2, "signal": 1, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "tags": ["product-hunt", "privacy", "coding-agent"],
+          "platform": "producthunt",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "yc_and_startups",
+      "title": "YC and Startups",
+      "description": "Early-stage AI companies with fresh capital or launches this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "emergent-unicorn-series-c",
+          "title": "Emergent Turns Unicorn With $130M Series C",
+          "source": "StartupTalky",
+          "date": "2026-07-15",
+          "primary_url": "https://startuptalky.com/news/daily-indian-funding-roundup-key-news-15-july-2026-emergent-turns-unicorn/",
+          "verified": true,
+          "verified_at": "2026-07-24T17:30:00Z",
+          "summary": "Emergent, an India-based AI agent app-building platform, raised $130M in Series C funding led by Creaegis at a $1.5B valuation, crossing unicorn status.",
+          "category": "Startup Funding",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.7, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["startup", "series-c", "unicorn", "agent-platform"],
+          "recurrence": "new"
+        },
+        {
+          "id": "prime-intellect-series-a",
+          "title": "Prime Intellect Raises $130M Series A at $1B Valuation",
+          "source": "tryfundable.ai",
+          "date": "2026-07-13",
+          "primary_url": "https://www.tryfundable.ai/blog/top-funding-rounds-week-of-2026-07-13",
+          "verified": true,
+          "verified_at": "2026-07-24T17:35:00Z",
+          "summary": "Prime Intellect, a compute and tooling provider for AI agents, closed a $130M Series A at a $1B valuation led by Radical Ventures, with Nvidia Ventures, Intel Capital, and Dell Technologies Capital participating.",
+          "category": "Startup Funding",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.6, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["startup", "series-a", "compute", "agent-infrastructure"],
+          "recurrence": "new"
+        },
+        {
+          "id": "cognichip-series-a",
+          "title": "Cognichip Raises $60M Series A for AI Chip-Design Foundation Models",
+          "source": "Ignita",
+          "date": "2026-07-13",
+          "primary_url": "https://www.ignita.ai/insights/biggest-us-funding-rounds-week-ending-2026-07-17",
+          "verified": true,
+          "verified_at": "2026-07-24T17:40:00Z",
+          "summary": "Cognichip raised a $60M Series A from Seligman Ventures to build foundation models specialized for semiconductor chip design.",
+          "category": "Startup Funding",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.0, "signal": 1, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["startup", "series-a", "chip-design"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_ai",
+      "title": "Enterprise AI",
+      "description": "Enterprise and industrial deployments of AI this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "instalily-series-b-entry",
+          "title": "InstaLILY Series B With Home Depot Ventures and United Rentals",
+          "source": "InstaLILY AI",
+          "date": "2026-07-14",
+          "primary_url": "https://instalily.ai/research/the-engineer-that-never-leaves",
+          "verified": true,
+          "verified_at": "2026-07-24T16:20:00Z",
+          "summary": "InstaLILY's $60M Series B brought in Home Depot Ventures and United Rentals as new strategic investors, directly tying enterprise AI capital to building-products and equipment-rental distribution.",
+          "category": "Enterprise AI",
+          "evaluation": "EVALUATE NOW",
+          "score": { "total": 7.8, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 2 },
+          "tags": ["enterprise-ai", "industrial", "distribution"],
+          "recurrence": "new"
+        },
+        {
+          "id": "walden-robotics-stealth-exit",
+          "title": "Walden Robotics Emerges From Stealth With $300M Seed, Toyota Deployment",
+          "source": "LinkedIn Editors roundup",
+          "date": "2026-07-17",
+          "primary_url": "https://www.linkedin.com/pulse/startup-venture-capital-report-usa-canada-india-july-17-2026-zmpbf",
+          "verified": true,
+          "verified_at": "2026-07-24T17:45:00Z",
+          "summary": "Walden Robotics emerged from stealth with a $300M seed round at a $1.1B valuation, co-led by Toyota and Deviation Capital with Nvidia, Boeing, Samsung Ventures, Prologis, and CoreWeave participating; its humanoid robots are already deployed at a Toyota North America factory.",
+          "category": "Enterprise AI",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.2, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["robotics", "manufacturing", "seed-funding"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "funding",
+      "title": "Funding",
+      "description": "Notable AI funding rounds announced this week.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "fireworks-ai-series-d-entry",
+          "title": "Fireworks AI: $1.505B Series D at $17.5B Valuation",
+          "source": "CNBC",
+          "date": "2026-07-16",
+          "primary_url": "https://www.cnbc.com/2026/07/16/fireworks-nvidia-cloud-ai-startup-value.html",
+          "verified": true,
+          "verified_at": "2026-07-24T16:05:00Z",
+          "summary": "Fireworks AI's Series D quadrupled its valuation in roughly seven months on the back of annualized revenue crossing $1B.",
+          "category": "Funding",
+          "evaluation": "MONITOR",
+          "score": { "total": 8.0, "signal": 3, "novelty": 2, "actionability": 1, "source_quality": 2 },
+          "tags": ["funding", "inference-infrastructure"],
+          "recurrence": "new"
+        },
+        {
+          "id": "chai-discovery-series-c",
+          "title": "Chai Discovery Raises $400M Series C for AI Molecular Design",
+          "source": "The Funding Letter",
+          "date": "2026-07-15",
+          "primary_url": "https://thefundingletter.beehiiv.com/p/07-15-2026",
+          "verified": true,
+          "verified_at": "2026-07-24T17:50:00Z",
+          "summary": "Chai Discovery closed a $400M Series C led by Index Ventures, with Kleiner Perkins, OpenAI, and Sapphire Ventures participating, to build AI models for molecular and drug design.",
+          "category": "Funding",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.8, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["funding", "biotech", "series-c"],
+          "recurrence": "new"
+        },
+        {
+          "id": "nscale-debt-financing",
+          "title": "Nscale Secures $900M Debt Financing for AI Data Centers",
+          "source": "Digital Wealth News",
+          "date": "2026-07-16",
+          "primary_url": "https://dwealth.news/2026/07/top-5-vc-deals-of-the-week-in-ai-7-15-26/",
+          "verified": true,
+          "verified_at": "2026-07-24T17:55:00Z",
+          "summary": "London-based AI infrastructure builder Nscale secured $900M in debt financing to fund data-center capacity expansion.",
+          "category": "Funding",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.4, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["funding", "data-centers", "debt-financing"],
+          "recurrence": "new"
+        },
+        {
+          "id": "pixverse-series-c-extension",
+          "title": "PixVerse Raises $439M Series C Extension, Crosses $2B Valuation",
+          "source": "Startup Flash Report",
+          "date": "2026-07-14",
+          "primary_url": "https://startupflashreport.com/archive/2026-07-15",
+          "verified": true,
+          "verified_at": "2026-07-24T18:00:00Z",
+          "summary": "AI video-generation startup PixVerse extended its Series C by $439M led by CDH Investments, pushing its valuation above $2B.",
+          "category": "Funding",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.3, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["funding", "video-generation", "series-c"],
+          "recurrence": "new"
+        },
+        {
+          "id": "lyzr-series-b",
+          "title": "Lyzr Raises $100M Series B for Agent Infrastructure",
+          "source": "The Funding Letter",
+          "date": "2026-07-15",
+          "primary_url": "https://thefundingletter.beehiiv.com/p/07-15-2026",
+          "verified": true,
+          "verified_at": "2026-07-24T18:05:00Z",
+          "summary": "Agent infrastructure platform Lyzr closed a $100M Series B, part of a heavy week of agent-tooling investment.",
+          "category": "Funding",
+          "evaluation": "MONITOR",
+          "score": { "total": 6.0, "signal": 1, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["funding", "agent-infrastructure", "series-b"],
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "open_source",
+      "title": "Open Source",
+      "description": "Open-weight models and open-source developer tools released this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "kimi-k3-open-source-entry",
+          "title": "Kimi K3 Open Weights Promised by July 27",
+          "source": "Moonshot AI",
+          "date": "2026-07-14",
+          "primary_url": "https://www.kimi.com/blog/kimi-k3",
+          "verified": true,
+          "verified_at": "2026-07-24T16:00:00Z",
+          "summary": "Moonshot AI's Kimi K3 API is live now; full open weights for the 2.8T-parameter model are scheduled for July 27, after this brief's window.",
+          "category": "Open Source",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 8.3, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 2 },
+          "tags": ["open-source", "moonshot-ai"],
+          "recurrence": "new"
+        },
+        {
+          "id": "grok-build-open-source-oss-entry",
+          "title": "Grok Build Codebase Published on GitHub",
+          "source": "xAI",
+          "date": "2026-07-16",
+          "primary_url": "https://github.com/xai-org/grok-build",
+          "verified": true,
+          "verified_at": "2026-07-24T16:15:00Z",
+          "summary": "xAI's ~844,530-line Grok Build codebase is now public under Apache 2.0, following a privacy incident.",
+          "category": "Open Source",
+          "evaluation": "MONITOR",
+          "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 },
+          "tags": ["open-source", "xai"],
+          "recurrence": "new"
+        },
+        {
+          "id": "osaurus-open-source-entry",
+          "title": "Osaurus: Open-Source Local Agent Runtime for macOS",
+          "source": "Product Hunt / GitHub",
+          "date": "2026-07-14",
+          "primary_url": "https://github.com/osaurus-ai/osaurus",
+          "verified": true,
+          "verified_at": "2026-07-24T17:10:00Z",
+          "summary": "Osaurus is a fully offline, open-source native Swift runtime for local AI agents on Mac, which passed 7,300 GitHub stars within its launch week.",
+          "category": "Open Source",
+          "evaluation": "ADD TO WATCHLIST",
+          "score": { "total": 7.3, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 2 },
+          "tags": ["open-source", "local-ai", "macos"],
+          "engagement": { "stars": 7300 },
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "to_watch",
+      "title": "To Watch",
+      "description": "Pre-launch or unconfirmed developments worth monitoring before acting.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "grok-4-6-training-confirmed",
+          "title": "Musk Confirms Grok 4.6 Training, Targeting August Release",
+          "source": "xAI / Elon Musk",
+          "date": "2026-07-18",
+          "primary_url": "https://www.bighatgroup.com/blog/xai-weekly-2026-07-22/",
+          "verified": true,
+          "verified_at": "2026-07-24T18:10:00Z",
+          "summary": "Elon Musk confirmed a roughly 2T-parameter Grok 4.6 is in training, with an August 2026 target release; no product, pricing, or benchmark details are available yet, so this is a watch item rather than an actionable launch.",
+          "category": "Frontier Model",
+          "evaluation": "MONITOR",
+          "score": { "total": 5.5, "signal": 1, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["xai", "grok", "pre-launch"],
+          "recurrence": "new"
+        },
+        {
+          "id": "zoodata-agent-data-layer",
+          "title": "ZooData: Agent-Ready Data Layer for E-Commerce Intelligence",
+          "source": "Product Hunt",
+          "date": "2026-07-17",
+          "primary_url": "https://www.producthunt.com/products/zoodata",
+          "verified": true,
+          "verified_at": "2026-07-24T18:15:00Z",
+          "summary": "ZooData turns e-commerce URLs into agent-ready JSON with claimed 75% token reduction versus raw page content; the Product Hunt listing date is ambiguous between an initial mid-July launch and a later re-feature, so treat exact ranking and date as unconfirmed pending clearer sourcing.",
+          "category": "Product Hunt",
+          "evaluation": "MONITOR",
+          "score": { "total": 5.8, "signal": 1, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["product-hunt", "data-layer", "e-commerce"],
+          "recurrence": "new"
+        }
+      ]
+    }
+  ],
+  "index": [
+    { "title": "Kimi K3 Launches as First Open 3T-Class Model — Full Weights Pending", "source": "Moonshot AI", "date": "2026-07-14", "primary_url": "https://www.kimi.com/blog/kimi-k3", "score": 8.3 },
+    { "title": "Fireworks AI Raises $1.505B Series D at $17.5B Valuation", "source": "Fireworks AI", "date": "2026-07-16", "primary_url": "https://www.cnbc.com/2026/07/16/fireworks-nvidia-cloud-ai-startup-value.html", "score": 8.0 },
+    { "title": "Claude Cowork Expands From Desktop-Only to iPhone, Android, and Web", "source": "Anthropic", "date": "2026-07-13", "primary_url": "https://9to5mac.com/2026/07/13/anthropic-expanding-claude-cowork-to-mobile-and-web-details-here/", "score": 7.6 },
+    { "title": "xAI Open-Sources Grok Build Codebase After Privacy Scandal", "source": "xAI (SpaceXAI)", "date": "2026-07-16", "primary_url": "https://github.com/xai-org/grok-build", "score": 7.5 },
+    { "title": "InstaLILY Raises $60M Series B With Home Depot Ventures and United Rentals", "source": "InstaLILY AI", "date": "2026-07-14", "primary_url": "https://instalily.ai/research/the-engineer-that-never-leaves", "score": 7.8 },
+    { "title": "xAI Launches Grok Automations for Scheduled and Email-Triggered Agent Tasks", "source": "xAI", "date": "2026-07-16", "primary_url": "https://blockchain.news/news/grok-automations-scheduled-tasks", "score": 7.5 },
+    { "title": "Claude Fable 5 Free-Access Deadline Extended a Second Time to July 19", "source": "Anthropic", "date": "2026-07-13", "primary_url": "https://www.androidauthority.com/claude-fable-5-access-extended-3686668/", "score": 6.5 },
+    { "title": "ClawTeams: Goal-Driven Proactive AI Team for E-Commerce", "source": "Product Hunt", "date": "2026-07-14", "primary_url": "https://clawteams.ai/", "score": 6.8 },
+    { "title": "AgentKey: Live Data Marketplace for AI Agents", "source": "Product Hunt", "date": "2026-07-15", "primary_url": "https://agentkey.app/", "score": 6.5 },
+    { "title": "Osaurus: Open-Source Local AI Agent Runtime for Mac", "source": "Product Hunt", "date": "2026-07-14", "primary_url": "https://osaurus.ai/", "score": 7.3 },
+    { "title": "Unabyss for Claude: Shared Memory Across Apps and LLMs", "source": "Product Hunt", "date": "2026-07-17", "primary_url": "https://unabyss.com/", "score": 6.3 },
+    { "title": "Zro: Private Inference Endpoint for Coding Agents", "source": "Product Hunt", "date": "2026-07-15", "primary_url": "https://zro.moonmath.ai/", "score": 6.2 },
+    { "title": "Emergent Turns Unicorn With $130M Series C", "source": "StartupTalky", "date": "2026-07-15", "primary_url": "https://startuptalky.com/news/daily-indian-funding-roundup-key-news-15-july-2026-emergent-turns-unicorn/", "score": 6.7 },
+    { "title": "Prime Intellect Raises $130M Series A at $1B Valuation", "source": "tryfundable.ai", "date": "2026-07-13", "primary_url": "https://www.tryfundable.ai/blog/top-funding-rounds-week-of-2026-07-13", "score": 6.6 },
+    { "title": "Cognichip Raises $60M Series A for AI Chip-Design Foundation Models", "source": "Ignita", "date": "2026-07-13", "primary_url": "https://www.ignita.ai/insights/biggest-us-funding-rounds-week-ending-2026-07-17", "score": 6.0 },
+    { "title": "Walden Robotics Emerges From Stealth With $300M Seed, Toyota Deployment", "source": "LinkedIn Editors roundup", "date": "2026-07-17", "primary_url": "https://www.linkedin.com/pulse/startup-venture-capital-report-usa-canada-india-july-17-2026-zmpbf", "score": 7.2 },
+    { "title": "Chai Discovery Raises $400M Series C for AI Molecular Design", "source": "The Funding Letter", "date": "2026-07-15", "primary_url": "https://thefundingletter.beehiiv.com/p/07-15-2026", "score": 6.8 },
+    { "title": "Nscale Secures $900M Debt Financing for AI Data Centers", "source": "Digital Wealth News", "date": "2026-07-16", "primary_url": "https://dwealth.news/2026/07/top-5-vc-deals-of-the-week-in-ai-7-15-26/", "score": 6.4 },
+    { "title": "PixVerse Raises $439M Series C Extension, Crosses $2B Valuation", "source": "Startup Flash Report", "date": "2026-07-14", "primary_url": "https://startupflashreport.com/archive/2026-07-15", "score": 6.3 },
+    { "title": "Lyzr Raises $100M Series B for Agent Infrastructure", "source": "The Funding Letter", "date": "2026-07-15", "primary_url": "https://thefundingletter.beehiiv.com/p/07-15-2026", "score": 6.0 },
+    { "title": "Musk Confirms Grok 4.6 Training, Targeting August Release", "source": "xAI / Elon Musk", "date": "2026-07-18", "primary_url": "https://www.bighatgroup.com/blog/xai-weekly-2026-07-22/", "score": 5.5 },
+    { "title": "ZooData: Agent-Ready Data Layer for E-Commerce Intelligence", "source": "Product Hunt", "date": "2026-07-17", "primary_url": "https://www.producthunt.com/products/zoodata", "score": 5.8 },
+    { "title": "Fireworks AI: $1.505B Series D at $17.5B Valuation (Legal Filing Summary)", "source": "Orrick", "date": "2026-07-16", "primary_url": "https://www.orrick.com/en/News/2026/07/Fireworks-AI-Closes-Over-1-5-Billion-in-Series-D-Funding", "score": 7.0 }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Grok 4.3 became newly available on Amazon Bedrock during the week of July 13-19, 2026",
+      "reason": "AWS's own announcement and multiple corroborating sources (Truefoundry, Digital Applied, AWS regional blogs) confirm Grok 4.3 reached general availability on Amazon Bedrock on June 15, 2026 — a full month before this brief's window. An initial secondary source misdated this as a July 16-17 event; excluded from all sections after primary-source verification.",
+      "attempted_url": "https://aws.amazon.com/blogs/machine-learning/introducing-grok-on-amazon-bedrock/"
+    },
+    {
+      "claim": "Norm Ai reaching a $1.2B valuation on a $120M Series C is a new event this week",
+      "reason": "The prior week's brief (2026-07-06) executive summary already covered Norm Ai hitting a $1.2B valuation; coverage this week appears to be recirculation of the same round rather than a new financing event. Excluded to avoid duplicate/contradicted funding claims.",
+      "attempted_url": "https://alleywatch.com/2026/07/the-weekly-notable-startup-funding-report-7-13-26/"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Direct AWS/Azure/GCP/Snowflake/Databricks 'What's New' feeds, fetched with explicit date filters to avoid stale June items surfacing in July searches",
+      "YC official batch/launch pages for closer startup coverage"
+    ],
+    "sources_to_drop": [
+      "Secondary AI-news aggregators that misdate hyperscaler announcements (e.g., Big Hat Group's xAI weekly recap misdated the Grok 4.3 Bedrock GA by a month)"
+    ],
+    "topics_to_add": [
+      "Enterprise AI / cloud platform launches specific to the window — this week's research surfaced fewer verified in-window hyperscaler items than usual and should be revisited with more targeted date-scoped searches"
+    ],
+    "topics_to_drop": [],
+    "notes": "Kimi K3 is scored as ADD TO WATCHLIST rather than EVALUATE NOW specifically because its central 'open' claim is not yet verifiable until the July 27 weights release; re-verify next cycle. Enterprise AI and YC/startups sections are thinner than target this week after an Amazon Bedrock Grok 4.3 claim was found to be misdated and dropped; consider dedicated hyperscaler-blog monitoring to close this gap next week."
+  }
+}
