@@ -1,0 +1,638 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 1.0,
+    "items_total": 20,
+    "items_new": 20,
+    "items_returning": 0
+  },
+  "executive_summary": [
+    {
+      "headline": "On-device models that know when they are wrong just became a shippable pattern, not a research idea",
+      "body": "Cactus Hybrid post-trains Gemma 4 E2B with an 11-tensor probe that emits a calibrated confidence score with every generation, then routes only the 15-35% of low-confidence queries to a cloud model. The probe averages 0.814 AUROC across 12 benchmarks versus 0.549 for token-entropy baselines, and it generalizes to audio benchmarks despite zero audio training data. This is a concrete, MIT-licensed blueprint for cutting cloud-inference cost on any on-device deployment without a binary all-local-or-all-cloud choice.",
+      "primary_url": "https://github.com/cactus-compute/cactus-hybrid"
+    },
+    {
+      "headline": "The single-file application pattern is resurfacing as a deliberate rejection of cloud lock-in",
+      "body": "Bento packages a full presentation editor, viewer, and real-time collaboration layer into one self-rewriting 560KB HTML file that needs no install, account, or server; it passed 2,200 GitHub stars and a 900-point Hacker News thread within days. The same instinct shows up in HART OS (a federated, OpenAI-compatible agent runtime that boots on 8GB of RAM) and in Wmux (a workspace multiplexer that survives full OS reboots without a database). All three ship real portability guarantees, not marketing claims.",
+      "primary_url": "https://github.com/nyblnet/bento"
+    },
+    {
+      "headline": "Agent reliability tooling is fragmenting into small, composable primitives instead of one framework",
+      "body": "This week's builder output split cleanly into narrow, single-purpose components: TheHarbinger issues mTLS identity to agents instead of API keys, Millwright is a self-hosted deterministic LLM router, and a Show HN governance harness enforces policy-as-code on agentic development loops. None claims to be a full framework. The pattern across all three is the same: treat agent reliability as an infrastructure layer to bolt on, not a property to prompt for.",
+      "primary_url": "https://github.com/n0tduck1e/theharbinger"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "cactus-hybrid-confidence-routing",
+      "title": "Cactus Hybrid teaches Gemma 4 to know when it's wrong, then routes only the uncertain 15-35% to the cloud",
+      "subtitle": "An 11-tensor probe emits a calibrated confidence score with every on-device generation",
+      "source": "Show HN / GitHub",
+      "author": "Cactus Compute (YC S25)",
+      "date": "2026-07-22",
+      "primary_url": "https://github.com/cactus-compute/cactus-hybrid",
+      "secondary_urls": [
+        { "label": "Hacker News discussion", "url": "https://news.ycombinator.com/item?id=49010782" },
+        { "label": "Hugging Face model card", "url": "https://huggingface.co/Cactus-Compute/gemma-4-e2b-it-hybrid" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-26T21:16:00-04:00",
+      "summary": "Cactus Hybrid adds an 11-tensor probe to Gemma 4 E2B that reads intermediate hidden states and outputs a structured confidence score (never parsed from answer text) with every generation. Above a configurable threshold the response is served locally; below it, the query is escalated to Gemini 3.1 Flash-Lite or another cloud model. The repo was created 2026-07-20 and shipped a Show HN post 2026-07-22 with 46 points; it is separately confirmed trending on GitHub via Trendshift.",
+      "score": { "total": 8.5, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 2 },
+      "engagement": { "stars": 185, "upvotes": 46, "comments": 7 },
+      "tags": ["on-device-ai", "model-routing", "confidence-calibration", "gemma"],
+      "category": "Model Infrastructure",
+      "key_takeaways": [
+        "The probe averages 0.814 AUROC across 12 hold-out benchmarks spanning text, vision, and audio, versus 0.549 for a token-entropy baseline",
+        "It scores 0.79-0.88 AUROC on audio benchmarks despite being trained on zero audio data, suggesting it reads a modality-independent correctness signal from hidden states rather than memorized patterns",
+        "Reported handoff rates to the cloud model range 15-35% of queries depending on benchmark and quantization, while matching Gemini 3.1 Flash-Lite's accuracy on much of the workload",
+        "Ships working paths for Cactus engine, Hugging Face Transformers, MLX, and a patched llama.cpp server; base model weights are byte-identical to stock Gemma so existing serving code mostly works unchanged",
+        "MIT-licensed code; the underlying Gemma weights remain subject to Google's Gemma terms of use"
+      ],
+      "results": "0.814 average AUROC across 12 benchmarks (vs. 0.549 for token entropy); 15-35% cloud handoff rate while matching Gemini 3.1 Flash-Lite benchmark scores, per the project's own published model card and GitHub repository",
+      "enterprise_adaptation": "The reusable pattern is confidence-gated model routing: attach a lightweight probe to a small local model's hidden states rather than building a separate classifier in front of it, and use the probe's score as the sole routing signal. For a public-company AI function running on-device or edge inference (kiosks, field devices, plant-floor assistants), this argues for evaluating hybrid routing before defaulting to always-cloud or always-local architectures, since the cost savings come specifically from avoiding cloud calls on the 65-85% of queries the small model already gets right. A 30-day experiment: fine-tune or attach an equivalent probe to an internal small model already in a pilot, measure AUROC against a labeled validation set of real queries, and compare total inference cost against the current all-cloud baseline before committing to a threshold policy. Caveat for regulated use: the probe currently scores single-sequence decoding only up to the first 1,024 generated tokens and does not support continuous batching or speculative decoding, so throughput-sensitive production paths need separate validation.",
+      "why_it_matters": "Verified via the live GitHub repository (185 stars, MIT license, repo created 2026-07-20) and the Hacker News thread (46 points, 7 comments, posted 2026-07-22), cross-referenced against the Hugging Face model card and Cactus's own hybrid-inference documentation, which independently state the same AUROC and handoff figures."
+    },
+    {
+      "id": "bento-single-file-office-suite",
+      "title": "Bento fits a full presentation editor, viewer, and live collaboration into one 560KB HTML file",
+      "subtitle": "No install, no account, no server; the file rewrites itself on save",
+      "source": "Show HN / GitHub",
+      "author": "nyblnet (independent)",
+      "date": "2026-07-22",
+      "primary_url": "https://github.com/nyblnet/bento",
+      "secondary_urls": [
+        { "label": "Hacker News discussion", "url": "https://news.ycombinator.com/item?id=49008211" },
+        { "label": "Project site", "url": "https://bento.page/" }
+      ],
+      "verified": true,
+      "verified_at": "2026-07-26T21:16:00-04:00",
+      "summary": "Bento is an MIT-licensed presentation tool where the editor, viewer, presenter, and the deck's own data all live inside a single self-contained HTML file (~560KB). Opening the file in any modern browser gives a full slide editor; saving with Ctrl+S rewrites the file in place via the File System Access API, so the file is simultaneously the software and the content. It supports end-to-end encrypted multi-user collaboration through an optional blind relay and works fully offline.",
+      "score": { "total": 8, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 2 },
+      "engagement": { "stars": 2200, "upvotes": 591, "comments": 141 },
+      "tags": ["local-first", "no-install", "presentation-software", "single-file-app"],
+      "category": "Dev Tool",
+      "key_takeaways": [
+        "The document and the application are the same artifact: a `<script>` tag with type `application/bento+json` embeds slide content, positions, and styling inside the outer HTML shell",
+        "Passed roughly 591 points and 141 comments on Hacker News within about 8 hours of posting, and crossed 2,200 GitHub stars",
+        "Repo shows 260+ commits, indicating this is not a weekend proof of concept but an actively developed project predating its Show HN debut",
+        "Collaboration uses an end-to-end encrypted blind relay rather than a cloud account system, preserving the no-server-dependency claim",
+        "Author explicitly built it with Claude Code and describes converting existing PPTX files by dropping them into Claude or ChatGPT"
+      ],
+      "results": "591 Hacker News points and 141 comments within 8 hours of posting; 2,200+ GitHub stars and 260+ commits at verification time, per the live GitHub repository and the original Show HN thread",
+      "enterprise_adaptation": "The transferable pattern is self-contained, dependency-free document software: pack the authoring tool inside the artifact itself so recipients need nothing but a browser to open, edit, or present it. For a public-company innovation or comms function, this is directly relevant to any workflow where files get emailed or shared outside a managed SaaS environment (board decks going to outside directors, vendor-facing proposals, field-site presentations without reliable connectivity) and IT cannot guarantee the recipient has the same software license. A 30-day experiment: pilot Bento for one recurring low-sensitivity external-facing deck (e.g., a partner-facing quarterly update) instead of PowerPoint, and evaluate whether the collaboration and offline properties hold up under a real editing cycle with a non-technical reviewer, before considering it for anything containing controlled or confidential information given the project's early-stage security review.",
+      "why_it_matters": "Verified via the live GitHub repository (nyblnet/bento, 2,200 stars, MIT license, public) and the original Hacker News Show HN thread, cross-referenced against independent technical write-ups (steinslab.io, GIGAZINE) that confirm the same star count, commit count, and file-size figures."
+    },
+    {
+      "id": "wmux-workspace-multiplexer",
+      "title": "Wmux runs fleets of coding agents in parallel panes and survives a full OS reboot mid-conversation",
+      "subtitle": "One prompt fans out into N isolated git worktrees for hunk-by-hunk review",
+      "source": "Show HN / GitHub",
+      "author": "openwong2kim (independent)",
+      "date": "2026-07-22",
+      "primary_url": "https://github.com/openwong2kim/wmux",
+      "verified": true,
+      "verified_at": "2026-07-26T21:16:00-04:00",
+      "summary": "Wmux is a native, MIT-licensed workspace multiplexer for AI coding agents. It runs Claude Code, Codex, and Gemini in parallel panes, can fan one prompt into multiple isolated git worktrees for review, includes approval gates and agent-to-agent channels, and persists sessions through crashes and full reboots. It has crossed 291 GitHub stars.",
+      "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+      "engagement": { "stars": 291 },
+      "tags": ["agent-orchestration", "coding-agents", "developer-tooling"],
+      "category": "Dev Tool",
+      "key_takeaways": [
+        "Native on Windows and macOS, avoiding the WSL/VM workarounds many agent-orchestration tools require on Windows",
+        "Fan-out review model: one prompt spawns N isolated git worktrees so a developer reviews diffs hunk by hunk rather than one combined change",
+        "Session state survives process crashes and full OS reboots, resuming mid-conversation rather than restarting cold",
+        "Ships approval gates and agent-to-agent communication channels, plus MCP tool support and a `wmux.json` supervision config"
+      ],
+      "results": "291 GitHub stars at verification time, per the live repository",
+      "enterprise_adaptation": "The reusable pattern is workspace-level isolation for multi-agent coding: give every parallel agent task its own git worktree rather than sharing one working directory, so failures or bad diffs in one lane cannot corrupt another. An enterprise engineering group piloting multiple concurrent coding-agent tasks (e.g., parallel bug-fix and feature branches) can adopt the worktree-isolation pattern even without adopting the tool itself, since it maps directly onto existing branch-protection and code-review policy. A 30-day experiment: run wmux against a low-risk internal repo with two or three agents working in parallel worktrees, and measure whether hunk-by-hunk review actually reduces review time versus reviewing one large combined diff.",
+      "why_it_matters": "Verified via the live GitHub repository (openwong2kim/wmux, 291 stars, MIT license, public) at fetch time."
+    },
+    {
+      "id": "hart-os-federated-agent-runtime",
+      "title": "HART OS boots an OpenAI-compatible agent runtime on 8GB of RAM with no broker-based federation",
+      "subtitle": "Peer-to-peer node federation over direct WebSocket, with a Wayland compositor built in",
+      "source": "Show HN / GitHub",
+      "author": "hertz-ai (independent)",
+      "date": "2026-07-22",
+      "primary_url": "https://github.com/hertz-ai/HARTOS",
+      "verified": true,
+      "verified_at": "2026-07-26T21:16:00-04:00",
+      "summary": "HART OS is an Apache 2.0-licensed, AI-native runtime that exposes an OpenAI-compatible API on port 6777, runs local inference via llama.cpp/GGUF, and federates directly with peer nodes over PeerLink, a broker-less peer-to-peer WebSocket protocol. It deploys as a standalone Python package, a Docker container, or a full NixOS-based operating system, and the project claims it boots and runs on as little as 8GB of RAM.",
+      "score": { "total": 7.5, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 1 },
+      "engagement": { "stars": 27 },
+      "tags": ["agentic-os", "local-inference", "peer-to-peer", "federation"],
+      "category": "Agent Infrastructure",
+      "key_takeaways": [
+        "Federates over PeerLink, a direct peer-to-peer WebSocket with no central broker, positioned as a deliberate alternative to cloud-mediated agent coordination",
+        "Three deployment tiers from one codebase: flat (single laptop), regional (LAN with a certificate authority), and central (cloud mesh with telemetry aggregation)",
+        "OpenAI-compatible API on port 6777 means many existing client libraries and internal tooling can point at it with minimal changes",
+        "Boot-time guardrail hash plus a 300-second re-verification cycle and Ed25519 release signing for update integrity"
+      ],
+      "results": "27 GitHub stars at verification time; claims of running on 8GB RAM and three deployment tiers are sourced from the project's own README and architecture documentation, not independently benchmarked",
+      "enterprise_adaptation": "The transferable idea is tiered, broker-less federation: the same codebase runs identically on a single laptop, a regional hub, or a central mesh, differing only in peer-count and network role rather than requiring separate builds. For a public enterprise piloting distributed or edge AI (e.g., plant-level assistants that occasionally need to share state without routing everything through a central cloud service), this pattern is worth studying even independent of adopting HART OS itself, since broker-less federation reduces a single point of failure and a recurring egress-cost driver. A 30-day experiment: stand up two flat-tier nodes on isolated test hardware, verify the OpenAI-compatible API actually works against an existing internal client library, and stress-test the peer-to-peer federation claim under a simulated network partition before considering any production use — this is a small, early-stage project (27 stars) and its security and federation claims have not been independently audited.",
+      "why_it_matters": "Verified via the live GitHub repository (hertz-ai/HARTOS, 27 stars, Apache 2.0 license, public) and cross-referenced against the project's own hosted architecture documentation (docs.hevolve.ai), which independently describes the same three-tier deployment model. Star count is modest; this is included for the pattern (broker-less tiered federation) rather than for adoption signal."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "GitHub repositories that shipped, released, or crossed a notable star threshold within the week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "bento-single-file-office-suite-repo",
+          "title": "Bento: an entire PowerPoint replaced by one self-rewriting HTML file",
+          "source": "GitHub",
+          "author": "nyblnet",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/nyblnet/bento",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "MIT-licensed single-file presentation editor, viewer, and encrypted-collaboration tool; crossed 2,200 GitHub stars and 591 Hacker News points within days of its Show HN post.",
+          "score": { "total": 8, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 1 },
+          "engagement": { "stars": 2200, "upvotes": 591, "comments": 141 },
+          "tags": ["local-first", "single-file-app"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "cactus-hybrid-repo",
+          "title": "cactus-compute/cactus-hybrid: confidence-scored on-device models with cloud handoff",
+          "source": "GitHub",
+          "author": "Cactus Compute",
+          "date": "2026-07-20",
+          "primary_url": "https://github.com/cactus-compute/cactus-hybrid",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "MIT-licensed probe added to Gemma 4 E2B that scores every generation with a confidence value for cloud-handoff routing; repo created 2026-07-20 and independently confirmed trending via Trendshift.",
+          "score": { "total": 8.5, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 185, "upvotes": 46, "comments": 7 },
+          "tags": ["on-device-ai", "model-routing"],
+          "category": "Model Infrastructure"
+        },
+        {
+          "id": "wmux-repo",
+          "title": "openwong2kim/wmux: native workspace multiplexer for AI coding agents",
+          "source": "GitHub",
+          "author": "openwong2kim",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/openwong2kim/wmux",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "MIT-licensed tool that runs Claude Code, Codex, and Gemini in parallel panes with git-worktree fan-out and crash/reboot-persistent sessions; 291 stars at verification.",
+          "score": { "total": 7.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 291 },
+          "tags": ["agent-orchestration", "coding-agents"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "world-model-optimizer-repo",
+          "title": "experientiallabs/world-model-optimizer: distill agent traces into a cheaper self-improving model",
+          "source": "Show HN / GitHub",
+          "author": "experientiallabs",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/experientiallabs/world-model-optimizer",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "wmo turns agent traces already being collected into a continually improving, distilled model endpoint the project claims runs at frontier quality for 40%+ lower cost, with a router deciding frontier-vs-local per task. 146 GitHub stars.",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 146 },
+          "tags": ["model-distillation", "agent-traces", "cost-optimization"],
+          "category": "Model Infrastructure"
+        },
+        {
+          "id": "millwright-repo",
+          "title": "Northwood-Systems/millwright: self-hosted, deterministic LLM router",
+          "source": "Show HN / GitHub",
+          "author": "AndrewLiu96 / Northwood-Systems",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/Northwood-Systems/millwright",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "Rust-based, self-hosted LLM router positioned as cost-effective, deterministic, and private by default. Apache-2.0 licensed, 32 GitHub stars, posted to Show HN 2026-07-22.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 32 },
+          "tags": ["llm-router", "self-hosted", "cost-optimization"],
+          "category": "Model Infrastructure"
+        },
+        {
+          "id": "hart-os-repo",
+          "title": "hertz-ai/HARTOS: AI-native OS with peer-to-peer federation",
+          "source": "Show HN / GitHub",
+          "author": "hertz-ai",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/hertz-ai/HARTOS",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "Apache 2.0-licensed agentic runtime with an OpenAI-compatible API, local llama.cpp inference, and broker-less peer-to-peer federation; boots on claimed 8GB RAM. 27 stars.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 3, "actionability": 1, "source_quality": 0 },
+          "engagement": { "stars": 27 },
+          "tags": ["agentic-os", "local-inference", "federation"],
+          "category": "Agent Infrastructure"
+        },
+        {
+          "id": "runkit-browser-tmux-repo",
+          "title": "sahil87/run-kit: remote, phone-first console for tmux, agent-agnostic",
+          "source": "Show HN / GitHub",
+          "author": "sahil87",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/sahil87/run-kit",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "MIT-licensed remote console for tmux sessions that works from a phone browser with no database dependency; built to spawn and watch coding agents running in parallel worktrees. 53 stars, 871 commits.",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 53 },
+          "tags": ["remote-access", "coding-agents", "tmux"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "boffin-staff-engineer-layer-repo",
+          "title": "MicSm/boffin: staff-engineer control layer for AI coding agents",
+          "source": "Show HN / GitHub",
+          "author": "MicSm",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/MicSm/boffin",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "npm package (boffinit) that feeds an AI coding agent only the architectural constraints relevant to the exact file being edited, then requires verification of the result. MIT licensed, 27 stars; cites a DuckDB case study landing a +17/-17 line refactor with 2,104 passing assertions.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 0 },
+          "engagement": { "stars": 27 },
+          "tags": ["agent-skill", "code-review", "verification"],
+          "category": "Dev Tool"
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Skills & MCP Servers",
+      "description": "Individual and small-team agent skills, guardrails, and MCP-protocol servers shipped this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "theharbinger-mtls-agent-identity",
+          "title": "TheHarbinger gives AI agents mTLS identity instead of API keys",
+          "source": "Show HN / GitHub",
+          "author": "n0tduck1e",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/n0tduck1e/theharbinger",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "An mTLS proxy, described by its author as \"sane policies for insane agents,\" that authenticates AI agents by cryptographic identity rather than shared API keys. Apache 2.0 licensed, 7 GitHub stars, posted to Show HN 2026-07-22.",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 0 },
+          "engagement": { "stars": 7 },
+          "tags": ["agent-identity", "mtls", "security"],
+          "category": "Agent Skill"
+        },
+        {
+          "id": "dataparade-cli-dataflow-diagrams",
+          "title": "DataParade CLI generates dataflow diagrams from code for privacy and security risk assessments",
+          "source": "Show HN / GitHub",
+          "author": "dpdave / DataParade-io",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/DataParade-io/dataparade-cli",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "GPL-3.0-licensed CLI that scans a codebase and produces dataflow diagrams intended to support privacy and security risk-assessment documentation. Small early-stage project (1 star) posted to Show HN 2026-07-22.",
+          "score": { "total": 5, "signal": 1, "novelty": 2, "actionability": 1, "source_quality": 0 },
+          "engagement": { "stars": 1 },
+          "tags": ["privacy", "risk-assessment", "static-analysis"],
+          "category": "Dev Tool"
+        },
+        {
+          "id": "poc-agentic-platform-governance-harness",
+          "title": "A deterministic governance harness for agentic development loops",
+          "source": "Show HN / GitHub",
+          "author": "owulveryck",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/owulveryck/poc-agentic-platform",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "A proof-of-concept \"Platform Planning Gateway\" applying deterministic, policy-as-code enforcement to agentic development loops rather than relying on prompt-level instructions. MIT licensed, 2 stars, posted to Show HN 2026-07-22.",
+          "score": { "total": 5.5, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 0 },
+          "engagement": { "stars": 2 },
+          "tags": ["governance", "policy-as-code", "agent-loops"],
+          "category": "Agent Infrastructure"
+        },
+        {
+          "id": "boffin-mcp-verification-skill",
+          "title": "Boffin: architectural-constraint routing for coding agents, positioned against static AGENTS.md files",
+          "source": "GitHub",
+          "author": "MicSm",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/MicSm/boffin",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "Routes only the architectural rules relevant to the file currently being edited, then requires the agent to verify its own change; ships install instructions for Cursor, Claude Code, Codex, and OpenCode. MIT licensed, 27 stars.",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 0 },
+          "engagement": { "stars": 27 },
+          "tags": ["agent-skill", "code-review"],
+          "category": "Agent Skill"
+        },
+        {
+          "id": "millwright-deterministic-router-skill",
+          "title": "Millwright's deterministic routing rules as a drop-in self-hosted layer",
+          "source": "GitHub",
+          "author": "AndrewLiu96 / Northwood-Systems",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/Northwood-Systems/millwright",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "Rust router that sits in front of multiple LLM providers with deterministic (non-probabilistic) routing rules, positioned for teams that need reproducible model-selection behavior rather than a black-box gateway. Apache-2.0, 32 stars.",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 0 },
+          "engagement": { "stars": 32 },
+          "tags": ["llm-router", "self-hosted"],
+          "category": "Agent Infrastructure"
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN & Indie Builds",
+      "description": "Independent builder launches from Hacker News and community forums this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "bento-show-hn",
+          "title": "Show HN: Bento - An entire PowerPoint in one HTML file (edit+view+data+collab)",
+          "source": "Hacker News",
+          "author": "nyblnet",
+          "date": "2026-07-22",
+          "primary_url": "https://news.ycombinator.com/item?id=49008211",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "591 points, 141 comments within roughly 8 hours; independently confirmed on the live GitHub repo (2,200 stars, MIT license) and two independent technical write-ups.",
+          "score": { "total": 8, "signal": 3, "novelty": 3, "actionability": 1, "source_quality": 1 },
+          "engagement": { "upvotes": 591, "comments": 141 },
+          "tags": ["single-file-app", "local-first"],
+          "category": "Show HN"
+        },
+        {
+          "id": "wmux-show-hn",
+          "title": "Show HN: Wmux, the workspace multiplexer for AI coding agents",
+          "source": "Hacker News",
+          "author": "openwong2kim",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/openwong2kim/wmux",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "291 GitHub stars for a native, crash/reboot-persistent multiplexer that runs Claude Code, Codex, and Gemini in parallel git-worktree panes.",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 291 },
+          "tags": ["agent-orchestration", "coding-agents"],
+          "category": "Show HN"
+        },
+        {
+          "id": "world-model-optimizer-show-hn",
+          "title": "Show HN: Distill and serve small models with frontier quality for half the cost",
+          "source": "Hacker News",
+          "author": "experientiallabs",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/experientiallabs/world-model-optimizer",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "146-star tool that launches `wmo serve`, routing repetitive agent tasks to a continually distilled local model while a router sends harder tasks to the frontier model.",
+          "score": { "total": 7, "signal": 2, "novelty": 2, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 146 },
+          "tags": ["model-distillation", "cost-optimization"],
+          "category": "Show HN"
+        },
+        {
+          "id": "cactus-hybrid-show-hn",
+          "title": "Show HN: Cactus Hybrid - We taught Gemma 4 to know when it's wrong",
+          "source": "Hacker News",
+          "author": "Cactus Compute",
+          "date": "2026-07-22",
+          "primary_url": "https://news.ycombinator.com/item?id=49010782",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "46 points, 7 comments; the author thread includes benchmark methodology, caveats (single-sequence decoding only, first 1,024 tokens), and links to weights and code.",
+          "score": { "total": 8, "signal": 3, "novelty": 3, "actionability": 2, "source_quality": 1 },
+          "engagement": { "upvotes": 46, "comments": 7 },
+          "tags": ["on-device-ai", "model-routing"],
+          "category": "Show HN"
+        },
+        {
+          "id": "runkit-show-hn",
+          "title": "Show HN: RunKit - a browser based tmux manager",
+          "source": "Hacker News",
+          "author": "sahil87",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/sahil87/run-kit",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "MIT-licensed, agent-agnostic remote console for tmux with a phone-first UI and no database dependency; 53 stars, 871 commits at verification.",
+          "score": { "total": 6, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 0 },
+          "engagement": { "stars": 53 },
+          "tags": ["remote-access", "tmux"],
+          "category": "Show HN"
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent & RAG Implementations",
+      "description": "Production or near-production agent architectures and retrieval implementations shipped this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "cactus-hybrid-agent-implementation",
+          "title": "Confidence-gated hybrid inference as a production routing architecture",
+          "source": "GitHub",
+          "author": "Cactus Compute",
+          "date": "2026-07-20",
+          "primary_url": "https://github.com/cactus-compute/cactus-hybrid",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "Ships four working runtime integrations (Cactus engine, Transformers, MLX, patched llama.cpp), each returning a top-level confidence field alongside the answer, so any existing agent loop can add a routing decision with minimal code change.",
+          "score": { "total": 7.5, "signal": 2, "novelty": 3, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 185 },
+          "tags": ["agent-architecture", "model-routing"],
+          "category": "Agent Implementation"
+        },
+        {
+          "id": "poc-agentic-platform-planning-gateway",
+          "title": "Platform Planning Gateway: policy-as-code enforcement inside an agentic development loop",
+          "source": "GitHub",
+          "author": "owulveryck",
+          "date": "2026-07-22",
+          "primary_url": "https://github.com/owulveryck/poc-agentic-platform",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "A proof of concept applying deterministic governance checks to an agent's development loop rather than relying on the model to follow written instructions; framed explicitly as an amplified agentic loop with a planning gateway in front of execution.",
+          "score": { "total": 5.5, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 0 },
+          "engagement": { "stars": 2 },
+          "tags": ["agent-architecture", "governance"],
+          "category": "Agent Implementation"
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "No-code/low-code automation builds with a stated, measurable outcome.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "aegisvault-security-questionnaire-automation",
+          "title": "AegisVault automates SOC 2 / ISO 27001 vendor security questionnaires end-to-end in n8n",
+          "source": "n8n Community",
+          "author": "theworkflowatelier",
+          "date": "2026-07-25",
+          "primary_url": "https://community.n8n.io/t/showcase-aegisvault-soc-2-iso-27001-security-questionnaire-automation-engine-gemini-ai-n8n/304778",
+          "secondary_urls": [
+            { "label": "GitHub repository", "url": "https://github.com/theworkflowatelier/AegisVault-Enterprise-Security-Questionnaire-Engine" }
+          ],
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "An n8n workflow that ingests multi-format vendor security questionnaires (Excel, CSV, Google Sheets), evaluates each question against internal policy documents using Google Gemini, and outputs verbatim-cited answers, routing low-confidence rows to a human-in-the-loop queue. The author states it cuts a multi-hour manual process to under 3 minutes for a 100+ question questionnaire. A free 8-node community edition is on GitHub; a 20-node production version with rate-limit throttling and audit logging is sold separately.",
+          "score": { "total": 6.5, "signal": 2, "novelty": 1, "actionability": 2, "source_quality": 1 },
+          "engagement": { "stars": 4 },
+          "tags": ["n8n", "compliance-automation", "security-questionnaires"],
+          "category": "Automation"
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Dated version releases from major agent and LLM-application frameworks within the week.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "crewai-v1-15-7-release",
+          "title": "CrewAI v1.15.7: observability and bugfix release",
+          "source": "GitHub Releases",
+          "author": "crewAIInc",
+          "date": "2026-07-26",
+          "primary_url": "https://github.com/crewAIInc/crewAI/releases",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "Patch release focused on observability improvements and bug fixes, shipped on the last day of the window.",
+          "score": { "total": 5, "signal": 1, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["framework-release", "crewai"],
+          "category": "Framework Release"
+        },
+        {
+          "id": "crewai-v1-15-6-release",
+          "title": "CrewAI v1.15.6",
+          "source": "GitHub Releases",
+          "author": "crewAIInc",
+          "date": "2026-07-24",
+          "primary_url": "https://github.com/crewAIInc/crewAI/releases",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "Incremental patch release two days after v1.15.5.",
+          "score": { "total": 4.5, "signal": 1, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["framework-release", "crewai"],
+          "category": "Framework Release"
+        },
+        {
+          "id": "crewai-v1-15-5-release",
+          "title": "CrewAI v1.15.5 adds authenticated skill registry downloads",
+          "source": "GitHub Releases",
+          "author": "crewAIInc",
+          "date": "2026-07-20",
+          "primary_url": "https://github.com/crewAIInc/crewAI/releases",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "Adds authentication to skill-registry downloads, a small but concrete supply-chain hardening step for teams pulling shared CrewAI skills from a registry.",
+          "score": { "total": 5.5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["framework-release", "crewai", "supply-chain"],
+          "category": "Framework Release"
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-cutting themes visible across three or more independent builds this week.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "pattern-confidence-gated-routing",
+          "title": "Confidence-gated routing is replacing binary local-vs-cloud model choices",
+          "source": "Cross-source pattern",
+          "date": "2026-07-20/2026-07-26",
+          "primary_url": "https://github.com/cactus-compute/cactus-hybrid",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "Cactus Hybrid's confidence probe and World Model Optimizer's task router both ship the same underlying idea: keep a cheap model in the loop for most traffic and escalate only the fraction it is likely to get wrong, rather than defaulting every request to a frontier model or every request to a local one.",
+          "score": { "total": 6, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 1 },
+          "tags": ["model-routing", "cost-optimization"],
+          "category": "Emerging Pattern"
+        },
+        {
+          "id": "pattern-single-file-local-first-software",
+          "title": "Single-file, no-install software is a recurring rejection of SaaS lock-in",
+          "source": "Cross-source pattern",
+          "date": "2026-07-20/2026-07-26",
+          "primary_url": "https://github.com/nyblnet/bento",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "Bento (single-file presentation suite) and HART OS (an 8GB-capable local agent runtime) both ship hard portability guarantees — no account, no server dependency, no vendor lock-in — as the headline feature rather than a footnote, ahead of feature breadth.",
+          "score": { "total": 5.5, "signal": 2, "novelty": 2, "actionability": 1, "source_quality": 0 },
+          "tags": ["local-first", "portability"],
+          "category": "Emerging Pattern"
+        },
+        {
+          "id": "pattern-narrow-reliability-primitives",
+          "title": "Agent reliability is being decomposed into narrow, composable infrastructure primitives",
+          "source": "Cross-source pattern",
+          "date": "2026-07-20/2026-07-26",
+          "primary_url": "https://github.com/n0tduck1e/theharbinger",
+          "verified": true,
+          "verified_at": "2026-07-26T21:16:00-04:00",
+          "summary": "TheHarbinger (mTLS identity for agents), Millwright (deterministic LLM routing), and the Show HN governance harness (policy-as-code for agentic loops) each solve one narrow reliability problem rather than bundling into a general framework, mirroring the direction seen in prior weeks' agent-audit tooling.",
+          "score": { "total": 5.5, "signal": 2, "novelty": 1, "actionability": 1, "source_quality": 1 },
+          "tags": ["agent-reliability", "infrastructure"],
+          "category": "Emerging Pattern"
+        }
+      ]
+    }
+  ],
+  "index": [
+    { "title": "Cactus Hybrid teaches Gemma 4 to know when it's wrong", "source": "Show HN / GitHub", "author": "Cactus Compute", "date": "2026-07-22", "primary_url": "https://github.com/cactus-compute/cactus-hybrid", "score": 8.5 },
+    { "title": "Bento: an entire PowerPoint in one self-rewriting HTML file", "source": "Show HN / GitHub", "author": "nyblnet", "date": "2026-07-22", "primary_url": "https://github.com/nyblnet/bento", "score": 8 },
+    { "title": "Wmux: native workspace multiplexer for AI coding agents", "source": "Show HN / GitHub", "author": "openwong2kim", "date": "2026-07-22", "primary_url": "https://github.com/openwong2kim/wmux", "score": 7.5 },
+    { "title": "HART OS: AI-native OS with peer-to-peer federation, boots on 8GB RAM", "source": "Show HN / GitHub", "author": "hertz-ai", "date": "2026-07-22", "primary_url": "https://github.com/hertz-ai/HARTOS", "score": 7.5 },
+    { "title": "World Model Optimizer: distill agent traces into a cheaper self-improving model", "source": "Show HN / GitHub", "author": "experientiallabs", "date": "2026-07-22", "primary_url": "https://github.com/experientiallabs/world-model-optimizer", "score": 7 },
+    { "title": "Boffin: staff-engineer control layer for AI coding agents", "source": "Show HN / GitHub", "author": "MicSm", "date": "2026-07-22", "primary_url": "https://github.com/MicSm/boffin", "score": 6.5 },
+    { "title": "Millwright: self-hosted, deterministic LLM router", "source": "Show HN / GitHub", "author": "AndrewLiu96 / Northwood-Systems", "date": "2026-07-22", "primary_url": "https://github.com/Northwood-Systems/millwright", "score": 6.5 },
+    { "title": "AegisVault: automated SOC 2 / ISO 27001 security questionnaire engine", "source": "n8n Community", "author": "theworkflowatelier", "date": "2026-07-25", "primary_url": "https://community.n8n.io/t/showcase-aegisvault-soc-2-iso-27001-security-questionnaire-automation-engine-gemini-ai-n8n/304778", "score": 6.5 },
+    { "title": "RunKit: browser-based, phone-first tmux manager for coding agents", "source": "Show HN / GitHub", "author": "sahil87", "date": "2026-07-22", "primary_url": "https://github.com/sahil87/run-kit", "score": 6 },
+    { "title": "TheHarbinger: mTLS proxy that gives AI agents identity, not API keys", "source": "Show HN / GitHub", "author": "n0tduck1e", "date": "2026-07-22", "primary_url": "https://github.com/n0tduck1e/theharbinger", "score": 6 },
+    { "title": "A deterministic governance harness for agentic development loops", "source": "Show HN / GitHub", "author": "owulveryck", "date": "2026-07-22", "primary_url": "https://github.com/owulveryck/poc-agentic-platform", "score": 5.5 },
+    { "title": "CrewAI v1.15.5 adds authenticated skill registry downloads", "source": "GitHub Releases", "author": "crewAIInc", "date": "2026-07-20", "primary_url": "https://github.com/crewAIInc/crewAI/releases", "score": 5.5 },
+    { "title": "DataParade CLI: generate dataflow diagrams from code for risk assessments", "source": "Show HN / GitHub", "author": "dpdave / DataParade-io", "date": "2026-07-22", "primary_url": "https://github.com/DataParade-io/dataparade-cli", "score": 5 },
+    { "title": "CrewAI v1.15.7: observability and bugfix release", "source": "GitHub Releases", "author": "crewAIInc", "date": "2026-07-26", "primary_url": "https://github.com/crewAIInc/crewAI/releases", "score": 5 },
+    { "title": "CrewAI v1.15.6", "source": "GitHub Releases", "author": "crewAIInc", "date": "2026-07-24", "primary_url": "https://github.com/crewAIInc/crewAI/releases", "score": 4.5 },
+    { "title": "Confidence-gated routing pattern across Cactus Hybrid and World Model Optimizer", "source": "Cross-source pattern", "author": "Editorial synthesis", "date": "2026-07-20/2026-07-26", "primary_url": "https://github.com/cactus-compute/cactus-hybrid", "score": 6 },
+    { "title": "Single-file, no-install local-first software pattern", "source": "Cross-source pattern", "author": "Editorial synthesis", "date": "2026-07-20/2026-07-26", "primary_url": "https://github.com/nyblnet/bento", "score": 5.5 },
+    { "title": "Narrow, composable agent-reliability primitives pattern", "source": "Cross-source pattern", "author": "Editorial synthesis", "date": "2026-07-20/2026-07-26", "primary_url": "https://github.com/n0tduck1e/theharbinger", "score": 5.5 },
+    { "title": "Show HN: Cactus Hybrid - We taught Gemma 4 to know when it's wrong", "source": "Hacker News", "author": "Cactus Compute", "date": "2026-07-22", "primary_url": "https://news.ycombinator.com/item?id=49010782", "score": 8 },
+    { "title": "Show HN: Bento - An entire PowerPoint in one HTML file", "source": "Hacker News", "author": "nyblnet", "date": "2026-07-22", "primary_url": "https://news.ycombinator.com/item?id=49008211", "score": 8 }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "HN Algolia search_by_date API with story-title keyword queries — far more reliable for pulling exact repo URLs behind Show HN posts than reading digest snapshots, which frequently truncate or garble GitHub usernames",
+      "genisisiq.com daily Reddit/HN AI digests — high signal-to-noise for surfacing community builder activity (r/LocalLLaMA, r/LocalLLM) with explicit dates, though every candidate still requires independent GitHub verification"
+    ],
+    "sources_to_drop": [
+      "GitHub Trending weekly/monthly pages — returned stale or cached snapshots that did not reflect the target week regardless of forced refetch; direct repo-page fetches and dated Show HN/Reddit digests were used instead",
+      "MCP registry API (registry.modelcontextprotocol.io) — heavily dominated by repeated vendor SaaS listings (e.g., a single vendor's server appearing 15+ times across version churn); did not surface a clean individual/small-team MCP server this week after filtering"
+    ],
+    "topics_to_add": [
+      "Confidence-calibration and routing probes as their own recurring watch category — Cactus Hybrid is the second independent project in two weeks addressing the same on-device-vs-cloud handoff problem",
+      "Agent identity and authentication (mTLS, cryptographic receipts) as a distinct thread alongside the existing agent-audit/evidence tooling category"
+    ],
+    "topics_to_drop": [],
+    "notes": "One promising candidate — a llama.cpp fork called 'MindControl' that injects budget-aware reasoning messages into <think> blocks (posted to r/LocalLLaMA and r/LocalLLM on 2026-07-22/23, attributed to Laurence Hardman) — was excluded from this file. Multiple independent source pages referenced its existence and described its mechanism in detail, but every attempt to resolve the actual GitHub repository URL returned a garbled or non-resolving path, and direct guesses at the likely URL pattern (github.com/lahardman/MindControl, github.com/laurencehardman/mindcontrol) returned HTTP errors. Per verification protocol, an item that cannot be confirmed live on its primary URL does not get promoted into the tab, even when third-party coverage of it is otherwise consistent. BoundaryAI, surfaced via the MCP registry as a possible small-team guardrails entry, was also excluded: its own site describes on-prem/VPC/air-gapped deployment as 'Coming soon,' and no individual open-source GitHub repository could be resolved for it, indicating this is an early-stage vendor product rather than a builder-community open-source release. The automation_wins section contains one item (AegisVault) rather than the 2-4 the skill targets; direct searches of n8n's Built-with-n8n and AI-tagged community categories for the exact 2026-07-20 to 2026-07-26 window surfaced several other posts, but only AegisVault had both a dated, in-window post and a verifiable GitHub repository with a concrete claimed outcome (100+ question questionnaire processed in under 3 minutes) — the RetryClassifier/AgentGuard n8n sub-workflow release, while a strong pattern match, was dated 2026-05-07 and fell outside the recurrence window, so it was not reused or backdated."
+  }
+}
