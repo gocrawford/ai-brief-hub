@@ -1,0 +1,421 @@
+{
+  "week_start": "2026-07-27",
+  "generated_at": "2026-08-03T01:05:00Z",
+  "headline": "Open weights are arriving with agent infrastructure while EU transparency rules and enterprise control planes become operational requirements.",
+  "themes": [
+    {
+      "theme_id": "open-weights-become-operating-stacks",
+      "headline": "Open weights now arrive with the infrastructure to run agents",
+      "summary": "Kimi K3, DeepSeek V4 Flash, and MiniMax H3 turn open-weight releases into broader operating stacks with runtimes, multimodal controls, or agent environments. Community and X discussion shifts from leaderboard rank to hosting cost, hardware, licenses, and reproducibility.",
+      "implication": "Evaluate open models as a governed stack: model, runtime, identity, tools, and evidence.",
+      "citations": [
+        {
+          "tab_id": "launches",
+          "item_id": "kimi-k3-full-open-weights",
+          "label": "Kimi K3 weights",
+          "primary_url": "https://huggingface.co/moonshotai/Kimi-K3"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "kimi-k3-weights-and-agentenv-arrive-together",
+          "label": "Kimi K3 and AgentENV",
+          "primary_url": "https://x.com/WesRoth/status/2082133990400794770"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "open-weight-llms-in-july-2026",
+          "label": "Open-weight community comparison",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1v9u8bw/best_open_weight_llms_in_july_2026/"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "kimi-k3-research-paper",
+          "label": "Kimi K3 paper",
+          "primary_url": "https://huggingface.co/papers/2607.24653"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 2,
+        "first_seen_week": "2026-07-20",
+        "note": "The prior week covered open-weight policy; this week adds full-stack releases and operating evidence."
+      },
+      "tags": [
+        "open-weights",
+        "model-routing"
+      ]
+    },
+    {
+      "theme_id": "agent-security-needs-control-plane",
+      "headline": "Agent security is moving from prompt hygiene to infrastructure control",
+      "summary": "Microsoft’s Project Perception, AWS’s coding-agent control framework, Reddit’s hook-based workflows, and the prior intrusion discussion all point to the same conclusion: agents need scoped identities, tool allowlists, runtime checks, and audit logs. A model refusal is not a substitute for containment.",
+      "implication": "Make identity, least privilege, sandboxing, and trace retention acceptance criteria for every agent pilot.",
+      "citations": [
+        {
+          "tab_id": "launches",
+          "item_id": "project-perception-and-mai-cyber-1-flash",
+          "label": "Project Perception",
+          "primary_url": "https://blogs.microsoft.com/blog/2026/07/27/rethinking-security-for-the-age-of-ai/"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "aws-control-framework-for-coding-agents",
+          "label": "AWS control framework",
+          "primary_url": "https://aws.amazon.com/blogs/security/balancing-speed-and-safety-a-control-framework-for-ai-coding-agents/"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "open-sourced-claude-code-behavior-layer",
+          "label": "Open-sourced behavior layer",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1v8ztjz/i_opensourced_the_behavior_layer_i_use_with/"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "news-ycombinator-com-item-id-49113543",
+          "label": "Noisegate privacy gateway",
+          "primary_url": "https://news.ycombinator.com/item?id=49113543"
+        }
+      ],
+      "recurrence": {
+        "status": "returning",
+        "weeks_count": 2,
+        "first_seen_week": "2026-07-20",
+        "note": "Security and containment continue from the prior week, now with more defensive tooling."
+      },
+      "tags": [
+        "security",
+        "agent-governance"
+      ]
+    },
+    {
+      "theme_id": "mcp-becomes-enterprise-transport",
+      "headline": "MCP is becoming an enterprise transport layer, which raises versioning and authorization risk",
+      "summary": "The MCP 2026-07-28 revision is stateless and AWS documents opt-in gateway support, while builders publish domain-specific servers for CAD, law, research, and video. The opportunity is composable connectivity; the risk is multiplying tools faster than policy and observability can keep up.",
+      "implication": "Version MCP deliberately, review server manifests as code, and issue dedicated scoped credentials per integration.",
+      "citations": [
+        {
+          "tab_id": "launches",
+          "item_id": "mcp-2026-07-28-and-agentcore-gateway",
+          "label": "MCP revision and AgentCore",
+          "primary_url": "https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "blwfish-freecad-mcp",
+          "label": "FreeCAD MCP",
+          "primary_url": "https://github.com/blwfish/freecad-mcp"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "tiptreesystems-lacuna-research-mcp",
+          "label": "Lacuna Research MCP",
+          "primary_url": "https://github.com/tiptreesystems/lacuna-research-mcp"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "mcp-2026-07-28-goes-stateless",
+          "label": "Stateless MCP discussion",
+          "primary_url": "https://x.com/ClaudeDevs/status/2082164248697069935"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-07-27"
+      },
+      "tags": [
+        "MCP",
+        "interoperability"
+      ]
+    },
+    {
+      "theme_id": "agents-need-new-interfaces",
+      "headline": "The interface for agents is becoming a workspace with checkpoints, not a chat box",
+      "summary": "YouTube builds, social posts, Google’s Spark announcement, and HN projects all show agents operating in the background or across multiple workers. The control surface is shifting toward visible tasks, approvals, artifacts, and resumption.",
+      "implication": "Prototype a visible task queue and approval boundary before connecting an agent to business systems.",
+      "citations": [
+        {
+          "tab_id": "youtube",
+          "item_id": "claude-code-is-secretly-just-a-while-loop",
+          "label": "Agent loop explainer",
+          "primary_url": "https://www.youtube.com/watch?v=J8fMcbIJ0to"
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "this-new-app-turns-claude-code-into-a-team-of-ai-agents",
+          "label": "Agent team workspace",
+          "primary_url": "https://www.youtube.com/watch?v=gdyxlOqVigE"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "ethan-mollick-managing-ai-requires-new-interfaces",
+          "label": "Physical controls for agents",
+          "primary_url": "https://www.linkedin.com/posts/emollick_managing-ai-requires-new-interfaces-these-activity-7488696510264684545-ku2K"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "news-ycombinator-com-item-id-49119274",
+          "label": "Marble agent workspace",
+          "primary_url": "https://news.ycombinator.com/item?id=49119274"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 2,
+        "first_seen_week": "2026-07-20",
+        "note": "The prior week discussed agentic work; this week adds concrete interface and workspace patterns."
+      },
+      "tags": [
+        "agent-ux",
+        "workflow"
+      ]
+    },
+    {
+      "theme_id": "ai-transparency-becomes-operational",
+      "headline": "AI transparency is moving into product behavior and evidence collection",
+      "summary": "The EU AI Act’s August 2 enforcement and Article 50 guidance make disclosure and machine-readable marking concrete duties. LinkedIn and TikTok are simultaneously adding authenticity feedback, labeling, and detection loops.",
+      "implication": "Inventory generated-content touchpoints and attach provenance, disclosure, and review evidence to each workflow.",
+      "citations": [
+        {
+          "tab_id": "research",
+          "item_id": "eu-ai-act-enforcement-august-2",
+          "label": "EU enforcement",
+          "primary_url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "eu-transparency-guidelines-article-50",
+          "label": "Article 50 guidance",
+          "primary_url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-transparency-ai-generated-content"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "linkedin-adds-ai-slop-reporting",
+          "label": "LinkedIn AI-slop reporting",
+          "primary_url": "https://techcrunch.com/2026/07/30/linkedin-adds-a-button-to-report-ai-generated-slop/?ref=digitalbrain.news"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "tiktok-transparency-tools",
+          "label": "TikTok transparency tools",
+          "primary_url": "https://english.ahram.org.eg/NewsContentP/3/572753/Business/TikTok-expands-AI-transparency-tools-as-generative.aspx"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-07-27"
+      },
+      "tags": [
+        "transparency",
+        "provenance"
+      ]
+    },
+    {
+      "theme_id": "evaluation-is-a-system",
+      "headline": "Evaluation is measuring the harness and task, not only the model",
+      "summary": "NIST’s sequestered testbed, YouTube’s agent-loop explanations, and Reddit’s false-conclusion benchmark all treat the evaluation setup as part of the result. Model choice without tool, context, and reviewer controls produces misleading comparisons.",
+      "implication": "Build held-out task suites with identical tools, budgets, and review criteria before comparing models.",
+      "citations": [
+        {
+          "tab_id": "research",
+          "item_id": "nist-artificial-intelligence-technology-evaluation",
+          "label": "NIST AITE",
+          "primary_url": "https://www.nist.gov/news-events/news/2026/07/announcing-nists-artificial-intelligence-technology-evaluation-aite"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "perfect-sql-false-conclusion-benchmark",
+          "label": "False-conclusion benchmark",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1v90yrw/perfect_sql_false_conclusion_my_local_model_told/"
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "learn-95-of-the-claude-agent-sdk-in-under-14-minutes",
+          "label": "Agent SDK primitives",
+          "primary_url": "https://www.youtube.com/watch?v=8YcBhue2Yfs"
+        }
+      ],
+      "recurrence": {
+        "status": "returning",
+        "weeks_count": 2,
+        "first_seen_week": "2026-07-20",
+        "note": "Evaluation quality remains a recurring theme, now anchored by a government testbed."
+      },
+      "tags": [
+        "evaluation",
+        "reliability"
+      ]
+    }
+  ],
+  "ninety_second_brief": [
+    {
+      "tab_id": "launches",
+      "item_id": "kimi-k3-full-open-weights",
+      "title": "Kimi K3 full open weights",
+      "one_line": "Moonshot released Kimi K3 as a 2.8T MoE model with native vision and a 1M-token context window. The model page is the canonical weights destination.",
+      "primary_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "score": 8.9,
+      "source_label": "Launch / primary source"
+    },
+    {
+      "tab_id": "research",
+      "item_id": "nist-artificial-intelligence-technology-evaluation",
+      "title": "NIST Artificial Intelligence Technology Evaluation",
+      "one_line": "NIST launched a sequestered evaluation environment where data providers and model providers can compare performance on private tasks without using evaluation data for training.",
+      "primary_url": "https://www.nist.gov/news-events/news/2026/07/announcing-nists-artificial-intelligence-technology-evaluation-aite",
+      "score": 8.8,
+      "source_label": "NIST"
+    },
+    {
+      "tab_id": "x",
+      "item_id": "kimi-k3-weights-and-agentenv-arrive-together",
+      "title": "Kimi K3 weights and AgentENV arrive together",
+      "one_line": "The post highlights Kimi K3’s open weights and AgentENV, a distributed system for running isolated agent environments with snapshot, resume, and fork support.",
+      "primary_url": "https://x.com/WesRoth/status/2082133990400794770",
+      "score": 8.7,
+      "source_label": "X"
+    },
+    {
+      "tab_id": "youtube",
+      "item_id": "claude-code-is-secretly-just-a-while-loop",
+      "title": "Claude Code Is Secretly Just a While Loop",
+      "one_line": "The video strips an agent to its executable core: a model, a tool-call parser, and a loop. The enterprise implication is that memory, skills, and MCP are harness controls, not model magic.",
+      "primary_url": "https://www.youtube.com/watch?v=J8fMcbIJ0to",
+      "score": 8.6,
+      "source_label": "YouTube"
+    },
+    {
+      "tab_id": "reddit",
+      "item_id": "anatomy-of-a-frontier-lab-agent-intrusion",
+      "title": "Anatomy of a Frontier Lab Agent Intrusion",
+      "one_line": "The thread focuses on the technical timeline of an autonomous agent intrusion and the role of an open model in incident response.",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1v9cph9/anatomy_of_a_frontier_lab_agent_intrusion_a/",
+      "score": 8.6,
+      "source_label": "Reddit"
+    },
+    {
+      "tab_id": "research",
+      "item_id": "nist-ai-data-center-security-analysis-draft-sp-800-239",
+      "title": "NIST AI Data Center Security Analysis draft SP 800-239",
+      "one_line": "The draft analyzes threats across AI data-center hardware, software, workflows, and storage and opens public comment through September 25.",
+      "primary_url": "https://csrc.nist.gov/News/2026/ai-data-center-security-analysis-draft-sp-800-239",
+      "score": 8.5,
+      "source_label": "NIST"
+    },
+    {
+      "tab_id": "x",
+      "item_id": "kimi-k3-model-weights-release",
+      "title": "Kimi K3 model weights release",
+      "one_line": "Moonshot announced the 2.8T MoE model, native vision, 1M-token context, and companion infrastructure releases.",
+      "primary_url": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
+      "score": 8.5,
+      "source_label": "X"
+    },
+    {
+      "tab_id": "launches",
+      "item_id": "minimax-h3-open-omni-modal-model",
+      "title": "MiniMax H3 open omni-modal model",
+      "one_line": "MiniMax launched H3 for multimodal understanding and video generation with native stereo audio, up to 2K resolution, and 15-second clips; the vendor claims materially lower per-second pricing than mainstream models.",
+      "primary_url": "https://www.minimax.io/blog/minimax-h3",
+      "score": 8.4,
+      "source_label": "Launch / primary source"
+    },
+    {
+      "tab_id": "youtube",
+      "item_id": "how-does-claude-code-actually-work-let-s-make-our-own",
+      "title": "How Does Claude Code Actually Work? Let’s Make Our Own",
+      "one_line": "A from-scratch implementation walks through tool calls, permission checks, context management, and the repeated loop that turns a language model into an agent.",
+      "primary_url": "https://www.youtube.com/watch?v=vp6Dlx5aHDU",
+      "score": 8.4,
+      "source_label": "YouTube"
+    },
+    {
+      "tab_id": "social",
+      "item_id": "ethan-mollick-managing-ai-requires-new-interfaces",
+      "title": "Ethan Mollick: managing AI requires new interfaces",
+      "one_line": "Mollick shows physical interfaces for controlling multiple agents and argues that agent management needs a workspace beyond the chat window.",
+      "primary_url": "https://www.linkedin.com/posts/emollick_managing-ai-requires-new-interfaces-these-activity-7488696510264684545-ku2K",
+      "score": 8.4,
+      "source_label": "LinkedIn"
+    }
+  ],
+  "deltas_vs_prior_week": {
+    "themes_new_this_week": [
+      "mcp-becomes-enterprise-transport",
+      "ai-transparency-becomes-operational"
+    ],
+    "themes_dropped_off": [],
+    "themes_intensifying": [
+      "open-weights-become-operating-stacks",
+      "agents-need-new-interfaces"
+    ],
+    "note": "Compared with the prior overview, the week shifts from breach disclosure and open-weight policy toward deployable controls, protocol changes, and regulatory execution."
+  },
+  "theme_tracker": [
+    {
+      "theme_id": "open-weights-become-operating-stacks",
+      "headline": "Open weights now arrive with the infrastructure to run agents",
+      "weeks_active": 2,
+      "first_seen_week": "2026-07-20",
+      "intensity_history": [
+        {
+          "week_start": "2026-07-20",
+          "citation_count": 2
+        },
+        {
+          "week_start": "2026-07-27",
+          "citation_count": 4
+        }
+      ]
+    },
+    {
+      "theme_id": "agent-security-needs-control-plane",
+      "headline": "Agent security is moving from prompt hygiene to infrastructure control",
+      "weeks_active": 2,
+      "first_seen_week": "2026-07-20",
+      "intensity_history": [
+        {
+          "week_start": "2026-07-20",
+          "citation_count": 2
+        },
+        {
+          "week_start": "2026-07-27",
+          "citation_count": 3
+        }
+      ]
+    },
+    {
+      "theme_id": "agents-need-new-interfaces",
+      "headline": "The interface for agents is becoming a workspace with checkpoints, not a chat box",
+      "weeks_active": 2,
+      "first_seen_week": "2026-07-20",
+      "intensity_history": [
+        {
+          "week_start": "2026-07-20",
+          "citation_count": 2
+        },
+        {
+          "week_start": "2026-07-27",
+          "citation_count": 3
+        }
+      ]
+    },
+    {
+      "theme_id": "evaluation-is-a-system",
+      "headline": "Evaluation is measuring the harness and task, not only the model",
+      "weeks_active": 2,
+      "first_seen_week": "2026-07-20",
+      "intensity_history": [
+        {
+          "week_start": "2026-07-20",
+          "citation_count": 2
+        },
+        {
+          "week_start": "2026-07-27",
+          "citation_count": 3
+        }
+      ]
+    }
+  ]
+}
