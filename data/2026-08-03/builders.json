@@ -1,0 +1,633 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 1.0,
+    "items_total": 18,
+    "items_new": 18,
+    "items_returning": 0
+  },
+  "executive_summary": [
+    {
+      "headline": "The builder layer is hardening around gates, memory, and MCP",
+      "body": "Current repository activity is less about another prompt wrapper and more about workflow validation, database connectors, shared memory, orchestration, and tool policy. Those are the pieces that make agents operable.",
+      "primary_url": "https://github.github.com/gh-aw/blog/2026-08-03-weekly-update/"
+    },
+    {
+      "headline": "Security is shipping as an implementation detail",
+      "body": "Argument-injection fixes, vulnerable-container removal, job dependencies, and scoped interfaces are practical signs that agent infrastructure is becoming production software.",
+      "primary_url": "https://github.com/github/github-mcp-server"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "github-agentic-workflows-weekly-update",
+      "title": "GitHub Agentic Workflows Weekly Update",
+      "source": "GitHub Agentic Workflows",
+      "author": "GitHub Agentic Workflows",
+      "date": "August 3, 2026",
+      "primary_url": "https://github.github.com/gh-aw/blog/2026-08-03-weekly-update/",
+      "verified": true,
+      "verified_at": "2026-08-10T01:05:00Z",
+      "summary": "The weekly update lists releases, an argument-injection fix, optional shellcheck gates, removal of vulnerable containers, and fine-grained agent job dependencies.",
+      "score": {
+        "total": 8.8,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Prefer composable primitives over opaque agent platforms.",
+        "Make tool access explicit, scoped, and logged."
+      ],
+      "results": "Repository page or release metadata was reachable at verification time.",
+      "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+    },
+    {
+      "id": "mcp-toolbox-for-databases-1-8-0",
+      "title": "MCP Toolbox for Databases 1.8.0",
+      "source": "Google",
+      "author": "Google",
+      "date": "August 1, 2026",
+      "primary_url": "https://github.com/googleapis/mcp-toolbox",
+      "verified": true,
+      "verified_at": "2026-08-10T01:05:00Z",
+      "summary": "The database MCP toolbox shipped a release with continued connector and admin-tool development. The pattern is a governed interface layer between agents and structured data.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Prefer composable primitives over opaque agent platforms.",
+        "Make tool access explicit, scoped, and logged."
+      ],
+      "results": "Repository page or release metadata was reachable at verification time.",
+      "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+    },
+    {
+      "id": "github-mcp-server-1-8-0",
+      "title": "GitHub MCP Server 1.8.0",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "July 30, 2026",
+      "primary_url": "https://github.com/github/github-mcp-server",
+      "verified": true,
+      "verified_at": "2026-08-10T01:05:00Z",
+      "summary": "The official server connects agents to repositories, issues, pull requests, and workflows. The recent release activity makes identity scope and auditability the key deployment questions.",
+      "score": {
+        "total": 8.4,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Prefer composable primitives over opaque agent platforms.",
+        "Make tool access explicit, scoped, and logged."
+      ],
+      "results": "Repository page or release metadata was reachable at verification time.",
+      "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+    },
+    {
+      "id": "tencentdb-agent-memory-2-0",
+      "title": "TencentDB Agent Memory 2.0",
+      "source": "Tencent Cloud",
+      "author": "Tencent Cloud",
+      "date": "August 3, 2026",
+      "primary_url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+      "verified": true,
+      "verified_at": "2026-08-10T01:05:00Z",
+      "summary": "The repository released a 2.0 memory hub that turns conversations, documents, and code into governed reusable memory assets. Shared memory needs provenance and retention controls.",
+      "score": {
+        "total": 8.4,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Prefer composable primitives over opaque agent platforms.",
+        "Make tool access explicit, scoped, and logged."
+      ],
+      "results": "Repository page or release metadata was reachable at verification time.",
+      "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+    },
+    {
+      "id": "agent-orchestrator-0-12-1",
+      "title": "Agent Orchestrator 0.12.1",
+      "source": "Untrivial AI",
+      "author": "Untrivial AI",
+      "date": "August 5, 2026",
+      "primary_url": "https://github.com/Untrivial-ai/agent-orchestrator",
+      "verified": true,
+      "verified_at": "2026-08-10T01:05:00Z",
+      "summary": "The release adds fixes around delegated task spawns and desktop development skills. The builder pattern is a durable orchestration layer, not a single model feature.",
+      "score": {
+        "total": 8.2,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Prefer composable primitives over opaque agent platforms.",
+        "Make tool access explicit, scoped, and logged."
+      ],
+      "results": "Repository page or release metadata was reachable at verification time.",
+      "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+    },
+    {
+      "id": "awesome-ai-agents-2026-index",
+      "title": "Awesome AI Agents 2026 Index",
+      "source": "Community maintainers",
+      "author": "Community maintainers",
+      "date": "August 3, 2026",
+      "primary_url": "https://github.com/Zijian-Ni/awesome-ai-agents-2026",
+      "verified": true,
+      "verified_at": "2026-08-10T01:05:00Z",
+      "summary": "The index tracks current frameworks, MCP, coding agents, and memory systems. It is a discovery map, not evidence that every listed project is production-ready.",
+      "score": {
+        "total": 7.8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "key_takeaways": [
+        "Prefer composable primitives over opaque agent platforms.",
+        "Make tool access explicit, scoped, and logged."
+      ],
+      "results": "Repository page or release metadata was reachable at verification time.",
+      "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "builder_index",
+      "title": "Trending repos and workflow infrastructure",
+      "description": "GitHub-anchored projects and registries reviewed for current activity or direct implementation relevance.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "agent-module-mcp-compliance-server",
+          "title": "Agent Module MCP Compliance Server",
+          "source": "Agent Module",
+          "author": "Agent Module",
+          "date": "March 15, 2026",
+          "primary_url": "https://github.com/AgentModule/mcp",
+          "verified": true,
+          "verified_at": "2026-08-10T01:05:00Z",
+          "summary": "The MCP server exposes structured compliance logic for agent runtime retrieval. A machine-readable policy layer can reduce drift, but legal ownership and update provenance remain essential.",
+          "score": {
+            "total": 8.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "key_takeaways": [
+            "Prefer composable primitives over opaque agent platforms.",
+            "Make tool access explicit, scoped, and logged."
+          ],
+          "results": "Repository page or release metadata was reachable at verification time.",
+          "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+        },
+        {
+          "id": "agentic-memory",
+          "title": "Agentic Memory",
+          "source": "Agentra Labs",
+          "author": "Agentra Labs",
+          "date": "February 18, 2026",
+          "primary_url": "https://github.com/agentralabs/agentic-memory",
+          "verified": true,
+          "verified_at": "2026-08-10T01:05:00Z",
+          "summary": "The project stores agent knowledge as a navigable graph with a local MCP server. Persistent memory is useful only when correction, retention, and deletion are explicit.",
+          "score": {
+            "total": 7.9,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Prefer composable primitives over opaque agent platforms.",
+            "Make tool access explicit, scoped, and logged."
+          ],
+          "results": "Repository page or release metadata was reachable at verification time.",
+          "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+        },
+        {
+          "id": "agent-memory",
+          "title": "Agent Memory",
+          "source": "Axiom",
+          "author": "Axiom",
+          "date": "February 13, 2026",
+          "primary_url": "https://github.com/axiomhq/agent-memory",
+          "verified": true,
+          "verified_at": "2026-08-10T01:05:00Z",
+          "summary": "The project captures, consolidates, and defragments agent memory across harnesses. The architectural pattern is reusable, but provenance and sensitive-data handling need review.",
+          "score": {
+            "total": 7.8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Prefer composable primitives over opaque agent platforms.",
+            "Make tool access explicit, scoped, and logged."
+          ],
+          "results": "Repository page or release metadata was reachable at verification time.",
+          "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+        },
+        {
+          "id": "mcp-agent",
+          "title": "MCP Agent",
+          "source": "Jeomon",
+          "author": "Jeomon",
+          "date": "June 3, 2025",
+          "primary_url": "https://github.com/modelcontextprotocol/servers",
+          "verified": true,
+          "verified_at": "2026-08-10T01:05:00Z",
+          "summary": "The project discovers and connects to MCP servers dynamically. Dynamic discovery increases flexibility and expands the policy surface, so allowlists and signature checks matter.",
+          "score": {
+            "total": 7.8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Prefer composable primitives over opaque agent platforms.",
+            "Make tool access explicit, scoped, and logged."
+          ],
+          "results": "Repository page or release metadata was reachable at verification time.",
+          "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+        },
+        {
+          "id": "mcp-agent-framework",
+          "title": "MCP Agent Framework",
+          "source": "LastMile AI",
+          "author": "LastMile AI",
+          "date": "December 18, 2024",
+          "primary_url": "https://github.com/lastmile-ai/mcp-agent",
+          "verified": true,
+          "verified_at": "2026-08-10T01:05:00Z",
+          "summary": "The framework offers composable agent patterns over MCP. It is a useful reference for separating transport, orchestration, and model choice.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Prefer composable primitives over opaque agent platforms.",
+            "Make tool access explicit, scoped, and logged."
+          ],
+          "results": "Repository page or release metadata was reachable at verification time.",
+          "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+        },
+        {
+          "id": "unified-mcp-agent",
+          "title": "Unified MCP Agent",
+          "source": "1MCP",
+          "author": "1MCP",
+          "date": "March 16, 2025",
+          "primary_url": "https://github.com/1mcp-app/agent",
+          "verified": true,
+          "verified_at": "2026-08-10T01:05:00Z",
+          "summary": "The project unifies multiple MCP servers behind one agent entry point. Consolidation can simplify controls but can also create a high-value gateway.",
+          "score": {
+            "total": 7.8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Prefer composable primitives over opaque agent platforms.",
+            "Make tool access explicit, scoped, and logged."
+          ],
+          "results": "Repository page or release metadata was reachable at verification time.",
+          "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+        },
+        {
+          "id": "agent-memory-mcp",
+          "title": "Agent Memory MCP",
+          "source": "Open-source maintainer",
+          "author": "Open-source maintainer",
+          "date": "February 21, 2026",
+          "primary_url": "https://github.com/adamrdrew/agent-memory-mcp",
+          "verified": true,
+          "verified_at": "2026-08-10T01:05:00Z",
+          "summary": "This local-first MCP memory server uses hybrid search and local embeddings. A local path can reduce data movement, but backup and access controls still need design.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Prefer composable primitives over opaque agent platforms.",
+            "Make tool access explicit, scoped, and logged."
+          ],
+          "results": "Repository page or release metadata was reachable at verification time.",
+          "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+        },
+        {
+          "id": "agent-memory-research-collection",
+          "title": "Agent Memory Research Collection",
+          "source": "Research collection",
+          "author": "Research collection",
+          "date": "February 21, 2026",
+          "primary_url": "https://github.com/lhl/agentic-memory",
+          "verified": true,
+          "verified_at": "2026-08-10T01:05:00Z",
+          "summary": "The repository collects papers on agent memory architectures and output quality. It is a useful reading list for evaluation design, not a benchmark.",
+          "score": {
+            "total": 7.6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Prefer composable primitives over opaque agent platforms.",
+            "Make tool access explicit, scoped, and logged."
+          ],
+          "results": "Repository page or release metadata was reachable at verification time.",
+          "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+        },
+        {
+          "id": "agent-memory-topics",
+          "title": "Agent Memory Topics",
+          "source": "GitHub Topics",
+          "author": "GitHub Topics",
+          "date": "May 25, 2026",
+          "primary_url": "https://github.com/topics/agentmemory",
+          "verified": true,
+          "verified_at": "2026-08-10T01:05:00Z",
+          "summary": "The topic page shows the breadth of memory tooling and encrypted variants. Treat topic listings as discovery signals and verify each repository separately.",
+          "score": {
+            "total": 7.6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Prefer composable primitives over opaque agent platforms.",
+            "Make tool access explicit, scoped, and logged."
+          ],
+          "results": "Repository page or release metadata was reachable at verification time.",
+          "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+        },
+        {
+          "id": "agentic-workflows-security-notes",
+          "title": "Agentic Workflows Security Notes",
+          "source": "GitHub Agentic Workflows",
+          "author": "GitHub Agentic Workflows",
+          "date": "August 1, 2026",
+          "primary_url": "https://github.com/github/gh-aw",
+          "verified": true,
+          "verified_at": "2026-08-10T01:05:00Z",
+          "summary": "The codebase links workflow automation to security and validation gates. Opt-in validation and dependency hygiene are practical patterns for controlled adoption.",
+          "score": {
+            "total": 8.0,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "key_takeaways": [
+            "Prefer composable primitives over opaque agent platforms.",
+            "Make tool access explicit, scoped, and logged."
+          ],
+          "results": "Repository page or release metadata was reachable at verification time.",
+          "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+        },
+        {
+          "id": "mcp-registry",
+          "title": "MCP Registry",
+          "source": "MCP Registry",
+          "author": "MCP Registry",
+          "date": "September 9, 2025",
+          "primary_url": "https://github.com/mcp",
+          "verified": true,
+          "verified_at": "2026-08-10T01:05:00Z",
+          "summary": "The registry is a discovery surface for official and community MCP servers. It needs governance controls before broad internal use.",
+          "score": {
+            "total": 7.6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Prefer composable primitives over opaque agent platforms.",
+            "Make tool access explicit, scoped, and logged."
+          ],
+          "results": "Repository page or release metadata was reachable at verification time.",
+          "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+        },
+        {
+          "id": "agent-memory-paper-list",
+          "title": "Agent Memory Paper List",
+          "source": "Research maintainers",
+          "author": "Research maintainers",
+          "date": "December 13, 2025",
+          "primary_url": "https://github.com/Shichun-Liu/Agent-Memory-Paper-List",
+          "verified": true,
+          "verified_at": "2026-08-10T01:05:00Z",
+          "summary": "The list tracks long-term and working-memory research. Use it to shape test cases for memory poisoning, correction, and retrieval quality.",
+          "score": {
+            "total": 7.6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Prefer composable primitives over opaque agent platforms.",
+            "Make tool access explicit, scoped, and logged."
+          ],
+          "results": "Repository page or release metadata was reachable at verification time.",
+          "enterprise_adaptation": "Implementation pattern: pilot the component behind a narrow internal API and a reviewed allowlist. Regulated-environment caveats: keep data residency, model governance, secrets management, and audit logging under enterprise control. 30-day experiment: run a non-production workflow on synthetic data, measure task success, tool calls, latency, and operator overrides, then review the logs."
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "GitHub Agentic Workflows Weekly Update",
+      "source": "GitHub Agentic Workflows",
+      "author": "GitHub Agentic Workflows",
+      "date": "August 3, 2026",
+      "primary_url": "https://github.github.com/gh-aw/blog/2026-08-03-weekly-update/",
+      "score": 8.8
+    },
+    {
+      "title": "MCP Toolbox for Databases 1.8.0",
+      "source": "Google",
+      "author": "Google",
+      "date": "August 1, 2026",
+      "primary_url": "https://github.com/googleapis/mcp-toolbox",
+      "score": 8.5
+    },
+    {
+      "title": "GitHub MCP Server 1.8.0",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "July 30, 2026",
+      "primary_url": "https://github.com/github/github-mcp-server",
+      "score": 8.4
+    },
+    {
+      "title": "TencentDB Agent Memory 2.0",
+      "source": "Tencent Cloud",
+      "author": "Tencent Cloud",
+      "date": "August 3, 2026",
+      "primary_url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+      "score": 8.4
+    },
+    {
+      "title": "Agent Orchestrator 0.12.1",
+      "source": "Untrivial AI",
+      "author": "Untrivial AI",
+      "date": "August 5, 2026",
+      "primary_url": "https://github.com/Untrivial-ai/agent-orchestrator",
+      "score": 8.2
+    },
+    {
+      "title": "Awesome AI Agents 2026 Index",
+      "source": "Community maintainers",
+      "author": "Community maintainers",
+      "date": "August 3, 2026",
+      "primary_url": "https://github.com/Zijian-Ni/awesome-ai-agents-2026",
+      "score": 7.8
+    },
+    {
+      "title": "Agent Module MCP Compliance Server",
+      "source": "Agent Module",
+      "author": "Agent Module",
+      "date": "March 15, 2026",
+      "primary_url": "https://github.com/AgentModule/mcp",
+      "score": 8.0
+    },
+    {
+      "title": "Agentic Memory",
+      "source": "Agentra Labs",
+      "author": "Agentra Labs",
+      "date": "February 18, 2026",
+      "primary_url": "https://github.com/agentralabs/agentic-memory",
+      "score": 7.9
+    },
+    {
+      "title": "Agent Memory",
+      "source": "Axiom",
+      "author": "Axiom",
+      "date": "February 13, 2026",
+      "primary_url": "https://github.com/axiomhq/agent-memory",
+      "score": 7.8
+    },
+    {
+      "title": "MCP Agent",
+      "source": "Jeomon",
+      "author": "Jeomon",
+      "date": "June 3, 2025",
+      "primary_url": "https://github.com/modelcontextprotocol/servers",
+      "score": 7.8
+    },
+    {
+      "title": "MCP Agent Framework",
+      "source": "LastMile AI",
+      "author": "LastMile AI",
+      "date": "December 18, 2024",
+      "primary_url": "https://github.com/lastmile-ai/mcp-agent",
+      "score": 7.7
+    },
+    {
+      "title": "Unified MCP Agent",
+      "source": "1MCP",
+      "author": "1MCP",
+      "date": "March 16, 2025",
+      "primary_url": "https://github.com/1mcp-app/agent",
+      "score": 7.8
+    },
+    {
+      "title": "Agent Memory MCP",
+      "source": "Open-source maintainer",
+      "author": "Open-source maintainer",
+      "date": "February 21, 2026",
+      "primary_url": "https://github.com/adamrdrew/agent-memory-mcp",
+      "score": 7.7
+    },
+    {
+      "title": "Agent Memory Research Collection",
+      "source": "Research collection",
+      "author": "Research collection",
+      "date": "February 21, 2026",
+      "primary_url": "https://github.com/lhl/agentic-memory",
+      "score": 7.6
+    },
+    {
+      "title": "Agent Memory Topics",
+      "source": "GitHub Topics",
+      "author": "GitHub Topics",
+      "date": "May 25, 2026",
+      "primary_url": "https://github.com/topics/agentmemory",
+      "score": 7.6
+    },
+    {
+      "title": "Agentic Workflows Security Notes",
+      "source": "GitHub Agentic Workflows",
+      "author": "GitHub Agentic Workflows",
+      "date": "August 1, 2026",
+      "primary_url": "https://github.com/github/gh-aw",
+      "score": 8.0
+    },
+    {
+      "title": "MCP Registry",
+      "source": "MCP Registry",
+      "author": "MCP Registry",
+      "date": "September 9, 2025",
+      "primary_url": "https://github.com/mcp",
+      "score": 7.6
+    },
+    {
+      "title": "Agent Memory Paper List",
+      "source": "Research maintainers",
+      "author": "Research maintainers",
+      "date": "December 13, 2025",
+      "primary_url": "https://github.com/Shichun-Liu/Agent-Memory-Paper-List",
+      "score": 7.6
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Release-feed deltas",
+      "Signed artifact and SBOM metadata"
+    ],
+    "sources_to_drop": [
+      "Repos without code or release activity"
+    ],
+    "topics_to_add": [
+      "Agent memory governance",
+      "Tool authorization manifests"
+    ],
+    "topics_to_drop": [
+      "Unmeasured autonomy claims"
+    ],
+    "notes": "GitHub pages returned HTTP 200. Star counts are intentionally omitted unless directly verified; repository activity and release metadata are the signal."
+  }
+}

@@ -1,0 +1,432 @@
+{
+  "week_start": "2026-08-03",
+  "generated_at": "2026-08-10T01:05:00Z",
+  "headline": "Agents are moving into governed runtimes as open models, stateless MCP, and AI transparency rules turn experimentation into an operating discipline.",
+  "themes": [
+    {
+      "theme_id": "agent-security-needs-trajectory-controls",
+      "headline": "Agent security is moving from prompts to whole-run control",
+      "summary": "Current videos, social posts, repository releases, and research all point to the same change: an agent’s risk lives in its trajectory, network access, credentials, and tool chain, not just in a single answer. Evaluation needs traces, stop conditions, and a reversible runtime.",
+      "implication": "Make scoped identity, network isolation, trajectory review, and rollback acceptance criteria for every agent pilot.",
+      "citations": [
+        {
+          "tab_id": "youtube",
+          "item_id": "rogue-ai-agents-copilot-exploits-and-eu-ai-enforcement",
+          "label": "Video coverage of rogue-agent tests",
+          "primary_url": "https://www.youtube.com/watch?v=1Lg7gM88tVQ"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "frontier-model-escapes-another-test-boundary",
+          "label": "Social signal on a test-boundary failure",
+          "primary_url": "https://x.com/blackorbird/status/2085344984270774346"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "github-agentic-workflows-weekly-update",
+          "label": "Workflow security release",
+          "primary_url": "https://github.github.com/gh-aw/blog/2026-08-03-weekly-update/"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "securing-agentic-ai-with-trajectory-assurance",
+          "label": "Trajectory-assurance paper",
+          "primary_url": "https://arxiv.org/abs/2608.01558"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 3,
+        "first_seen_week": "2026-07-20",
+        "note": "Containment and agent-security themes continue, now with trajectory-level evaluation and current-week incident discussion."
+      },
+      "tags": [
+        "security",
+        "agent-governance"
+      ]
+    },
+    {
+      "theme_id": "mcp-becomes-enterprise-transport",
+      "headline": "Stateless MCP is turning interoperability into gateway work",
+      "summary": "X discussion, GitHub projects, and managed gateway documentation converge on a stateless MCP core with extensions and stronger enterprise authorization. The benefit is scale; the risk is multiplying tools faster than policy, versioning, and observability can keep up.",
+      "implication": "Version MCP deliberately, review server manifests as code, and issue dedicated scoped credentials per integration.",
+      "citations": [
+        {
+          "tab_id": "x",
+          "item_id": "mcp-2026-07-28-goes-stateless",
+          "label": "MCP stateless release thread",
+          "primary_url": "https://x.com/dsp_/status/2082173429399142616"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "mcp-toolbox-for-databases-1-8-0",
+          "label": "Database MCP toolbox",
+          "primary_url": "https://github.com/googleapis/mcp-toolbox"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "agentcore-gateway-supports-new-mcp-spec",
+          "label": "Managed gateway support",
+          "primary_url": "https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/"
+        }
+      ],
+      "recurrence": {
+        "status": "returning",
+        "weeks_count": 2,
+        "first_seen_week": "2026-07-27",
+        "note": "The protocol theme continues from last week, shifting from specification news to production gateway and repository adoption."
+      },
+      "tags": [
+        "MCP",
+        "interoperability"
+      ]
+    },
+    {
+      "theme_id": "open-models-expand-operating-surface",
+      "headline": "Open models are expanding the operating surface, not just lowering model price",
+      "summary": "Launch pages, X posts, Reddit threads, and videos all treat open-weight releases as stack decisions involving hardware, active parameters, local execution, licenses, and serving economics. The model is only one part of the adoption cost.",
+      "implication": "Evaluate open models on cost per completed task, license, hardware, latency, and evidence retention rather than benchmark rank alone.",
+      "citations": [
+        {
+          "tab_id": "launches",
+          "item_id": "qwen3-8-max-open-model-family",
+          "label": "Qwen open-model release",
+          "primary_url": "https://huggingface.co/moonshotai/Kimi-K3"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "cheaper-models-expand-the-automation-budget",
+          "label": "Operating-economics thread",
+          "primary_url": "https://x.com/is_OwenLewis/status/2085222406478823718"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "qwen3-8-27b-and-qwen3-8-max-announced",
+          "label": "Practitioner model discussion",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen3827b_announced_alongside_qwen38max/"
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "exciting-ai-updates-weekly-august-7",
+          "label": "Video roundup",
+          "primary_url": "https://www.youtube.com/watch?v=J3oUaee542k&vl=uk"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 2,
+        "first_seen_week": "2026-07-27",
+        "note": "Open-weight discussion continues, with more attention on local execution and total operating cost."
+      },
+      "tags": [
+        "open-weights",
+        "model-economics"
+      ]
+    },
+    {
+      "theme_id": "agent-interfaces-need-approval-state",
+      "headline": "Agent interfaces are becoming visible workspaces with approval state",
+      "summary": "Social posts, YouTube coverage, and builder releases point toward task queues, persistent runtimes, visible status, and approval controls. A chat window hides exactly the state operators need to supervise long-running work.",
+      "implication": "Prototype a visible task queue with approval, pause, resume, escalation, and evidence states before connecting agents to business systems.",
+      "citations": [
+        {
+          "tab_id": "social",
+          "item_id": "managing-agents-requires-new-interfaces",
+          "label": "Physical control surface",
+          "primary_url": "https://www.linkedin.com/posts/emollick_managing-ai-requires-new-interfaces-these-activity-7488696510264684545-ku2K"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "what-builders-need-from-the-last-24-hours",
+          "label": "Approval ergonomics",
+          "primary_url": "https://x.com/Austen/status/2085796353284682073"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "agent-orchestrator-0-12-1",
+          "label": "Persistent orchestration",
+          "primary_url": "https://github.com/Untrivial-ai/agent-orchestrator"
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "openai-agents-and-new-defensive-controls",
+          "label": "Workflow control layer",
+          "primary_url": "https://www.youtube.com/watch?v=00YleYEkQbE"
+        }
+      ],
+      "recurrence": {
+        "status": "returning",
+        "weeks_count": 2,
+        "first_seen_week": "2026-07-27",
+        "note": "The prior interface theme now has concrete approval, persistence, and orchestration evidence."
+      },
+      "tags": [
+        "agent-ux",
+        "workflow"
+      ]
+    },
+    {
+      "theme_id": "ai-transparency-becomes-operational",
+      "headline": "AI transparency is now a product and evidence requirement",
+      "summary": "European guidance and enforcement make disclosure and machine-readable marking concrete, while social platforms add reporting and authenticity feedback loops. Transparency is no longer only policy language; it needs inventory, labeling, review, and retained evidence.",
+      "implication": "Inventory generated-content touchpoints and attach provenance, disclosure, and review evidence to each workflow.",
+      "citations": [
+        {
+          "tab_id": "research",
+          "item_id": "eu-ai-transparency-obligations",
+          "label": "Article 50 guidance",
+          "primary_url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "eu-ai-transparency-obligations-guidance",
+          "label": "Launch and policy item",
+          "primary_url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "linkedin-adds-ai-generated-slop-reporting",
+          "label": "Platform trust control",
+          "primary_url": "https://techcrunch.com/2026/07/30/linkedin-adds-a-button-to-report-ai-generated-slop/?ref=digitalbrain.news"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 2,
+        "first_seen_week": "2026-07-27",
+        "note": "Last week’s policy signal is now an enforcement and product-behavior workstream."
+      },
+      "tags": [
+        "transparency",
+        "provenance"
+      ]
+    },
+    {
+      "theme_id": "industrial-ai-needs-measurable-tevv",
+      "headline": "Industrial AI adoption is being framed as measurable TEVV work",
+      "summary": "NIST’s manufacturing mission, evaluation framework, data-center security work, and research on cross-system agents all move the conversation toward testable performance, infrastructure controls, and human-in-the-loop outcomes. That is closer to an engineering program than a model showcase.",
+      "implication": "Define a held-out task suite, safety cases, and operating metrics before scaling an industrial AI pilot.",
+      "citations": [
+        {
+          "tab_id": "research",
+          "item_id": "nist-genesis-mission-and-ai-manufacturing",
+          "label": "Manufacturing AI centers",
+          "primary_url": "https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "nist-tevv-athlon-framework",
+          "label": "TEVV-Athlon framework",
+          "primary_url": "https://www.nist.gov/artificial-intelligence/ai-research/tevv-athlon-framework-evaluating-ai-systems"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "nist-ai-data-center-security-analysis",
+          "label": "Data-center security",
+          "primary_url": "https://csrc.nist.gov/News/2026/ai-data-center-security-analysis-draft-sp-800-239"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "nist-genesis-mission-and-ai-manufacturing-centers",
+          "label": "Public-sector industrial AI signal",
+          "primary_url": "https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-08-03"
+      },
+      "tags": [
+        "industrial-ai",
+        "evaluation"
+      ]
+    }
+  ],
+  "ninety_second_brief": [
+    {
+      "tab_id": "research",
+      "item_id": "eu-ai-transparency-obligations",
+      "title": "EU AI Transparency Obligations",
+      "one_line": "Article 50 obligations apply from August 2, 2026. Providers and deployers must disclose certain AI interactions and mark generated or manipulated content.",
+      "primary_url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations",
+      "score": 9.0,
+      "source_label": "European Commission"
+    },
+    {
+      "tab_id": "launches",
+      "item_id": "eu-ai-transparency-obligations-guidance",
+      "title": "EU AI Transparency Obligations Guidance",
+      "one_line": "The guidance explains obligations to disclose AI interaction and apply machine-readable marks to generated or manipulated content, with specific deployer duties.",
+      "primary_url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations",
+      "score": 8.9,
+      "source_label": "European Commission"
+    },
+    {
+      "tab_id": "research",
+      "item_id": "nist-genesis-mission-and-ai-manufacturing",
+      "title": "NIST Genesis Mission and AI Manufacturing",
+      "one_line": "NIST describes AI economic-security centers for manufacturing productivity and critical-infrastructure defense, including human-in-the-loop robotics and autonomous systems.",
+      "primary_url": "https://www.nist.gov/news-events/news/2026/08/nist-joins-national-genesis-mission-accelerate-ai-innovation",
+      "score": 8.9,
+      "source_label": "NIST"
+    },
+    {
+      "tab_id": "research",
+      "item_id": "eu-ai-act-enforcement",
+      "title": "EU AI Act Enforcement",
+      "one_line": "The Commission and national authorities begin enforcing specified AI Act rules and transparency requirements, moving compliance from planning into operations.",
+      "primary_url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
+      "score": 8.9,
+      "source_label": "European Commission"
+    },
+    {
+      "tab_id": "builders",
+      "item_id": "github-agentic-workflows-weekly-update",
+      "title": "GitHub Agentic Workflows Weekly Update",
+      "one_line": "The weekly update lists releases, an argument-injection fix, optional shellcheck gates, removal of vulnerable containers, and fine-grained agent job dependencies.",
+      "primary_url": "https://github.github.com/gh-aw/blog/2026-08-03-weekly-update/",
+      "score": 8.8,
+      "source_label": "GitHub Agentic Workflows"
+    },
+    {
+      "tab_id": "research",
+      "item_id": "nist-tevv-athlon-framework",
+      "title": "NIST TEVV-Athlon Framework",
+      "one_line": "The framework seeks input on a common approach to testing, evaluation, verification, and validation. A shared vocabulary improves comparability across models and agent harnesses.",
+      "primary_url": "https://www.nist.gov/artificial-intelligence/ai-research/tevv-athlon-framework-evaluating-ai-systems",
+      "score": 8.8,
+      "source_label": "NIST"
+    },
+    {
+      "tab_id": "youtube",
+      "item_id": "rogue-ai-agents-copilot-exploits-and-eu-ai-enforcement",
+      "title": "Rogue AI Agents, Copilot Exploits, and EU AI Enforcement",
+      "one_line": "The episode connects unsanctioned agent behavior, coding-agent security, an AI infrastructure deal, and the start of EU AI Act enforcement. The useful angle is the move from model capability to operational containment.",
+      "primary_url": "https://www.youtube.com/watch?v=1Lg7gM88tVQ",
+      "score": 8.7,
+      "source_label": "Tech Field Day"
+    },
+    {
+      "tab_id": "launches",
+      "item_id": "qwen3-8-max-open-model-family",
+      "title": "Qwen3.8-Max Open Model Family",
+      "one_line": "The current open-model cycle includes a large mixture-of-experts flagship and smaller deployment-oriented variants. Check the official model card for licensing, context, and hardware fit before testing.",
+      "primary_url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "score": 8.7,
+      "source_label": "Hugging Face / Qwen"
+    },
+    {
+      "tab_id": "launches",
+      "item_id": "agentcore-gateway-supports-new-mcp-spec",
+      "title": "AgentCore Gateway Supports New MCP Spec",
+      "one_line": "The gateway supports a stateless MCP revision and governed extensions. This is a deployment story about scaling and authorization, not merely a protocol upgrade.",
+      "primary_url": "https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/",
+      "score": 8.7,
+      "source_label": "AWS"
+    },
+    {
+      "tab_id": "research",
+      "item_id": "securing-agentic-ai-with-trajectory-assurance",
+      "title": "Securing Agentic AI with Trajectory Assurance",
+      "one_line": "The paper argues that per-action checks are insufficient for long-running agents and proposes assurance over trajectories. The concept maps to trace review, stop conditions, and rollback.",
+      "primary_url": "https://arxiv.org/abs/2608.01558",
+      "score": 8.7,
+      "source_label": "arXiv"
+    }
+  ],
+  "deltas_vs_prior_week": {
+    "themes_new_this_week": [
+      "industrial-ai-needs-measurable-tevv"
+    ],
+    "themes_dropped_off": [],
+    "themes_intensifying": [
+      "agent-security-needs-trajectory-controls",
+      "open-models-expand-operating-surface",
+      "ai-transparency-becomes-operational"
+    ],
+    "note": "Compared with the prior week, the emphasis shifts from protocol and model announcements toward trajectory assurance, operator interfaces, industrial evaluation, and evidence collection."
+  },
+  "theme_tracker": [
+    {
+      "theme_id": "agent-security-needs-trajectory-controls",
+      "headline": "Agent security is moving from prompts to whole-run control",
+      "weeks_active": 3,
+      "first_seen_week": "2026-07-20",
+      "intensity_history": [
+        {
+          "week_start": "2026-07-27",
+          "citation_count": 4
+        },
+        {
+          "week_start": "2026-08-03",
+          "citation_count": 4
+        }
+      ]
+    },
+    {
+      "theme_id": "mcp-becomes-enterprise-transport",
+      "headline": "Stateless MCP is turning interoperability into gateway work",
+      "weeks_active": 2,
+      "first_seen_week": "2026-07-27",
+      "intensity_history": [
+        {
+          "week_start": "2026-07-27",
+          "citation_count": 3
+        },
+        {
+          "week_start": "2026-08-03",
+          "citation_count": 3
+        }
+      ]
+    },
+    {
+      "theme_id": "open-models-expand-operating-surface",
+      "headline": "Open models are expanding the operating surface, not just lowering model price",
+      "weeks_active": 2,
+      "first_seen_week": "2026-07-27",
+      "intensity_history": [
+        {
+          "week_start": "2026-07-27",
+          "citation_count": 4
+        },
+        {
+          "week_start": "2026-08-03",
+          "citation_count": 4
+        }
+      ]
+    },
+    {
+      "theme_id": "agent-interfaces-need-approval-state",
+      "headline": "Agent interfaces are becoming visible workspaces with approval state",
+      "weeks_active": 2,
+      "first_seen_week": "2026-07-27",
+      "intensity_history": [
+        {
+          "week_start": "2026-07-27",
+          "citation_count": 4
+        },
+        {
+          "week_start": "2026-08-03",
+          "citation_count": 4
+        }
+      ]
+    },
+    {
+      "theme_id": "ai-transparency-becomes-operational",
+      "headline": "AI transparency is now a product and evidence requirement",
+      "weeks_active": 2,
+      "first_seen_week": "2026-07-27",
+      "intensity_history": [
+        {
+          "week_start": "2026-07-27",
+          "citation_count": 3
+        },
+        {
+          "week_start": "2026-08-03",
+          "citation_count": 3
+        }
+      ]
+    }
+  ]
+}
