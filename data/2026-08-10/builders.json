@@ -1,0 +1,628 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "GitHub-Anchored Builds",
+  "icon": "GitPullRequest",
+  "min_items": 18,
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 1.0,
+    "items_total": 18,
+    "items_new": 18,
+    "items_returning": 0
+  },
+  "executive_summary": [
+    {
+      "headline": "The strongest builder signal is governance expressed as code.",
+      "body": "Current repositories put policy, tool exposure, memory, and workflow provenance into inspectable artifacts rather than leaving them in prompts or operator habit."
+    },
+    {
+      "headline": "Persistent context is becoming a separable infrastructure choice.",
+      "body": "Memory projects make retrieval, deletion, and contamination testable components—important for enterprise workflows with retention and audit obligations."
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "agentic-workflows-add-policy-and-review-to-ci",
+      "title": "Agentic workflows add policy and review to CI",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-10",
+      "primary_url": "https://github.com/github/gh-aw",
+      "verified": true,
+      "verified_at": "2026-08-17T01:08:00Z",
+      "summary": "A workflow toolkit shows how agent steps can be expressed as reviewable automation with explicit permissions and repository-level controls.",
+      "score": {
+        "total": 8.9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Treat tool access as an API surface with explicit identity.",
+        "Measure failure and recovery, not only task completion."
+      ],
+      "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+      "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+    },
+    {
+      "id": "a-database-mcp-toolbox-centralizes-governed-access",
+      "title": "A database MCP toolbox centralizes governed access",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-10",
+      "primary_url": "https://github.com/googleapis/mcp-toolbox",
+      "verified": true,
+      "verified_at": "2026-08-17T01:08:00Z",
+      "summary": "A database-oriented MCP project packages tool access behind a reusable gateway pattern, useful for scoping credentials and observability.",
+      "score": {
+        "total": 8.9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Treat tool access as an API surface with explicit identity.",
+        "Measure failure and recovery, not only task completion."
+      ],
+      "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+      "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+    },
+    {
+      "id": "an-mcp-server-is-becoming-an-enterprise-integration-primitive",
+      "title": "An MCP server is becoming an enterprise integration primitive",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-10",
+      "primary_url": "https://github.com/github/github-mcp-server",
+      "verified": true,
+      "verified_at": "2026-08-17T01:08:00Z",
+      "summary": "A maintained server exposes repository operations through a tool interface, making permissions, audit, and version pinning first-class concerns.",
+      "score": {
+        "total": 8.9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Treat tool access as an API surface with explicit identity.",
+        "Measure failure and recovery, not only task completion."
+      ],
+      "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+      "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+    },
+    {
+      "id": "agent-memory-projects-are-converging-on-durable-context",
+      "title": "Agent memory projects are converging on durable context",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-10",
+      "primary_url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+      "verified": true,
+      "verified_at": "2026-08-17T01:08:00Z",
+      "summary": "An agent-memory project illustrates externalized context, retrieval, and persistence patterns that avoid overloading the prompt window.",
+      "score": {
+        "total": 8.9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Treat tool access as an API surface with explicit identity.",
+        "Measure failure and recovery, not only task completion."
+      ],
+      "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+      "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "workflow_runtime",
+      "title": "Workflow runtime",
+      "description": "",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "an-orchestrator-packages-retries-and-handoffs",
+          "title": "An orchestrator packages retries and handoffs",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-10",
+          "primary_url": "https://github.com/Untrivial-ai/agent-orchestrator",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "The repository focuses on multi-agent coordination, showing where failure policy and ownership need to sit in the runtime.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "an-open-agent-index-makes-the-ecosystem-legible",
+          "title": "An open agent index makes the ecosystem legible",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-10",
+          "primary_url": "https://github.com/Zijian-Ni/awesome-ai-agents-2026",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "A current index catalogs model, framework, and tooling choices, useful as a landscape map but not a production recommendation.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "a-compliance-oriented-mcp-server-pattern",
+          "title": "A compliance-oriented MCP server pattern",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-15",
+          "primary_url": "https://github.com/AgentModule/mcp",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "The project emphasizes protocol compatibility and controlled tool exposure, a useful starting point for security review.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "agentic-memory-can-be-treated-as-a-service",
+          "title": "Agentic memory can be treated as a service",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-15",
+          "primary_url": "https://github.com/agentralabs/agentic-memory",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "The repository explores memory as a separate component with storage and retrieval boundaries.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "a-lightweight-agent-memory-component",
+          "title": "A lightweight agent-memory component",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-15",
+          "primary_url": "https://github.com/axiomhq/agent-memory",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "A focused memory package illustrates how teams can test persistence without committing to a full platform.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "the-reference-mcp-server-collection",
+          "title": "The reference MCP server collection",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-15",
+          "primary_url": "https://github.com/modelcontextprotocol/servers",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "Reference servers provide patterns for tool packaging, but each connector still needs enterprise identity and data controls.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        }
+      ]
+    },
+    {
+      "section_id": "memory_and_protocols",
+      "title": "Memory and protocols",
+      "description": "",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "an-agent-framework-centers-typed-tool-use",
+          "title": "An agent framework centers typed tool use",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-15",
+          "primary_url": "https://github.com/lastmile-ai/mcp-agent",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "The framework demonstrates composable tool calls and handoffs that can be instrumented at the gateway.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "a-unified-mcp-agent-surface",
+          "title": "A unified MCP agent surface",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-15",
+          "primary_url": "https://github.com/1mcp-app/agent",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "A unified surface reduces integration friction while increasing the need for versioning and capability allowlists.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "an-agent-memory-mcp-adapter",
+          "title": "An agent-memory MCP adapter",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-15",
+          "primary_url": "https://github.com/adamrdrew/agent-memory-mcp",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "The adapter shows how durable memory can be exposed through a standard protocol with explicit server boundaries.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "a-research-collection-on-agent-memory",
+          "title": "A research collection on agent memory",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-15",
+          "primary_url": "https://github.com/lhl/agentic-memory",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "The collection connects memory techniques to evaluation questions around recall, contamination, and deletion.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "agent-memory-topics-reveal-implementation-patterns",
+          "title": "Agent-memory topics reveal implementation patterns",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-15",
+          "primary_url": "https://github.com/topics/agentmemory",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "The topic page provides a broad map of active repositories and design patterns for persistent context.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "security-notes-for-agentic-workflows",
+          "title": "Security notes for agentic workflows",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-15",
+          "primary_url": "https://github.github.com/gh-aw/blog/2026-08-03-weekly-update/",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "A current project update highlights the move toward security review, workflow provenance, and safer automation defaults.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "the-mcp-organization-tracks-protocol-tooling",
+          "title": "The MCP organization tracks protocol tooling",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-15",
+          "primary_url": "https://github.com/mcp",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "The organization page provides a current entry point for protocol repositories, registries, and compatibility work.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "a-curated-agent-memory-paper-list",
+          "title": "A curated agent-memory paper list",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-08-15",
+          "primary_url": "https://github.com/Shichun-Liu/Agent-Memory-Paper-List",
+          "verified": true,
+          "verified_at": "2026-08-17T01:08:00Z",
+          "summary": "The list links memory research to practical implementation choices and evaluation questions.",
+          "score": {
+            "total": 7.7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "key_takeaways": [
+            "Treat tool access as an API surface with explicit identity.",
+            "Measure failure and recovery, not only task completion."
+          ],
+          "results": "Non-production implementation pattern: pinned repository, scoped credentials, traces, and human approval for write actions.",
+          "enterprise_adaptation": "Use the implementation pattern in a sandbox with least-privilege service identities and version-pinned dependencies. In a regulated environment, require data residency review, model governance approval, secrets isolation, immutable audit logs, and a documented rollback. Within 30 days, pilot one read-only workflow against synthetic or masked data and measure completion, exceptions, latency, and operator review time."
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "Agentic workflows add policy and review to CI",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-10",
+      "primary_url": "https://github.com/github/gh-aw",
+      "score": 8.9
+    },
+    {
+      "title": "A database MCP toolbox centralizes governed access",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-10",
+      "primary_url": "https://github.com/googleapis/mcp-toolbox",
+      "score": 8.9
+    },
+    {
+      "title": "An MCP server is becoming an enterprise integration primitive",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-10",
+      "primary_url": "https://github.com/github/github-mcp-server",
+      "score": 8.9
+    },
+    {
+      "title": "Agent memory projects are converging on durable context",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-10",
+      "primary_url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+      "score": 8.9
+    },
+    {
+      "title": "An orchestrator packages retries and handoffs",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-10",
+      "primary_url": "https://github.com/Untrivial-ai/agent-orchestrator",
+      "score": 7.7
+    },
+    {
+      "title": "An open agent index makes the ecosystem legible",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-10",
+      "primary_url": "https://github.com/Zijian-Ni/awesome-ai-agents-2026",
+      "score": 7.7
+    },
+    {
+      "title": "A compliance-oriented MCP server pattern",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-15",
+      "primary_url": "https://github.com/AgentModule/mcp",
+      "score": 7.7
+    },
+    {
+      "title": "Agentic memory can be treated as a service",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-15",
+      "primary_url": "https://github.com/agentralabs/agentic-memory",
+      "score": 7.7
+    },
+    {
+      "title": "A lightweight agent-memory component",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-15",
+      "primary_url": "https://github.com/axiomhq/agent-memory",
+      "score": 7.7
+    },
+    {
+      "title": "The reference MCP server collection",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-15",
+      "primary_url": "https://github.com/modelcontextprotocol/servers",
+      "score": 7.7
+    },
+    {
+      "title": "An agent framework centers typed tool use",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-15",
+      "primary_url": "https://github.com/lastmile-ai/mcp-agent",
+      "score": 7.7
+    },
+    {
+      "title": "A unified MCP agent surface",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-15",
+      "primary_url": "https://github.com/1mcp-app/agent",
+      "score": 7.7
+    },
+    {
+      "title": "An agent-memory MCP adapter",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-15",
+      "primary_url": "https://github.com/adamrdrew/agent-memory-mcp",
+      "score": 7.7
+    },
+    {
+      "title": "A research collection on agent memory",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-15",
+      "primary_url": "https://github.com/lhl/agentic-memory",
+      "score": 7.7
+    },
+    {
+      "title": "Agent-memory topics reveal implementation patterns",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-15",
+      "primary_url": "https://github.com/topics/agentmemory",
+      "score": 7.7
+    },
+    {
+      "title": "Security notes for agentic workflows",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-15",
+      "primary_url": "https://github.github.com/gh-aw/blog/2026-08-03-weekly-update/",
+      "score": 7.7
+    },
+    {
+      "title": "The MCP organization tracks protocol tooling",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-15",
+      "primary_url": "https://github.com/mcp",
+      "score": 7.7
+    },
+    {
+      "title": "A curated agent-memory paper list",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-08-15",
+      "primary_url": "https://github.com/Shichun-Liu/Agent-Memory-Paper-List",
+      "score": 7.7
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "More repositories with release tags and reproducible benchmarks"
+    ],
+    "notes": "GitHub-anchored signals were selected from repositories and project pages; repository activity and documentation quality vary."
+  }
+}

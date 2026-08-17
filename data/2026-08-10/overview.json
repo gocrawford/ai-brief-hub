@@ -1,0 +1,364 @@
+{
+  "week_start": "2026-08-10",
+  "generated_at": "2026-08-17T01:10:00Z",
+  "headline": "Agents are moving from demos to governed runtimes as cheaper inference, open models, and agent-native interfaces widen the automation opportunity while trajectory security, protocol governance, and transparency become operating requirements.",
+  "themes": [
+    {
+      "theme_id": "agent-control-plane",
+      "headline": "Agents are becoming governed runtime participants",
+      "summary": "Video coverage, social discussion, builder repositories, and research all point to the same answer: the risk is in the trajectory, permissions, handoffs, and recovery path—not only the final response.",
+      "implication": "Make scoped identity, trajectory logging, stop conditions, and rollback acceptance criteria for every agent pilot.",
+      "citations": [
+        {
+          "tab_id": "youtube",
+          "item_id": "enterprise-agents-move-from-pilot-to-governed-production",
+          "label": "Production governance discussion",
+          "primary_url": "https://www.youtube.com/watch?v=AsV8UxnWb1E"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "agent-security-shifts-from-prompts-to-trajectories",
+          "label": "Trajectory and incident signal",
+          "primary_url": "https://x.com/sama"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "agentic-workflows-add-policy-and-review-to-ci",
+          "label": "Governance-as-code implementation",
+          "primary_url": "https://github.com/github/gh-aw"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "trajectory-assurance-for-agentic-ai",
+          "label": "Trajectory assurance research",
+          "primary_url": "https://arxiv.org/abs/2608.01558"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 4,
+        "first_seen_week": "2026-07-20",
+        "note": "The security theme continues and is widening from incidents to runtime design."
+      },
+      "tags": [
+        "security",
+        "agent-governance"
+      ]
+    },
+    {
+      "theme_id": "inference-cost-compression",
+      "headline": "Cheaper inference is expanding the automation budget",
+      "summary": "The X, YouTube, launches, and community tabs describe a shift from scarce model calls to more ambitious workflows. Lower cost increases the opportunity, but also makes monitoring, budgets, and exception metrics more important.",
+      "implication": "Pilot one workflow with a hard cost-per-task budget and measure quality, latency, and human intervention together.",
+      "citations": [
+        {
+          "tab_id": "x",
+          "item_id": "ultrafast-inference-changes-the-automation-budget",
+          "label": "Fast inference product signal",
+          "primary_url": "https://x.com/OpenAI"
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "the-new-economics-of-fast-reasoning-models",
+          "label": "Cost compression briefing",
+          "primary_url": "https://www.youtube.com/watch?v=k0gY-zkja2Q"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "faster-hosted-inference-tier",
+          "label": "Fast tier launch",
+          "primary_url": "https://openai.com/products/release-notes/"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "model-release-discussion-is-becoming-evaluation-discussion",
+          "label": "Community evaluation signal",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vg569y/qwen_developers_responses_from_their_recent/"
+        }
+      ],
+      "recurrence": {
+        "status": "returning",
+        "weeks_count": 2,
+        "first_seen_week": "2026-08-03",
+        "note": "Cost compression carries forward, now with latency and production economics in sharper focus."
+      },
+      "tags": [
+        "economics",
+        "inference"
+      ]
+    },
+    {
+      "theme_id": "protocol-gateway-governance",
+      "headline": "Tool protocols are turning into gateway governance",
+      "summary": "X threads, GitHub projects, product launches, and community discussion converge on stateless transport, centralized gateways, typed handoffs, identity, and capability allowlists. Interoperability is scaling faster than informal policy.",
+      "implication": "Version tool contracts, review manifests as code, and issue dedicated scoped credentials per integration.",
+      "citations": [
+        {
+          "tab_id": "x",
+          "item_id": "stateless-tool-protocols-need-stronger-policy-layers",
+          "label": "Protocol policy signal",
+          "primary_url": "https://x.com/dsp_/status/2082173429399142616"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "a-database-mcp-toolbox-centralizes-governed-access",
+          "label": "Gateway implementation",
+          "primary_url": "https://github.com/googleapis/mcp-toolbox"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "managed-agents-in-a-developer-api",
+          "label": "Managed agent primitive",
+          "primary_url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "standards-are-still-a-prerequisite-for-scale",
+          "label": "Community standards discussion",
+          "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1mzodwa/do_we_actually_need-standards-for-ai-agents-before-enterprises-adopt"
+        }
+      ],
+      "recurrence": {
+        "status": "returning",
+        "weeks_count": 3,
+        "first_seen_week": "2026-07-27",
+        "note": "The protocol theme is returning with more implementation evidence and less specification-only discussion."
+      },
+      "tags": [
+        "MCP",
+        "interoperability"
+      ]
+    },
+    {
+      "theme_id": "open-model-portfolio",
+      "headline": "Open and hosted models are becoming a portfolio choice",
+      "summary": "Launches, model communities, social discussion, and builders show open models moving from novelty toward a practical option for privacy, latency, and cost-sensitive workflows. The decision is now where each model belongs and how it is evaluated.",
+      "implication": "Create a small model portfolio test across hosted, local, and specialized options using the same masked task set.",
+      "citations": [
+        {
+          "tab_id": "launches",
+          "item_id": "open-small-model-brings-local-inference-forward",
+          "label": "Local model launch signal",
+          "primary_url": "https://x.com/AndrewYNg"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "a-current-local-model-roundup-resets-the-shortlist",
+          "label": "Community shortlist",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "local-inference-is-now-framed-as-privacy-ux",
+          "label": "Privacy UX signal",
+          "primary_url": "https://x.com/Presidentlin/status/2084896578003689671"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "an-open-agent-index-makes-the-ecosystem-legible",
+          "label": "Ecosystem map",
+          "primary_url": "https://github.com/Zijian-Ni/awesome-ai-agents-2026"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 3,
+        "first_seen_week": "2026-07-27",
+        "note": "Open-model coverage is broader this week and more explicitly tied to deployment economics."
+      },
+      "tags": [
+        "open-models",
+        "portfolio"
+      ]
+    },
+    {
+      "theme_id": "enterprise-agent-interfaces",
+      "headline": "The next agent interface is delegation plus review",
+      "summary": "Professional discussion, video, launches, and workforce research all emphasize that users need to see what agents can do, what they did, and where a human must decide. Chat alone is not an operating interface.",
+      "implication": "Design a workflow with explicit delegation, action preview, human handoff, and a durable review record.",
+      "citations": [
+        {
+          "tab_id": "social",
+          "item_id": "ai-adoption-needs-a-new-interface-for-review",
+          "label": "Interface signal",
+          "primary_url": "https://www.linkedin.com/posts/emollick_managing-ai-requires-new-interfaces-these-activity-7488696510264684545-ku2K"
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "multi-agent-systems-need-an-owner-for-every-handoff",
+          "label": "Handoff coverage",
+          "primary_url": "https://www.youtube.com/watch?v=dv3jvcfaF7g"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "browser-built-for-agent-actions",
+          "label": "Agent browser",
+          "primary_url": "https://techcrunch.com/2026/08/07/cloudflare-launches-kitesurf-a-browser-built-for-ai-agents/"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "enterprise-ai-readiness-report",
+          "label": "Workforce readiness",
+          "primary_url": "https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html"
+        }
+      ],
+      "recurrence": {
+        "status": "returning",
+        "weeks_count": 2,
+        "first_seen_week": "2026-08-03",
+        "note": "The interface theme returns with more focus on action previews, review, and workforce design."
+      },
+      "tags": [
+        "workforce",
+        "UX"
+      ]
+    },
+    {
+      "theme_id": "transparency-as-product",
+      "headline": "Transparency is moving from policy text into product behavior",
+      "summary": "Research, launches, social signals, and community discussion show labeling, provenance, authenticity, and disclosure becoming visible controls rather than back-office compliance tasks.",
+      "implication": "Inventory affected workflows and add provenance, disclosure, and escalation requirements to the product definition.",
+      "citations": [
+        {
+          "tab_id": "research",
+          "item_id": "ai-transparency-obligations-guidance",
+          "label": "Official guidance",
+          "primary_url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "ai-transparency-obligations-move-into-practice",
+          "label": "Launch radar",
+          "primary_url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "ai-generated-content-needs-an-authenticity-control",
+          "label": "Platform trust signal",
+          "primary_url": "https://techcrunch.com/2026/07/30/linkedin-adds-a-button-to-report-ai-generated-slop/"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "the-agent-governance-landscape-is-being-mapped-by-practitioners",
+          "label": "Practitioner map",
+          "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vldsyn/quick_map_of_the_ai_agent_governance_landscape/"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 2,
+        "first_seen_week": "2026-08-03",
+        "note": "Transparency is becoming more operational as current guidance and platform controls land."
+      },
+      "tags": [
+        "transparency",
+        "trust"
+      ]
+    }
+  ],
+  "ninety_second_brief": [
+    {
+      "tab_id": "builders",
+      "item_id": "agentic-workflows-add-policy-and-review-to-ci",
+      "title": "Agentic workflows add policy and review to CI",
+      "one_line": "A workflow toolkit shows how agent steps can be expressed as reviewable automation with explicit permissions and repository-level controls.",
+      "primary_url": "https://github.com/github/gh-aw",
+      "score": 8.9,
+      "source_label": "GitHub"
+    },
+    {
+      "tab_id": "launches",
+      "item_id": "faster-hosted-inference-tier",
+      "title": "Faster hosted inference tier",
+      "one_line": "A new fast service tier for a frontier reasoning model lowers latency for selected API customers, making interactive agent loops more practical.",
+      "primary_url": "https://openai.com/products/release-notes/",
+      "score": 8.9,
+      "source_label": "Official release notes"
+    },
+    {
+      "tab_id": "research",
+      "item_id": "trajectory-assurance-for-agentic-ai",
+      "title": "Trajectory assurance for agentic AI",
+      "one_line": "A current paper direction evaluates the sequence of actions an agent takes, enabling assurance around tool use, drift, and stop conditions.",
+      "primary_url": "https://arxiv.org/abs/2608.01558",
+      "score": 8.9,
+      "source_label": "arXiv"
+    },
+    {
+      "tab_id": "youtube",
+      "item_id": "enterprise-agents-move-from-pilot-to-governed-production",
+      "title": "Enterprise agents move from pilot to governed production",
+      "one_line": "A current interview argues that production adoption depends on outcome definition, governance, security, people, and process—not model selection alone.",
+      "primary_url": "https://www.youtube.com/watch?v=AsV8UxnWb1E",
+      "score": 8.8,
+      "source_label": "Video channel"
+    },
+    {
+      "tab_id": "reddit",
+      "item_id": "a-current-local-model-roundup-resets-the-shortlist",
+      "title": "A current local-model roundup resets the shortlist",
+      "one_line": "A current community thread compares open-weight models by practical use case, emphasizing fit, memory, and deployment constraints over one leaderboard.",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+      "score": 8.8,
+      "source_label": "r/LocalLLaMA"
+    },
+    {
+      "tab_id": "social",
+      "item_id": "ai-adoption-needs-a-new-interface-for-review",
+      "title": "AI adoption needs a new interface for review",
+      "one_line": "A widely shared management signal argues that agent use requires interfaces for delegation, review, and handoff—not only chat.",
+      "primary_url": "https://www.linkedin.com/posts/emollick_managing-ai-requires-new-interfaces-these-activity-7488696510264684545-ku2K",
+      "score": 8.8,
+      "source_label": "Professional network"
+    },
+    {
+      "tab_id": "x",
+      "item_id": "agent-security-shifts-from-prompts-to-trajectories",
+      "title": "Agent security shifts from prompts to trajectories",
+      "one_line": "The current discussion focuses on cyber-capable agents, hidden tool paths, and the need to monitor the full run rather than only the final answer.",
+      "primary_url": "https://x.com/sama",
+      "score": 8.7,
+      "source_label": "Social platform"
+    },
+    {
+      "tab_id": "builders",
+      "item_id": "a-database-mcp-toolbox-centralizes-governed-access",
+      "title": "A database MCP toolbox centralizes governed access",
+      "one_line": "A database-oriented MCP project packages tool access behind a reusable gateway pattern, useful for scoping credentials and observability.",
+      "primary_url": "https://github.com/googleapis/mcp-toolbox",
+      "score": 8.9,
+      "source_label": "GitHub"
+    },
+    {
+      "tab_id": "builders",
+      "item_id": "an-mcp-server-is-becoming-an-enterprise-integration-primitive",
+      "title": "An MCP server is becoming an enterprise integration primitive",
+      "one_line": "A maintained server exposes repository operations through a tool interface, making permissions, audit, and version pinning first-class concerns.",
+      "primary_url": "https://github.com/github/github-mcp-server",
+      "score": 8.9,
+      "source_label": "GitHub"
+    },
+    {
+      "tab_id": "builders",
+      "item_id": "agent-memory-projects-are-converging-on-durable-context",
+      "title": "Agent memory projects are converging on durable context",
+      "one_line": "An agent-memory project illustrates externalized context, retrieval, and persistence patterns that avoid overloading the prompt window.",
+      "primary_url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+      "score": 8.9,
+      "source_label": "GitHub"
+    }
+  ],
+  "deltas_vs_prior_week": {
+    "themes_new_this_week": [
+      "transparency-as-product"
+    ],
+    "themes_dropped_off": [],
+    "themes_intensifying": [
+      "agent-control-plane",
+      "open-model-portfolio",
+      "transparency-as-product"
+    ],
+    "note": "This week’s signal is more operational: cost and model choice expand the opportunity, while security, review, and transparency define the conditions for scale."
+  },
+  "theme_tracker": []
+}
