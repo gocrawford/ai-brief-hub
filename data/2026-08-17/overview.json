@@ -1,0 +1,453 @@
+{
+  "week_start": "2026-08-17",
+  "generated_at": "2026-08-24T01:20:00Z",
+  "headline": "Agent runtimes, tool protocols, and evaluation discipline are becoming the operating layer as cheaper inference and broader model choice widen the automation opportunity.",
+  "themes": [
+    {
+      "theme_id": "agent-control-plane",
+      "headline": "Agents are becoming governed runtime participants",
+      "summary": "Across video, live discussion, builders, research, and community threads, the operational unit is shifting from the model response to the full trajectory: identity, permissions, tool calls, recovery, and human review. The practical question is no longer whether an agent can complete a task once; it is whether the runtime makes every consequential step inspectable and reversible.",
+      "implication": "Make scoped identity, trajectory logging, stop conditions, and rollback acceptance criteria for every agent pilot.",
+      "citations": [
+        {
+          "tab_id": "youtube",
+          "item_id": "enterprise-agents-actually-work-with-governed-runtime",
+          "label": "Production runtime discussion",
+          "primary_url": "https://www.youtube.com/watch?v=mav15aW9lLM"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "mcp-servers-expose-enterprise-secrets",
+          "label": "MCP exposure warning",
+          "primary_url": "https://x.com/TheHackersNews/status/2089337869060251758"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "gh-aw-v087-hardens-agentic-workflows",
+          "label": "Governance-as-code implementation",
+          "primary_url": "https://github.github.com/gh-aw/blog/2026-08-17-weekly-update/"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "policy-algebra-trust-preserving-execution",
+          "label": "Trust-preserving execution research",
+          "primary_url": "https://arxiv.org/abs/2608.16402"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "quick-map-agent-governance-landscape",
+          "label": "Practitioner governance map",
+          "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vldsyn/quick_map_of_the_ai_agent_governance_landscape/"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 5,
+        "first_seen_week": "2026-07-20",
+        "note": "The theme is widening from agent security incidents into runtime policy, identity, and recovery design."
+      },
+      "tags": [
+        "security",
+        "agent-governance"
+      ]
+    },
+    {
+      "theme_id": "inference-cost-compression",
+      "headline": "Cheaper, faster inference is expanding the automation budget",
+      "summary": "Product launches, video coverage, model analysis, and community comparisons all point to more affordable agent loops. Lower latency and pricing make interactive and long-running workflows more feasible, but they also increase the need to measure total cost per completed task after context, retries, tool calls, and human review.",
+      "implication": "Pilot one workflow with a hard cost-per-task budget and measure quality, latency, retries, and human intervention together.",
+      "citations": [
+        {
+          "tab_id": "launches",
+          "item_id": "openai-ultrafast-gpt56-sol",
+          "label": "Ultrafast inference launch",
+          "primary_url": "https://openai.com/index/previewing-ultrafast/"
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "ultrafast-inference-makes-agent-loops-interactive",
+          "label": "Latency and workflow economics",
+          "primary_url": "https://www.youtube.com/watch?v=eir_2k4kVL0"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "deepseek-v4-pro-price-and-capability-tradeoff",
+          "label": "Capability-price analysis",
+          "primary_url": "https://x.com/ArtificialAnlys/status/2088440350734201149"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "community-benchmarking-cost",
+          "label": "Community cost-aware benchmarking",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vs3joh/glm53_artificial_analysis_benchmarks/"
+        }
+      ],
+      "recurrence": {
+        "status": "returning",
+        "weeks_count": 3,
+        "first_seen_week": "2026-08-03",
+        "note": "The economics signal returns with sharper evidence on latency, pricing, cache behavior, and task-level cost."
+      },
+      "tags": [
+        "economics",
+        "inference"
+      ]
+    },
+    {
+      "theme_id": "protocol-gateway-governance",
+      "headline": "Tool protocols are turning into gateway governance",
+      "summary": "The A2A foundation move, MCP security discussion, GitHub server releases, and compositional-skill research converge on the same architecture: interoperability needs typed contracts, capability allowlists, identity, versioning, and revoke paths. Standards are becoming an operating concern because each new connector expands the blast radius of a mis-scoped permission.",
+      "implication": "Version tool contracts, review manifests as code, and issue dedicated scoped credentials per integration.",
+      "citations": [
+        {
+          "tab_id": "x",
+          "item_id": "a2a-joins-agentic-ai-foundation",
+          "label": "A2A foundation announcement",
+          "primary_url": "https://x.com/GoogleOSS/status/2089425274916225523"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "github-mcp-server-release-180",
+          "label": "MCP server implementation",
+          "primary_url": "https://github.com/github/github-mcp-server"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "composkill-compositional-skill-chain-attacks",
+          "label": "Skill-chain attack research",
+          "primary_url": "https://arxiv.org/abs/2608.16246"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "enterprise-agent-identity-checklist",
+          "label": "Enterprise identity checklist",
+          "primary_url": "https://www.linkedin.com/posts/michaelemarin_ai-agents-news-week-of-august-11-2026-activity-7492742841517989888-uXAO"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 4,
+        "first_seen_week": "2026-07-27",
+        "note": "Protocol coverage now carries concrete foundation, server, identity, and attack-chain evidence."
+      },
+      "tags": [
+        "MCP",
+        "interoperability"
+      ]
+    },
+    {
+      "theme_id": "open-model-portfolio",
+      "headline": "Open and hosted models are becoming a portfolio choice",
+      "summary": "Launches, local-model communities, live model analysis, and video explainers increasingly frame model selection as a portfolio decision. Privacy, licensing, memory, latency, support, and task fit matter alongside benchmark quality; one default model is less useful than a dated, comparable test across deployment modes.",
+      "implication": "Create a small model portfolio test across hosted, local, and specialized options using the same masked task set.",
+      "citations": [
+        {
+          "tab_id": "youtube",
+          "item_id": "open-model-week-changes-local-deployment-options",
+          "label": "Open-model deployment briefing",
+          "primary_url": "https://www.youtube.com/watch?v=Spjxg9Gwq5I"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "best-local-llms-august-2026",
+          "label": "Local-model task shortlist",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "open-model-portfolio-expands",
+          "label": "Open-model portfolio discussion",
+          "primary_url": "https://x.com/AGTPinsights/status/2088107008410935740"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "aws-nemotron-lightning-sagemaker",
+          "label": "Open model deployment launch",
+          "primary_url": "https://aws.amazon.com/blogs/machine-learning/category/post-types/announcements/"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 4,
+        "first_seen_week": "2026-07-27",
+        "note": "Open-model coverage is now tied directly to deployment economics and enterprise fit."
+      },
+      "tags": [
+        "open-models",
+        "portfolio"
+      ]
+    },
+    {
+      "theme_id": "enterprise-agent-interfaces",
+      "headline": "The next agent interface is delegation plus review",
+      "summary": "Professional discussion, video, community, and product signals all emphasize that users need to see what agents can do, what they did, and where a human must decide. Chat is becoming only one surface; the enterprise interface is a bounded delegation loop with action preview, explicit handoff, and a durable review record.",
+      "implication": "Design a workflow with explicit delegation, action preview, human handoff, and a durable review record.",
+      "citations": [
+        {
+          "tab_id": "social",
+          "item_id": "enterprise-ai-needs-review-interface",
+          "label": "Review-interface signal",
+          "primary_url": "https://www.linkedin.com/pulse/ai-agents-news-week-of-august-11-2026-activity-7492742841517989888-uXAO"
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "agent-orchestration-needs-human-handoffs",
+          "label": "Human handoff coverage",
+          "primary_url": "https://www.youtube.com/watch?v=07-gy7iDJVQ"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "agent-governance-needs-stop-conditions",
+          "label": "Community stop-condition discussion",
+          "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vldsyn/quick_map_of_the_ai_agent_governance_landscape/"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "show-hn-ozbrain-shared-agent-memory",
+          "label": "Shared-memory builder signal",
+          "primary_url": "https://news.ycombinator.com/item?id=47059153"
+        }
+      ],
+      "recurrence": {
+        "status": "returning",
+        "weeks_count": 3,
+        "first_seen_week": "2026-08-03",
+        "note": "The interface theme returns as more tools add review, memory, and explicit handoff surfaces."
+      },
+      "tags": [
+        "workflow-design",
+        "human-in-the-loop"
+      ]
+    },
+    {
+      "theme_id": "evaluation-lifecycle",
+      "headline": "Evaluation is moving from launch benchmarks to lifecycle evidence",
+      "summary": "Research on LLM judges, long-horizon agents, and agent memory is reinforced by benchmark-focused video, live analysis, and local-model community testing. The signal favors dated task suites, independent measurement, trajectory review, and regression checks over one-time leaderboard claims.",
+      "implication": "Keep a versioned evaluation set and require quality, cost, latency, tool-use, and reviewer-effort evidence before changing a production default.",
+      "citations": [
+        {
+          "tab_id": "research",
+          "item_id": "llm-judge-lifecycle-recommendations",
+          "label": "LLM-judge lifecycle research",
+          "primary_url": "https://arxiv.org/abs/2608.18300"
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "faraday-replicates-research-with-long-horizon-agent",
+          "label": "Long-horizon benchmark",
+          "primary_url": "https://www.youtube.com/watch?v=-uVZKUcfE7k"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "deepseek-v4-pro-price-and-capability-tradeoff",
+          "label": "Independent benchmark economics",
+          "primary_url": "https://x.com/ArtificialAnlys/status/2088440350734201149"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "glm53-artificial-analysis-benchmarks",
+          "label": "Community benchmark reading",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vs3joh/glm53_artificial_analysis_benchmarks/"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-08-17",
+        "note": "This is the first week the evaluation lifecycle signal clears the cross-source threshold as a distinct theme."
+      },
+      "tags": [
+        "evaluation",
+        "measurement"
+      ]
+    }
+  ],
+  "ninety_second_brief": [
+    {
+      "tab_id": "builders",
+      "item_id": "gh-aw-v087-hardens-agentic-workflows",
+      "title": "gh-aw v0.87.0 hardens agentic workflows",
+      "one_line": "Governance-as-code is becoming a practical control plane for agentic workflows.",
+      "primary_url": "https://github.github.com/gh-aw/blog/2026-08-17-weekly-update/",
+      "score": 8.9,
+      "source_label": "GitHub"
+    },
+    {
+      "tab_id": "research",
+      "item_id": "policy-algebra-trust-preserving-execution",
+      "title": "Policy algebra treats reliable capability as a path property",
+      "one_line": "Policy algebra turns identity, policy, and execution constraints into explicit controls for agent runs.",
+      "primary_url": "https://arxiv.org/abs/2608.16402",
+      "score": 8.9,
+      "source_label": "arXiv"
+    },
+    {
+      "tab_id": "launches",
+      "item_id": "openai-ultrafast-gpt56-sol",
+      "title": "OpenAI previews Ultrafast GPT-5.6 Sol service tier",
+      "one_line": "Ultrafast inference makes more interactive agent loops economically plausible, but total task cost still needs measurement.",
+      "primary_url": "https://openai.com/index/previewing-ultrafast/",
+      "score": 8.9,
+      "source_label": "OpenAI"
+    },
+    {
+      "tab_id": "x",
+      "item_id": "a2a-joins-agentic-ai-foundation",
+      "title": "A2A joining the Agentic AI Foundation makes interoperability concrete",
+      "one_line": "A2A entering a broader foundation makes cross-agent compatibility, identity, and stewardship concrete.",
+      "primary_url": "https://x.com/GoogleOSS/status/2089425274916225523",
+      "score": 8.8,
+      "source_label": "X"
+    },
+    {
+      "tab_id": "x",
+      "item_id": "mcp-servers-expose-enterprise-secrets",
+      "title": "MCP servers widen the enterprise attack surface",
+      "one_line": "Connector discovery is only useful when it is paired with scoped access and a tested revoke path.",
+      "primary_url": "https://x.com/TheHackersNews/status/2089337869060251758",
+      "score": 8.8,
+      "source_label": "X"
+    },
+    {
+      "tab_id": "launches",
+      "item_id": "aws-bedrock-cross-region-gpt56",
+      "title": "Bedrock adds GPT-5.6 models and cross-Region inference",
+      "one_line": "Cross-region hosted inference broadens availability options while raising residency and routing questions.",
+      "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-bedrock-cross-region-openai-v2/",
+      "score": 8.8,
+      "source_label": "AWS"
+    },
+    {
+      "tab_id": "social",
+      "item_id": "enterprise-ai-needs-review-interface",
+      "title": "Enterprise AI needs an interface for review, not just generation",
+      "one_line": "Enterprise adoption needs an interface for delegation, action preview, and human review\u2014not chat alone.",
+      "primary_url": "https://www.linkedin.com/pulse/ai-agents-news-week-of-august-11-2026-activity-7492742841517989888-uXAO",
+      "score": 8.8,
+      "source_label": "LinkedIn"
+    },
+    {
+      "tab_id": "reddit",
+      "item_id": "best-local-llms-august-2026",
+      "title": "The local-model shortlist is now organized by task",
+      "one_line": "The local-model shortlist is splitting by task and deployment constraint rather than one overall winner.",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+      "score": 8.7,
+      "source_label": "r/LocalLLaMA"
+    },
+    {
+      "tab_id": "youtube",
+      "item_id": "faraday-replicates-research-with-long-horizon-agent",
+      "title": "Faraday tests whether an AI scientist can reproduce published research",
+      "one_line": "Long-horizon replication makes agent reliability measurable beyond a single successful demo.",
+      "primary_url": "https://www.youtube.com/watch?v=-uVZKUcfE7k",
+      "score": 8.7,
+      "source_label": "AI Explained"
+    },
+    {
+      "tab_id": "research",
+      "item_id": "nist-ai-csf-analysis-draft",
+      "title": "NIST releases a draft guide for AI-assisted CSF analysis",
+      "one_line": "A draft cybersecurity profile keeps AI risk management tied to lifecycle controls and organizational evidence.",
+      "primary_url": "https://www.nist.gov/news-events/news/2026/08/seeking-public-comment-using-artificial-intelligence-cybersecurity",
+      "score": 8.7,
+      "source_label": "NIST"
+    }
+  ],
+  "deltas_vs_prior_week": {
+    "themes_new_this_week": [
+      "evaluation-lifecycle"
+    ],
+    "themes_dropped_off": [
+      "transparency-as-product"
+    ],
+    "themes_intensifying": [
+      "agent-control-plane",
+      "protocol-gateway-governance",
+      "open-model-portfolio"
+    ],
+    "note": "The week shifts emphasis from model novelty to operating controls: runtime governance, protocol identity, lifecycle evaluation, and review interfaces. Inference economics and open-model choice continue, but the strategic bottleneck is now safe, measurable workflow execution."
+  },
+  "theme_tracker": [
+    {
+      "theme_id": "agent-control-plane",
+      "headline": "Agents are becoming governed runtime participants",
+      "weeks_active": 2,
+      "first_seen_week": "2026-08-10",
+      "intensity_history": [
+        {
+          "week_start": "2026-08-10",
+          "citation_count": 4
+        },
+        {
+          "week_start": "2026-08-17",
+          "citation_count": 5
+        }
+      ]
+    },
+    {
+      "theme_id": "inference-cost-compression",
+      "headline": "Cheaper, faster inference is expanding the automation budget",
+      "weeks_active": 2,
+      "first_seen_week": "2026-08-10",
+      "intensity_history": [
+        {
+          "week_start": "2026-08-10",
+          "citation_count": 4
+        },
+        {
+          "week_start": "2026-08-17",
+          "citation_count": 4
+        }
+      ]
+    },
+    {
+      "theme_id": "protocol-gateway-governance",
+      "headline": "Tool protocols are turning into gateway governance",
+      "weeks_active": 2,
+      "first_seen_week": "2026-08-10",
+      "intensity_history": [
+        {
+          "week_start": "2026-08-10",
+          "citation_count": 4
+        },
+        {
+          "week_start": "2026-08-17",
+          "citation_count": 4
+        }
+      ]
+    },
+    {
+      "theme_id": "open-model-portfolio",
+      "headline": "Open and hosted models are becoming a portfolio choice",
+      "weeks_active": 2,
+      "first_seen_week": "2026-08-10",
+      "intensity_history": [
+        {
+          "week_start": "2026-08-10",
+          "citation_count": 4
+        },
+        {
+          "week_start": "2026-08-17",
+          "citation_count": 4
+        }
+      ]
+    },
+    {
+      "theme_id": "enterprise-agent-interfaces",
+      "headline": "The next agent interface is delegation plus review",
+      "weeks_active": 2,
+      "first_seen_week": "2026-08-10",
+      "intensity_history": [
+        {
+          "week_start": "2026-08-10",
+          "citation_count": 4
+        },
+        {
+          "week_start": "2026-08-17",
+          "citation_count": 4
+        }
+      ]
+    }
+  ]
+}

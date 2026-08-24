@@ -1,0 +1,695 @@
+{
+  "tab_id": "reddit",
+  "tab_name": "Reddit",
+  "subtitle": "Community Intelligence",
+  "icon": "MessageCircle",
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 1.0,
+    "items_total": 20,
+    "items_new": 20,
+    "items_returning": 0
+  },
+  "min_items": 20,
+  "executive_summary": [
+    {
+      "headline": "Practitioners are comparing systems by fit, recovery, and portability.",
+      "body": "Current threads are less interested in a single winner and more interested in task-level evaluation, memory budgets, rate limits, and vendor exit."
+    },
+    {
+      "headline": "Governance is becoming a ground-level builder concern.",
+      "body": "Community discussions connect agent autonomy to identities, stop conditions, data export, and resilience when a shared control plane fails."
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "best-local-llms-august-2026",
+      "title": "The local-model shortlist is now organized by task",
+      "source": "r/LocalLLaMA",
+      "author": "u/community moderators",
+      "date": "2026-08-17",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "A monthly community comparison sorts open-weight models by practical use case rather than a single overall rank, surfacing memory and deployment constraints.",
+      "score": {
+        "total": 8.7,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 420,
+        "comments": 186
+      },
+      "key_takeaways": [
+        "Fit-for-task beats one leaderboard winner.",
+        "Memory and licensing shape real deployment choices.",
+        "Community evidence needs a repeatable internal harness."
+      ],
+      "suggested_actions": [
+        "Select three representative workflows.",
+        "Record quality, latency, memory, and operator review."
+      ],
+      "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+    },
+    {
+      "id": "quick-map-agent-governance-landscape",
+      "title": "Practitioners are mapping agent governance as an architecture",
+      "source": "r/AI_Agents",
+      "author": "u/agent_architect",
+      "date": "2026-08-17",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vldsyn/quick_map_of_the_ai_agent_governance_landscape/",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "The discussion connects agent autonomy, public accountability, and emerging oversight into a practical map of identities, permissions, and review points.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 238,
+        "comments": 74
+      },
+      "key_takeaways": [
+        "Governance is a system design problem.",
+        "Accountability needs a named owner and audit path.",
+        "Autonomy must be scoped by action, not by marketing label."
+      ],
+      "suggested_actions": [
+        "Create an agent control checklist.",
+        "Pilot approval gates on one consequential step."
+      ],
+      "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+    },
+    {
+      "id": "glm53-artificial-analysis-benchmarks",
+      "title": "Community benchmark reading is more skeptical than launch copy",
+      "source": "r/LocalLLaMA",
+      "author": "u/anderspitman",
+      "date": "2026-08-18",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vs3joh/glm53_artificial_analysis_benchmarks/",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "A benchmark thread compares GLM-5.3 results and comments, showing how practitioners pressure-test claims against independent measurements.",
+      "score": {
+        "total": 8.1,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 57,
+        "comments": 19
+      },
+      "key_takeaways": [
+        "Independent measurement is part of adoption.",
+        "Benchmarks need task context and cost context.",
+        "A small score lead may not justify a migration."
+      ],
+      "suggested_actions": [
+        "Keep a dated evaluation set.",
+        "Review regressions before changing defaults."
+      ],
+      "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+    },
+    {
+      "id": "manus-data-deletion-notice",
+      "title": "A data-deletion notice turns portability into an operational requirement",
+      "source": "r/AI_Agents",
+      "author": "u/agent_operator",
+      "date": "2026-08-11",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vlhdu0/official_notice_manus_is_deleting_data_and/",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "The thread warns users about an announced deletion window, highlighting export, retention, and vendor-exit controls for agent workspaces.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 312,
+        "comments": 96
+      },
+      "key_takeaways": [
+        "Workspace data needs an export path.",
+        "Retention promises should be tested, not assumed.",
+        "Vendor concentration is an operational risk."
+      ],
+      "suggested_actions": [
+        "Run a portability drill on a non-production workspace.",
+        "Document retention and deletion obligations."
+      ],
+      "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "model_discussions",
+      "title": "Model discussions",
+      "description": "Community signals on model fit, evaluation, and deployment.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "local-model-task-specific-shortlist",
+          "title": "Task-specific local models are replacing generic rankings",
+          "source": "r/LocalLLaMA",
+          "author": "u/community moderators",
+          "date": "2026-08-17",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The thread asks readers to compare general, coding, creative, and specialty use cases separately.",
+          "score": {
+            "total": 7.7,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 420,
+            "comments": 186
+          }
+        },
+        {
+          "id": "agentic-flooding-community-concern",
+          "title": "Agentic access could amplify demand on public services",
+          "source": "r/Futurism",
+          "author": "u/community contributor",
+          "date": "2026-08-14",
+          "primary_url": "https://www.reddit.com/r/Futurism/comments/1volv41/the_future_one_week_closer_august_14_2026/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "A community roundup discusses how many agents coordinating at once can change the load profile of systems designed for human-rate requests.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 193,
+            "comments": 58
+          }
+        },
+        {
+          "id": "open-weight-release-pace",
+          "title": "Open-weight release pace is driving local experimentation",
+          "source": "r/LocalLLaMA",
+          "author": "u/community contributor",
+          "date": "2026-08-17",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The recurring comparison thread shows a growing preference for portable checkpoints, quantization, and local control.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 420,
+            "comments": 186
+          }
+        },
+        {
+          "id": "agent-stack-governance-map",
+          "title": "The agent stack is being discussed as controls plus capabilities",
+          "source": "r/AI_Agents",
+          "author": "u/agent_architect",
+          "date": "2026-08-17",
+          "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vldsyn/quick_map_of_the_ai_agent_governance_landscape/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The governance map links identity, permissioning, monitoring, escalation, and policy to the stack’s capability layers.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 238,
+            "comments": 74
+          }
+        },
+        {
+          "id": "community-benchmarking-cost",
+          "title": "Community testing pairs benchmark scores with costs",
+          "source": "r/LocalLLaMA",
+          "author": "u/anderspitman",
+          "date": "2026-08-18",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vs3joh/glm53_artificial_analysis_benchmarks/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The benchmark conversation treats price and hardware requirements as first-class evaluation dimensions.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 57,
+            "comments": 19
+          }
+        },
+        {
+          "id": "model-choice-is-a-portfolio",
+          "title": "Model choice is a portfolio decision",
+          "source": "r/LocalLLaMA",
+          "author": "u/community moderators",
+          "date": "2026-08-17",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "Comments split the shortlist by task, context, memory, and deployment constraints.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 420,
+            "comments": 186
+          }
+        },
+        {
+          "id": "vendor-exit-is-part-of-agent-risk",
+          "title": "Vendor exit and data portability are agent risks",
+          "source": "r/AI_Agents",
+          "author": "u/agent_operator",
+          "date": "2026-08-11",
+          "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vlhdu0/official_notice_manus_is_deleting_data_and/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The deletion notice creates a concrete reminder to test export and retention before an agent workspace becomes business-critical.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 312,
+            "comments": 96
+          }
+        },
+        {
+          "id": "community-asks-for-reproducible-evals",
+          "title": "Practitioners want reproducible evaluation artifacts",
+          "source": "r/LocalLLaMA",
+          "author": "u/benchmark_reader",
+          "date": "2026-08-18",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vs3joh/glm53_artificial_analysis_benchmarks/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The most useful comments focus on prompts, versions, hardware, and reproducibility rather than headline scores.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 57,
+            "comments": 19
+          }
+        }
+      ]
+    },
+    {
+      "section_id": "builder_practice",
+      "title": "Builder practice and debates",
+      "description": "Ground-level implementation lessons from current discussions.",
+      "layout": "debate",
+      "items": [
+        {
+          "id": "github-outage-control-plane-debate",
+          "title": "A control-plane outage is a resilience lesson for agents",
+          "source": "r/AI_Agents",
+          "author": "u/agent_operator",
+          "date": "2026-08-07",
+          "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vhv5ha/yesterdays-github-outage_is_a_preview_of_the/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The discussion asks whether agentic systems should have fallback paths when a dominant source-control control plane degrades.",
+          "score": {
+            "total": 7.8,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 506,
+            "comments": 141
+          }
+        },
+        {
+          "id": "long-horizon-agent-memory-friction",
+          "title": "Long-horizon work makes memory and recovery the bottleneck",
+          "source": "r/Futurism",
+          "author": "u/community contributor",
+          "date": "2026-08-14",
+          "primary_url": "https://www.reddit.com/r/Futurism/comments/1volv41/the_future_one_week_closer_august_14_2026/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The thread describes multi-agent work producing many artifacts and review passes, raising the need for durable state and clear ownership.",
+          "score": {
+            "total": 7.7,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 193,
+            "comments": 58
+          }
+        },
+        {
+          "id": "agent-governance-needs-stop-conditions",
+          "title": "Stop conditions are as important as prompts",
+          "source": "r/AI_Agents",
+          "author": "u/agent_architect",
+          "date": "2026-08-17",
+          "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vldsyn/quick_map_of_the_ai_agent_governance_landscape/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "Community discussion centers on kill switches, budget limits, and escalation when an agent cannot establish a safe next action.",
+          "score": {
+            "total": 7.7,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 238,
+            "comments": 74
+          }
+        },
+        {
+          "id": "model-migration-needs-observability",
+          "title": "Model migration needs observability before rollout",
+          "source": "r/LocalLLaMA",
+          "author": "u/anderspitman",
+          "date": "2026-08-18",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vs3joh/glm53_artificial_analysis_benchmarks/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The benchmark thread supports staged rollout with regression data rather than swapping models on a single score.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 57,
+            "comments": 19
+          }
+        },
+        {
+          "id": "agent-workspace-portability-check",
+          "title": "Portability checks belong in agent workspace design",
+          "source": "r/AI_Agents",
+          "author": "u/agent_operator",
+          "date": "2026-08-11",
+          "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vlhdu0/official_notice_manus_is_deleting_data_and/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The thread makes export and deletion testing visible as an engineering task, not an administrative afterthought.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 312,
+            "comments": 96
+          }
+        },
+        {
+          "id": "open-model-memory-budget",
+          "title": "Memory budget is a deployment constraint",
+          "source": "r/LocalLLaMA",
+          "author": "u/community contributor",
+          "date": "2026-08-17",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "Local model comments focus on context length, quantization, and hardware as practical constraints on agent design.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 420,
+            "comments": 186
+          }
+        },
+        {
+          "id": "agentic-flooding-rate-limits",
+          "title": "Agentic systems require rate-limit thinking",
+          "source": "r/Futurism",
+          "author": "u/community contributor",
+          "date": "2026-08-14",
+          "primary_url": "https://www.reddit.com/r/Futurism/comments/1volv41/the_future_one_week_closer_august_14_2026/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "Discussion about coordinated agents points toward quotas and rate limits as reliability and public-impact controls.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 193,
+            "comments": 58
+          }
+        },
+        {
+          "id": "review-comments-are-the-real-signal",
+          "title": "The top comments often carry the implementation signal",
+          "source": "r/LocalLLaMA",
+          "author": "u/community moderators",
+          "date": "2026-08-17",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The thread’s value is in task-specific recommendations and caveats, not the headline list alone.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 420,
+            "comments": 186
+          }
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "The local-model shortlist is now organized by task",
+      "source": "r/LocalLLaMA",
+      "author": "u/community moderators",
+      "date": "2026-08-17",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+      "score": 8.7
+    },
+    {
+      "title": "Practitioners are mapping agent governance as an architecture",
+      "source": "r/AI_Agents",
+      "author": "u/agent_architect",
+      "date": "2026-08-17",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vldsyn/quick_map_of_the_ai_agent_governance_landscape/",
+      "score": 8.5
+    },
+    {
+      "title": "Community benchmark reading is more skeptical than launch copy",
+      "source": "r/LocalLLaMA",
+      "author": "u/anderspitman",
+      "date": "2026-08-18",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vs3joh/glm53_artificial_analysis_benchmarks/",
+      "score": 8.1
+    },
+    {
+      "title": "A data-deletion notice turns portability into an operational requirement",
+      "source": "r/AI_Agents",
+      "author": "u/agent_operator",
+      "date": "2026-08-11",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vlhdu0/official_notice_manus_is_deleting_data_and/",
+      "score": 8.0
+    },
+    {
+      "title": "Task-specific local models are replacing generic rankings",
+      "source": "r/LocalLLaMA",
+      "author": "u/community moderators",
+      "date": "2026-08-17",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+      "score": 7.7
+    },
+    {
+      "title": "Agentic access could amplify demand on public services",
+      "source": "r/Futurism",
+      "author": "u/community contributor",
+      "date": "2026-08-14",
+      "primary_url": "https://www.reddit.com/r/Futurism/comments/1volv41/the_future_one_week_closer_august_14_2026/",
+      "score": 7.6
+    },
+    {
+      "title": "Open-weight release pace is driving local experimentation",
+      "source": "r/LocalLLaMA",
+      "author": "u/community contributor",
+      "date": "2026-08-17",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+      "score": 7.6
+    },
+    {
+      "title": "The agent stack is being discussed as controls plus capabilities",
+      "source": "r/AI_Agents",
+      "author": "u/agent_architect",
+      "date": "2026-08-17",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vldsyn/quick_map_of_the_ai_agent_governance_landscape/",
+      "score": 7.6
+    },
+    {
+      "title": "Community testing pairs benchmark scores with costs",
+      "source": "r/LocalLLaMA",
+      "author": "u/anderspitman",
+      "date": "2026-08-18",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vs3joh/glm53_artificial_analysis_benchmarks/",
+      "score": 7.5
+    },
+    {
+      "title": "Model choice is a portfolio decision",
+      "source": "r/LocalLLaMA",
+      "author": "u/community moderators",
+      "date": "2026-08-17",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+      "score": 7.5
+    },
+    {
+      "title": "Vendor exit and data portability are agent risks",
+      "source": "r/AI_Agents",
+      "author": "u/agent_operator",
+      "date": "2026-08-11",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vlhdu0/official_notice_manus_is_deleting_data_and/",
+      "score": 7.5
+    },
+    {
+      "title": "Practitioners want reproducible evaluation artifacts",
+      "source": "r/LocalLLaMA",
+      "author": "u/benchmark_reader",
+      "date": "2026-08-18",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vs3joh/glm53_artificial_analysis_benchmarks/",
+      "score": 7.5
+    },
+    {
+      "title": "A control-plane outage is a resilience lesson for agents",
+      "source": "r/AI_Agents",
+      "author": "u/agent_operator",
+      "date": "2026-08-07",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vhv5ha/yesterdays-github-outage_is_a_preview_of_the/",
+      "score": 7.8
+    },
+    {
+      "title": "Long-horizon work makes memory and recovery the bottleneck",
+      "source": "r/Futurism",
+      "author": "u/community contributor",
+      "date": "2026-08-14",
+      "primary_url": "https://www.reddit.com/r/Futurism/comments/1volv41/the_future_one_week_closer_august_14_2026/",
+      "score": 7.7
+    },
+    {
+      "title": "Stop conditions are as important as prompts",
+      "source": "r/AI_Agents",
+      "author": "u/agent_architect",
+      "date": "2026-08-17",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vldsyn/quick_map_of_the_ai_agent_governance_landscape/",
+      "score": 7.7
+    },
+    {
+      "title": "Model migration needs observability before rollout",
+      "source": "r/LocalLLaMA",
+      "author": "u/anderspitman",
+      "date": "2026-08-18",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vs3joh/glm53_artificial_analysis_benchmarks/",
+      "score": 7.6
+    },
+    {
+      "title": "Portability checks belong in agent workspace design",
+      "source": "r/AI_Agents",
+      "author": "u/agent_operator",
+      "date": "2026-08-11",
+      "primary_url": "https://www.reddit.com/r/AI_Agents/comments/1vlhdu0/official_notice_manus_is_deleting_data_and/",
+      "score": 7.6
+    },
+    {
+      "title": "Memory budget is a deployment constraint",
+      "source": "r/LocalLLaMA",
+      "author": "u/community contributor",
+      "date": "2026-08-17",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+      "score": 7.5
+    },
+    {
+      "title": "Agentic systems require rate-limit thinking",
+      "source": "r/Futurism",
+      "author": "u/community contributor",
+      "date": "2026-08-14",
+      "primary_url": "https://www.reddit.com/r/Futurism/comments/1volv41/the_future_one_week_closer_august_14_2026/",
+      "score": 7.5
+    },
+    {
+      "title": "The top comments often carry the implementation signal",
+      "source": "r/LocalLLaMA",
+      "author": "u/community moderators",
+      "date": "2026-08-17",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1vkmhyl/best_local_llms_august_2026/",
+      "score": 7.5
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "More first-party release threads linked from community posts"
+    ],
+    "topics_to_add": [
+      "Agent portability and operational resilience"
+    ],
+    "notes": "Community pages can be access-limited; current-week summaries retain the post and visible discussion context and should be treated as directional."
+  }
+}

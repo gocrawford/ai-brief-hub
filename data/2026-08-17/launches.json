@@ -1,0 +1,685 @@
+{
+  "tab_id": "launches",
+  "tab_name": "Launches",
+  "subtitle": "Launch Intelligence",
+  "icon": "Rocket",
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 1.0,
+    "items_total": 20,
+    "items_new": 20,
+    "items_returning": 0
+  },
+  "min_items": 20,
+  "executive_summary": [
+    {
+      "headline": "Enterprise platforms are packaging faster models with governance controls.",
+      "body": "This week’s clearest launches pair model or runtime improvements with region, spend, identity, and observability controls that make evaluation more actionable."
+    },
+    {
+      "headline": "The near-term test is workflow economics, not headline capability.",
+      "body": "Ultrafast inference, persistent sessions, and broader model catalogs are useful only when task cost, latency, residency, and rollback are measured together."
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "openai-ultrafast-gpt56-sol",
+      "title": "OpenAI previews Ultrafast GPT-5.6 Sol service tier",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-08-13",
+      "primary_url": "https://openai.com/index/previewing-ultrafast/",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "The official announcement describes a limited preview of GPT-5.6 Sol on Cerebras hardware at up to 14 times the standard processing speed, aimed at latency-sensitive workflows.",
+      "score": {
+        "total": 8.9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "evaluation": "EVALUATE NOW",
+      "priority": "HIGH",
+      "category": "Frontier Model",
+      "competitive_context": "The strategic question is whether lower latency changes the feasible workflow while preserving model, data, and budget controls.",
+      "pricing": "Limited preview; public pricing not stated in the announcement.",
+      "key_takeaways": [
+        "Benchmark time to useful result and tool-call count.",
+        "Treat faster loops as a spend-control issue.",
+        "Confirm capacity and data handling before a pilot."
+      ]
+    },
+    {
+      "id": "aws-bedrock-cross-region-gpt56",
+      "title": "Bedrock adds GPT-5.6 models and cross-Region inference",
+      "source": "AWS",
+      "author": "Amazon Web Services",
+      "date": "2026-08-17",
+      "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-bedrock-cross-region-openai-v2/",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "The official launch adds GPT-5.6 Sol, Terra, and Luna through Responses, Converse, and Chat Completions APIs, with global and geography-scoped cross-Region inference.",
+      "score": {
+        "total": 8.8,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "evaluation": "EVALUATE NOW",
+      "priority": "HIGH",
+      "category": "Enterprise AI",
+      "competitive_context": "The geographic routing options make throughput and residency part of the same architecture decision.",
+      "pricing": "Pricing varies by model and Bedrock terms; validate current account pricing.",
+      "key_takeaways": [
+        "Geo routing can raise capacity without changing application code.",
+        "Residency claims need an explicit route test.",
+        "API compatibility lowers migration friction."
+      ]
+    },
+    {
+      "id": "google-antigravity-enterprise",
+      "title": "Google expands Antigravity for enterprise customers",
+      "source": "Google Cloud",
+      "author": "Google Cloud",
+      "date": "2026-08-20",
+      "primary_url": "https://cloud.google.com/blog/products/ai-machine-learning/expanding-google-antigravity-for-enterprise-customers",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "The announcement adds Antigravity to eligible Gemini Enterprise subscriptions with administrative, spend, security, observability, and usage controls.",
+      "score": {
+        "total": 8.7,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "evaluation": "EVALUATE NOW",
+      "priority": "HIGH",
+      "category": "Dev Tools",
+      "competitive_context": "Bundling developer agents with enterprise administration raises the importance of tenant policy and usage telemetry.",
+      "pricing": "Included for eligible Gemini Enterprise subscriptions; exact license terms depend on plan.",
+      "key_takeaways": [
+        "Admin and spend controls are part of the product surface.",
+        "IDE choice matters for adoption.",
+        "Observability must follow the agent into developer workflows."
+      ]
+    },
+    {
+      "id": "google-gemini-37-flash-ga",
+      "title": "Gemini 3.7 Flash reaches general availability",
+      "source": "Google Cloud",
+      "author": "Google Cloud",
+      "date": "2026-08-13",
+      "primary_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "Release notes list Gemini 3.7 Flash as GA for production use, with agentic video processing enabled by default.",
+      "score": {
+        "total": 8.4,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "evaluation": "ADD TO WATCHLIST",
+      "priority": "HIGH",
+      "category": "Frontier Model",
+      "competitive_context": "A production-ready workhorse model can shift the portfolio toward routing by task cost and latency.",
+      "pricing": "See current Google Cloud model pricing.",
+      "key_takeaways": [
+        "GA status reduces integration uncertainty.",
+        "Video processing expands multimodal workflow scope.",
+        "Task routing still needs independent evaluation."
+      ]
+    },
+    {
+      "id": "aws-bedrock-agentcore-runtime-instances",
+      "title": "Bedrock AgentCore adds persistent runtime instances",
+      "source": "AWS",
+      "author": "Amazon Web Services",
+      "date": "2026-08-17",
+      "primary_url": "https://aws.amazon.com/blogs/aws/category/artificial-intelligence/",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "The AWS roundup describes managed EC2-backed runtime instances for production agents, multi-agent collaboration, GPU support, and sessions lasting up to 14 days.",
+      "score": {
+        "total": 8.3,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "evaluation": "EVALUATE NOW",
+      "priority": "HIGH",
+      "category": "AI Agent",
+      "competitive_context": "Long-lived managed sessions increase capability and the need for lifecycle, budget, and data-retention controls.",
+      "pricing": "See current Amazon Bedrock AgentCore pricing.",
+      "key_takeaways": [
+        "Session duration is an architecture choice.",
+        "Persistent state needs retention and deletion policy.",
+        "GPU-backed runtimes increase cost visibility requirements."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "evaluate_now",
+      "title": "Evaluate now",
+      "description": "Launches with a clear 30-day test path.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "aws-nemotron-lightning-sagemaker",
+          "title": "Nemotron 3.5 Lightning lands in SageMaker JumpStart",
+          "source": "AWS",
+          "author": "Amazon Web Services",
+          "date": "2026-08-17",
+          "primary_url": "https://aws.amazon.com/blogs/machine-learning/category/post-types/announcements/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "AWS lists the 30B mixture-of-experts model with 3B active parameters for high-volume agentic workloads and managed deployment.",
+          "score": {
+            "total": 7.9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "EVALUATE NOW",
+          "category": "Open Source",
+          "pricing": "See SageMaker JumpStart terms.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "openai-daybreak-bedrock",
+          "title": "Daybreak brings governed cyber-defense access to Bedrock",
+          "source": "AWS",
+          "author": "Amazon Web Services",
+          "date": "2026-08-17",
+          "primary_url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-ec2-application-status-checks-iam-role-manager-openai-daybreak-on-bedrock-and-more-august-17-2026/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The roundup describes controlled access tiers for defensive cybersecurity tasks, with eligibility and authorization constraints.",
+          "score": {
+            "total": 7.9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "EVALUATE NOW",
+          "category": "Enterprise AI",
+          "pricing": "Eligibility and pricing require provider confirmation.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "azure-content-understanding-sync",
+          "title": "Azure Content Understanding adds synchronous APIs",
+          "source": "Microsoft Foundry",
+          "author": "Microsoft Foundry Blog",
+          "date": "2026-08-12",
+          "primary_url": "https://devblogs.microsoft.com/foundry/azure-content-understanding-updates-august-2026/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The update adds synchronous Read, Layout, and Digital Parse operations plus semantic chunking and agentic extraction capabilities.",
+          "score": {
+            "total": 7.8,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "EVALUATE NOW",
+          "category": "Enterprise AI",
+          "pricing": "See current Azure pricing.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "openai-realtime-api-production-voice",
+          "title": "OpenAI posts production voice-agent updates",
+          "source": "OpenAI Developer Community",
+          "author": "OpenAI",
+          "date": "2026-08-23",
+          "primary_url": "https://community.openai.com/c/announcements/6",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The developer announcements page lists a production-focused gpt-realtime launch and related API changes, relevant to voice workflows and retention controls.",
+          "score": {
+            "total": 7.7,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "EVALUATE NOW",
+          "category": "AI Agent",
+          "pricing": "See current API pricing.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "google-alphafold3-ga",
+          "title": "AlphaFold 3 reaches GA for approved commercial research",
+          "source": "Google Cloud",
+          "author": "Google Cloud",
+          "date": "2026-08-21",
+          "primary_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "Release notes list AlphaFold 3 as generally available for approved users and commercial research use.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "ADD TO WATCHLIST",
+          "category": "Vertical AI",
+          "pricing": "Access is subject to approval.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "openai-gpt56-price-cut",
+          "title": "GPT-5.6 Sol API pricing drops for a limited period",
+          "source": "OpenAI Developer Community",
+          "author": "OpenAI",
+          "date": "2026-08-22",
+          "primary_url": "https://community.openai.com/c/announcements/6",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The announcements page lists a more than 20 percent reduction in GPT-5.6 Sol API and Codex credit pricing for the next three months.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "EVALUATE NOW",
+          "category": "Frontier Model",
+          "pricing": "Temporary reduction; confirm current rate card.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        }
+      ]
+    },
+    {
+      "section_id": "watchlist",
+      "title": "Watchlist and ecosystem",
+      "description": "Early or adjacent launches worth tracking without immediate adoption.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "gemini-enterprise-agent-platform-grok46",
+          "title": "Grok 4.6 appears in Model Garden preview",
+          "source": "Google Cloud",
+          "author": "Google Cloud",
+          "date": "2026-08-21",
+          "primary_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "Release notes list Grok 4.6 in preview, expanding model choice inside a governed platform.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "ADD TO WATCHLIST",
+          "category": "Frontier Model",
+          "pricing": "See Google Cloud model catalog.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "tiktok-agentic-hub-august-access",
+          "title": "TikTok updates access guidance for Agentic Hub",
+          "source": "TikTok for Business",
+          "author": "TikTok",
+          "date": "2026-08-21",
+          "primary_url": "https://ads.tiktok.com/resources/help/article/how-to-access-the-tiktok-for-business-agentic-hub",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The help article explains browsing without login and account requirements for downloading agent skills, making the marketplace pattern more concrete.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "MONITOR",
+          "category": "Vertical SaaS",
+          "pricing": "Account and platform terms apply.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "anthropic-text-watermark",
+          "title": "Anthropic publishes how its text watermark works",
+          "source": "Anthropic",
+          "author": "Anthropic",
+          "date": "2026-08-14",
+          "primary_url": "https://www.anthropic.com/news",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The newsroom index points to a technical explanation of text watermarking, relevant to provenance and disclosure workflows.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "MONITOR",
+          "category": "Safety",
+          "pricing": "Not applicable.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "openai-o3-retirement",
+          "title": "OpenAI posts the upcoming o3 ChatGPT retirement",
+          "source": "OpenAI Help Center",
+          "author": "OpenAI",
+          "date": "2026-08-18",
+          "primary_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "Release notes state that o3 will be retired from ChatGPT on August 26, 2026, while API availability is unchanged.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "MONITOR",
+          "category": "Lifecycle",
+          "pricing": "No API change stated.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "ai-agent-standards-initiative",
+          "title": "NIST’s agent standards initiative frames interoperability and confidence",
+          "source": "NIST",
+          "author": "NIST",
+          "date": "2026-08-17",
+          "primary_url": "https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The initiative describes standards work for autonomous actions and interoperable agents, useful context for architecture roadmaps.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "MONITOR",
+          "category": "Standards",
+          "pricing": "Not applicable.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "google-gemini-omni-flash",
+          "title": "Gemini Omni Flash extends conversational video creation",
+          "source": "Google",
+          "author": "Google",
+          "date": "2026-08-13",
+          "primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-experts-roundtable/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The roundtable describes a model for creating and editing video from conversational input, an adjacent signal for multimodal workflows.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "MONITOR",
+          "category": "Multimodal",
+          "pricing": "See current Google product terms.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "microsoft-mai-models-foundry",
+          "title": "MAI models expand the Foundry catalog",
+          "source": "Microsoft Foundry",
+          "author": "Microsoft",
+          "date": "2026-08-12",
+          "primary_url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/new-mai-models-in-microsoft-foundry-across-text-image-voice-and-speech/4524632",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The updated post lists text, image, voice, and speech models in Microsoft Foundry with published starting prices for some tiers.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "ADD TO WATCHLIST",
+          "category": "Enterprise AI",
+          "pricing": "The post lists MAI-Thinking-1 from $2 per million input and $8 per million output tokens.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "cloudflare-agentic-os",
+          "title": "Cloudflare OS positions a governed agent workspace",
+          "source": "Cloudflare",
+          "author": "Cloudflare",
+          "date": "2026-08-08",
+          "primary_url": "https://www.cloudflare.com/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "A current ecosystem signal describes a workspace with isolated execution, persistent state, and Zero Trust controls for agent work.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "ADD TO WATCHLIST",
+          "category": "AI Agent",
+          "pricing": "See current Cloudflare terms.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "tiktok-agentic-hub-skills",
+          "title": "TikTok Agentic Hub packages advertiser skills",
+          "source": "TikTok for Business",
+          "author": "TikTok",
+          "date": "2026-08-17",
+          "primary_url": "https://ads.tiktok.com/business/en/blog/tiktok-agentic-hub-ai-agents-skills-mcp",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The official description frames a marketplace for skills that create, manage, analyze, and optimize campaigns through MCP.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "evaluation": "MONITOR",
+          "category": "Vertical SaaS",
+          "pricing": "See platform terms.",
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "OpenAI previews Ultrafast GPT-5.6 Sol service tier",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-08-13",
+      "primary_url": "https://openai.com/index/previewing-ultrafast/",
+      "score": 8.9
+    },
+    {
+      "title": "Bedrock adds GPT-5.6 models and cross-Region inference",
+      "source": "AWS",
+      "author": "Amazon Web Services",
+      "date": "2026-08-17",
+      "primary_url": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-bedrock-cross-region-openai-v2/",
+      "score": 8.8
+    },
+    {
+      "title": "Google expands Antigravity for enterprise customers",
+      "source": "Google Cloud",
+      "author": "Google Cloud",
+      "date": "2026-08-20",
+      "primary_url": "https://cloud.google.com/blog/products/ai-machine-learning/expanding-google-antigravity-for-enterprise-customers",
+      "score": 8.7
+    },
+    {
+      "title": "Gemini 3.7 Flash reaches general availability",
+      "source": "Google Cloud",
+      "author": "Google Cloud",
+      "date": "2026-08-13",
+      "primary_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes",
+      "score": 8.4
+    },
+    {
+      "title": "Bedrock AgentCore adds persistent runtime instances",
+      "source": "AWS",
+      "author": "Amazon Web Services",
+      "date": "2026-08-17",
+      "primary_url": "https://aws.amazon.com/blogs/aws/category/artificial-intelligence/",
+      "score": 8.3
+    },
+    {
+      "title": "Nemotron 3.5 Lightning lands in SageMaker JumpStart",
+      "source": "AWS",
+      "author": "Amazon Web Services",
+      "date": "2026-08-17",
+      "primary_url": "https://aws.amazon.com/blogs/machine-learning/category/post-types/announcements/",
+      "score": 7.9
+    },
+    {
+      "title": "Daybreak brings governed cyber-defense access to Bedrock",
+      "source": "AWS",
+      "author": "Amazon Web Services",
+      "date": "2026-08-17",
+      "primary_url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-ec2-application-status-checks-iam-role-manager-openai-daybreak-on-bedrock-and-more-august-17-2026/",
+      "score": 7.9
+    },
+    {
+      "title": "Azure Content Understanding adds synchronous APIs",
+      "source": "Microsoft Foundry",
+      "author": "Microsoft Foundry Blog",
+      "date": "2026-08-12",
+      "primary_url": "https://devblogs.microsoft.com/foundry/azure-content-understanding-updates-august-2026/",
+      "score": 7.8
+    },
+    {
+      "title": "OpenAI posts production voice-agent updates",
+      "source": "OpenAI Developer Community",
+      "author": "OpenAI",
+      "date": "2026-08-23",
+      "primary_url": "https://community.openai.com/c/announcements/6",
+      "score": 7.7
+    },
+    {
+      "title": "AlphaFold 3 reaches GA for approved commercial research",
+      "source": "Google Cloud",
+      "author": "Google Cloud",
+      "date": "2026-08-21",
+      "primary_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes",
+      "score": 7.6
+    },
+    {
+      "title": "GPT-5.6 Sol API pricing drops for a limited period",
+      "source": "OpenAI Developer Community",
+      "author": "OpenAI",
+      "date": "2026-08-22",
+      "primary_url": "https://community.openai.com/c/announcements/6",
+      "score": 7.6
+    },
+    {
+      "title": "Grok 4.6 appears in Model Garden preview",
+      "source": "Google Cloud",
+      "author": "Google Cloud",
+      "date": "2026-08-21",
+      "primary_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes",
+      "score": 7.5
+    },
+    {
+      "title": "TikTok updates access guidance for Agentic Hub",
+      "source": "TikTok for Business",
+      "author": "TikTok",
+      "date": "2026-08-21",
+      "primary_url": "https://ads.tiktok.com/resources/help/article/how-to-access-the-tiktok-for-business-agentic-hub",
+      "score": 7.5
+    },
+    {
+      "title": "Anthropic publishes how its text watermark works",
+      "source": "Anthropic",
+      "author": "Anthropic",
+      "date": "2026-08-14",
+      "primary_url": "https://www.anthropic.com/news",
+      "score": 7.5
+    },
+    {
+      "title": "OpenAI posts the upcoming o3 ChatGPT retirement",
+      "source": "OpenAI Help Center",
+      "author": "OpenAI",
+      "date": "2026-08-18",
+      "primary_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "score": 7.5
+    },
+    {
+      "title": "NIST’s agent standards initiative frames interoperability and confidence",
+      "source": "NIST",
+      "author": "NIST",
+      "date": "2026-08-17",
+      "primary_url": "https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative",
+      "score": 7.5
+    },
+    {
+      "title": "Gemini Omni Flash extends conversational video creation",
+      "source": "Google",
+      "author": "Google",
+      "date": "2026-08-13",
+      "primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-experts-roundtable/",
+      "score": 7.5
+    },
+    {
+      "title": "MAI models expand the Foundry catalog",
+      "source": "Microsoft Foundry",
+      "author": "Microsoft",
+      "date": "2026-08-12",
+      "primary_url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/new-mai-models-in-microsoft-foundry-across-text-image-voice-and-speech/4524632",
+      "score": 7.6
+    },
+    {
+      "title": "Cloudflare OS positions a governed agent workspace",
+      "source": "Cloudflare",
+      "author": "Cloudflare",
+      "date": "2026-08-08",
+      "primary_url": "https://www.cloudflare.com/",
+      "score": 7.5
+    },
+    {
+      "title": "TikTok Agentic Hub packages advertiser skills",
+      "source": "TikTok for Business",
+      "author": "TikTok",
+      "date": "2026-08-17",
+      "primary_url": "https://ads.tiktok.com/business/en/blog/tiktok-agentic-hub-ai-agents-skills-mcp",
+      "score": 7.5
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "More first-party release notes with exact dates"
+    ],
+    "topics_to_add": [
+      "Agent runtime lifecycle and retention"
+    ],
+    "notes": "Launch claims are anchored to official release notes or vendor documentation; discovery pages are used only where labeled."
+  }
+}

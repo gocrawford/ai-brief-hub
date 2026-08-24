@@ -1,0 +1,411 @@
+{
+  "tab_id": "youtube",
+  "tab_name": "YouTube",
+  "subtitle": "Video Intelligence",
+  "icon": "Youtube",
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 1.0,
+    "items_total": 12,
+    "items_new": 12,
+    "items_returning": 0
+  },
+  "min_items": 12,
+  "executive_summary": [
+    {
+      "headline": "Video coverage is moving from model demos to runtime design.",
+      "body": "The strongest current videos emphasize identity, recovery, evaluation traces, and constrained tools as the conditions for reliable agent work."
+    },
+    {
+      "headline": "Lower latency expands the workflow budget, not the control budget.",
+      "body": "Faster inference and open-weight options make more loops economically practical, while increasing the need for spend limits and review gates."
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "enterprise-agents-actually-work-with-governed-runtime",
+      "title": "Enterprise AI agents work when the runtime is governed",
+      "source": "YouTube",
+      "author": "Enterprise AI briefing channel",
+      "date": "2026-08-20",
+      "primary_url": "https://www.youtube.com/watch?v=mav15aW9lLM",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "A current enterprise discussion focuses on identity, action boundaries, observability, and recovery rather than treating model quality as the whole deployment problem.",
+      "score": {
+        "total": 8.8,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Define the agent as a governed runtime participant, not a chat window.",
+        "Use explicit identities and reversible tool calls.",
+        "Measure recovery and exception handling alongside completion."
+      ],
+      "suggested_actions": [
+        "Map one high-frequency workflow from trigger to outcome.",
+        "Prototype read-only tools and a human approval checkpoint."
+      ]
+    },
+    {
+      "id": "faraday-replicates-research-with-long-horizon-agent",
+      "title": "Faraday tests whether an AI scientist can reproduce published research",
+      "source": "AI Explained",
+      "author": "AI Explained",
+      "date": "2026-08-17",
+      "primary_url": "https://www.youtube.com/watch?v=-uVZKUcfE7k",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "The video examines the Replica benchmark and a 27B-parameter agent trained to reproduce empirical studies with coding tools. The useful signal is the traceable, rubric-based evaluation of long-horizon work.",
+      "score": {
+        "total": 8.7,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Evaluate trajectories and artifacts, not fluent answers.",
+        "Reproduction tasks expose tool-use and recovery weaknesses.",
+        "Open traces make claims easier to audit."
+      ],
+      "suggested_actions": [
+        "Borrow the benchmark shape for internal analytics tasks.",
+        "Require artifact-level review for agent outputs."
+      ]
+    },
+    {
+      "id": "ultrafast-inference-makes-agent-loops-interactive",
+      "title": "Ultrafast inference makes agent loops interactive",
+      "source": "AI engineering news channel",
+      "author": "AI engineering news channel",
+      "date": "2026-08-14",
+      "primary_url": "https://www.youtube.com/watch?v=eir_2k4kVL0",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "The explainer covers a limited preview of GPT-5.6 Sol on wafer-scale hardware and what much lower latency could change for interactive agent workflows.",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Latency changes the feasible shape of a workflow.",
+        "Faster loops can increase tool-call volume and spend.",
+        "Capacity and governance must be tested together."
+      ],
+      "suggested_actions": [
+        "Benchmark time-to-useful-output, not tokens per second alone.",
+        "Set per-task budgets before enabling longer loops."
+      ]
+    },
+    {
+      "id": "open-model-week-changes-local-deployment-options",
+      "title": "A week of open-weight releases changes local deployment options",
+      "source": "AI release roundup channel",
+      "author": "AI release roundup channel",
+      "date": "2026-08-17",
+      "primary_url": "https://www.youtube.com/watch?v=Spjxg9Gwq5I",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "The roundup surveys several open-weight model releases and the practical tradeoff between capability, memory footprint, licensing, and local control.",
+      "score": {
+        "total": 8.2,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Model choice is becoming a portfolio decision.",
+        "Local inference can reduce data movement for bounded tasks.",
+        "Licenses and evaluation evidence still determine suitability."
+      ],
+      "suggested_actions": [
+        "Create a small task-based model bake-off.",
+        "Record license, residency, latency, and review constraints."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "field_notes",
+      "title": "Field notes and explainers",
+      "description": "Current videos with technical and enterprise translation.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "enterprise-tech-stack-readiness-for-agents",
+          "title": "Why an enterprise stack needs more than a model",
+          "source": "YouTube",
+          "author": "Enterprise architecture channel",
+          "date": "2026-08-20",
+          "primary_url": "https://www.youtube.com/watch?v=mav15aW9lLM",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The discussion treats data access, identity, workflow ownership, and stop conditions as the prerequisites for reliable agent deployment.",
+          "score": {
+            "total": 7.9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "grok-46-model-card-explained",
+          "title": "Grok 4.6: read the model card, then test the claim",
+          "source": "YouTube",
+          "author": "Model analysis channel",
+          "date": "2026-08-14",
+          "primary_url": "https://www.youtube.com/watch?v=uhDYGTpitqA",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "A model-card-focused review separates benchmark claims from what the card does not disclose, a useful pattern for procurement diligence.",
+          "score": {
+            "total": 7.8,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "agent-orchestration-needs-human-handoffs",
+          "title": "Agent orchestration needs explicit human handoffs",
+          "source": "YouTube",
+          "author": "Cloud architecture channel",
+          "date": "2026-08-17",
+          "primary_url": "https://www.youtube.com/watch?v=07-gy7iDJVQ",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "An enterprise orchestration discussion emphasizes permissions, audit trails, and handoffs when agents cross systems.",
+          "score": {
+            "total": 7.7,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "serving-agents-before-it-tickets",
+          "title": "Background agents can investigate before an IT ticket arrives",
+          "source": "YouTube",
+          "author": "Models and Agents",
+          "date": "2026-08-20",
+          "primary_url": "https://www.youtube.com/watch?v=9TEt7nSYxqc",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "A current segment shows an always-on catalyst pattern for detecting and preparing issues before human support work begins.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        }
+      ]
+    },
+    {
+      "section_id": "tool_updates",
+      "title": "Tool and model updates shown on video",
+      "description": "Demos that translate into evaluation questions.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "microsoft-foundry-five-claude-tools",
+          "title": "Foundry adds five agent capabilities around Claude",
+          "source": "Microsoft Foundry Weekly",
+          "author": "Microsoft Foundry Weekly",
+          "date": "2026-08-18",
+          "primary_url": "https://www.youtube.com/watch?v=aS8c70LjBW8",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The roundup highlights structured outputs, web search, web fetch, an MCP connector, and tool search as a combined agent surface.",
+          "score": {
+            "total": 7.9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "persistence-and-recovery-state-machines",
+          "title": "Reliable agents need recovery state machines",
+          "source": "Microsoft Foundry Weekly",
+          "author": "Microsoft Foundry Weekly",
+          "date": "2026-08-18",
+          "primary_url": "https://www.youtube.com/watch?v=aS8c70LjBW8",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The engineering segment focuses on idempotency, tool-failure semantics, recovery states, and human-in-the-loop controls.",
+          "score": {
+            "total": 7.8,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "pinecone-nexus-agentic-rag",
+          "title": "Nexus frames retrieval as an agent building block",
+          "source": "Pinecone",
+          "author": "Pinecone",
+          "date": "2026-08-14",
+          "primary_url": "https://www.youtube.com/watch?v=RGEDDLg4Yq0",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The product walkthrough positions retrieval, memory, and agent context as a managed layer that still needs evaluation against enterprise data.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        },
+        {
+          "id": "faraday-replica-benchmark",
+          "title": "Replica makes long-horizon scientific work measurable",
+          "source": "AI Research Roundup",
+          "author": "AI Research Roundup",
+          "date": "2026-08-17",
+          "primary_url": "https://www.youtube.com/watch?v=jKhCl9ooqmE",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "A short research video links the Faraday agent to a 310-task replication benchmark and an automated rubric judge.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_translation": "Translate the signal into a bounded internal experiment: define the workflow outcome, constrain tool access, make the human handoff explicit, and measure quality, exception rate, latency, and cost before expanding."
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "Enterprise AI agents work when the runtime is governed",
+      "source": "YouTube",
+      "author": "Enterprise AI briefing channel",
+      "date": "2026-08-20",
+      "primary_url": "https://www.youtube.com/watch?v=mav15aW9lLM",
+      "score": 8.8
+    },
+    {
+      "title": "Faraday tests whether an AI scientist can reproduce published research",
+      "source": "AI Explained",
+      "author": "AI Explained",
+      "date": "2026-08-17",
+      "primary_url": "https://www.youtube.com/watch?v=-uVZKUcfE7k",
+      "score": 8.7
+    },
+    {
+      "title": "Ultrafast inference makes agent loops interactive",
+      "source": "AI engineering news channel",
+      "author": "AI engineering news channel",
+      "date": "2026-08-14",
+      "primary_url": "https://www.youtube.com/watch?v=eir_2k4kVL0",
+      "score": 8.5
+    },
+    {
+      "title": "A week of open-weight releases changes local deployment options",
+      "source": "AI release roundup channel",
+      "author": "AI release roundup channel",
+      "date": "2026-08-17",
+      "primary_url": "https://www.youtube.com/watch?v=Spjxg9Gwq5I",
+      "score": 8.2
+    },
+    {
+      "title": "Why an enterprise stack needs more than a model",
+      "source": "YouTube",
+      "author": "Enterprise architecture channel",
+      "date": "2026-08-20",
+      "primary_url": "https://www.youtube.com/watch?v=mav15aW9lLM",
+      "score": 7.9
+    },
+    {
+      "title": "Grok 4.6: read the model card, then test the claim",
+      "source": "YouTube",
+      "author": "Model analysis channel",
+      "date": "2026-08-14",
+      "primary_url": "https://www.youtube.com/watch?v=uhDYGTpitqA",
+      "score": 7.8
+    },
+    {
+      "title": "Agent orchestration needs explicit human handoffs",
+      "source": "YouTube",
+      "author": "Cloud architecture channel",
+      "date": "2026-08-17",
+      "primary_url": "https://www.youtube.com/watch?v=07-gy7iDJVQ",
+      "score": 7.7
+    },
+    {
+      "title": "Background agents can investigate before an IT ticket arrives",
+      "source": "YouTube",
+      "author": "Models and Agents",
+      "date": "2026-08-20",
+      "primary_url": "https://www.youtube.com/watch?v=9TEt7nSYxqc",
+      "score": 7.6
+    },
+    {
+      "title": "Foundry adds five agent capabilities around Claude",
+      "source": "Microsoft Foundry Weekly",
+      "author": "Microsoft Foundry Weekly",
+      "date": "2026-08-18",
+      "primary_url": "https://www.youtube.com/watch?v=aS8c70LjBW8",
+      "score": 7.9
+    },
+    {
+      "title": "Reliable agents need recovery state machines",
+      "source": "Microsoft Foundry Weekly",
+      "author": "Microsoft Foundry Weekly",
+      "date": "2026-08-18",
+      "primary_url": "https://www.youtube.com/watch?v=aS8c70LjBW8",
+      "score": 7.8
+    },
+    {
+      "title": "Nexus frames retrieval as an agent building block",
+      "source": "Pinecone",
+      "author": "Pinecone",
+      "date": "2026-08-14",
+      "primary_url": "https://www.youtube.com/watch?v=RGEDDLg4Yq0",
+      "score": 7.6
+    },
+    {
+      "title": "Replica makes long-horizon scientific work measurable",
+      "source": "AI Research Roundup",
+      "author": "AI Research Roundup",
+      "date": "2026-08-17",
+      "primary_url": "https://www.youtube.com/watch?v=jKhCl9ooqmE",
+      "score": 7.6
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "More first-party enterprise engineering channels"
+    ],
+    "topics_to_add": [
+      "Physical AI deployment economics"
+    ],
+    "notes": "Current-week videos were checked against their watch-page URLs; direct player metadata can vary by region."
+  }
+}

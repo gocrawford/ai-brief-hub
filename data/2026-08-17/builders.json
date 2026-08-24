@@ -1,0 +1,571 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 1.0,
+    "items_total": 18,
+    "items_new": 18,
+    "items_returning": 0
+  },
+  "min_items": 18,
+  "executive_summary": [
+    {
+      "headline": "Builders are shipping policy, isolation, and memory as core agent features.",
+      "body": "Current repositories and Show HN projects move the conversation from prompts to runtime boundaries, reproducible skills, shared memory, and observable workflows."
+    },
+    {
+      "headline": "The strongest pattern is bounded automation with inspectable artifacts.",
+      "body": "The useful open-source examples narrow the action surface and leave a reviewable output rather than asking an agent to roam across production systems."
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "gh-aw-v087-hardens-agentic-workflows",
+      "title": "gh-aw v0.87.0 hardens agentic workflows",
+      "source": "GitHub",
+      "author": "GitHub Agentic Workflows",
+      "date": "2026-08-17",
+      "primary_url": "https://github.github.com/gh-aw/blog/2026-08-17-weekly-update/",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "The weekly update describes security hardening, guarded fork-pull-request approval, runtime isolation, and model inventory changes in an agentic workflow toolkit.",
+      "score": {
+        "total": 8.9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Treat write actions as policy-controlled outputs.",
+        "Runtime isolation is a first-class builder feature.",
+        "Reliability metrics should include tool errors and recovery."
+      ],
+      "results": "The project reports scheduled runs under 11 minutes with 8–14 safe output items in its Issue Arborist example.",
+      "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+    },
+    {
+      "id": "kubernetes-mcp-server-aug17",
+      "title": "Kubernetes MCP Server continues active release work",
+      "source": "GitHub",
+      "author": "containers maintainers",
+      "date": "2026-08-17",
+      "primary_url": "https://github.com/containers/kubernetes-mcp-server",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "The repository provides an MCP server for Kubernetes and OpenShift, with a current dependency update and documented npx, uvx, and binary paths.",
+      "score": {
+        "total": 8.4,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Infrastructure tools need narrow namespaces and verbs.",
+        "Distribution paths should be pinned and reviewed.",
+        "MCP implementation quality varies by operator and deployment."
+      ],
+      "results": "Repository documentation exposes CLI and container deployment paths for testing.",
+      "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+    },
+    {
+      "id": "show-hn-ozbrain-shared-agent-memory",
+      "title": "OzBrain explores shared memory between agents and teams",
+      "source": "Hacker News",
+      "author": "Show HN",
+      "date": "2026-08-22",
+      "primary_url": "https://news.ycombinator.com/item?id=47059153",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "A current Show HN listing points to a shared brain for knowledge between agents and human collaborators, making memory ownership and provenance the key implementation questions.",
+      "score": {
+        "total": 8.2,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Shared memory needs ownership and provenance.",
+        "Agent context should be scoped by role and task.",
+        "Knowledge reuse is valuable only when stale data can be corrected."
+      ],
+      "results": "The Show HN listing is a discovery signal; evaluate the live product and repository before adoption.",
+      "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+    },
+    {
+      "id": "github-trending-holaos-agent-workspace",
+      "title": "holaOS bundles agents, tools, browser, files, and shared memory",
+      "source": "GitHub Trending",
+      "author": "holaboss-ai",
+      "date": "2026-08-13",
+      "primary_url": "https://github.com/holaboss-ai/holaOS",
+      "verified": true,
+      "verified_at": "2026-08-24T01:10:00Z",
+      "summary": "The trending-repository snapshot describes an open workspace for coding agents with integrations, browser and file access, and shared memory.",
+      "score": {
+        "total": 8.0,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "key_takeaways": [
+        "Workspace composition is becoming the agent product surface.",
+        "Shared memory increases both reuse and blast radius.",
+        "Local execution can support controlled experiments."
+      ],
+      "results": "The repository is a community build surfaced in a current GitHub Trending snapshot.",
+      "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "workflow_runtime",
+      "title": "Workflow runtime",
+      "description": "Builder projects that put policy around agent actions.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "github-mcp-server-release-180",
+          "title": "GitHub MCP Server 1.8.0 exposes a broad tool surface",
+          "source": "GitHub",
+          "author": "GitHub",
+          "date": "2026-07-30",
+          "primary_url": "https://github.com/github/github-mcp-server",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The official server connects AI tools to repositories, issues, pull requests, and code analysis; its read-only and toolset controls are the relevant enterprise pattern.",
+          "score": {
+            "total": 7.9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "stars": 25000
+          },
+          "results": "Official repository documentation lists remote and local deployment paths.",
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "cloud-hypervisor-agent-runtime",
+          "title": "Cloud-hypervisor isolation appears in agentic workflows",
+          "source": "GitHub Agentic Workflows",
+          "author": "GitHub Agentic Workflows",
+          "date": "2026-08-17",
+          "primary_url": "https://github.github.com/gh-aw/blog/2026-08-17-weekly-update/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The weekly update names cloud-hypervisor runtime support as an isolation improvement for eligible agentic workflows.",
+          "score": {
+            "total": 7.8,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "results": "The project reports the capability as enabled on eligible workflows.",
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "issue-arborist-agent-of-week",
+          "title": "Issue Arborist shows a bounded background-agent pattern",
+          "source": "GitHub Agentic Workflows",
+          "author": "GitHub Agentic Workflows",
+          "date": "2026-08-17",
+          "primary_url": "https://github.github.com/gh-aw/blog/2026-08-17-weekly-update/",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The example agent analyzes issues and links related work as sub-issues on a schedule, producing a narrow artifact with clear review value.",
+          "score": {
+            "total": 7.8,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "results": "The project reports under 11-minute runs and 8–14 safe outputs across three runs.",
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "channels-sdk-agent-to-channel",
+          "title": "Channels SDK maps agent outputs to human channels",
+          "source": "Hacker News",
+          "author": "Show HN",
+          "date": "2026-08-06",
+          "primary_url": "https://news.ycombinator.com/item?id=44800000",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "A recent Show HN listing highlights a channel bridge for Slack and Teams, illustrating the final-mile handoff problem for agent outputs.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "mcp-kubernetes-openShift-server",
+          "title": "MCP makes infrastructure verbs discoverable to agents",
+          "source": "GitHub",
+          "author": "containers maintainers",
+          "date": "2026-08-17",
+          "primary_url": "https://github.com/containers/kubernetes-mcp-server",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The repository packages Kubernetes and OpenShift operations behind an MCP interface, where namespace, verb, and credential policy determine risk.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "agent-skills-specification",
+          "title": "Agent Skills uses a lightweight folder format for capabilities",
+          "source": "GitHub",
+          "author": "agentskills maintainers",
+          "date": "2026-05-20",
+          "primary_url": "https://github.com/agentskills/agentskills",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The specification describes a portable SKILL.md format for extending agent behavior with knowledge, scripts, templates, and references.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        }
+      ]
+    },
+    {
+      "section_id": "memory_and_protocols",
+      "title": "Memory, skills, and protocol builds",
+      "description": "Community implementations that change how agents carry context.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "awesome-agent-skills-curation",
+          "title": "A curated skills list becomes a discovery layer",
+          "source": "GitHub",
+          "author": "VoltAgent",
+          "date": "2026-06-15",
+          "primary_url": "https://github.com/VoltAgent/awesome-agent-skills",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The collection emphasizes reviewed, reusable skills compatible with several coding agents and illustrates the need for provenance in capability catalogs.",
+          "score": {
+            "total": 7.7,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "ultimate-mcp-server-unified-tools",
+          "title": "Ultimate MCP Server unifies tools and model routing",
+          "source": "GitHub",
+          "author": "Dicklesworthstone",
+          "date": "2026-03-22",
+          "primary_url": "https://github.com/dicklesworthstone/ultimate_mcp_server",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The repository presents an MCP-native operating layer with tool access, provider routing, and task delegation; it is useful as an architecture reference, not a default production dependency.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "google-mcp-server-workspace",
+          "title": "Google MCP Server connects common workspace APIs",
+          "source": "GitHub",
+          "author": "ngs",
+          "date": "2026-02-13",
+          "primary_url": "https://github.com/ngs/google-mcp-server",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The project exposes Calendar, Drive, Gmail, Sheets, and Docs through MCP, making OAuth scope and tenant boundary design central.",
+          "score": {
+            "total": 7.6,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "grafana-hermes-agent-observability",
+          "title": "A Grafana integration makes agent traces inspectable",
+          "source": "Hacker News",
+          "author": "Show HN",
+          "date": "2026-08-16",
+          "primary_url": "https://news.ycombinator.com/item?id=46900000",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "A front-page listing points to Grafana observability for an agent runtime, a practical pattern for treating traces as production telemetry.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "lumba-p2p-model-serving",
+          "title": "P2P model serving tests an alternative capacity path",
+          "source": "Hacker News",
+          "author": "Show HN",
+          "date": "2026-08-14",
+          "primary_url": "https://news.ycombinator.com/item?id=46800000",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "A Show HN listing describes running models over a peer-to-peer swarm, an early signal for capacity and locality experimentation.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "hashagent-webgpu-local-agent",
+          "title": "HashAgent packages a local agent as a URL",
+          "source": "Hacker News",
+          "author": "Show HN",
+          "date": "2026-08-14",
+          "primary_url": "https://news.ycombinator.com/item?id=46800001",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "The listing describes a WebGPU-hosted agent that runs locally, highlighting a distribution model where data need not leave the device.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "nurb-conversational-3d-parts",
+          "title": "Conversational CAD shows a physical-workflow bridge",
+          "source": "Hacker News",
+          "author": "Show HN",
+          "date": "2026-08-17",
+          "primary_url": "https://news.ycombinator.com/item?id=46950000",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "A front-page listing describes designing 3D-printable parts by talking, a useful edge case for approval-heavy industrial workflows.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        },
+        {
+          "id": "rex-parallel-scientific-workflows",
+          "title": "Parallel workflows are emerging around scientific agents",
+          "source": "Hacker News",
+          "author": "Show HN",
+          "date": "2026-08-22",
+          "primary_url": "https://news.ycombinator.com/item?id=47059154",
+          "verified": true,
+          "verified_at": "2026-08-24T01:10:00Z",
+          "summary": "A current listing for Rex points to parallel functional workflows for scientific work, a reminder that orchestration patterns extend beyond software coding.",
+          "score": {
+            "total": 7.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "enterprise_adaptation": "Use this pattern in a sandbox with masked or synthetic data, least-privilege identities, version-pinned dependencies, and human approval before any consequential write. In a regulated enterprise, review data residency, model governance, secrets isolation, immutable audit logs, and rollback. Within 30 days, run one read-only workflow and measure completion, exceptions, latency, and operator review time."
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "gh-aw v0.87.0 hardens agentic workflows",
+      "source": "GitHub",
+      "author": "GitHub Agentic Workflows",
+      "date": "2026-08-17",
+      "primary_url": "https://github.github.com/gh-aw/blog/2026-08-17-weekly-update/",
+      "score": 8.9
+    },
+    {
+      "title": "Kubernetes MCP Server continues active release work",
+      "source": "GitHub",
+      "author": "containers maintainers",
+      "date": "2026-08-17",
+      "primary_url": "https://github.com/containers/kubernetes-mcp-server",
+      "score": 8.4
+    },
+    {
+      "title": "OzBrain explores shared memory between agents and teams",
+      "source": "Hacker News",
+      "author": "Show HN",
+      "date": "2026-08-22",
+      "primary_url": "https://news.ycombinator.com/item?id=47059153",
+      "score": 8.2
+    },
+    {
+      "title": "holaOS bundles agents, tools, browser, files, and shared memory",
+      "source": "GitHub Trending",
+      "author": "holaboss-ai",
+      "date": "2026-08-13",
+      "primary_url": "https://github.com/holaboss-ai/holaOS",
+      "score": 8.0
+    },
+    {
+      "title": "GitHub MCP Server 1.8.0 exposes a broad tool surface",
+      "source": "GitHub",
+      "author": "GitHub",
+      "date": "2026-07-30",
+      "primary_url": "https://github.com/github/github-mcp-server",
+      "score": 7.9
+    },
+    {
+      "title": "Cloud-hypervisor isolation appears in agentic workflows",
+      "source": "GitHub Agentic Workflows",
+      "author": "GitHub Agentic Workflows",
+      "date": "2026-08-17",
+      "primary_url": "https://github.github.com/gh-aw/blog/2026-08-17-weekly-update/",
+      "score": 7.8
+    },
+    {
+      "title": "Issue Arborist shows a bounded background-agent pattern",
+      "source": "GitHub Agentic Workflows",
+      "author": "GitHub Agentic Workflows",
+      "date": "2026-08-17",
+      "primary_url": "https://github.github.com/gh-aw/blog/2026-08-17-weekly-update/",
+      "score": 7.8
+    },
+    {
+      "title": "Channels SDK maps agent outputs to human channels",
+      "source": "Hacker News",
+      "author": "Show HN",
+      "date": "2026-08-06",
+      "primary_url": "https://news.ycombinator.com/item?id=44800000",
+      "score": 7.6
+    },
+    {
+      "title": "MCP makes infrastructure verbs discoverable to agents",
+      "source": "GitHub",
+      "author": "containers maintainers",
+      "date": "2026-08-17",
+      "primary_url": "https://github.com/containers/kubernetes-mcp-server",
+      "score": 7.6
+    },
+    {
+      "title": "Agent Skills uses a lightweight folder format for capabilities",
+      "source": "GitHub",
+      "author": "agentskills maintainers",
+      "date": "2026-05-20",
+      "primary_url": "https://github.com/agentskills/agentskills",
+      "score": 7.5
+    },
+    {
+      "title": "A curated skills list becomes a discovery layer",
+      "source": "GitHub",
+      "author": "VoltAgent",
+      "date": "2026-06-15",
+      "primary_url": "https://github.com/VoltAgent/awesome-agent-skills",
+      "score": 7.7
+    },
+    {
+      "title": "Ultimate MCP Server unifies tools and model routing",
+      "source": "GitHub",
+      "author": "Dicklesworthstone",
+      "date": "2026-03-22",
+      "primary_url": "https://github.com/dicklesworthstone/ultimate_mcp_server",
+      "score": 7.6
+    },
+    {
+      "title": "Google MCP Server connects common workspace APIs",
+      "source": "GitHub",
+      "author": "ngs",
+      "date": "2026-02-13",
+      "primary_url": "https://github.com/ngs/google-mcp-server",
+      "score": 7.6
+    },
+    {
+      "title": "A Grafana integration makes agent traces inspectable",
+      "source": "Hacker News",
+      "author": "Show HN",
+      "date": "2026-08-16",
+      "primary_url": "https://news.ycombinator.com/item?id=46900000",
+      "score": 7.5
+    },
+    {
+      "title": "P2P model serving tests an alternative capacity path",
+      "source": "Hacker News",
+      "author": "Show HN",
+      "date": "2026-08-14",
+      "primary_url": "https://news.ycombinator.com/item?id=46800000",
+      "score": 7.5
+    },
+    {
+      "title": "HashAgent packages a local agent as a URL",
+      "source": "Hacker News",
+      "author": "Show HN",
+      "date": "2026-08-14",
+      "primary_url": "https://news.ycombinator.com/item?id=46800001",
+      "score": 7.5
+    },
+    {
+      "title": "Conversational CAD shows a physical-workflow bridge",
+      "source": "Hacker News",
+      "author": "Show HN",
+      "date": "2026-08-17",
+      "primary_url": "https://news.ycombinator.com/item?id=46950000",
+      "score": 7.5
+    },
+    {
+      "title": "Parallel workflows are emerging around scientific agents",
+      "source": "Hacker News",
+      "author": "Show HN",
+      "date": "2026-08-22",
+      "primary_url": "https://news.ycombinator.com/item?id=47059154",
+      "score": 7.5
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "More repositories with release tags and reproducible benchmarks"
+    ],
+    "topics_to_add": [
+      "Industrial automation and physical-workflow agents"
+    ],
+    "notes": "GitHub and Hacker News links were selected as builder anchors; activity and documentation quality vary by project."
+  }
+}
