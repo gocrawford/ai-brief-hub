@@ -111,7 +111,7 @@ for (let i = 0; i < segments.length; i++) {
 }
 
 console.log(`\nTTS queue: ${renderQueue.length} segments to render`);
-const BATCH = 5;
+const BATCH = 1;
 for (let b = 0; b < renderQueue.length; b += BATCH) {
   const batch = renderQueue.slice(b, b + BATCH);
   await Promise.all(batch.map(async ({ seg, idx, outPath }) => {
