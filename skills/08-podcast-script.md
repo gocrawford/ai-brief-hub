@@ -322,14 +322,40 @@ The renderer expects two music assets to exist at:
 
 Both must be CC0 / royalty-free. Sourced and committed once; reused weekly.
 
+## Prohibited content — hard fail
+
+The correspondent segments are SPOKEN narrative. Never paste raw source-page content into any `text` field. The renderer will refuse to render if any spoken segment contains any of these markers:
+
+- `http://` or `https://` — never any raw URL
+- `{ts:` — YouTube transcript timestamp markers (a signal that transcript text was pasted verbatim)
+- `**subreddit` — Reddit metadata blocks
+- `arXiv:` or `arxiv.org` — paper identifiers
+- `###` — markdown headers
+- `author:` or `author.` — metadata fragments
+- `.com/`, `.ai/`, `.org/`, `www.` — domain fragments spoken aloud
+
+If a story needs attribution, say "linked in the show notes" or "covered on the dashboard." If a paper matters, say "a new paper this week from the Stanford NLP group" — never speak the arXiv ID.
+
 ## Validation
 
-The script-writing agent must verify:
+The script-writing agent must verify BEFORE writing the final file:
 1. Every `voice_id` in `podcast.json` matches a fixed character above.
 2. Every correspondent segment ends with a handback (substring "Back to you" or "back to you").
 3. No emoji anywhere in any `text` field.
 4. No instances of "Carlisle," "Bill," "your team."
-5. Total estimated duration (sum of `len(text) / 15` chars-per-second + music durations) within 18–38 minutes.
-6. Every top pick referenced in script has a corresponding `id` in the source tab JSON (so future deep-link audio→tab features work).
-7. **Coherence pass:** every cross-segment story has a single owner with substantive coverage; secondary mentions are name-checks only with a genuinely distinct angle. No two correspondents deep-dive the same story.
-8. **Handoff variety:** at least one of each handoff style (quick pivot, two-beat exchange, callback) appears per episode.
+5. **No prohibited bleed markers** (see "Prohibited content" above) in any spoken segment. Run this assertion:
+   ```python
+   import json
+   d = json.load(open(f"data/{week_start}/podcast.json"))
+   BLEED = ["http://", "https://", "{ts:", "**subreddit", "arXiv:", "arxiv.org", "###", "author:", "author.", ".com/", ".ai/", ".org/", "www."]
+   for s in d["segments"]:
+       if s.get("speaker") == "music": continue
+       t = s.get("text", "")
+       for m in BLEED:
+           assert m not in t, f"BLEED '{m}' in {s['id']}"
+   ```
+   If any assertion fires, rewrite the offending segment in clean spoken narrative form.
+6. Total estimated duration (sum of `len(text) / 15` chars-per-second + music durations) within 18–38 minutes.
+7. Every top pick referenced in script has a corresponding `id` in the source tab JSON (so future deep-link audio→tab features work).
+8. **Coherence pass:** every cross-segment story has a single owner with substantive coverage; secondary mentions are name-checks only with a genuinely distinct angle. No two correspondents deep-dive the same story.
+9. **Handoff variety:** at least one of each handoff style (quick pivot, two-beat exchange, callback) appears per episode.

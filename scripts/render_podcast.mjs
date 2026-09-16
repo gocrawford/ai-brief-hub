@@ -43,6 +43,36 @@ const script = JSON.parse(fs.readFileSync(path.join(dataDir, 'podcast.json'), 'u
 console.log(`Rendering: ${script.title}`);
 console.log(`Segments: ${script.segments.length}`);
 
+// Hard-fail on source-page bleed markers. If a script generator ever bleeds
+// raw source content (URLs, transcript timestamps, subreddit metadata,
+// markdown fragments, arXiv IDs) into spoken segments, refuse to render.
+// This catches the failure loudly instead of silently producing an episode
+// where the correspondents read HTML fragments aloud.
+const BLEED_MARKERS = [
+  'http://', 'https://', '{ts:', '**subreddit',
+  'arXiv:', 'arxiv.org', '###', 'author:', 'author.',
+  '.com/', '.ai/', '.org/', 'www.',
+];
+const bleedHits = [];
+for (const seg of script.segments) {
+  if (seg.speaker === 'music') continue;
+  const text = seg.text || '';
+  for (const marker of BLEED_MARKERS) {
+    if (text.includes(marker)) {
+      const idx = text.indexOf(marker);
+      const context = text.slice(Math.max(0, idx - 40), idx + 80);
+      bleedHits.push(`  [${seg.id}] '${marker}' — ...${context}...`);
+      break; // one hit per segment is enough to flag it
+    }
+  }
+}
+if (bleedHits.length > 0) {
+  console.error('\nREFUSING TO RENDER — script contains raw source-page bleed markers:');
+  bleedHits.forEach(h => console.error(h));
+  console.error(`\n${bleedHits.length} segment(s) affected. Regenerate the script in clean spoken narrative form before rendering.`);
+  process.exit(1);
+}
+
 // Per-character voice settings — tuned for energetic, podcast-ready delivery
 // speed: 1.0 = baseline, 1.10 = ~10% faster (caps at 1.20 in API)
 // Lower stability = more emotional range. style adds expressive variation.
