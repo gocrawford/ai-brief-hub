@@ -1,0 +1,441 @@
+{
+  "week_start": "2026-09-14",
+  "generated_at": "2026-09-21T01:20:00Z",
+  "headline": "Agent runtimes, persistent context, and lifecycle evaluation are becoming the operating layer as protocols widen the automation surface and usage limits make capacity planning unavoidable.",
+  "themes": [
+    {
+      "theme_id": "governed-agent-runtime",
+      "headline": "Agent runtimes are becoming the real enterprise control plane",
+      "summary": "Across current video, builder, launch, and research sources, the useful unit is the governed runtime around a model: identity, tool boundaries, execution traces, and recovery matter as much as raw capability.",
+      "implication": "Choose one read-only workflow and require scoped identity, approval, trace capture, and rollback before widening access.",
+      "citations": [
+        {
+          "tab_id": "youtube",
+          "item_id": "aws-s-multi-agent-ai-playbook-for-regulated-industries-ep-663-september--youtube",
+          "label": "AWS’s Multi-Agent AI Playbook for Regulated Industries | EP 663 | September 15 | Daily AI News",
+          "primary_url": "https://www.youtube.com/watch?v=dSWW56DyYXA"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "welcome-to-microsoft-agent-framework-builders",
+          "label": "Welcome to Microsoft Agent Framework!",
+          "primary_url": "https://github.com/microsoft/agent-framework"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "2609-02095-ready-or-not-reliable-enterprise-agent-deployment-research",
+          "label": "[2609.02095] READY or Not: Reliable Enterprise Agent Deployment",
+          "primary_url": "https://arxiv.org/abs/2609.02095"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 2,
+        "first_seen_week": "2026-09-07",
+        "note": "The prior week emphasized runtime governance; this week adds agent APIs and enterprise deployment evidence."
+      },
+      "tags": [
+        "agents",
+        "governance",
+        "runtime"
+      ]
+    },
+    {
+      "theme_id": "persistent-context-needs-boundaries",
+      "headline": "Persistent context increases both continuity and blast radius",
+      "summary": "The week’s video, X, Reddit, social, and research signals converge on memory, projects, quotas, and usage boundaries. Persistence makes agents more useful, but it also makes stale or mis-scoped context harder to notice.",
+      "implication": "Treat memory as governed state: define retention, separation, export, deletion, and review controls before using it in a consequential workflow.",
+      "citations": [
+        {
+          "tab_id": "youtube",
+          "item_id": "ai-in-september-2026-it-got-smart-now-it-needs-to-remember-youtube",
+          "label": "AI in September 2026: It Got Smart. Now It Needs to Remember.",
+          "primary_url": "https://www.youtube.com/watch?v=zBxPBcVxMGU"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "jev-ai-judgment-agent-coordination-voice-agents-x-x",
+          "label": "Jev AI Judgment, Agent Coordination + Voice Agents - X",
+          "primary_url": "https://x.com/AgenticAIFdn/status/2100262620926181384"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "claude-project-showcase-discussion-hub-updated-on-12-reddit-reddit",
+          "label": "Claude Project Showcase Discussion Hub updated on 12 ... - Reddit",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1weari5/claude_project_showcase_discussion_hub_updated_on/"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "agentaudit-an-open-extensible-framework-for-full-lifecycle-trust-research",
+          "label": "AgentAudit: An Open, Extensible Framework for Full-Lifecycle Trust ...",
+          "primary_url": "https://arxiv.org/abs/2609.09875"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-09-14",
+        "note": "This is the first week persistent context clears the cross-source threshold as a distinct theme."
+      },
+      "tags": [
+        "memory",
+        "identity",
+        "security"
+      ]
+    },
+    {
+      "theme_id": "protocol-and-connector-surface",
+      "headline": "Protocols and connectors are becoming an access-governance problem",
+      "summary": "Builder repositories, X discussion, launches, and social posts all point to a wider connector surface. The strategic question is not whether tools can connect, but whether capability manifests, credentials, namespaces, and revoke paths are explicit.",
+      "implication": "Version connector manifests, issue dedicated credentials, and test quarantine and revoke on synthetic data.",
+      "citations": [
+        {
+          "tab_id": "x",
+          "item_id": "tencent-cloud-x",
+          "label": "Tencent Cloud",
+          "primary_url": "https://x.com/tencentcloud/status/2098248605639590206"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "releases-github-github-mcp-server-builders",
+          "label": "Releases · github/github-mcp-server",
+          "primary_url": "https://github.com/github/github-mcp-server/releases"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "github-s-official-mcp-server-builders",
+          "label": "GitHub's official MCP Server",
+          "primary_url": "https://github.com/github/github-mcp-server"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "designing-production-ready-ai-agents-with-r-mi-dyon-and-jagan-social",
+          "label": "Designing Production-Ready AI Agents with Rémi Dyon and Jagan ...",
+          "primary_url": "https://www.linkedin.com/posts/dewain-robinson-6ba8932_coreshift2026-coreshift2026-coreshift2026-activity-7495090818727358464-SKsK"
+        }
+      ],
+      "recurrence": {
+        "status": "returning",
+        "weeks_count": 2,
+        "first_seen_week": "2026-09-07",
+        "note": "Protocol and connector governance continues from last week with more implementation evidence."
+      },
+      "tags": [
+        "MCP",
+        "connectors",
+        "security"
+      ]
+    },
+    {
+      "theme_id": "usage-economics-and-capacity",
+      "headline": "Usage limits are now part of workflow architecture",
+      "summary": "Community threads, video coverage, and live discourse treated quotas, limits, and pricing as operational constraints rather than account details. This makes capacity planning and fallback behavior part of agent design.",
+      "implication": "Measure cost per completed task, include retries and reviewer time, and define a fallback model or manual route before a pilot goes live.",
+      "citations": [
+        {
+          "tab_id": "youtube",
+          "item_id": "today-in-ai-september-15-2026-youtube",
+          "label": "Today in AI — September 15, 2026",
+          "primary_url": "https://www.youtube.com/watch?v=bWclUNdUYiY"
+        },
+        {
+          "tab_id": "x",
+          "item_id": "daily-ai-recap-september-14-2026-neo-neoaiforecast-on-x-x",
+          "label": "Daily AI Recap September 14, 2026 | Neo (@NeoAIForecast) on X",
+          "primary_url": "https://x.com/i/article/2099445318509293685"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "usage-limits-discussion-hub-updated-on-15-september-2026-reddit-reddit",
+          "label": "Usage Limits Discussion Hub updated on 15 September 2026 - Reddit",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1wguzpb/usage_limits_discussion_hub_updated_on_15/"
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "the-limits-have-been-reduced-even-further-now-it-s-september-14-reddit",
+          "label": "The limits have been reduced even further now. It's September 14 ...",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1wfwl6k/the_limits_have_been_reduced_even_further_now_its/"
+        }
+      ],
+      "recurrence": {
+        "status": "returning",
+        "weeks_count": 2,
+        "first_seen_week": "2026-09-07",
+        "note": "The usage-limit signal returns with more direct evidence from both product coverage and practitioner threads."
+      },
+      "tags": [
+        "economics",
+        "capacity",
+        "reliability"
+      ]
+    },
+    {
+      "theme_id": "lifecycle-evaluation",
+      "headline": "Evaluation is moving from benchmark day to the full lifecycle",
+      "summary": "Research on enterprise deployment, audit frameworks, and agent benchmarks is reinforced by launches and builder releases. Evidence needs to cover long-horizon behavior, tool risk, recovery, and human review—not only the first successful run.",
+      "implication": "Keep a dated task suite and trajectory log; require quality, latency, cost, exceptions, and reviewer effort before changing a production default.",
+      "citations": [
+        {
+          "tab_id": "research",
+          "item_id": "copying-explains-the-collective-behavior-of-ai-agents-in-the-wild-arxiv-research",
+          "label": "Copying explains the collective behavior of AI agents in the wild - arXiv",
+          "primary_url": "https://arxiv.org/abs/2609.09150"
+        },
+        {
+          "tab_id": "research",
+          "item_id": "2609-09113-saescientist-bench-can-ai-agents-conduct-research",
+          "label": "[2609.09113] SAEScientist-Bench: Can AI Agents Conduct ...",
+          "primary_url": "https://arxiv.org/abs/2609.09113"
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "partnering-with-accenture-on-embedded-evaluation-anthropic-launches",
+          "label": "Partnering with Accenture on embedded evaluation - Anthropic",
+          "primary_url": "https://www.anthropic.com/news/accenture-embedded-evaluation"
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "addyosmani-agent-skills-production-grade-engineering-builders",
+          "label": "addyosmani/agent-skills: Production-grade engineering ...",
+          "primary_url": "https://github.com/addyosmani/agent-skills"
+        }
+      ],
+      "recurrence": {
+        "status": "intensifying",
+        "weeks_count": 2,
+        "first_seen_week": "2026-09-07",
+        "note": "Evaluation moved from a research concern to a product and implementation requirement this week."
+      },
+      "tags": [
+        "evaluation",
+        "audit",
+        "reliability"
+      ]
+    },
+    {
+      "theme_id": "agent-traffic-and-observability",
+      "headline": "Agent traffic is becoming visible infrastructure",
+      "summary": "Professional social sources focused on persistent agents, bot traffic, analytics, and production-ready design. The through-line is observability: enterprises need to know what automated actors can reach, what they did, and how to distinguish useful activity from uncontrolled load.",
+      "implication": "Inventory agent traffic and instrument actions at the gateway before scaling autonomous access.",
+      "citations": [
+        {
+          "tab_id": "social",
+          "item_id": "hubertus-savelberg-s-post-social",
+          "label": "Hubertus Savelberg's Post",
+          "primary_url": "https://www.linkedin.com/posts/hubertus-savelberg-38165a_daily-grok-ai-news-briefing-from-grok-for-activity-7502610579560329218-8Hdi"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "new-ai-traffic-options-for-all-customers-rebecca-ficke-social",
+          "label": "new AI traffic options for all customers | Rebecca Ficke",
+          "primary_url": "https://www.linkedin.com/posts/rebecca-ficke_your-site-your-rules-new-ai-traffic-options-activity-7503896469309939712-Yvbn"
+        },
+        {
+          "tab_id": "social",
+          "item_id": "cloudflare-monetizes-ai-agent-traffic-with-new-analytics-social",
+          "label": "Cloudflare Monetizes AI-Agent Traffic with New Analytics ...",
+          "primary_url": "https://www.linkedin.com/posts/sergey-o-341931184_cloudflare-artificialintelligence-agenticai-activity-7495860394570260480-Veb-"
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "openai-launches-agents-api-as-ai-moves-into-real-work-september-15-2026-youtube",
+          "label": "OpenAI Launches Agents API as AI Moves Into Real Work | September 15, 2026",
+          "primary_url": "https://www.youtube.com/watch?v=y7omWOXYaJU"
+        }
+      ],
+      "recurrence": {
+        "status": "new",
+        "weeks_count": 1,
+        "first_seen_week": "2026-09-14",
+        "note": "A distinct traffic and observability theme emerged from the social and launch coverage this week."
+      },
+      "tags": [
+        "observability",
+        "traffic",
+        "agents"
+      ]
+    }
+  ],
+  "ninety_second_brief": [
+    {
+      "tab_id": "research",
+      "item_id": "2609-02095-ready-or-not-reliable-enterprise-agent-deployment-research",
+      "title": "[2609.02095] READY or Not: Reliable Enterprise Agent Deployment",
+      "one_line": "Reliable enterprise agent deployment is now a research problem with explicit evidence requirements.",
+      "primary_url": "https://arxiv.org/abs/2609.02095",
+      "score": 9.1,
+      "source_label": "arXiv"
+    },
+    {
+      "tab_id": "builders",
+      "item_id": "welcome-to-microsoft-agent-framework-builders",
+      "title": "Welcome to Microsoft Agent Framework!",
+      "one_line": "Agent frameworks and connectors are making identity, permissions, and rollback implementation concerns.",
+      "primary_url": "https://github.com/microsoft/agent-framework",
+      "score": 9.0,
+      "source_label": "GitHub"
+    },
+    {
+      "tab_id": "launches",
+      "item_id": "choose-your-agent-launches",
+      "title": "Choose Your Agent...",
+      "one_line": "Agent APIs widen the automation surface; evaluate the control plane, not just the endpoint.",
+      "primary_url": "https://openai.com/index/introducing-the-agents-api/",
+      "score": 8.9,
+      "source_label": "Primary launch source"
+    },
+    {
+      "tab_id": "youtube",
+      "item_id": "aws-s-multi-agent-ai-playbook-for-regulated-industries-ep-663-september--youtube",
+      "title": "AWS’s Multi-Agent AI Playbook for Regulated Industries | EP 663 | September 15 | Daily AI News",
+      "one_line": "Regulated-industry playbooks are shifting the discussion from demos to multi-agent operating patterns.",
+      "primary_url": "https://www.youtube.com/watch?v=dSWW56DyYXA",
+      "score": 8.8,
+      "source_label": "YouTube"
+    },
+    {
+      "tab_id": "research",
+      "item_id": "agentaudit-an-open-extensible-framework-for-full-lifecycle-trust-research",
+      "title": "AgentAudit: An Open, Extensible Framework for Full-Lifecycle Trust ...",
+      "one_line": "Full-lifecycle audit frameworks give teams a practical vocabulary for trust and evidence.",
+      "primary_url": "https://arxiv.org/abs/2609.09875",
+      "score": 8.8,
+      "source_label": "arXiv"
+    },
+    {
+      "tab_id": "reddit",
+      "item_id": "usage-limits-discussion-hub-updated-on-15-september-2026-reddit-reddit",
+      "title": "Usage Limits Discussion Hub updated on 15 September 2026 - Reddit",
+      "one_line": "Usage limits and incidents show that capacity and reliability belong in workflow design.",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1wguzpb/usage_limits_discussion_hub_updated_on_15/",
+      "score": 8.7,
+      "source_label": "Reddit"
+    },
+    {
+      "tab_id": "social",
+      "item_id": "cloudflare-monetizes-ai-agent-traffic-with-new-analytics-social",
+      "title": "Cloudflare Monetizes AI-Agent Traffic with New Analytics ...",
+      "one_line": "Agent traffic analytics make observability a product requirement rather than a back-office task.",
+      "primary_url": "https://www.linkedin.com/posts/sergey-o-341931184_cloudflare-artificialintelligence-agenticai-activity-7495860394570260480-Veb-",
+      "score": 8.7,
+      "source_label": "LinkedIn"
+    },
+    {
+      "tab_id": "x",
+      "item_id": "jev-ai-judgment-agent-coordination-voice-agents-x-x",
+      "title": "Jev AI Judgment, Agent Coordination + Voice Agents - X",
+      "one_line": "Agent judgment and coordination discourse is converging on evaluation and governance.",
+      "primary_url": "https://x.com/AgenticAIFdn/status/2100262620926181384",
+      "score": 8.6,
+      "source_label": "X"
+    },
+    {
+      "tab_id": "youtube",
+      "item_id": "ai-in-september-2026-it-got-smart-now-it-needs-to-remember-youtube",
+      "title": "AI in September 2026: It Got Smart. Now It Needs to Remember.",
+      "one_line": "Persistent memory is useful only when retention and separation are visible controls.",
+      "primary_url": "https://www.youtube.com/watch?v=zBxPBcVxMGU",
+      "score": 8.6,
+      "source_label": "YouTube"
+    },
+    {
+      "tab_id": "builders",
+      "item_id": "addyosmani-agent-skills-production-grade-engineering-builders",
+      "title": "addyosmani/agent-skills: Production-grade engineering ...",
+      "one_line": "Skill catalogs increase reuse while raising supply-chain review and permission questions.",
+      "primary_url": "https://github.com/addyosmani/agent-skills",
+      "score": 8.5,
+      "source_label": "GitHub"
+    }
+  ],
+  "deltas_vs_prior_week": {
+    "themes_new_this_week": [
+      "agent-traffic-and-observability",
+      "governed-agent-runtime",
+      "lifecycle-evaluation",
+      "persistent-context-needs-boundaries",
+      "protocol-and-connector-surface",
+      "usage-economics-and-capacity"
+    ],
+    "themes_dropped_off": [
+      "enterprise-adoption-is-operational",
+      "evaluation-moves-to-trajectories",
+      "governed-agent-runtimes",
+      "multimodal-workflows-widen",
+      "open-model-choice-becomes-portfolio",
+      "protocols-need-security-boundaries"
+    ],
+    "themes_intensifying": [
+      "governed-agent-runtime",
+      "protocol-and-connector-surface",
+      "lifecycle-evaluation"
+    ],
+    "note": "The week shifts from model novelty toward operating discipline: governed runtimes, bounded memory, connector control, usage economics, and evidence across the full agent lifecycle."
+  },
+  "theme_tracker": [
+    {
+      "theme_id": "governed-agent-runtime",
+      "headline": "Agent runtimes are becoming the real enterprise control plane",
+      "weeks_active": 2,
+      "first_seen_week": "2026-09-07",
+      "intensity_history": [
+        {
+          "week_start": "2026-09-07",
+          "citation_count": 2
+        },
+        {
+          "week_start": "2026-09-14",
+          "citation_count": 3
+        }
+      ]
+    },
+    {
+      "theme_id": "protocol-and-connector-surface",
+      "headline": "Protocols and connectors are becoming an access-governance problem",
+      "weeks_active": 2,
+      "first_seen_week": "2026-09-07",
+      "intensity_history": [
+        {
+          "week_start": "2026-09-07",
+          "citation_count": 2
+        },
+        {
+          "week_start": "2026-09-14",
+          "citation_count": 3
+        }
+      ]
+    },
+    {
+      "theme_id": "usage-economics-and-capacity",
+      "headline": "Usage limits are now part of workflow architecture",
+      "weeks_active": 2,
+      "first_seen_week": "2026-09-07",
+      "intensity_history": [
+        {
+          "week_start": "2026-09-07",
+          "citation_count": 2
+        },
+        {
+          "week_start": "2026-09-14",
+          "citation_count": 3
+        }
+      ]
+    },
+    {
+      "theme_id": "lifecycle-evaluation",
+      "headline": "Evaluation is moving from benchmark day to the full lifecycle",
+      "weeks_active": 2,
+      "first_seen_week": "2026-09-07",
+      "intensity_history": [
+        {
+          "week_start": "2026-09-07",
+          "citation_count": 2
+        },
+        {
+          "week_start": "2026-09-14",
+          "citation_count": 3
+        }
+      ]
+    }
+  ]
+}
