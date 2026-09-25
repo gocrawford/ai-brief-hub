@@ -73,6 +73,21 @@ if (bleedHits.length > 0) {
   process.exit(1);
 }
 
+// Code-enforced quality gate: run the deterministic lint (with grounding check
+// against the pre-review draft when present). Any lint error blocks rendering.
+{
+  const draftPath = path.join(dataDir, 'podcast.draft.json');
+  const args = [path.join(REPO_ROOT, 'scripts', 'podcast_lint.py'), weekStart,
+    '--out', path.join(dataDir, 'podcast.lint.json')];
+  if (fs.existsSync(draftPath)) args.push('--draft', draftPath);
+  try {
+    execSync(`python3 ${args.map(a => JSON.stringify(a)).join(' ')}`, { stdio: 'inherit' });
+  } catch (e) {
+    console.error('\nREFUSING TO RENDER — podcast_lint.py reported errors. See data/' + weekStart + '/podcast.lint.json');
+    process.exit(1);
+  }
+}
+
 // Per-character voice settings — tuned for energetic, podcast-ready delivery
 // speed: 1.0 = baseline, 1.10 = ~10% faster (caps at 1.20 in API)
 // Lower stability = more emotional range. style adds expressive variation.

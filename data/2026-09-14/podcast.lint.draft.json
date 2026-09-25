@@ -1,0 +1,132 @@
+{
+  "week": "2026-09-14",
+  "script": "data/2026-09-14/podcast.draft.json",
+  "pass": true,
+  "errors": [],
+  "warnings": [
+    {
+      "check": "handback",
+      "segment": "x_segment",
+      "detail": "no handback in final lines"
+    },
+    {
+      "check": "handback",
+      "segment": "builders_segment",
+      "detail": "no handback in final lines"
+    },
+    {
+      "check": "handback",
+      "segment": "launches_segment",
+      "detail": "no handback in final lines"
+    },
+    {
+      "check": "handback",
+      "segment": "research_segment",
+      "detail": "no handback in final lines"
+    },
+    {
+      "check": "handback_monotony",
+      "segment": null,
+      "detail": "'back to you jordan' ends 3 segments"
+    },
+    {
+      "check": "long_sentences",
+      "segment": null,
+      "detail": "2 sentences over 30 words (one idea per sentence)",
+      "examples": [
+        {
+          "segment": "social_segment",
+          "words": 35,
+          "sentence": "Posts about persistent cloud agents, agentic platform design, traffic controls, analytics, and production-ready systems all carried the same message: if automat"
+        },
+        {
+          "segment": "closing_anchor",
+          "words": 32,
+          "sentence": "Then ask a harder question than 'did it work?' Ask whether an operator can explain why it worked, what it did when it failed, and how to stop it next time."
+        }
+      ]
+    },
+    {
+      "check": "repeated_phrases",
+      "segment": null,
+      "detail": "1 four-word phrases appear in 3+ segments",
+      "examples": [
+        {
+          "phrase": "the difference between a",
+          "segments": [
+            "closing_anchor",
+            "reddit_segment",
+            "youtube_segment"
+          ]
+        }
+      ]
+    },
+    {
+      "check": "concept_saturation",
+      "segment": null,
+      "detail": "content words in 5+ of 7 correspondent segments; is the same point being made repeatedly?",
+      "terms": {
+        "identity": 7,
+        "useful": 7,
+        "workflow": 6,
+        "agents": 6,
+        "operator": 6,
+        "reviewer": 6,
+        "action": 6,
+        "enterprise": 5,
+        "signal": 5
+      }
+    },
+    {
+      "check": "abstract_segment",
+      "segment": "builders_segment",
+      "detail": "0 numbers, ~4 named entities; add concrete facts from the source JSON"
+    },
+    {
+      "check": "abstract_segment",
+      "segment": "social_segment",
+      "detail": "0 numbers, ~4 named entities; add concrete facts from the source JSON"
+    }
+  ],
+  "info": [
+    {
+      "check": "acronyms",
+      "detail": "confirm each is pronounced as intended (letters vs word)",
+      "tokens": {
+        "AI": 5,
+        "API": 4,
+        "APIs": 3,
+        "AWS": 1,
+        "MCP": 1
+      }
+    }
+  ],
+  "metrics": {
+    "spoken_segments": 16,
+    "music_segments": 2,
+    "total_words": 2830,
+    "estimated_minutes": 18.5,
+    "avg_sentence_words": 10.4,
+    "long_sentences": 2,
+    "repeated_phrases": 1,
+    "tts_symbols": 0,
+    "segment_words": {
+      "cold_open": 79,
+      "handoff_youtube": 9,
+      "youtube_segment": 336,
+      "handoff_x": 15,
+      "x_segment": 342,
+      "handoff_reddit": 13,
+      "reddit_segment": 355,
+      "handoff_builders": 12,
+      "builders_segment": 359,
+      "handoff_launches": 13,
+      "launches_segment": 363,
+      "handoff_social": 17,
+      "social_segment": 342,
+      "handoff_research": 17,
+      "research_segment": 362,
+      "closing_anchor": 196
+    }
+  }
+}

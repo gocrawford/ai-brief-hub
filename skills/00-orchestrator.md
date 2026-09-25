@@ -42,6 +42,25 @@ Runs every Sunday 8 PM ET. Produces a complete, validated, deduplicated week of 
 
 8. **Notify.** Send the user the URL, source counts, and the executive summary as a notification.
 
+## Podcast pipeline (after overview, before deploy)
+
+Order: **write → lint → review → lint → render.** No script goes to text-to-speech without passing the editor.
+
+1. **Write.** A script subagent follows `skills/08-podcast-script.md` and writes `data/<week_start>/podcast.json`.
+2. **Freeze the draft.** `cp data/<week_start>/podcast.json data/<week_start>/podcast.draft.json`
+3. **Lint the draft.** `python3 scripts/podcast_lint.py <week_start> --script data/<week_start>/podcast.draft.json --out data/<week_start>/podcast.lint.draft.json`
+   Lint errors (bleed markers, schema, voice IDs, banned names) go to the reviewer as must-fix items. Don't send the draft back to the writer.
+4. **Review.** Spawn ONE editor subagent on a **different model family than the writer** (writer: Claude; reviewer: `gpt_6_sol`; fallback `gemini_3_1_pro`). It follows `skills/09-podcast-review.md`, has full editorial authority, may not add facts that aren't in the week's JSONs, and gets at most 2 rounds. It overwrites `data/<week_start>/podcast.json` and writes `data/<week_start>/podcast.review.json`.
+5. **Gate.** `python3 scripts/podcast_lint.py <week_start> --draft data/<week_start>/podcast.draft.json`
+   - Exit 0 + `verdict: pass` → render.
+   - Exit 0 + `verdict: ship_with_flags` → render, and list `flags` under Notes in the notification.
+   - Exit 1 (for example ungrounded numbers or bleed after review) → restore the draft (`cp podcast.draft.json podcast.json`). If the draft lints clean, render it and flag "editor output rejected." If the draft fails too, skip the podcast and flag it.
+   - Reviewer subagent crashes or times out → same as exit 1.
+6. **Render.** `rm -rf /home/user/workspace/podcast_tmp/<week_start> && node scripts/render_podcast.mjs <week_start>`. The renderer re-runs the lint and refuses to render on any error.
+7. **Report.** Add one line to the notification: `Editor: <verdict>, rubric <before mean> → <after mean>, <N> changes, <minutes> min`, plus any flags.
+
+Commit `podcast.draft.json`, `podcast.lint*.json` and `podcast.review.json` with the week so every edit can be audited.
+
 ## Failure modes (explicit)
 
 - Schema validation fails → abort, notify with the specific tab and field that failed. Never silently render a degraded page.
