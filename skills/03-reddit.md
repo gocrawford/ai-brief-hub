@@ -24,6 +24,7 @@ Reddit shows what's actually working for real people outside the marketing layer
 - r/BetterOffline (sample lightly; skeptic angle, for contrast only)
 
 **Tier 3b — wins and creative use (always search):**
+- r/labrats, r/comp_chem, r/materials, r/chemistry (AI-for-science and scientist adoption)
 - r/SideProject, r/indiehackers, r/smallbusiness, r/ChatGPTPro, r/aivideo, r/StableDiffusion, r/ClaudeAI "showcase" flair, r/vibecoding
 
 ## Method

@@ -42,6 +42,7 @@ Common theme shapes that emerge in AI weeks:
 - **New things you can do** — capabilities or features that just became possible or cheap
 - **Success stories** — people or companies getting real results with AI, especially small teams
 - **Creative and consumer breakouts** — viral demos, new creator tools, delightful uses
+- **AI for science and R&D** — materials, chemistry, simulation, and building-science breakthroughs, or scientists adopting AI
 - **Security/safety or regulatory moves** — at most ONE theme per week, only when the news is significant
 - **Capital/business signals** — when major funding, M&A, or enterprise deployment happens
 - **Builder pattern shifts** — when a coding/agent practice changes meaningfully
@@ -78,7 +79,7 @@ Walk every prior `data/*/overview.json` (oldest to newest). For every `theme_id`
 This becomes the cross-week tracker shown on the Overview page.
 
 ### Step 6 — Build the 90-second brief
-Pick the 5–10 single highest-scoring items across **all 7 source tabs combined**, ranked by composite score (top_pick.score.total). Include at least two consumer, creator, small-business, or indie items and at most one risk or regulation item. Each entry references the underlying item by `tab_id` and `item_id`. Each gets a one-line takeaway that someone could read in 5 seconds.
+Pick the 5–10 single highest-scoring items across **all 7 source tabs combined**, ranked by composite score (top_pick.score.total). Include at least two consumer, creator, small-business, or indie items, at least one AI-for-science or R&D-adoption item when the week has one, and at most one risk or regulation item. Each entry references the underlying item by `tab_id` and `item_id`. Each gets a one-line takeaway that someone could read in 5 seconds.
 
 ### Step 7 — Headline
 Write one sentence (≤ 200 chars) framing the entire week. This is what the user reads if they only see the page title. Lead with the answer, framed as opportunity (what's newly possible), not risk.

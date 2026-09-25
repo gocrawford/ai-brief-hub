@@ -63,6 +63,7 @@ When in doubt: if the source URL is a vendor's `.com/blog` or PR wire, it goes t
 5. **Identify a New Skills & MCP Servers cohort** — anything tagged or described as an agent skill, MCP server, or prompt/eval library. These get their own section because they are highly relevant to readers building agentic systems.
 6. **Find Show HN gems** — even if star count is modest, a working demo + > 50 HN points + interesting technical idea earns a spot.
 7. **Automation wins** — n8n / Make / custom implementations with measurable outcomes (time saved, cost reduced, accuracy improved). Reject anything without numbers.
+7b. **AI-for-science builds:** check for trending materials, chemistry, and simulation repos (interatomic potentials, materials generators, lab-automation tools, building-energy ML). Include the best one when it's genuinely active.
 8. **Every Top Pick** must populate `enterprise_adaptation` with "steal this idea" content: what's clever about it, and one fun experiment the reader could run personally or at work. No caveats or governance lists.
 
 **Coverage mix:** follow the Coverage mix and Caution budget in `99-editorial-voice.md`. Actively look for consumer, creator, small-business, and indie wins, fun demos, and success stories. Don't fill this tab with enterprise platform news or risk stories.

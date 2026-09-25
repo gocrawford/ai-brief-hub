@@ -1,12 +1,16 @@
-# Research & Regulation — Primary-Source Intelligence
+# Research — AI for Science, Breakthroughs & Regulation
 
 ## Mission
 
-The highest-trust tab. Lead with **new capabilities**: papers and model cards that show AI can now do something it couldn't, with results the reader can build on. Then cover the slower signals: NIST, EU AI Act, and US executive actions, plus AI disclosures in peer 10-K/10-Q filings.
+The highest-trust tab, and the brief's **AI-for-science desk**. The reader leads innovation in an R&D function of materials and building scientists and wants to get them using more AI. Lead with **AI for science**: materials discovery, chemistry, physics simulation, building science, and self-driving labs. Also cover **how R&D teams are getting scientists to adopt AI**, plus general papers and model cards that show AI can now do something it couldn't. Then cover the slower signals: NIST, EU AI Act, and US executive actions, plus AI disclosures in peer 10-K/10-Q filings.
 
 **Balance:** at least half of the Top Picks should be capability or breakthrough research. This tab also **owns** security, safety, and regulation for the whole brief. Keep it here, stated plainly, so the other tabs don't have to.
 
-This tab exists because hype cycles obscure the slower-moving but higher-impact signals: regulation, capability disclosures from frontier labs, and how peer public companies are framing AI to investors.
+This tab exists because hype cycles obscure the slower, higher-impact signals: scientific capability, how research labs actually use AI, and (secondarily) regulation and peer disclosures.
+
+**Balance for Top Picks (4–6):** at least 2 AI-for-science or R&D-adoption items when the week has them, 1–2 general AI capability papers or model cards, and at most 1–2 safety or regulation items.
+
+**Pick the "share this with your lab" item:** choose ONE item (from this tab, or any tab's AI-for-science find) that would most likely win over a skeptical scientist, because it's concrete, reproducible, and in or near materials, chemistry, physics, or building science. Put it first in `top_picks`, and start its `enterprise_adaptation` with "Share with your lab:" followed by one line on why it would land with researchers.
 
 ## Source list
 
@@ -15,6 +19,20 @@ This tab exists because hype cycles obscure the slower-moving but higher-impact 
 - Major lab papers (Anthropic, OpenAI, DeepMind, Meta, Mistral) — published with their model cards
 - AlphaXiv, Papers with Code — for traction signals
 - Hugging Face papers section
+
+**AI for materials, chemistry, and physics (check every week):**
+- arXiv cond-mat.mtrl-sci, physics.comp-ph, physics.chem-ph, and cs.LG papers applied to materials
+- ChemRxiv; journals Digital Discovery, npj Computational Materials, Nature Computational Science, and Nature/Science AI-for-science papers
+- Lab and industry announcements: materials foundation models, machine-learned interatomic potentials, generative materials design, self-driving and autonomous labs, AI-for-science startups
+- Open tools with traction: materials and chemistry model repos and benchmarks (for example Matbench-style leaderboards)
+
+**AI for building science:**
+- Building energy modeling with ML, surrogate models for heat, moisture, airflow, and structural simulation, building-performance digital twins, and AI in building codes and standards work
+- Sources: arXiv (eess.SY, physics.app-ph), Energy and Buildings, Building and Environment, and national lab announcements (for example NREL, LBNL, ORNL)
+
+**Scientist and R&D adoption stories:**
+- How research groups, national labs, universities, and corporate R&D teams are getting scientists to use AI: literature-review agents, experiment design, lab notebooks and data, and training programs, with measured results where available
+- Sources: lab and university news, R&D trade press, Nature careers and news features, and practitioner posts on X, LinkedIn, and Reddit (for example r/labrats, r/comp_chem, r/materials)
 
 **Model cards / system cards:**
 - Each frontier lab's published model card for new releases
@@ -61,14 +79,16 @@ Set `freshness.target_pct_new = 0.80` and `min_items = 10`. Against last week's 
 **Sections:**
 1. `executive_summary` — 3–5 bullets
 2. `top_picks` — 4–6 items spanning research, regulation, and disclosures
-3. `papers` — arXiv and lab papers with traction
-4. `model_cards` — New model/system card analyses
-5. `regulation_us` — US regulatory activity
-6. `regulation_global` — EU AI Act, UK, ISO, China
-7. `enterprise_disclosures` — Public company AI mentions in filings (use generic framing)
-8. `emerging_signals` — Patterns
-9. `index` — All considered
-10. `suggested_refinements`
+3. `ai_for_science` — Materials, chemistry, physics-simulation, and building-science AI (3–6 items)
+4. `lab_adoption` — How R&D teams and scientists are adopting AI, with results (2–4 items)
+5. `papers` — Other arXiv and lab papers with traction
+6. `model_cards` — New model/system card analyses
+7. `regulation_us` — US regulatory activity
+8. `regulation_global` — EU AI Act, UK, ISO, China
+9. `enterprise_disclosures` — Public company AI mentions in filings (use generic framing)
+10. `emerging_signals` — Patterns
+11. `index` — All considered
+12. `suggested_refinements`
 
 ## Per-item required fields
 

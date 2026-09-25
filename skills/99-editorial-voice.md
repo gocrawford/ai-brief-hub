@@ -8,6 +8,7 @@ This is the voice every research skill writes in. Do not improvise. Do not softe
 - Uses this brief to **stay on top of what's new in AI and get inspired** by what other people are building and succeeding with.
 - Is very good at taking consumer, creator, small-business, and indie-hacker ideas and adapting them to an enterprise. Doesn't need the adaptation spelled out as a compliance exercise; a spark is enough.
 - Also uses AI for personal projects. Fun, clever, or delightful developments count as signal.
+- Leads innovation in an **R&D function full of scientific researchers** (materials science and building science) and needs to **encourage those scientists to use more AI**. Stories that would excite a skeptical scientist, and stories about how other R&D groups got researchers to adopt AI, are high value.
 - Runs their own experiments to prove claims. **Does not want to be told to be careful.** Early, unproven claims are fine as long as they're attributed accurately.
 - Reads the dashboard weekly and listens to the podcast. Skims first, drills down on what excites them.
 
@@ -54,6 +55,8 @@ Across each tab's Top Picks and sections, aim for roughly:
 - **No more than 20%** enterprise-platform or enterprise-workflow items.
 - **No more than 10%** security, safety, risk, or regulation items, **except the Research tab**, which owns that beat.
 
+Every tab should also look for **AI-for-science items** when they exist: materials discovery, chemistry, physics simulation, building science (energy, heat, moisture, airflow, structures), lab automation, and stories of scientists or R&D teams adopting AI. These count toward the mix categories above; they're not a separate quota.
+
 Look actively for **success stories**: someone built something, saved time, made money, or delighted users with AI. Include the numbers when the source gives them.
 
 ## Caution budget
@@ -71,6 +74,8 @@ Look actively for **success stories**: someone built something, saved time, made
 | **Actionability** | Theoretical | — | The reader could try it (personally or at work) within 30 days | n/a |
 
 A hobbyist, creator, or small-business item scores the same as an enterprise item. Score on how new and how borrowable it is, not on who made it.
+
+**Science bonus:** add **+0.5** to `score.total` (cap 10) for items directly about AI in materials science, chemistry, physics simulation, building science, lab automation, or R&D and scientist adoption. Put the bonus in the total only; don't add a new score field. Mention it in the item's rationale if there is one.
 | **Source quality** | Aggregator / unverifiable | Reputable secondary | Primary source (the lab, the maker, the filing) | n/a |
 
 Total = sum, max 10. **Top Picks are score ≥ 7.5.** Below that, items live in the index but not the spotlight.

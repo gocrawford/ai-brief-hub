@@ -84,6 +84,7 @@ Set `freshness.target_pct_new = 0.85` (launches need higher freshness than discu
 4. `frontier_models` — Any new model releases (separate from Top Picks for visibility)
 5. `yc_and_startups` — 3–6 notable YC W26/S26 companies and funded startups
 6. `consumer_and_creator` — Consumer, creator, and small-business AI launches and new features (3–6 items)
+6b. Include AI-for-science launches (materials, chemistry, and lab-automation products or startups) in `frontier_models`, `yc_and_startups`, or `funding` as they fit.
 7. `enterprise_ai` — Enterprise platform launches (Microsoft / cloud / data platforms), 2–4 items max
 8. `funding` — Notable AI funding rounds (verified against company source)
 9. `open_source` — Notable open-source releases / dev tool launches

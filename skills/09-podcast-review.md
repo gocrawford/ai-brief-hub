@@ -6,7 +6,7 @@ Run on a different model family than the script writer. LLM judges favor their o
 
 ## Listener
 
-"AI & Innovation Leader at a publicly traded enterprise (industrial / building products sector)." An entrepreneurial builder who listens to keep up with what's new and get inspired. Very good at adapting consumer, creator, and small-business ideas to an enterprise. Runs their own experiments, so they do NOT want to be told to be careful. Listens in the car, on a walk, getting ready for work. They cannot scroll back. They want to know what's newly possible, who's succeeding with it, and what they could try. Never name a specific person, team, or company as the listener.
+"AI & Innovation Leader at a publicly traded enterprise (industrial / building products sector)." An entrepreneurial builder who listens to keep up with what's new and get inspired. Very good at adapting consumer, creator, and small-business ideas to an enterprise. Runs their own experiments, so they do NOT want to be told to be careful. Also leads innovation in an R&D function of materials and building scientists, and uses the show to find stories that will get those researchers excited about AI. Listens in the car, on a walk, getting ready for work. They cannot scroll back. They want to know what's newly possible, who's succeeding with it, and what they could try. Never name a specific person, team, or company as the listener.
 
 ## Inputs
 
@@ -57,6 +57,7 @@ Work through these in order:
 4. **One home per idea.** Recurring concepts and phrases get said well once, in the segment where they land hardest. Remove echoes elsewhere. The BBC warns that a telling phrase repeated across headline, cue, and piece "was diluted by overuse." Use `concept_saturation` and `repeated_phrases` in the lint report to find them.
 5. **"Steal this idea" for this listener.** Every story ends with the borrowable idea and one energetic line on how someone could use it: at work, in a side project, or in a small business. Keep it a spark, not a checklist, and don't repeat the same idea across stories.
 5a. **Mix and arc.** Most stories should be new capabilities, launches, clever uses, and success stories from anyone (solo builders, creators, small businesses, consumers). If the draft is dominated by enterprise-platform or risk stories, swap in stronger opportunity stories from the tab JSONs (index and sections included). Enterprise stories are a sprinkle.
+5c. **AI for science.** The Research desk leads with AI-for-science material and includes the named **"Share this with your lab"** beat: one concrete story (60–90 seconds) that would win over a skeptical scientist. If the draft picked a weak one, swap in the strongest materials, chemistry, simulation, building-science, or lab-adoption item from the JSONs. Pull strong AI-for-science items into other desks too when the tabs surfaced them.
 5b. **Caution budget.** Cautions, security, safety, and regulation live ONLY in the reality check at the end of the Research segment: two or three items, about 45–75 seconds, stated plainly. Delete every other caution: "be careful," "pilot first," "start read-only," "verify before you act," "that's a claim, not a guarantee," "treat it as a hypothesis." An early claim gets one light attribution ("the company says"), nothing more. Use the lint `caution_language` warning to find them.
 6. **Momentum.** Re-engage the listener every 2–5 minutes with a new question, a turn, a surprising number, or a change of voice. Don't save the best story for the end. Put the strongest desk early if its material is clearly strongest; the run order is yours.
 7. **Handoffs.** The anchor's cue sets up the correspondent without stealing their first line. Mix quick pivots, two-beat exchanges, and callbacks. Vary handback wording; "Back to you, Jordan" must not end most segments.
@@ -97,6 +98,7 @@ Work through these in order:
 | `hook` | Opens on a concrete story with tension in the first 15 seconds; under 45 seconds | Abstract thesis or theme list; over a minute |
 | `audience_fit` | Most stories are new capabilities or success stories from a wide mix of sources; each ends with a borrowable idea | Dominated by enterprise-platform, governance, or risk stories |
 | `inspiration` | Listener finishes with 3+ ideas they want to try; energy and wonder throughout | Feels like a risk briefing; nothing to get excited about |
+| `science_value` | Research desk leads with a strong AI-for-science story, and the "Share this with your lab" pick would genuinely win over a skeptical scientist | No science content, or a generic pick nobody in a lab would care about |
 | `caution_budget` | Cautions appear only in the Research reality check, 2–3 items, plain | Warnings, "be careful," or "unproven" reminders scattered across segments |
 | `specificity` | Named products, orgs, numbers, and dates from the sources in every segment | "One explainer," "a cluster of posts," no numbers |
 | `non_redundancy` | Each story and each piece of advice appears once | Same advice or concept in 4+ segments |
@@ -117,6 +119,8 @@ Work through these in order:
 - `no_advice_repeated_across_segments`
 - `every_story_has_steal_this_idea`
 - `cautions_only_in_research_reality_check`
+- `has_share_this_with_your_lab_beat`
+- `research_desk_leads_with_ai_for_science`
 - `majority_of_stories_are_capabilities_or_success_stories`
 - `at_least_two_consumer_creator_or_small_business_stories`
 - `no_sentence_over_30_words_unless_list`

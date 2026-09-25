@@ -55,6 +55,7 @@ Futurepedia, Brain Project, Greg Isenberg, MattVidPro, Jeremy Orozco, Paul J Lip
    - "I built with AI <month> 2026"
    - "AI side project / small business AI workflow <month> 2026"
    - "new AI feature demo <month> 2026"
+   - "AI materials science / AI for chemistry / self-driving lab <month> 2026"
 2. Sweep each Tier 1 + Tier 2 channel for the week's uploads. For Tier 3, sample — don't sweep all.
 3. For each candidate, fetch the video page (YouTube URL) to confirm publish date, view count, channel.
 4. Watch transcript or read description carefully for top candidates. **Do NOT summarize from titles alone.**

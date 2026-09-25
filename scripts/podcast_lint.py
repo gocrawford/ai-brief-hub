@@ -237,6 +237,11 @@ def lint(week, script_path, draft_path=None):
     ENT = [r"\benterprise", r"\bcompan(?:y|ies)\b", r"\bIT\b", r"\bprocurement\b", r"\bvendor"]
     ent_total = sum(len(re.findall(e, s_.get("text", ""), re.I if e != r"\bIT\b" else 0)) for s_ in spoken for e in ENT)
 
+    rs = next((x for x in spoken if x.get("id") == "research_segment"), None)
+    if rs is not None and not re.search(r"share this with your lab", rs.get("text", ""), re.I):
+        warnings.append({"check": "lab_beat", "segment": "research_segment",
+                         "detail": "no 'Share this with your lab' beat; it's a required recurring segment"})
+
     # ---------- specificity ----------
     for s in corr:
         t = s["text"]
