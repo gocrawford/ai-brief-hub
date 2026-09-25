@@ -2,7 +2,9 @@
 
 ## Mission
 
-Reddit shows what's actually working (or breaking) for practitioners outside the marketing layer. Long-form post-mortems, honest tool reviews, and emerging frustrations show up here first.
+Reddit shows what's actually working for real people outside the marketing layer: what they built, what saved them hours, which tools they love, and honest reviews. Lead with wins and clever uses. Frustrations are secondary.
+
+**Coverage mix:** follow the Coverage mix and Caution budget in `99-editorial-voice.md`. Actively look for consumer, creator, small-business, and indie wins, fun demos, and success stories. Don't fill this tab with enterprise platform news or risk stories.
 
 ## Source list
 
@@ -19,13 +21,16 @@ Reddit shows what's actually working (or breaking) for practitioners outside the
 **Tier 3 — business / practical / critical:**
 - r/SaaS, r/startups, r/Entrepreneur, r/SideProject, r/productivity
 - r/EnterpriseAI, r/automation, r/n8n
-- r/BetterOffline (deliberate inclusion — the AI-skeptic angle catches enterprise risks the boosters miss)
+- r/BetterOffline (sample lightly; skeptic angle, for contrast only)
+
+**Tier 3b — wins and creative use (always search):**
+- r/SideProject, r/indiehackers, r/smallbusiness, r/ChatGPTPro, r/aivideo, r/StableDiffusion, r/ClaudeAI "showcase" flair, r/vibecoding
 
 ## Method
 
 1. For each Tier 1 and Tier 2 subreddit, fetch posts from the week sorted by Top, Hot, and Rising. Use `browser_task` against `old.reddit.com/r/<sub>/top/?t=week` for cleaner DOM, or the JSON API at `reddit.com/r/<sub>/top.json?t=week`.
 2. Filter by upvote threshold per subreddit (the threshold varies — set per-sub minimums in the index, e.g., r/ClaudeAI ≥ 50, r/MachineLearning ≥ 100, r/LocalLLaMA ≥ 75, r/BetterOffline ≥ 100).
-3. Run cross-subreddit search queries: `Claude Code`, `Manus`, `Perplexity Computer`, `NotebookLM`, `Antigravity IDE`, `MCP server`, `AI agents production`, `multi-agent system`, `RAG implementation`, `AI cost optimization`, `AI enterprise deployment`.
+3. Run cross-subreddit search queries: `Claude Code`, `Manus`, `Perplexity Computer`, `NotebookLM`, `Antigravity IDE`, `MCP server`, `AI agents production`, `multi-agent system`, `RAG implementation`, `AI cost optimization`, `I built`, `saved me hours`, `automated my`, `small business AI`, `made money with AI`.
 4. For each candidate, verify the URL resolves and capture upvotes + top comment count.
 5. Read at least the post body and top 3 comments before summarizing — Reddit threads often have the real signal in comments.
 6. Tool Reviews section: when a thread is a review, capture community sentiment (split positive/negative if significant).
@@ -49,7 +54,7 @@ If a section has nothing new, set `freshness.empty_week_note: "No major new deve
 1. `executive_summary` — 3–4 bullets
 2. `top_picks` — 4–6 threads
 3. `viral_threads` — Threads with > 500 upvotes regardless of category
-4. `use_cases` — Real workflow examples; each gets an `enterprise_translation`
+4. `use_cases` — Real workflow wins (work, small business, personal); each gets an `enterprise_translation` ("steal this idea")
 5. `tool_reviews` — Honest community reviews; each has a `recommendation`
 6. `hot_debates` — Active disagreements with multiple positions
 7. `emerging_signals` — Patterns

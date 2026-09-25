@@ -2,7 +2,9 @@
 
 ## Mission
 
-The highest-trust tab. Track the substrate beneath the news cycle: arXiv papers being widely discussed, model cards, NIST AI RMF updates, EU AI Act implementation milestones, US executive actions, and AI disclosures in peer 10-K/10-Q filings.
+The highest-trust tab. Lead with **new capabilities**: papers and model cards that show AI can now do something it couldn't, with results the reader can build on. Then cover the slower signals: NIST, EU AI Act, and US executive actions, plus AI disclosures in peer 10-K/10-Q filings.
+
+**Balance:** at least half of the Top Picks should be capability or breakthrough research. This tab also **owns** security, safety, and regulation for the whole brief. Keep it here, stated plainly, so the other tabs don't have to.
 
 This tab exists because hype cycles obscure the slower-moving but higher-impact signals: regulation, capability disclosures from frontier labs, and how peer public companies are framing AI to investors.
 
@@ -41,7 +43,7 @@ This tab exists because hype cycles obscure the slower-moving but higher-impact 
 2. **Model cards:** when a frontier lab releases, read the actual card, not the press release. Capture capability claims, safety eval results, and what the card *doesn't* address.
 3. **Regulation:** read the primary document, not the news summary. Capture the specific clause/section that changed.
 4. **SEC:** EDGAR full-text search for "artificial intelligence" in 10-K/10-Q/8-K filed during the week, scoped to industrial sector. Summarize what the filing says, with the exact filing URL on EDGAR.
-5. Every Top Pick must populate `enterprise_adaptation` per the schema definition (implementation pattern + regulated-environment caveats + 30-day experiment) — Research Top Picks earn the same actionability bar as Builders.
+5. Every Top Pick must populate `enterprise_adaptation`. For capability papers, give "steal this idea" content and one experiment. For regulation or safety items, say in one or two plain sentences what changed and who it affects. No checklists.
 
 ## Freshness & recurrence
 

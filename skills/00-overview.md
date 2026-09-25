@@ -39,8 +39,10 @@ Group candidates into 3–7 cross-source themes using **semantic** clustering (n
 Common theme shapes that emerge in AI weeks:
 - **Frontier/foundation model launches** — when a new model from a major lab ships
 - **Platform consolidation** — when multiple vendors converge on the same architecture or pricing model
-- **Security/safety incidents** — when an exploit, attack, or postmortem lands
-- **Regulatory action** — when an agency, court, or jurisdiction moves
+- **New things you can do** — capabilities or features that just became possible or cheap
+- **Success stories** — people or companies getting real results with AI, especially small teams
+- **Creative and consumer breakouts** — viral demos, new creator tools, delightful uses
+- **Security/safety or regulatory moves** — at most ONE theme per week, only when the news is significant
 - **Capital/business signals** — when major funding, M&A, or enterprise deployment happens
 - **Builder pattern shifts** — when a coding/agent practice changes meaningfully
 - **Cultural/discourse moments** — when a debate, narrative, or framing crosses platforms
@@ -52,7 +54,7 @@ For every theme:
 - **theme_id** — kebab-case stable identifier. Pick names that survive across weeks (`agent-platform-pricing`, not `april-22-pricing-news`). This is critical for recurrence tracking.
 - **headline** — lead with the answer. Max 140 chars.
 - **summary** — 2-3 sentences. State what's happening across sources, name specific products/labs/agencies/numbers.
-- **implication** — one sentence on what an enterprise AI team should watch or do.
+- **implication** — one sentence on the opportunity: what the reader could try, borrow, or build. No cautions.
 - **citations** — minimum 2, ideally 3-6, drawn from multiple source tabs. Each citation needs `tab_id`, `item_id` (from the source file), `label` (a short reference like "GPT-5.5 ships April 23"), and `primary_url`.
 - **recurrence** — see Step 4.
 - **tags** — short topic tags (e.g. `frontier-models`, `agents`, `regulation`).
@@ -76,10 +78,10 @@ Walk every prior `data/*/overview.json` (oldest to newest). For every `theme_id`
 This becomes the cross-week tracker shown on the Overview page.
 
 ### Step 6 — Build the 90-second brief
-Pick the 5–10 single highest-scoring items across **all 7 source tabs combined**, ranked by composite score (top_pick.score.total). Each entry references the underlying item by `tab_id` and `item_id`. Each gets a one-line takeaway that someone could read in 5 seconds.
+Pick the 5–10 single highest-scoring items across **all 7 source tabs combined**, ranked by composite score (top_pick.score.total). Include at least two consumer, creator, small-business, or indie items and at most one risk or regulation item. Each entry references the underlying item by `tab_id` and `item_id`. Each gets a one-line takeaway that someone could read in 5 seconds.
 
 ### Step 7 — Headline
-Write one sentence (≤ 200 chars) framing the entire week. This is what the user reads if they only see the page title. Lead with the answer.
+Write one sentence (≤ 200 chars) framing the entire week. This is what the user reads if they only see the page title. Lead with the answer, framed as opportunity (what's newly possible), not risk.
 
 ## Editorial rules
 

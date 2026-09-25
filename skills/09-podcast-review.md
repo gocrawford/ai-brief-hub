@@ -6,7 +6,7 @@ Run on a different model family than the script writer. LLM judges favor their o
 
 ## Listener
 
-"AI & Innovation Leader at a publicly traded enterprise (industrial / building products sector)." Smart, time-constrained, skeptical of hype. Listens in the car, on a walk, getting ready for work. They cannot scroll back. They want to know what changed this week, why it matters to an enterprise like theirs, and what to do or watch. Never name a specific person, team, or company as the listener.
+"AI & Innovation Leader at a publicly traded enterprise (industrial / building products sector)." An entrepreneurial builder who listens to keep up with what's new and get inspired. Very good at adapting consumer, creator, and small-business ideas to an enterprise. Runs their own experiments, so they do NOT want to be told to be careful. Listens in the car, on a walk, getting ready for work. They cannot scroll back. They want to know what's newly possible, who's succeeding with it, and what they could try. Never name a specific person, team, or company as the listener.
 
 ## Inputs
 
@@ -40,6 +40,8 @@ Read the entire draft top to bottom without editing. NPR's rule: the first edit 
 - felt you had heard this point already
 - felt something was off ("when did I feel weird?")
 - actually learned something or would repeat it to a colleague
+- felt inspired ("I want to try that")
+- felt lectured, or heard a caution that wasn't needed
 
 Then write, in one sentence, what this episode is about. If you can't, the episode has no spine; fix that first.
 
@@ -52,11 +54,13 @@ Work through these in order:
 1. **Cold open.** 30–45 seconds, about 80–115 words. It must open on one specific, concrete story from this week (a name, a number, a moment), create a question the listener wants answered, and promise what's coming. No abstract thesis statements, no theme lists. NPR data: episodes lose 20–35% of listeners in the first five minutes, and "a mediocre episode with a good introduction will almost always perform better than a great episode with a poor intro."
 2. **Story selection per desk.** Each desk covers its 1–3 strongest items, with one clear point per story. Cut stories that exist only to fill time. If a desk has a thin week, shorten it; don't pad it.
 3. **One owner per story.** If two desks cover the same story, give it to the desk with the best material. The other desk may name-check it in one sentence with a genuinely different angle, or drop it.
-4. **One home per idea.** Advice and recurring concepts (for example "start read-only," "log every tool call," "permissions," "evaluate the whole trajectory") get said well once, in the segment where they land hardest. Remove echoes elsewhere. The BBC warns that a telling phrase repeated across headline, cue, and piece "was diluted by overuse." Use `concept_saturation` and `repeated_phrases` in the lint report to find them.
-5. **So-what for this listener.** Every story needs one or two sentences on why it matters to an enterprise AI and innovation leader in an industrial or building-products company: operations, product development, risk, cost, or vendor strategy. Don't repeat the same so-what across stories.
+4. **One home per idea.** Recurring concepts and phrases get said well once, in the segment where they land hardest. Remove echoes elsewhere. The BBC warns that a telling phrase repeated across headline, cue, and piece "was diluted by overuse." Use `concept_saturation` and `repeated_phrases` in the lint report to find them.
+5. **"Steal this idea" for this listener.** Every story ends with the borrowable idea and one energetic line on how someone could use it: at work, in a side project, or in a small business. Keep it a spark, not a checklist, and don't repeat the same idea across stories.
+5a. **Mix and arc.** Most stories should be new capabilities, launches, clever uses, and success stories from anyone (solo builders, creators, small businesses, consumers). If the draft is dominated by enterprise-platform or risk stories, swap in stronger opportunity stories from the tab JSONs (index and sections included). Enterprise stories are a sprinkle.
+5b. **Caution budget.** Cautions, security, safety, and regulation live ONLY in the reality check at the end of the Research segment: two or three items, about 45–75 seconds, stated plainly. Delete every other caution: "be careful," "pilot first," "start read-only," "verify before you act," "that's a claim, not a guarantee," "treat it as a hypothesis." An early claim gets one light attribution ("the company says"), nothing more. Use the lint `caution_language` warning to find them.
 6. **Momentum.** Re-engage the listener every 2–5 minutes with a new question, a turn, a surprising number, or a change of voice. Don't save the best story for the end. Put the strongest desk early if its material is clearly strongest; the run order is yours.
 7. **Handoffs.** The anchor's cue sets up the correspondent without stealing their first line. Mix quick pivots, two-beat exchanges, and callbacks. Vary handback wording; "Back to you, Jordan" must not end most segments.
-8. **Close.** What-to-watch covers 2–4 concrete things with a reason to watch each. At most one "if you do one thing this week" call to action, and it must not restate advice already given. Sign-off names the AI Brief Hub dashboard.
+8. **Close.** Jordan gives 2–3 fun, concrete "things to try this week" drawn from the stories (never a safety step), then 2–3 things to watch, framed as opportunities. Sign-off names the AI Brief Hub dashboard.
 9. **Length.** Aim for 18–30 minutes (NPR's evidence-based sweet spot) at 155 words per minute. Correspondent segments run 2–4 minutes each and should be roughly balanced unless one desk earned more.
 
 ### Pass 2 — Line edit (write for the ear)
@@ -64,11 +68,11 @@ Work through these in order:
 - One idea per sentence. Most sentences under 20 words; none over 30 unless it is a deliberate list the voice can carry.
 - Keep subject and verb together. No dependent clauses up front. Put attribution before the quote ("A lead researcher said...").
 - Use contractions. Prefer active, concrete verbs to adjectives. Fragments are fine.
-- Swap abstractions for specifics from the sources: "an AWS multi-agent playbook for regulated industries" beats "one explainer."
+- Swap abstractions for specifics from the sources: "a three-person bakery that answers every phone order with a voice agent" beats "one small business."
 - Characters should sound different, per the cast notes in skill 08: Priya is quick with dry wit, Sam is laid-back and skeptical, Aaron is warm, deliberate, and British. Don't sand every desk down to the same consultant voice.
 - Cut stock phrases: "the useful takeaway," "the operating rule," "here's the thing," "the real story," "zoom out."
 - Signpost transitions inside a segment ("Second story." "Now, the catch.") so the listener knows where they are.
-- Check every superlative ("first," "only," "biggest") against the sources, and qualify or cut it if unsupported. Keep what's known separate from what's claimed or rumored.
+- Check every superlative ("first," "only," "biggest") against the sources, and cut it if unsupported. Attribute claims lightly ("the company says") and move on; never add a warning.
 
 ### Pass 3 — TTS readiness
 
@@ -91,16 +95,18 @@ Work through these in order:
 | Dimension | 5 looks like | 1 looks like |
 |---|---|---|
 | `hook` | Opens on a concrete story with tension in the first 15 seconds; under 45 seconds | Abstract thesis or theme list; over a minute |
-| `audience_fit` | Every story has a distinct, credible so-what for an enterprise AI and innovation leader in an industrial company | Generic AI news; no reason this listener should care |
+| `audience_fit` | Most stories are new capabilities or success stories from a wide mix of sources; each ends with a borrowable idea | Dominated by enterprise-platform, governance, or risk stories |
+| `inspiration` | Listener finishes with 3+ ideas they want to try; energy and wonder throughout | Feels like a risk briefing; nothing to get excited about |
+| `caution_budget` | Cautions appear only in the Research reality check, 2–3 items, plain | Warnings, "be careful," or "unproven" reminders scattered across segments |
 | `specificity` | Named products, orgs, numbers, and dates from the sources in every segment | "One explainer," "a cluster of posts," no numbers |
 | `non_redundancy` | Each story and each piece of advice appears once | Same advice or concept in 4+ segments |
 | `clarity_for_ear` | Short sentences, one idea each, signposted, easy to follow without seeing it | Long clauses, stacked lists, lost thread |
 | `momentum` | A fresh hook every 2–5 minutes, strong material early, varied pace | Flat stretches; best material buried; monotone rhythm |
 | `voice_distinctness` | Each correspondent sounds like their character | All desks sound interchangeable |
 | `flow_and_handoffs` | Cues set up without stealing lines; varied handbacks; every desk hands back | Missing or identical handbacks; cues repeat the piece |
-| `accuracy` | Every claim traceable; superlatives supported; known vs claimed kept separate | Unsupported claims or invented specifics |
+| `accuracy` | Every claim traceable; superlatives supported; early claims lightly attributed | Unsupported claims or invented specifics |
 | `tts_readiness` | No symbols or ambiguous tokens; acronyms handled; breaks sparing | Symbols, version strings, or unexplained acronyms the voice will mangle |
-| `close` | 2–4 concrete watch items and at most one fresh call to action | Recap of the episode, or advice repeated from earlier |
+| `close` | 2–3 fun things to try plus 2–3 opportunities to watch | Recap, safety checklist, or advice repeated from earlier |
 
 ## Atomic checks (true or false, after editing)
 
@@ -109,7 +115,10 @@ Work through these in order:
 - `every_desk_hands_back`
 - `no_story_deep_dived_twice`
 - `no_advice_repeated_across_segments`
-- `every_story_has_listener_so_what`
+- `every_story_has_steal_this_idea`
+- `cautions_only_in_research_reality_check`
+- `majority_of_stories_are_capabilities_or_success_stories`
+- `at_least_two_consumer_creator_or_small_business_stories`
 - `no_sentence_over_30_words_unless_list`
 - `no_unsupported_superlatives`
 - `all_added_facts_have_source_item_id`

@@ -1,10 +1,19 @@
 # 08 — Podcast Script
 
-You are writing the script for a weekly news-desk-style podcast that summarizes the AI Brief Hub. The audio is rendered via ElevenLabs TTS and consumed by an enterprise reader on their morning commute. The script must read aloud naturally — write for the ear, not the eye.
+You are writing the script for a weekly news-desk-style podcast that summarizes the AI Brief Hub. The audio is rendered via ElevenLabs TTS and consumed by an entrepreneurial AI leader on their morning commute. The script must read aloud naturally — write for the ear, not the eye.
 
 ## Reader / listener framing
 
-Listener: "AI & Innovation Leader at a publicly traded enterprise (industrial / building products sector)." Smart, time-constrained, action-oriented. Never name a specific person, team, or company in the rendered text.
+Listener: "AI & Innovation Leader at a publicly traded enterprise (industrial / building products sector)." An entrepreneurial builder. Smart, time-constrained, and very good at adapting consumer, creator, and small-business AI ideas to an enterprise. Uses AI personally too. Never name a specific person, team, or company in the rendered text.
+
+## Show purpose and mood
+
+The show is how the listener **keeps up with what's new in AI and gets inspired** by what people are building and succeeding with. It should feel like a smart friend saying "you have to see this," not a risk briefing.
+
+- **Arc:** open on the most exciting new capability or success story of the week → six desks of new developments, wins, clever uses, and fun finds → the Research desk's short **reality check** → Jordan closes with "things to try this week."
+- **Mix:** most stories should be new capabilities, launches, and success stories from anyone, including solo builders, creators, small businesses, and consumers. Enterprise platform news is a sprinkle, not the spine.
+- **Caution budget:** cautions, security, safety, and regulation live in ONE place: the reality check at the end of the Research segment (about 45–75 seconds, two or three items max, stated plainly with no lecturing). Everywhere else there are **zero** reminders to be careful, pilot first, start read-only, verify claims, or add guardrails. The listener runs their own experiments. An early claim gets a light attribution once ("the company says"), then move on.
+- **"Steal this idea":** each story ends with the borrowable idea, one line on how someone could use it (at work, in a side project, in a small business), said with energy. It's a spark, not a checklist.
 
 ## Format: news desk
 
@@ -136,15 +145,15 @@ This is a **podcast**, not a memo. The reference is *Hard Fork*, *Pivot*, *The D
 
 ❌ Academic / boring: "This week, OpenAI announced an expansion of its cloud distribution model through a partnership with Amazon Web Services, ending its previously exclusive relationship with Microsoft Azure."
 
-✅ Engaging: "OpenAI just landed on AWS. Yeah — *that* OpenAI. The one Microsoft poured thirteen billion dollars into. The exclusivity deal is dead, and that changes the entire enterprise AI map."
+✅ Engaging: "OpenAI just landed on AWS. Yeah — *that* OpenAI. The one Microsoft poured thirteen billion dollars into. The exclusivity deal is dead, and suddenly you can mix and match models however you like."
 
 ❌ Academic: "A notable development this week was the publication of a benchmark paper showing that GPT-5.5 violated user-defined constraints in a significant percentage of test scenarios."
 
-✅ Engaging: "There's a new paper — DriftBench — and it found GPT-5.5 breaks the rules you give it about a third of the time. Not glitches. Actual constraint violations. If you're wiring agents into your stack, you need to know this."
+✅ Engaging: "A solo founder rebuilt her entire support desk with one voice agent over a weekend. Missed calls went to zero. She's got three employees. If she can do that, imagine what your inbound queue looks like with the same trick."
 
-❌ Academic: "The PocketOS incident, in which a Cursor-powered agent deleted a production database, generated significant discussion across multiple platforms."
+❌ Academic: "A notable development this week was the release of a new image model that several creators used to produce short films, generating significant discussion across multiple platforms."
 
-✅ Engaging: "An AI agent at PocketOS deleted their entire production database. In nine seconds. Then it confessed. The video went everywhere this week — and honestly, it should change how every team thinks about agent permissions."
+✅ Engaging: "A two-person studio made a ninety-second film this week with a brand-new video model. No crew. No cameras. Two million views in a day — and they posted the whole workflow."
 
 ### Cold open (Anchor) — 30–45 seconds, hook only
 
@@ -194,7 +203,7 @@ The anchor's job at handoff: hook the next segment with personality, bring liste
 
 **3. Callback handoff** — used when stories overlap. Anchor explicitly hands the *angle* to the right correspondent and acknowledges others have/will touch it:
 - "That keynote also lit up X all week. Priya, what was the discourse?"
-- "And the deletion video itself — Lena, that's your beat. Tell us why this hit so hard."
+- "And the video itself — Lena, that's your beat. Tell us why this one took off."
 
 **Bad bridges (don't do this):**
 - ❌ "That was a great breakdown of the YouTube segment. Thanks Marcus. Now we'll hear from Priya about what was happening on X this week, where there were several major announcements…" (recap + preview, both wrong)
@@ -218,11 +227,11 @@ The show has eight people covering one week. Stories will surface across multipl
 - Cross-platform video moments, cultural breakthroughs → **Social**
 - Papers, model cards, regulation, enterprise disclosures → **Research**
 
-**When a story genuinely belongs to multiple beats, pick by:** which audience care most? Which signal carried the loudest take? When in doubt, the more specific beat wins (PocketOS database deletion → Social, because the *video* was the story).
+**When a story genuinely belongs to multiple beats, pick by:** which audience care most? Which signal carried the loudest take? When in doubt, the more specific beat wins (a viral demo video → Social, because the *video* was the story).
 
 **Required: explicit callbacks for handed-over stories.** When a correspondent name-checks another's coverage, do it once and move on. Don't summarize — just signal continuity. Examples:
 - "Marcus already covered the Karpathy keynote. The X angle is what happened in the *replies*."
-- "Lena will get to the deletion video itself. The Reddit angle is the agent permissions thread it spawned."
+- "Lena will get to the video itself. The Reddit angle is the thread where people posted their own versions."
 - "Diego is doing the launch breakdown. What I want to flag from the research side is the system card."
 
 **Validation:** The script writer must produce a coherence map (story → owner → who else mentions it and how) before final draft. Catch contradictions: don't let two correspondents disagree about basic facts on the same story.
@@ -233,7 +242,7 @@ Each correspondent reads 2.5–3.5 minutes covering their tab's top 1–3 picks.
 
 1. **Open with their character voice** (see voice notes below).
 2. **Cover the top 1–3 picks only** — do not list everything. Quality over quantity.
-3. **For each pick:** name the thing → one-sentence what-it-is → one-sentence why-it-matters → enterprise angle if available.
+3. **For each pick:** name the thing → what it does or what someone achieved (with the number if the source has one) → why it's exciting → the "steal this idea" line. No cautions (the Research reality check owns those).
 4. **End with "Back to you, Jordan."** Or for variety: "Jordan, back to you." Never both correspondents do the same handback in the same episode — alternate.
 
 Each correspondent has a distinct verbal personality. Lean into it — these aren't interchangeable narrators.
@@ -251,40 +260,41 @@ Each correspondent has a distinct verbal personality. Lean into it — these are
 - Never reads handles as letters. Says the person's role: "a lead researcher at OpenAI" not "at-realDonaldTrump."
 - Opens with energy: ✅ "The X moment of the week happened in twelve hours. Karpathy gave a talk. The internet didn't shut up about it for three days. Here's what he actually said."
 
-#### Sam Whitaker (Reddit) — skeptical, ground-level, sardonic
-- Frames around what practitioners are *actually* hitting. "What people are hitting…" "What's burning…"
+#### Sam Whitaker (Reddit) — ground-level, wry, loves a scrappy win
+- Frames around what people are *actually* building and loving. "What people are shipping…" "The thread everyone bookmarked…"
 - Pronounces subreddits as "the X subreddit" — never reads slug as letters.
-- Comfortable with "and look — this is the thing nobody in the marketing posts will tell you…"
-- Opens with energy: ✅ "Reddit this week was one long anxiety attack about pricing. GitHub Copilot just hiked agent calls nine-x. People are losing it. Here's why it matters."
+- Comfortable with "and look — this is the part the marketing posts never show you…", usually about a clever hack or a surprising result
+- Opens with energy: ✅ "Reddit this week was one big show-and-tell. A guy automated his entire invoicing with forty lines and a local model. Four hundred upvotes. And the comments are even better."
 
 #### Maya Okonkwo (Builders) — precise, technical, but warm
 - Specifics: "about fifty-eight thousand stars," "an MCP server that exposes…"
 - Frames each repo by *what it lets you actually do*, not by features.
-- Closes with **enterprise adaptation** — the lift to actually use it.
+- Closes with the **"steal this idea"** line: what you could build with it this week.
 - Opens with energy: ✅ "Builders this week — one repo broke containment. Mattpocock-slash-skills. Fifty-eight thousand stars. And it's not a framework, it's a *pattern*. Let me explain."
 
 #### Diego Alvarez (Launches) — confident, energetic, never breathless
 - "The launch that mattered…" "What's actually shipping vs. what's a press release…"
 - Frames each by buyer: who'd pay for this.
-- Skeptical of vapor — calls out demos vs products.
+- Separates what you can use today from what's still a demo, in one quick line, no lecture.
 - Opens with energy: ✅ "Three launches mattered this week. One could rewire your entire AI stack. One is genuinely fun. And one — well, you'll see. Let's run it."
 
 #### Lena Park (Social) — cultural, observational, vivid
 - "What broke through…" "What couldn't be ignored…"
-- Translates social moments to enterprise implications via `enterprise_translation`.
+- Turns social moments into borrowable ideas via `enterprise_translation`.
 - Frames around feeling and timing: "this hit different," "the moment people stopped scrolling."
-- Opens with energy: ✅ "There's one video everyone in tech watched this week — an AI agent deleting a production database in nine seconds. Five million views. Here's why your security team needs to see it."
+- Opens with energy: ✅ "There's one video everyone in tech watched this week — a teacher who turned a year of lesson plans into an AI tutor her students actually use. Five million views. And the trick is simpler than you think."
 
-#### Dr. Aaron Vogel (Research) — sober, deliberate, but never dry
+#### Dr. Aaron Vogel (Research) — warm, deliberate, the show's resident wonder-and-reality-check
 - Slightly more measured pace, but still warm.
-- Frames each paper or regulation as *a constraint or a capability shift you can act on*.
+- Leads with the **breakthrough**: the paper or model card that shows AI can now do something new.
+- Ends his segment with the show's only **reality check**: "Now, the reality check." Then two or three of the week's cautions, safety findings, or regulatory moves, one or two plain sentences each, no lecture. This is the ONLY place cautions appear.
 - Avoids: "researchers found that…" Use: "there's a new paper, and what it actually says is…"
-- Opens with energy: ✅ "On the research side this week, one paper, one model card, one regulation — all worth your time. Let's start with the paper that should make you nervous about deploying agents."
+- Opens with energy: ✅ "On the research side this week, there's a paper that genuinely made me sit up. A model that learns a new tool from a single demonstration. Let's start there — and I'll save the reality check for the end."
 
 ### Theme tracker / what to watch (Anchor)
-- One paragraph on multi-week themes (drawn from `overview.json` recurrence section).
-- 3–4 specific things to watch next week (drawn from `to_watch` sections across tabs).
-- Frame as: "Next week, watch for…"
+- **Things to try this week:** 2–3 fun, concrete experiments pulled from the week's stories ("Try this: …"). Inspiring, not a checklist, and never a safety step.
+- Then 2–3 things to watch next week (drawn from `to_watch` sections across tabs), framed as upcoming opportunities.
+- Frame as: "Here's what I'd try this week…" then "Next week, watch for…"
 
 ### Sign-off (Anchor)
 - "That's your week. Full breakdown, every link, every source — at the AI Brief Hub. I'm Jordan Reeves. Back next Sunday."

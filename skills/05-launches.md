@@ -2,7 +2,11 @@
 
 ## Mission
 
-Track new AI products, model releases, and funding rounds with an evaluation lens. Every Top Pick gets an explicit recommendation: EVALUATE NOW, ADD TO WATCHLIST, MONITOR, or SKIP.
+Track new AI products, features, model releases, and funding rounds, including consumer apps, creator tools, and small-business products. The question is "what could I use or borrow from this?" A clever consumer app counts as much as an enterprise platform.
+
+**Coverage mix:** follow the Coverage mix and Caution budget in `99-editorial-voice.md`. Actively look for consumer, creator, small-business, and indie wins, fun demos, and success stories. Don't fill this tab with enterprise platform news or risk stories.
+
+ Every Top Pick gets an explicit recommendation: EVALUATE NOW, ADD TO WATCHLIST, MONITOR, or SKIP.
 
 ## Source list
 
@@ -39,10 +43,10 @@ Track new AI products, model releases, and funding rounds with an evaluation len
 2. **Verification is critical here** — funding numbers, model claims, pricing. Cross-check funding announcements against the company's own site, not just press coverage. If a TechCrunch number contradicts the company's press release, drop the item into `flagged_unverified`.
 3. For each candidate, classify by category: Frontier Model / Enterprise AI / Dev Tools / AI Agent / Vertical SaaS / Open Source / Hardware.
 4. Apply evaluation badge:
-   - **EVALUATE NOW** — High strategic relevance, GA or near-GA, fits a regulated enterprise context.
+   - **EVALUATE NOW** — Available now and worth trying this month, for personal use, a team, or the org.
    - **ADD TO WATCHLIST** — Promising but early; track for next 1–2 quarters.
    - **MONITOR** — Worth knowing about; not a near-term decision.
-   - **SKIP** — Hype-driven, not enterprise-relevant.
+   - **SKIP** — Hype with nothing real to try.
 
 ## Cross-source search queries
 
@@ -79,12 +83,13 @@ Set `freshness.target_pct_new = 0.85` (launches need higher freshness than discu
 3. `product_hunt` — Top 8–12 PH launches sorted by upvotes (table). Resolve every URL per the URL Resolution Rules below — maker website as primary, PH product page as secondary, never a leaderboard URL.
 4. `frontier_models` — Any new model releases (separate from Top Picks for visibility)
 5. `yc_and_startups` — 3–6 notable YC W26/S26 companies and funded startups
-6. `enterprise_ai` — Enterprise platform launches (Microsoft / cloud / data platforms)
-7. `funding` — Notable AI funding rounds (verified against company source)
-8. `open_source` — Notable open-source releases / dev tool launches
-9. `to_watch` — Early-stage with high signal
-10. `index` — All launches considered, **min 20 rows** (`min_items: 20`)
-11. `suggested_refinements`
+6. `consumer_and_creator` — Consumer, creator, and small-business AI launches and new features (3–6 items)
+7. `enterprise_ai` — Enterprise platform launches (Microsoft / cloud / data platforms), 2–4 items max
+8. `funding` — Notable AI funding rounds (verified against company source)
+9. `open_source` — Notable open-source releases / dev tool launches
+10. `to_watch` — Early-stage with high signal
+11. `index` — All launches considered, **min 20 rows** (`min_items: 20`)
+12. `suggested_refinements`
 
 ## Per-item required fields
 
@@ -115,4 +120,4 @@ Every `primary_url` and `secondary_urls` link must land somewhere genuinely usef
 - "Pre-launch" / waitlist-only items with no real product
 - Re-announcements of existing features
 - Funding rounds where the company press release contradicts the news article (flag in `flagged_unverified`)
-- Pure consumer apps with no enterprise relevance, unless the underlying technology is novel
+- Consumer apps that are thin wrappers with nothing new (keep consumer apps that show a new capability, a clever use, or real traction)

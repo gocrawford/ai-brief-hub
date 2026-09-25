@@ -2,9 +2,11 @@
 
 ## Mission
 
-Cover viral and educational AI content on LinkedIn, Instagram, TikTok, and Facebook. Translate consumer/creator energy into enterprise concepts. **This is the consumer-to-enterprise translation tab** — every item includes `enterprise_translation`.
+Cover viral and educational AI content on LinkedIn, Instagram, TikTok, and Facebook. Capture the creator energy: what people are making, the wins they share, and the new features they discover. **This is the "steal this idea" tab.** Every item includes `enterprise_translation` with borrowable-idea content per `99-editorial-voice.md`.
 
-The reader's framing: "We can't always install the new tool on managed laptops, but we can extract the design principles (self-learning loops, distributed memory, subagents) and bake them into our internal agent projects." Every Top Pick should serve that exercise.
+The reader's framing: "Show me what's working out there. I'll figure out how to bring it inside." Every Top Pick should spark an idea.
+
+**Coverage mix:** follow the Coverage mix and Caution budget in `99-editorial-voice.md`. Actively look for consumer, creator, small-business, and indie wins, fun demos, and success stories. Don't fill this tab with enterprise platform news or risk stories.
 
 ## Source list
 
@@ -39,9 +41,9 @@ The reader's framing: "We can't always install the new tool on managed laptops, 
 1. Use `browser_task` for each platform to find the week's top content matching the source list. **This is the trickiest tab to verify** — engagement numbers change quickly. Capture them at fetch time.
 2. For each candidate, write a 2-sentence summary: what the creator demonstrated, and why it spread.
 3. Then write `enterprise_translation` — 1–3 sentences on:
-   - The design principle the consumer demo exposes (e.g., self-directed loop, multi-agent decomposition, persistent memory across sessions)
-   - The enterprise pattern that principle maps to (internal agent project, internal RAG, agent-as-coworker)
-   - One concrete experiment a public-company innovation team could run within 30 days
+   - The idea worth borrowing (for example a self-directed loop, a multi-agent split, or persistent memory)
+   - One fun way to try it, personally or at work
+   - No caveats or governance lists
 4. Tools Trending: count cross-platform mentions of the week's hot tools.
 
 ## Freshness & recurrence
@@ -76,7 +78,7 @@ Set `freshness.target_pct_new = 0.80` and `min_items = 15`. Against last week's 
 
 ## What to drop
 
-- Pure entertainment (e.g., AI-generated dance videos)
+- Pure entertainment with no new capability behind it (keep it if it shows what a new model or tool can now do)
 - Posts whose engagement is fake-looking (sudden 1M views from unknown account, no following)
 - Recycled Reels from earlier weeks
 - Drama / influencer feuds with no technical content

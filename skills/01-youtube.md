@@ -2,7 +2,9 @@
 
 ## Mission
 
-Surface the highest-signal AI/agent/automation videos published in the week. Bias toward technical depth, primary-source demos from labs and serious builders, sober analysis (anti-hype), and tutorials that translate to enterprise patterns.
+Surface the highest-signal AI/agent/automation videos published in the week. Bias toward new capabilities shown working, builders and creators demoing what they made, success stories with real results, and tutorials worth copying, whether the use is at work, in a small business, or personal. Serious analysis is welcome; skeptic-only takes are not the goal.
+
+**Coverage mix:** follow the Coverage mix and Caution budget in `99-editorial-voice.md`. Actively look for consumer, creator, small-business, and indie wins, fun demos, and success stories. Don't fill this tab with enterprise platform news or risk stories.
 
 ## Source list (locked April 2026; refine via Suggested Refinements)
 
@@ -50,7 +52,9 @@ Futurepedia, Brain Project, Greg Isenberg, MattVidPro, Jeremy Orozco, Paul J Lip
    - "<frontier model name> launch demo"
    - "OpenAI <month> 2026 announcement"
    - "Anthropic <month> 2026"
-   - "AI agent enterprise <month> 2026"
+   - "I built with AI <month> 2026"
+   - "AI side project / small business AI workflow <month> 2026"
+   - "new AI feature demo <month> 2026"
 2. Sweep each Tier 1 + Tier 2 channel for the week's uploads. For Tier 3, sample — don't sweep all.
 3. For each candidate, fetch the video page (YouTube URL) to confirm publish date, view count, channel.
 4. Watch transcript or read description carefully for top candidates. **Do NOT summarize from titles alone.**
@@ -74,7 +78,7 @@ Set `freshness.target_pct_new = 0.80` and `min_items = 12`. Against last week's 
 2. `top_picks` — 4–6 videos
 3. `tool_updates` — Major tool/model demos shown on YouTube this week (cards: tool / feature / one-line takeaway)
 4. `tutorials` — How-tos worth replicating, with `key_takeaways`
-5. `use_cases` — Demos of agents/automation in real workflows. Each gets `enterprise_translation`.
+5. `use_cases` — Demos of agents and automation in real workflows, including creators, small businesses, and personal use. Each gets `enterprise_translation` ("steal this idea" content per `99-editorial-voice.md`).
 6. `emerging_signals` — Patterns observed across multiple videos
 7. `index` — All videos considered, **min 12 rows** (`min_items: 12`) (sortable table)
 8. `suggested_refinements`
@@ -88,7 +92,7 @@ Set `freshness.target_pct_new = 0.80` and `min_items = 12`. Against last week's 
 ## What to drop
 
 - Reaction videos with no primary content
-- "I asked ChatGPT to..." entertainment content
+- "I asked ChatGPT to..." content with nothing new in it (keep it if it shows a new capability or a clever use)
 - Videos < 4 minutes (too thin to score)
 - Channels that recycle press releases without demo or analysis
 - Clickbait titles where the video doesn't deliver on the headline (verify by skimming)

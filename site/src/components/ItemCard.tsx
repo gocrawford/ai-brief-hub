@@ -193,7 +193,7 @@ export default function ItemCard({ item }: { item: Item }) {
       {(item.enterprise_translation || item.enterprise_adaptation) && (
         <div className="mt-1 rounded-lg border border-amber-400/20 bg-amber-400/5 p-3">
           <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-amber-300 mb-1.5">
-            {item.enterprise_adaptation ? "Enterprise adaptation" : "Enterprise translation"}
+            How you could use it
           </div>
           <p className="text-sm text-slate-200 leading-relaxed">
             {item.enterprise_adaptation ?? item.enterprise_translation}

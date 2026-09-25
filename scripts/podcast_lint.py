@@ -214,6 +214,29 @@ def lint(week, script_path, draft_path=None):
     if stock:
         warnings.append({"check": "stock_phrases", "segment": None, "detail": "generic phrases used 2+ times", "phrases": stock})
 
+
+    # ---------- caution budget (cautions live only in the Research reality check) ----------
+    CAUTION = [r"\bbe careful\b", r"\bcaution", r"\bunverified\b", r"\bnot verified\b", r"\bunproven\b",
+               r"\bnot a guarantee\b", r"\bisn't a guarantee\b", r"\bhypothesis\b", r"\bbefore you (?:act|trust|deploy)\b",
+               r"\bread-only\b", r"\bguardrails?\b", r"\bgovernance\b", r"\baudit(?:s|ed|ing)?\b", r"\bpermissions?\b",
+               r"\bcompliance\b", r"\brisks?\b", r"\bpilot (?:it|first)\b", r"\bdon't (?:act|trust|rely)\b",
+               r"\bproceed with\b", r"\bverify\b", r"\bprove it\b", r"\bwarning\b"]
+    caution_hits = collections.Counter()
+    for s_ in spoken:
+        if s_.get("id") == "research_segment":
+            continue
+        t = s_.get("text", "").lower()
+        n = sum(len(re.findall(c, t)) for c in CAUTION)
+        if n:
+            caution_hits[s_["id"]] = n
+    caution_total = sum(caution_hits.values())
+    if caution_total > 3:
+        warnings.append({"check": "caution_language", "segment": None,
+                         "detail": f"{caution_total} caution words outside the Research reality check (budget 3); move to research_segment or cut",
+                         "by_segment": dict(caution_hits)})
+    ENT = [r"\benterprise", r"\bcompan(?:y|ies)\b", r"\bIT\b", r"\bprocurement\b", r"\bvendor"]
+    ent_total = sum(len(re.findall(e, s_.get("text", ""), re.I if e != r"\bIT\b" else 0)) for s_ in spoken for e in ENT)
+
     # ---------- specificity ----------
     for s in corr:
         t = s["text"]
@@ -243,6 +266,7 @@ def lint(week, script_path, draft_path=None):
         "spoken_segments": len(spoken), "music_segments": len(music), "total_words": total_words,
         "estimated_minutes": round(est_min, 1), "avg_sentence_words": round(avg_sent, 1),
         "long_sentences": len(long_sents), "repeated_phrases": len(rep), "tts_symbols": len(tts),
+        "caution_words_outside_research": caution_total, "enterprise_words": ent_total,
         "segment_words": wc,
     }
     return {"week": week, "script": str(script_path), "pass": not errors,
