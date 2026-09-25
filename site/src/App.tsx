@@ -3,8 +3,9 @@ import Hero from "./components/Hero";
 import TabNav, { type View } from "./components/TabNav";
 import TabView from "./components/TabView";
 import OverviewView from "./components/OverviewView";
-import { fetchWeekIndex, fetchMeta, fetchTab, fetchOverview, fetchPodcast } from "./lib/data";
-import type { Meta, Tab, TabId, WeekIndexEntry, Overview, PodcastEpisode } from "./types";
+import ScienceView from "./components/ScienceView";
+import { fetchWeekIndex, fetchMeta, fetchTab, fetchOverview, fetchPodcast, fetchScience } from "./lib/data";
+import type { Meta, Tab, TabId, WeekIndexEntry, Overview, PodcastEpisode, Science } from "./types";
 
 const DEFAULT_VIEW: View = "overview";
 
@@ -18,7 +19,7 @@ function parseHash(): Route {
   const h = window.location.hash.replace(/^#\/?/, "");
   if (!h) return { view: "overview", itemId: null };
   const [view, itemId] = h.split("/");
-  const validViews: View[] = ["overview", "youtube", "x", "reddit", "builders", "launches", "social", "research"];
+  const validViews: View[] = ["overview", "science", "youtube", "x", "reddit", "builders", "launches", "social", "research"];
   if (!validViews.includes(view as View)) return { view: "overview", itemId: null };
   return { view: view as View, itemId: itemId || null };
 }
@@ -39,6 +40,7 @@ export default function App() {
 
   const [tabData, setTabData] = useState<Tab | null>(null);
   const [overview, setOverview] = useState<Overview | null>(null);
+  const [science, setScience] = useState<Science | null>(null);
   const [podcast, setPodcast] = useState<PodcastEpisode | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -71,7 +73,14 @@ export default function App() {
   useEffect(() => {
     if (!activeWeek) return;
     setLoading(true);
-    if (activeView === "overview") {
+    if (activeView === "science") {
+      setTabData(null);
+      setOverview(null);
+      fetchScience(activeWeek)
+        .then(setScience)
+        .catch(() => setScience(null))
+        .finally(() => setLoading(false));
+    } else if (activeView === "overview") {
       setTabData(null);
       fetchOverview(activeWeek)
         .then(setOverview)
@@ -173,6 +182,8 @@ export default function App() {
               </p>
             </div>
           )
+        ) : activeView === "science" ? (
+          <ScienceView science={science} onNavigate={handleNavigate} />
         ) : tabData ? (
           <TabView tab={tabData} />
         ) : null}

@@ -201,6 +201,34 @@ function validateWeek(weekStart, allWeeks, ajvValidate) {
     }
   }
 
+  // 8. Science summary (optional file): shape + every item reference must resolve.
+  const sciPath = path.join(DATA_DIR, weekStart, "science.json");
+  if (fs.existsSync(sciPath)) {
+    let sci;
+    try { sci = readJson(sciPath); } catch (e) { errors.push(`[science] invalid JSON: ${e.message}`); }
+    if (sci) {
+      for (const k of ["headline", "summary_for_scientists", "sections"]) {
+        if (sci[k] === undefined) errors.push(`[science] missing ${k}`);
+      }
+      const idsByTab = {};
+      for (const t of TAB_IDS) {
+        const tp = path.join(DATA_DIR, weekStart, `${t}.json`);
+        if (!fs.existsSync(tp)) continue;
+        const tj = readJson(tp);
+        idsByTab[t] = new Set([
+          ...(tj.top_picks ?? []), ...(tj.sections ?? []).flatMap((x) => x.items ?? []), ...(tj.index ?? []),
+        ].map((x) => x.id).filter(Boolean));
+      }
+      const refs = [...(sci.lab_pick ? [sci.lab_pick] : []), ...(sci.sections ?? []).flatMap((x) => x.items ?? [])];
+      for (const r of refs) {
+        if (!r.tab_id || !r.item_id) { errors.push(`[science] item missing tab_id/item_id: ${r.title ?? "?"}`); continue; }
+        if (!idsByTab[r.tab_id] || !idsByTab[r.tab_id].has(r.item_id)) {
+          errors.push(`[science] ${r.tab_id}/${r.item_id} not found in ${r.tab_id}.json`);
+        }
+      }
+    }
+  }
+
   return errors;
 }
 

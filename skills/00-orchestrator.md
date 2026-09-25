@@ -42,6 +42,10 @@ Runs every Sunday 8 PM ET. Produces a complete, validated, deduplicated week of 
 
 8. **Notify.** Send the user the URL, source counts, and the executive summary as a notification.
 
+## Science summary (after overview, before podcast)
+
+Spawn one subagent (model `claude_sonnet_5_0`) using `skills/10-science-summary.md`. It reads all 7 tab JSONs and `overview.json` and writes `data/<week_start>/science.json`: the "Share this with your lab" pick, AI-for-science sections, and "try it in the lab" ideas. Every `tab_id`/`item_id` must resolve; `npm run validate` fails the week on dangling references. If it fails after one fix pass, delete `science.json` (the Science page shows an empty state) and note it in the notification. The podcast's "Share this with your lab" beat should use the same `lab_pick`.
+
 ## Podcast pipeline (after overview, before deploy)
 
 Order: **write → lint → review → lint → render.** No script goes to text-to-speech without passing the editor.

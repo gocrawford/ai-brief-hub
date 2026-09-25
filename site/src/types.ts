@@ -231,3 +231,45 @@ export interface PodcastEpisode {
   generated_at?: string;
 }
 
+
+// ---- Science summary ----
+
+export interface ScienceItem {
+  tab_id: TabId;
+  item_id: string;
+  title: string;
+  source?: string;
+  primary_url?: string;
+  one_line: string;
+  try_this?: string;
+}
+
+export interface ScienceLabPick {
+  tab_id: TabId;
+  item_id: string;
+  title: string;
+  primary_url?: string;
+  what_they_did: string;
+  result: string;
+  why_researchers_care: string;
+  how_to_share: string;
+}
+
+export interface ScienceSection {
+  section_id: string;
+  title: string;
+  description?: string;
+  items: ScienceItem[];
+}
+
+export interface Science {
+  week_start: string;
+  week_end: string;
+  generated_at?: string;
+  headline: string;
+  summary_for_scientists: string;
+  lab_pick: ScienceLabPick | null;
+  sections: ScienceSection[];
+  try_in_the_lab?: string[];
+  coverage_note?: string;
+}

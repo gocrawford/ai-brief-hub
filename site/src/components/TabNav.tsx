@@ -1,10 +1,11 @@
-import { Compass, Video, Twitter, MessageCircle, Hammer, Rocket, Share2, FileText } from "lucide-react";
+import { Compass, FlaskConical, Video, Twitter, MessageCircle, Hammer, Rocket, Share2, FileText } from "lucide-react";
 import type { TabId } from "../types";
 
-export type View = "overview" | TabId;
+export type View = "overview" | "science" | TabId;
 
 const TABS: { id: View; label: string; subtitle: string; Icon: any }[] = [
   { id: "overview", label: "Overview", subtitle: "Cross-Source Synthesis", Icon: Compass },
+  { id: "science", label: "Science", subtitle: "AI for Science & R&D", Icon: FlaskConical },
   { id: "youtube", label: "YouTube", subtitle: "Video Intelligence", Icon: Video },
   { id: "x", label: "X.com", subtitle: "Social Intelligence", Icon: Twitter },
   { id: "reddit", label: "Reddit", subtitle: "Community Intelligence", Icon: MessageCircle },

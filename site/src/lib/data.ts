@@ -1,4 +1,4 @@
-import type { Tab, Meta, WeekIndex, TabId, Overview, PodcastEpisode } from "../types";
+import type { Tab, Meta, WeekIndex, TabId, Overview, PodcastEpisode, Science } from "../types";
 
 // Data files live in /public/data/ so Vite copies them as-is into dist/data/.
 // Vite prepends import.meta.env.BASE_URL to absolute paths, so this works in
@@ -44,4 +44,10 @@ export async function fetchPodcast(weekStart: string): Promise<PodcastEpisode | 
     meta.audio_url = url(meta.audio_url.replace(/^\/+/, ""));
   }
   return meta;
+}
+
+export async function fetchScience(weekStart: string): Promise<Science | null> {
+  const res = await fetch(url(`data/${weekStart}/science.json`));
+  if (!res.ok) return null; // Science summary is optional — older weeks show an empty state
+  return res.json();
 }
