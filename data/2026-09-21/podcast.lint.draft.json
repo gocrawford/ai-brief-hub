@@ -1,0 +1,95 @@
+{
+  "week": "2026-09-21",
+  "script": "data/2026-09-21/podcast.draft.json",
+  "pass": true,
+  "errors": [],
+  "warnings": [
+    {
+      "check": "duration",
+      "segment": null,
+      "detail": "estimated 14.6 min; NPR evidence puts the sweet spot at 18-30 min"
+    },
+    {
+      "check": "handback_monotony",
+      "segment": null,
+      "detail": "'back to you jordan' ends 7 segments"
+    },
+    {
+      "check": "long_sentences",
+      "segment": null,
+      "detail": "2 sentences over 30 words (one idea per sentence)",
+      "examples": [
+        {
+          "segment": "builders_segment",
+          "words": 33,
+          "sentence": "Microsoft Agent Framework, OpenAI\u2019s Python agents kit, LangGraph, AutoGen, and browser-use all represent different slices of the same shift: agents are becoming"
+        },
+        {
+          "segment": "launches_segment",
+          "words": 32,
+          "sentence": "There were also specialist products exposing agent surfaces: an AI assistant and MCP server for communications data, a connector for market intelligence, and ne"
+        }
+      ]
+    },
+    {
+      "check": "concept_saturation",
+      "segment": null,
+      "detail": "content words in 5+ of 7 correspondent segments; is the same point being made repeatedly?",
+      "terms": {
+        "useful": 6,
+        "workflow": 6,
+        "through": 6,
+        "agents": 6,
+        "conversation": 5,
+        "result": 5,
+        "question": 5,
+        "system": 5,
+        "science": 5,
+        "research": 5
+      }
+    }
+  ],
+  "info": [
+    {
+      "check": "acronyms",
+      "detail": "confirm each is pronounced as intended (letters vs word)",
+      "tokens": {
+        "AI": 12,
+        "GPT": 2,
+        "MCP": 2,
+        "READY": 1
+      }
+    }
+  ],
+  "metrics": {
+    "spoken_segments": 17,
+    "music_segments": 1,
+    "total_words": 2246,
+    "estimated_minutes": 14.6,
+    "avg_sentence_words": 12.4,
+    "long_sentences": 2,
+    "repeated_phrases": 0,
+    "tts_symbols": 0,
+    "caution_words_outside_research": 0,
+    "enterprise_words": 2,
+    "segment_words": {
+      "cold_open": 69,
+      "handoff_youtube": 15,
+      "youtube_segment": 275,
+      "handoff_x": 14,
+      "x_segment": 290,
+      "handoff_reddit": 15,
+      "reddit_segment": 267,
+      "handoff_builders": 16,
+      "builders_segment": 274,
+      "handoff_launches": 11,
+      "launches_segment": 272,
+      "handoff_social": 15,
+      "social_segment": 271,
+      "handoff_research": 16,
+      "research_segment": 298,
+      "things_to_try": 106,
+      "signoff": 22
+    }
+  }
+}
