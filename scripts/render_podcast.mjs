@@ -182,13 +182,13 @@ const concatList = path.join(tmpDir, 'concat.txt');
 const lines = [];
 
 // Add slight pause between segments (200ms silence files generated as needed)
-const silencePath = path.join(tmpDir, 'silence_400ms.mp3');
+const silencePath = path.join(tmpDir, 'silence_400ms.wav');
 if (!fs.existsSync(silencePath)) {
-  execSync(`ffmpeg -y -f lavfi -i "anullsrc=r=44100:cl=stereo" -t 0.4 -b:a 192k "${silencePath}"`, { stdio: ['ignore', 'ignore', 'inherit'] });
+  execSync(`ffmpeg -y -f lavfi -i "anullsrc=r=44100:cl=stereo" -t 0.4 -c:a pcm_s16le "${silencePath}"`, { stdio: ['ignore', 'ignore', 'inherit'] });
 }
-const stingGapPath = path.join(tmpDir, 'silence_300ms.mp3');
+const stingGapPath = path.join(tmpDir, 'silence_300ms.wav');
 if (!fs.existsSync(stingGapPath)) {
-  execSync(`ffmpeg -y -f lavfi -i "anullsrc=r=44100:cl=stereo" -t 0.3 -b:a 192k "${stingGapPath}"`, { stdio: ['ignore', 'ignore', 'inherit'] });
+  execSync(`ffmpeg -y -f lavfi -i "anullsrc=r=44100:cl=stereo" -t 0.3 -c:a pcm_s16le "${stingGapPath}"`, { stdio: ['ignore', 'ignore', 'inherit'] });
 }
 
 // Normalize each input to common sample rate / channels before concat
@@ -198,10 +198,15 @@ fs.mkdirSync(normalizedDir, { recursive: true });
 for (let i = 0; i < segments.length; i++) {
   const seg = segments[i];
   const inputPath = seg._audioPath;
-  const normPath = path.join(normalizedDir, `n_${String(i).padStart(2, '0')}.mp3`);
+  const normPath = path.join(normalizedDir, `n_${String(i).padStart(2, '0')}.wav`);
   if (!fs.existsSync(normPath)) {
     // Re-encode to consistent format (44100 Hz, stereo, 192kbps)
-    execSync(`ffmpeg -y -i "${inputPath}" -ar 44100 -ac 2 -b:a 192k -af "loudnorm=I=-16:LRA=11:TP=-1.5" "${normPath}"`, { stdio: ['ignore', 'ignore', 'pipe'] });
+    execSync(`ffmpeg -y -f mp3 -i "${inputPath}" -ar 44100 -ac 2 -af "loudnorm=I=-16:LRA=11:TP=-1.5" -c:a pcm_s16le "${normPath}"`, { stdio: ['ignore', 'ignore', 'pipe'] });
+  }
+  const probed = execSync(`ffprobe -v error -show_entries stream=codec_name -of csv=p=0 "${normPath}"`).toString().trim();
+  if (probed !== 'pcm_s16le') {
+    fs.unlinkSync(normPath);
+    throw new Error(`Normalized clip ${normPath} probes as '${probed}', not pcm_s16le WAV. Refusing to stitch.`);
   }
   lines.push(`file '${normPath}'`);
 
