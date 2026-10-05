@@ -1,0 +1,44 @@
+{
+  "reviewer_model": "gpt_6_sol",
+  "reviewer_subagent_id": "review_sep_21_podcast",
+  "draft_read_in_full": true,
+  "existing_review_ignored": true,
+  "episode_in_one_sentence": "AI is becoming something people can use repeatedly, from creator studios and everyday helpers to research methods and chemical searches.",
+  "before_scores": {
+    "hook": 3, "audience_fit": 3, "inspiration": 3, "science_value": 3,
+    "caution_budget": 4, "specificity": 2, "non_redundancy": 2,
+    "clarity_for_ear": 4, "momentum": 3, "voice_distinctness": 2,
+    "flow_and_handoffs": 2, "accuracy": 3, "tts_readiness": 3, "close": 3
+  },
+  "listener_notes": [
+    {"segment":"cold_open","reaction":"learned","note":"The compound count is memorable, but the opening slides immediately into a theme list and offers no question."},
+    {"segment":"youtube_segment","reaction":"weird","note":"The voice-agent and video-series demonstrations have no titles. Their specificity disappears even though the tab contains those titles."},
+    {"segment":"x_segment","reaction":"learned","note":"Designing an agent's stopping point is a good, borrowable product idea."},
+    {"segment":"reddit_segment","reaction":"repeat","note":"Graceful stopping, science reproducibility, and narrow agents echo other desks. The community source is Reddit, not a Hacker News fallback."},
+    {"segment":"builders_segment","reaction":"confused","note":"The long framework roll call obscures what a builder can actually make. Scientific skills deserve their own explanation."},
+    {"segment":"launches_segment","reaction":"repeat","note":"Model choices, YouTube, Ando, and enzyme discovery all receive substantive coverage elsewhere."},
+    {"segment":"social_segment","reaction":"bored","note":"The before-and-after abstraction repeats earlier advice. Building-performance modeling and the solo operations desk are stronger skipped items."},
+    {"segment":"research_segment","reaction":"inspired","note":"The chemistry lab pick belongs here, but it is too brief and repeats its opening. The reality check contains an unspecific incident claim without a matching source item."},
+    {"segment":"things_to_try","reaction":"repeat","note":"The closing experiments mostly repeat the advice already given rather than offering fresh applications."}
+  ],
+  "macro_plan": [
+    "Open on the hydrogen-position search and a scientific question; tease one consumer capability.",
+    "Give each story one substantive owner. Cut duplicated platform recaps before adding items.",
+    "YouTube owns Made On, the small-business voice tutorial, and playful tiny tools.",
+    "X owns model economics, graceful task wrap-up, and the portable research figure.",
+    "Reddit owns repeatable consumer uses, compact local coding, and SaaS onboarding/pricing.",
+    "Builders owns Hindsight, scientific skills, and SoL-Pi.",
+    "Launches owns Muse, Ando, and Claude Science.",
+    "Social owns the ongoing video series, building-performance modeling, and the solo operations desk.",
+    "Research owns RetroChimera, the science.json lab_pick, and the enzyme discovery, followed by two sourced reality-check items.",
+    "Use distinct sparks per story, fresh close applications, seven varied handbacks, short sentences, and spoken model versions.",
+    "Target 2800–3600 spoken words without invented outcomes, implementation details, or performance numbers."
+  ],
+  "source_constraints": {
+    "allowed": ["youtube.json","x.json","reddit.json","builders.json","launches.json","social.json","research.json","overview.json","science.json"],
+    "reddit_is_hacker_news_fallback": false,
+    "science_lab_pick_item_id": "ai-scans-4-6-million-compounds-to-predict-hydrogen-positions-research",
+    "source_conflict_resolution": "science.json mislabels the copying-paper item as SAEScientist-Bench in one section. Use research.json's separate correctly titled items; do not import that conflicting sentence.",
+    "to_watch_note": "No tab has a to_watch field. Draw the closing opportunity-watch topics from sourced launch and builder items, without predicting unannounced releases."
+  }
+}
