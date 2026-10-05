@@ -48,6 +48,10 @@ Spawn one subagent (model `claude_sonnet_5_0`) using `skills/10-science-summary.
 
 ## Podcast pipeline (after overview, before deploy)
 
+**Provenance rule (never violate).** `podcast.review.json` must record who actually reviewed the script. Set `reviewer_model` to a model name ONLY if you started a separate editor subagent on that model and it wrote the file. Also record its subagent id in `reviewer_subagent_id`. Never hand-write a review file and attribute it to another model.
+
+**If subagents are unavailable in this run:** do not skip the podcast. Write the script yourself, freeze it as `podcast.draft.json`, then do a separate self-edit pass following `skills/09-podcast-review.md`. Set `reviewer_model` to `"self-review (no independent editor available)"` and `reviewer_subagent_id` to `null`. Gate with the lint as usual, render, and add a Notes line to the notification: "Podcast self-reviewed; independent editor unavailable." A self-reviewed episode is better than no episode.
+
 Order: **write → lint → review → lint → render.** No script goes to text-to-speech without passing the editor.
 
 1. **Write.** A script subagent follows `skills/08-podcast-script.md` and writes `data/<week_start>/podcast.json`.

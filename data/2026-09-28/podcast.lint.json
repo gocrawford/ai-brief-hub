@@ -1,0 +1,91 @@
+{
+  "week": "2026-09-28",
+  "script": "/home/user/workspace/ai-brief-hub/data/2026-09-28/podcast.json",
+  "pass": true,
+  "errors": [],
+  "warnings": [
+    {
+      "check": "repeated_phrases",
+      "segment": null,
+      "detail": "2 four-word phrases appear in 3+ segments",
+      "examples": [
+        {
+          "phrase": "sonnet five point five",
+          "segments": [
+            "research_segment",
+            "social_segment",
+            "x_segment",
+            "youtube_segment"
+          ]
+        },
+        {
+          "phrase": "the idea to steal",
+          "segments": [
+            "builders_segment",
+            "research_segment",
+            "youtube_segment"
+          ]
+        }
+      ]
+    },
+    {
+      "check": "concept_saturation",
+      "segment": null,
+      "detail": "content words in 5+ of 7 correspondent segments; is the same point being made repeatedly?",
+      "terms": {
+        "another": 7,
+        "imagine": 6,
+        "familiar": 6,
+        "rather": 6,
+        "reported": 5,
+        "finished": 5,
+        "conversation": 5,
+        "borrow": 5,
+        "format": 5,
+        "something": 5
+      }
+    }
+  ],
+  "info": [
+    {
+      "check": "acronyms",
+      "detail": "confirm each is pronounced as intended (letters vs word)",
+      "tokens": {
+        "AI": 10,
+        "GPT": 4,
+        "API": 1
+      }
+    }
+  ],
+  "metrics": {
+    "spoken_segments": 17,
+    "music_segments": 8,
+    "total_words": 3233,
+    "estimated_minutes": 21.1,
+    "avg_sentence_words": 10.2,
+    "long_sentences": 0,
+    "repeated_phrases": 2,
+    "tts_symbols": 0,
+    "caution_words_outside_research": 0,
+    "enterprise_words": 4,
+    "segment_words": {
+      "cold_open": 83,
+      "handoff_youtube": 5,
+      "youtube_segment": 371,
+      "handoff_x": 13,
+      "x_segment": 370,
+      "handoff_reddit": 10,
+      "reddit_segment": 371,
+      "handoff_builders": 9,
+      "builders_segment": 426,
+      "handoff_launches": 7,
+      "launches_segment": 428,
+      "handoff_social": 12,
+      "social_segment": 416,
+      "handoff_research": 8,
+      "research_segment": 545,
+      "what_to_watch": 139,
+      "signoff": 20
+    }
+  }
+}
