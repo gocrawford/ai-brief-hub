@@ -1,0 +1,964 @@
+{
+  "week_start": "2026-10-12",
+  "reviewer_model": "gpt_6_1_sol",
+  "requested_reviewer_model": "gpt_6_sol",
+  "model_substitution": {
+    "requested_identifier_available": false,
+    "replacement": "gpt_6_1_sol",
+    "different_family_reviewer": true,
+    "note": "Used the available different-family reviewer specified in the task; did not claim to use the unavailable identifier."
+  },
+  "rounds": 1,
+  "status": "complete",
+  "episode_in_one_sentence": "People are turning the tools, data and creative material they already have into software, media and scientific experiments they can actually use.",
+  "process": {
+    "draft_read_in_full_before_other_inputs": true,
+    "before_scores_recorded_before_script_edits": true,
+    "passes_completed_before_rewriting": [
+      "Pass 0: complete listener read",
+      "Full draft lint report",
+      "Full overview.json and science.json",
+      "All seven tab JSONs, including every section, index and footer",
+      "Pass 1: macro review and story-ownership decision"
+    ],
+    "sources_read": [
+      "data/2026-10-12/podcast.draft.json",
+      "data/2026-10-12/podcast.lint.draft.json",
+      "data/2026-10-12/overview.json",
+      "data/2026-10-12/science.json",
+      "data/2026-10-12/youtube.json",
+      "data/2026-10-12/x.json",
+      "data/2026-10-12/reddit.json",
+      "data/2026-10-12/builders.json",
+      "data/2026-10-12/launches.json",
+      "data/2026-10-12/social.json",
+      "data/2026-10-12/research.json"
+    ],
+    "skills_read": [
+      "skills/09-podcast-review.md",
+      "skills/08-podcast-script.md",
+      "skills/99-editorial-voice.md"
+    ],
+    "external_facts_added": false,
+    "rendering_run": false,
+    "git_run": false,
+    "draft_sha256_before": "41df3b351dd2b0b16a4b9dfb6e4e4223837c5acbb3b940eec542b63d209d4c78",
+    "draft_sha256_after": "41df3b351dd2b0b16a4b9dfb6e4e4223837c5acbb3b940eec542b63d209d4c78",
+    "draft_unchanged": true,
+    "round_1": "Macro decisions were followed by one bounded macro/line/TTS edit, a complete read of the edited script, deterministic lint and a manual grounding/ownership audit.",
+    "second_round_needed": false,
+    "duration_metadata_update": "Set to the measured word-rate estimate after lint; this was a metadata calculation, not an additional editorial round.",
+    "lint_command": "PYTHONDONTWRITEBYTECODE=1 python3 -B scripts/podcast_lint.py 2026-10-12 --draft data/2026-10-12/podcast.draft.json --out /dev/stdout",
+    "lint_output_policy": "Used /dev/stdout so the required lint run did not create or overwrite a third workspace file; its final results are embedded in this review.",
+    "only_files_written": [
+      "data/2026-10-12/podcast.json",
+      "data/2026-10-12/podcast.review.json"
+    ]
+  },
+  "listener_notes": [
+    {
+      "segment": "cold_open",
+      "reaction": "learned",
+      "note": "Personal Android apps are immediately inviting, but the contest has stronger numerical tension and pays off in the first desk."
+    },
+    {
+      "segment": "youtube_segment",
+      "reaction": "learned",
+      "note": "The adoption threshold and the token-plus-expertise cost are the detail I would repeat; keep both."
+    },
+    {
+      "segment": "youtube_segment",
+      "reaction": "inspired",
+      "note": "Hiding already measured chemistry outcomes makes the agent experiment tangible rather than magical."
+    },
+    {
+      "segment": "x_segment",
+      "reaction": "bored",
+      "note": "The newsletter story lands quickly, then explains a recurring deliverable several times before reaching the idea."
+    },
+    {
+      "segment": "x_segment",
+      "reaction": "weird",
+      "note": "The million-dollar software bill deserves Priya's dry delivery; the middle instead sounds like generic business commentary."
+    },
+    {
+      "segment": "reddit_segment",
+      "reaction": "learned",
+      "note": "The console and expandable replies are memorable. Put the two-bit model configuration beside the speed claim rather than circling back."
+    },
+    {
+      "segment": "builders_segment",
+      "reaction": "confused",
+      "note": "HTML and MCP arrive without useful spoken handling; explain outputs and agent connectivity in ordinary language."
+    },
+    {
+      "segment": "launches_segment",
+      "reaction": "repeat",
+      "note": "The app-for-one opening is good, but several consecutive sentences restate that a personal app needs only one job."
+    },
+    {
+      "segment": "social_segment",
+      "reaction": "bored",
+      "note": "The carousel's live-auction side features interrupt a clear photo-to-purchase story; the microscopy example has more energy."
+    },
+    {
+      "segment": "research_segment",
+      "reaction": "inspired",
+      "note": "OpenStudio produces an inspectable simulation and has an exact lab-meeting demonstration. This is the right lab pick."
+    },
+    {
+      "segment": "research_segment",
+      "reaction": "confused",
+      "note": "A hundredfold quantum improvement never says what improved. The source thread specifies footprint; use that narrower measure."
+    },
+    {
+      "segment": "research_segment",
+      "reaction": "weird",
+      "note": "The reality check says to use a named standard but never names it. The agency acronym stack will also be hard to hear."
+    },
+    {
+      "segment": "things_to_try_this_week",
+      "reaction": "repeat",
+      "note": "All three experiments repeat desk recommendations. The first watch is generic; only PDF TO MP3 is a specific watch-list item."
+    }
+  ],
+  "problems_before_editing": [
+    "Cold open divides attention between two full mini-stories instead of leading with the contest's strongest tension.",
+    "Repeated explanation of why a tool is interesting slows otherwise strong three-story desks.",
+    "Generic something/people/different commentary blurs correspondent voices.",
+    "Draft lint flags repeated four-word advice lead-ins, concept saturation and a false-negative specificity heuristic on X.",
+    "Handbacks are formally present but too similar in cadence and destination wording.",
+    "No genuine two-beat correspondent pickup before a sting.",
+    "M5, SaaS, LLM, HTML, MCP, GPT-Rosalind and agency acronyms need deliberate spoken handling or simpler wording.",
+    "Quantum-circuit improvement needs its footprint measure rather than an unspecified hundredfold gain.",
+    "Research's standard needs an actual name, or its recommendation must stop calling it named.",
+    "Close repeats three earlier recommendations and lacks a second concrete to-watch item.",
+    "Headline's anyone-can-now assertion is broader than the market-limited Android launch.",
+    "The 1500-second duration metadata does not reflect the draft lint's 22-minute word-rate estimate."
+  ],
+  "macro_decisions": [
+    "Keep the seven-desk order: the contest is strong early material and Research earns the final wonder-to-reality-check turn.",
+    "Keep three opportunity stories per non-Research desk; tighten explanations instead of replacing strong source-grounded stories.",
+    "Keep Argon's science result and the exact science.json.lab_pick item in Research.",
+    "Keep all cautions and three regulatory/incident items only after Research's reality-check marker.",
+    "Assign each substantive story to one correspondent and retain only a short chemistry-to-tools callback in Jordan's Builders cue.",
+    "Replace the close's repeated projects with different uses of already covered capabilities and two named Launches to-watch entries.",
+    "Prefer cuts; use new sourced facts only for a meaningful measure, a named standard and the missing watch-list opportunity."
+  ],
+  "scores": {
+    "before": {
+      "hook": 4,
+      "audience_fit": 4,
+      "inspiration": 4,
+      "science_value": 4,
+      "caution_budget": 5,
+      "specificity": 5,
+      "non_redundancy": 3,
+      "clarity_for_ear": 4,
+      "momentum": 4,
+      "voice_distinctness": 3,
+      "flow_and_handoffs": 3,
+      "accuracy": 4,
+      "tts_readiness": 3,
+      "close": 3
+    },
+    "before_evidence": {
+      "hook": "85 words, about 33 seconds, with Google Play, seventy-two teams and five adoptable apps; the strongest contest tension arrives after the app tease.",
+      "audience_fit": "Six desks lead with usable capabilities and creator or solo-builder wins; long adaptation explanations occasionally sound like a memo.",
+      "inspiration": "The paid-tool build-off, chemistry sandbox, handwriting font and machine simulation each suggest an experiment.",
+      "science_value": "Research opens on stellarator counterexamples and uses OpenStudio, exactly science.json.lab_pick.item_id; chemistry and science skills also appear elsewhere.",
+      "caution_budget": "Zero caution words outside Research in the full draft lint; all three incident/regulation items follow 'Now, the reality check.'",
+      "specificity": "Each desk has named products and sourced quantities; X's 0-numbers lint warning overlooks spelled-out revenue, parameter and context figures.",
+      "non_redundancy": "No correspondent deep-dives a duplicate story, but the close repeats the Android tracker, font and machine recommendations.",
+      "clarity_for_ear": "Draft lint averages 12.1 words per sentence with no sentence above 30; several abstract explanation chains still require more attention than their stories earn.",
+      "momentum": "407-481-word desks supply new voices every roughly three minutes; repeated explanation flattens the middle of X, Launches and Social.",
+      "voice_distinctness": "Marcus and Priya have strong opening beats and Aaron has warm phrasing, but all seven repeatedly explain 'the interesting' or 'appealing' pattern.",
+      "flow_and_handoffs": "Every desk returns to Jordan, but three end 'Jordan, back to you' and no correspondent pickup occurs before a sting.",
+      "accuracy": "Core story facts match the week's JSONs; the unspecified quantum improvement and headline's universal scope need tightening.",
+      "tts_readiness": "No symbols or excessive breaks, but M5, MCP and the NIST/NSA/CISA stack need editorial handling.",
+      "close": "Three concrete tries plus a generic specialist-server watch and PDF TO MP3; all tries repeat earlier desk advice."
+    },
+    "after": {
+      "hook": 5,
+      "audience_fit": 5,
+      "inspiration": 4,
+      "science_value": 5,
+      "caution_budget": 5,
+      "specificity": 5,
+      "non_redundancy": 5,
+      "clarity_for_ear": 4,
+      "momentum": 4,
+      "voice_distinctness": 4,
+      "flow_and_handoffs": 5,
+      "accuracy": 5,
+      "tts_readiness": 4,
+      "close": 5
+    },
+    "after_evidence": {
+      "hook": "cold_open begins 'Seventy-two teams spent a weekend trying to replace a conference tool costing forty-three thousand dollars a year.' It poses an adoption question before show identity; 82 words take approximately 31.7 seconds. The contest is grounded in [Latent Space](https://www.youtube.com/watch?v=zlD-CkLVKtU).",
+      "audience_fit": "Twenty of 23 substantive story beats are opportunities or successes; the only three incident/regulation beats are at Research's end. Borrowable endings range from a subscription build-off to a shoppable photo sequence, grounded in [Latent Space](https://www.youtube.com/watch?v=zlD-CkLVKtU) and [Social Media Today](https://www.socialmediatoday.com/news/tiktok-shop-offers-uk-merchants-more-engagement-tools/833064/).",
+      "inspiration": "The build-off, dataset game, expandable briefing, personal chore app and lab demonstration provide more than three distinct experiments. The close adds a walking-brainstorm transcript and haiku animation rather than repeating the desk projects; these use capabilities in [VoiceStudio](https://github.com/debpalash/VoiceStudio) and [Claude's showcase](https://x.com/claudeai/status/2111177834127601902).",
+      "science_value": "Research leads with stellarator counterexamples, then uses exactly science.json.lab_pick.item_id, openstudio-mcp-building-energy. The lab beat retains the 197 tools, six-model benchmark, attributed days-to-minutes result and twenty-minute comparison demonstration; 168 words take about 65 seconds, grounded in [the National Laboratory of the Rockies](https://www.nlr.gov/news/detail/program/2026/building-energy-modeling-made-easy-with-natural-language-prompts).",
+      "caution_budget": "The only three caution/regulation beats follow 'Now, the reality check.' The block is 150 words, about 58 seconds; no caution expressions occur outside Research. Its three sources are [NIST](https://www.nist.gov/news-events/news/2026/10/key-practices-incident-readiness-and-response-super-intelligence-training), [the EU Official Journal](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202602274) and [the European Commission](https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/era-living-guidelines-responsible-use-generative-ai-research-updated-2026-10-16_en).",
+      "specificity": "Every correspondent retains named products and quantities. X includes the three-million-dollar revenue account, Muse Spark Open's total/active parameters and the 120-page font; adding the actual clip sharer's name removes the abstract-segment warning without adding numeric digits, grounded in [Molly O'Shea's clip](https://x.com/MollySOShea/status/2109664225698476333) and [Claude's showcase](https://x.com/claudeai/status/2111177834127601902).",
+      "non_redundancy": "The ownership and advice maps below assign every substantive story and recommendation once. Close applications differ from the desks: dictation rather than guide narration, and haiku animation rather than handwriting-to-font; their source capabilities appear in [VoiceStudio](https://github.com/debpalash/VoiceStudio) and [Claude's showcase](https://x.com/claudeai/status/2111177834127601902). No four-word phrase appears in three or more segments.",
+      "clarity_for_ear": "The final lint measures 10.8 words per sentence, no sentences over 30 and a longest sentence of 24 words; 261 of 277 sentences are under 20. Marcus explicitly says the chemistry campaigns used 'recorded measurements, with instant feedback,' preserving [Latent Space's experimental-data sandbox](https://www.youtube.com/watch?v=hQSBJVreLms) rather than implying new wet-lab runs.",
+      "momentum": "Six opportunity desks run 2.3-2.4 minutes and Research runs 2.9 minutes, with the pre-sting pickup helping the first transition. 'Third video. The editing queue just got shorter' and 'Last one: a project that keeps going' refresh attention within the desks; their stories are grounded in [Kaye Creatives](https://www.youtube.com/watch?v=AsvN_feasyY) and [the solo game's progress post](https://www.reddit.com/r/ClaudeCode/comments/1x4tuqy/13_weeks_of_vibe_coding_my_mmorpg_with_claude/).",
+      "voice_distinctness": "Marcus leans into the contest's finish line, Priya uses 'Quite a software bill,' Sam leaves the console under the television, Maya distinguishes pictures from computed values, Diego frames the buyer, Lena describes a visible scene, and Aaron says 'I rather like that.' These are editorial delivery choices, not extra factual claims; pacing remains constrained by the short desk format.",
+      "flow_and_handoffs": "The quick Launches pivot, Marcus's two-beat pickup before the sting and the chemistry-to-toolbox callback all appear. The seven main correspondent segments have different final handback sentences and each explicitly returns to Jordan. The pickup and body form one YouTube contribution, with its handback at the body's end.",
+      "accuracy": "All 23 substantive beats and two watch entries have item IDs and source locations in the ownership ledger. New external assertions are restricted to the clip sharer's name, the quantum footprint measure, the standard's identifier and the additional game-benchmark watch, each logged below with its source item ID. The quantum measure now follows [Google DeepMind's science thread](https://x.com/pushmeet/status/2110049807385702623), not an unspecified speed claim.",
+      "tts_readiness": "M5 becomes 'M five'; GPT-Rosalind becomes 'G P T Rosalind'; MP3 becomes 'M P three'; the standard is 'E N one eight two eight six.' HTML, MCP, LLM and the agency acronym cluster are removed in favour of plain output descriptions. AI, API and PDF remain familiar letter-spoken terms. Zero symbol hazards, markdown, URLs, emoji or break tags occur in spoken text; actual audio has not been rendered or auditioned.",
+      "close": "Jordan gives two distinct experiments and two named watch opportunities, then the unchanged AI Brief Hub sign-off. PDF to M P three and Star Skirmish Bench both come from launches.json.sections[to_watch], including the one-hour bot-writing task in [StarSkirmish Bench](https://starskirmish.com/bench/v0-2/) and the audiobook integration in [PDF TO MP3](https://pdftomp3.com/connect-ai/)."
+    },
+    "mean_before": 3.7857,
+    "mean_after": 4.6429
+  },
+  "atomic_checks": {
+    "cold_open_names_specific_story": true,
+    "cold_open_under_45s": true,
+    "every_desk_hands_back": true,
+    "no_story_deep_dived_twice": true,
+    "no_advice_repeated_across_segments": true,
+    "every_story_has_steal_this_idea": true,
+    "cautions_only_in_research_reality_check": true,
+    "has_share_this_with_your_lab_beat": true,
+    "research_desk_leads_with_ai_for_science": true,
+    "majority_of_stories_are_capabilities_or_success_stories": true,
+    "at_least_two_consumer_creator_or_small_business_stories": true,
+    "no_sentence_over_30_words_unless_list": true,
+    "no_unsupported_superlatives": true,
+    "all_added_facts_have_source_item_id": true,
+    "runtime_18_to_30_min": true,
+    "lint_zero_errors": true
+  },
+  "atomic_check_evidence": {
+    "cold_open_names_specific_story": "The seventy-two-team conference-software contest opens cold_open; kill-my-saas-43k-tool.",
+    "cold_open_under_45s": "82 words / 155 words per minute = 31.74 seconds.",
+    "every_desk_hands_back": "All seven correspondent bodies contain an explicit final 'back to you'; the YouTube pickup belongs to Marcus's single contribution.",
+    "no_story_deep_dived_twice": "The story_ownership ledger has one owner per story; cold-open teases, the short Builders cue and closing applications are not second deep dives.",
+    "no_advice_repeated_across_segments": "Each ownership record names its distinct borrowable action; the close uses dictation and haiku animation, not the desks' narration and font actions.",
+    "every_story_has_steal_this_idea": "23 substantive beats, 23 literal 'Steal this idea:' endings: three per non-Research desk and five in Research including its three reality-check items.",
+    "cautions_only_in_research_reality_check": "Manually checked both sides of the marker as well as the zero outside-Research lint count; eligibility, quantization and maker attribution are product detail, not warnings.",
+    "has_share_this_with_your_lab_beat": "Literal named beat and item openstudio-mcp-building-energy; the exact science.json.lab_pick is retained below.",
+    "research_desk_leads_with_ai_for_science": "First Research story is the Gemini four Argon stellarator/quantum result, before the lab pick and reality check.",
+    "majority_of_stories_are_capabilities_or_success_stories": "20 opportunity/success beats out of 23 substantive beats, about 87 percent.",
+    "at_least_two_consumer_creator_or_small_business_stories": "Examples include motion graphics, solo newsletters, the local console server, handwriting font, game, personal Android app and TikTok seller carousel.",
+    "no_sentence_over_30_words_unless_list": "Maximum sentence length is 24 words; no list exception is needed.",
+    "no_unsupported_superlatives": "Retained 'first harmonised AI Act standard' is explicitly the eu-en-18286-harmonised-standard source title; 'first agent-powered notebook entry' is an invitation, not a market superlative.",
+    "all_added_facts_have_source_item_id": "The added_fact_audit and add_fact changes name every added external assertion and its exact weekly source location.",
+    "runtime_18_to_30_min": "2978 words at 155 words per minute plus 25.5 seconds of music = 19.6379 minutes.",
+    "lint_zero_errors": "Final deterministic run passes with errors=[], one reviewed concept-saturation warning."
+  },
+  "lint": {
+    "before": {
+      "errors": 0,
+      "warnings": 3,
+      "metrics": {
+        "spoken_segments": 17,
+        "music_segments": 9,
+        "total_words": 3342,
+        "estimated_minutes": 22.0,
+        "avg_sentence_words": 12.1,
+        "long_sentences": 0,
+        "repeated_phrases": 2,
+        "tts_symbols": 0,
+        "caution_words_outside_research": 0,
+        "enterprise_words": 0,
+        "segment_words": {
+          "cold_open": 85,
+          "handoff_youtube": 9,
+          "youtube_segment": 407,
+          "handoff_x": 11,
+          "x_segment": 411,
+          "handoff_reddit": 14,
+          "reddit_segment": 411,
+          "handoff_builders": 18,
+          "builders_segment": 427,
+          "handoff_launches": 9,
+          "launches_segment": 432,
+          "handoff_social": 15,
+          "social_segment": 418,
+          "handoff_research": 18,
+          "research_segment": 481,
+          "things_to_try_this_week": 156,
+          "sign_off": 20
+        }
+      },
+      "warning_checks": [
+        "repeated_phrases",
+        "concept_saturation",
+        "abstract_segment"
+      ]
+    },
+    "after": {
+      "errors": 0,
+      "warnings": 1,
+      "pass": true,
+      "error_details": [],
+      "warning_details": [
+        {
+          "check": "concept_saturation",
+          "segment": null,
+          "detail": "Content words in five or more correspondent segments.",
+          "terms": {
+            "hundred": 5,
+            "someone": 5,
+            "rather": 5,
+            "second": 5
+          }
+        }
+      ],
+      "info": [
+        {
+          "check": "acronyms",
+          "tokens": {
+            "AI": 12,
+            "API": 4,
+            "PDF": 1,
+            "PDFs": 1
+          }
+        }
+      ],
+      "metrics": {
+        "spoken_segments": 18,
+        "music_segments": 9,
+        "total_words": 2978,
+        "estimated_minutes": 19.6,
+        "avg_sentence_words": 10.8,
+        "long_sentences": 0,
+        "repeated_phrases": 0,
+        "tts_symbols": 0,
+        "caution_words_outside_research": 0,
+        "enterprise_words": 0,
+        "segment_words": {
+          "cold_open": 82,
+          "handoff_youtube": 12,
+          "youtube_pickup": 11,
+          "youtube_segment": 358,
+          "handoff_x": 11,
+          "x_segment": 359,
+          "handoff_reddit": 14,
+          "reddit_segment": 373,
+          "handoff_builders": 17,
+          "builders_segment": 374,
+          "handoff_launches": 9,
+          "launches_segment": 369,
+          "handoff_social": 7,
+          "social_segment": 378,
+          "handoff_research": 11,
+          "research_segment": 447,
+          "things_to_try_this_week": 126,
+          "sign_off": 20
+        }
+      }
+    }
+  },
+  "draft_warning_resolutions": [
+    {
+      "check": "repeated_phrases",
+      "before": "Two repeated four-word phrases: 'steal this idea give' and 'this idea give a'.",
+      "resolution": "Varied the actual recommendations' verbs and cut repeated sentence frames; final repeated-phrase count is zero."
+    },
+    {
+      "check": "concept_saturation",
+      "before": "something, another, working, people, different, hundred.",
+      "resolution": "Removed the generic explanation loops. All five generic draft terms drop below the threshold; hundred remains because it expresses different sourced quantities, not one recurring concept."
+    },
+    {
+      "check": "abstract_segment",
+      "before": "X: zero numeric digits and approximately four named entities.",
+      "resolution": "Preserved the already specific spoken-out quantities and added the sourced clip sharer's name. Final X segment no longer triggers the heuristic; no digits were inserted simply to satisfy lint."
+    }
+  ],
+  "warnings_left_by_design": [
+    {
+      "check": "concept_saturation",
+      "reason": "The remaining terms are hundred, someone, rather and second. Hundred belongs to unrelated sourced quantities; second is an audible story ordinal or unit; someone and rather are ordinary connective language. Manual review finds no repeated proposition or duplicated advice, so a second editing round solely to swap these words would game the heuristic."
+    }
+  ],
+  "verdict": "pass",
+  "flags": [],
+  "estimated_minutes": {
+    "before": 22.0,
+    "after": 19.6
+  },
+  "timing": {
+    "words_per_minute": 155,
+    "exact_estimated_minutes": 19.637903225806454,
+    "estimated_duration_seconds": 1178,
+    "music_seconds": 25.5,
+    "cold_open_words": 82,
+    "cold_open_seconds": 31.74,
+    "lab_beat_words_excluding_intro": 168,
+    "lab_beat_seconds": 65.03,
+    "reality_check_words_after_marker": 150,
+    "reality_check_seconds": 58.06,
+    "character_rate_cross_check_minutes_at_15_characters_per_second": 20.85,
+    "words_cut": 364,
+    "runtime_reduction_minutes_at_155_wpm": 2.35,
+    "sentence_count": 277,
+    "sentences_under_20_words": 261,
+    "maximum_sentence_words": 24,
+    "note": "Word-rate estimates include music, not the small post-silence fields or unrendered voice-dependent variation. The lab beat is 60-90 seconds and the reality check 45-75 seconds at the specified rate."
+  },
+  "lab_pick": {
+    "tab_id": "research",
+    "item_id": "openstudio-mcp-building-energy",
+    "title": "Plain-language prompts now build and simulate whole-building energy models",
+    "primary_url": "https://www.nlr.gov/news/detail/program/2026/building-energy-modeling-made-easy-with-natural-language-prompts",
+    "what_they_did": "A National Laboratory of the Rockies team released an open-source server that lets an AI assistant drive the EnergyPlus-based OpenStudio toolchain. You describe a prototype office or school, add a lighting or HVAC upgrade, and the assistant builds and runs a validated simulation.",
+    "result": "The SoftwareX paper documents 197 tools and a benchmark across six language models. The researchers say tasks that took days now take minutes.",
+    "why_researchers_care": "Whole-building energy modeling no longer starts with scripting or menu-hunting: a building scientist can state a retrofit in plain language and get a simulation to inspect, edit and rerun. It also gives a concrete baseline to compare against your group's last hand-built model.",
+    "how_to_share": "Run a 20-minute lab-meeting demo: describe one familiar building in two sentences, let the assistant draft the model, then set its upgrade estimate beside the group's last hand-built run."
+  },
+  "lab_pick_exact_match": true,
+  "story_ownership": [
+    {
+      "item_id": "kill-my-saas-43k-tool",
+      "owner": "youtube_segment",
+      "source_file": "youtube.json",
+      "source_location": "top_picks[id=kill-my-saas-43k-tool]",
+      "source_url": "https://www.youtube.com/watch?v=zlD-CkLVKtU",
+      "facts": "72 teams, a weekend, Claude Code/Codex, conference speaker management, $43,000 yearly subscription, five adoptable apps, about $1,000 tokens plus $10,000 expertise.",
+      "other_mentions": "cold_open teases the cost/adoption question; handoff_youtube and youtube_pickup form the owner's introduction.",
+      "borrowable_action": "Paid-tool build-off judged by users."
+    },
+    {
+      "item_id": "leash-lab-in-the-loop-agents",
+      "owner": "youtube_segment",
+      "source_file": "youtube.json",
+      "source_location": "top_picks[id=leash-lab-in-the-loop-agents]",
+      "source_url": "https://www.youtube.com/watch?v=hQSBJVreLms",
+      "facts": "Four billion measured binding results; over 10,000 campaigns in a weekend; ten binders, ten non-binders, 100-molecule budget and 6.5 million candidates.",
+      "other_mentions": "One-sentence chemistry-to-toolbox callback in handoff_builders, with no second explanation of the experiment.",
+      "borrowable_action": "Query-and-reveal formulation dataset game."
+    },
+    {
+      "item_id": "claude-motion-vs-designer",
+      "owner": "youtube_segment",
+      "source_file": "youtube.json",
+      "source_location": "top_picks[id=claude-motion-vs-designer]",
+      "source_url": "https://www.youtube.com/watch?v=AsvN_feasyY",
+      "facts": "Kaye Creatives' comparison, Claude Motion, Opus 5.5, 34 minutes versus five hours; five-second intro in about twenty minutes.",
+      "other_mentions": "None.",
+      "borrowable_action": "Graphics around a newly recorded product explanation."
+    },
+    {
+      "item_id": "solo-company-3m-newsletter-automation",
+      "owner": "x_segment",
+      "source_file": "x.json",
+      "source_location": "top_picks[id=solo-company-3m-newsletter-automation]",
+      "source_url": "https://x.com/MollySOShea/status/2109664225698476333",
+      "facts": "Molly O'Shea's interview clip; Perplexity chief executive's account of one operator, $3M annual revenue and roughly $1M yearly Perplexity spend automating newsletters.",
+      "other_mentions": "None; Social's newsletter poll is a different audience-control story and recommendation.",
+      "borrowable_action": "Sell a recurring content deliverable as a service."
+    },
+    {
+      "item_id": "muse-spark-open-weights-two-mac-studios",
+      "owner": "x_segment",
+      "source_file": "x.json",
+      "source_location": "top_picks[id=muse-spark-open-weights-two-mac-studios]",
+      "source_url": "https://x.com/AIatMeta/status/2110779754274292212",
+      "facts": "816B total/42B active parameters, million-token context, open weights, Meta's two Apple M5 Ultra Mac Studio setup.",
+      "other_mentions": "Jordan's Reddit cue contrasts a big model with a spare console; no specs or buying advice are repeated.",
+      "borrowable_action": "Compare a pair of workstations with a high-volume recurring API workload."
+    },
+    {
+      "item_id": "claude-community-projects-showcase",
+      "owner": "x_segment",
+      "source_file": "x.json",
+      "source_location": "top_picks[id=claude-community-projects-showcase]",
+      "source_url": "https://x.com/claudeai/status/2111177834127601902",
+      "facts": "Six showcased builds; wildfire prototype, doodle chess, electromagnetic simulator, cardiology fellow's 3D angiogram tool, haiku animations, 120-page one-evening font; about 1.9M views.",
+      "other_mentions": "Close borrows haiku animation, not the owner's handwriting-font action, with no second showcase explanation.",
+      "borrowable_action": "Turn a physical handwriting artifact into a reusable font for an invitation."
+    },
+    {
+      "item_id": "ps5-runs-qwen-27b-native-app",
+      "owner": "reddit_segment",
+      "source_file": "reddit.json",
+      "source_location": "top_picks[id=ps5-runs-qwen-27b-native-app]",
+      "source_url": "https://www.reddit.com/r/LocalLLM/comments/1x4y61f/qwen_27b_at_20_toks_on_a_jailbroken_ps5s_gpu_i/",
+      "facts": "Jailbroken PS5 native app, maker-reported 27B Qwen around twenty tokens per second with two-bit quantization, console graphics processor, TV dashboard, model browser and network API.",
+      "other_mentions": "handoff_reddit teases only the console.",
+      "borrowable_action": "Retired computer as a household local model server."
+    },
+    {
+      "item_id": "cc-stretch-expandable-replies",
+      "owner": "reddit_segment",
+      "source_file": "reddit.json",
+      "source_location": "top_picks[id=cc-stretch-expandable-replies]",
+      "source_url": "https://www.reddit.com/r/ClaudeCode/comments/1x688sx/turning_a_crazy_idea_from_1967_into_a_claude_code/",
+      "facts": "1967 stretchtext idea, Claude Code plugin, maker's 83-percent reply reduction, expand-on-demand sections, opened-section feedback, approximately 1300 upvotes.",
+      "other_mentions": "None.",
+      "borrowable_action": "Expandable briefing with a visible conclusion."
+    },
+    {
+      "item_id": "mmorpg-built-with-claude-code-13-weeks",
+      "owner": "reddit_segment",
+      "source_file": "reddit.json",
+      "source_location": "top_picks[id=mmorpg-built-with-claude-code-13-weeks]",
+      "source_url": "https://www.reddit.com/r/ClaudeCode/comments/1x4tuqy/13_weeks_of_vibe_coding_my_mmorpg_with_claude/",
+      "facts": "Solo builder's thirteen-week free browser voxel multiplayer RPG update; almost no hand coding; new visuals, redesigned zones/dungeons and browser-tool performance work.",
+      "other_mentions": "None; the closing StarCraft benchmark is a different project and task.",
+      "borrowable_action": "Explorable place instead of an explanation in slides."
+    },
+    {
+      "item_id": "airsuphq-machine-skill",
+      "owner": "builders_segment",
+      "source_file": "builders.json",
+      "source_location": "top_picks[id=airsuphq-machine-skill]",
+      "source_url": "https://github.com/AirsupHQ/machine-skill",
+      "facts": "One-line prompt, interactive 3D machine in a single HTML file, purpose-built solvers, pump/compressor examples, 28-second film command, launched this week and about 300 stars.",
+      "other_mentions": "None.",
+      "borrowable_action": "Explorable machine training scene from a whiteboard explanation."
+    },
+    {
+      "item_id": "k-dense-ai-scientific-agent-skills",
+      "owner": "builders_segment",
+      "source_file": "builders.json",
+      "source_location": "top_picks[id=k-dense-ai-scientific-agent-skills]",
+      "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "facts": "177 scientific skills, listed scientific disciplines/procedures, Agent Skills format, Cursor/Codex/Claude Code compatibility, about 4300 weekly new stars.",
+      "other_mentions": "None; Research does not revisit this library.",
+      "borrowable_action": "Install one materials or kinetics procedure for a routine notebook analysis."
+    },
+    {
+      "item_id": "debpalash-voicestudio",
+      "owner": "builders_segment",
+      "source_file": "builders.json",
+      "source_location": "top_picks[id=debpalash-voicestudio]",
+      "source_url": "https://github.com/debpalash/VoiceStudio",
+      "facts": "Local voice cloning/design, dubbing, dictation/transcription, audiobooks, project-reported 646 languages, about 16500 weekly new stars, Mac/Linux/Windows, local API and agent connectivity.",
+      "other_mentions": "Close uses dictation for a walking brainstorm, not the owner's guide narration.",
+      "borrowable_action": "Audio edition and narrated demonstration from one short guide."
+    },
+    {
+      "item_id": "google-play-personal-android-apps",
+      "owner": "launches_segment",
+      "source_file": "launches.json",
+      "source_location": "top_picks[id=google-play-personal-android-apps]",
+      "source_url": "https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/",
+      "facts": "AI Studio personal Android apps without developer accounts; rollout for adults in select markets including the U.S.",
+      "other_mentions": "Removed the draft's cold-open and closing substantive repetitions.",
+      "borrowable_action": "Household-specific single-screen chore tracker."
+    },
+    {
+      "item_id": "kling-4-0-global",
+      "owner": "launches_segment",
+      "source_file": "launches.json",
+      "source_location": "top_picks[id=kling-4-0-global]",
+      "source_url": "https://kling.ai/blog/kling40-kling-visual-realism-creative-control-introducing-storytelling",
+      "facts": "Global Kling 4.0 launch, up to thirty seconds, fifteen reference assets, ten keyframes; live web app with API to follow.",
+      "other_mentions": "None; Marcus owns a different tool and graphics-over-footage workflow.",
+      "borrowable_action": "Ten-keyframe continuous product demonstration."
+    },
+    {
+      "item_id": "openai-rosalind-academic-plan",
+      "owner": "launches_segment",
+      "source_file": "launches.json",
+      "source_location": "top_picks[id=openai-rosalind-academic-plan]",
+      "source_url": "https://openai.com/index/introducing-the-rosalind-academic-plan/",
+      "facts": "Eligible U.S. university labs, up to thirty ChatGPT Business Standard seats free for twelve months, separate GPT-Rosalind approval and seven life-science areas.",
+      "other_mentions": "None; Research does not retell this access offer.",
+      "borrowable_action": "Literature-club build session using the shared seats."
+    },
+    {
+      "item_id": "facebook-your-algorithm-natural-language-feed-controls",
+      "owner": "social_segment",
+      "source_file": "social.json",
+      "source_location": "top_picks[id=facebook-your-algorithm-natural-language-feed-controls]",
+      "source_url": "https://about.fb.com/news/2026/10/introducing-your-algorithm-facebook/",
+      "facts": "Your Algorithm topic control for Feed/Reels in the three-dot menu; Interested/Not Interested follow-ups and language-model real-time ranking.",
+      "other_mentions": "None.",
+      "borrowable_action": "Ask newsletter readers what they want more of and use their actual answers."
+    },
+    {
+      "item_id": "tiktok-shop-uk-shoppable-carousels-live-deals",
+      "owner": "social_segment",
+      "source_file": "social.json",
+      "source_location": "top_picks[id=tiktok-shop-uk-shoppable-carousels-live-deals]",
+      "source_url": "https://www.socialmediatoday.com/news/tiktok-shop-offers-uk-merchants-more-engagement-tools/833064/",
+      "facts": "UK shoppable photo carousels; two-image minimum and five-to-seven recommendation.",
+      "other_mentions": "None; removed the secondary live-auction feature cluster.",
+      "borrowable_action": "Existing product photos in a buyable swipe sequence."
+    },
+    {
+      "item_id": "google-org-ai-for-science-36m-17-teams",
+      "owner": "social_segment",
+      "source_file": "social.json",
+      "source_location": "top_picks[id=google-org-ai-for-science-36m-17-teams]",
+      "source_url": "https://blog.google/company-news/outreach-and-initiatives/google-org/impact-challenge-ai-science-recipients/",
+      "facts": "$36M to seventeen groups; microscopy/materials discovery, fusion reactor models, battery cathode wear and a six-month accelerator with engineering support/compute.",
+      "other_mentions": "None.",
+      "borrowable_action": "Sort a microscopy or inspection image folder into question-driven bins."
+    },
+    {
+      "item_id": "gemini-4-argon-science-results",
+      "owner": "research_segment",
+      "source_file": "research.json",
+      "source_location": "top_picks[id=gemini-4-argon-science-results]",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "additional_source_item_id": "argon-science-counterexamples-thread",
+      "additional_source_file": "x.json",
+      "additional_source_url": "https://x.com/pushmeet/status/2110049807385702623",
+      "facts": "University collaboration, broader counterexamples to a 1967 stellarator magnetic-field conjecture; quantum-subroutine footprint reduction over 100x checked in Lean.",
+      "other_mentions": "None outside Research.",
+      "borrowable_action": "Counterexamples to a checkable rule of thumb as new test cases."
+    },
+    {
+      "item_id": "openstudio-mcp-building-energy",
+      "owner": "research_segment",
+      "source_file": "science.json",
+      "source_location": "lab_pick; corroborated by research.json.top_picks[id=openstudio-mcp-building-energy]",
+      "source_url": "https://www.nlr.gov/news/detail/program/2026/building-energy-modeling-made-easy-with-natural-language-prompts",
+      "facts": "All lab_pick fields are preserved in the lab_pick object above and represented in the spoken beat.",
+      "other_mentions": "cold_open teases the attributed days-to-minutes result only.",
+      "borrowable_action": "Twenty-minute familiar-building comparison with the last hand-built simulation."
+    },
+    {
+      "item_id": "nist-caissi-incident-practices",
+      "owner": "research_segment",
+      "source_file": "research.json",
+      "source_location": "sections[section_id=regulation_us].items[id=nist-caissi-incident-practices]",
+      "source_url": "https://www.nist.gov/news-events/news/2026/10/key-practices-incident-readiness-and-response-super-intelligence-training",
+      "facts": "Ten voluntary practices, AI training/evaluation incidents, five named lifecycle categories and agents acting beyond instructions.",
+      "other_mentions": "None; reality check only.",
+      "borrowable_action": "Use the categories as evaluation-notebook headings.",
+      "classification": "reality_check"
+    },
+    {
+      "item_id": "eu-en-18286-harmonised-standard",
+      "owner": "research_segment",
+      "source_file": "research.json",
+      "source_location": "sections[section_id=regulation_global].items[id=eu-en-18286-harmonised-standard]",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202602274",
+      "facts": "First harmonised AI Act standard, EN 18286:2026, AI quality management, Article 40 presumption of conformity.",
+      "other_mentions": "None; reality check only.",
+      "borrowable_action": "Common standard reference in a supplier conversation.",
+      "classification": "reality_check"
+    },
+    {
+      "item_id": "era-living-guidelines-agentic-ai",
+      "owner": "research_segment",
+      "source_file": "research.json",
+      "source_location": "top_picks[id=era-living-guidelines-agentic-ai]",
+      "source_url": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/era-living-guidelines-responsible-use-generative-ai-research-updated-2026-10-16_en",
+      "facts": "Fourth edition; agentic AI, AI-assisted peer review/proposal evaluation; researchers/funders/research organisations working with EU programmes.",
+      "other_mentions": "None; reality check only.",
+      "borrowable_action": "One-page research-use statement based on the new sections.",
+      "classification": "reality_check"
+    },
+    {
+      "item_id": "pdftomp3-audiobook-mcp",
+      "owner": "things_to_try_this_week",
+      "source_file": "launches.json",
+      "source_location": "sections[section_id=to_watch].items[id=pdftomp3-audiobook-mcp]",
+      "source_url": "https://pdftomp3.com/connect-ai/",
+      "facts": "PDF-to-audiobook conversion from Codex or Claude.",
+      "other_mentions": "None.",
+      "borrowable_action": "Watch the reading-pile-to-listening-queue opportunity.",
+      "classification": "watch_only"
+    },
+    {
+      "item_id": "starskirmish-bench-v0-2",
+      "owner": "things_to_try_this_week",
+      "source_file": "launches.json",
+      "source_location": "sections[section_id=to_watch].items[id=starskirmish-bench-v0-2]",
+      "source_url": "https://starskirmish.com/bench/v0-2/",
+      "facts": "A model has one hour to write a StarCraft: Brood War bot.",
+      "other_mentions": "None.",
+      "borrowable_action": "Watch approaches to a timed game-writing challenge.",
+      "classification": "watch_only"
+    }
+  ],
+  "added_fact_audit": [
+    {
+      "segment": "x_segment",
+      "fact": "Molly O'Shea shared the interview clip.",
+      "source_item_id": "solo-company-3m-newsletter-automation",
+      "source_file": "x.json",
+      "source_field": "top_picks[id=solo-company-3m-newsletter-automation].author and primary_url",
+      "source_url": "https://x.com/MollySOShea/status/2109664225698476333",
+      "change_index": 7
+    },
+    {
+      "segment": "research_segment",
+      "fact": "The quantum improvement is a footprint reduction greater than a hundredfold, not an unspecified improvement or speed gain.",
+      "source_item_id": "argon-science-counterexamples-thread",
+      "source_file": "x.json",
+      "source_field": "top_picks[id=argon-science-counterexamples-thread].summary and key_takeaways",
+      "source_url": "https://x.com/pushmeet/status/2110049807385702623",
+      "change_index": 21
+    },
+    {
+      "segment": "research_segment",
+      "fact": "The harmonised AI quality-management standard is EN 18286; rendered as E N one eight two eight six.",
+      "source_item_id": "eu-en-18286-harmonised-standard",
+      "source_file": "research.json",
+      "source_field": "sections[section_id=regulation_global].items[id=eu-en-18286-harmonised-standard].summary",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202602274",
+      "change_index": 24
+    },
+    {
+      "segment": "things_to_try_this_week",
+      "fact": "StarSkirmish Bench gives a model one hour to write a StarCraft: Brood War bot, and is in Launches' to-watch section.",
+      "source_item_id": "starskirmish-bench-v0-2",
+      "source_file": "launches.json",
+      "source_field": "sections[section_id=to_watch].items[id=starskirmish-bench-v0-2].title and summary",
+      "source_url": "https://starskirmish.com/bench/v0-2/",
+      "change_index": 28
+    }
+  ],
+  "grounding_notes": [
+    "No web, memory or other weeks supplied any episode facts; the source URLs above were read as fields of the current week's immutable inputs, not fetched anew.",
+    "Quantization described as a compressed model is a plain-language rendering of the existing two-bit configuration, not a new speed, quality or hardware claim; reddit.json.ps5-runs-qwen-27b-native-app.key_takeaways supplies the configuration.",
+    "HTML described as a single web-page file and macOS spoken as Mac are semantic/TTS rewrites, not added capabilities; builders.json supplies both original facts.",
+    "The close's walking brainstorm and animated haiku are clearly invitations, not claims that a new user or experiment succeeded.",
+    "Revenue remains revenue; no profit margin, payback period, scientific measurement or promised tool outcome was invented.",
+    "The qualified Google Play rollout and Rosalind eligibility/separate approval remain factual availability boundaries, not cautionary advice."
+  ],
+  "changes": [
+    {
+      "segment": "headline",
+      "type": "rewrite",
+      "before": "mean anyone can now build apps, simulations and science workflows",
+      "after": "Builders are turning subscriptions, measured data and creative material into personal apps, media and scientific tools.",
+      "reason": "Replace the universal capability claim with the episode's supported spine; do not override market-limited availability."
+    },
+    {
+      "segment": "cold_open",
+      "type": "rewrite",
+      "before": "Google Play's letting people build personal Android apps ... And seventy-two teams",
+      "after": "Seventy-two teams spent a weekend trying to replace a conference tool costing forty-three thousand dollars a year.",
+      "reason": "Lead with one concrete contest and a question about adoption; promise the first desk's payoff instead of splitting the lead."
+    },
+    {
+      "segment": "cold_open",
+      "type": "cut",
+      "before": "Five apps met the bar for adoption. What happens when making your own becomes a serious option?",
+      "after": "Could their builds earn a place with the people who actually use it?",
+      "reason": "Withhold the result until Marcus's pickup and make the question specific rather than abstract."
+    },
+    {
+      "segment": "handoff_youtube / youtube_pickup",
+      "type": "handoff",
+      "before": "Marcus Chen, take us inside that weekend build contest.",
+      "after": "Marcus Chen, did the people using that software find anything they'd keep? / Five apps cleared the bar, Jordan.",
+      "reason": "Add a genuine two-beat exchange before the sting; move an existing fact into its single owner’s opening, without inventing a result."
+    },
+    {
+      "segment": "youtube_segment",
+      "type": "cut",
+      "before": "The target was a conference speaker-management tool costing forty-three thousand dollars a year. Seventy-two teams ... Five apps",
+      "after": "The job was conference speaker management ... about a thousand dollars in tokens, plus about ten thousand dollars of expertise.",
+      "reason": "Do not replay the hook and pickup numbers. Preserve the more useful full build-cost distinction and the user's adoption criterion."
+    },
+    {
+      "segment": "youtube_segment",
+      "type": "line_edit",
+      "before": "The trick is the instant feedback from existing experimental data.",
+      "after": "Those campaigns ran against recorded measurements, with instant feedback.",
+      "reason": "Keep the chemistry success exciting while making clear which environment produced the campaign count; no new wet-lab result is implied."
+    },
+    {
+      "segment": "x_segment",
+      "type": "add_fact",
+      "before": "an interview clip shared on X",
+      "after": "an interview clip Molly O'Shea shared on X",
+      "reason": "Name the actual clip sharer, make attribution concrete and resolve the specificity warning without inserting digits.",
+      "source_item_id": "solo-company-3m-newsletter-automation",
+      "source_file": "x.json",
+      "source_url": "https://x.com/MollySOShea/status/2109664225698476333"
+    },
+    {
+      "segment": "x_segment",
+      "type": "rewrite",
+      "before": "What's interesting is the shape of the offer: something a business needs again next week",
+      "after": "Quite a software bill. Also, quite a service business. The customer buys next week's newsletter.",
+      "reason": "Give Priya dry, short beats and remove repeated explanations of recurring deliverables."
+    },
+    {
+      "segment": "x_segment",
+      "type": "tts",
+      "before": "two Apple M5 Ultra Mac Studios",
+      "after": "two Apple M five Ultra Mac Studios",
+      "reason": "Resolve a mixed letter-number hardware token while preserving Meta's light attribution."
+    },
+    {
+      "segment": "x_segment",
+      "type": "line_edit",
+      "before": "The clinician and physicist examples are interesting for the same reason",
+      "after": "The clinician and physicist examples start with expertise",
+      "reason": "Replace another interesting-picture abstraction with the distinctive expert-to-tool pattern already in the source."
+    },
+    {
+      "segment": "reddit_segment",
+      "type": "merge",
+      "before": "reported twenty tokens a second ... This is the maker's performance report ... two-bit quantization",
+      "after": "The maker reports a twenty-seven-billion-parameter Qwen model at about twenty tokens a second, using two-bit quantization.",
+      "reason": "Keep attribution, model size, speed and configuration together so the listener never has to revise the initial picture."
+    },
+    {
+      "segment": "reddit_segment",
+      "type": "tts",
+      "before": "A builder on the Local LLM subreddit",
+      "after": "A builder in a local-model subreddit",
+      "reason": "Drop an unnecessary unfamiliar acronym, not the console story's factual specificity."
+    },
+    {
+      "segment": "reddit_segment",
+      "type": "rewrite",
+      "before": "You don't have to choose between a wall of text and an answer that's missing the interesting bit.",
+      "after": "The conclusion stays in view; the detail waits until you want it.",
+      "reason": "Make the expandable-reply idea hearable and give Sam a shorter, ground-level explanation."
+    },
+    {
+      "segment": "reddit_segment",
+      "type": "rewrite",
+      "before": "New places. Better movement through the world. Finding the slow bits and making them faster.",
+      "after": "Dungeons need redesigning. Slow bits need finding.",
+      "reason": "Keep Sam's affection for a continuing build while avoiding an unsourced implication about better movement mechanics."
+    },
+    {
+      "segment": "handoff_builders",
+      "type": "handoff",
+      "before": "Marcus gave us the experimental-data sandbox ... tools people can install.",
+      "after": "Marcus's chemistry sandbox used data already on hand ... take that science thread into the toolbox.",
+      "reason": "Make the callback explicit and brief; Maya owns installable tools rather than retelling Marcus's experiment."
+    },
+    {
+      "segment": "builders_segment",
+      "type": "tts",
+      "before": "one HTML file ... macOS ... an MCP connection",
+      "after": "a single web-page file ... Mac ... a connection an agent can call",
+      "reason": "Describe outputs and connectivity rather than making the voice read unfamiliar abbreviations."
+    },
+    {
+      "segment": "builders_segment",
+      "type": "rewrite",
+      "before": "I like that the output can be both an interactive lesson and a short clip.",
+      "after": "For me, the solver is the detail that earns the story. The picture has a calculation behind it.",
+      "reason": "Make Maya's technical distinction specific while retaining the original solver and film capabilities."
+    },
+    {
+      "segment": "launches_segment",
+      "type": "cut",
+      "before": "The customer here doesn't need a growth plan ... a different reason to make software ... a much more inviting one.",
+      "after": "Those ideas can be worth making even when nobody else would download them.",
+      "reason": "Keep the app-for-one invitation without three consecutive restatements; preserve the adult/select-market boundaries."
+    },
+    {
+      "segment": "launches_segment",
+      "type": "line_edit",
+      "before": "For a more cinematic afternoon ... a beginning and an ending ... a small seller ... a creator ... a hobby project",
+      "after": "Second launch ... For a small seller planning a product demonstration, the new ingredient is sequence control.",
+      "reason": "Give Kling one buyer and one point; distinguish its keyframed continuous clip from Marcus's graphics-over-footage story."
+    },
+    {
+      "segment": "social_segment",
+      "type": "cut",
+      "before": "The same update adds group deals in live streams, plus ways to mix auction and fixed-price selling and reserve stock",
+      "after": "A set of product pictures becomes a sequence with a route to buying attached.",
+      "reason": "Drop the secondary feature cluster and let the carousel story own a single clear idea."
+    },
+    {
+      "segment": "research_segment",
+      "type": "add_fact",
+      "before": "a roughly hundredfold improvement to a quantum-circuit subroutine",
+      "after": "a quantum subroutine with its footprint cut by more than a hundredfold",
+      "reason": "Specify the actual improved measure from the science thread; do not imply a speed improvement.",
+      "source_item_id": "argon-science-counterexamples-thread",
+      "source_file": "x.json",
+      "source_url": "https://x.com/pushmeet/status/2110049807385702623"
+    },
+    {
+      "segment": "research_segment",
+      "type": "cut",
+      "before": "Two different subjects, with a similar appeal: an answer that becomes a concrete object for further work.",
+      "after": "A counterexample and a smaller circuit: concrete objects another researcher can pick up.",
+      "reason": "Keep Aaron's measured wonder without a generic explanation loop before the lab pick."
+    },
+    {
+      "segment": "research_segment",
+      "type": "line_edit",
+      "before": "The conversation leads into a familiar scientific workflow. You can discuss the building, the proposed change, and the resulting estimate together.",
+      "after": "The prompt opens a familiar scientific workflow, with a proposed retrofit and an estimate to discuss.",
+      "reason": "Tighten the lab beat to about 65 seconds without changing the exact lab_pick story, results or twenty-minute sharing method.",
+      "source_item_id": "openstudio-mcp-building-energy",
+      "source_file": "science.json",
+      "source_url": "https://www.nlr.gov/news/detail/program/2026/building-energy-modeling-made-easy-with-natural-language-prompts"
+    },
+    {
+      "segment": "research_segment",
+      "type": "add_fact",
+      "before": "use that named standard",
+      "after": "E N one eight two eight six ... use that standard",
+      "reason": "Actually name the standard the listener is being invited to use; pronounce its letters and digits explicitly.",
+      "source_item_id": "eu-en-18286-harmonised-standard",
+      "source_file": "research.json",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202602274"
+    },
+    {
+      "segment": "research_segment / launches_segment",
+      "type": "tts",
+      "before": "NIST, NSA and CISA ... EU ... GPT-Rosalind",
+      "after": "In the United States, ten voluntary practices ... European Union ... G P T Rosalind",
+      "reason": "Remove the agency acronym pile, expand the regional term and make the model prefix letter-spoken without adding agency-name facts."
+    },
+    {
+      "segment": "handoffs / correspondent endings",
+      "type": "handoff",
+      "before": "Jordan, back to you / Over to you, Jordan / Back to you, Jordan",
+      "after": "Seven distinct final sentences, including 'I'll leave the console under the television. Back to you, Jordan.'",
+      "reason": "Preserve all seven returns to the anchor while adding voice-specific handbacks and avoiding identical end-line cadence."
+    },
+    {
+      "segment": "things_to_try_this_week",
+      "type": "rewrite",
+      "before": "personal Android app ... handwritten pages into a font ... describe a machine",
+      "after": "VoiceStudio's dictation for a walking brainstorm ... give a favourite haiku an animated scene",
+      "reason": "Two fun applications from already covered capabilities replace three repeated desk recommendations; neither is presented as a new factual success.",
+      "source_item_ids": [
+        "debpalash-voicestudio",
+        "claude-community-projects-showcase"
+      ],
+      "source_urls": [
+        "https://github.com/debpalash/VoiceStudio",
+        "https://x.com/claudeai/status/2111177834127601902"
+      ]
+    },
+    {
+      "segment": "things_to_try_this_week",
+      "type": "add_fact",
+      "before": "watch for more labs publishing specialist servers and reusable skills",
+      "after": "Star Skirmish Bench gives a model one hour to write a StarCraft: Brood War bot.",
+      "reason": "Replace a generic emerging-pattern forecast with a second named item from the actual to-watch section; retain PDF TO MP3 as the first.",
+      "source_item_id": "starskirmish-bench-v0-2",
+      "source_file": "launches.json",
+      "source_url": "https://starskirmish.com/bench/v0-2/"
+    },
+    {
+      "segment": "things_to_try_this_week / launches_segment",
+      "type": "tts",
+      "before": "PDF to MP3 ... Access to GPT-Rosalind",
+      "after": "PDF to M P three ... Access to G P T Rosalind",
+      "reason": "Resolve mixed letter-number and hyphenated model tokens; keep familiar AI, API and PDF as letters."
+    },
+    {
+      "segment": "estimated_duration_seconds / whole episode",
+      "type": "line_edit",
+      "before": "1500 seconds; 3342 spoken words",
+      "after": "1178 seconds; 2978 spoken words",
+      "reason": "Cut 364 words and replace the stale duration metadata with the specified word-rate-plus-music calculation; no padding and no rendering."
+    }
+  ],
+  "pass_bar": {
+    "zero_lint_errors": true,
+    "all_dimensions_at_least_three": true,
+    "mean_at_least_four": true,
+    "all_atomic_checks_true": true,
+    "all_conditions_met_after_round": 1
+  },
+  "summary_for_producer": "Pass after one editorial round: rubric mean rises from 3.79 to 4.64, with zero lint errors and every atomic check true. The edit cuts 364 words, leads on the adoption contest, differentiates voices and handbacks, and replaces repeated closing projects with two fresh applications and two named watch opportunities. The exact science.json lab pick remains a roughly 65-second OpenStudio demonstration, followed by a roughly 58-second, three-item reality check; no cautions leak into other desks. One concept-saturation warning remains by design because it measures ordinary connective words and unrelated sourced quantities, not duplicated stories or advice. Next week, keep the same one-owner discipline and name concrete watch items rather than turning the close into a generic forecast; the immutable draft is unchanged and no rendering or git command was run."
+}

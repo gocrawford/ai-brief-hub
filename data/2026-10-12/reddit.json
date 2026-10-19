@@ -1,0 +1,1222 @@
+{
+  "tab_id": "reddit",
+  "tab_name": "Reddit / Community",
+  "subtitle": "Community Intelligence",
+  "icon": "MessageCircle",
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 1.0,
+    "items_total": 31,
+    "items_new": 31,
+    "items_returning": 0
+  },
+  "min_items": 20,
+  "executive_summary": [
+    {
+      "headline": "Small builders turn spare hardware and old ideas into working tools",
+      "body": "A plugin that shrinks replies by 83%, a jailbroken console serving a 27B model at about 20 tok/s, and two old phones clustered over USB lead the week. Each is a one-person build with numbers attached.",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x688sx/turning_a_crazy_idea_from_1967_into_a_claude_code/"
+    },
+    {
+      "headline": "Open-weight releases arrive in volume",
+      "body": "Muse Spark Open (816B total, 1M context), DeepSeek V4.1 Flash, a 24GB Nemotron Bolt and a new TTS model all drew hundreds of upvotes, giving local and indie builders new baselines.",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6r9pz/introducing_muse_spark_open_the_most_capable_us/"
+    },
+    {
+      "headline": "AI-for-science threads show both progress and adoption friction",
+      "body": "An AI weather model flagged a hurricane 11 days before landfall, mathematicians are reacting to a batch of AI proofs, and one lab notes fewer in-person brainstorms after adopting Claude.",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1x3unnr/google_deepminds_ai_weather_model_picked_up/"
+    },
+    {
+      "headline": "Model comparisons center on usage limits and one-prompt tests",
+      "body": "Gemini 4 Argon dominated review threads, with users comparing build cost, time and plan usage against Opus 5.5.",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x56wuh/gemini_4_argon_vs_claude_opus_55_same_prompt_tiny/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "cc-stretch-expandable-replies",
+      "title": "A 1967 stretchtext idea becomes a Claude Code plugin that cuts replies by 83%",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x688sx/turning_a_crazy_idea_from_1967_into_a_claude_code/",
+      "date": "2026-10-15",
+      "summary": "The maker ships cc-stretch, a Claude Code plugin that shrinks each reply by 83% and lets you expand any part on demand. It also tells the model which parts you opened, so it does not assume you read the rest. The thread scored 1,343 upvotes in the Tips & Workflows flair.",
+      "source": "r/ClaudeCode",
+      "author": "u/pro-vi",
+      "platform": "reddit",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 1343,
+        "comments": 118
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:40:00Z",
+      "tags": [
+        "claude-code",
+        "plugin",
+        "reading-workflow"
+      ],
+      "category": "Creator tool",
+      "recurrence": "new",
+      "enterprise_translation": "Reply length is now a dial you control. Install it for a week and see how much reading time comes back, then try the same expand-on-demand pattern in an internal report or briefing template.",
+      "key_takeaways": [
+        "Plugin installs from a Claude Code session via the plugin marketplace command.",
+        "Replies shrink 83%; each section expands on demand.",
+        "The plugin reports which sections you opened back to the model."
+      ]
+    },
+    {
+      "id": "ps5-runs-qwen-27b-native-app",
+      "title": "A jailbroken PS5 runs a 27B Qwen model at about 20 tokens per second",
+      "primary_url": "https://www.reddit.com/r/LocalLLM/comments/1x4y61f/qwen_27b_at_20_toks_on_a_jailbroken_ps5s_gpu_i/",
+      "date": "2026-10-13",
+      "summary": "The builder forked a llama.cpp port into a native PS5 app that uses the console GPU through Vulkan and gets about 11.4 GiB of memory. Reported speeds: Qwen 3.8 27B at roughly 20 tok/s with 64k context, a 4B Gemma at about 61 tok/s, and a 3B Llama at about 124 tok/s. The app adds a TV dashboard, a model library, a Hugging Face browser and an OpenAI-compatible API.",
+      "source": "r/LocalLLM",
+      "author": "u/AdIllustrious7246",
+      "platform": "reddit",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 1046,
+        "comments": 122
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:40:00Z",
+      "tags": [
+        "local-llm",
+        "hardware",
+        "fun-demo"
+      ],
+      "category": "Local AI hack",
+      "recurrence": "new",
+      "enterprise_translation": "Spare hardware is a free inference box. Pick a dusty console, mini PC or old laptop in your office and see what model size it can serve to the team over a local API.",
+      "key_takeaways": [
+        "Reported 20 tok/s on a 27B model at 2-bit quantization.",
+        "Serves chat and an OpenAI-compatible API to any device on the network."
+      ]
+    },
+    {
+      "id": "two-android-phones-cluster-27b",
+      "title": "Two old Android phones cluster over USB to run a 27B model",
+      "primary_url": "https://www.reddit.com/r/LocalLLM/comments/1x4awt8/i_clustered_two_old_android_phones_to_run_a_27b/",
+      "date": "2026-10-12",
+      "summary": "The builder wrote a C++ engine that splits a 27B ternary model across two phones over a USB cable. Reported results: 2.8 tok/s in cluster mode, 5.6 tok/s on a single phone, and a maximum temperature near 30 C because the math reduces to additions and subtractions.",
+      "source": "r/LocalLLM",
+      "author": "u/Grouchy-Zebra9780",
+      "platform": "reddit",
+      "score": {
+        "total": 9,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 354,
+        "comments": 54
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:40:00Z",
+      "tags": [
+        "local-llm",
+        "mobile",
+        "ternary-weights"
+      ],
+      "category": "Local AI hack",
+      "recurrence": "new",
+      "enterprise_translation": "A drawer of retired phones is a small compute cluster. Try splitting a mid-size model across two devices for an offline demo at your next team event.",
+      "key_takeaways": [
+        "Weights compressed to 2.06 bits per weight, 6.52 GiB total.",
+        "Perplexity reported at 14.26 against a 14.05 reference."
+      ]
+    },
+    {
+      "id": "mmorpg-built-with-claude-code-13-weeks",
+      "title": "13 weeks of building a browser MMORPG with Claude Code",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x4tuqy/13_weeks_of_vibe_coding_my_mmorpg_with_claude/",
+      "date": "2026-10-13",
+      "summary": "A solo builder shares a three-month progress update on a free, in-browser voxel MMORPG made almost entirely by describing features to Claude Code and iterating. This month went into new visuals, redesigned zones and dungeons, and performance work found with Chrome MCP.",
+      "source": "r/ClaudeCode",
+      "author": "u/Big-Sandwich733",
+      "platform": "reddit",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 459,
+        "comments": 196
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:40:00Z",
+      "tags": [
+        "indie-game",
+        "claude-code",
+        "vibe-coding"
+      ],
+      "category": "Indie build",
+      "recurrence": "new",
+      "enterprise_translation": "A multiplayer game is now a solo project. Describe a small internal tool the way this builder describes a dungeon, and let the agent profile its own bottlenecks through browser tooling.",
+      "key_takeaways": [
+        "Builder says they write almost none of the code by hand.",
+        "Browser tooling helped find performance bottlenecks."
+      ]
+    },
+    {
+      "id": "kernel-maintainer-uses-llm-untangle-code",
+      "title": "A kernel maintainer used an LLM to untangle obscure code and found three more bugs",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1x3yeti/linus_torvalds_used_ai_to_make_code_decipherable/",
+      "date": "2026-10-12",
+      "summary": "The maintainer quoted in the thread says a patch touched code too obscure to follow, so he used an LLM to split large functions into readable ones. A user-space test harness then confirmed the reported bug and found three others dating back to the library's first commit in 2013.",
+      "source": "r/singularity",
+      "author": "u/PointmanW",
+      "platform": "reddit",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 1
+      },
+      "engagement": {
+        "upvotes": 1131,
+        "comments": 212
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:40:00Z",
+      "tags": [
+        "code-comprehension",
+        "testing",
+        "open-source"
+      ],
+      "category": "Developer workflow",
+      "recurrence": "new",
+      "enterprise_translation": "Use the model as a code translator first and a code writer second. Point it at the oldest, least-loved module you own and ask for a readable refactor plus a test harness.",
+      "key_takeaways": [
+        "LLM-assisted refactor made the code readable.",
+        "Test harness surfaced three extra bugs from 2013."
+      ]
+    },
+    {
+      "id": "ten-things-with-qwen-27b-for-newcomers",
+      "title": "Ten things a first-time user can do with a 27B open model today",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x7sq8e/10_things_you_maybe_didnt_know_you_can_do_with/",
+      "date": "2026-10-16",
+      "summary": "A long-time local-model user lists ten practical uses, starting with building a personal Notepad replacement with word processing and light/dark mode, and writing your own chat front end. The advice is to ask \"can I make an app that makes this simpler?\" whenever a task annoys you. It scored 700 upvotes.",
+      "source": "r/LocalLLaMA",
+      "author": "u/GrungeWerX",
+      "platform": "reddit",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 700,
+        "comments": 130
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:40:00Z",
+      "tags": [
+        "local-llm",
+        "personal-apps",
+        "beginner"
+      ],
+      "category": "Local AI how-to",
+      "recurrence": "new",
+      "enterprise_translation": "Every small annoyance is a candidate micro-app. Keep a running list for a week, then build the top three in one afternoon with a local model.",
+      "key_takeaways": [
+        "Author uses llama.cpp for every trick.",
+        "First tip: build personal replacements for everyday apps."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "viral_threads",
+      "title": "Viral Threads (500+ upvotes)",
+      "description": "Threads above 500 upvotes this week regardless of category.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "film-industry-ai-seedance-parody",
+          "title": "\"The Film Industry Is Not Ready for What AI Can Do\" (Seedance parody video)",
+          "primary_url": "https://www.reddit.com/r/aivideo/comments/1x6f5ob/the_film_industry_is_not_ready_for_what_ai_can_do/",
+          "date": "2026-10-15",
+          "summary": "A creator posts a comedy and parody video made with Seedance that took 8,846 upvotes and 1,240 comments, the top post in the sub this week. The reaction shows how far AI video has moved into mainstream entertainment.",
+          "source": "r/aivideo",
+          "author": "u/Old_Establishment287",
+          "platform": "reddit",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 8846,
+            "comments": 1240
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "ai-video",
+            "seedance",
+            "creator"
+          ],
+          "category": "AI video",
+          "recurrence": "new",
+          "enterprise_translation": "Parody is the fastest proof of a new video tool. Have your team make a 30-second spoof of an internal process to see what the tool can do."
+        },
+        {
+          "id": "vibecoded-app-fortune-cash-out-or-keep-building",
+          "title": "If your vibe-coded app made a fortune, would you cash out?",
+          "primary_url": "https://www.reddit.com/r/vibecoding/comments/1x43ud8/if_your_vibecoded_app_suddenly_made_you_a_fortune/",
+          "date": "2026-10-12",
+          "summary": "A discussion post asks whether people would sell, retire and travel, or keep building if a vibe-coded app took off. It reached 1,772 upvotes and 154 comments, a sign that many readers now expect a solo AI-built app to be a real business.",
+          "source": "r/vibecoding",
+          "author": "u/a113rick",
+          "platform": "reddit",
+          "score": {
+            "total": 5,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 1772,
+            "comments": 154
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "vibe-coding",
+            "indie",
+            "founders"
+          ],
+          "category": "Indie discussion",
+          "recurrence": "new",
+          "enterprise_translation": "Ask your team the same question about a side tool: what would we keep building if it took off? The answers show where the energy is."
+        },
+        {
+          "id": "muse-spark-open-weight-release",
+          "title": "Muse Spark Open: an 816B open-weight model with 1M context",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6r9pz/introducing_muse_spark_open_the_most_capable_us/",
+          "date": "2026-10-15",
+          "summary": "The lab's account announces Muse Spark Open as the most capable US open-weight model to date. Listed specs: 816B total and 42B active parameters, a 1M-token context window, and text, image, video and audio input. It scored 1,322 upvotes.",
+          "source": "r/LocalLLaMA",
+          "author": "u/AIatMeta",
+          "platform": "reddit",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 1322,
+            "comments": 352
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "open-weights",
+            "release",
+            "agentic-coding"
+          ],
+          "category": "Model release",
+          "recurrence": "new",
+          "enterprise_translation": "A frontier-class open model lets you run your own agent stack. Queue it for a head-to-head against your current coding model on one real task."
+        },
+        {
+          "id": "deepseek-v4-1-flash-1017",
+          "title": "DeepSeek V4.1 Flash (1017) lands on Hugging Face",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x84po4/deepseekaideepseekv41flash1017_hugging_face/",
+          "date": "2026-10-17",
+          "summary": "A new DeepSeek V4.1 Flash checkpoint appeared on Hugging Face on October 17 and drew 1,102 upvotes and 301 comments in the first day.",
+          "source": "r/LocalLLaMA",
+          "author": "u/Bestlife73",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 1102,
+            "comments": 301
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "open-weights",
+            "release"
+          ],
+          "category": "Model release",
+          "recurrence": "new",
+          "enterprise_translation": "Fast, cheap checkpoints are the workhorses of agent loops. Swap it into one background job this week and compare cost per task."
+        },
+        {
+          "id": "opus-oboe-concerto-listener-test",
+          "title": "Opus 5.5 wrote an oboe concerto that 60% of listeners judged human-composed",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1x4k8pa/claude_opus_55_wrote_an_oboe_concerto_that_60_of/",
+          "date": "2026-10-13",
+          "summary": "The post reports that listeners rated the model's oboe concerto as human-composed 60% of the time, against 58% for a Handel piece and 43% for a Vivaldi piece. It scored 704 upvotes.",
+          "source": "r/singularity",
+          "author": "u/141_1337",
+          "platform": "reddit",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 704,
+            "comments": 190
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "music",
+            "creative",
+            "claude"
+          ],
+          "category": "Creative AI",
+          "recurrence": "new",
+          "enterprise_translation": "Blind listening tests make a good team demo. Run a blind A/B on your own marketing copy or jingle and share the result."
+        },
+        {
+          "id": "claude-rewrite-printer-firmware-idea",
+          "title": "Idea thread: have Claude rewrite printer firmware to accept third-party ink",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1x472ch/what_if_we_get_claude_to_rewrite_hp_printer/",
+          "date": "2026-10-12",
+          "summary": "A 695-upvote thread floats using a coding model to rewrite printer firmware so owners can use third-party ink. The community treats it as a consumer-empowerment use of coding agents.",
+          "source": "r/singularity",
+          "author": "u/FatesWaltz",
+          "platform": "reddit",
+          "score": {
+            "total": 5,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 695,
+            "comments": 99
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "consumer",
+            "firmware",
+            "right-to-repair"
+          ],
+          "category": "Consumer idea",
+          "recurrence": "new",
+          "enterprise_translation": "Frustrating locked-in devices are good targets for agent-written replacements. List the gadgets in your lab or office that you would rewrite if you could."
+        },
+        {
+          "id": "scion-source-control-for-agents",
+          "title": "A repo outgrows git: 2,500 to 30,000 merged changes a day",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x5phqp/anthropic_went_from_2500_to_30000_merges_a_day/",
+          "date": "2026-10-14",
+          "summary": "A post summarizes a lab's engineering write-up: merged changes per day rose from about 2,500 in May to over 30,000 in September, CI checks out code about 25 million times a day, and the main branch history is nearly 100 GB. They built Scion, a server-side system where agents download only the files they need.",
+          "source": "r/ClaudeCode",
+          "author": "u/emarkosov",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 914,
+            "comments": 168
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "source-control",
+            "agents",
+            "scale"
+          ],
+          "category": "Enterprise platform",
+          "recurrence": "new",
+          "enterprise_translation": "Agent volume reshapes tooling. Look at which of your own systems assume a human at the keyboard."
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases and Builds",
+      "description": "Workflow wins, creative builds and small automations.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "claude-bubblegum-pop-music-video",
+          "title": "Claude builds a bubblegum-pop music video in two days",
+          "primary_url": "https://www.reddit.com/r/vibecoding/comments/1x4agp8/i_had_claude_make_a_bubblegum_pop_music_video/",
+          "date": "2026-10-12",
+          "summary": "A software engineer used Opus 5.5 to write lyrics, a song and an animated video in about two days. It was not one-shot. The post shows asset creation in code as a new capability. It scored 422 upvotes.",
+          "source": "r/vibecoding",
+          "author": "u/pizzaisprettyneato",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 422,
+            "comments": 68
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "music-video",
+            "creative",
+            "claude"
+          ],
+          "category": "Creative AI",
+          "recurrence": "new",
+          "enterprise_translation": "Turn your next team update into a music video. Draft lyrics from the real highlights, then have the model build the visuals."
+        },
+        {
+          "id": "peripheral-drivers-reverse-engineered-all-in-one-app",
+          "title": "Reverse-engineering peripheral drivers into one settings app",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x5gemk/managed_to_reverse_engineer_my_peripheral/",
+          "date": "2026-10-14",
+          "summary": "A builder reports using Claude Code to reverse engineer vendor drivers for several peripherals and combine them into one app that changes settings and shows status. It scored 437 upvotes.",
+          "source": "r/ClaudeCode",
+          "author": "u/thisbejann",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 437,
+            "comments": 50
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "reverse-engineering",
+            "personal-app",
+            "claude-code"
+          ],
+          "category": "Personal tool",
+          "recurrence": "new",
+          "enterprise_translation": "Replace bloated vendor software with your own small app. Pick the one utility everyone dislikes and have an agent rebuild just the parts you use."
+        },
+        {
+          "id": "fishing-game-week-11-dev-log",
+          "title": "Week 11 of a solo fishing game built with AI",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1x3ttzl/week_11_of_making_my_fishing_game_with_the_help/",
+          "date": "2026-10-12",
+          "summary": "A builder posts a weekly dev log for a free fishing game made with Opus 5.5 plus separate tools for sound and art. This week adds a prologue scene. It scored 351 upvotes and 112 comments.",
+          "source": "r/ClaudeAI",
+          "author": "u/RUSuper",
+          "platform": "reddit",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 351,
+            "comments": 112
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "indie-game",
+            "dev-log"
+          ],
+          "category": "Indie build",
+          "recurrence": "new",
+          "enterprise_translation": "Weekly public dev logs build an audience and keep momentum. Try a 12-week log for one internal tool."
+        },
+        {
+          "id": "fish-drama-3-tts-demo",
+          "title": "Fish Drama 3, a 35B MoE text-to-speech model, gets a hosted demo",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6f9p2/new_tts_king_in_town_fishs_drama_3_35b3a/",
+          "date": "2026-10-15",
+          "summary": "A community member built a demo for a new text-to-speech model that runs on a DGX Spark, with 4-bit quants close to the original. The demo is public on Hugging Face. It scored 428 upvotes.",
+          "source": "r/LocalLLaMA",
+          "author": "u/futterneid",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 428,
+            "comments": 86
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "tts",
+            "open-weights",
+            "voice"
+          ],
+          "category": "Model release",
+          "recurrence": "new",
+          "enterprise_translation": "Open voice models are good enough to narrate. Generate an audio version of your weekly update and see who listens."
+        },
+        {
+          "id": "five-free-n8n-boring-job-workflows",
+          "title": "Five free n8n workflows for boring daily jobs",
+          "primary_url": "https://www.reddit.com/r/n8n/comments/1x7bays/i_built_5_free_n8n_workflows_for_boring_daily/",
+          "date": "2026-10-16",
+          "summary": "A builder shares five small n8n workflows, including a morning AI-news digest, a free-game alert posted to chat, and feed-to-channel filters, with the JSON included. It is small (9 upvotes, 7 comments) but copyable.",
+          "source": "r/n8n",
+          "author": "u/TaskToAgent",
+          "platform": "reddit",
+          "score": {
+            "total": 5,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 9,
+            "comments": 7
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "n8n",
+            "automation",
+            "templates"
+          ],
+          "category": "Automation",
+          "recurrence": "new",
+          "enterprise_translation": "Start with boring. One working digest beats ten agent demos; clone the news-digest flow for your own topic."
+        }
+      ]
+    },
+    {
+      "section_id": "tool_reviews",
+      "title": "Tool Reviews",
+      "description": "Community sentiment on this week's model and plan changes.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "gemini-4-argon-vs-opus-tiny-world-test",
+          "title": "Gemini 4 Argon vs Opus 5.5 on a same-prompt 3D planet test",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x56wuh/gemini_4_argon_vs_claude_opus_55_same_prompt_tiny/",
+          "date": "2026-10-13",
+          "summary": "A user ran the same three.js planet prompt on both models and compared build time, cost and page size. Verdict: \"not too bad, but also not good enough\". It scored 349 upvotes.",
+          "source": "r/ClaudeCode",
+          "author": "u/Timisageek",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 349,
+            "comments": 49
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "gemini",
+            "claude",
+            "benchmark"
+          ],
+          "category": "Model comparison",
+          "recurrence": "new",
+          "enterprise_translation": "Build your own one-prompt benchmark. A single visual task your team cares about tells you more than a leaderboard.",
+          "evaluation": "ADD TO WATCHLIST"
+        },
+        {
+          "id": "argon-4-in-antigravity-pro-user",
+          "title": "Argon 4 in Antigravity for Pro users: first impressions",
+          "primary_url": "https://www.reddit.com/r/google_antigravity/comments/1x73yrd/my_thoughts_about_argon_4_in_antigravity_pro_user/",
+          "date": "2026-10-16",
+          "summary": "A Pro user got access to Argon 4 in Antigravity on October 16 and reports about 50% of usage gone after roughly 12 minutes of thinking, and is disappointed. 384 upvotes, 78 comments.",
+          "source": "r/google_antigravity",
+          "author": "u/uvuvevue",
+          "platform": "reddit",
+          "score": {
+            "total": 5,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 384,
+            "comments": 78
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "gemini",
+            "antigravity",
+            "usage"
+          ],
+          "category": "Tool review",
+          "recurrence": "new",
+          "enterprise_translation": "Track usage per task, not per message, when you trial a new model.",
+          "evaluation": "MONITOR"
+        },
+        {
+          "id": "antigravity-ultra-usage-vs-20-dollar-plans",
+          "title": "Antigravity Ultra usage compared with $20 plans",
+          "primary_url": "https://www.reddit.com/r/google_antigravity/comments/1x5gapl/googles_100_ultra_subscription_usage_is/",
+          "date": "2026-10-14",
+          "summary": "A user estimates about 90M tokens per 5-hour window on the $100 Ultra tier, roughly $70 of API value per week, against about $280 for a $20 Claude plan. 438 upvotes, 64 comments. This is the poster's own calculation.",
+          "source": "r/google_antigravity",
+          "author": "u/Sksend",
+          "platform": "reddit",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 438,
+            "comments": 64
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "gemini",
+            "pricing",
+            "usage"
+          ],
+          "category": "Tool review",
+          "recurrence": "new",
+          "enterprise_translation": "Compare plans by cost per finished task. Run the same project on two plans for a week.",
+          "evaluation": "MONITOR"
+        }
+      ]
+    },
+    {
+      "section_id": "hot_debates",
+      "title": "Hot Debates",
+      "description": "Active disagreements with multiple positions.",
+      "layout": "debate",
+      "items": [
+        {
+          "id": "non-coders-shipping-real-apps",
+          "title": "People with almost no coding experience are shipping real cross-platform apps",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x68om1/weve_reached_the_point_where_people_with/",
+          "date": "2026-10-15",
+          "summary": "A Rant-flair post with 1,038 upvotes and 263 comments reacts to a person with almost no coding background releasing an open-source app for Windows and Android. Commenters split on whether this is empowering or premature.",
+          "source": "r/ClaudeCode",
+          "author": "u/onepunchcode",
+          "platform": "reddit",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 1038,
+            "comments": 263
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "vibe-coding",
+            "non-coders",
+            "debate"
+          ],
+          "category": "Indie debate",
+          "recurrence": "new",
+          "enterprise_translation": "The barrier to a first shipped app has dropped. Invite your non-engineers to ship one small tool in a sprint."
+        },
+        {
+          "id": "lab-llm-use-and-conversation",
+          "title": "A lab adopts Claude and one researcher notices fewer hallway brainstorms",
+          "primary_url": "https://www.reddit.com/r/labrats/comments/1x5xw86/llms_and_intralab_collaboration/",
+          "date": "2026-10-14",
+          "summary": "A researcher says the PI put the lab on Claude, some labmates love it, and group experiment brainstorming has dropped as everyone asks the model first. 74 upvotes, 38 comments. A useful look at how R&D groups adopt AI day to day.",
+          "source": "r/labrats",
+          "author": "u/starliteburnsbrite",
+          "platform": "reddit",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 74,
+            "comments": 38
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "labs",
+            "adoption",
+            "r-and-d"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "enterprise_translation": "Pair AI use with a weekly in-person idea session. Schedule a recurring whiteboard hour next to your AI rollout."
+        },
+        {
+          "id": "openai-math-proofs-mathematicians-reaction",
+          "title": "Mathematicians react to OpenAI's batch of proofs",
+          "primary_url": "https://www.reddit.com/r/OpenAI/comments/1x4ffsj/openais_latest_blow_to_mathematicians_they_have/",
+          "date": "2026-10-12",
+          "summary": "The thread shares a Le Monde article in which a mathematician says the new work \"annihilated\" his field of research. 462 upvotes and 630 comments, the most comment-heavy science item this week.",
+          "source": "r/OpenAI",
+          "author": "u/ThereWas",
+          "platform": "reddit",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 462,
+            "comments": 630
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:40:00Z",
+          "tags": [
+            "mathematics",
+            "research",
+            "science"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "enterprise_translation": "Math was the first field to feel it. Ask which of your research problems resemble formal, checkable ones."
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "id": "cc-stretch-expandable-replies",
+      "title": "A 1967 stretchtext idea becomes a Claude Code plugin that cuts replies by 83%",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x688sx/turning_a_crazy_idea_from_1967_into_a_claude_code/",
+      "score": 9,
+      "source": "r/ClaudeCode",
+      "author": "u/pro-vi",
+      "date": "2026-10-15",
+      "upvotes": 1343,
+      "comments": 118
+    },
+    {
+      "id": "ps5-runs-qwen-27b-native-app",
+      "title": "A jailbroken PS5 runs a 27B Qwen model at about 20 tokens per second",
+      "primary_url": "https://www.reddit.com/r/LocalLLM/comments/1x4y61f/qwen_27b_at_20_toks_on_a_jailbroken_ps5s_gpu_i/",
+      "score": 9,
+      "source": "r/LocalLLM",
+      "author": "u/AdIllustrious7246",
+      "date": "2026-10-13",
+      "upvotes": 1046,
+      "comments": 122
+    },
+    {
+      "id": "two-android-phones-cluster-27b",
+      "title": "Two old Android phones cluster over USB to run a 27B model",
+      "primary_url": "https://www.reddit.com/r/LocalLLM/comments/1x4awt8/i_clustered_two_old_android_phones_to_run_a_27b/",
+      "score": 9,
+      "source": "r/LocalLLM",
+      "author": "u/Grouchy-Zebra9780",
+      "date": "2026-10-12",
+      "upvotes": 354,
+      "comments": 54
+    },
+    {
+      "id": "muse-spark-open-weight-release",
+      "title": "Muse Spark Open: an 816B open-weight model with 1M context",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6r9pz/introducing_muse_spark_open_the_most_capable_us/",
+      "score": 9,
+      "source": "r/LocalLLaMA",
+      "author": "u/AIatMeta",
+      "date": "2026-10-15",
+      "upvotes": 1322,
+      "comments": 352
+    },
+    {
+      "id": "nemotron-3-5-bolt-74b-a9b-24gb",
+      "title": "Nemotron 3.5 Bolt 74B-A9B runs in 24GB at 2-bit",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6o31q/nvidianvidianemotron35bolt74ba9b24gb_hugging_face/",
+      "score": 9,
+      "source": "r/LocalLLaMA",
+      "author": "u/jacek2023",
+      "date": "2026-10-15",
+      "upvotes": 513,
+      "comments": 246
+    },
+    {
+      "id": "openai-math-proofs-mathematicians-reaction",
+      "title": "Mathematicians react to OpenAI's batch of proofs",
+      "primary_url": "https://www.reddit.com/r/OpenAI/comments/1x4ffsj/openais_latest_blow_to_mathematicians_they_have/",
+      "score": 8.5,
+      "source": "r/OpenAI",
+      "author": "u/ThereWas",
+      "date": "2026-10-12",
+      "upvotes": 462,
+      "comments": 630
+    },
+    {
+      "id": "mmorpg-built-with-claude-code-13-weeks",
+      "title": "13 weeks of building a browser MMORPG with Claude Code",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x4tuqy/13_weeks_of_vibe_coding_my_mmorpg_with_claude/",
+      "score": 8,
+      "source": "r/ClaudeCode",
+      "author": "u/Big-Sandwich733",
+      "date": "2026-10-13",
+      "upvotes": 459,
+      "comments": 196
+    },
+    {
+      "id": "kernel-maintainer-uses-llm-untangle-code",
+      "title": "A kernel maintainer used an LLM to untangle obscure code and found three more bugs",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1x3yeti/linus_torvalds_used_ai_to_make_code_decipherable/",
+      "score": 8,
+      "source": "r/singularity",
+      "author": "u/PointmanW",
+      "date": "2026-10-12",
+      "upvotes": 1131,
+      "comments": 212
+    },
+    {
+      "id": "ten-things-with-qwen-27b-for-newcomers",
+      "title": "Ten things a first-time user can do with a 27B open model today",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x7sq8e/10_things_you_maybe_didnt_know_you_can_do_with/",
+      "score": 8,
+      "source": "r/LocalLLaMA",
+      "author": "u/GrungeWerX",
+      "date": "2026-10-16",
+      "upvotes": 700,
+      "comments": 130
+    },
+    {
+      "id": "qwengyre-rl-framework",
+      "title": "QwenGyre: elastic RL for extremely long agent tasks",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x41myz/qwen_released_qwengyre_rl_framework_for_training/",
+      "score": 8,
+      "source": "r/LocalLLaMA",
+      "author": "u/ResearchCrafty1804",
+      "date": "2026-10-12",
+      "upvotes": 493,
+      "comments": 50
+    },
+    {
+      "id": "ai-weather-model-hurricane-isaias-lead-time",
+      "title": "An AI weather model flagged Hurricane Isaias 11 days before landfall",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1x3unnr/google_deepminds_ai_weather_model_picked_up/",
+      "score": 7.5,
+      "source": "r/singularity",
+      "author": "u/141_1337",
+      "date": "2026-10-12",
+      "upvotes": 1104,
+      "comments": 114
+    },
+    {
+      "id": "deepseek-v4-1-flash-1017",
+      "title": "DeepSeek V4.1 Flash (1017) lands on Hugging Face",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x84po4/deepseekaideepseekv41flash1017_hugging_face/",
+      "score": 7,
+      "source": "r/LocalLLaMA",
+      "author": "u/Bestlife73",
+      "date": "2026-10-17",
+      "upvotes": 1102,
+      "comments": 301
+    },
+    {
+      "id": "scion-source-control-for-agents",
+      "title": "A repo outgrows git: 2,500 to 30,000 merged changes a day",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x5phqp/anthropic_went_from_2500_to_30000_merges_a_day/",
+      "score": 7,
+      "source": "r/ClaudeCode",
+      "author": "u/emarkosov",
+      "date": "2026-10-14",
+      "upvotes": 914,
+      "comments": 168
+    },
+    {
+      "id": "claude-bubblegum-pop-music-video",
+      "title": "Claude builds a bubblegum-pop music video in two days",
+      "primary_url": "https://www.reddit.com/r/vibecoding/comments/1x4agp8/i_had_claude_make_a_bubblegum_pop_music_video/",
+      "score": 7,
+      "source": "r/vibecoding",
+      "author": "u/pizzaisprettyneato",
+      "date": "2026-10-12",
+      "upvotes": 422,
+      "comments": 68
+    },
+    {
+      "id": "peripheral-drivers-reverse-engineered-all-in-one-app",
+      "title": "Reverse-engineering peripheral drivers into one settings app",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x5gemk/managed_to_reverse_engineer_my_peripheral/",
+      "score": 7,
+      "source": "r/ClaudeCode",
+      "author": "u/thisbejann",
+      "date": "2026-10-14",
+      "upvotes": 437,
+      "comments": 50
+    },
+    {
+      "id": "fish-drama-3-tts-demo",
+      "title": "Fish Drama 3, a 35B MoE text-to-speech model, gets a hosted demo",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6f9p2/new_tts_king_in_town_fishs_drama_3_35b3a/",
+      "score": 7,
+      "source": "r/LocalLLaMA",
+      "author": "u/futterneid",
+      "date": "2026-10-15",
+      "upvotes": 428,
+      "comments": 86
+    },
+    {
+      "id": "gemini-4-argon-vs-opus-tiny-world-test",
+      "title": "Gemini 4 Argon vs Opus 5.5 on a same-prompt 3D planet test",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x56wuh/gemini_4_argon_vs_claude_opus_55_same_prompt_tiny/",
+      "score": 7,
+      "source": "r/ClaudeCode",
+      "author": "u/Timisageek",
+      "date": "2026-10-13",
+      "upvotes": 349,
+      "comments": 49
+    },
+    {
+      "id": "muse-wonder-announcement",
+      "title": "Muse Wonder announced",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1x47oxn/introducing_muse_wonder/",
+      "score": 7,
+      "source": "r/singularity",
+      "author": "u/saln1",
+      "date": "2026-10-12",
+      "upvotes": 471,
+      "comments": 204
+    },
+    {
+      "id": "decision-3-0-open-decision-models",
+      "title": "Decision 3.0: open decision models from 0.6B to 27B",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x3th4p/decision_30_open_multimodal_decision_models_from/",
+      "score": 7,
+      "source": "r/LocalLLaMA",
+      "author": "u/henzy123",
+      "date": "2026-10-12",
+      "upvotes": 542,
+      "comments": 110
+    },
+    {
+      "id": "lab-llm-use-and-conversation",
+      "title": "A lab adopts Claude and one researcher notices fewer hallway brainstorms",
+      "primary_url": "https://www.reddit.com/r/labrats/comments/1x5xw86/llms_and_intralab_collaboration/",
+      "score": 6.5,
+      "source": "r/labrats",
+      "author": "u/starliteburnsbrite",
+      "date": "2026-10-14",
+      "upvotes": 74,
+      "comments": 38
+    },
+    {
+      "id": "film-industry-ai-seedance-parody",
+      "title": "\"The Film Industry Is Not Ready for What AI Can Do\" (Seedance parody video)",
+      "primary_url": "https://www.reddit.com/r/aivideo/comments/1x6f5ob/the_film_industry_is_not_ready_for_what_ai_can_do/",
+      "score": 6,
+      "source": "r/aivideo",
+      "author": "u/Old_Establishment287",
+      "date": "2026-10-15",
+      "upvotes": 8846,
+      "comments": 1240
+    },
+    {
+      "id": "opus-oboe-concerto-listener-test",
+      "title": "Opus 5.5 wrote an oboe concerto that 60% of listeners judged human-composed",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1x4k8pa/claude_opus_55_wrote_an_oboe_concerto_that_60_of/",
+      "score": 6,
+      "source": "r/singularity",
+      "author": "u/141_1337",
+      "date": "2026-10-13",
+      "upvotes": 704,
+      "comments": 190
+    },
+    {
+      "id": "fishing-game-week-11-dev-log",
+      "title": "Week 11 of a solo fishing game built with AI",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1x3ttzl/week_11_of_making_my_fishing_game_with_the_help/",
+      "score": 6,
+      "source": "r/ClaudeAI",
+      "author": "u/RUSuper",
+      "date": "2026-10-12",
+      "upvotes": 351,
+      "comments": 112
+    },
+    {
+      "id": "antigravity-ultra-usage-vs-20-dollar-plans",
+      "title": "Antigravity Ultra usage compared with $20 plans",
+      "primary_url": "https://www.reddit.com/r/google_antigravity/comments/1x5gapl/googles_100_ultra_subscription_usage_is/",
+      "score": 6,
+      "source": "r/google_antigravity",
+      "author": "u/Sksend",
+      "date": "2026-10-14",
+      "upvotes": 438,
+      "comments": 64
+    },
+    {
+      "id": "non-coders-shipping-real-apps",
+      "title": "People with almost no coding experience are shipping real cross-platform apps",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x68om1/weve_reached_the_point_where_people_with/",
+      "score": 6,
+      "source": "r/ClaudeCode",
+      "author": "u/onepunchcode",
+      "date": "2026-10-15",
+      "upvotes": 1038,
+      "comments": 263
+    },
+    {
+      "id": "gemini-4-argon-live",
+      "title": "Gemini 4 Argon is live in Antigravity",
+      "primary_url": "https://www.reddit.com/r/google_antigravity/comments/1x505ut/gemini_4_argon_is_live/",
+      "score": 6,
+      "source": "r/google_antigravity",
+      "author": "u/CucumberAccording813",
+      "date": "2026-10-13",
+      "upvotes": 399,
+      "comments": 211
+    },
+    {
+      "id": "vibecoded-app-fortune-cash-out-or-keep-building",
+      "title": "If your vibe-coded app made a fortune, would you cash out?",
+      "primary_url": "https://www.reddit.com/r/vibecoding/comments/1x43ud8/if_your_vibecoded_app_suddenly_made_you_a_fortune/",
+      "score": 5,
+      "source": "r/vibecoding",
+      "author": "u/a113rick",
+      "date": "2026-10-12",
+      "upvotes": 1772,
+      "comments": 154
+    },
+    {
+      "id": "claude-rewrite-printer-firmware-idea",
+      "title": "Idea thread: have Claude rewrite printer firmware to accept third-party ink",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1x472ch/what_if_we_get_claude_to_rewrite_hp_printer/",
+      "score": 5,
+      "source": "r/singularity",
+      "author": "u/FatesWaltz",
+      "date": "2026-10-12",
+      "upvotes": 695,
+      "comments": 99
+    },
+    {
+      "id": "five-free-n8n-boring-job-workflows",
+      "title": "Five free n8n workflows for boring daily jobs",
+      "primary_url": "https://www.reddit.com/r/n8n/comments/1x7bays/i_built_5_free_n8n_workflows_for_boring_daily/",
+      "score": 5,
+      "source": "r/n8n",
+      "author": "u/TaskToAgent",
+      "date": "2026-10-16",
+      "upvotes": 9,
+      "comments": 7
+    },
+    {
+      "id": "argon-4-in-antigravity-pro-user",
+      "title": "Argon 4 in Antigravity for Pro users: first impressions",
+      "primary_url": "https://www.reddit.com/r/google_antigravity/comments/1x73yrd/my_thoughts_about_argon_4_in_antigravity_pro_user/",
+      "score": 5,
+      "source": "r/google_antigravity",
+      "author": "u/uvuvevue",
+      "date": "2026-10-16",
+      "upvotes": 384,
+      "comments": 78
+    },
+    {
+      "id": "phd-method-development-and-ai",
+      "title": "A PhD student in quantum chemistry weighs method development in the age of AI",
+      "primary_url": "https://www.reddit.com/r/comp_chem/comments/1x4bbe1/method_development_and_ai/",
+      "score": 4.5,
+      "source": "r/comp_chem",
+      "author": "u/QuartermasterH",
+      "date": "2026-10-12",
+      "upvotes": 36,
+      "comments": 13
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Spare hardware as inference",
+      "evidence": "A jailbroken PS5 at about 20 tok/s on a 27B model and two phones clustered over USB both drew strong engagement in r/LocalLLM."
+    },
+    {
+      "pattern": "Controlling reply length",
+      "evidence": "A plugin that shrinks Claude Code replies by 83% with expand-on-demand scored 1,343 upvotes in r/ClaudeCode."
+    },
+    {
+      "pattern": "Scientists adopting AI, with mixed feelings",
+      "evidence": "r/labrats and r/comp_chem threads discuss lab-wide Claude adoption and method development; r/OpenAI has 630 comments on mathematicians' reactions."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Opus 5.5 music video for an agency's AI (r/ClaudeAI)",
+      "reason": "Archive record shows the post body as [removed]; dropped from items.",
+      "attempted_url": "https://www.reddit.com/r/ClaudeAI/comments/1x9iacw/claude_opus_55_made_a_full_music_video_for_our/"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "r/ps5homebrew",
+      "r/ChatGPTPromptGenius"
+    ],
+    "sources_to_drop": [
+      "r/BetterOffline (sample only)"
+    ],
+    "topics_to_add": [
+      "AI for materials, chemistry and building science",
+      "small-business automation case studies with revenue numbers",
+      "scientist adoption stories"
+    ],
+    "topics_to_drop": [],
+    "notes": "Direct Reddit access was blocked (HTTP 403 for site, old.reddit and JSON API; robots disallow for page fetch; cloud browser showed a network-policy block). Post metadata (title, author, date, upvotes, comment count, body text) came from the Arctic Shift public Reddit archive, and discovery used a Reddit-domain web search. Upvote and comment counts are archive snapshots and can lag live values. Top Pick URLs could not be loaded on reddit.com; each was verified by matching archive records. Per-subreddit coverage was partial for some subs (archive pagination), and Tier 1 subs r/perplexity_ai, r/notebooklm and r/ManusOfficial had few or low-score posts in the pulled data. Top comments were not read, so sentiment statements rely on post bodies and titles."
+  }
+}

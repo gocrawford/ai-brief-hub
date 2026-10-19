@@ -1,0 +1,194 @@
+{
+  "week_start": "2026-10-12",
+  "week_end": "2026-10-18",
+  "generated_at": "2026-10-19T01:31:21Z",
+  "headline": "Plain-language prompts now build whole-building energy models, and agents are scoring real wins on lab campaigns.",
+  "summary_for_scientists": "An open-source OpenStudio server lets an assistant build and simulate whole-building energy models from a two-sentence description, and a new benchmark puts the best lab agent at 67% success across 144 design-build-test-learn trials. Materials work is moving fast too: a vision-language model retrieves crystals from plain-English queries, and HIP predicts molecular Hessians 1 to 2 orders of magnitude faster. A 177-skill science library is ready to install today.",
+  "lab_pick": {
+    "tab_id": "research",
+    "item_id": "openstudio-mcp-building-energy",
+    "title": "Plain-language prompts now build and simulate whole-building energy models",
+    "primary_url": "https://www.nlr.gov/news/detail/program/2026/building-energy-modeling-made-easy-with-natural-language-prompts",
+    "what_they_did": "A National Laboratory of the Rockies team released an open-source server that lets an AI assistant drive the EnergyPlus-based OpenStudio toolchain. You describe a prototype office or school, add a lighting or HVAC upgrade, and the assistant builds and runs a validated simulation.",
+    "result": "The SoftwareX paper documents 197 tools and a benchmark across six language models. The researchers say tasks that took days now take minutes.",
+    "why_researchers_care": "Whole-building energy modeling no longer starts with scripting or menu-hunting: a building scientist can state a retrofit in plain language and get a simulation to inspect, edit and rerun. It also gives a concrete baseline to compare against your group's last hand-built model.",
+    "how_to_share": "Run a 20-minute lab-meeting demo: describe one familiar building in two sentences, let the assistant draft the model, then set its upgrade estimate beside the group's last hand-built run."
+  },
+  "sections": [
+    {
+      "section_id": "materials_chemistry",
+      "title": "Materials & Chemistry",
+      "description": "Models that read crystal structures, predict molecular curvature in one pass, and turn multi-step electronic-structure calculations into repeatable runs.",
+      "items": [
+        {
+          "tab_id": "research",
+          "item_id": "mit-crystal-vision-language-model",
+          "title": "A vision-language model that reads crystal structures retrieves materials from plain-English property queries",
+          "source": "MIT News",
+          "primary_url": "https://news.mit.edu/2026/giving-ai-crystal-clear-view-of-materials-world-1018",
+          "one_line": "MIT researchers paired 3D atomic structures with text in one model (Nature Communications). It outperformed text-only models, and its top picks for solid-state lithium-ion electrolytes included materials independently flagged as promising.",
+          "try_this": "Write the three property constraints you would give a new materials student as one plain-English query and count the retrieved structures your group has not screened."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "hip-hessian-interatomic-potentials",
+          "title": "HIP predicts molecular Hessians directly, 1 to 2 orders of magnitude faster",
+          "source": "Nature Computational Science",
+          "primary_url": "https://link.springer.com/article/10.1038/s43588-026-01066-x",
+          "one_line": "Hessian Interatomic Potentials use an equivariant graph neural network to output symmetric Hessians in one pass, 1 to 2 orders of magnitude faster. Validated on transition-state search, geometry optimization, zero-point energy and vibrational analysis; code and weights are released.",
+          "try_this": "Swap it into one transition-state search your group already runs and compare wall-clock time and vibrational frequencies."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "ai-donkey-gw-workflows",
+          "title": "AI-Donkey turns first-principles GW workflows into runnable, repeatable agent tasks",
+          "source": "arXiv",
+          "primary_url": "https://arxiv.org/abs/2610.20779",
+          "one_line": "Out-of-the-box agents average 54%, 36% and 19% on GW, GW-BSE and GWPT workflow benchmarks. AI-Donkey produces complete runnable workflows with no run-to-run variation, across proprietary and open-weight models.",
+          "try_this": "Encode one multi-step electronic-structure calculation you repeat and rerun it across two models to confirm identical results."
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "isinglch-wannier-compass",
+          "title": "isinglch/wannier-compass",
+          "source": "isinglch/wannier-compass",
+          "primary_url": "https://github.com/isinglch/wannier-compass",
+          "one_line": "WannierCompass lets an agent choose orbital bases and energy windows to build tight-binding models from first-principles calculations. 33 of 35 test materials passed within three rounds at roughly 0.4 yuan per material, via an MCP server, a skill and a CLI.",
+          "try_this": "Point it at one material you already have a first-principles run for and compare the agent's tight-binding model with your own."
+        }
+      ]
+    },
+    {
+      "section_id": "simulation_building_science",
+      "title": "Simulation & Building Science",
+      "description": "Prompt-driven building energy models and fast surrogates that replace hour-long simulations.",
+      "items": [
+        {
+          "tab_id": "research",
+          "item_id": "openstudio-mcp-building-energy",
+          "title": "Plain-language prompts now build and simulate whole-building energy models",
+          "source": "National Laboratory of the Rockies",
+          "primary_url": "https://www.nlr.gov/news/detail/program/2026/building-energy-modeling-made-easy-with-natural-language-prompts",
+          "one_line": "An open-source server lets an AI assistant build and run whole-building EnergyPlus-based models from plain-language prompts. The paper documents 197 tools and a six-model benchmark, and the researchers say days of work now take minutes.",
+          "try_this": "Describe one existing building in two sentences and compare the assistant's upgrade estimate with your last hand-built run."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "tohoku-ai-symmetry-woven-absorbers",
+          "title": "AI plus symmetry searches woven sound-absorbing designs in under a minute",
+          "source": "Tohoku University AIMR",
+          "primary_url": "https://www.wpi-aimr.tohoku.ac.jp/en/achievements/press/2026/20261015_002285.html",
+          "one_line": "An international team grouped weave patterns into four symmetry types, trained a predictor on selected acoustic simulations, and searched candidate sound-absorbing designs in under a minute. Predictions matched independent detailed simulations within 5%, replacing hour-long simulations per design.",
+          "try_this": "Use symmetry classes to shrink a large pattern-design space you explore, then train a quick surrogate on a few hundred simulations."
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "airsuphq-machine-skill",
+          "title": "AirsupHQ/machine-skill",
+          "source": "AirsupHQ/machine-skill",
+          "primary_url": "https://github.com/AirsupHQ/machine-skill",
+          "one_line": "Machine Skill turns one line such as a refinery process pump into an interactive 3D simulation in a single HTML file, with a small physics solver per machine driving every number on screen. It launched this week with 304 stars.",
+          "try_this": "Ask for a heat exchanger, a kiln or a wall assembly your team knows well and see where the solver disagrees with a specialist's intuition."
+        }
+      ]
+    },
+    {
+      "section_id": "lab_automation",
+      "title": "Lab Automation & Scientific Reasoning",
+      "description": "Agents closing the loop with experiments, plus a model producing checkable results in physics and quantum computing.",
+      "items": [
+        {
+          "tab_id": "research",
+          "item_id": "autonomous-science-bench",
+          "title": "Autonomous Science Bench scores agents on full design-build-test-learn lab campaigns",
+          "source": "arXiv",
+          "primary_url": "https://arxiv.org/abs/2610.18449",
+          "one_line": "The benchmark runs six budgeted design-build-test-learn campaigns across biology, chemistry and materials, with eight agent configurations over 144 trials. The best configuration succeeded in 67% of trials and the hardest campaign was solved in 3 of 24; campaigns, a lab runtime and a leaderboard are released.",
+          "try_this": "Run the open v0.1 campaign closest to your work with your current agent setup and post the score as your baseline."
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "leash-lab-in-the-loop-agents",
+          "title": "From Wet Lab to RL Env: 10,000 Drug-Discovery Campaigns in a Weekend",
+          "source": "Latent Space",
+          "primary_url": "https://www.youtube.com/watch?v=hQSBJVreLms",
+          "one_line": "A drug-discovery team turned about four billion measured binding results into a sandbox where agents ran more than 10,000 medicinal-chemistry campaigns in a weekend. In one setup the agent sees 10 binders and 10 non-binders and has a 100-molecule budget to find binders among 6.5 million.",
+          "try_this": "Hide the answers in a materials or formulation dataset you own, let an agent choose what to test next, and score its picks."
+        },
+        {
+          "tab_id": "x",
+          "item_id": "google-research-wet-lab-agents-binders",
+          "title": "Agents at the wet-lab bench found single-digit-nanomolar protein binders for cancer targets",
+          "source": "@GoogleResearch",
+          "primary_url": "https://x.com/GoogleResearch/status/2111159868187181399",
+          "one_line": "Google Research describes agents working at the wet-lab bench in a closed loop, designing proteins that bound cancer targets at single-digit nanomolar strength."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "gemini-4-argon-science-results",
+          "title": "Gemini 4 Argon finds new fusion-physics counterexamples and opens a free science tier",
+          "source": "Google",
+          "primary_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "one_line": "With a university collaborator, the model found a broader class of counterexamples to a 1967 stellarator magnetic-field conjecture, giving fusion teams new test cases for simulation codes. The launch also reports a roughly 100x quantum-circuit improvement checked in Lean, and offers 10,000 scientists a free six-month top usage tier of Google Antigravity.",
+          "try_this": "Take a problem in your field with a checkable answer, ask the model for counterexamples or edge cases, and add what it finds to your regression suite."
+        }
+      ]
+    },
+    {
+      "section_id": "rd_adoption",
+      "title": "How R&D Teams Are Adopting AI",
+      "description": "Funding, access programs and the day-to-day experience of labs bringing AI into the group.",
+      "items": [
+        {
+          "tab_id": "social",
+          "item_id": "google-org-ai-for-science-36m-17-teams",
+          "title": "Google.org funds 17 AI-for-science teams with $36M, from fusion modeling to sodium-ion batteries",
+          "source": "Google Blog",
+          "primary_url": "https://blog.google/company-news/outreach-and-initiatives/google-org/impact-challenge-ai-science-recipients/",
+          "one_line": "Google.org funds 17 AI-for-science teams with $36M. Recipients include agents that read microscopy images for automated materials discovery, physics-informed models of fusion reactors, and AI forecasting of battery cathode wear, each with a six-month accelerator offering engineering support and compute.",
+          "try_this": "Point a vision model at a folder of your own microscopy or inspection images and ask it to sort them into three bins."
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "lab-llm-use-and-conversation",
+          "title": "A lab adopts Claude and one researcher notices fewer hallway brainstorms",
+          "source": "r/labrats",
+          "primary_url": "https://www.reddit.com/r/labrats/comments/1x5xw86/llms_and_intralab_collaboration/",
+          "one_line": "A researcher on r/labrats says the PI put the lab on Claude, some labmates love it, and group experiment brainstorming has dropped as everyone asks the model first. The post drew 74 upvotes and 38 comments.",
+          "try_this": "Schedule a recurring whiteboard hour next to the lab's AI use and compare the ideas that come out of each."
+        }
+      ]
+    },
+    {
+      "section_id": "research_tools",
+      "title": "Tools Researchers Can Use Now",
+      "description": "Open skill libraries and research pipelines a scientist can install or run today.",
+      "items": [
+        {
+          "tab_id": "builders",
+          "item_id": "k-dense-ai-scientific-agent-skills",
+          "title": "K-Dense-AI/scientific-agent-skills",
+          "source": "K-Dense-AI/scientific-agent-skills",
+          "primary_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+          "one_line": "Scientific Agent Skills is a library of 177 research skills covering chemistry, materials science, physics, engineering simulation and lab automation, installable in any agent that reads the open Agent Skills format. It added 4,310 stars this week.",
+          "try_this": "Give three bench scientists the materials-science and kinetics skills, have each run one analysis they normally do by hand, and compare time and results."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "agentic-scientist-co-discovery",
+          "title": "The Agentic Scientist orchestrates coding agents for computational research alongside human researchers",
+          "source": "arXiv",
+          "primary_url": "https://arxiv.org/abs/2610.18933",
+          "one_line": "The Agentic Scientist splits research into task drafting, ideation, planning, sandboxed experiments, baselines and ablations, analysis and report writing, with a meta-controller running parallel threads. A paper written with its co-scientist mode was accepted at ALIFE 2026.",
+          "try_this": "Hand the pipeline one open question from your backlog and read the baselines and ablations it builds before deciding what to run yourself."
+        }
+      ]
+    }
+  ],
+  "try_in_the_lab": [
+    "Describe one building your group has already modeled in two sentences, let the OpenStudio assistant draft the model, and compare its upgrade estimate with your hand-built run.",
+    "Swap HIP into one transition-state search you already run and compare wall-clock time and vibrational frequencies against your current method.",
+    "Give three bench scientists the materials-science and kinetics skills from the 177-skill library, have each run an analysis they normally do by hand, and compare time and results.",
+    "Copy the lab-in-the-loop game: hide the answers in one of your own formulation datasets, let an agent choose the next experiments, and score its picks against what you measured."
+  ]
+}

@@ -1,0 +1,2040 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.976,
+    "items_total": 42,
+    "items_new": 41,
+    "items_returning": 1
+  },
+  "min_items": 18,
+  "executive_summary": [
+    {
+      "headline": "VoiceStudio leads the week: a full local voice studio with 16,569 new stars",
+      "body": "debpalash/VoiceStudio clones and designs voices, dubs video and builds audiobooks in 646 languages on a laptop, and exposes a local API and MCP for agents.",
+      "primary_url": "https://github.com/debpalash/VoiceStudio"
+    },
+    {
+      "headline": "A $7 board lets an agent operate a real phone",
+      "body": "onehumanbeing/esp32-iphone-agent reached 3,116 stars in its first week by acting as the AirPlay receiver and USB mouse, with nothing installed on the phone.",
+      "primary_url": "https://github.com/onehumanbeing/esp32-iphone-agent"
+    },
+    {
+      "headline": "Science tooling comes with numbers",
+      "body": "A materials workflow passed 33 of 35 test compounds within three rounds, a chemistry-lab asset library reached 203 simulated instruments, and a 177-skill science library added 4,310 stars.",
+      "primary_url": "https://github.com/isinglch/wannier-compass"
+    },
+    {
+      "headline": "Key takeaway",
+      "body": "Individual builders are shipping finished artifacts from one-line skills: sites, diagrams, courses, simulations, voices. Pick one skill from this page and run it on a real task this week.",
+      "primary_url": "https://github.com/AirsupHQ/machine-skill"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "debpalash-voicestudio",
+      "title": "debpalash/VoiceStudio",
+      "primary_url": "https://github.com/debpalash/VoiceStudio",
+      "date": "2026-10-17",
+      "summary": "VoiceStudio is a fully local voice studio that clones and designs voices, dubs video, dictates, transcribes and builds audiobooks in 646 languages, and it added 16,569 stars this week. The repository logged 255 commits in the window, the latest on Oct 17, and it exposes a local API and MCP so agents can call it.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:14:47Z",
+      "tags": [
+        "creator",
+        "consumer",
+        "local-first",
+        "audio"
+      ],
+      "category": "Creator Tool",
+      "engagement": {
+        "stars": 16569,
+        "total_stars": 75394
+      },
+      "results": "Weekly star delta 16,569 (GitHub Trending, Python, Oct 18); 255 commits since Oct 12; runs on CPU, Apple Metal or NVIDIA CUDA; the project reports 646 languages.",
+      "secondary_urls": [
+        {
+          "label": "Latest release v0.5.6 (Sep 23)",
+          "url": "https://github.com/debpalash/VoiceStudio/releases/tag/v0.5.6"
+        }
+      ],
+      "enterprise_adaptation": "The clever part is a complete voice pipeline (clone, design, dub, dictate, narrate) that lives on your own machine and can be driven by an agent. Experiment: take a 10-minute internal training or product video, dub it into three languages in an afternoon, and have a few colleagues rate the results blind against the original.",
+      "key_takeaways": [
+        "A creator can clone a voice, dub a video and produce an audiobook on one laptop with no per-minute fees.",
+        "The local API and MCP endpoint let an agent call the studio as a tool.",
+        "Installs with a one-line script on macOS, Linux and Windows; CPU-only machines work, slower."
+      ]
+    },
+    {
+      "id": "madslorentzen-ai-job-search",
+      "title": "MadsLorentzen/ai-job-search",
+      "primary_url": "https://github.com/MadsLorentzen/ai-job-search",
+      "date": "2026-10-18",
+      "summary": "AI Job Search turns a coding agent into a full application workflow: search portals, score fit, tailor a CV and cover letter, then run a reviewer pass. The maintainer reports 69 tailored applications, 20 first interviews and one signed contract, and the repo gained 5,742 stars this week with 52 commits.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:14:47Z",
+      "tags": [
+        "consumer",
+        "personal-productivity",
+        "agent-workflow"
+      ],
+      "category": "Personal Productivity",
+      "engagement": {
+        "stars": 5742,
+        "total_stars": 53220
+      },
+      "results": "Builder-reported funnel: 69 applications, 20 first interviews, 1 contract. 5,742 weekly stars (GitHub Trending); 52 commits since Oct 12; latest release v1.7.2 (Sep 29).",
+      "secondary_urls": [
+        {
+          "label": "Release v1.7.2",
+          "url": "https://github.com/MadsLorentzen/ai-job-search/releases/tag/v1.7.2"
+        }
+      ],
+      "enterprise_adaptation": "The idea worth borrowing is the drafter-reviewer loop wrapped in slash commands: one agent writes, a second critiques, and the human only picks. Experiment: point the same pattern at proposal or RFP responses and compare a week of drafts against your usual turnaround.",
+      "key_takeaways": [
+        "A drafter-then-reviewer agent pair produces better documents than a single pass.",
+        "Slash commands for setup, applying and interview prep make a multi-step personal workflow repeatable.",
+        "The funnel numbers are the builder's own, from one search."
+      ]
+    },
+    {
+      "id": "k-dense-ai-scientific-agent-skills",
+      "title": "K-Dense-AI/scientific-agent-skills",
+      "primary_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "date": "2026-10-15",
+      "summary": "Scientific Agent Skills is a library of 177 research skills covering chemistry, materials science, physics, engineering simulation, lab automation and more, installable in any agent that reads the open Agent Skills format. It added 4,310 stars this week; the latest tagged release is v2.72.0 from Oct 1, with a single maintenance commit in the window.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 1,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:14:47Z",
+      "tags": [
+        "science",
+        "materials",
+        "chemistry",
+        "lab-automation",
+        "agent-skills"
+      ],
+      "category": "AI for Science",
+      "engagement": {
+        "stars": 4310,
+        "total_stars": 52658
+      },
+      "results": "Weekly star delta 4,310 (GitHub Trending, Python, Oct 18); README lists 177 skills across materials science, chemistry, physics, engineering and lab automation; a companion paper is listed (arXiv 2609.00065). Science bonus +0.5 applied.",
+      "secondary_urls": [
+        {
+          "label": "Release v2.72.0",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/releases/tag/v2.72.0"
+        }
+      ],
+      "enterprise_adaptation": "The clever move is treating a scientist's procedure as a reusable skill file that any agent can load. Experiment: give three bench scientists the materials-science and kinetics skills, ask each to run one analysis they normally do by hand, and compare time and results.",
+      "key_takeaways": [
+        "Domain know-how (CALPHAD phase equilibria, crystal structure analysis, kinetics, liquid-handling protocols) is packaged as portable skills.",
+        "Works across Cursor, Codex, Claude Code and other hosts through one standard.",
+        "Related to last week's local research workspace from the same maintainers, which runs on this library."
+      ],
+      "recurrence": "returning_pattern",
+      "recurrence_note": "Same maintainers' local research workspace was a Top Pick last week; this week the underlying 177-skill library itself trended."
+    },
+    {
+      "id": "airsuphq-machine-skill",
+      "title": "AirsupHQ/machine-skill",
+      "primary_url": "https://github.com/AirsupHQ/machine-skill",
+      "date": "2026-10-13",
+      "summary": "Machine Skill turns one line such as 'a refinery process pump, cut open for plant training' into an interactive 3D simulation in a single HTML file, with a small physics solver per machine driving every number on screen. It launched this week with 304 stars and 8 commits, including new pump and compressor examples for plant training.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 9.5,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:14:47Z",
+      "tags": [
+        "science",
+        "physics-simulation",
+        "engineering",
+        "creator"
+      ],
+      "category": "AI for Science",
+      "engagement": {
+        "stars": 304
+      },
+      "results": "304 stars within days of creation (Oct 12); 8 commits through Oct 13; gallery covers a turbofan (Brayton cycle), a rocket engine (2,462 kN at 330 bar per its solver), a process pump and a centrifugal compressor. Science bonus +0.5 applied.",
+      "enterprise_adaptation": "The newly possible thing is a physics-backed, explorable model generated from a sentence. Experiment: ask for a heat exchanger, a kiln or a wall assembly your team knows well, hand it to a materials or building scientist, and see where the solver disagrees with their intuition.",
+      "key_takeaways": [
+        "Each machine ships with a purpose-built solver (pump curves, surge line, Brayton cycle), so the on-screen numbers are computed.",
+        "A built-in 'break it' mode shows failure behavior, such as a stuck anti-surge valve.",
+        "One command records a 28-second film from the simulation."
+      ]
+    },
+    {
+      "id": "gathin23-tv-vibehack",
+      "title": "Gathin23/tv-vibehack",
+      "primary_url": "https://github.com/Gathin23/tv-vibehack",
+      "date": "2026-10-18",
+      "summary": "tv-vibehack strips ads and bloat from any Android TV over Wi-Fi and swaps in a clean launcher, using a prompt that lets a coding agent discover and disable the junk on your specific TV. The repo is days old with 2,008 stars and 46 commits since Oct 12, and every step is reversible with a restore script.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 9,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:14:47Z",
+      "tags": [
+        "consumer",
+        "home",
+        "agent-workflow"
+      ],
+      "category": "Consumer Tool",
+      "engagement": {
+        "stars": 2008
+      },
+      "results": "2,008 stars within a day of creation (Oct 17); 46 commits since Oct 12; no root or cable required.",
+      "enterprise_adaptation": "The idea is to ship a prompt plus a tiny native helper and let the agent adapt it to each device. Experiment: write a one-page prompt that has an agent tidy the settings of a meeting-room display or a shared laptop, and see how many units it handles unattended.",
+      "key_takeaways": [
+        "The prompt itself is the product: the agent inspects the real TV and decides what to disable.",
+        "Nothing is uninstalled, so a one-line restore undoes the changes.",
+        "A tvOS-style launcher replaces the ad-filled home screen."
+      ]
+    },
+    {
+      "id": "onehumanbeing-esp32-iphone-agent",
+      "title": "onehumanbeing/esp32-iphone-agent",
+      "primary_url": "https://github.com/onehumanbeing/esp32-iphone-agent",
+      "date": "2026-10-18",
+      "summary": "ESP32 iPhone Agent lets an AI model use a real iPhone with a $7 ESP32 board that acts as the AirPlay receiver and the USB mouse, with no jailbreak. It reached 3,116 stars in its first week, shipped a computer-free redesign, and logged 40 commits since Oct 12.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:14:47Z",
+      "tags": [
+        "maker",
+        "consumer",
+        "hardware",
+        "agent-tool"
+      ],
+      "category": "Agent Hardware",
+      "engagement": {
+        "total_stars": 3116
+      },
+      "results": "3,116 total stars after first week (created Oct 11); 40 commits since Oct 12; demo task: set a repeating 8:00 AM alarm by operating the Clock app.",
+      "secondary_urls": [
+        {
+          "label": "Release v0.1.0 (Oct 14)",
+          "url": "https://github.com/onehumanbeing/esp32-iphone-agent/releases/tag/v0.1.0"
+        }
+      ],
+      "enterprise_adaptation": "The clever bit is giving an agent eyes and hands through standard ports instead of an SDK. Experiment: build one for a kiosk, a test handset or a device that has no API, and let it run a nightly smoke test of the screens you care about.",
+      "key_takeaways": [
+        "The agent sees the phone through screen mirroring and acts through a USB HID mouse, so nothing is installed on the phone's operating system.",
+        "The first version needed a computer; the new one runs the agent in an app on the same phone.",
+        "Any OpenAI-compatible vision model can drive it."
+      ]
+    },
+    {
+      "id": "saarthurr-atticus-mac",
+      "title": "SaarthurR/atticus-mac",
+      "primary_url": "https://github.com/SaarthurR/atticus-mac",
+      "date": "2026-10-17",
+      "summary": "Atticus is a free hold-to-talk voice assistant for macOS that moves windows, finds files, reads the screen and replies to emails, running on an existing agent subscription with no API key. It earned 116 points on Hacker News and shipped 37 commits this week, including routing simple asks around the model entirely.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-19T01:14:47Z",
+      "tags": [
+        "consumer",
+        "personal-productivity",
+        "voice"
+      ],
+      "category": "Consumer Tool",
+      "engagement": {
+        "total_stars": 210,
+        "upvotes": 116,
+        "comments": 30
+      },
+      "results": "Show HN: 116 points, 30 comments. README reports an app opens in 0.08 s with no model call, a learned two-app command dropping from 5.5 s to near zero, and roughly 550 asks per dollar of plan usage at API list rates.",
+      "secondary_urls": [
+        {
+          "label": "Show HN thread",
+          "url": "https://news.ycombinator.com/item?id=50049588"
+        },
+        {
+          "label": "Release v1.2 (Oct 15)",
+          "url": "https://github.com/SaarthurR/atticus-mac/releases/tag/v1.2"
+        }
+      ],
+      "enterprise_adaptation": "The idea is a speed ladder: instant rules first, learned shortcuts second, the model last. Experiment: put that ladder in front of an internal help-desk or ops bot and measure how many requests never need the model.",
+      "key_takeaways": [
+        "Simple commands skip the model, and repeated asks become learned shortcuts that run instantly and for free.",
+        "Speech-to-text runs on-device, so audio stays on the Mac.",
+        "Thirty-seven commits in a week show fast iteration."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repositories",
+      "description": "AI repos ranked by weekly star delta from GitHub Trending (Oct 18 snapshot), with what shipped this week.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "cathrynlavery-diagram-design",
+          "title": "cathrynlavery/diagram-design",
+          "primary_url": "https://github.com/cathrynlavery/diagram-design",
+          "date": "2026-10-16",
+          "summary": "diagram-design is an agent skill that draws 45 diagram types as one self-contained HTML and SVG file styled to your brand, and it added 7,901 stars this week. The latest commits bump the plugin to 2.6.110, part of 74 commits since Oct 12.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "creator",
+            "smb",
+            "design",
+            "agent-skills"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 7901,
+            "total_stars": 57699
+          },
+          "results": "Weekly stars 7,901; 74 commits since Oct 12; imports from draw.io, Mermaid and Excalidraw; exports PNG and SVG."
+        },
+        {
+          "id": "alishahryar1-free-claude-code",
+          "title": "Alishahryar1/free-claude-code",
+          "primary_url": "https://github.com/Alishahryar1/free-claude-code",
+          "date": "2026-10-18",
+          "summary": "free-claude-code is a router that lets 11 coding-agent clients run on 61 providers and local models through one model catalog, adding 3,838 stars this week. Release v6.16.15 landed Oct 18 with 22 commits that week, including automatic discovery of local models.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "dev-tool",
+            "local-first"
+          ],
+          "category": "Dev Tool",
+          "engagement": {
+            "stars": 3838,
+            "total_stars": 61552
+          },
+          "results": "Weekly stars 3,838; release v6.16.15 on Oct 18; the README lists 61 providers, 11 agent clients and voice-note input.",
+          "secondary_urls": [
+            {
+              "label": "Release v6.16.15",
+              "url": "https://github.com/Alishahryar1/free-claude-code/releases/tag/v6.16.15"
+            }
+          ]
+        },
+        {
+          "id": "tashfeenahmed-freellmapi",
+          "title": "tashfeenahmed/freellmapi",
+          "primary_url": "https://github.com/tashfeenahmed/freellmapi",
+          "date": "2026-10-18",
+          "summary": "FreeLLMAPI pools 34 free-tier providers behind one OpenAI-compatible /v1 endpoint with automatic failover when a provider rate-limits, gaining 3,815 stars this week. Release v0.16.3 shipped Oct 18 after 60 commits in the window.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "dev-tool",
+            "smb"
+          ],
+          "category": "Dev Tool",
+          "engagement": {
+            "stars": 3815,
+            "total_stars": 37090
+          },
+          "results": "Weekly stars 3,815; release v0.16.3 on Oct 18; the README states 34 providers and 635 free model endpoints.",
+          "secondary_urls": [
+            {
+              "label": "Release v0.16.3",
+              "url": "https://github.com/tashfeenahmed/freellmapi/releases/tag/v0.16.3"
+            }
+          ]
+        },
+        {
+          "id": "lyogavin-airllm",
+          "title": "lyogavin/airllm",
+          "primary_url": "https://github.com/lyogavin/airllm",
+          "date": "2026-10-18",
+          "summary": "AirLLM streams a large model's layers through memory so very large open models can run on a single small GPU, and it added 2,966 stars this week. There is no new release in the window (v4.0.0 is from Sep 5); the week's commits only refresh the star chart, so the signal here is attention rather than code.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "local-first",
+            "inference"
+          ],
+          "category": "Local Inference",
+          "engagement": {
+            "stars": 2966,
+            "total_stars": 39344
+          },
+          "results": "Weekly stars 2,966; per the README, a 70B model runs on a 4GB card without quantization."
+        },
+        {
+          "id": "earthtojake-text-to-cad",
+          "title": "earthtojake/text-to-cad",
+          "primary_url": "https://github.com/earthtojake/text-to-cad",
+          "date": "2026-10-18",
+          "summary": "text-to-cad gives any plugin-capable agent local CAD skills that generate STEP, GLB, STL and 3MF models, run manufacturing checks and produce drawings, gaining 2,296 stars this week. It shipped releases 0.7.22 through 0.7.24 on Oct 18, including a redesigned CAD viewer in five languages.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "maker",
+            "creator",
+            "cad",
+            "engineering"
+          ],
+          "category": "Maker Tool",
+          "engagement": {
+            "stars": 2296,
+            "total_stars": 21455
+          },
+          "results": "Weekly stars 2,296; release v0.7.24 on Oct 18; outputs STEP, GLB, STL and 3MF.",
+          "secondary_urls": [
+            {
+              "label": "Release v0.7.24",
+              "url": "https://github.com/earthtojake/text-to-cad/releases/tag/v0.7.24"
+            }
+          ]
+        },
+        {
+          "id": "ranxianglei-billion-context",
+          "title": "ranxianglei/billion-context",
+          "primary_url": "https://github.com/ranxianglei/billion-context",
+          "date": "2026-10-18",
+          "summary": "billion-context is a context-compression plugin that keeps month-long agent sessions going inside a 100K window, and it added 1,001 stars this week. Release v0.1.201 shipped Oct 18 after more than 1,000 commits in the window.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "dev-tool",
+            "agent-memory"
+          ],
+          "category": "Dev Tool",
+          "engagement": {
+            "stars": 1001,
+            "total_stars": 1880
+          },
+          "results": "Weekly stars 1,001; v0.1.201 released Oct 18; the project claims about 5x fewer tokens.",
+          "secondary_urls": [
+            {
+              "label": "Release v0.1.201",
+              "url": "https://github.com/ranxianglei/billion-context/releases/tag/v0.1.201"
+            }
+          ]
+        },
+        {
+          "id": "krillinai-opencreator",
+          "title": "krillinai/OpenCreator",
+          "primary_url": "https://github.com/krillinai/OpenCreator",
+          "date": "2026-10-18",
+          "summary": "OpenCreator (formerly KrillinAI) is an open-source desktop workspace for creators covering video translation and dubbing, image and video generation, voiceover and short-video scripting, with 994 new stars this week. Release v3.2.8 shipped Oct 18.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "creator",
+            "smb",
+            "video"
+          ],
+          "category": "Creator Tool",
+          "engagement": {
+            "stars": 994,
+            "total_stars": 13691
+          },
+          "results": "Weekly stars 994; release v3.2.8 on Oct 18; 77 commits since Oct 12.",
+          "secondary_urls": [
+            {
+              "label": "Release v3.2.8",
+              "url": "https://github.com/krillinai/OpenCreator/releases/tag/v3.2.8"
+            }
+          ]
+        },
+        {
+          "id": "elie222-rakazo",
+          "title": "elie222/rakazo",
+          "primary_url": "https://github.com/elie222/rakazo",
+          "date": "2026-10-18",
+          "summary": "Rakazo is a self-hosted agent for persistent AI teammates, available on web, desktop, iPhone and Android with bring-your-own-model, and it added 850 stars this week. Release v0.2.0 came Oct 10 and 136 commits landed this week, including bot voice calls behind a flag.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "consumer",
+            "self-hosted"
+          ],
+          "category": "Personal Agent",
+          "engagement": {
+            "stars": 850,
+            "total_stars": 4591
+          },
+          "results": "Weekly stars 850; 136 commits since Oct 12; v0.2.0 released Oct 10."
+        },
+        {
+          "id": "shawnpana-phone-harness",
+          "title": "ShawnPana/phone-harness",
+          "primary_url": "https://github.com/ShawnPana/phone-harness",
+          "date": "2026-10-17",
+          "summary": "phone-harness lets an agent control a real iPhone through iPhone Mirroring or an Android over adb, with nothing installed on the phone, adding 567 stars this week. Release 0.3.3rc1 landed Oct 17 after 19 commits.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "maker",
+            "consumer",
+            "agent-tool"
+          ],
+          "category": "Agent Tool",
+          "engagement": {
+            "stars": 567,
+            "total_stars": 3796
+          },
+          "results": "Weekly stars 567; 0.3.3rc1 released Oct 17.",
+          "secondary_urls": [
+            {
+              "label": "Release 0.3.3rc1",
+              "url": "https://github.com/ShawnPana/phone-harness/releases/tag/0.3.3rc1"
+            }
+          ]
+        },
+        {
+          "id": "kittenml-kittentts",
+          "title": "KittenML/KittenTTS",
+          "primary_url": "https://github.com/KittenML/KittenTTS",
+          "date": "2026-10-16",
+          "summary": "KittenTTS is an open text-to-speech model that runs on a CPU, gaining 368 stars this week. The week's four commits update the API docs; the latest tagged release is 0.8.1 from February, so this is a docs-and-attention week.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "creator",
+            "local-first",
+            "audio"
+          ],
+          "category": "Local Model",
+          "engagement": {
+            "stars": 368,
+            "total_stars": 16160
+          },
+          "results": "Weekly stars 368; four documentation commits since Oct 12."
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Skills and MCP Servers",
+      "description": "Agent skills and MCP servers created this week, mostly by individuals.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "leonxlnx-earshot",
+          "title": "Leonxlnx/earshot",
+          "primary_url": "https://github.com/Leonxlnx/earshot",
+          "date": "2026-10-16",
+          "summary": "earshot gives coding agents ears: it describes what an audio file sounds like, scores a film's sound against a reference, and lets an agent forge sound effects in code, all on CPU through a CLI, Python API or MCP server. It was created Oct 15, reached 810 stars, and released 0.2.0 on Oct 16.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "creator",
+            "audio",
+            "mcp"
+          ],
+          "category": "MCP Server",
+          "engagement": {
+            "stars": 810
+          },
+          "results": "810 stars within three days; v0.2.0 on Oct 16; README lists a bank of 201 code-rendered sound effects and CPU-only operation.",
+          "secondary_urls": [
+            {
+              "label": "Release v0.2.0",
+              "url": "https://github.com/Leonxlnx/earshot/releases/tag/v0.2.0"
+            }
+          ]
+        },
+        {
+          "id": "licincan-blender-ai-mcp-addon",
+          "title": "LiCinCan/blender-ai-mcp-addon",
+          "primary_url": "https://github.com/LiCinCan/blender-ai-mcp-addon",
+          "date": "2026-10-18",
+          "summary": "mcp-for-blender-pro adds a chat workspace and a built-in MCP server to Blender so an agent can inspect a scene, build objects, edit materials and run multi-step workflows. It reached 787 stars after creation on Oct 15 and shipped release 1.0.1 on Oct 18.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "creator",
+            "3d",
+            "mcp"
+          ],
+          "category": "MCP Server",
+          "engagement": {
+            "stars": 787
+          },
+          "results": "787 stars within four days; release 1.0.1 on Oct 18; requires Blender 4.2 or later, Windows build.",
+          "secondary_urls": [
+            {
+              "label": "Release 1.0.1",
+              "url": "https://github.com/LiCinCan/blender-ai-mcp-addon/releases/tag/v1.0.1"
+            }
+          ]
+        },
+        {
+          "id": "juliobsz-skills",
+          "title": "juliobsz/skills",
+          "primary_url": "https://github.com/juliobsz/skills",
+          "date": "2026-10-18",
+          "summary": "The /awwwards skill builds a polished website from one line such as 'make me a portfolio', acting as creative director, designer and developer, then checks its own work in a real browser. It reached 399 stars in its first week and added a standalone /jury scorer on Oct 18.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "creator",
+            "smb",
+            "web-design",
+            "agent-skills"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 399
+          },
+          "results": "399 stars since Oct 12 creation; a /jury command scoring sites was merged Oct 18."
+        },
+        {
+          "id": "assafkip-claudemy",
+          "title": "assafkip/claudemy",
+          "primary_url": "https://github.com/assafkip/claudemy",
+          "date": "2026-10-16",
+          "summary": "Claudemy is a free agent skill that researches any topic on the web and returns about 12 two-minute audio lessons, each with a card, one thing to try and a rule to keep. It reached 310 stars after creation on Oct 14 and released v0.3.2 on Oct 16.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "consumer",
+            "learning",
+            "agent-skills"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 310
+          },
+          "results": "310 stars within three days; v0.3.2 on Oct 16; about 12 lessons of 2 minutes per topic per README.",
+          "secondary_urls": [
+            {
+              "label": "Release v0.3.2",
+              "url": "https://github.com/assafkip/claudemy/releases/tag/v0.3.2"
+            }
+          ]
+        },
+        {
+          "id": "jonwheatley-pixel-path",
+          "title": "jonwheatley/pixel-path",
+          "primary_url": "https://github.com/jonwheatley/pixel-path",
+          "date": "2026-10-12",
+          "summary": "Pixel Path is an agent skill that turns any two places into a pixel-art fly-through of the real road, baking real buildings, land cover and hills from map and elevation data. It launched Oct 12 with 221 stars and a 1.0 release commit.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "creator",
+            "indie",
+            "games",
+            "agent-skills"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 221
+          },
+          "results": "221 stars within a week of its Oct 12 creation; version 1.0 committed Oct 12."
+        },
+        {
+          "id": "kanaworksai-hue-audio-studio-mcp",
+          "title": "kanaworksai-hue/audio-studio-mcp",
+          "primary_url": "https://github.com/kanaworksai-hue/audio-studio-mcp",
+          "date": "2026-10-18",
+          "summary": "Audio Studio MCP gives any MCP client a local sound studio that generates music loops and sound effects on Apple Silicon, with a prompt sidecar file for every output. Version 0.1.0 shipped Oct 18 and the repo has 79 stars.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "creator",
+            "audio",
+            "local-first",
+            "mcp"
+          ],
+          "category": "MCP Server",
+          "engagement": {
+            "stars": 79
+          },
+          "results": "79 stars on launch day; v0.1.0 on Oct 18; the README says same-seed output matches the upstream reference CLI bit for bit.",
+          "secondary_urls": [
+            {
+              "label": "Release v0.1.0",
+              "url": "https://github.com/kanaworksai-hue/audio-studio-mcp/releases/tag/v0.1.0"
+            }
+          ]
+        },
+        {
+          "id": "mbratkowski-deweloperuch-mcp",
+          "title": "MBratkowski/deweloperuch-mcp",
+          "primary_url": "https://github.com/MBratkowski/deweloperuch-mcp",
+          "date": "2026-10-18",
+          "summary": "deweloperuch-mcp lets an assistant answer questions about new-build apartment prices in Poland, joining developer asking prices and history with registered transaction prices and official statistics through 13 read-only tools. It has 27 stars and shipped v0.1.3 on Oct 16.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "smb",
+            "real-estate",
+            "mcp"
+          ],
+          "category": "MCP Server",
+          "engagement": {
+            "stars": 27
+          },
+          "results": "27 stars; v0.1.3 on Oct 16; read-only client limited to one request per second per the README.",
+          "secondary_urls": [
+            {
+              "label": "Release v0.1.3",
+              "url": "https://github.com/MBratkowski/deweloperuch-mcp/releases/tag/v0.1.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN and Indie Builds",
+      "description": "Show HN posts with a working repo or demo, plus indie hardware and creative builds.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "nicorobinreal-llmspeed",
+          "title": "nicorobinreal/llmspeed",
+          "primary_url": "https://github.com/nicorobinreal/llmspeed",
+          "date": "2026-10-17",
+          "summary": "llmspeed lets you feel how fast a local model will run before buying hardware: pick a GPU or Mac and a model, and the answer streams at the predicted speed, including time to first token. It scored 321 points on Show HN, and the repo shipped a new commit on Oct 18.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "consumer",
+            "local-first"
+          ],
+          "category": "Dev Tool",
+          "engagement": {
+            "total_stars": 107,
+            "upvotes": 321,
+            "comments": 86
+          },
+          "results": "Show HN: 321 points, 86 comments. 30 GPUs, Macs and CPUs across 15 models; each estimate is labeled with how much to trust it.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50127979"
+            },
+            {
+              "label": "Live demo",
+              "url": "https://llmspeed.dev/"
+            }
+          ]
+        },
+        {
+          "id": "parthh01-sphinx",
+          "title": "parthh01/sphinx",
+          "primary_url": "https://github.com/parthh01/sphinx",
+          "date": "2026-10-18",
+          "summary": "Sphinx is a git hook that quizzes you on what your agent-written change will do before the push continues, then explains what you missed. It earned 241 points on Show HN and its latest commit cut release 0.1.9.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "dev-tool",
+            "learning"
+          ],
+          "category": "Dev Tool",
+          "engagement": {
+            "total_stars": 108,
+            "upvotes": 241,
+            "comments": 85
+          },
+          "results": "Show HN: 241 points, 85 comments. Works with several coding agents or a plain git push; the reviewer model reads the commit through read-only Git tools.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50137950"
+            },
+            {
+              "label": "Project site",
+              "url": "https://sphinx-six-theta.vercel.app/"
+            }
+          ]
+        },
+        {
+          "id": "tangency-labs-solidcraft",
+          "title": "tangency-labs/solidcraft",
+          "primary_url": "https://github.com/tangency-labs/solidcraft",
+          "date": "2026-10-18",
+          "summary": "SolidCraft is an open-source parametric 3D CAD application in pure Rust that runs on the desktop or in the browser and exposes a built-in MCP server so agents can model through it. It scored 144 points on Show HN and released v0.16.1 on Oct 18.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "maker",
+            "indie",
+            "cad",
+            "mcp"
+          ],
+          "category": "Maker Tool",
+          "engagement": {
+            "total_stars": 5737,
+            "upvotes": 144,
+            "comments": 51
+          },
+          "results": "Show HN: 144 points, 51 comments. 5,737 total stars (created Oct 7); v0.16.1 on Oct 18.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50064840"
+            },
+            {
+              "label": "Release v0.16.1",
+              "url": "https://github.com/tangency-labs/solidcraft/releases/tag/v0.16.1"
+            }
+          ]
+        },
+        {
+          "id": "la5u-parsimony",
+          "title": "La5u/Parsimony",
+          "primary_url": "https://github.com/La5u/Parsimony",
+          "date": "2026-10-17",
+          "summary": "Parsimony is an open benchmark that ranks AI coding agents by how much code they add, counting syntax elements in patches that public benchmarks already published. It got 77 points on Show HN, and the latest commit on Oct 17 adds a new self-run result.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "eval",
+            "benchmark"
+          ],
+          "category": "Eval Framework",
+          "engagement": {
+            "total_stars": 11,
+            "upvotes": 77,
+            "comments": 19
+          },
+          "results": "Show HN: 77 points, 19 comments. Uses patches from DeepSWE, SWE-bench Verified and SWE-bench Live; anyone can recompute every number.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50077619"
+            },
+            {
+              "label": "Leaderboard",
+              "url": "https://parsimony.lasu.dev/"
+            }
+          ]
+        },
+        {
+          "id": "raullenchai-esp32-thinks",
+          "title": "raullenchai/esp32-thinks",
+          "primary_url": "https://github.com/raullenchai/esp32-thinks",
+          "date": "2026-10-15",
+          "summary": "esp32-thinks is a voice assistant for a small ESP32 gadget with a mic, speaker and round display that answers aloud in English, Chinese or Korean using any OpenAI-compatible speech, transcription and chat endpoints. It reached 222 stars after creation on Oct 12 and released v0.2.1 on Oct 13.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "maker",
+            "consumer",
+            "hardware",
+            "voice"
+          ],
+          "category": "Agent Hardware",
+          "engagement": {
+            "stars": 222
+          },
+          "results": "222 stars within a week; measured on-device turn times of 3.9 s (English), 8.7 s (Chinese) and 3.2 s (Korean) in the README's pre-release check.",
+          "secondary_urls": [
+            {
+              "label": "Release v0.2.1",
+              "url": "https://github.com/raullenchai/esp32-thinks/releases/tag/v0.2.1"
+            }
+          ]
+        },
+        {
+          "id": "tkgally-500-clocks",
+          "title": "tkgally/500-clocks",
+          "primary_url": "https://github.com/tkgally/500-clocks",
+          "date": "2026-10-18",
+          "summary": "500 Clocks is a single 6.3 MB HTML file holding 500 distinct clock designs that one frontier model built over several chat sessions. It scored 64 points on Show HN and is a playful, CC0-licensed test of how varied a model's design output can get.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "creator",
+            "fun",
+            "indie"
+          ],
+          "category": "Creative Demo",
+          "engagement": {
+            "total_stars": 12,
+            "upvotes": 64,
+            "comments": 27
+          },
+          "results": "Show HN: 64 points, 27 comments. 500 clocks in one 6.3 MB file; repository released under CC0.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50137820"
+            },
+            {
+              "label": "Live demo",
+              "url": "https://tkgally.github.io/500-clocks/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent and RAG Implementations",
+      "description": "Retrieval, memory and infrastructure builds with linked code.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "xerj-org-xerj",
+          "title": "xerj-org/xerj",
+          "primary_url": "https://github.com/xerj-org/xerj",
+          "date": "2026-10-18",
+          "summary": "XERJ indexes any folder locally so a coding agent pulls the exact code it needs instead of reading files one by one, and it added 4,925 stars this week. The project's controlled case study reports 2.7x fewer output tokens at the same 16 of 16 solve rate; 543 commits landed this week.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "dev-tool",
+            "rag"
+          ],
+          "category": "Agent Retrieval",
+          "engagement": {
+            "stars": 4925,
+            "total_stars": 8428
+          },
+          "results": "Weekly stars 4,925 (GitHub Trending, Rust); the project's case study reports 2.7x fewer output tokens at 16/16 solved; 543 commits since Oct 12.",
+          "secondary_urls": [
+            {
+              "label": "Corpus release (Oct 18)",
+              "url": "https://github.com/xerj-org/xerj/releases/tag/pack-rust-vulns-2026-10-18"
+            }
+          ]
+        },
+        {
+          "id": "graphicle-ai-graphicle",
+          "title": "Graphicle-AI/graphicle",
+          "primary_url": "https://github.com/Graphicle-AI/graphicle",
+          "date": "2026-10-18",
+          "summary": "Graphicle maps a repository into a code graph, remembers project docs and past agent sessions, and returns cited file-and-line excerpts to any MCP-capable agent, locally with no account. It reached 294 stars after creation on Oct 14, with release 0.1.2 on Oct 18.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "dev-tool",
+            "mcp",
+            "rag"
+          ],
+          "category": "Agent Memory",
+          "engagement": {
+            "stars": 294,
+            "upvotes": 47,
+            "comments": 13
+          },
+          "results": "294 stars within four days; v0.1.2 on Oct 18; Show HN thread: 47 points, 13 comments.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50088713"
+            },
+            {
+              "label": "Release 0.1.2",
+              "url": "https://github.com/Graphicle-AI/graphicle/releases/tag/v0.1.2"
+            }
+          ]
+        },
+        {
+          "id": "feder-cr-git-ai",
+          "title": "feder-cr/git-ai",
+          "primary_url": "https://github.com/feder-cr/git-ai",
+          "date": "2026-10-18",
+          "summary": "gitai is an open-source server-centric version control system designed for many agents landing small changes at once, with compare-and-swap landing, a changeset log and automatic conflict resolution by a resolver you choose. It reached 2,297 stars after creation on Oct 15 and released 0.2.0 on Oct 18.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "dev-tool",
+            "agent-infrastructure"
+          ],
+          "category": "Agent Infrastructure",
+          "engagement": {
+            "stars": 2297
+          },
+          "results": "2,297 stars within four days; v0.2.0 on Oct 18; the README maps each design idea to a component such as sparse clones, UserLand and graft-verify.",
+          "secondary_urls": [
+            {
+              "label": "Release gitai 0.2.0",
+              "url": "https://github.com/feder-cr/git-ai/releases/tag/v0.2.0"
+            }
+          ]
+        },
+        {
+          "id": "mksglu-context-mode",
+          "title": "mksglu/context-mode",
+          "primary_url": "https://github.com/mksglu/context-mode",
+          "date": "2026-10-18",
+          "summary": "Context Mode is an MCP server that sandboxes tool output, tracks session events in SQLite and retrieves only what matters after compaction, adding 4,138 stars this week. The README's headline example shrinks 315 KB of tool output to 5.4 KB; this week's commits are install-stat updates and the latest tag is v1.0.169 from June.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "dev-tool",
+            "mcp"
+          ],
+          "category": "Agent Memory",
+          "engagement": {
+            "stars": 4138,
+            "total_stars": 30759
+          },
+          "results": "Weekly stars 4,138; README reports a 98% reduction (315 KB to 5.4 KB) on its example; no feature release this week."
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "Automations with numbers attached.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "mbzuai-nlp-chemlab-assets",
+          "title": "mbzuai-nlp/ChemLab-Assets",
+          "primary_url": "https://github.com/mbzuai-nlp/ChemLab-Assets",
+          "date": "2026-10-17",
+          "summary": "ChemLab-Assets ships 203 simulation-ready chemistry lab instruments with part-level geometry, working joints and executable behavior models so lab agents can train and be tested in simulation. Four versions landed in four days, with v1.3.0 on Oct 17 adding 5 instruments and rebuilding 44.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "science",
+            "chemistry",
+            "lab-automation",
+            "agent-environment"
+          ],
+          "category": "AI for Science",
+          "engagement": {
+            "stars": 24
+          },
+          "results": "24 stars; v1.0 (198 instruments) on Oct 14 to v1.3.0 (203 instruments, 103 built-in reactions) on Oct 17. Science bonus +0.5 applied.",
+          "secondary_urls": [
+            {
+              "label": "Release v1.3.0",
+              "url": "https://github.com/mbzuai-nlp/ChemLab-Assets/releases/tag/v1.3.0"
+            }
+          ]
+        },
+        {
+          "id": "isinglch-wannier-compass",
+          "title": "isinglch/wannier-compass",
+          "primary_url": "https://github.com/isinglch/wannier-compass",
+          "date": "2026-10-15",
+          "summary": "WannierCompass lets an agent choose orbital bases and energy windows to build tight-binding models from first-principles materials calculations, and 33 of 35 test materials passed within three rounds at roughly 0.4 yuan per material. The tool exposes an MCP server, a skill and a CLI, and was created Oct 14.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "science",
+            "materials",
+            "automation",
+            "mcp"
+          ],
+          "category": "AI for Science",
+          "engagement": {
+            "stars": 10
+          },
+          "results": "Author-reported: 33 of 35 materials passed the error check within 3 rounds across 32 elements, 14 space groups and 6 crystal systems; 13.45 yuan total (about 0.38 per material) on one model and 12.91 yuan (about 0.37 per material) on another, both 33 of 35. Science bonus +0.5 applied."
+        },
+        {
+          "id": "oleost-visionstate",
+          "title": "oleost/VisionState",
+          "primary_url": "https://github.com/oleost/VisionState",
+          "date": "2026-10-18",
+          "summary": "VisionState turns cameras into Home Assistant sensors with a local model you teach in minutes: garage door open or closed, who is in the driveway, even the numbers on a water meter. It runs on any CPU including a Raspberry Pi with no cloud, learns a new state from a few clicked examples in about a second, and shipped 0.9.2b4 on Oct 18.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "consumer",
+            "smb",
+            "home",
+            "local-first"
+          ],
+          "category": "Home Automation",
+          "engagement": {
+            "total_stars": 127
+          },
+          "results": "Teach a state in about a second from a few examples; 80 detectable objects with no training; runs 100% locally on CPU (README). 0.9.2b4 released Oct 18.",
+          "secondary_urls": [
+            {
+              "label": "Release 0.9.2b4",
+              "url": "https://github.com/oleost/VisionState/releases/tag/v0.9.2b4"
+            }
+          ]
+        },
+        {
+          "id": "rociiu-talorys",
+          "title": "rociiu/talorys",
+          "primary_url": "https://github.com/rociiu/talorys",
+          "date": "2026-10-18",
+          "summary": "Talorys deploys a personal AI agent with memory, tasks, notes and scheduled reminders into your own Cloudflare account with one command, no server or database to run. It reached 1,326 stars after creation on Oct 10 and shipped version 0.1.7 at 8:20 p.m. EDT on Oct 18 (00:20 UTC on Oct 19).",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "consumer",
+            "indie",
+            "automation",
+            "self-hosted"
+          ],
+          "category": "Personal Agent",
+          "engagement": {
+            "total_stars": 1326
+          },
+          "results": "1,326 total stars within nine days of creation; one-command install (npx create-talorys@latest); 0.1.7 released Oct 19.",
+          "secondary_urls": [
+            {
+              "label": "Release create-talorys 0.1.7",
+              "url": "https://github.com/rociiu/talorys/releases/tag/create-talorys%400.1.7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Releases from widely used open-source agent and model frameworks with new capabilities.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "unslothai-unsloth-v0-1-907",
+          "title": "unslothai/unsloth",
+          "primary_url": "https://github.com/unslothai/unsloth/releases/tag/v0.1.907-beta",
+          "date": "2026-10-13",
+          "summary": "Unsloth v0.1.907-beta makes its local studio up to 10x faster across multiple chats, adds up to 5x faster inference with a 95% cache hit rate, and brings browser use with scripts plus video generation with LTX-2.5 and Wan2.2. A follow-up release landed Oct 15.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "indie",
+            "local-first",
+            "fine-tuning"
+          ],
+          "category": "Framework Release",
+          "engagement": {
+            "total_stars": 78230
+          },
+          "results": "Release notes: up to 10x faster UI for multiple chats; up to 5x faster inference; 3x more supported drag-and-drop file types."
+        },
+        {
+          "id": "pydantic-pydantic-ai-v2-56",
+          "title": "pydantic/pydantic-ai",
+          "primary_url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.56.0",
+          "date": "2026-10-13",
+          "summary": "Pydantic AI v2.56.0 lets Skills layer project and personal libraries, adds a local microVM sandbox for harness capabilities, adds durable-execution integrations, and adds Python 3.15 support. A v2.57.0 followed on Oct 16.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "dev-tool",
+            "agent-framework"
+          ],
+          "category": "Framework Release",
+          "engagement": {
+            "total_stars": 20715
+          },
+          "results": "Release notes list layered Skills, a local microVM sandbox, two durable-execution integrations and Python 3.15 support."
+        },
+        {
+          "id": "browser-use-browser-use-0-13-12",
+          "title": "browser-use/browser-use",
+          "primary_url": "https://github.com/browser-use/browser-use/releases/tag/0.13.12",
+          "date": "2026-10-15",
+          "summary": "browser-use 0.13.12 adds browser tools for agent SDKs backed by its Actor, covering 18 default tools and six optional actions across local browsers, its cloud browsers or an existing session. Follow-up 0.13.13 shipped the same day.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "dev-tool",
+            "browser-agent"
+          ],
+          "category": "Framework Release",
+          "engagement": {
+            "total_stars": 118421
+          },
+          "results": "Release notes: 18 default browser tools plus six optional actions; 35 integration and model tests passed, two skipped."
+        },
+        {
+          "id": "ollama-ollama-v0-40-5",
+          "title": "ollama/ollama",
+          "primary_url": "https://github.com/ollama/ollama/releases/tag/v0.40.5",
+          "date": "2026-10-14",
+          "summary": "Ollama v0.40.5 adds a 120B-parameter open-weight vision-language model with tool calling and up to 1M context, plus a compact 74B sibling tuned to fit a 24 GB GPU. v0.40.6 followed on Oct 16.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "local-first",
+            "indie",
+            "inference"
+          ],
+          "category": "Framework Release",
+          "engagement": {
+            "stars": 1092,
+            "total_stars": 183748
+          },
+          "results": "Release notes: new models run with one command; weekly stars 1,092 (GitHub Trending, Go)."
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Patterns visible across this week's repos.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "pattern-agents-get-senses-and-hands",
+          "title": "Agents are getting senses and hands beyond the terminal",
+          "primary_url": "https://github.com/Leonxlnx/earshot",
+          "date": "2026-10-18",
+          "summary": "Builders are giving agents hearing, touch and physical reach through standard ports. Evidence spans a sound-analysis server, a $7 board that operates a real phone, and a phone-control harness.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "pattern",
+            "creator",
+            "hardware"
+          ],
+          "category": "Emerging Pattern",
+          "key_takeaways": [
+            "earshot lets an agent hear and critique audio.",
+            "esp32-iphone-agent and phone-harness let agents tap and type on real phones.",
+            "machine-skill and pixel-path return finished visual artifacts."
+          ]
+        },
+        {
+          "id": "pattern-one-line-skills-ship-finished-work",
+          "title": "One-line skills now ship finished artifacts",
+          "primary_url": "https://github.com/juliobsz/skills",
+          "date": "2026-10-18",
+          "summary": "The most-starred new skills install in one command and return a finished website, diagram, course, simulation or sound bed rather than advice. The unit of distribution is a skill folder, and the output is a file you can open.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "pattern",
+            "creator",
+            "agent-skills"
+          ],
+          "category": "Emerging Pattern",
+          "key_takeaways": [
+            "diagram-design returns one HTML and SVG file per diagram.",
+            "claudemy returns about 12 two-minute audio lessons per topic.",
+            "The /awwwards skill returns a site it has checked in a real browser."
+          ]
+        },
+        {
+          "id": "pattern-science-workflows-get-measured",
+          "title": "Science workflows are being packaged with measured pass rates",
+          "primary_url": "https://github.com/isinglch/wannier-compass",
+          "date": "2026-10-18",
+          "summary": "Materials and chemistry builders are publishing agent tools with explicit test counts instead of demos. Counts this week include 33 of 35 materials passing, 203 simulated lab instruments, and a 177-skill science library.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8.0,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-19T01:14:47Z",
+          "tags": [
+            "pattern",
+            "science",
+            "materials"
+          ],
+          "category": "Emerging Pattern",
+          "key_takeaways": [
+            "wannier-compass reports 33 of 35 materials within three rounds.",
+            "ChemLab-Assets reaches 203 instruments in four versions.",
+            "scientific-agent-skills trended with 4,310 weekly stars."
+          ]
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "id": "airsuphq-machine-skill",
+      "title": "AirsupHQ/machine-skill",
+      "source": "GitHub",
+      "date": "2026-10-13",
+      "primary_url": "https://github.com/AirsupHQ/machine-skill",
+      "score": 9.5,
+      "category": "AI for Science"
+    },
+    {
+      "id": "debpalash-voicestudio",
+      "title": "debpalash/VoiceStudio",
+      "source": "GitHub",
+      "date": "2026-10-17",
+      "primary_url": "https://github.com/debpalash/VoiceStudio",
+      "score": 9,
+      "category": "Creator Tool"
+    },
+    {
+      "id": "gathin23-tv-vibehack",
+      "title": "Gathin23/tv-vibehack",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/Gathin23/tv-vibehack",
+      "score": 9,
+      "category": "Consumer Tool"
+    },
+    {
+      "id": "cathrynlavery-diagram-design",
+      "title": "cathrynlavery/diagram-design",
+      "source": "GitHub",
+      "date": "2026-10-16",
+      "primary_url": "https://github.com/cathrynlavery/diagram-design",
+      "score": 9,
+      "category": "Agent Skill"
+    },
+    {
+      "id": "leonxlnx-earshot",
+      "title": "Leonxlnx/earshot",
+      "source": "GitHub",
+      "date": "2026-10-16",
+      "primary_url": "https://github.com/Leonxlnx/earshot",
+      "score": 9,
+      "category": "MCP Server"
+    },
+    {
+      "id": "licincan-blender-ai-mcp-addon",
+      "title": "LiCinCan/blender-ai-mcp-addon",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/LiCinCan/blender-ai-mcp-addon",
+      "score": 9,
+      "category": "MCP Server"
+    },
+    {
+      "id": "juliobsz-skills",
+      "title": "juliobsz/skills",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/juliobsz/skills",
+      "score": 9,
+      "category": "Agent Skill"
+    },
+    {
+      "id": "assafkip-claudemy",
+      "title": "assafkip/claudemy",
+      "source": "GitHub",
+      "date": "2026-10-16",
+      "primary_url": "https://github.com/assafkip/claudemy",
+      "score": 9,
+      "category": "Agent Skill"
+    },
+    {
+      "id": "jonwheatley-pixel-path",
+      "title": "jonwheatley/pixel-path",
+      "source": "GitHub",
+      "date": "2026-10-12",
+      "primary_url": "https://github.com/jonwheatley/pixel-path",
+      "score": 9,
+      "category": "Agent Skill"
+    },
+    {
+      "id": "kanaworksai-hue-audio-studio-mcp",
+      "title": "kanaworksai-hue/audio-studio-mcp",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/kanaworksai-hue/audio-studio-mcp",
+      "score": 9,
+      "category": "MCP Server"
+    },
+    {
+      "id": "mbratkowski-deweloperuch-mcp",
+      "title": "MBratkowski/deweloperuch-mcp",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/MBratkowski/deweloperuch-mcp",
+      "score": 9,
+      "category": "MCP Server"
+    },
+    {
+      "id": "nicorobinreal-llmspeed",
+      "title": "nicorobinreal/llmspeed",
+      "source": "GitHub",
+      "date": "2026-10-17",
+      "primary_url": "https://github.com/nicorobinreal/llmspeed",
+      "score": 9,
+      "category": "Dev Tool"
+    },
+    {
+      "id": "parthh01-sphinx",
+      "title": "parthh01/sphinx",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/parthh01/sphinx",
+      "score": 9,
+      "category": "Dev Tool"
+    },
+    {
+      "id": "tangency-labs-solidcraft",
+      "title": "tangency-labs/solidcraft",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/tangency-labs/solidcraft",
+      "score": 9,
+      "category": "Maker Tool"
+    },
+    {
+      "id": "la5u-parsimony",
+      "title": "La5u/Parsimony",
+      "source": "GitHub",
+      "date": "2026-10-17",
+      "primary_url": "https://github.com/La5u/Parsimony",
+      "score": 9,
+      "category": "Eval Framework"
+    },
+    {
+      "id": "raullenchai-esp32-thinks",
+      "title": "raullenchai/esp32-thinks",
+      "source": "GitHub",
+      "date": "2026-10-15",
+      "primary_url": "https://github.com/raullenchai/esp32-thinks",
+      "score": 9,
+      "category": "Agent Hardware"
+    },
+    {
+      "id": "xerj-org-xerj",
+      "title": "xerj-org/xerj",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/xerj-org/xerj",
+      "score": 9,
+      "category": "Agent Retrieval"
+    },
+    {
+      "id": "rociiu-talorys",
+      "title": "rociiu/talorys",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/rociiu/talorys",
+      "score": 9,
+      "category": "Personal Agent"
+    },
+    {
+      "id": "k-dense-ai-scientific-agent-skills",
+      "title": "K-Dense-AI/scientific-agent-skills",
+      "source": "GitHub",
+      "date": "2026-10-15",
+      "primary_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "score": 8.5,
+      "category": "AI for Science"
+    },
+    {
+      "id": "mbzuai-nlp-chemlab-assets",
+      "title": "mbzuai-nlp/ChemLab-Assets",
+      "source": "GitHub",
+      "date": "2026-10-17",
+      "primary_url": "https://github.com/mbzuai-nlp/ChemLab-Assets",
+      "score": 8.5,
+      "category": "AI for Science"
+    },
+    {
+      "id": "isinglch-wannier-compass",
+      "title": "isinglch/wannier-compass",
+      "source": "GitHub",
+      "date": "2026-10-15",
+      "primary_url": "https://github.com/isinglch/wannier-compass",
+      "score": 8.5,
+      "category": "AI for Science"
+    },
+    {
+      "id": "madslorentzen-ai-job-search",
+      "title": "MadsLorentzen/ai-job-search",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/MadsLorentzen/ai-job-search",
+      "score": 8,
+      "category": "Personal Productivity"
+    },
+    {
+      "id": "onehumanbeing-esp32-iphone-agent",
+      "title": "onehumanbeing/esp32-iphone-agent",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/onehumanbeing/esp32-iphone-agent",
+      "score": 8,
+      "category": "Agent Hardware"
+    },
+    {
+      "id": "saarthurr-atticus-mac",
+      "title": "SaarthurR/atticus-mac",
+      "source": "GitHub",
+      "date": "2026-10-17",
+      "primary_url": "https://github.com/SaarthurR/atticus-mac",
+      "score": 8,
+      "category": "Consumer Tool"
+    },
+    {
+      "id": "alishahryar1-free-claude-code",
+      "title": "Alishahryar1/free-claude-code",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/Alishahryar1/free-claude-code",
+      "score": 8,
+      "category": "Dev Tool"
+    },
+    {
+      "id": "tashfeenahmed-freellmapi",
+      "title": "tashfeenahmed/freellmapi",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/tashfeenahmed/freellmapi",
+      "score": 8,
+      "category": "Dev Tool"
+    },
+    {
+      "id": "earthtojake-text-to-cad",
+      "title": "earthtojake/text-to-cad",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/earthtojake/text-to-cad",
+      "score": 8,
+      "category": "Maker Tool"
+    },
+    {
+      "id": "krillinai-opencreator",
+      "title": "krillinai/OpenCreator",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/krillinai/OpenCreator",
+      "score": 8,
+      "category": "Creator Tool"
+    },
+    {
+      "id": "elie222-rakazo",
+      "title": "elie222/rakazo",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/elie222/rakazo",
+      "score": 8,
+      "category": "Personal Agent"
+    },
+    {
+      "id": "shawnpana-phone-harness",
+      "title": "ShawnPana/phone-harness",
+      "source": "GitHub",
+      "date": "2026-10-17",
+      "primary_url": "https://github.com/ShawnPana/phone-harness",
+      "score": 8,
+      "category": "Agent Tool"
+    },
+    {
+      "id": "graphicle-ai-graphicle",
+      "title": "Graphicle-AI/graphicle",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/Graphicle-AI/graphicle",
+      "score": 8,
+      "category": "Agent Memory"
+    },
+    {
+      "id": "feder-cr-git-ai",
+      "title": "feder-cr/git-ai",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/feder-cr/git-ai",
+      "score": 8,
+      "category": "Agent Infrastructure"
+    },
+    {
+      "id": "oleost-visionstate",
+      "title": "oleost/VisionState",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/oleost/VisionState",
+      "score": 8,
+      "category": "Home Automation"
+    },
+    {
+      "id": "unslothai-unsloth-v0-1-907",
+      "title": "unslothai/unsloth",
+      "source": "GitHub",
+      "date": "2026-10-13",
+      "primary_url": "https://github.com/unslothai/unsloth/releases/tag/v0.1.907-beta",
+      "score": 8,
+      "category": "Framework Release"
+    },
+    {
+      "id": "pydantic-pydantic-ai-v2-56",
+      "title": "pydantic/pydantic-ai",
+      "source": "GitHub",
+      "date": "2026-10-13",
+      "primary_url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.56.0",
+      "score": 8,
+      "category": "Framework Release"
+    },
+    {
+      "id": "browser-use-browser-use-0-13-12",
+      "title": "browser-use/browser-use",
+      "source": "GitHub",
+      "date": "2026-10-15",
+      "primary_url": "https://github.com/browser-use/browser-use/releases/tag/0.13.12",
+      "score": 8,
+      "category": "Framework Release"
+    },
+    {
+      "id": "ollama-ollama-v0-40-5",
+      "title": "ollama/ollama",
+      "source": "GitHub",
+      "date": "2026-10-14",
+      "primary_url": "https://github.com/ollama/ollama/releases/tag/v0.40.5",
+      "score": 8,
+      "category": "Framework Release"
+    },
+    {
+      "id": "lyogavin-airllm",
+      "title": "lyogavin/airllm",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/lyogavin/airllm",
+      "score": 7,
+      "category": "Local Inference"
+    },
+    {
+      "id": "ranxianglei-billion-context",
+      "title": "ranxianglei/billion-context",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/ranxianglei/billion-context",
+      "score": 7,
+      "category": "Dev Tool"
+    },
+    {
+      "id": "kittenml-kittentts",
+      "title": "KittenML/KittenTTS",
+      "source": "GitHub",
+      "date": "2026-10-16",
+      "primary_url": "https://github.com/KittenML/KittenTTS",
+      "score": 7,
+      "category": "Local Model"
+    },
+    {
+      "id": "tkgally-500-clocks",
+      "title": "tkgally/500-clocks",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/tkgally/500-clocks",
+      "score": 7,
+      "category": "Creative Demo"
+    },
+    {
+      "id": "mksglu-context-mode",
+      "title": "mksglu/context-mode",
+      "source": "GitHub",
+      "date": "2026-10-18",
+      "primary_url": "https://github.com/mksglu/context-mode",
+      "score": 7,
+      "category": "Agent Memory"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "GitHub Trending filtered by language (Python, TypeScript, Rust, Go) to widen the weekly sample beyond the default top 10",
+      "GitHub search by topic for repos created in the window (mcp-server, agent-skills, claude-code, ai-agents)",
+      "Hugging Face Spaces and model trending, filtered to community publishers"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "AI for materials, chemistry and building science repos with published pass rates",
+      "Home and workshop automation with local models",
+      "Creator pipelines for video, audio and 3D"
+    ],
+    "topics_to_drop": [],
+    "notes": "Weekly star deltas come from GitHub Trending (Oct 18 snapshot); for repos created this week the delta equals total stars at fetch time, and repos created earlier without a trending entry carry total stars only. Gaps this week: n8n and Make community pages returned no dated, numbers-backed workflows inside the window, so Automation Wins uses GitHub-hosted custom automations with reported results; the trending page lists about 10 repos per language, so mid-tier repos with 300 to 1,000 weekly stars are under-sampled; Hugging Face Spaces and r/LocalLLaMA were not sampled this run. The Top Pick on the science skill library is anchored to its trending entry and a release from Oct 1, since the repo had one maintenance commit this week. GitHub event timestamps shortly after 00:00 UTC on Oct 19 were converted to Oct 18 EDT for the Monday–Sunday ET reporting window."
+  }
+}

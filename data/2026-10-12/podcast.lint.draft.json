@@ -1,0 +1,102 @@
+{
+  "week": "2026-10-12",
+  "script": "data/2026-10-12/podcast.draft.json",
+  "pass": true,
+  "errors": [],
+  "warnings": [
+    {
+      "check": "repeated_phrases",
+      "segment": null,
+      "detail": "2 four-word phrases appear in 3+ segments",
+      "examples": [
+        {
+          "phrase": "steal this idea give",
+          "segments": [
+            "reddit_segment",
+            "research_segment",
+            "social_segment"
+          ]
+        },
+        {
+          "phrase": "this idea give a",
+          "segments": [
+            "reddit_segment",
+            "research_segment",
+            "social_segment"
+          ]
+        }
+      ]
+    },
+    {
+      "check": "concept_saturation",
+      "segment": null,
+      "detail": "content words in 5+ of 7 correspondent segments; is the same point being made repeatedly?",
+      "terms": {
+        "something": 6,
+        "another": 5,
+        "working": 5,
+        "people": 5,
+        "different": 5,
+        "hundred": 5
+      }
+    },
+    {
+      "check": "abstract_segment",
+      "segment": "x_segment",
+      "detail": "0 numbers, ~4 named entities; add concrete facts from the source JSON"
+    }
+  ],
+  "info": [
+    {
+      "check": "acronyms",
+      "detail": "confirm each is pronounced as intended (letters vs word)",
+      "tokens": {
+        "AI": 14,
+        "API": 4,
+        "EU": 2,
+        "CEO": 1,
+        "LLM": 1,
+        "HTML": 1,
+        "MCP": 1,
+        "GPT": 1,
+        "UK": 1,
+        "NIST": 1,
+        "NSA": 1,
+        "CISA": 1,
+        "PDF": 1,
+        "PDFs": 1
+      }
+    }
+  ],
+  "metrics": {
+    "spoken_segments": 17,
+    "music_segments": 9,
+    "total_words": 3342,
+    "estimated_minutes": 22.0,
+    "avg_sentence_words": 12.1,
+    "long_sentences": 0,
+    "repeated_phrases": 2,
+    "tts_symbols": 0,
+    "caution_words_outside_research": 0,
+    "enterprise_words": 0,
+    "segment_words": {
+      "cold_open": 85,
+      "handoff_youtube": 9,
+      "youtube_segment": 407,
+      "handoff_x": 11,
+      "x_segment": 411,
+      "handoff_reddit": 14,
+      "reddit_segment": 411,
+      "handoff_builders": 18,
+      "builders_segment": 427,
+      "handoff_launches": 9,
+      "launches_segment": 432,
+      "handoff_social": 15,
+      "social_segment": 418,
+      "handoff_research": 18,
+      "research_segment": 481,
+      "things_to_try_this_week": 156,
+      "sign_off": 20
+    }
+  }
+}
