@@ -1,0 +1,1737 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.892,
+    "items_total": 37,
+    "items_new": 33,
+    "items_returning": 4
+  },
+  "min_items": 18,
+  "executive_summary": [
+    {
+      "headline": "A free video editor with an MCP port leads the week: Concat added 2,616 stars",
+      "body": "jub0t/Concat runs captions, voice cloning and cutout locally, has no watermark or account, and lets an agent cut video through a built-in MCP server.",
+      "primary_url": "https://github.com/jub0t/Concat"
+    },
+    {
+      "headline": "Agent memory goes vendor-neutral",
+      "body": "akitaonrails/ai-memory added 3,254 stars by letting Claude Code hand a half-finished task to Codex with a typed handoff, and agent-beacon added 972 on the same idea.",
+      "primary_url": "https://github.com/akitaonrails/ai-memory"
+    },
+    {
+      "headline": "Science agents arrive with evaluations",
+      "body": "ChemGraph merged a Deep Agent evaluation harness, idfkit-mcp exposes 37 EnergyPlus tools to an assistant, and a chemistry skill library cites a peer-reviewed paper.",
+      "primary_url": "https://github.com/idfkit/idfkit-mcp"
+    },
+    {
+      "headline": "Key takeaway",
+      "body": "Individual builders are wrapping local tools in MCP and skills so agents can run them: video, 3D scans, TVs, simulators. Pick one real task this week and hand it to an agent through one of these.",
+      "primary_url": "https://github.com/wesbos/3d-model-anything"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "jub0t-concat",
+      "title": "jub0t/Concat",
+      "primary_url": "https://github.com/jub0t/Concat",
+      "date": "2026-10-25",
+      "summary": "Concat is a free, open-source video editor for macOS, Windows, Linux and Android that runs captions, text-to-speech, voice cloning and background removal on-device, with no watermark or account. It added 2,616 stars this week, and a built-in MCP server lets agents cut video with it.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-26T01:40:00Z",
+      "tags": [
+        "creator",
+        "consumer",
+        "local-first",
+        "video",
+        "mcp"
+      ],
+      "category": "Creator Tool",
+      "engagement": {
+        "stars": 2616,
+        "total_stars": 11546
+      },
+      "results": "2,616 weekly stars (GitHub Trending weekly snapshot, Oct 25 evening PT); 11,546 total; v0.2.8 released Oct 20; at least 100 commits in the window, latest Oct 25; AGPL-3.0, individual maintainer.",
+      "secondary_urls": [
+        {
+          "label": "Release v0.2.8",
+          "url": "https://github.com/jub0t/Concat/releases/tag/v0.2.8"
+        }
+      ],
+      "key_takeaways": [
+        "Captions use local Whisper and the cutout and voice models download once, then work offline.",
+        "An MCP server (concat --mcp) and a JSON-RPC API let an agent drive the editor.",
+        "Aimed at TikTok, Reels, Shorts, tutorials and podcast clips."
+      ],
+      "enterprise_adaptation": "The clever part is a full editor that an agent can drive over MCP while every model runs on the laptop. Experiment: point Claude at Concat and ask it to turn one internal demo recording into a captioned 60-second cut with a cloned narrator voice, then time it against a manual edit."
+    },
+    {
+      "id": "akitaonrails-ai-memory",
+      "title": "akitaonrails/ai-memory",
+      "primary_url": "https://github.com/akitaonrails/ai-memory",
+      "date": "2026-10-25",
+      "summary": "ai-memory gives coding agents one shared long-term memory: quit Claude Code mid-task, open Codex in the same directory and the next agent picks up a typed handoff of what failed and what is open. It added 3,254 stars this week and shipped v3.2.5 on Oct 25.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-26T01:40:00Z",
+      "tags": [
+        "developer",
+        "memory",
+        "cross-agent",
+        "rust",
+        "individual"
+      ],
+      "category": "Agent Memory",
+      "engagement": {
+        "stars": 3254,
+        "total_stars": 13528
+      },
+      "results": "3,254 weekly stars (GitHub Trending weekly snapshot, Oct 25 evening PT); 13,528 total; v3.2.5 on Oct 25; at least 500 commits in the window (API page cap), latest Oct 25; README lists 20+ supported harnesses.",
+      "secondary_urls": [
+        {
+          "label": "Project site",
+          "url": "https://aimemory.sh"
+        }
+      ],
+      "key_takeaways": [
+        "Handoffs are a typed protocol: each has an owner and is claimed exactly once.",
+        "Works across Claude Code, Codex, Cursor, Gemini CLI, OpenCode and others.",
+        "Single Rust binary, MIT license, built by an individual developer."
+      ],
+      "enterprise_adaptation": "The clever part is treating the agent hand-off as a protocol instead of a chat summary, so switching tools mid-task stops costing context. Experiment: run a real task in one agent, stop halfway, and finish it in a different agent with ai-memory installed; see how much re-explaining you skip."
+    },
+    {
+      "id": "wesbos-3d-model-anything",
+      "title": "wesbos/3d-model-anything",
+      "primary_url": "https://github.com/wesbos/3d-model-anything",
+      "date": "2026-10-22",
+      "summary": "Wes Bos published an iPhone app, a Three.js viewer and a scan-to-threejs agent skill that turn a room capture into an editable 3D scene with a coding agent. The repo was created Oct 21 and has 1,924 stars; the README calls it an iterative reconstruction workflow, not one-click scan-to-model.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-26T01:40:00Z",
+      "tags": [
+        "creator",
+        "3d",
+        "skill",
+        "iphone",
+        "building-science-adjacent"
+      ],
+      "category": "Agent Skill",
+      "engagement": {
+        "stars": 1924
+      },
+      "results": "1,924 stars in its first five days (created Oct 21); 5 commits through Oct 22; includes a detailed office demo and a live viewer.",
+      "secondary_urls": [
+        {
+          "label": "Live viewer",
+          "url": "https://wesbos.github.io/3d-model-anything/"
+        }
+      ],
+      "key_takeaways": [
+        "The app records evidence; the skill guides measurement, modeling and matched-camera visual comparison.",
+        "Output is an editable Three.js scene, with dollhouse, walking, overhead and wireframe views.",
+        "Current focus is rooms and interiors."
+      ],
+      "enterprise_adaptation": "The clever part is the matched-camera comparison loop, where the agent checks its model against the original photos until they agree. Experiment: scan one lab bench or meeting room with a phone and let an agent rebuild it as a browsable 3D scene over a weekend."
+    },
+    {
+      "id": "idfkit-idfkit-mcp",
+      "title": "idfkit/idfkit-mcp",
+      "primary_url": "https://github.com/idfkit/idfkit-mcp",
+      "date": "2026-10-19",
+      "summary": "idfkit-mcp is an MCP server that lets an assistant build, edit and simulate EnergyPlus building energy models in plain language. It exposes 37 tools and 13 resources, supports EnergyPlus 8.9 through 26.2, and shipped v0.11.0 and v0.11.1 in the window.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 8.5,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-26T01:40:00Z",
+      "tags": [
+        "science",
+        "building-science",
+        "mcp",
+        "energyplus",
+        "simulation"
+      ],
+      "category": "AI for Science",
+      "engagement": {
+        "total_stars": 10
+      },
+      "results": "37 tools and 13 MCP resources; 18 EnergyPlus versions with bundled schemas; v0.11.1 on Oct 19 fixes start-up on Python 3.11. Star count is small (10), so the signal is the capability, not momentum. Science bonus +0.5 included in score.",
+      "secondary_urls": [
+        {
+          "label": "Release v0.11.1",
+          "url": "https://github.com/idfkit/idfkit-mcp/releases/tag/v0.11.1"
+        }
+      ],
+      "key_takeaways": [
+        "Describe a building and the agent creates zones, surfaces, constructions, schedules and HVAC.",
+        "Load an existing IDF or epJSON, edit it, validate, run a simulation and read results in one conversation.",
+        "Schema and documentation search return direct links to the EnergyPlus reference."
+      ],
+      "enterprise_adaptation": "The clever part is a validated schema layer between the language model and a physics simulator, so an agent edits real building models without breaking them. Experiment: hand a building scientist a sample IDF and ask them to run three setpoint variants by chatting, then compare to their usual workflow time."
+    },
+    {
+      "id": "ethanplusai-harvey",
+      "title": "ethanplusai/harvey",
+      "primary_url": "https://github.com/ethanplusai/harvey",
+      "date": "2026-10-25",
+      "summary": "Harvey is an autonomous sales agent for small businesses that finds prospects, reads their sites, writes cold emails and drafts replies, running on a Claude or Codex subscription instead of per-token API billing. It added 1,147 stars this week and shipped v0.3.0 on Oct 13.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-26T01:40:00Z",
+      "tags": [
+        "smb",
+        "sales",
+        "agent",
+        "python",
+        "individual"
+      ],
+      "category": "SMB Sales Agent",
+      "engagement": {
+        "stars": 1147,
+        "total_stars": 2548
+      },
+      "results": "1,147 weekly stars (GitHub Trending weekly snapshot, Oct 25 evening PT); 2,548 total; at least 236 commits in the window; README cost table lists $0 to find businesses on the default source and $0 to read their websites (three HTTP requests, no model call).",
+      "secondary_urls": [
+        {
+          "label": "Release v0.3.0",
+          "url": "https://github.com/ethanplusai/harvey/releases/tag/v0.3.0"
+        }
+      ],
+      "key_takeaways": [
+        "Website reading uses plain HTTP requests, so the model is only called for writing and reply handling.",
+        "A dashboard shows an outbox of drafted replies, with conversations handed back to a human.",
+        "Built for owners who want outbound without a per-token bill."
+      ],
+      "enterprise_adaptation": "The clever part is moving everything that does not need a model out of the model loop, which is why the running cost is near zero. Experiment: point Harvey at a list of 50 local prospects for a side project and measure replies per hundred emails against your last manual push."
+    },
+    {
+      "id": "argonne-lcf-chemgraph",
+      "title": "argonne-lcf/ChemGraph",
+      "primary_url": "https://github.com/argonne-lcf/ChemGraph",
+      "date": "2026-10-22",
+      "summary": "ChemGraph is an agent framework that connects natural-language requests to molecule building, simulation and reporting, using LangGraph, ASE, RDKit and MCP, with MACE and TBLite calculators and distributed runs on ALCF systems. A Deep Agent evaluation harness merged on Oct 22 after about a dozen commits that week.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 7.5,
+        "signal": 2,
+        "novelty": 1,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-10-26T01:40:00Z",
+      "tags": [
+        "science",
+        "chemistry",
+        "materials",
+        "mcp",
+        "langgraph"
+      ],
+      "category": "AI for Science",
+      "engagement": {
+        "total_stars": 167
+      },
+      "results": "12 commits in the window; latest release v0.7.0 (Sep 11); Oct 22 merge of pull request 256 adds Deep Agent evaluation with checkpointed, preflighted runs. Maintained by a national-lab team; 167 stars. Science bonus +0.5 included in score.",
+      "secondary_urls": [
+        {
+          "label": "Merged evaluation pull request",
+          "url": "https://github.com/argonne-lcf/ChemGraph/pull/256"
+        }
+      ],
+      "key_takeaways": [
+        "Runs from the command line, Python, a Streamlit app or as an MCP server.",
+        "Local workflows use ASE calculators such as EMT and MACE; optional docking, XANES and retrieval add-ons.",
+        "This week's work is about scoring agents on chemistry tasks, not adding features."
+      ],
+      "enterprise_adaptation": "The clever part is shipping an evaluation harness beside the chemistry agent, so a skeptical scientist can see pass rates before trusting it. Experiment: pick five calculations your researchers run by hand each week and let ChemGraph attempt them with MACE, then have a scientist grade the outputs."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repositories",
+      "description": "AI-related repos from GitHub Trending weekly (Oct 25 snapshot), ranked by weekly star delta. Concat, ai-memory and harvey rank higher and appear under Top Picks. For repos created this week, the delta equals total stars.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "pengchujin-aerial-tv",
+          "title": "pengchujin/aerial-tv",
+          "primary_url": "https://github.com/pengchujin/aerial-tv",
+          "date": "2026-10-25",
+          "summary": "Aerial is an ad-free, Apple TV style home screen for Android TV sets, with your apps, wallpapers and an aerial-footage screensaver. Created Oct 20, it reached 5,021 stars and v1.51 on Oct 25.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "consumer",
+            "tv",
+            "kotlin",
+            "individual"
+          ],
+          "category": "Consumer Tool",
+          "engagement": {
+            "stars": 5021
+          },
+          "results": "5,021 stars since creation on Oct 20 (delta equals total for repos created in the window); at least 100 commits; v1.51 on Oct 25.",
+          "secondary_urls": [
+            {
+              "label": "Release v1.51",
+              "url": "https://github.com/pengchujin/aerial-tv/releases/tag/v1.51"
+            }
+          ],
+          "recurrence": "returning_pattern",
+          "recurrence_note": "Same pattern as last week's tv-vibehack: owners replacing a vendor TV home screen with an ad-free launcher, new implementation."
+        },
+        {
+          "id": "simbasjungles-free-my-tv",
+          "title": "simbasjungles/free-my-tv",
+          "primary_url": "https://github.com/simbasjungles/free-my-tv",
+          "date": "2026-10-25",
+          "summary": "Free My TV is an open-source home screen for Google TV, LG and Samsung sets that shows trending picks from the apps you already have, weather and crypto prices, and installs through an AI coding assistant with one button to undo. Created Oct 19, it has 4,616 stars and v1.2.0.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "consumer",
+            "tv",
+            "claude-code",
+            "individual"
+          ],
+          "category": "Consumer Tool",
+          "engagement": {
+            "stars": 4616
+          },
+          "results": "4,616 stars since creation on Oct 19; at least 100 commits; v1.2.0 on Oct 24; README reports 96 MB of memory versus 242 MB for the stock launcher on a 98-inch TCL Google TV.",
+          "secondary_urls": [
+            {
+              "label": "Release v1.2.0",
+              "url": "https://github.com/simbasjungles/free-my-tv/releases/tag/v1.2.0"
+            }
+          ],
+          "recurrence": "returning_pattern",
+          "recurrence_note": "Same pattern as last week's tv-vibehack, new implementation with a different launcher."
+        },
+        {
+          "id": "ruvnet-ruflo",
+          "title": "ruvnet/ruflo",
+          "primary_url": "https://github.com/ruvnet/ruflo",
+          "date": "2026-10-25",
+          "summary": "Ruflo is an agent meta-harness for Claude Code and Codex that installs as plugins and coordinates swarms of agents. It added 2,987 stars this week and released v3.63.0 on Oct 25.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "agent-framework",
+            "claude-code",
+            "typescript",
+            "individual"
+          ],
+          "category": "Agent Framework",
+          "engagement": {
+            "stars": 2987,
+            "total_stars": 79287
+          },
+          "results": "2,987 weekly stars (GitHub Trending weekly snapshot, Oct 25 evening PT); 79,287 total; at least 200 commits in the window; v3.63.0 on Oct 25.",
+          "secondary_urls": [
+            {
+              "label": "Release v3.63.0",
+              "url": "https://github.com/ruvnet/ruflo/releases/tag/v3.63.0"
+            }
+          ]
+        },
+        {
+          "id": "pc2005-cloud-dsh-pet",
+          "title": "PC2005-cloud/dsh-pet",
+          "primary_url": "https://github.com/PC2005-cloud/dsh-pet",
+          "date": "2026-10-25",
+          "summary": "dsh-pet is a transparent desktop pet that lives inside the DeepSeek Harness, with more than a hundred animations, and ships the prompt recipe and video-to-transparent-animation pipeline used to generate them. It added 2,283 stars this week.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "consumer",
+            "creator",
+            "desktop-pet",
+            "typescript"
+          ],
+          "category": "Creator Tool",
+          "engagement": {
+            "stars": 2283,
+            "total_stars": 4110
+          },
+          "results": "2,283 weekly stars (GitHub Trending weekly snapshot, Oct 25 evening PT); 4,110 total; 78 commits in the window; v0.3.8 on Oct 22. README is in Chinese."
+        },
+        {
+          "id": "thesysdev-openui",
+          "title": "thesysdev/openui",
+          "primary_url": "https://github.com/thesysdev/openui",
+          "date": "2026-10-23",
+          "summary": "OpenUI is an open standard for generative UI, where a model streams interface components instead of text. It added 2,149 stars this week with a CLI 0.6.0 release on Oct 15.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "generative-ui",
+            "typescript",
+            "developer"
+          ],
+          "category": "Dev Tool",
+          "engagement": {
+            "stars": 2149,
+            "total_stars": 13975
+          },
+          "results": "2,149 weekly stars (GitHub Trending weekly snapshot, Oct 25 evening PT); 13,975 total; 9 commits in the window. Backed by a company, MIT licensed."
+        },
+        {
+          "id": "pollen-robotics-microduck",
+          "title": "pollen-robotics/microduck",
+          "primary_url": "https://github.com/pollen-robotics/microduck",
+          "date": "2026-10-19",
+          "summary": "Microduck is a tiny biped duck robot that walks using reinforcement learning policies, with open training code and a build guide. It added 1,876 stars this week.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "hobbyist",
+            "robotics",
+            "reinforcement-learning",
+            "rust"
+          ],
+          "category": "Robotics",
+          "engagement": {
+            "stars": 1876,
+            "total_stars": 11662
+          },
+          "results": "1,876 weekly stars (GitHub Trending weekly snapshot, Oct 25 evening PT); 11,662 total; 6 commits in the window, daemon v0.17.8 on Oct 19; Apache-2.0."
+        },
+        {
+          "id": "makecindy-cindy",
+          "title": "makecindy/cindy",
+          "primary_url": "https://github.com/makecindy/cindy",
+          "date": "2026-10-25",
+          "summary": "Cindy is an open-source desktop agent that combines several harnesses, models and tools and works on your real local files. It added 1,514 stars this week and ships a release every couple of days (v0.1.115 on Oct 23).",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "consumer",
+            "agent",
+            "desktop",
+            "typescript"
+          ],
+          "category": "Agent App",
+          "engagement": {
+            "stars": 1514,
+            "total_stars": 4891
+          },
+          "results": "1,514 weekly stars (GitHub Trending weekly snapshot, Oct 25 evening PT); 4,891 total; at least 500 commits in the window (API page cap); Apache-2.0."
+        },
+        {
+          "id": "lyogavin-airllm",
+          "title": "lyogavin/airllm",
+          "primary_url": "https://github.com/lyogavin/airllm",
+          "date": "2026-10-25",
+          "summary": "AirLLM runs very large language models on a single 4 GB GPU by loading layers one at a time. It added 1,394 stars this week and had 16 commits in the window.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "local-llm",
+            "hobbyist",
+            "python",
+            "individual"
+          ],
+          "category": "Local Inference",
+          "engagement": {
+            "stars": 1394,
+            "total_stars": 40673
+          },
+          "results": "1,394 weekly stars (GitHub Trending weekly snapshot, Oct 25 evening PT); 40,673 total; 16 commits in the window; latest tagged release v4.0.0 on Sep 5."
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Skills and MCP Servers",
+      "description": "Agent skills and MCP servers from individuals and small teams, including science libraries.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "plugin87-ux-ui-agent-skills",
+          "title": "plugin87/ux-ui-agent-skills",
+          "primary_url": "https://github.com/plugin87/ux-ui-agent-skills",
+          "date": "2026-10-25",
+          "summary": "This skill pack turns Claude into a design architect that produces design tokens, 52 components and accessibility-checked UI. It added 749 stars this week and released v3.0.0 on Oct 25.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "creator",
+            "design",
+            "skill",
+            "javascript",
+            "individual"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 749,
+            "total_stars": 3006
+          },
+          "results": "749 weekly stars (GitHub Trending weekly snapshot, Oct 25 evening PT); 3,006 total; 9 commits in the window; v3.0.0 on Oct 25.",
+          "secondary_urls": [
+            {
+              "label": "Release v3.0.0",
+              "url": "https://github.com/plugin87/ux-ui-agent-skills/releases/tag/v3.0.0"
+            }
+          ]
+        },
+        {
+          "id": "donchitos-claude-code-game-studios",
+          "title": "Donchitos/Claude-Code-Game-Studios",
+          "primary_url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+          "date": "2026-10-19",
+          "summary": "Claude Code Game Studios organizes one session into a game studio of 49 agents and 74 skills, and its v1.2.0 release rebuilt the story skills and moved engine references to Godot 4.7 and Unreal Engine 5.8. It added 751 stars this week.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "creator",
+            "games",
+            "skills",
+            "shell",
+            "individual"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 751,
+            "total_stars": 27550
+          },
+          "results": "751 weekly stars (GitHub Trending weekly snapshot, Oct 25 evening PT); 27,550 total; v1.2.0 on Oct 19.",
+          "secondary_urls": [
+            {
+              "label": "Release v1.2.0",
+              "url": "https://github.com/Donchitos/Claude-Code-Game-Studios/releases/tag/v1.2.0"
+            }
+          ]
+        },
+        {
+          "id": "jinzhezenggroup-computational-chemistry-agent-skills",
+          "title": "jinzhezenggroup/computational-chemistry-agent-skills",
+          "primary_url": "https://github.com/jinzhezenggroup/computational-chemistry-agent-skills",
+          "date": "2026-10-25",
+          "summary": "This library packages computational-chemistry workflows as agent skills, including DeePMD training and LAMMPS runs, and is the basis of a 2026 J. Chem. Theory Comput. paper on automating these workflows. A sync on Oct 25 and a DPA4 workflow update on Oct 15 keep it current.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "science",
+            "chemistry",
+            "skills",
+            "openclaw",
+            "molecular-dynamics"
+          ],
+          "category": "AI for Science",
+          "engagement": {
+            "total_stars": 154
+          },
+          "results": "154 stars; README lists about 35 skills and a hosted skill browser; latest sync commit Oct 25; peer-reviewed citation in the README. Science bonus +0.5 included in score.",
+          "secondary_urls": [
+            {
+              "label": "Skill browser",
+              "url": "https://skills.jinzhezeng.group"
+            }
+          ]
+        },
+        {
+          "id": "denissergeevitch-ex-ussr-kinship-research",
+          "title": "DenisSergeevitch/ex-ussr-kinship-research",
+          "primary_url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+          "date": "2026-10-25",
+          "summary": "This agent skill turns Codex or Claude Code into a family-history researcher for the former USSR, reading church, civil and military records across all 15 successor republics and replying in the user's language. Created Oct 25, it has 537 stars.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "consumer",
+            "genealogy",
+            "skill",
+            "personal"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 537
+          },
+          "results": "537 stars on its first day (created Oct 25); skill instructions are in Russian while the agent answers in the user's language."
+        },
+        {
+          "id": "lillyguisnet-sam3-segmentation",
+          "title": "lillyguisnet/sam3-segmentation",
+          "primary_url": "https://github.com/lillyguisnet/sam3-segmentation",
+          "date": "2026-10-24",
+          "summary": "This agent skill outlines objects in photos with Meta's SAM 3 on your own NVIDIA GPU and keeps every output checkable; the README compares six agents on the same corn photo with and without the skill. Created Oct 24, it has 75 stars.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "science",
+            "vision",
+            "skill",
+            "individual"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 75
+          },
+          "results": "75 stars since creation on Oct 24. The author states the code was mostly written by an AI model and has been tested only on one machine."
+        },
+        {
+          "id": "czlonkowski-n8n-skills",
+          "title": "czlonkowski/n8n-skills",
+          "primary_url": "https://github.com/czlonkowski/n8n-skills",
+          "date": "2026-10-24",
+          "summary": "n8n-skills is a set of Claude skills that teach an agent to build n8n workflows correctly, and v1.37.1 shipped on Oct 24. It has 6,522 total stars and 4 commits in the window.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "automation",
+            "n8n",
+            "skills",
+            "smb"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "total_stars": 6522
+          },
+          "results": "6,522 total stars; weekly delta not shown on a GitHub Trending page; v1.37.1 on Oct 24.",
+          "secondary_urls": [
+            {
+              "label": "Release v1.37.1",
+              "url": "https://github.com/czlonkowski/n8n-skills/releases/tag/v1.37.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN and Indie Builds",
+      "description": "Show HN posts with a repo or live write-up, plus indie and hobby builds.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "dsmurrell-onkey",
+          "title": "dsmurrell/onkey",
+          "primary_url": "https://github.com/dsmurrell/onkey",
+          "date": "2026-10-22",
+          "summary": "OnKey is a free Mac singing trainer that listens to the song playing in Spotify, Apple Music or YouTube, learns the singer's melody from one play and draws your pitch over it. The builder wrote the first version by asking Claude Code to detect both pitches.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "consumer",
+            "music",
+            "indie",
+            "mac",
+            "show-hn"
+          ],
+          "category": "Consumer App",
+          "engagement": {
+            "upvotes": 233,
+            "comments": 91,
+            "total_stars": 308
+          },
+          "results": "Show HN: 233 points, 91 comments; repo created Oct 18, 308 stars, v0.1.0 on Oct 22; requires Apple Silicon and macOS 14.2 or later.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50195488"
+            },
+            {
+              "label": "Project site",
+              "url": "https://singonkey.app"
+            }
+          ]
+        },
+        {
+          "id": "erik-qwen3-4b-deslop",
+          "title": "qwen3-4b-deslop",
+          "primary_url": "https://100toolkit.com/blog/deslop-model/",
+          "date": "2026-10-19",
+          "summary": "A solo builder fine-tuned Qwen3-4B on an M2 MacBook Air so it writes without em dashes, 'not X, but Y' or lists of three, and the slop score fell from 121 to 12.5 per 1,000 words on 40 held-out prompts.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "creator",
+            "writing",
+            "fine-tune",
+            "local",
+            "show-hn"
+          ],
+          "category": "Open Model",
+          "engagement": {
+            "upvotes": 158,
+            "comments": 113
+          },
+          "results": "Show HN: 158 points, 113 comments. Author reports 288 teacher prompts, 161 selected answers, rank-16 LoRA, one to three hours per round, 30 of 30 factual questions correct. Self-reported results from one sample per prompt.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50151928"
+            }
+          ],
+          "author": "Erik Markus Kannike"
+        },
+        {
+          "id": "abdullahalhariri-penmentor",
+          "title": "AbdullahAlhariri/penmentor",
+          "primary_url": "https://github.com/AbdullahAlhariri/penmentor",
+          "date": "2026-10-24",
+          "summary": "penmentor marks up handwritten maths in xournal++ with one key: Claude, Gemini or GPT circles the slip like a teacher, gives hints instead of answers and builds a manim animation of the idea. It runs on the user's own model subscription.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "consumer",
+            "education",
+            "math",
+            "show-hn"
+          ],
+          "category": "Consumer App",
+          "engagement": {
+            "upvotes": 66,
+            "comments": 9,
+            "total_stars": 131
+          },
+          "results": "Show HN: 66 points, 9 comments; 131 stars; created Oct 17.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50167604"
+            }
+          ]
+        },
+        {
+          "id": "anubhavmalhotra-r2d2-tv",
+          "title": "anubhavmalhotra/r2d2-tv",
+          "primary_url": "https://github.com/anubhavmalhotra/r2d2-tv",
+          "date": "2026-10-24",
+          "summary": "R2D2 gives a webOS TV a local home screen, a private remote browser and a push-to-talk voice assistant, with a Linux host running Chromium and the voice models. The README warns the TV components run as root on one firmware build.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "consumer",
+            "tv",
+            "voice",
+            "show-hn"
+          ],
+          "category": "Consumer Tool",
+          "engagement": {
+            "upvotes": 109,
+            "comments": 79,
+            "total_stars": 63
+          },
+          "results": "Show HN: 109 points, 79 comments; 63 stars; created Oct 21; 5 commits through Oct 24.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50202865"
+            }
+          ],
+          "recurrence": "returning_pattern",
+          "recurrence_note": "Same pattern as last week's tv-vibehack: reclaiming a vendor TV, here with a voice assistant."
+        },
+        {
+          "id": "jamro-tiny-engineer",
+          "title": "jamro/tiny-engineer",
+          "primary_url": "https://github.com/jamro/tiny-engineer",
+          "date": "2026-10-24",
+          "summary": "Tiny Engineer is a desk robot that moves, changes its face and rings a bell as your coding agent reads files, writes code and finishes tasks, wired through Cursor and Claude Code hooks or a simple HTTP call. It added 176 stars this week on the C++ trending page.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "hobbyist",
+            "hardware",
+            "esp32",
+            "fun"
+          ],
+          "category": "Hobby Hardware",
+          "engagement": {
+            "stars": 176,
+            "total_stars": 892
+          },
+          "results": "176 weekly stars (GitHub Trending, C++, Oct 25); 892 total; 12 commits in the window; v0.2.0 on Oct 5; the maker is polling interest in a $15 to $20 assembled board."
+        },
+        {
+          "id": "zengshuangzi-mcd-money-saver",
+          "title": "zengshuangzi/mcd-money-saver",
+          "primary_url": "https://github.com/zengshuangzi/mcd-money-saver",
+          "date": "2026-10-23",
+          "summary": "McD Money Saver is a skill built on McDonald's MCP access that sorts coupons, points and bundles to work out the cheapest way to order. It was an entry in a McDonald's developer-day contest and has 347 stars after two days.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "consumer",
+            "food",
+            "mcp",
+            "skill"
+          ],
+          "category": "Consumer Skill",
+          "engagement": {
+            "stars": 347
+          },
+          "results": "347 stars since creation on Oct 22; README is in Chinese and says it was built with Tencent WorkBuddy for a contest."
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent and RAG Implementations",
+      "description": "Agent harnesses and memory layers with linked code.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "amosblomqvist-learnharness",
+          "title": "amosblomqvist/learnharness",
+          "primary_url": "https://github.com/amosblomqvist/learnharness",
+          "date": "2026-10-25",
+          "summary": "LearnHarness is an agent harness for learning: it measures what you understand, plans a dependency map to your goal and keeps a knowledge graph across sessions. The repo was created Oct 16, has 1,679 stars and shipped v0.3.7 on Oct 25.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "consumer",
+            "education",
+            "agent",
+            "typescript"
+          ],
+          "category": "Agent Harness",
+          "engagement": {
+            "total_stars": 1679
+          },
+          "results": "1,679 stars nine days after creation (weekly delta not isolated); at least 50 commits in the window; AGPL-3.0.",
+          "secondary_urls": [
+            {
+              "label": "Release v0.3.7",
+              "url": "https://github.com/amosblomqvist/learnharness/releases/tag/v0.3.7"
+            }
+          ]
+        },
+        {
+          "id": "omnara-ai-omnara",
+          "title": "omnara-ai/omnara",
+          "primary_url": "https://github.com/omnara-ai/omnara",
+          "date": "2026-10-24",
+          "summary": "Omnara is an open-source API for durable agents: one call creates an agent, with sandboxes, secrets, permissions and state stored in Postgres so idle agents cost nothing. It is pitched as a self-hostable alternative to managed-agent services.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "agent-platform",
+            "self-hosted",
+            "go",
+            "show-hn"
+          ],
+          "category": "Agent Platform",
+          "engagement": {
+            "upvotes": 114,
+            "comments": 34,
+            "total_stars": 3258
+          },
+          "results": "Show HN: 114 points, 34 comments; 3,258 total stars; 26 commits in the window; omnarad v0.2.11 on Oct 24.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50183892"
+            }
+          ]
+        },
+        {
+          "id": "asymptote-labs-agent-beacon",
+          "title": "Asymptote-Labs/agent-beacon",
+          "primary_url": "https://github.com/Asymptote-Labs/agent-beacon",
+          "date": "2026-10-25",
+          "summary": "agent-beacon is a cross-harness, self-improving memory layer for coding agents. It added 972 stars this week on the Go trending page and shipped v1.3.46 on Oct 22.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "agent",
+            "memory",
+            "go"
+          ],
+          "category": "Agent Memory",
+          "engagement": {
+            "stars": 972,
+            "total_stars": 2808
+          },
+          "results": "972 weekly stars (GitHub Trending, Go, Oct 25); 2,808 total; at least 100 commits in the window."
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "Automations and pipelines with numbers attached, from GitHub and Hacker News. n8n and Make community pages had no dated, numbers-backed workflow inside the window.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "c4rohan-lampline",
+          "title": "C4rohan/Lampline",
+          "primary_url": "https://github.com/C4rohan/Lampline",
+          "date": "2026-10-22",
+          "summary": "Lampline is an open-source, self-hosted voice-agent platform that imports agents from Google's Dialogflow CX and tests them with real phone calls graded against checks. The README puts running cost at about $0.02 to $0.17 a call versus $0.50.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "smb",
+            "voice",
+            "phone",
+            "evals",
+            "python"
+          ],
+          "category": "Voice Agent",
+          "engagement": {
+            "total_stars": 267
+          },
+          "results": "README states about $0.02 to $0.17 per call versus $0.50 (builder-reported, not independently tested); 267 stars since creation Oct 19; 97 commits; v0.4.0 on Oct 22.",
+          "secondary_urls": [
+            {
+              "label": "Release v0.4.0",
+              "url": "https://github.com/C4rohan/Lampline/releases/tag/v0.4.0"
+            }
+          ]
+        },
+        {
+          "id": "thisandthat-enron-company-brain",
+          "title": "this+that: an AI-written wiki of 45,047 Enron emails",
+          "primary_url": "https://www.thisandthat.chat/enron/",
+          "date": "2026-10-23",
+          "summary": "A small team had an AI read 45,047 Enron emails and write 214 pages holding 49,401 facts, each quoting the sentence in the email it came from. A second AI audit found 93% of sampled facts fully supported and none of 500 wrong at the core.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "rag",
+            "citations",
+            "knowledge-base",
+            "show-hn"
+          ],
+          "category": "Knowledge Base",
+          "engagement": {
+            "upvotes": 70,
+            "comments": 56
+          },
+          "results": "Show HN: 70 points, 56 comments. Reported: 57 proposed types, 54 kept; facts dropped unless the sentence matches the email word for word; audit by a second AI (self-reported).",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50207620"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Open-source framework releases with new capabilities this week.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "mastra-core-1-79-0",
+          "title": "mastra-ai/mastra @mastra/core 1.79.0",
+          "primary_url": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.79.0",
+          "date": "2026-10-21",
+          "summary": "Mastra core 1.79.0 adds experimental MCP Events, so MCP servers can publish event streams that clients poll, hold open or receive by signed webhook, plus span aggregation for p95 latency per tool and cost per agent.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "framework",
+            "mcp",
+            "observability",
+            "typescript"
+          ],
+          "category": "Framework Release",
+          "results": "Release published Oct 21; MCP Events follow the SEP-3415 draft and are marked experimental."
+        },
+        {
+          "id": "ollama-v0-40-11",
+          "title": "ollama/ollama v0.40.11",
+          "primary_url": "https://github.com/ollama/ollama/releases/tag/v0.40.11",
+          "date": "2026-10-24",
+          "summary": "Ollama v0.40.11 lets `ollama run` speak a reply aloud on macOS and serves audio through an OpenAI-compatible /v1/audio/speech endpoint, and adds the d3 decision-model family in 2B to 27B sizes.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "local-llm",
+            "speech",
+            "consumer",
+            "go"
+          ],
+          "category": "Framework Release",
+          "results": "Release published Oct 24; speech is macOS-only in this release."
+        },
+        {
+          "id": "crewai-1-15-29",
+          "title": "crewAIInc/crewAI 1.15.29",
+          "primary_url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.29",
+          "date": "2026-10-23",
+          "summary": "CrewAI 1.15.29 adds LiteLLM-compatible keyword arguments, promotes AgentExecutor out of experimental status and adds an Azure DocumentDB vector search integration.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "framework",
+            "python",
+            "agents"
+          ],
+          "category": "Framework Release",
+          "results": "Release published Oct 23."
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Patterns visible across this week's repos.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "pattern-tv-rescue-with-a-coding-agent",
+          "title": "Owners are reclaiming vendor TV screens with a coding agent",
+          "primary_url": "https://github.com/simbasjungles/free-my-tv",
+          "date": "2026-10-25",
+          "summary": "A second wave of TV launchers followed last week's tv-vibehack: aerial-tv (5,021 stars), free-my-tv (4,616) and r2d2-tv (63 stars, 109 HN points). Each installs through an AI assistant over the local network and keeps an undo path.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "pattern",
+            "consumer",
+            "tv"
+          ],
+          "category": "Emerging Pattern",
+          "secondary_urls": [
+            {
+              "label": "aerial-tv",
+              "url": "https://github.com/pengchujin/aerial-tv"
+            },
+            {
+              "label": "r2d2-tv",
+              "url": "https://github.com/anubhavmalhotra/r2d2-tv"
+            }
+          ],
+          "recurrence": "returning_pattern",
+          "recurrence_note": "Extends last week's tv-vibehack pattern with three new implementations.",
+          "key_takeaways": [
+            "Two of the three were created within the week and passed 4,000 stars in days.",
+            "Setup is delegated to Claude Code, Codex or Antigravity with a prompt in the README."
+          ]
+        },
+        {
+          "id": "pattern-domain-experts-ship-skill-packs-with-citations",
+          "title": "Science groups are shipping agents with evaluation and citations",
+          "primary_url": "https://github.com/jinzhezenggroup/computational-chemistry-agent-skills",
+          "date": "2026-10-25",
+          "summary": "Three science repos pair an agent with proof: ChemGraph merged an evaluation harness, idfkit-mcp wraps EnergyPlus in 37 validated tools, and the computational-chemistry skill library cites a J. Chem. Theory Comput. paper.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "pattern",
+            "science",
+            "chemistry",
+            "building-science"
+          ],
+          "category": "Emerging Pattern",
+          "secondary_urls": [
+            {
+              "label": "ChemGraph",
+              "url": "https://github.com/argonne-lcf/ChemGraph"
+            },
+            {
+              "label": "idfkit-mcp",
+              "url": "https://github.com/idfkit/idfkit-mcp"
+            }
+          ],
+          "key_takeaways": [
+            "Validation layers and evaluation harnesses ship in the same repo as the agent.",
+            "MCP and skills are the common packaging for simulators."
+          ]
+        },
+        {
+          "id": "pattern-agent-memory-goes-cross-vendor",
+          "title": "Agent memory is becoming vendor-neutral",
+          "primary_url": "https://github.com/akitaonrails/ai-memory",
+          "date": "2026-10-25",
+          "summary": "ai-memory (3,254 weekly stars) and agent-beacon (972) both give one memory to many coding agents so a task can move between tools without re-explaining, and Omnara stores durable agent state in Postgres.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:40:00Z",
+          "tags": [
+            "pattern",
+            "memory",
+            "agents"
+          ],
+          "category": "Emerging Pattern",
+          "secondary_urls": [
+            {
+              "label": "agent-beacon",
+              "url": "https://github.com/Asymptote-Labs/agent-beacon"
+            }
+          ],
+          "key_takeaways": [
+            "Handoffs are becoming typed protocols rather than chat summaries.",
+            "Both repos support 20 or more harnesses or the major CLIs."
+          ]
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "jub0t/Concat",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/jub0t/Concat",
+      "score": 9,
+      "category": "Creator Tool"
+    },
+    {
+      "title": "akitaonrails/ai-memory",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/akitaonrails/ai-memory",
+      "score": 8,
+      "category": "Agent Memory"
+    },
+    {
+      "title": "wesbos/3d-model-anything",
+      "source": "GitHub",
+      "date": "2026-10-22",
+      "primary_url": "https://github.com/wesbos/3d-model-anything",
+      "score": 9,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "idfkit/idfkit-mcp",
+      "source": "GitHub",
+      "date": "2026-10-19",
+      "primary_url": "https://github.com/idfkit/idfkit-mcp",
+      "score": 8.5,
+      "category": "AI for Science"
+    },
+    {
+      "title": "ethanplusai/harvey",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/ethanplusai/harvey",
+      "score": 8,
+      "category": "SMB Sales Agent"
+    },
+    {
+      "title": "argonne-lcf/ChemGraph",
+      "source": "GitHub",
+      "date": "2026-10-22",
+      "primary_url": "https://github.com/argonne-lcf/ChemGraph",
+      "score": 7.5,
+      "category": "AI for Science"
+    },
+    {
+      "title": "pengchujin/aerial-tv",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/pengchujin/aerial-tv",
+      "score": 7,
+      "category": "Consumer Tool"
+    },
+    {
+      "title": "simbasjungles/free-my-tv",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/simbasjungles/free-my-tv",
+      "score": 7,
+      "category": "Consumer Tool"
+    },
+    {
+      "title": "ruvnet/ruflo",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/ruvnet/ruflo",
+      "score": 6,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "PC2005-cloud/dsh-pet",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/PC2005-cloud/dsh-pet",
+      "score": 7,
+      "category": "Creator Tool"
+    },
+    {
+      "title": "thesysdev/openui",
+      "source": "GitHub",
+      "date": "2026-10-23",
+      "primary_url": "https://github.com/thesysdev/openui",
+      "score": 6,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "pollen-robotics/microduck",
+      "source": "GitHub",
+      "date": "2026-10-19",
+      "primary_url": "https://github.com/pollen-robotics/microduck",
+      "score": 8,
+      "category": "Robotics"
+    },
+    {
+      "title": "makecindy/cindy",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/makecindy/cindy",
+      "score": 7,
+      "category": "Agent App"
+    },
+    {
+      "title": "lyogavin/airllm",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/lyogavin/airllm",
+      "score": 7,
+      "category": "Local Inference"
+    },
+    {
+      "title": "plugin87/ux-ui-agent-skills",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/plugin87/ux-ui-agent-skills",
+      "score": 7,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "Donchitos/Claude-Code-Game-Studios",
+      "source": "GitHub",
+      "date": "2026-10-19",
+      "primary_url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "score": 7,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "jinzhezenggroup/computational-chemistry-agent-skills",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/jinzhezenggroup/computational-chemistry-agent-skills",
+      "score": 8.5,
+      "category": "AI for Science"
+    },
+    {
+      "title": "DenisSergeevitch/ex-ussr-kinship-research",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+      "score": 9,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "lillyguisnet/sam3-segmentation",
+      "source": "GitHub",
+      "date": "2026-10-24",
+      "primary_url": "https://github.com/lillyguisnet/sam3-segmentation",
+      "score": 7,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "czlonkowski/n8n-skills",
+      "source": "GitHub",
+      "date": "2026-10-24",
+      "primary_url": "https://github.com/czlonkowski/n8n-skills",
+      "score": 6,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "dsmurrell/onkey",
+      "source": "Hacker News",
+      "date": "2026-10-22",
+      "primary_url": "https://github.com/dsmurrell/onkey",
+      "score": 8,
+      "category": "Consumer App"
+    },
+    {
+      "title": "qwen3-4b-deslop",
+      "source": "Hacker News",
+      "date": "2026-10-19",
+      "primary_url": "https://100toolkit.com/blog/deslop-model/",
+      "score": 7,
+      "category": "Open Model"
+    },
+    {
+      "title": "AbdullahAlhariri/penmentor",
+      "source": "Hacker News",
+      "date": "2026-10-24",
+      "primary_url": "https://github.com/AbdullahAlhariri/penmentor",
+      "score": 8,
+      "category": "Consumer App"
+    },
+    {
+      "title": "anubhavmalhotra/r2d2-tv",
+      "source": "Hacker News",
+      "date": "2026-10-24",
+      "primary_url": "https://github.com/anubhavmalhotra/r2d2-tv",
+      "score": 6,
+      "category": "Consumer Tool"
+    },
+    {
+      "title": "jamro/tiny-engineer",
+      "source": "GitHub",
+      "date": "2026-10-24",
+      "primary_url": "https://github.com/jamro/tiny-engineer",
+      "score": 8,
+      "category": "Hobby Hardware"
+    },
+    {
+      "title": "zengshuangzi/mcd-money-saver",
+      "source": "GitHub",
+      "date": "2026-10-23",
+      "primary_url": "https://github.com/zengshuangzi/mcd-money-saver",
+      "score": 7,
+      "category": "Consumer Skill"
+    },
+    {
+      "title": "amosblomqvist/learnharness",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/amosblomqvist/learnharness",
+      "score": 8,
+      "category": "Agent Harness"
+    },
+    {
+      "title": "omnara-ai/omnara",
+      "source": "Hacker News",
+      "date": "2026-10-24",
+      "primary_url": "https://github.com/omnara-ai/omnara",
+      "score": 6,
+      "category": "Agent Platform"
+    },
+    {
+      "title": "Asymptote-Labs/agent-beacon",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/Asymptote-Labs/agent-beacon",
+      "score": 7,
+      "category": "Agent Memory"
+    },
+    {
+      "title": "C4rohan/Lampline",
+      "source": "GitHub",
+      "date": "2026-10-22",
+      "primary_url": "https://github.com/C4rohan/Lampline",
+      "score": 8,
+      "category": "Voice Agent"
+    },
+    {
+      "title": "this+that: an AI-written wiki of 45,047 Enron emails",
+      "source": "Hacker News",
+      "date": "2026-10-23",
+      "primary_url": "https://www.thisandthat.chat/enron/",
+      "score": 9,
+      "category": "Knowledge Base"
+    },
+    {
+      "title": "mastra-ai/mastra @mastra/core 1.79.0",
+      "source": "GitHub",
+      "date": "2026-10-21",
+      "primary_url": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.79.0",
+      "score": 7,
+      "category": "Framework Release"
+    },
+    {
+      "title": "ollama/ollama v0.40.11",
+      "source": "GitHub",
+      "date": "2026-10-24",
+      "primary_url": "https://github.com/ollama/ollama/releases/tag/v0.40.11",
+      "score": 8,
+      "category": "Framework Release"
+    },
+    {
+      "title": "crewAIInc/crewAI 1.15.29",
+      "source": "GitHub",
+      "date": "2026-10-23",
+      "primary_url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.29",
+      "score": 6,
+      "category": "Framework Release"
+    },
+    {
+      "title": "Owners are reclaiming vendor TV screens with a coding agent",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/simbasjungles/free-my-tv",
+      "score": 9,
+      "category": "Emerging Pattern"
+    },
+    {
+      "title": "Science groups are shipping agents with evaluation and citations",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/jinzhezenggroup/computational-chemistry-agent-skills",
+      "score": 9.5,
+      "category": "Emerging Pattern"
+    },
+    {
+      "title": "Agent memory is becoming vendor-neutral",
+      "source": "GitHub",
+      "date": "2026-10-25",
+      "primary_url": "https://github.com/akitaonrails/ai-memory",
+      "score": 8,
+      "category": "Emerging Pattern"
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "multica-ai/andrej-karpathy-skills: 2,937 weekly stars on GitHub Trending",
+      "reason": "Single CLAUDE.md file with no commits since Apr 20 and 223,863 total stars; matches the star-manipulation drop rule.",
+      "attempted_url": "https://github.com/multica-ai/andrej-karpathy-skills"
+    },
+    {
+      "claim": "shiyu-coder/Kronos: 2,801 weekly stars",
+      "reason": "No commits in the window and last push Apr 13; momentum without activity.",
+      "attempted_url": "https://github.com/shiyu-coder/Kronos"
+    },
+    {
+      "claim": "citrolabs/ego-lite: 1,853 weekly stars, 19,475 total",
+      "reason": "Only 2 commits in the window and a tagline claiming 7.4 billion tokens per month that could not be verified.",
+      "attempted_url": "https://github.com/citrolabs/ego-lite"
+    },
+    {
+      "claim": "Show HN: Permit Pending (938 points)",
+      "reason": "The page does not mention AI; not a builder-AI item.",
+      "attempted_url": "https://permit.petercai.com/"
+    },
+    {
+      "claim": "Show HN: Corgi agent terminal multiplexer (137 points)",
+      "reason": "Page shows no repository link or license, so open-source status could not be confirmed.",
+      "attempted_url": "https://corgi.computer/"
+    },
+    {
+      "claim": "Show HN: Jev Cards (72 points)",
+      "reason": "Page is a vendor gateway demo with no model, results or repo stated.",
+      "attempted_url": "https://jevcards.com"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "GitHub Trending filtered by Java, Kotlin, Swift and C++ (this week's TV launchers and desk robot appeared only there)",
+      "GitHub search sorted by stars for repos created in the window, by topic (mcp-server, agent-skills, claude-code)",
+      "r/LocalLLaMA and Hugging Face Spaces trending, filtered to community publishers",
+      "awesome-mcp-servers and awesome-claude-skills new-entry diffs"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "Materials and building-science repos with published pass rates; only three science repos surfaced and two have under 200 stars",
+      "Home and device reclaiming with local models",
+      "Creator pipelines for video, audio and 3D"
+    ],
+    "topics_to_drop": [],
+    "notes": "Gaps this week: weekly star deltas come from GitHub Trending pages fetched Oct 25 to 26; GitHub's star-timestamp endpoint was unavailable, so repos created before Oct 19 without a trending entry (learnharness, OnKey, ChemGraph, idfkit-mcp, comp-chem skills, n8n-skills) carry total stars only, and for repos created in the window the delta equals total stars. Commit counts capped at 500 by API paging. n8n and Make community pages and Latent Space were not sampled, so Automation Wins uses GitHub and Hacker News builds with README-reported numbers (Lampline cost per call, Enron pipeline audit) that are builder-reported. Science coverage is thin: 3 items plus 1 pattern. Returning items are limited to three TV-pattern entries and the freshness target of 0.85 is met. Seven candidates were flagged for failing verification or routing rules."
+  }
+}

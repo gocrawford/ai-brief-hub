@@ -1,0 +1,2295 @@
+{
+  "tab_id": "reddit",
+  "tab_name": "Reddit",
+  "subtitle": "Community Intelligence",
+  "icon": "MessageCircle",
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 0.84,
+    "items_total": 43,
+    "items_new": 36,
+    "items_returning": 7
+  },
+  "min_items": 20,
+  "executive_summary": [
+    {
+      "headline": "Agents finish long games and long chores on their own",
+      "body": "Opus 5.5 beat Baldur's Gate 3 unattended for $712 over 39 hours, and Anthropic's Claude Duet puts a proactive background agent into a consumer app. The BG3 builder says memory handoffs, not model skill, took most of his time.",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x9ue4y/after_712_and_39_hours_opus_55_beat_baldurs_gate/"
+    },
+    {
+      "headline": "AI for science had its best Reddit week in a while",
+      "body": "Claude designed 318,484 scorpion toxin binders and 17 of 211 tested bound, OpenAI's GPT-Rosalind agents read a mouse brain atlas in 32 minutes, and a physicist's repo has Claude auditing a quantum gravity calculation. Quanta also explained the AI quasi-Riemann proof and CERN announced a Large Physics Model plan with Mistral.",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1xb2pme/a_fiveperson_investment_team_with_almost_no/"
+    },
+    {
+      "headline": "Solo builders ship the clever stuff",
+      "body": "A rules-first Claude Code prompt that strips ads from smart TVs drew 200+ pull requests in four days. MAFDET cuts a local model's wait from 12 s to 3 s by thinking while you type.",
+      "primary_url": "https://www.reddit.com/r/SideProject/comments/1xbp1be/my_parents_tv_showed_an_ad_before_netflix_so_i/"
+    },
+    {
+      "headline": "Local AI keeps squeezing frontier models onto home hardware",
+      "body": "PROMETHEVS runs a 510 GB DeepSeek model on a 64 GB RAM, RTX 3060 PC, a kernel module unlocks about 2x BF16 on RTX 3000 cards, and Kitten-TTS 2 runs voice cloning on a CPU.",
+      "primary_url": "https://www.reddit.com/r/LocalLLM/comments/1xdm3mc/full_deepseekv41flash1017_510_gb_original_weights/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "cleanyourtv-agent-debloats-android-tvs",
+      "title": "A Claude Code agent strips ads from parents' TV and the repo goes viral",
+      "primary_url": "https://www.reddit.com/r/SideProject/comments/1xbp1be/my_parents_tv_showed_an_ad_before_netflix_so_i/",
+      "date": "2026-10-21",
+      "summary": "A builder pointed Claude Code at his parents' Xiaomi TV, disabled 25 ad and tracking apps and built a clean home screen, then open-sourced it as cleanyourtv. The thread reports 200+ pull requests adding TVs and about 150 models from 50+ brands within four days. The GitHub repo now shows 34.9k stars, up from the 16k quoted in the post.",
+      "source": "r/SideProject",
+      "author": "u/Gathin23",
+      "platform": "reddit",
+      "score": {
+        "total": 10,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 456,
+        "comments": 99
+      },
+      "verified": true,
+      "verified_at": "2026-10-26T01:25:00Z",
+      "tags": [
+        "claude-code",
+        "open-source",
+        "android-tv",
+        "consumer"
+      ],
+      "category": "Consumer win",
+      "recurrence": "new",
+      "key_takeaways": [
+        "The agent prompt is mostly a list of things it must not do: never uninstall, back up first, leave casting and Wi-Fi packages alone.",
+        "Most of those rules came from strangers' TVs breaking in new ways, via pull requests.",
+        "It works on Android TV and Google TV without root, and one command restores everything."
+      ],
+      "enterprise_translation": "A rules-first agent prompt that crowdsources its own edge cases is a repeatable pattern. Pick one fiddly device or workflow your team fights with, write the do-not-do list first, and let colleagues add rules as it breaks.",
+      "secondary_urls": [
+        {
+          "label": "Fetched external source",
+          "url": "https://github.com/Gathin23/cleanyourtv"
+        }
+      ],
+      "results": "Repo shows 34.9k stars on fetch; post said 16k at day four. Top comment questioned the star growth; the builder pointed to a viral X post as the cause.",
+      "why_it_matters": "A one-person fix for a family annoyance turned into a community-maintained device database in under a week."
+    },
+    {
+      "id": "opus-5-5-beats-baldurs-gate-3-for-712-dollars",
+      "title": "Opus 5.5 finishes Baldur's Gate 3 alone: 39 hours, $712",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x9ue4y/after_712_and_39_hours_opus_55_beat_baldurs_gate/",
+      "date": "2026-10-19",
+      "summary": "A developer let Claude Opus 5.5 play Baldur's Gate 3 through Claude Code with no human at the controls. It killed the final boss on its twelfth attempt after 96 numbered sessions, $711.66 of API usage and 38.9 hours of play. The builder's write-up says most of his effort went into a memory system, since every session starts from a fresh `claude -p` run.",
+      "source": "r/ClaudeCode",
+      "author": "u/Bogdanilaa",
+      "platform": "reddit",
+      "score": {
+        "total": 10,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 799,
+        "comments": 172
+      },
+      "verified": true,
+      "verified_at": "2026-10-26T01:25:00Z",
+      "tags": [
+        "claude-code",
+        "opus-5-5",
+        "gaming",
+        "agents",
+        "mcp"
+      ],
+      "category": "Creator demo",
+      "recurrence": "new",
+      "key_takeaways": [
+        "Setup: Claude Code with built-in tools off, a Python MCP server, and a Lua mod that reports only what the party can see.",
+        "A runner recovered from all 11 game crashes unattended.",
+        "Cost split on the write-up: $694.20 for play, $17.46 for the memory keeper."
+      ],
+      "enterprise_translation": "Long-horizon agents live or die on handoff notes. Try the same fresh-session-plus-memory-file loop on any multi-day task you keep restarting, such as a data migration or a long report.",
+      "secondary_urls": [
+        {
+          "label": "Fetched external source",
+          "url": "https://bogdantruta.com/blog/claude-finished-baldurs-gate-3/"
+        }
+      ],
+      "results": "Write-up lists $711.66 total cost, 38.9 hours, 96 sessions (99 with restarts), medium reasoning effort.",
+      "why_it_matters": "A concrete, priced benchmark for how far an unattended agent loop can run on a messy real-world interface."
+    },
+    {
+      "id": "claude-duet-proactive-agent-app",
+      "title": "Anthropic launches Claude Duet, an agent that works while you are away",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1xbz98o/anthropic_unveils_claude_duet_a_proactive_ai/",
+      "date": "2026-10-21",
+      "summary": "Claude Duet is a new app where Claude acts proactively: it flags what matters, finishes requested tasks, keeps working while you are away and checks with you before acting. Anthropic's page dates the launch October 21, with a waitlist research preview for US Pro and Max subscribers on iOS, Android and claude.ai. It connects to over 6,000 connectors and plugins in the Claude Marketplace and shares the plan's usage limits.",
+      "source": "r/singularity",
+      "author": "u/141_1337",
+      "platform": "reddit",
+      "score": {
+        "total": 10,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 980,
+        "comments": 180
+      },
+      "verified": true,
+      "verified_at": "2026-10-26T01:25:00Z",
+      "tags": [
+        "anthropic",
+        "claude-duet",
+        "agents",
+        "consumer-app"
+      ],
+      "category": "Consumer release",
+      "recurrence": "new",
+      "key_takeaways": [
+        "Included in Pro and Max during the research preview; no separate price stated.",
+        "Background checks and tasks count toward the plan's usage limits.",
+        "One commenter says they used it on a personal Gmail account to unsubscribe from senders and set a definition of important."
+      ],
+      "enterprise_translation": "Inbox triage with a stated definition of 'important' is the starter use case people reach for first. Write your own definition for a shared mailbox and see how many messages never need a human.",
+      "secondary_urls": [
+        {
+          "label": "Fetched external source",
+          "url": "https://claude.com/resources/articles/claude-duet"
+        }
+      ],
+      "results": "Anthropic page dated 2026-10-21 states waitlist, US Pro and Max, 6,000+ connectors.",
+      "why_it_matters": "It moves the assistant from reply-on-demand to a standing background worker in a mainstream consumer app."
+    },
+    {
+      "id": "mafdet-local-llm-thinks-while-you-type",
+      "title": "MAFDET makes a local LLM think while you are still typing: 12 s wait drops to 3 s",
+      "primary_url": "https://www.reddit.com/r/LocalLLM/comments/1xclfjf/i_made_my_local_llm_start_thinking_while_im_still/",
+      "date": "2026-10-22",
+      "summary": "MAFDET is an Apache-2.0 app on llama.cpp that pre-reads and pre-reasons your prompt as you type, so the answer starts sooner after Enter. On Qwen3-4B with 24 typed word problems, the repo reports mean wait falling from 12.2 s to 3.2 s with 24/24 correct both ways. The post title cites a 6 GB GPU.",
+      "source": "r/LocalLLM",
+      "author": "u/Oxygenne_",
+      "platform": "reddit",
+      "score": {
+        "total": 10,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "upvotes": 403,
+        "comments": 76
+      },
+      "verified": true,
+      "verified_at": "2026-10-26T01:25:00Z",
+      "tags": [
+        "local-llm",
+        "llama-cpp",
+        "open-source",
+        "latency"
+      ],
+      "category": "Indie open source",
+      "recurrence": "new",
+      "key_takeaways": [
+        "Read-ahead keeps the KV cache in step with your text, including edits and pastes; the repo says this part is exact.",
+        "Think-ahead starts Qwen3 reasoning early and keeps it as notes after edits.",
+        "On Qwen3-14B, six problems went from 108 s to 47 s mean wait."
+      ],
+      "enterprise_translation": "Idle GPU time while a person types is free compute. The same idea fits any chat or form where users compose long inputs: start the expensive step on a draft and reconcile on submit. A commenter already plans to pre-fill tool-call context before the message lands.",
+      "secondary_urls": [
+        {
+          "label": "Fetched external source",
+          "url": "https://github.com/TheLastOxygen/mafdet"
+        }
+      ],
+      "results": "Repo benchmark: Qwen3-4B mean wait 12.2 s to 3.2 s, median 10.7 s to 2.9 s, 24 of 24 faster.",
+      "why_it_matters": "A clever latency trick that needs no new hardware, from a solo builder, with benchmarks in the repo."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "viral_threads",
+      "title": "Viral Threads",
+      "description": "Threads over 500 upvotes this week, outside the science and release sections.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "solo-dev-godot-game-opus-six-weeks",
+          "title": "No coding background, six weeks, one Godot game built with Opus 5.5",
+          "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1xdhkzb/no_coding_or_gamedev_background_6_weeks_with_opus/",
+          "date": "2026-10-23",
+          "summary": "A relayed interview with a solo indie dev who went from drawings to a playable Ragnarok-meets-Monster-Hunter game in about six weeks, mostly through Claude Code on a Max 20x plan. The setup includes a custom 'route' skill that hands suitable work to Sonnet or Haiku and has Opus review. The post carries a video and 2,273 upvotes; the top comment, from a Godot user of 11 months, doubts the timeline unless the dev left design choices to the AI.",
+          "source": "r/ClaudeAI",
+          "author": "u/Delicious-Shower8401",
+          "platform": "reddit",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 2273,
+            "comments": 193
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "claude-code",
+            "godot",
+            "indie-games",
+            "skills"
+          ],
+          "category": "Indie win",
+          "recurrence": "returning_theme",
+          "key_takeaways": [
+            "Each feature starts as an idea plus research, then is built and tuned in the running game.",
+            "A routing skill saves tokens by sending easy work to cheaper models.",
+            "The poster relays the dev's account; no dev account or game link appears in the archived post."
+          ],
+          "enterprise_translation": "A router skill that delegates by difficulty is easy to copy. Add one to your own agent setup and compare token spend on a normal week.",
+          "recurrence_note": "Last week's index had two non-coder shipping stories."
+        },
+        {
+          "id": "opus-5-5-decompiles-ps2-game-browser-ports",
+          "title": "Opus 5.5 decompiles a PS2-era game overnight and browser ports multiply",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1xa79hb/claude_opus_55_decompiles_a_ps2era_game_overnight/",
+          "date": "2026-10-19",
+          "summary": "Kotaku reports AI-assisted decompilation has put Halo: CE, Vice City, Skate 3 and The Simpsons: Hit and Run into the browser, and credits Claude Opus 5.5 as especially capable at decompiling. The r/ClaudeCode thread passed 2,295 upvotes with 317 comments. Kotaku's piece is dated October 9, so the story predates the week; the thread is this week's.",
+          "source": "r/ClaudeCode",
+          "author": "u/Resident-Fall4351",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 2295,
+            "comments": 317
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "opus-5-5",
+            "decompilation",
+            "gaming",
+            "browser"
+          ],
+          "category": "Creator demo",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Kotaku says ports that took months now land in record time.",
+            "Top comments speculate other labs will train on these decompilation breakthroughs."
+          ],
+          "enterprise_translation": "Legacy code archaeology is now an overnight job. Point an agent at an undocumented internal tool and ask it to produce the missing spec.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://kotaku.com/we-might-be-cooked-as-these-vibe-coded-web-browser-ports-of-halo-the-simpsons-hit-and-run-and-gta-vice-city-seem-to-work-perfectly-2000743300"
+            }
+          ]
+        },
+        {
+          "id": "chatgpt-rebuilds-plex-with-live-tv-in-a-day",
+          "title": "A home-server fan rebuilds Plex with better live TV in a day",
+          "primary_url": "https://www.reddit.com/r/ChatGPT/comments/1x9nnpd/you_can_literally_just_recreate_almost_any_app_in/",
+          "date": "2026-10-19",
+          "summary": "The poster replaced Plex's weak IPTV with his own web app: 24/7 channels built from his library, sports APIs that hide dead channels until games air, and a richer home page. He says he also replaced Kometa and Title Card Maker the weekend before. The thread has 2,157 upvotes and 623 comments.",
+          "source": "r/ChatGPT",
+          "author": "u/enkidook",
+          "platform": "reddit",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 2157,
+            "comments": 623
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "chatgpt",
+            "personal-software",
+            "media-server"
+          ],
+          "category": "Personal build",
+          "recurrence": "new",
+          "key_takeaways": [
+            "One bespoke app replaced about six separate tools.",
+            "Sports-schedule APIs keep the channel list free of empty slots."
+          ],
+          "enterprise_translation": "When you are juggling six utilities for one job, describe the combined workflow to a coding agent and see whether one tool beats the stack."
+        },
+        {
+          "id": "rtx-3000-bf16-unlock-kernel-module",
+          "title": "A kernel module unlocks about 2x BF16 speed on RTX 3000 cards",
+          "primary_url": "https://www.reddit.com/r/StableDiffusion/comments/1xcvlgt/it_turns_out_rtx_3000_series_can_run_bf16_almost/",
+          "date": "2026-10-22",
+          "summary": "A Linux kernel module, gpu-unlock, raises BF16 instruction issue rate on RTX 3000 cards to their professional equivalents without patching the NVIDIA driver. The repo lists gains of roughly 25% to 80% in BF16 GEMM by card, and a Windows port and a 4090 variant followed in the same week. The post scored 1,180 upvotes; a commenter says it began with a 3090 unlock.",
+          "source": "r/StableDiffusion",
+          "author": "u/CeFurkan",
+          "platform": "reddit",
+          "score": {
+            "total": 10,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 1180,
+            "comments": 188
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "gpu",
+            "bf16",
+            "local-ai",
+            "open-source"
+          ],
+          "category": "Local AI hardware",
+          "recurrence": "new",
+          "key_takeaways": [
+            "RTX 3090 Ti +68-80%, 3080 +70-73%, 3070 +73-81%, 3060 12 GB about +80% on the repo's table.",
+            "A 3080 Ti 20 GB OEM variant completes the unlock but stays at half rate.",
+            "Users are asked to add their own card reports."
+          ],
+          "enterprise_translation": "Hardware that was already in your lab may have headroom. Ask an agent to survey community unlock repos for the cards you own and benchmark before and after.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://github.com/Zagitta/gpu-unlock"
+            }
+          ],
+          "results": "Repo table gives per-card BF16 GEMM gains; the Reddit post's headline 'almost 2x' matches the best cases only."
+        },
+        {
+          "id": "npctalk-realtime-talking-game-npcs",
+          "title": "NPCTalk makes GTA V characters answer in character, in cloned voices, under 1 second",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1xczh14/introducing_npctalk_make_the_npcs_of_any_game/",
+          "date": "2026-10-23",
+          "summary": "A modder shows every NPC in GTA V replying to spoken input in character and in a cloned voice in under a second, acting on what the player says. The stack, as quoted from the creator's X post, is NVIDIA Nemotron ASR, Qwen 3.8 27B for dialogue and Fish Audio Drama 3 for voices on a serverless GPU. The video post has 1,168 upvotes.",
+          "source": "r/singularity",
+          "author": "u/Prime-Paradox",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 1168,
+            "comments": 143
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "gaming",
+            "voice",
+            "qwen",
+            "mods"
+          ],
+          "category": "Creator demo",
+          "recurrence": "returning_theme",
+          "key_takeaways": [
+            "The pipeline is all open or self-hostable models.",
+            "Top comments joke about asking NPCs strange questions."
+          ],
+          "enterprise_translation": "A sub-second voice loop is enough for a convincing talking character. A kiosk, training sim or product demo guide could use the same three-model stack.",
+          "recurrence_note": "Last week's index carried Fish Drama 3 TTS."
+        },
+        {
+          "id": "oblivion-remastered-performance-mod-built-with-claude",
+          "title": "A Claude-assisted mod lifts Oblivion Remastered FPS over 40%",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1xbwun6/oblivion_remastered_mod_built_using_claude_ai/",
+          "date": "2026-10-21",
+          "summary": "Wccftech reports the Oblivion Remastered Performance Fix, built with Claude Opus 5.5 over about two and a half weeks, raised an Imperial City 4K benchmark from 72 to 102 FPS and cut hitches over 50 ms from 19.5 to 4.8 per run. It contains roughly 40 engine-level optimizations and was mainly tested on one Ryzen 7 5800X and Radeon RX 9070 XT system. The thread has 645 upvotes; the top comment says AI-built mods are being removed on r/gaming.",
+          "source": "r/singularity",
+          "author": "u/PikaPikaDude",
+          "platform": "reddit",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 645,
+            "comments": 92
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "claude",
+            "modding",
+            "performance",
+            "gaming"
+          ],
+          "category": "Creator win",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Wccftech says Claude found lighting systems rebuilt every frame and single-threaded DX12 prep.",
+            "The beta ships with source and reproducible benchmark tools."
+          ],
+          "enterprise_translation": "Profile-then-patch is a strong agent task. Hand an agent a slow internal build or report generator with a benchmark script and a target number.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://wccftech.com/oblivion-remastered-mod-built-using-claude-ai-boosts-fps-by-over-40-and-drastically-reduces-stuttering-without-sacrificing-visual-quality/"
+            }
+          ]
+        },
+        {
+          "id": "claude-code-11-million-news-articles-patterns",
+          "title": "Claude Code mines 11 million news articles and reports 12 articles per real event",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1xaxzqv/i_handed_claude_code_a_database_of_11_million/",
+          "date": "2026-10-20",
+          "summary": "A side-project builder pointed Claude Code at a database of 11,079,667 articles collected over 164 days from 40,000+ sources and asked it to test hypotheses. The poster reports 12 articles per event, 4 in 10 events getting no second day of coverage, and 0.08% of events rated exceptional by an LLM judge. Top commenters question the source quality; the post has 1,183 upvotes.",
+          "source": "r/ClaudeCode",
+          "author": "u/conurbano",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 1183,
+            "comments": 281
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "claude-code",
+            "data-analysis",
+            "side-project",
+            "news"
+          ],
+          "category": "Indie project",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Claude first listed hypotheses, then ran queries against an export.",
+            "Source mix includes low-quality sites, which a top commenter calls out."
+          ],
+          "enterprise_translation": "Hand an agent a clean export plus a list of questions and let it propose its own hypotheses. A support-ticket or maintenance-log archive is a natural first target."
+        },
+        {
+          "id": "aivideo-26500-dollar-film-blender-workflow",
+          "title": "A studio spent $26,500 on a short film to find a Blender workflow that halves AI video costs",
+          "primary_url": "https://www.reddit.com/r/aivideo/comments/1xclika/we_spent_26500_on_this_film_to_figure_out_a/",
+          "date": "2026-10-22",
+          "summary": "The Nexus 6 team says the film was an R&D spend to find a Blender-plus-AI workflow that cuts production cost by half. The r/aivideo post has 1,093 upvotes. Commenters criticize script and camera work; one describes a client using AI video to simulate rare equipment failures from security-camera stills.",
+          "source": "r/aivideo",
+          "author": "u/NightsRadiant",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 1093,
+            "comments": 176
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "ai-video",
+            "blender",
+            "seedance",
+            "film"
+          ],
+          "category": "Creator workflow",
+          "recurrence": "new",
+          "key_takeaways": [
+            "The team frames the film as a paid experiment, not a finished product.",
+            "One commenter's client generates failure simulations from still frames."
+          ],
+          "enterprise_translation": "Treat the first production as the tooling study. Budget one real project to find the workflow, then reuse it."
+        }
+      ]
+    },
+    {
+      "section_id": "ai_for_science",
+      "title": "AI for Science",
+      "description": "Scientists, labs and builders using AI on real research problems.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "opus-audits-one-loop-quantum-gravity-calculation",
+          "title": "Opus 5.5 re-derives a published quantum gravity calculation and finds a sign error",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1x9rgzl/a_physicist_spent_a_year_of_his_life_and_500/",
+          "date": "2026-10-19",
+          "summary": "A physicist's GitHub repo says Claude re-derived a published one-loop quantum gravity calculation across 18 tasks, 183 pages and 38 reproducible checks. It found an overall sign error in the printed self-mass and a missing term, and the main physical conclusion survived. The Reddit title says 500 pages and 10 hours replacing a thesis year; the repo describes an audit of a published calculation, so trust the repo.",
+          "source": "r/singularity",
+          "author": "u/saln1",
+          "platform": "reddit",
+          "score": {
+            "total": 10,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 1134,
+            "comments": 287
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "ai-for-science",
+            "physics",
+            "claude",
+            "verification"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Audit mode: re-derive someone else's work step by step and classify discrepancies.",
+            "Thread has 1,134 upvotes and a long argument about what academic labor means now."
+          ],
+          "enterprise_translation": "Ask an agent to re-derive a key internal calculation, such as a heat-transfer or moisture model, and list every discrepancy. It's a cheap second pair of eyes on work that is already published.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://github.com/eokahya/claude-audits-quantum-gravity"
+            }
+          ],
+          "results": "Repo: 18 tasks, 183 pages, 38 checks, sign error and missing term found."
+        },
+        {
+          "id": "fields-medalist-pardon-ai-understands-proofs",
+          "title": "2026 Fields medalist John Pardon says AI now understands his messiest proofs",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1xaernx/2026_fields_medalist_john_pardon_says_ai_now/",
+          "date": "2026-10-20",
+          "summary": "In a Society for Science interview dated October 21, Pardon says AI finds subtle errors in his terse arguments and has produced a few nontrivial proofs of results he suspected were true. The r/singularity thread (921 upvotes) quotes 'The AI understands. 100%.' The interview page text we fetched supports the error-finding and proof claims; the exact '100%' quote is in the thread's screenshot, not the page excerpt.",
+          "source": "r/singularity",
+          "author": "u/141_1337",
+          "platform": "reddit",
+          "score": {
+            "total": 9.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 921,
+            "comments": 108
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "ai-for-science",
+            "mathematics",
+            "proofs"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Pardon says his writing is so compressed that human experts struggle to check it.",
+            "Top commenters describe the same shift from spellchecker to logic checker in their own work."
+          ],
+          "enterprise_translation": "Terse expert notes are exactly what a strong model reads well. Point one at a senior scientist's internal memo and ask what it would flag.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://www.societyforscience.org/blog/conversations-with-maya-john-pardon/"
+            }
+          ]
+        },
+        {
+          "id": "quanta-ai-quasi-riemann-proof-explained",
+          "title": "Quanta: human experts unpack the AI proof of the quasi-Riemann hypothesis",
+          "primary_url": "https://www.reddit.com/r/OpenAI/comments/1xao716/ai_proved_the_quasiriemann_hypothesis_what/",
+          "date": "2026-10-20",
+          "summary": "Quanta reports OpenAI's September 30 proof, which places zeta zeros between 1/8 and 7/8, is 199 pages and was formally verified in Lean. A second 49-page proof with a tighter 1/12 to 11/12 strip is not yet formally verified, and mathematicians have mostly studied it for being shorter. The r/OpenAI thread has 476 upvotes.",
+          "source": "r/OpenAI",
+          "author": "u/Malor777",
+          "platform": "reddit",
+          "score": {
+            "total": 8.5,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 476,
+            "comments": 159
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "ai-for-science",
+            "mathematics",
+            "openai",
+            "lean"
+          ],
+          "category": "AI for science",
+          "recurrence": "returning_theme",
+          "key_takeaways": [
+            "Experts largely agree the result is correct and see novelty in combining established ideas.",
+            "Lean verification covered the first proof, not the second."
+          ],
+          "enterprise_translation": "Pair a long machine-written derivation with a formal checker. Any team with a spec in code can do the same for its own claims.",
+          "recurrence_note": "Last week's index covered mathematicians reacting to OpenAI's batch of proofs.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://www.quantamagazine.org/ai-proved-the-quasi-riemann-hypothesis-what-happens-now-20261019"
+            }
+          ]
+        },
+        {
+          "id": "cern-mistral-large-physics-model",
+          "title": "CERN and Mistral plan a pretrained Large Physics Model for collider data",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1xa9oaz/cern_joins_forces_with_french_llm_company_mistral/",
+          "date": "2026-10-19",
+          "summary": "CERN says it signed a statement of intent with Mistral on a long-term partnership to build a single pretrained Large Physics Model, the first foundation model for collider physics. It would train on billions of simulated LHC proton-proton collisions. CERN holds about one exabyte of LHC data, and the HL-LHC will raise collision counts tenfold around 2030.",
+          "source": "r/singularity",
+          "author": "u/Upset-Jellyfish-235",
+          "platform": "reddit",
+          "score": {
+            "total": 8.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 165,
+            "comments": 18
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "ai-for-science",
+            "physics",
+            "mistral",
+            "foundation-model"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Initial focus is high-energy physics.",
+            "A top commenter calls it another test of the bitter lesson: specialist model versus frontier generalists."
+          ],
+          "enterprise_translation": "Domain foundation models trained on simulation output are now a serious bet. If your lab has years of simulation runs, that archive is the training set.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://home.cern/cern-and-mistral-join-forces-to-accelerate-ai-for-science/"
+            }
+          ]
+        },
+        {
+          "id": "carbon-x-open-dna-and-text-model",
+          "title": "Carbon-X: an open 14.8B model reads raw DNA and answers in English",
+          "primary_url": "https://www.reddit.com/r/MachineLearning/comments/1xchayq/carbonx_is_an_open_148b_model_trained_jointly_on/",
+          "date": "2026-10-22",
+          "summary": "Hugging Face's Carbon-X, Apache 2.0, starts from Qwen3-14B and scores 66.7% on five DNA benchmarks with thinking off, versus 67.5% for GPT-6.1 Sol. The model card says analyzing the 2.4 million ClinVar variants of uncertain significance would cost about $300, against $32,000 to $4 million for frontier models. The weights fit on a single 80 GB GPU.",
+          "source": "r/MachineLearning",
+          "author": "u/jatingargiitk",
+          "platform": "reddit",
+          "score": {
+            "total": 9.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 45,
+            "comments": 1
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "ai-for-science",
+            "genomics",
+            "open-weights",
+            "huggingface"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Leads every model tested on coding-variant effects and next-base prediction.",
+            "Runs locally, which matters for private variant datasets, as the poster notes."
+          ],
+          "enterprise_translation": "Small open domain models can match frontier APIs on narrow scientific tasks at a fraction of the cost. Benchmark one against your own labeled data.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://huggingface.co/HuggingFaceBio/Carbon-X"
+            }
+          ]
+        },
+        {
+          "id": "claude-runs-quantum-espresso-dft-in-sandbox",
+          "title": "A chemist finds Claude can install Quantum Espresso and run DFT in its own sandbox",
+          "primary_url": "https://www.reddit.com/r/comp_chem/comments/1xf0xzu/claude_can_run_dft_in_their_own_server_thats/",
+          "date": "2026-10-25",
+          "summary": "A r/comp_chem user asked Claude to install Quantum Espresso on its server and it did, then ran a silicon structure calculation. The thread is small (14 upvotes, 32 comments) but shows computational chemists testing the idea directly. The post does not give energies or settings.",
+          "source": "r/comp_chem",
+          "author": "u/YogurtclosetFickle17",
+          "platform": "reddit",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 14,
+            "comments": 32
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "ai-for-science",
+            "comp-chem",
+            "dft",
+            "claude"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "key_takeaways": [
+            "The poster used silicon as a test case.",
+            "No benchmark against a reference value appears in the post."
+          ],
+          "enterprise_translation": "Ask an agent to set up and run your standard validation case, such as silicon or a known cell, and compare to your reference numbers."
+        },
+        {
+          "id": "moltalk-chemistry-mcp-plugin-for-chatgpt",
+          "title": "MolTalk puts validated molecule drawing and 3D stereochemistry inside ChatGPT",
+          "primary_url": "https://www.reddit.com/r/comp_chem/comments/1xdsl0q/i_built_an_opensource_molecular_visualization/",
+          "date": "2026-10-23",
+          "summary": "An organic chemistry tutor built MolTalk, an open-source MCP server in the ChatGPT plugin marketplace that checks structures with RDKit, OPSIN and PubChem instead of the model's memory. It draws 2D and 3D structures, analyzes R/S and E/Z stereochemistry, and exports to ChemDraw CDXML, SDF, MOL and PDB. A commenter questions who it is for; the author says it also served as a way to learn MCP.",
+          "source": "r/comp_chem",
+          "author": "u/domfico",
+          "platform": "reddit",
+          "score": {
+            "total": 8.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 11,
+            "comments": 10
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "ai-for-science",
+            "chemistry",
+            "mcp",
+            "open-source"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "key_takeaways": [
+            "The bundled library holds 22,038 compounds.",
+            "It refuses ambiguous names or structures with unverifiable stereochemistry.",
+            "The author says a Claude version is under review."
+          ],
+          "enterprise_translation": "Wrap your domain's trusted toolkit as an MCP server and let the chat model call it instead of guessing. The pattern fits materials property lookups too.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://github.com/DomFico/moltalk"
+            }
+          ]
+        },
+        {
+          "id": "claude-scorpion-toxin-binders-lab-tested",
+          "title": "Claude designs 318,484 protein binders for scorpion toxins; 17 of 211 tested bind",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1xb2pme/a_fiveperson_investment_team_with_almost_no/",
+          "date": "2026-10-20",
+          "summary": "Anthropic and Citrini Research had an internal Claude model in Claude Science design minibinders against five scorpion neurotoxins over 64 hours, using an initial prompt and four follow-ups. Adaptyv Bio and Twist Bioscience tested 211 designs; 17 bound a single toxin, and the two best bound Cn2 in the single-digit nanomolar range near an antibody-neutralizing site. Anthropic says the work does not claim an antivenom.",
+          "source": "r/singularity",
+          "author": "u/141_1337",
+          "platform": "reddit",
+          "score": {
+            "total": 9.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 198,
+            "comments": 35
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "ai-for-science",
+            "protein-design",
+            "claude-science",
+            "wet-lab"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Claude used 12 design tools and screened 553,052 design-toxin pairs, about 10,000 GPU hours.",
+            "Among 60 single-toxin designs, 11 were binders (18%).",
+            "All 211 designs, predicted structures and experimental data are being released."
+          ],
+          "enterprise_translation": "Closed-loop design with an outside lab doing the test is a template for any materials or formulation problem: let the agent pick tools and thresholds, then spend your wet-lab budget only on its shortlist.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design"
+            }
+          ],
+          "results": "Anthropic page (2026-10-20): 211 tested, 17 binders, two at single-digit nM for Cn2. The Reddit title says a five-person team and 300+ agents; Anthropic's page does not state that, so the figures here follow Anthropic.",
+          "why_it_matters": "A named lab-validated hit rate for an autonomous design run, with the data being released."
+        },
+        {
+          "id": "gpt-rosalind-agents-mouse-brain-atlas-32-minutes",
+          "title": "Thousands of GPT-Rosalind agents read a mouse brain CRISPR atlas in 32 minutes",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1xbx2x9/openais_thousands_of_gptrosalind_agents_analyzed/",
+          "date": "2026-10-21",
+          "summary": "OpenAI, PerturbAI and Scripps Research ran thousands of GPT-Rosalind agents over existing data from millions of mouse brain cells in 32 minutes, a job the team estimates takes humans months to a year. Blinded experts preferred the distributed-agent reports over single-agent reports 75% of the time. The agents flagged a Tsc1 versus Tsc2 split in the cerebellum and a DCTN1 link to cholesterol genes.",
+          "source": "r/singularity",
+          "author": "u/141_1337",
+          "platform": "reddit",
+          "score": {
+            "total": 9.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 526,
+            "comments": 40
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "ai-for-science",
+            "gpt-rosalind",
+            "agents",
+            "neuroscience"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Each agent took one gene disruption, analyzed cell responses, searched literature and proposed mechanisms.",
+            "At the largest workload a single agent cited 11 references; the distributed agents cited more than 700.",
+            "Agents reproduced findings from human analyses and added further leads."
+          ],
+          "enterprise_translation": "Fan out one agent per perturbation, sample or formulation, then merge the reports into a single map. The same shape fits a big test-matrix from a materials or building-science lab.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data"
+            }
+          ],
+          "results": "OpenAI page (2026-10-21): 32 minutes, 75% expert preference, 700+ citations versus 11.",
+          "why_it_matters": "Distributed agents beat one long-running agent on the same model and budget, which is a design lesson beyond biology."
+        }
+      ]
+    },
+    {
+      "section_id": "use_cases",
+      "title": "Use Cases",
+      "description": "Real workflow wins: a clever build, a time saver, a distribution trick.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "healthcare-price-navigator-10k-users",
+          "title": "A chat tool over 100TB of published hospital prices reaches 10,000 users in 15 days",
+          "primary_url": "https://www.reddit.com/r/SideProject/comments/1xc59jz/the_us_healthcare_system_is_designed_to_hide/",
+          "date": "2026-10-22",
+          "summary": "A founder built an AI chat tool over insurer-published negotiated rate files to estimate procedure costs and find cheaper nearby providers. The poster says the same MRI can be $400 at one place and $2,800 ten minutes away and that SEO drove 10K users. The product page lists 10,000+ members, a 4.7 rating, $240 average savings per procedure and 83% finding a lower-cost option; commenters say plain search beats chat for this.",
+          "source": "r/SideProject",
+          "author": "u/DependentRun6816",
+          "platform": "reddit",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 252,
+            "comments": 44
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "side-project",
+            "seo",
+            "healthcare-prices",
+            "distribution"
+          ],
+          "category": "SMB / indie win",
+          "recurrence": "new",
+          "key_takeaways": [
+            "The data is the product; the chat layer drew the most criticism.",
+            "Distribution came from search, not paid ads, per the poster."
+          ],
+          "enterprise_translation": "Find a public dataset nobody can read and put a search box on it. Internal versions of the same idea: supplier price books or spec sheets.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://momentarylab.com/healthcare-navigator"
+            }
+          ],
+          "results": "Site figures are the company's own: 10,000+ members, 4.7 stars, $240 average savings."
+        },
+        {
+          "id": "opus-blender-mcp-animates-first-person-rifle",
+          "title": "Opus 5.5 plus Blender MCP animates a first-person rifle for Unity and Unreal",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1xblj73/opus_55_blender_mcp_animated_this_mp5/",
+          "date": "2026-10-21",
+          "summary": "A game dev says Opus 5.5 rigged, posed and animated a first-person weapon and hands in Blender, ready to import into Unity or Unreal, work he used to pay for. The video post has 854 upvotes. The top tip: give it many reference animations and write out each keyframe, since it has no sense of physics.",
+          "source": "r/ClaudeCode",
+          "author": "u/HBK-101",
+          "platform": "reddit",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 854,
+            "comments": 137
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "blender",
+            "mcp",
+            "animation",
+            "game-dev"
+          ],
+          "category": "Creator win",
+          "recurrence": "new",
+          "key_takeaways": [
+            "A commenter says GPT-6 Astra could not match the reload animation.",
+            "Reference clips plus detailed wording work best."
+          ],
+          "enterprise_translation": "Any tool with a scripting API can become an agent target. Pick the one your designers outsource most and try a reference-driven brief."
+        },
+        {
+          "id": "claude-code-2000-krea2-images-overnight",
+          "title": "Claude Code runs 2,000+ Krea2 images overnight and writes its own prompt notes",
+          "primary_url": "https://www.reddit.com/r/StableDiffusion/comments/1xcc7l0/i_let_claude_create_over_2000_krea2_images/",
+          "date": "2026-10-22",
+          "summary": "A creator let Claude Code drive a Krea2 API workflow, choose LoRAs, judge outputs and log findings to a 1,700-line notes file across about 2,100 images. He shared the notes and image set in the thread. The agent learned to avoid poetry-style prompts, favor long detailed prompts, skip high CFG and treat Krea2 text as weak.",
+          "source": "r/StableDiffusion",
+          "author": "u/reynadsaltynuts",
+          "platform": "reddit",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 358,
+            "comments": 92
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "stable-diffusion",
+            "claude-code",
+            "krea2",
+            "prompting"
+          ],
+          "category": "Creator workflow",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Most findings matched what the community already knew.",
+            "A commenter suggests turning the notes into a system prompt for a local prompt expander."
+          ],
+          "enterprise_translation": "Let an agent run an overnight sweep of any generative workflow and read its summary in the morning. It's a cheap way to find settings your team never tried."
+        },
+        {
+          "id": "claude-md-one-liners-that-changed-behavior",
+          "title": "The CLAUDE.md lines people say changed Claude Code the most",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1xeautc/whats_the_one_line_in_your_claudemd_that_made_the/",
+          "date": "2026-10-24",
+          "summary": "A 701-upvote thread collects single instructions that shift agent behavior. The opener: list every file you need, read them in one pass, make all edits, then run tests once, which stopped a read-edit loop that ate half the poster's usage. Top replies: treat all work as a queue and append corrections instead of dropping everything, and a 'less is more' simplicity rule.",
+          "source": "r/ClaudeCode",
+          "author": "u/GhaisD",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 701,
+            "comments": 162
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "claude-code",
+            "claude-md",
+            "tips"
+          ],
+          "category": "Dev workflow",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Queue rule (144 upvotes): new tweaks are appended, not allowed to preempt the current queue.",
+            "Simplicity rule (80 upvotes): review your own work and cut creeping complexity."
+          ],
+          "enterprise_translation": "Collect the three lines your team's best prompt-writers swear by and put them in a shared starter file."
+        },
+        {
+          "id": "web-browser-from-scratch-in-rust-with-claude-code",
+          "title": "A solo dev builds a Rust browser engine with Claude Code: 92% combined conformance",
+          "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1xd2oxt/i_built_a_web_browser_from_scratch_in_rust_with/",
+          "date": "2026-10-23",
+          "summary": "The builder reports T.A.B., a headless-first browser with its own JavaScript engine, JIT, DOM, CSS layout and WebAssembly runtime, scoring 91.42% on WPT testharness, 97.83% on Test262 and 100% on WebAssembly. He cites 1,763,775 passing results across five suites over a few months. Commenters point to Ladybird as another new-engine effort and question daily-use fit.",
+          "source": "r/ClaudeCode",
+          "author": "u/PhallicPorsche",
+          "platform": "reddit",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 528,
+            "comments": 273
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "claude-code",
+            "rust",
+            "browser",
+            "indie"
+          ],
+          "category": "Indie project",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Designed for agents to operate without a full Chromium.",
+            "Numbers are the builder's own test runs."
+          ],
+          "enterprise_translation": "Public conformance suites give an agent an objective score to climb. Find the equivalent test corpus for your own domain and set it as the target."
+        }
+      ]
+    },
+    {
+      "section_id": "new_releases",
+      "title": "New Releases and Demos",
+      "description": "Open models, tools and demos that landed this week and drew community attention.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "kitten-tts-2-ternary-cpu-voice-cloning",
+          "title": "Kitten-TTS 2: ternary-weight, CPU-friendly TTS with voice cloning in 16 languages",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xc48or/kittentts_2_new_opensource_sota_158_bit_tts/",
+          "date": "2026-10-22",
+          "summary": "KittenML released code and weights for Kitten-TTS 2, a roughly 1.7B speech model with in-context voice cloning from a 5 to 30 second clip, 115 voices and emotion tags. The ternary 1.58-bit body shrinks the language model file to 0.95 GB, and the model card says it runs on CPU out of the box. The license is a community license: free for research and limited commercial use until a user passes $1M in annual revenue or funding.",
+          "source": "r/LocalLLaMA",
+          "author": "u/ElectricalBar7464",
+          "platform": "reddit",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 830,
+            "comments": 155
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "tts",
+            "voice-cloning",
+            "open-weights",
+            "cpu"
+          ],
+          "category": "Open-source release",
+          "recurrence": "returning_theme",
+          "key_takeaways": [
+            "The thread has 830 upvotes; one commenter says the demo still sounds robotic next to Kokoro and Piper.",
+            "A llama.cpp fork is the listed fastest way to run it.",
+            "The post calls it the first 1.58-bit TTS; the card says the body is ternary with a bf16 embedding."
+          ],
+          "enterprise_translation": "Narration, accessibility audio and product demos can now run on a laptop CPU with a cloned house voice. Try your next training video.",
+          "recurrence_note": "Last week's index covered Fish Drama 3 TTS.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://huggingface.co/KittenML/kitten-tts-2"
+            }
+          ]
+        },
+        {
+          "id": "pocket-tts-shrinks-to-1-9-million-parameters",
+          "title": "Kyutai's Pocket TTS with voice cloning shrinks to 1.9 million parameters",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xauekr/pocket_tts_which_supports_voice_cloning_is_now/",
+          "date": "2026-10-20",
+          "summary": "The LocalLLaMA thread (476 upvotes) reports Kyutai's Pocket TTS, which supports voice cloning, is now 1.9 million parameters; Kyutai's post is titled 'The tiny TTS was actually 10x too big' and is dated October 20. We could not extract specifics from the blog text. The top three comments, from one user, say the new model replaces curse words and report an issue filed on GitHub.",
+          "source": "r/LocalLLaMA",
+          "author": "u/Affectionate_Hat_585",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 476,
+            "comments": 51
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "tts",
+            "kyutai",
+            "tiny-models",
+            "voice-cloning"
+          ],
+          "category": "Open-source release",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Blog confirmed by title and date only.",
+            "Behavior change in output reported by one commenter, unconfirmed."
+          ],
+          "enterprise_translation": "A voice model this small can ride inside a mobile app or a device. Think about toys, kiosks and wearables.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://kyutai.org/blog/2026-10-20-pocket-tts-small/"
+            }
+          ]
+        },
+        {
+          "id": "kimi-k3-1-pro-open-weight-1m-context",
+          "title": "Kimi K3.1 Pro: a 3T-class open-weight model with 1M context",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xdk6ow/introducing_kimi_k31_pro_advancing_open/",
+          "date": "2026-10-23",
+          "summary": "Moonshot's Kimi K3.1 Pro is live on Kimi apps and API, with full weights promised by November 4. The blog lists Terminal-Bench 4.0 at 65.7% against 66.4% for Claude Opus 5.5 and 58.2% for GPT-6 Astra, and a faster Highspeed variant at 2 to 3 times the speed. The r/LocalLLaMA thread has 536 upvotes and 260 comments; the blog does not state a license.",
+          "source": "r/LocalLLaMA",
+          "author": "u/Recoil42",
+          "platform": "reddit",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 536,
+            "comments": 260
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "kimi",
+            "open-weights",
+            "long-context",
+            "coding"
+          ],
+          "category": "Model release",
+          "recurrence": "new",
+          "key_takeaways": [
+            "3T-class, 1M-token context, post-trained from Kimi K3.",
+            "Highspeed variant released alongside."
+          ],
+          "enterprise_translation": "A frontier-class coding model with open weights coming in days is worth one afternoon on your hardest repo task.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+            }
+          ]
+        },
+        {
+          "id": "deepseek-open-sources-deepinfer-inference-engine",
+          "title": "DeepSeek open-sources DeepInfer, the inference stack behind its production service",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xanm55/deepseek_released_deepinfer_open_source/",
+          "date": "2026-10-20",
+          "summary": "DeepSeek published DeepInfer under Apache 2.0: FlashMLA, DeepGEMM, DeepEP, speculative decoding with confidence-scheduled verification, batch-invariant and deterministic modes, and structured outputs. It supports DeepSeek-V4.1-Flash on NVIDIA SM100 GPUs and Huawei Ascend 950 NPUs. The thread has 994 upvotes; the top comment questions why a commercial company would release its core engine.",
+          "source": "r/LocalLLaMA",
+          "author": "u/feelspeaceman",
+          "platform": "reddit",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 994,
+            "comments": 155
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "deepseek",
+            "inference",
+            "open-source",
+            "kernels"
+          ],
+          "category": "Open-source release",
+          "recurrence": "returning_theme",
+          "key_takeaways": [
+            "Deterministic sampling reproduces outputs for identical inputs and seeds, on NVIDIA only.",
+            "Community engines like PROMETHEVS can study its techniques."
+          ],
+          "enterprise_translation": "Read the engine, not just the model. Platform teams can mine it for serving tricks.",
+          "recurrence_note": "Last week's index listed DeepSeek V4.1 Flash on Hugging Face.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://github.com/deepseek-ai/DeepInfer"
+            }
+          ]
+        },
+        {
+          "id": "promethevs-full-deepseek-flash-on-gaming-pc",
+          "title": "PROMETHEVS runs full DeepSeek V4.1 Flash (510 GB) on a 64 GB RAM, RTX 3060 PC",
+          "primary_url": "https://www.reddit.com/r/LocalLLM/comments/1xdm3mc/full_deepseekv41flash1017_510_gb_original_weights/",
+          "date": "2026-10-23",
+          "summary": "PROMETHEVS streams the original 510 GB weights through VRAM, RAM and NVMe using a 2-bit copy plus a stored correction plane, hitting up to 7.4 tok/s with 98.3% agreement to the full model, per the poster. The repo is Apache 2.0, needs about 1.1 TB of NVMe and offers an OpenAI-compatible local server. Plain exact decoding on the same PC is 2.14 tok/s.",
+          "source": "r/LocalLLM",
+          "author": "u/Muted_Context_1999",
+          "platform": "reddit",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 130,
+            "comments": 42
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "local-llm",
+            "deepseek",
+            "moe",
+            "open-source"
+          ],
+          "category": "Local AI hardware",
+          "recurrence": "returning_theme",
+          "key_takeaways": [
+            "Uncertain tokens are recomputed with the exact weights.",
+            "A commenter notes word-by-word agreement does not show how far long answers drift."
+          ],
+          "enterprise_translation": "A five-year-old gaming PC now runs a frontier-class MoE slowly but fully local. That's enough for overnight batch jobs.",
+          "recurrence_note": "Last week's index carried a PS5 and a phone cluster running 27B models locally.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://github.com/Magnvs7/Promethevs"
+            }
+          ]
+        },
+        {
+          "id": "berth-gpu-lease-scheduler-for-one-card",
+          "title": "Berth lets chat, image and voice engines take turns on one 24 GB GPU",
+          "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xahi82/24gb_is_plenty_if_your_engines_take_turns/",
+          "date": "2026-10-20",
+          "summary": "Berth is an Apache-2.0 Go binary that queues GPU leases so chat models, ComfyUI and voice engines never load at once and crash each other. It reports processes holding VRAM without a lease and unloads the previous engine before granting the next. The thread has 538 upvotes; the author says it asks the NVIDIA driver what holds memory, unlike llama-swap.",
+          "source": "r/LocalLLaMA",
+          "author": "u/Distinct-Pie2389",
+          "platform": "reddit",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 538,
+            "comments": 188
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "gpu",
+            "scheduler",
+            "local-ai",
+            "open-source"
+          ],
+          "category": "Indie open source",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Priorities: hold, foreground, interactive, batch.",
+            "Lets a box run an agent at night and give the card back by day."
+          ],
+          "enterprise_translation": "One workstation, many engines. A shared lab GPU can run the same queue discipline.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://github.com/T-Crypt/berth"
+            }
+          ]
+        },
+        {
+          "id": "gemini-4-agents-beat-minecraft-27-hours",
+          "title": "Four Gemini 4 Argon agents beat Minecraft in 27 hours by writing 2,783 programs",
+          "primary_url": "https://www.reddit.com/r/artificial/comments/1xaqlya/google_deepmind_says_four_ai_agents_beat/",
+          "date": "2026-10-20",
+          "summary": "Tom's Hardware reports Google DeepMind's four Gemini 4 Argon agents finished Minecraft on Easy in 27 hours 14 minutes with no human input. They wrote 2,783 programs, died 605 times, spent about half the run on the Ender Dragon and cost an estimated $520 on introductory pricing. A top commenter says $520 is the number that matters; another notes Deep Blue cost over $2M and now runs on a phone.",
+          "source": "r/artificial",
+          "author": "u/ControlCAD",
+          "platform": "reddit",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "upvotes": 386,
+            "comments": 108
+          },
+          "verified": true,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "gemini-4",
+            "agents",
+            "minecraft",
+            "deepmind"
+          ],
+          "category": "Model demo",
+          "recurrence": "new",
+          "key_takeaways": [
+            "About 1.35 billion input tokens, 91% cached.",
+            "Agents wrote their own helper functions: 42 of them."
+          ],
+          "enterprise_translation": "Agents that write and reuse their own skill library beat fixed toolsets on long tasks. Give yours a place to save helpers.",
+          "secondary_urls": [
+            {
+              "label": "Fetched external source",
+              "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/google-deepmind-claims-four-gemini-4-agents-beat-minecraft-in-27-hours-by-writing-2-783-programs-of-their-own-the-ai-team-died-605-times-on-easy-difficulty-and-ran-up-an-estimated-usd520-in-tokens"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "tool_reviews",
+      "title": "Tool Reviews",
+      "description": "Honest community takes on tools people use every day, with a recommendation badge.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "gpt-6-astra-vs-kimi-k3-1-same-prompt-agent-trace",
+          "title": "GPT-6 Astra versus Kimi K3.1 on one 3D scene: faster and pricier versus cheaper and blind",
+          "primary_url": "https://www.reddit.com/r/ChatGPTPro/comments/1xdunox/gpt6_astra_took_35_small_steps_and_checked_its/",
+          "date": "2026-10-24",
+          "summary": "A same-prompt, same-agent test has both models build a 28 second 3D flight in a single HTML file. Astra took 9:17, 35 steps and about $2.63 and checked its own screenshots; Kimi K3.1 took 12:28, 20 steps, roughly half the cost and shipped without seeing its output. A commenter calls it the least subjective benchmark on Reddit; another preferred Astra's camera framing.",
+          "source": "r/ChatGPTPro",
+          "author": "u/GapNew4766",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 29,
+            "comments": 17
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "gpt-6-astra",
+            "kimi-k3-1",
+            "agents",
+            "benchmark"
+          ],
+          "category": "Tool review",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Astra: 1.21M prompt tokens at 97% cached, 22K output tokens.",
+            "Kimi: 725K prompt tokens, 49K output, 27.7K reasoning tokens.",
+            "Recommendation: pick Astra when visual self-checking matters; pick Kimi for cost."
+          ],
+          "enterprise_translation": "Run your own same-prompt trace comparison on a real task and record steps, tokens and whether the model looked at its work.",
+          "evaluation": "MONITOR"
+        },
+        {
+          "id": "cursor-user-switches-to-claude-code-harness",
+          "title": "A long-time Cursor defender switches to Claude Code after a pricing change",
+          "primary_url": "https://www.reddit.com/r/cursor/comments/1xe7rim/i_have_a_confession_i_was_wrong/",
+          "date": "2026-10-24",
+          "summary": "A 244-upvote r/cursor post says a recent pricing update with weekly reset limits pushed the author to Claude Code, where work arrives in one to five feedback rounds. His complaints: third-party models removed, harness and Composer development stopped. Another commenter says a $20 plan went from 2-3 weeks to under one. A skeptic says skills fix any harness gap.",
+          "source": "r/cursor",
+          "author": "u/Machine2024",
+          "platform": "reddit",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 244,
+            "comments": 57
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "cursor",
+            "claude-code",
+            "pricing",
+            "switching"
+          ],
+          "category": "Tool review",
+          "recurrence": "returning_theme",
+          "key_takeaways": [
+            "Split view: positive on the Cursor editor itself, negative on limits and model access.",
+            "Recommendation: re-price your editor seats against actual weekly usage."
+          ],
+          "enterprise_translation": "Track tokens per task across two harnesses for a week; the winner is often the one that needs fewer correction rounds.",
+          "recurrence_note": "Last week's index compared Antigravity usage limits with $20 plans.",
+          "evaluation": "MONITOR"
+        },
+        {
+          "id": "manus-chat-mode-returns-after-community-campaign",
+          "title": "Manus brings Chat Mode back after a #BringBackChatMode campaign",
+          "primary_url": "https://www.reddit.com/r/ManusOfficial/comments/1xe61uw/chat_mode_is_back/",
+          "date": "2026-10-24",
+          "summary": "Users on r/ManusOfficial report Chat Mode is back after a hashtag campaign. The thread has 38 upvotes, small but a clear case of users reversing a product removal. The post asks Manus to keep it permanently.",
+          "source": "r/ManusOfficial",
+          "author": "u/talitapereira",
+          "platform": "reddit",
+          "score": {
+            "total": 5,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 38,
+            "comments": 56
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "manus",
+            "chat-mode",
+            "community"
+          ],
+          "category": "Tool review",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Campaign thread (21 upvotes) preceded the announcement.",
+            "Recommendation: watch whether it stays."
+          ],
+          "enterprise_translation": "Public user threads moved a roadmap in days. Run a feedback hashtag when you retire a feature.",
+          "evaluation": "MONITOR"
+        },
+        {
+          "id": "notebooklm-gemini-notebook-notes-rework",
+          "title": "Gemini Notebook's co-founder explains the notes rework and promises fixes",
+          "primary_url": "https://www.reddit.com/r/notebooklm/comments/1xa14h0/update_on_changes_to_notes_from_the_gemini/",
+          "date": "2026-10-19",
+          "summary": "Steven Johnson says notes were previously invisible to the Notebook AI and are being rebuilt so users can ask questions about them, find themes and contradictions, and generate audio overviews from their writing. The 249-upvote thread's top reply thanks him for engaging; others ask for answers grounded only in attached sources.",
+          "source": "r/notebooklm",
+          "author": "u/Realistic_Cow1881",
+          "platform": "reddit",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 249,
+            "comments": 57
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "notebooklm",
+            "gemini-notebook",
+            "notes"
+          ],
+          "category": "Tool review",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Team says several fixes are in progress after user friction.",
+            "Recommendation: try notes-as-source if you write while you research."
+          ],
+          "enterprise_translation": "Treat your own notes as a source the AI can interrogate, not just your uploaded documents.",
+          "evaluation": "MONITOR"
+        },
+        {
+          "id": "notebooklm-82-minute-audio-overview-prompt",
+          "title": "NotebookLM audio overview stretched to 82 minutes with a custom prompt",
+          "primary_url": "https://www.reddit.com/r/notebooklm/comments/1xd66fh/82_minutes_for_the_audio_overview_an_all_time/",
+          "date": "2026-10-23",
+          "summary": "A user reached an 82 minute NotebookLM audio overview by choosing the long format and writing an explicit prompt for a comprehensive deep dive without skimming. Others say theirs cap near 20 minutes. The thread has 98 upvotes.",
+          "source": "r/notebooklm",
+          "author": "u/CharlesThy4th",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 98,
+            "comments": 33
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "notebooklm",
+            "audio-overview",
+            "tips"
+          ],
+          "category": "Tool tip",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Select Long in custom audio overview.",
+            "Demand no summarizing or shortening in the prompt."
+          ],
+          "enterprise_translation": "Turn a long report or standard into a commute-length audio brief for your team.",
+          "evaluation": "ADD TO WATCHLIST"
+        },
+        {
+          "id": "perplexity-200-dollar-plan-limits-complaint",
+          "title": "Perplexity users on a $200 plan hit upload limits and look at alternatives",
+          "primary_url": "https://www.reddit.com/r/perplexity_ai/comments/1xdq54l/paying_200_a_month_is_apparently_not_enough/",
+          "date": "2026-10-23",
+          "summary": "A screenshot post titled 'paying 200$ a month is apparently not enough' drew 79 upvotes. Commenters report upload limits and document handling that silently misses the end of files, and suggest Claude, a ChatGPT subscription or DeepSeek credits instead. It's a Tier 1 community signal, not a verified plan change.",
+          "source": "r/perplexity_ai",
+          "author": "u/Efficient_System_292",
+          "platform": "reddit",
+          "score": {
+            "total": 4,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 79,
+            "comments": 12
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "perplexity",
+            "limits",
+            "pricing"
+          ],
+          "category": "Tool review",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Student user says upload limits made them drop Pro.",
+            "Recommendation: test your own long-document workload before paying for a top tier."
+          ],
+          "enterprise_translation": "Keep a standing test document with a known ending to check whether any RAG tool reads the whole file.",
+          "evaluation": "MONITOR"
+        }
+      ]
+    },
+    {
+      "section_id": "hot_debates",
+      "title": "Hot Debates",
+      "description": "Active disagreements with more than one position.",
+      "layout": "debate",
+      "items": [
+        {
+          "id": "saas-weekend-with-claude-moat-debate",
+          "title": "Would you start a SaaS a weekend with Claude could replace?",
+          "primary_url": "https://www.reddit.com/r/SaaS/comments/1xa4de7/i_wouldnt_start_a_saas_company_in_2026_if_the/",
+          "date": "2026-10-19",
+          "summary": "A 990-upvote r/SaaS post argues thousands of products exist because building was hard, and a $29 a month tool is a hard business when Claude can make it in five minutes. Pushback: SaaS is more than a dashboard, and these apps were already one search away.",
+          "source": "r/SaaS",
+          "author": "u/Ahsan_weed1",
+          "platform": "reddit",
+          "score": {
+            "total": 5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 990,
+            "comments": 488
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "saas",
+            "vibe-coding",
+            "moats"
+          ],
+          "category": "Indie debate",
+          "recurrence": "new",
+          "key_takeaways": [
+            "For: custom tools replace light-use subscriptions.",
+            "Against: reliability, support and distribution are the product.",
+            "Founder question: why would customers still need you after the basic product is free?"
+          ],
+          "enterprise_translation": "Ask what part of your product a customer can't rebuild in a weekend, and put that front and center."
+        },
+        {
+          "id": "skyrim-ai-bard-mod-backlash",
+          "title": "A Skyrim mod where bards write songs about your adventures draws heavy backlash",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1xana1l/this_mod_received_insane_amount_of_ai_hate_and/",
+          "date": "2026-10-20",
+          "summary": "A modder built a local-model mod in which followers and bards compose songs from in-game events in about a minute, then replay them, and says it was downvoted heavily in modding communities. The r/singularity thread has 1,222 upvotes and 503 comments. Commenters split: one says people are scared, another plans to stay with pre-2022 games.",
+          "source": "r/singularity",
+          "author": "u/ReignMocap",
+          "platform": "reddit",
+          "score": {
+            "total": 7,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 1222,
+            "comments": 503
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "modding",
+            "skyrim",
+            "local-model",
+            "backlash"
+          ],
+          "category": "Creator debate",
+          "recurrence": "new",
+          "key_takeaways": [
+            "A related thread notes AI-built mods are removed on r/gaming while the Oblivion mod climbs here.",
+            "The mod runs on a local model."
+          ],
+          "enterprise_translation": "Games with generative memory feel alive. Try event-logged storytelling in a training sim."
+        },
+        {
+          "id": "opus-groundwater-glymphatic-hidden-connection-debate",
+          "title": "Opus links groundwater cleanup to how sleeping brains clear tau: new idea or known glymphatics?",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1xd3gnx/i_asked_opus_55_for_a_hidden_connection_between/",
+          "date": "2026-10-23",
+          "summary": "A user asked Opus 5.5 for an unpublished cross-field link and got pulsed pumping in groundwater cleanup mapped to vessel pulsing in sleep, predicting slower optimal pulses for larger molecules like tau. Claude itself walked back one claim and said the vessel-pulsing link is known. The top skeptic says it is just glymphatic clearance; the top supporter wants sources but likes the idea of cross-silo discovery.",
+          "source": "r/singularity",
+          "author": "u/abstrusejoker",
+          "platform": "reddit",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 286,
+            "comments": 108
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "ai-for-science",
+            "hypothesis-generation",
+            "neuroscience"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Prediction: optimal pulse rate depends on molecule size.",
+            "Poster asked for experts in brain fluid dynamics to check it."
+          ],
+          "enterprise_translation": "Ask a model for analogies from engineering fields to your science problem, then hand the shortlist to a specialist."
+        },
+        {
+          "id": "ml-researchers-ideas-faster-than-experiments",
+          "title": "ML researcher: AI generates research ideas faster than I can test them",
+          "primary_url": "https://www.reddit.com/r/MachineLearning/comments/1xa3svs/ai_generates_research_ideas_faster_than_i_can/",
+          "date": "2026-10-19",
+          "summary": "An r/MachineLearning poster says a single AI session reviewing 30 papers produced dozens of promising approaches, and the bottleneck is now launching runs and understanding results. The thread has 50 upvotes, 60 comments and a 0.66 upvote ratio, so opinions are split.",
+          "source": "r/MachineLearning",
+          "author": "u/Amazing-Coat5160",
+          "platform": "reddit",
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "upvotes": 50,
+            "comments": 60
+          },
+          "verified": false,
+          "verified_at": "2026-10-26T01:25:00Z",
+          "tags": [
+            "ai-for-science",
+            "research-workflow",
+            "bottleneck"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "key_takeaways": [
+            "Idea generation is cheap; experiment management is not.",
+            "Researchers still need to understand what is going on."
+          ],
+          "enterprise_translation": "Put an agent on experiment queues and result triage, not just brainstorming."
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "A Claude Code agent strips ads from parents' TV and the repo goes viral",
+      "primary_url": "https://www.reddit.com/r/SideProject/comments/1xbp1be/my_parents_tv_showed_an_ad_before_netflix_so_i/",
+      "score": 10,
+      "source": "r/SideProject",
+      "author": "u/Gathin23",
+      "date": "2026-10-21",
+      "upvotes": 456,
+      "comments": 99
+    },
+    {
+      "title": "Opus 5.5 finishes Baldur's Gate 3 alone: 39 hours, $712",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1x9ue4y/after_712_and_39_hours_opus_55_beat_baldurs_gate/",
+      "score": 10,
+      "source": "r/ClaudeCode",
+      "author": "u/Bogdanilaa",
+      "date": "2026-10-19",
+      "upvotes": 799,
+      "comments": 172
+    },
+    {
+      "title": "Anthropic launches Claude Duet, an agent that works while you are away",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1xbz98o/anthropic_unveils_claude_duet_a_proactive_ai/",
+      "score": 10,
+      "source": "r/singularity",
+      "author": "u/141_1337",
+      "date": "2026-10-21",
+      "upvotes": 980,
+      "comments": 180
+    },
+    {
+      "title": "MAFDET makes a local LLM think while you are still typing: 12 s wait drops to 3 s",
+      "primary_url": "https://www.reddit.com/r/LocalLLM/comments/1xclfjf/i_made_my_local_llm_start_thinking_while_im_still/",
+      "score": 10,
+      "source": "r/LocalLLM",
+      "author": "u/Oxygenne_",
+      "date": "2026-10-22",
+      "upvotes": 403,
+      "comments": 76
+    },
+    {
+      "title": "A kernel module unlocks about 2x BF16 speed on RTX 3000 cards",
+      "primary_url": "https://www.reddit.com/r/StableDiffusion/comments/1xcvlgt/it_turns_out_rtx_3000_series_can_run_bf16_almost/",
+      "score": 10,
+      "source": "r/StableDiffusion",
+      "author": "u/CeFurkan",
+      "date": "2026-10-22",
+      "upvotes": 1180,
+      "comments": 188
+    },
+    {
+      "title": "Opus 5.5 re-derives a published quantum gravity calculation and finds a sign error",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1x9rgzl/a_physicist_spent_a_year_of_his_life_and_500/",
+      "score": 10,
+      "source": "r/singularity",
+      "author": "u/saln1",
+      "date": "2026-10-19",
+      "upvotes": 1134,
+      "comments": 287
+    },
+    {
+      "title": "Claude designs 318,484 protein binders for scorpion toxins; 17 of 211 tested bind",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1xb2pme/a_fiveperson_investment_team_with_almost_no/",
+      "score": 9.5,
+      "source": "r/singularity",
+      "author": "u/141_1337",
+      "date": "2026-10-20",
+      "upvotes": 198,
+      "comments": 35
+    },
+    {
+      "title": "Thousands of GPT-Rosalind agents read a mouse brain CRISPR atlas in 32 minutes",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1xbx2x9/openais_thousands_of_gptrosalind_agents_analyzed/",
+      "score": 9.5,
+      "source": "r/singularity",
+      "author": "u/141_1337",
+      "date": "2026-10-21",
+      "upvotes": 526,
+      "comments": 40
+    },
+    {
+      "title": "2026 Fields medalist John Pardon says AI now understands his messiest proofs",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1xaernx/2026_fields_medalist_john_pardon_says_ai_now/",
+      "score": 9.5,
+      "source": "r/singularity",
+      "author": "u/141_1337",
+      "date": "2026-10-20",
+      "upvotes": 921,
+      "comments": 108
+    },
+    {
+      "title": "Carbon-X: an open 14.8B model reads raw DNA and answers in English",
+      "primary_url": "https://www.reddit.com/r/MachineLearning/comments/1xchayq/carbonx_is_an_open_148b_model_trained_jointly_on/",
+      "score": 9.5,
+      "source": "r/MachineLearning",
+      "author": "u/jatingargiitk",
+      "date": "2026-10-22",
+      "upvotes": 45,
+      "comments": 1
+    },
+    {
+      "title": "A Claude-assisted mod lifts Oblivion Remastered FPS over 40%",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1xbwun6/oblivion_remastered_mod_built_using_claude_ai/",
+      "score": 9,
+      "source": "r/singularity",
+      "author": "u/PikaPikaDude",
+      "date": "2026-10-21",
+      "upvotes": 645,
+      "comments": 92
+    },
+    {
+      "title": "A chat tool over 100TB of published hospital prices reaches 10,000 users in 15 days",
+      "primary_url": "https://www.reddit.com/r/SideProject/comments/1xc59jz/the_us_healthcare_system_is_designed_to_hide/",
+      "score": 9,
+      "source": "r/SideProject",
+      "author": "u/DependentRun6816",
+      "date": "2026-10-22",
+      "upvotes": 252,
+      "comments": 44
+    },
+    {
+      "title": "Kitten-TTS 2: ternary-weight, CPU-friendly TTS with voice cloning in 16 languages",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xc48or/kittentts_2_new_opensource_sota_158_bit_tts/",
+      "score": 9,
+      "source": "r/LocalLLaMA",
+      "author": "u/ElectricalBar7464",
+      "date": "2026-10-22",
+      "upvotes": 830,
+      "comments": 155
+    },
+    {
+      "title": "PROMETHEVS runs full DeepSeek V4.1 Flash (510 GB) on a 64 GB RAM, RTX 3060 PC",
+      "primary_url": "https://www.reddit.com/r/LocalLLM/comments/1xdm3mc/full_deepseekv41flash1017_510_gb_original_weights/",
+      "score": 9,
+      "source": "r/LocalLLM",
+      "author": "u/Muted_Context_1999",
+      "date": "2026-10-23",
+      "upvotes": 130,
+      "comments": 42
+    },
+    {
+      "title": "Quanta: human experts unpack the AI proof of the quasi-Riemann hypothesis",
+      "primary_url": "https://www.reddit.com/r/OpenAI/comments/1xao716/ai_proved_the_quasiriemann_hypothesis_what/",
+      "score": 8.5,
+      "source": "r/OpenAI",
+      "author": "u/Malor777",
+      "date": "2026-10-20",
+      "upvotes": 476,
+      "comments": 159
+    },
+    {
+      "title": "CERN and Mistral plan a pretrained Large Physics Model for collider data",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1xa9oaz/cern_joins_forces_with_french_llm_company_mistral/",
+      "score": 8.5,
+      "source": "r/singularity",
+      "author": "u/Upset-Jellyfish-235",
+      "date": "2026-10-19",
+      "upvotes": 165,
+      "comments": 18
+    },
+    {
+      "title": "MolTalk puts validated molecule drawing and 3D stereochemistry inside ChatGPT",
+      "primary_url": "https://www.reddit.com/r/comp_chem/comments/1xdsl0q/i_built_an_opensource_molecular_visualization/",
+      "score": 8.5,
+      "source": "r/comp_chem",
+      "author": "u/domfico",
+      "date": "2026-10-23",
+      "upvotes": 11,
+      "comments": 10
+    },
+    {
+      "title": "No coding background, six weeks, one Godot game built with Opus 5.5",
+      "primary_url": "https://www.reddit.com/r/ClaudeAI/comments/1xdhkzb/no_coding_or_gamedev_background_6_weeks_with_opus/",
+      "score": 8,
+      "source": "r/ClaudeAI",
+      "author": "u/Delicious-Shower8401",
+      "date": "2026-10-23",
+      "upvotes": 2273,
+      "comments": 193
+    },
+    {
+      "title": "A home-server fan rebuilds Plex with better live TV in a day",
+      "primary_url": "https://www.reddit.com/r/ChatGPT/comments/1x9nnpd/you_can_literally_just_recreate_almost_any_app_in/",
+      "score": 8,
+      "source": "r/ChatGPT",
+      "author": "u/enkidook",
+      "date": "2026-10-19",
+      "upvotes": 2157,
+      "comments": 623
+    },
+    {
+      "title": "Opus 5.5 plus Blender MCP animates a first-person rifle for Unity and Unreal",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1xblj73/opus_55_blender_mcp_animated_this_mp5/",
+      "score": 8,
+      "source": "r/ClaudeCode",
+      "author": "u/HBK-101",
+      "date": "2026-10-21",
+      "upvotes": 854,
+      "comments": 137
+    },
+    {
+      "title": "Claude Code runs 2,000+ Krea2 images overnight and writes its own prompt notes",
+      "primary_url": "https://www.reddit.com/r/StableDiffusion/comments/1xcc7l0/i_let_claude_create_over_2000_krea2_images/",
+      "score": 8,
+      "source": "r/StableDiffusion",
+      "author": "u/reynadsaltynuts",
+      "date": "2026-10-22",
+      "upvotes": 358,
+      "comments": 92
+    },
+    {
+      "title": "Kimi K3.1 Pro: a 3T-class open-weight model with 1M context",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xdk6ow/introducing_kimi_k31_pro_advancing_open/",
+      "score": 8,
+      "source": "r/LocalLLaMA",
+      "author": "u/Recoil42",
+      "date": "2026-10-23",
+      "upvotes": 536,
+      "comments": 260
+    },
+    {
+      "title": "DeepSeek open-sources DeepInfer, the inference stack behind its production service",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xanm55/deepseek_released_deepinfer_open_source/",
+      "score": 8,
+      "source": "r/LocalLLaMA",
+      "author": "u/feelspeaceman",
+      "date": "2026-10-20",
+      "upvotes": 994,
+      "comments": 155
+    },
+    {
+      "title": "Berth lets chat, image and voice engines take turns on one 24 GB GPU",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xahi82/24gb_is_plenty_if_your_engines_take_turns/",
+      "score": 8,
+      "source": "r/LocalLLaMA",
+      "author": "u/Distinct-Pie2389",
+      "date": "2026-10-20",
+      "upvotes": 538,
+      "comments": 188
+    },
+    {
+      "title": "Four Gemini 4 Argon agents beat Minecraft in 27 hours by writing 2,783 programs",
+      "primary_url": "https://www.reddit.com/r/artificial/comments/1xaqlya/google_deepmind_says_four_ai_agents_beat/",
+      "score": 8,
+      "source": "r/artificial",
+      "author": "u/ControlCAD",
+      "date": "2026-10-20",
+      "upvotes": 386,
+      "comments": 108
+    },
+    {
+      "title": "A chemist finds Claude can install Quantum Espresso and run DFT in its own sandbox",
+      "primary_url": "https://www.reddit.com/r/comp_chem/comments/1xf0xzu/claude_can_run_dft_in_their_own_server_thats/",
+      "score": 7.5,
+      "source": "r/comp_chem",
+      "author": "u/YogurtclosetFickle17",
+      "date": "2026-10-25",
+      "upvotes": 14,
+      "comments": 32
+    },
+    {
+      "title": "Opus links groundwater cleanup to how sleeping brains clear tau: new idea or known glymphatics?",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1xd3gnx/i_asked_opus_55_for_a_hidden_connection_between/",
+      "score": 7.5,
+      "source": "r/singularity",
+      "author": "u/abstrusejoker",
+      "date": "2026-10-23",
+      "upvotes": 286,
+      "comments": 108
+    },
+    {
+      "title": "Opus 5.5 decompiles a PS2-era game overnight and browser ports multiply",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1xa79hb/claude_opus_55_decompiles_a_ps2era_game_overnight/",
+      "score": 7,
+      "source": "r/ClaudeCode",
+      "author": "u/Resident-Fall4351",
+      "date": "2026-10-19",
+      "upvotes": 2295,
+      "comments": 317
+    },
+    {
+      "title": "NPCTalk makes GTA V characters answer in character, in cloned voices, under 1 second",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1xczh14/introducing_npctalk_make_the_npcs_of_any_game/",
+      "score": 7,
+      "source": "r/singularity",
+      "author": "u/Prime-Paradox",
+      "date": "2026-10-23",
+      "upvotes": 1168,
+      "comments": 143
+    },
+    {
+      "title": "Claude Code mines 11 million news articles and reports 12 articles per real event",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1xaxzqv/i_handed_claude_code_a_database_of_11_million/",
+      "score": 7,
+      "source": "r/ClaudeCode",
+      "author": "u/conurbano",
+      "date": "2026-10-20",
+      "upvotes": 1183,
+      "comments": 281
+    },
+    {
+      "title": "A studio spent $26,500 on a short film to find a Blender workflow that halves AI video costs",
+      "primary_url": "https://www.reddit.com/r/aivideo/comments/1xclika/we_spent_26500_on_this_film_to_figure_out_a/",
+      "score": 7,
+      "source": "r/aivideo",
+      "author": "u/NightsRadiant",
+      "date": "2026-10-22",
+      "upvotes": 1093,
+      "comments": 176
+    },
+    {
+      "title": "The CLAUDE.md lines people say changed Claude Code the most",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1xeautc/whats_the_one_line_in_your_claudemd_that_made_the/",
+      "score": 7,
+      "source": "r/ClaudeCode",
+      "author": "u/GhaisD",
+      "date": "2026-10-24",
+      "upvotes": 701,
+      "comments": 162
+    },
+    {
+      "title": "Kyutai's Pocket TTS with voice cloning shrinks to 1.9 million parameters",
+      "primary_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xauekr/pocket_tts_which_supports_voice_cloning_is_now/",
+      "score": 7,
+      "source": "r/LocalLLaMA",
+      "author": "u/Affectionate_Hat_585",
+      "date": "2026-10-20",
+      "upvotes": 476,
+      "comments": 51
+    },
+    {
+      "title": "GPT-6 Astra versus Kimi K3.1 on one 3D scene: faster and pricier versus cheaper and blind",
+      "primary_url": "https://www.reddit.com/r/ChatGPTPro/comments/1xdunox/gpt6_astra_took_35_small_steps_and_checked_its/",
+      "score": 7,
+      "source": "r/ChatGPTPro",
+      "author": "u/GapNew4766",
+      "date": "2026-10-24",
+      "upvotes": 29,
+      "comments": 17
+    },
+    {
+      "title": "NotebookLM audio overview stretched to 82 minutes with a custom prompt",
+      "primary_url": "https://www.reddit.com/r/notebooklm/comments/1xd66fh/82_minutes_for_the_audio_overview_an_all_time/",
+      "score": 7,
+      "source": "r/notebooklm",
+      "author": "u/CharlesThy4th",
+      "date": "2026-10-23",
+      "upvotes": 98,
+      "comments": 33
+    },
+    {
+      "title": "A Skyrim mod where bards write songs about your adventures draws heavy backlash",
+      "primary_url": "https://www.reddit.com/r/singularity/comments/1xana1l/this_mod_received_insane_amount_of_ai_hate_and/",
+      "score": 7,
+      "source": "r/singularity",
+      "author": "u/ReignMocap",
+      "date": "2026-10-20",
+      "upvotes": 1222,
+      "comments": 503
+    },
+    {
+      "title": "A solo dev builds a Rust browser engine with Claude Code: 92% combined conformance",
+      "primary_url": "https://www.reddit.com/r/ClaudeCode/comments/1xd2oxt/i_built_a_web_browser_from_scratch_in_rust_with/",
+      "score": 6,
+      "source": "r/ClaudeCode",
+      "author": "u/PhallicPorsche",
+      "date": "2026-10-23",
+      "upvotes": 528,
+      "comments": 273
+    },
+    {
+      "title": "A long-time Cursor defender switches to Claude Code after a pricing change",
+      "primary_url": "https://www.reddit.com/r/cursor/comments/1xe7rim/i_have_a_confession_i_was_wrong/",
+      "score": 6,
+      "source": "r/cursor",
+      "author": "u/Machine2024",
+      "date": "2026-10-24",
+      "upvotes": 244,
+      "comments": 57
+    },
+    {
+      "title": "Gemini Notebook's co-founder explains the notes rework and promises fixes",
+      "primary_url": "https://www.reddit.com/r/notebooklm/comments/1xa14h0/update_on_changes_to_notes_from_the_gemini/",
+      "score": 6,
+      "source": "r/notebooklm",
+      "author": "u/Realistic_Cow1881",
+      "date": "2026-10-19",
+      "upvotes": 249,
+      "comments": 57
+    },
+    {
+      "title": "ML researcher: AI generates research ideas faster than I can test them",
+      "primary_url": "https://www.reddit.com/r/MachineLearning/comments/1xa3svs/ai_generates_research_ideas_faster_than_i_can/",
+      "score": 5.5,
+      "source": "r/MachineLearning",
+      "author": "u/Amazing-Coat5160",
+      "date": "2026-10-19",
+      "upvotes": 50,
+      "comments": 60
+    },
+    {
+      "title": "Manus brings Chat Mode back after a #BringBackChatMode campaign",
+      "primary_url": "https://www.reddit.com/r/ManusOfficial/comments/1xe61uw/chat_mode_is_back/",
+      "score": 5,
+      "source": "r/ManusOfficial",
+      "author": "u/talitapereira",
+      "date": "2026-10-24",
+      "upvotes": 38,
+      "comments": 56
+    },
+    {
+      "title": "Would you start a SaaS a weekend with Claude could replace?",
+      "primary_url": "https://www.reddit.com/r/SaaS/comments/1xa4de7/i_wouldnt_start_a_saas_company_in_2026_if_the/",
+      "score": 5,
+      "source": "r/SaaS",
+      "author": "u/Ahsan_weed1",
+      "date": "2026-10-19",
+      "upvotes": 990,
+      "comments": 488
+    },
+    {
+      "title": "Perplexity users on a $200 plan hit upload limits and look at alternatives",
+      "primary_url": "https://www.reddit.com/r/perplexity_ai/comments/1xdq54l/paying_200_a_month_is_apparently_not_enough/",
+      "score": 4,
+      "source": "r/perplexity_ai",
+      "author": "u/Efficient_System_292",
+      "date": "2026-10-23",
+      "upvotes": 79,
+      "comments": 12
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Agent memory and handoff files are the real engineering",
+      "evidence": "The BG3 run spent most effort on per-session memory, the CLAUDE.md thread's top lines are about queues and read-once passes, and GPT-Rosalind's distributed agents cited 700+ references versus 11 for one agent.",
+      "what_to_watch": "Whether memory layers become a shared product feature rather than per-project glue."
+    },
+    {
+      "pattern": "Domain toolkits wrapped as MCP servers",
+      "evidence": "MolTalk wraps RDKit, OPSIN and PubChem for chat; Blender MCP drives rigging and animation; BG3 uses a Python MCP bridge to a Lua mod.",
+      "what_to_watch": "Marketplace growth for science and CAD-style MCP servers."
+    },
+    {
+      "pattern": "Cheap idle compute and spare hardware as inference",
+      "evidence": "MAFDET uses typing time, Berth shares one 24 GB card, gpu-unlock lifts RTX 3000 BF16, PROMETHEVS streams a 510 GB model through NVMe.",
+      "what_to_watch": "Whether llama.cpp absorbs read-ahead prefill."
+    },
+    {
+      "pattern": "Community split over AI in games",
+      "evidence": "The Oblivion performance mod got 645 upvotes on r/singularity while a commenter says similar posts are removed on r/gaming; the Skyrim bard mod author reports heavy downvotes.",
+      "what_to_watch": "Whether game-sub rules change."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Reddit title claims a five-person investment team with 300+ agents designed the scorpion binders.",
+      "reason": "Anthropic's page says Claude Science with Citrini Research, 12 design tools and a 64-hour run; it does not state team size or agent count. Tab uses Anthropic's figures.",
+      "attempted_url": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design"
+    },
+    {
+      "claim": "Reddit title says a physicist's year of thesis calculations was done in 10 hours by Opus 5.5.",
+      "reason": "The repo describes a re-derivation audit of a published one-loop calculation (18 tasks, 183 pages), not a thesis replacement. Tab uses the repo wording.",
+      "attempted_url": "https://github.com/eokahya/claude-audits-quantum-gravity"
+    },
+    {
+      "claim": "u/Delicious-Shower8401's GPT-6 Astra driving game post (r/ChatGPT, 1,929 upvotes) and Godot game relay.",
+      "reason": "A top comment says the account re-posts other creators' X content. The driving-game post was left out; the Godot relay is included as unverified and attributed to the poster's account of an interview.",
+      "attempted_url": "https://www.reddit.com/r/ChatGPT/comments/1xcmyru/"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "r/ChatGPTPromptGenius (not pulled)",
+      "r/ps5homebrew",
+      "r/Rag"
+    ],
+    "sources_to_drop": [
+      "r/BetterOffline (sampled only)",
+      "r/GoogleAntigravityIDE (23 posts, none above threshold)"
+    ],
+    "topics_to_add": [
+      "lab automation and self-driving lab threads (r/labrats had almost none this week)",
+      "materials and building-science AI adoption stories",
+      "small-business automation with revenue numbers",
+      "scientist adoption stories from R&D groups"
+    ],
+    "topics_to_drop": [],
+    "notes": "Direct Reddit access was blocked (HTTP 403 on reddit.com JSON and old.reddit.com, robots disallow on page fetch). Thread titles, authors, dates, bodies, comments, upvote and comment counts came from the Arctic Shift public archive (snapshot about 2026-10-26T01:20Z, so counts can lag live values) and are labeled as archive-sourced; reddit.com permalinks were built from archive records and were not loaded, so permalink resolution is not directly verified. 'verified: true' means the headline claim was confirmed on a fetched external primary or secondary page (GitHub, Anthropic, OpenAI, Quanta, CERN, Kotaku and others, listed in secondary_urls); 'verified: false' means only the archive record and thread text support it, and the dashboard will show an UNVERIFIED pill. Window used: Oct 19 04:00Z to Oct 26 01:00Z, so Sunday evening posts have low counts. Pagination: r/SideProject was capped at 4,000 posts and stops near Oct 22, and r/ClaudeAI and other large subs may have gaps. r/perplexity_ai, r/notebooklm and r/ManusOfficial had few high-score posts. Comments were read from the top three archive comments per thread, which can differ from live ranking. Left out by design: threads outside this desk's opportunity-focused scope, and pure career-anxiety threads such as 'I'm tired, boss' (4,989 upvotes). Direct duplicates of last week: none found. Freshness: 36 of 43 items new; 7 are returning_theme. Mix by item: 34 of 43 consumer, creator, SMB, indie or science items; releases and demos make up most of the rest; enterprise-platform items: 0. The index lists every item in the tab; more candidates existed but were left out rather than padded."
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "week_start": "2026-10-19",
+  "week_end": "2026-10-25",
+  "generated_at": "2026-10-26T01:41:27Z",
+  "headline": "A 3.1M-parameter model transfers building-control forecasts across climates, and agents now run chemistry and EnergyPlus work from plain language.",
+  "summary_for_scientists": "TTM4HVAC, a small pretrained time-series model, cuts HVAC power forecast error by up to 36% and indoor temperature error by up to 44% on a new building, and its checkpoints are public. Open agents now drive EnergyPlus and computational chemistry from plain-language requests, and a Claude-designed protein run produced 17 lab-confirmed binders out of 211 tested. Thousands of parallel agents read millions of mouse brain cells in 32 minutes, a pattern any literature-heavy group can copy.",
+  "lab_pick": {
+    "tab_id": "research",
+    "item_id": "ttm4hvac-building-control-foundation-model",
+    "title": "A 3.1M-parameter time-series model cuts building HVAC forecast error by up to 44%",
+    "primary_url": "https://link.springer.com/article/10.1007/s12273-026-1501-5",
+    "what_they_did": "The team fine-tuned IBM's TinyTimeMixer on 32 one-year simulated trajectories from 6 buildings, 4 climates, and 2 control policies, using EnergyPlus, SINERGYM, and BOPTEST. They then transferred it to a new target building.",
+    "result": "RMSE dropped by up to 36% for HVAC power and 44% for indoor temperature, and R-squared rose by 0.44 and 0.80 against a model trained on the target alone.",
+    "why_researchers_care": "A building scientist gets a pretrained forecaster that fits in 3.1M parameters, with public checkpoints and a dataset DOI, so transfer across climates can be tested on a laptop before any new sensors go in.",
+    "how_to_share": "Share with your lab: pull the gft/ttm4hvac checkpoint, run the card's example dataset at 15-minute sampling, then fine-tune on one year of your own building or process-line data and compare RMSE against your current model. A first pass fits in a day on a laptop."
+  },
+  "sections": [
+    {
+      "section_id": "materials_chemistry",
+      "title": "Materials & Chemistry",
+      "description": "Agents that run molecular and electronic-structure calculations from plain-language requests, packaged as repos and skills you can install.",
+      "items": [
+        {
+          "tab_id": "builders",
+          "item_id": "argonne-lcf-chemgraph",
+          "title": "argonne-lcf/ChemGraph",
+          "source": "GitHub (Argonne LCF)",
+          "primary_url": "https://github.com/argonne-lcf/ChemGraph",
+          "one_line": "ChemGraph connects natural-language requests to molecule building, simulation and reporting through LangGraph, ASE, RDKit and MCP, with MACE and TBLite calculators. This week a Deep Agent evaluation harness merged, so pass rates on chemistry tasks are measurable.",
+          "try_this": "Pick five calculations your group runs by hand each week, let ChemGraph attempt them with MACE, and have a scientist grade the outputs."
+        },
+        {
+          "tab_id": "builders",
+          "item_id": "jinzhezenggroup-computational-chemistry-agent-skills",
+          "title": "jinzhezenggroup/computational-chemistry-agent-skills",
+          "source": "GitHub (jinzhezenggroup)",
+          "primary_url": "https://github.com/jinzhezenggroup/computational-chemistry-agent-skills",
+          "one_line": "About 35 agent skills package computational-chemistry workflows such as DeePMD training and LAMMPS runs, with a hosted skill browser. The library underlies a 2026 J. Chem. Theory Comput. paper and has 154 stars.",
+          "try_this": "Install one skill, hand it a LAMMPS run you have done before, and compare the agent's setup with your own input files."
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "claude-runs-quantum-espresso-dft-in-sandbox",
+          "title": "A chemist finds Claude can install Quantum Espresso and run DFT in its own sandbox",
+          "source": "r/comp_chem",
+          "primary_url": "https://www.reddit.com/r/comp_chem/comments/1xf0xzu/claude_can_run_dft_in_their_own_server_thats/",
+          "one_line": "A computational chemist asked Claude to install Quantum Espresso on its server, and it did, then ran a silicon structure calculation. The thread drew 14 upvotes and 32 comments from chemists testing the idea.",
+          "try_this": "Repeat the silicon test, then ask for a cell your group has already converged and compare energies against your reference."
+        }
+      ]
+    },
+    {
+      "section_id": "simulation_building_science",
+      "title": "Simulation & Building Science",
+      "description": "Plain-language control of EnergyPlus, faster solvers, and zero-shot forecasting on field sensor data.",
+      "items": [
+        {
+          "tab_id": "builders",
+          "item_id": "idfkit-idfkit-mcp",
+          "title": "idfkit/idfkit-mcp",
+          "source": "GitHub (idfkit)",
+          "primary_url": "https://github.com/idfkit/idfkit-mcp",
+          "one_line": "idfkit-mcp is an MCP server with 37 tools and 13 resources that lets an assistant build, edit, validate and simulate EnergyPlus models in plain language, across EnergyPlus 8.9 through 26.2. Describe a building and it creates zones, surfaces, constructions, schedules and HVAC.",
+          "try_this": "Hand a sample IDF to a building scientist, ask for three setpoint variants by chat, and compare the time against their usual workflow."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "timesfm-zero-shot-soil-moisture",
+          "title": "A zero-shot time-series model beats statistical baselines by 21% to 76% for soil forecasts under a day",
+          "source": "arXiv",
+          "primary_url": "https://arxiv.org/abs/2610.30971",
+          "one_line": "TimesFM 1, a 500M-parameter model with no training, beat persistence, seasonal-naive and 7-day climatology by 21% to 76% at sub-daily horizons on 15-minute telemetry from 27 field sensor stations. It loses beyond 24 hours.",
+          "try_this": "Point a zero-shot forecaster at a month of your own 15-minute sensor logs and score it against persistence at 1, 6 and 24 hours."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "nvidia-cudss-general-availability",
+          "title": "NVIDIA cuDSS reaches general availability, with 8x to 10x solver speedups reported in Abaqus",
+          "source": "NVIDIA Blog",
+          "primary_url": "https://blogs.nvidia.com/blog/cudss-generally-available-engineering-scientific-simulation/",
+          "one_line": "cuDSS moves the sparse linear solve that dominates many engineering simulations onto GPUs, callable from C, C++, Python and Fortran. NVIDIA reports 8x to 10x in Abaqus, up to 10x in Applied Materials' Ginestra, and 4x in a COMSOL plasma benchmark.",
+          "try_this": "Time the sparse solve in one of your finite-element models and see how many more design variants fit in a day."
+        }
+      ]
+    },
+    {
+      "section_id": "lab_automation",
+      "title": "Lab Automation & Scientific Reasoning",
+      "description": "Self-driving lab steering in plain language, lab-confirmed autonomous design, and AI re-deriving published physics.",
+      "items": [
+        {
+          "tab_id": "social",
+          "item_id": "krict-conversational-ai-self-driving-labs-natural-language-priors",
+          "title": "KRICT lets researchers steer self-driving labs in plain language, cutting searches from about 30 to under 10",
+          "source": "EurekAlert / KRICT",
+          "primary_url": "https://www.eurekalert.org/news-releases/1148248",
+          "one_line": "An LLM turns a researcher's statement such as 'increasing the temperature improves yield' into priors for Bayesian optimization, with a detector that switches off advice the data contradicts. One reaction needed fewer than 10 searches instead of about 30, and a conductive composite needed 3 to 5 instead of about 20.",
+          "try_this": "Write your own rule of thumb for a formulation or reaction and replay a past optimization with it as a prior."
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "claude-scorpion-toxin-binders-lab-tested",
+          "title": "Claude designs 318,484 protein binders for scorpion toxins; 17 of 211 tested bind",
+          "source": "r/singularity (Anthropic)",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1xb2pme/a_fiveperson_investment_team_with_almost_no/",
+          "one_line": "An internal Claude model in Claude Science designed minibinders against five scorpion neurotoxins over 64 hours using 12 design tools. Of 211 designs tested at Adaptyv Bio and Twist Bioscience, 17 bound, and the two best bound Cn2 in the single-digit nanomolar range. All designs, predicted structures and experimental data are being released."
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "opus-audits-one-loop-quantum-gravity-calculation",
+          "title": "Opus 5.5 re-derives a published quantum gravity calculation and finds a sign error",
+          "source": "r/singularity",
+          "primary_url": "https://www.reddit.com/r/singularity/comments/1x9rgzl/a_physicist_spent_a_year_of_his_life_and_500/",
+          "one_line": "A physicist's repo reports Claude re-deriving a published one-loop calculation across 18 tasks, 183 pages and 38 reproducible checks. It found an overall sign error in the printed self-mass and a missing term, and the main physical conclusion held.",
+          "try_this": "Give an agent one derivation from your own past paper and ask it to re-derive each step and classify any discrepancy."
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "quanta-ai-quasi-riemann-proof-explained",
+          "title": "Quanta: human experts unpack the AI proof of the quasi-Riemann hypothesis",
+          "source": "r/OpenAI (Quanta)",
+          "primary_url": "https://www.reddit.com/r/OpenAI/comments/1xao716/ai_proved_the_quasiriemann_hypothesis_what/",
+          "one_line": "OpenAI's September 30 proof places zeta zeros between 1/8 and 7/8, runs 199 pages and was formally verified in Lean. A second 49-page proof with a tighter 1/12 to 11/12 strip is shorter, and experts largely agree the result is correct."
+        }
+      ]
+    },
+    {
+      "section_id": "rd_adoption",
+      "title": "How R&D Teams Are Adopting AI",
+      "description": "A parallel-agent method with a blind expert test, an embedded residency for academic labs, and a view on where the bottleneck moves.",
+      "items": [
+        {
+          "tab_id": "research",
+          "item_id": "openai-distributed-agents-brain-cell-atlas",
+          "title": "Thousands of parallel research agents read millions of mouse brain cells in 32 minutes",
+          "source": "OpenAI",
+          "primary_url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data/",
+          "one_line": "OpenAI, PerturbAI and Scripps split one single-cell analysis across thousands of GPT-Rosalind agents. On the largest workload the distributed reports cited more than 700 references against 11 for a single agent, experts preferred them 75% of the time, and the run surfaced a DCTN1 cholesterol lead.",
+          "try_this": "Split one literature review into 50 independent sub-questions, run them as parallel agents, and have an expert blind-rank the merged report against the manual one."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "anthropic-guest-investigators-life-sciences",
+          "title": "Anthropic opens an embedded residency for academic life-science labs",
+          "source": "Anthropic",
+          "primary_url": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences",
+          "one_line": "Principal investigators at academic, nonprofit and government labs can spend 8 to 12 weeks working beside Anthropic researchers, with models provided at no cost, data rights kept, and outputs open-sourced and co-published. The application window is about two weeks.",
+          "try_this": "Borrow the structure: embed one lab scientist with an AI team for 8 to 12 weeks against a single measurable question."
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "tomasev-ai-science-needs-physical-labs-mts",
+          "title": "AI Science Requires Physical Labs To Scale | Nenad Tomasev",
+          "source": "MTS (YouTube)",
+          "primary_url": "https://www.youtube.com/watch?v=sTexzVhrJZI",
+          "one_line": "Google DeepMind's Nenad Tomasev says agents already generate usable hypotheses in biomedicine and materials science, and the bottleneck moves downstream to validation in physical labs with human experts."
+        }
+      ]
+    },
+    {
+      "section_id": "research_tools",
+      "title": "Tools Researchers Can Use Now",
+      "description": "Open data and plugins a researcher can open today.",
+      "items": [
+        {
+          "tab_id": "research",
+          "item_id": "olmoearth-v1-3-planet-embeddings",
+          "title": "OlmoEarth v1.3 ships a 10-meter embedding for every place on Earth, reproducible for about $2,720",
+          "source": "Ai2 on Hugging Face",
+          "primary_url": "https://huggingface.co/blog/allenai/olmoearth-v1-3",
+          "one_line": "Precomputed annual embeddings from Sentinel-1, Sentinel-2 and Landsat cover the planet at 10 meters, and the 128-dimension version scored highest on 20 of 27 evaluations against AlphaEarth Foundations and Tessera v2. A no-GPU explorer and open pretraining code are included.",
+          "try_this": "Click a site in the explorer, add a few labeled points, and classify land cover or detect change without a GPU."
+        },
+        {
+          "tab_id": "reddit",
+          "item_id": "moltalk-chemistry-mcp-plugin-for-chatgpt",
+          "title": "MolTalk puts validated molecule drawing and 3D stereochemistry inside ChatGPT",
+          "source": "r/comp_chem",
+          "primary_url": "https://www.reddit.com/r/comp_chem/comments/1xdsl0q/i_built_an_opensource_molecular_visualization/",
+          "one_line": "MolTalk is an open-source MCP server that checks structures with RDKit, OPSIN and PubChem instead of the model's memory, draws 2D and 3D structures, analyzes R/S and E/Z stereochemistry, and exports to ChemDraw CDXML, SDF, MOL and PDB. Its library holds 22,038 compounds.",
+          "try_this": "Ask it for the R/S assignment of a molecule from your last synthesis and export the result to SDF."
+        }
+      ]
+    }
+  ],
+  "try_in_the_lab": [
+    "Pull the gft/ttm4hvac checkpoint, run the example dataset at 15-minute sampling, then fine-tune on one year of your own building data and compare RMSE against your current model.",
+    "Split one literature review into 50 independent sub-questions, run them as parallel agents, and have an expert blind-rank the merged report against the manual one.",
+    "Hand a sample IDF to a building scientist and have them run three setpoint variants by chatting with idfkit-mcp, then compare the time to their usual workflow.",
+    "Pick five calculations your group runs by hand each week, let ChemGraph attempt them with MACE, and have a scientist grade the outputs."
+  ]
+}
