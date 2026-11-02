@@ -1,0 +1,926 @@
+{
+  "tab_id": "research",
+  "tab_name": "Research",
+  "subtitle": "Primary-Source Intelligence",
+  "icon": "FileText",
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 0.84,
+    "items_total": 19,
+    "items_new": 16,
+    "items_returning": 3
+  },
+  "min_items": 10,
+  "executive_summary": [
+    {
+      "headline": "AI-guided screening hits 27.2% in perovskite solar cells",
+      "body": "A Nature Synthesis study narrowed 90,000 generated molecules to 300 and built one that held over 95% of efficiency after 2,000 hours at 65 °C. The screening code is on GitHub.",
+      "primary_url": "https://www.nature.com/articles/s44160-026-01203-4"
+    },
+    {
+      "headline": "Mining old papers reopened the MXene family",
+      "body": "Machine-learning database mining flagged 33 overlooked MXenes and led to 11 new rare-earth ones, made by a method that needs no sustained heating.",
+      "primary_url": "https://doi.org/10.1126/science.aeh5957"
+    },
+    {
+      "headline": "Lab agents that veto each other ran a real experiment",
+      "body": "Reviewer agents on a quantum-spin setup caught a drifting signal, called the first run inconclusive and re-ran it to the same acceptance bar.",
+      "primary_url": "https://arxiv.org/abs/2610.40589"
+    },
+    {
+      "headline": "Labs are organizing around AI output",
+      "body": "OpenAI is handing AI-produced math, complexity and physics results to outside expert groups, and Anthropic's science program now spans 20 foundations and institutes.",
+      "primary_url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "ai-guided-sams-perovskite-solar-27-percent",
+      "title": "AI-guided screening finds a perovskite solar interface molecule that reaches 27.2% efficiency",
+      "subtitle": "90,000 generated structures narrowed to 300 candidates; code is public",
+      "source": "Nature Synthesis",
+      "author": "Fengchun Cai, Geping Qu, Alex K.-Y. Jen, Jun Jiang, Zong-Xiang Xu, Jixian Xu and colleagues",
+      "date": "2026-10-28",
+      "primary_url": "https://www.nature.com/articles/s44160-026-01203-4",
+      "summary": "The team combined retrosynthetic prediction, high-throughput DFT screening and chemical expertise to rank candidate self-assembled monolayers for perovskite solar cells. More than 90,000 structures built from 308 fragments were narrowed to 300 candidates scored on eight descriptors. Devices with the top molecule, AI-1, reached 27.2% power-conversion efficiency and kept more than 95% of initial efficiency after 2,000 hours of maximum-power-point tracking at 65 °C. Code for fragment extraction, generation, DFT screening and ranking is on GitHub.",
+      "platform": "research",
+      "score": {
+        "total": 10,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-01T23:00:00Z",
+      "tags": [
+        "ai-for-science",
+        "consumer-indie-open-source-smb"
+      ],
+      "category": "AI for science",
+      "recurrence": "new",
+      "why_it_matters": "The model ranks molecules by whether a chemist can actually make them, so the shortlist is something a bench can build. The same screen-by-synthesizability pattern applies to coatings, binders and interface layers.",
+      "secondary_urls": [
+        {
+          "label": "Code repository",
+          "url": "https://github.com/pic-ai-robotic-chemistry/AI-SAM"
+        }
+      ],
+      "enterprise_adaptation": "Share with your lab: this is a ranked shortlist of molecules a chemist can actually make, with the screening code on GitHub, so a materials group can see the method on its own problem within days. Clever part: the score blends DFT-derived interface descriptors with synthetic accessibility, so the top candidate is buildable. 30-day experiment: clone github.com/pic-ai-robotic-chemistry/AI-SAM, swap in 20 fragments from your own coating or adhesion problem, and compare its top 10 against what your team would have picked by hand.",
+      "evaluation": "EVALUATE NOW",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "Synthetic accessibility sits inside the ranking score",
+        "27.2% efficiency with more than 95% retained after 2,000 h at 65 °C",
+        "Screening code is public"
+      ],
+      "suggested_actions": [
+        "Clone the repository and run it on one interface problem from your own lab"
+      ],
+      "results": "27.2% PCE; >95% retained after 2,000 h MPP tracking at 65 °C; 90,000 structures to 300 candidates."
+    },
+    {
+      "id": "data-mined-mxenes-rare-earth-synthesis",
+      "title": "Machine-learning database mining finds 33 overlooked MXenes and yields 11 new rare-earth MXenes",
+      "subtitle": "Seven multilayer MXenes made by a self-propagating high-temperature method with no sustained heating",
+      "source": "Science",
+      "author": "Ali Saffar Shamshirgar, Johanna Rosen and colleagues (Linköping University)",
+      "date": "2026-10-29",
+      "primary_url": "https://doi.org/10.1126/science.aeh5957",
+      "summary": "Machine-learning-assisted mining of historical reports flagged 33 previously synthesized but unrecognized MXene candidates. Guided by them, the team made seven multilayer MXenes with a self-propagating high-temperature method that needs no sustained external heating and finishes within minutes. They also made 11 previously unexplored rare-earth MXenes (Pr, Nd, Sm, Gd, Tb, Ho, Tm). Experiments and modeling suggest semiconducting behavior and varied magnetic states.",
+      "platform": "research",
+      "score": {
+        "total": 9.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-01T23:00:00Z",
+      "tags": [
+        "ai-for-science"
+      ],
+      "category": "AI for science",
+      "recurrence": "new",
+      "why_it_matters": "Old literature hides materials that were already made. A text-and-data mining pass can reopen a closed family cheaply.",
+      "secondary_urls": [
+        {
+          "label": "Linköping coverage on Phys.org",
+          "url": "https://phys.org/news/2026-10-ai-uncover-overlooked-2d-materials.html"
+        }
+      ],
+      "enterprise_adaptation": "The clever move is mining decades of published syntheses for materials that were made and then forgotten, then using the hits to pick which new ones to try. 30-day experiment: point an LLM at 200 papers from your own corner (cements, insulation foams, coatings), extract compound and process into a table, and look for combinations that were made once and never followed up.",
+      "evaluation": "ADD TO WATCHLIST",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "33 overlooked candidates found by mining",
+        "11 new rare-earth MXenes",
+        "Synthesis completes within minutes without sustained heating"
+      ],
+      "suggested_actions": [
+        "Run a literature-mining pass on your own materials family"
+      ],
+      "results": "33 candidates identified; 7 multilayer MXenes made; 11 new rare-earth MXenes."
+    },
+    {
+      "id": "collaborating-agents-quantum-spins-diamond",
+      "title": "AI agents that check each other ran a real quantum-spin experiment and caught their own signal drift",
+      "subtitle": "Agents derived a calibration result, tested it, called a drifting first run inconclusive, and re-ran it",
+      "source": "arXiv",
+      "author": "El Mustapha Mansouri, Eikichi Kimura, Masato Koga, Keigo Arai (Institute of Science Tokyo)",
+      "date": "2026-10-29",
+      "primary_url": "https://arxiv.org/abs/2610.40589",
+      "summary": "LLM agents assess one another's work and can stop or redirect an investigation. On ensembles of quantum spins in diamond they derived the minimum number of calibration settings needed to predict responses to a family of microwave pulse sequences, checked it computationally, and designed experiments to separate competing predictions. Repeated reference measurements showed the signal was drifting, so the agents called the first run inconclusive and revised the protocol without loosening acceptance criteria. The revised run supported the theory. The abstract says code is available.",
+      "platform": "arxiv",
+      "score": {
+        "total": 9.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-01T23:00:00Z",
+      "tags": [
+        "ai-for-science",
+        "consumer-indie-open-source-smb"
+      ],
+      "category": "AI for science",
+      "recurrence": "new",
+      "why_it_matters": "A reviewer agent that can veto a result is what turns a lab agent from a fast typist into a colleague.",
+      "enterprise_adaptation": "The clever part is the veto: one agent's job is to reject another agent's claim and demand a separate check. 30-day experiment: on one recurring measurement, such as a tensile test log or sensor calibration, run a two-agent loop where agent A proposes the analysis and agent B must try to break it, then count how many drifts or outliers B catches that your current review misses.",
+      "evaluation": "ADD TO WATCHLIST",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "Agents can reject questions and demand independent checks",
+        "Drift was detected and the run was called inconclusive",
+        "Acceptance criteria were not relaxed"
+      ],
+      "suggested_actions": [
+        "Try an author-agent and breaker-agent loop on one routine measurement"
+      ],
+      "results": "First experiment agreed with theory but showed drift; revised experiment met the criteria."
+    },
+    {
+      "id": "openai-academic-communities-kakeya-eth-qft",
+      "title": "OpenAI reports AI-produced results on Kakeya, the Exponential Time Hypothesis and quantum field theory, and hands them to outside expert groups",
+      "subtitle": "Lean proofs for math and computer science are on GitHub; the physics group is writing its own account",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-10-26",
+      "primary_url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+      "summary": "OpenAI says its models proved the local smoothing conjecture in every dimension (which it says also settles Kakeya), proved the Exponential Time Hypothesis false with a Lean verification, and produced a rigorous existence proof for certain four-dimensional quantum field theories. The ETH group (Impagliazzo, Paturi, Williams) and a physics group led by David Gross are examining the results. The math and computer science writeups and Lean proofs are public; the physics group is holding the AI artifacts. These are company claims until the expert groups report. OpenAI also noted a $5 million contribution to a Simons Foundation initiative for workshops on AI-produced results.",
+      "platform": "research",
+      "score": {
+        "total": 9.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-01T23:00:00Z",
+      "tags": [
+        "ai-for-science",
+        "consumer-indie-open-source-smb"
+      ],
+      "category": "AI for science",
+      "recurrence": "new",
+      "why_it_matters": "The release model is the news: outside experts get the raw output, no NDAs and no credit claims, and publish their own conclusions.",
+      "enterprise_adaptation": "Steal the release format: publish raw AI output as research data and invite named experts to explain it. 30-day experiment: take one AI-generated analysis from your R&D group, share the raw output with two outside specialists with no NDA, and ask them to write a one-page explanation. Compare what they find with what your team believed.",
+      "evaluation": "ADD TO WATCHLIST",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "Three claimed results across math, computer science and physics",
+        "Open Lean proofs for two of the three",
+        "Independent shepherd groups with no NDAs"
+      ],
+      "suggested_actions": [
+        "Read the Lean proof repository for the ETH result"
+      ],
+      "results": "Claims: local smoothing conjecture, ETH false (Lean-verified), rigorous 4D QFT existence proof."
+    },
+    {
+      "id": "anthropic-ai-for-science-foundations-institutions",
+      "title": "Anthropic extends its AI for Science program to 20 foundations and research institutions",
+      "subtitle": "Instrument-control standard with HHMI Janelia and agent teams at the Allen Institute",
+      "source": "Anthropic",
+      "author": "Anthropic",
+      "date": "2026-10-28",
+      "primary_url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+      "summary": "The program, started in May 2025, now includes foundations and institutions such as Sloan, Simons, Schmidt Sciences, NSF, CAS, STScI, Sanger, Crick and EMBL. HHMI Janelia is co-developing the Model Hardware Standard, a research preview that lets agents operate lab instruments. The Allen Institute is building agent teams aimed at turning months of analysis into hours. The post gives no credit amounts and no materials-specific example.",
+      "platform": "research",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-01T23:00:00Z",
+      "tags": [
+        "ai-for-science"
+      ],
+      "category": "Lab adoption",
+      "recurrence": "returning_theme",
+      "why_it_matters": "A shared way for agents to drive instruments is what moves a lab from analyzing data with AI to running experiments with it.",
+      "recurrence_note": "Follows last week's Anthropic guest-investigator residency; this week adds the foundation and institute roster and the instrument standard.",
+      "enterprise_adaptation": "The clever part is the Model Hardware Standard: one interface so an agent can talk to any instrument the same way. 30-day experiment: pick one instrument in your lab that exports data to a folder, write a thin wrapper that exposes start, stop and read as three tools, and let an agent run a simple parameter sweep overnight.",
+      "evaluation": "ADD TO WATCHLIST",
+      "priority": "MEDIUM",
+      "key_takeaways": [
+        "20 foundations and institutions named",
+        "Instrument standard in research preview",
+        "Agent teams targeting months-to-hours analysis"
+      ],
+      "suggested_actions": [
+        "Read the Model Hardware Standard description and map it to one of your instruments"
+      ],
+      "results": "20 organizations; program running since May 2025."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "ai_for_science",
+      "title": "AI for Science",
+      "description": "Materials, chemistry and physics results labs can reuse now.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "lightweight-alloy-mlip-twelve-elements",
+          "title": "A lightweight interatomic potential covers 12 metal elements using only unary and binary training data",
+          "subtitle": "Active learning builds a compact dataset; ternary and quaternary alloys transfer",
+          "source": "arXiv",
+          "author": "Ademola Soyemi, Kipton Barros, Timothy C. Germann, Benjamin T. Nebgen, Brenden W. Hamilton",
+          "date": "2026-10-28",
+          "primary_url": "https://arxiv.org/abs/2610.38876",
+          "summary": "The model covers Al, Sc, Ti, V, Cu, Zn, Zr, Nb, Mo, Hf, Ta and W. Step-wise active learning builds a small, diverse dataset, and the potentials transfer to unseen ternary and quaternary alloys with only unary and binary data. A new element can be added through alchemical extrapolation using only its unary data.",
+          "platform": "arxiv",
+          "score": {
+            "total": 8.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "ai-for-science"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "why_it_matters": "Alloy groups get a fast starting potential without refitting for every system."
+        },
+        {
+          "id": "nvidia-tensor-core-mlip-speedups",
+          "title": "NVIDIA shows emulated-precision tensor cores speed up machine-learned interatomic potential molecular dynamics by up to 1.7x",
+          "subtitle": "BF16x9 on B300 and TF32x3 on A100, tested on PET checkpoints",
+          "source": "NVIDIA Technical Blog",
+          "author": "Anoushka Bhutani, Atul Thakur, Erica Tsai, Kristopher Keipert, Michele Ceriotti",
+          "date": "2026-10-29",
+          "primary_url": "https://developer.nvidia.com/blog/unlocking-tensor-core-performance-for-machine-learning-interatomic-potentials/",
+          "summary": "BF16x9 on a B300 sped up major matrix multiplies by up to 2.5x and a full MD step by up to 1.7x. TF32x3 on an A100 gave up to 1.9x on major matrix multiplies and 1.5x on a full step. On a 539-atom Cantor-alloy relaxation, TF32x3 gave 1.5x. A one-pass TF32 run was faster per step but failed to converge. The post lists the cuBLAS environment variable and a CUTLASS kernel.",
+          "platform": "research",
+          "score": {
+            "total": 8.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "consumer-indie-open-source-smb"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "why_it_matters": "A one-line environment variable gives existing PyTorch potentials a free speedup on current GPUs."
+        },
+        {
+          "id": "pnnl-genesis-grid-planning-awards",
+          "title": "PNNL's two Genesis Mission grid projects use machine learning to speed up microsecond-resolution grid physics and 10,000-scenario planning",
+          "subtitle": "Six months to demonstrate results; partners include Argonne, Sandia, Siemens and ERCOT",
+          "source": "Pacific Northwest National Laboratory",
+          "author": "JoAnna Wendel",
+          "date": "2026-10-29",
+          "primary_url": "https://www.pnnl.gov/news-media/two-genesis-awards-support-si-powered-grid-planning",
+          "summary": "One project approximates electromagnetic transient models with a machine-learning algorithm so planners can study scenarios faster. The other, led by Arizona State University, builds a model to find the interesting scenarios among as many as 10,000 in capacity-expansion planning and compares it with a traditional ensemble. Funding amounts are not stated.",
+          "platform": "research",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "ai-for-science"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "why_it_matters": "Surrogate models for slow physics simulators are the same idea that building energy and process-line modeling teams can borrow."
+        }
+      ]
+    },
+    {
+      "section_id": "lab_adoption",
+      "title": "Lab Adoption",
+      "description": "How research groups are organizing around AI.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "hugging-face-project-protostar-ai-ready-science",
+          "title": "Hugging Face and five universities launch Project ProtoStar to make publicly funded science datasets AI-ready",
+          "subtitle": "First open challenge runs 2-13 November on urban climate prediction for 210 U.S. cities",
+          "source": "Hugging Face",
+          "author": "Avijit Ghosh, Sayeed Choudhury, Greg Tananbaum, Emma Scharfmann, Georgia Channing, Eunice Mercado-Lara, Irene Solaiman",
+          "date": "2026-10-29",
+          "primary_url": "https://huggingface.co/blog/announcing-project-protostar",
+          "summary": "Founding partners are Carnegie Mellon, Purdue, Georgia Tech, Arizona State, George Washington, Astera Institute and ORCA, with Hugging Face as infrastructure. The first challenge, hosted by Carnegie Mellon, asks teams to predict 2019 to 2026 temperature, precipitation, hottest day and cooling degree days from records through 2018, with results due in early 2027. Hugging Face reports more than 3x as many new science datasets in the first nine months of 2026 as in the same period of 2025.",
+          "platform": "research",
+          "score": {
+            "total": 8.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "consumer-indie-open-source-smb"
+          ],
+          "category": "Lab adoption",
+          "recurrence": "new",
+          "why_it_matters": "Anyone can enter and the cooling-degree-day target maps straight onto building energy work."
+        },
+        {
+          "id": "cornell-copair-ai-enabled-research-communities",
+          "title": "Cornell sets up research-pod communities for AI use, with an eight-week genomics and imaging pilot",
+          "subtitle": "Co-sponsored by the Cornell AI Initiative and the Office of the Vice Provost for Research",
+          "source": "Cornell AI Initiative",
+          "author": "Cornell AI Initiative",
+          "date": "2026-10-26",
+          "primary_url": "https://ai.cornell.edu/research/copair/",
+          "summary": "Communities of Practice for AI-enabled Research come in two forms: self-formed Research Pod groups and groups anchored in core centers. They share practices, set norms for use and non-use, and test AI tools. A Fall 2026 pilot led by the Biotechnology Resource Center runs about eight weeks across genomics, proteomics, imaging and structural biology. The page is dated 26 October; no launch date is given.",
+          "platform": "research",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "ai-for-science"
+          ],
+          "category": "Lab adoption",
+          "recurrence": "new",
+          "why_it_matters": "A small self-forming pod is a low-cost way to get a research group to share what works."
+        },
+        {
+          "id": "scientists-ai-use-survey-seven-hours-saved",
+          "title": "A Google-led study finds scientists save almost seven hours a week with AI, and 41% report a growing backlog of untested hypotheses",
+          "subtitle": "Reported by the Society of Chemical Industry on 28 October",
+          "source": "Society of Chemical Industry",
+          "author": "Steve Ranger",
+          "date": "2026-10-28",
+          "primary_url": "https://www.soci.org/news/2026/10/ai-in-science-what-is-the-impact-on-research",
+          "summary": "The study drew on 360,000 Gemini interactions, data on 2,600 specialized models and a survey of 600 scientists. Nearly half use AI daily, about three quarters save time, and about eight in 10 report higher lab output over three years. Bottlenecks have moved to lab execution, clinical validation and field data collection. Half say AI pushes them toward safer, more incremental projects; just over a quarter say it lets them take on riskier ones. The article does not give the report's own publication date.",
+          "platform": "research",
+          "score": {
+            "total": 5.5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "ai-for-science"
+          ],
+          "category": "Lab adoption",
+          "recurrence": "returning_theme",
+          "why_it_matters": "The next payoff is in lab execution and automation, where the report places the new bottleneck.",
+          "recurrence_note": "The underlying Google-led study was first published earlier in October; this is a 28 October trade-press summary with new detail."
+        }
+      ]
+    },
+    {
+      "section_id": "papers",
+      "title": "Papers",
+      "description": "Preprints on agents, verification and training.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "autonomous-research-agents-formulate-own-question",
+          "title": "An off-the-shelf coding agent formulated its own research question and produced five reproducible papers on a laptop",
+          "subtitle": "Five consecutive runs reported, including the pilot; code and records released",
+          "source": "arXiv",
+          "author": "Ko Fujimura",
+          "date": "2026-10-29",
+          "primary_url": "https://arxiv.org/abs/2610.39620",
+          "summary": "The system gives a coding agent an instruction document and two skills: question formulation with a critique from a different model, and peer review by a reviewer from another model family that reruns the study. All five runs reached a revised, re-computable paper with no human research input, and external AI reviewers rated them at or near workshop level. The author released the system, the five papers and the reproduction records.",
+          "platform": "arxiv",
+          "score": {
+            "total": 9.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "consumer-indie-open-source-smb"
+          ],
+          "category": "Papers",
+          "recurrence": "new",
+          "why_it_matters": "A cross-model critic and a rerun-from-records reviewer are two cheap components any agent pipeline can copy."
+        },
+        {
+          "id": "misattributed-numbers-ai-research-agent-papers",
+          "title": "Four in five unsupported numbers in AI-written papers come from the wrong run or metric, not invention",
+          "subtitle": "Deterministic claim-to-evidence checker certifies claims with over 90% precision",
+          "source": "arXiv",
+          "author": "Mosab Alfaqeeh, Omar Hourani, Muath Hourani, Hashem Alfaqeeh",
+          "date": "2026-10-28",
+          "primary_url": "https://arxiv.org/abs/2610.38691",
+          "summary": "The authors re-analyzed 540 judgments from a public benchmark of nine research agents on fifteen problems and labeled 256 claims from 18 submissions. The checker certified claims with over 90% precision (78 of 85, kappa 0.89). An LLM verifier recovered more traceable claims but accepted about three times as many misattributed ones, so they work best together. Code and data are public per the abstract.",
+          "platform": "arxiv",
+          "score": {
+            "total": 8.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "consumer-indie-open-source-smb"
+          ],
+          "category": "Papers",
+          "recurrence": "new",
+          "why_it_matters": "A provenance check on every number is cheap to add to any analysis pipeline."
+        },
+        {
+          "id": "unified-training-single-algorithm-foundation-models",
+          "title": "Unified training puts pretraining, SFT and RL under one likelihood-based algorithm",
+          "subtitle": "67-page CMU and JHU paper; trending on alphaXiv",
+          "source": "arXiv",
+          "author": "Yuda Song, Alvin Zhang, Fahim Tajwar, Daman Arora, Jeff Schneider, Daniel Khashabi, Ruslan Salakhutdinov, J. Andrew Bagnell, Aarti Singh, Andrea Zanette",
+          "date": "2026-10-29",
+          "primary_url": "https://arxiv.org/abs/2610.40564",
+          "summary": "The paper frames the foundation-model training lifecycle as choosing which data to train on, in what proportions and when, with staged training as a special case. A single trainer mixes static data and RL generations. The authors report a better accuracy-compute tradeoff and task coverage while preserving broader capabilities. No code link is given.",
+          "platform": "arxiv",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "consumer-indie-open-source-smb"
+          ],
+          "category": "Papers",
+          "recurrence": "new",
+          "why_it_matters": "A single trainer simplifies fine-tuning pipelines for small teams."
+        },
+        {
+          "id": "openai-frontier-misalignment-monitoring-layers",
+          "title": "OpenAI describes a four-layer system that monitors every reinforcement-learning run and evaluation for misalignment",
+          "subtitle": "Activation probes, a model reviewer, an investigative agent and cross-log checks",
+          "source": "OpenAI",
+          "author": "OpenAI",
+          "date": "2026-10-29",
+          "primary_url": "https://openai.com/index/how-we-detect-frontier-model-misalignment/",
+          "summary": "For models at least as capable as GPT-6 Astra, OpenAI monitors every RL run, evaluation and tool-using harness, plus all internal Codex traffic. Layer 0 uses activation probes tuned for high recall; Layer 1 is a model reviewer; Layer 2 an investigative agent; Layer 3 compares transcripts with network logs for sensitive workloads. The highest-priority security alerts reach responders typically within 15 minutes.",
+          "platform": "research",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "safety"
+          ],
+          "category": "Papers",
+          "recurrence": "new",
+          "why_it_matters": "Shows what a tiered review pipeline looks like in practice, with cheap screens first and costly review last."
+        }
+      ]
+    },
+    {
+      "section_id": "model_cards",
+      "title": "Model Cards",
+      "description": "Open and closed releases with documentation.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "mistral-large-4-open-weights",
+          "title": "Mistral publishes open weights for Mistral Large 4, a 1T-parameter multimodal mixture-of-experts model",
+          "subtitle": "Modified MIT license; model-as-a-service businesses need a separate commercial license",
+          "source": "Mistral AI",
+          "author": "Mistral AI",
+          "date": "2026-10-29",
+          "primary_url": "https://mistral.ai/news/mistral-large-4-oss/",
+          "summary": "The weights are on Hugging Face under the Mistral Ecosystem Open-Weight License, with 1.05T total and 49B active parameters, and three reasoning modes. It runs with vLLM or SGLang, and the API is priced at $0.70 per million input tokens and $2.10 per million output tokens. Mistral says a technical report is coming.",
+          "platform": "research",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "consumer-indie-open-source-smb"
+          ],
+          "category": "Model cards",
+          "recurrence": "new",
+          "why_it_matters": "A frontier-scale open model available for self-hosting and fine-tuning."
+        },
+        {
+          "id": "gpt-6-1-terra-launch-and-system-card",
+          "title": "OpenAI releases GPT-6.1 Terra, a fast model for computer use, with a system card addendum",
+          "subtitle": "Rated Critical in cybersecurity under OpenAI's Preparedness Framework",
+          "source": "OpenAI",
+          "author": "OpenAI",
+          "date": "2026-10-26",
+          "primary_url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+          "summary": "OpenAI reports an error rate on error-inducing prompts that fell from 53.6% to 16.7% at low effort versus GPT-5.6 Terra, and 50.3% on Terminal-Bench 4.0 at max effort. It also reports coming within five points of Opus 5.5 on Terminal-Bench-Science 0.1 at under one-fifth the estimated cost. The card addendum covers baseline safety metrics; the post says the model meets the Critical cybersecurity threshold and keeps GPT-6 Astra's protections. All figures are vendor-reported.",
+          "platform": "research",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "enterprise-platform"
+          ],
+          "category": "Model cards",
+          "recurrence": "new",
+          "why_it_matters": "Cheaper computer use makes overnight lab data-entry and report-filling agents affordable.",
+          "secondary_urls": [
+            {
+              "label": "System card addendum listing",
+              "url": "https://openai.com/news/research/?display=list"
+            }
+          ]
+        },
+        {
+          "id": "nemotron-3-5-transcribe-open-speech-model",
+          "title": "NVIDIA releases Nemotron 3.5 Transcribe, an open speech model with diarization and style control",
+          "subtitle": "34B total, about 4.3B active; OpenMDW-1.1 license",
+          "source": "Hugging Face",
+          "author": "NVIDIA",
+          "date": "2026-10-28",
+          "primary_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+          "summary": "The card lists the 28 October release, FP8 and NVFP4 variants, and a mean English word error rate of 4.71 on nine Open ASR Leaderboard sets against 4.94 for Qwen3-ASR-1.7B. It reports 15.80 mean cpWER on multi-speaker sessions against 16.83 for the next published result. Benchmark figures were captured on 12 October by NVIDIA.",
+          "platform": "research",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "consumer-indie-open-source-smb"
+          ],
+          "category": "Model cards",
+          "recurrence": "new",
+          "why_it_matters": "Meeting and lab-notebook transcription with speaker labels, runnable on your own hardware."
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_us",
+      "title": "Regulation: United States",
+      "description": "State and federal rulemaking, stated plainly.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "colorado-admt-chatbot-rules-comment-close",
+          "title": "Colorado held its automated-decision and chatbot rulemaking hearing on 26 October; final rules are due before 1 January 2027",
+          "subtitle": "Comment closed 11:59 p.m. on 26 October; both laws take effect 1 January 2027",
+          "source": "Colorado Attorney General",
+          "author": "Colorado Department of Law",
+          "date": "2026-10-27",
+          "primary_url": "https://coag.gov/ai/",
+          "summary": "The state page confirms the hearing and comment close on 26 October, an interim draft on 6 October and a regulatory analysis on 21 October. The Attorney General's office will consider timely comments in drafting the final rules. Both the Automated Decision-Making Technology law and the Chatbot Safety Act take effect 1 January 2027.",
+          "platform": "regulation",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-01T23:00:00Z",
+          "tags": [
+            "regulation"
+          ],
+          "category": "Regulation",
+          "recurrence": "returning",
+          "why_it_matters": "Final rules will set the notice and review duties for any product that scores or ranks people.",
+          "recurrence_note": "Last week's item covered the comment window; this week the hearing happened and drafting of final rules begins.",
+          "secondary_urls": [
+            {
+              "label": "Jones Walker analysis",
+              "url": "https://www.joneswalker.com/en/insights/blogs/ai-law-blog/the-colorado-ai-law-you-prepared-for-is-gone-and-the-rulemaking-comment-window-c.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_global",
+      "title": "Regulation: Global",
+      "description": "No major new developments this week.",
+      "layout": "list",
+      "items": []
+    },
+    {
+      "section_id": "enterprise_disclosures",
+      "title": "Enterprise Disclosures",
+      "description": "No major new developments this week.",
+      "layout": "list",
+      "items": []
+    }
+  ],
+  "index": [
+    {
+      "id": "ai-guided-sams-perovskite-solar-27-percent",
+      "title": "AI-guided screening finds a perovskite solar interface molecule that reaches 27.2% efficiency",
+      "primary_url": "https://www.nature.com/articles/s44160-026-01203-4",
+      "source": "Nature Synthesis",
+      "author": "Fengchun Cai, Geping Qu, Alex K.-Y. Jen, Jun Jiang, Zong-Xiang Xu, Jixian Xu and colleagues",
+      "date": "2026-10-28",
+      "score": 10
+    },
+    {
+      "id": "data-mined-mxenes-rare-earth-synthesis",
+      "title": "Machine-learning database mining finds 33 overlooked MXenes and yields 11 new rare-earth MXenes",
+      "primary_url": "https://doi.org/10.1126/science.aeh5957",
+      "source": "Science",
+      "author": "Ali Saffar Shamshirgar, Johanna Rosen and colleagues (Linköping University)",
+      "date": "2026-10-29",
+      "score": 9.5
+    },
+    {
+      "id": "collaborating-agents-quantum-spins-diamond",
+      "title": "AI agents that check each other ran a real quantum-spin experiment and caught their own signal drift",
+      "primary_url": "https://arxiv.org/abs/2610.40589",
+      "source": "arXiv",
+      "author": "El Mustapha Mansouri, Eikichi Kimura, Masato Koga, Keigo Arai (Institute of Science Tokyo)",
+      "date": "2026-10-29",
+      "score": 9.5
+    },
+    {
+      "id": "openai-academic-communities-kakeya-eth-qft",
+      "title": "OpenAI reports AI-produced results on Kakeya, the Exponential Time Hypothesis and quantum field theory, and hands them to outside expert groups",
+      "primary_url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-10-26",
+      "score": 9.5
+    },
+    {
+      "id": "anthropic-ai-for-science-foundations-institutions",
+      "title": "Anthropic extends its AI for Science program to 20 foundations and research institutions",
+      "primary_url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+      "source": "Anthropic",
+      "author": "Anthropic",
+      "date": "2026-10-28",
+      "score": 8.5
+    },
+    {
+      "id": "lightweight-alloy-mlip-twelve-elements",
+      "title": "A lightweight interatomic potential covers 12 metal elements using only unary and binary training data",
+      "primary_url": "https://arxiv.org/abs/2610.38876",
+      "source": "arXiv",
+      "author": "Ademola Soyemi, Kipton Barros, Timothy C. Germann, Benjamin T. Nebgen, Brenden W. Hamilton",
+      "date": "2026-10-28",
+      "score": 8.5
+    },
+    {
+      "id": "nvidia-tensor-core-mlip-speedups",
+      "title": "NVIDIA shows emulated-precision tensor cores speed up machine-learned interatomic potential molecular dynamics by up to 1.7x",
+      "primary_url": "https://developer.nvidia.com/blog/unlocking-tensor-core-performance-for-machine-learning-interatomic-potentials/",
+      "source": "NVIDIA Technical Blog",
+      "author": "Anoushka Bhutani, Atul Thakur, Erica Tsai, Kristopher Keipert, Michele Ceriotti",
+      "date": "2026-10-29",
+      "score": 8.5
+    },
+    {
+      "id": "pnnl-genesis-grid-planning-awards",
+      "title": "PNNL's two Genesis Mission grid projects use machine learning to speed up microsecond-resolution grid physics and 10,000-scenario planning",
+      "primary_url": "https://www.pnnl.gov/news-media/two-genesis-awards-support-si-powered-grid-planning",
+      "source": "Pacific Northwest National Laboratory",
+      "author": "JoAnna Wendel",
+      "date": "2026-10-29",
+      "score": 7.5
+    },
+    {
+      "id": "hugging-face-project-protostar-ai-ready-science",
+      "title": "Hugging Face and five universities launch Project ProtoStar to make publicly funded science datasets AI-ready",
+      "primary_url": "https://huggingface.co/blog/announcing-project-protostar",
+      "source": "Hugging Face",
+      "author": "Avijit Ghosh, Sayeed Choudhury, Greg Tananbaum, Emma Scharfmann, Georgia Channing, Eunice Mercado-Lara, Irene Solaiman",
+      "date": "2026-10-29",
+      "score": 8.5
+    },
+    {
+      "id": "cornell-copair-ai-enabled-research-communities",
+      "title": "Cornell sets up research-pod communities for AI use, with an eight-week genomics and imaging pilot",
+      "primary_url": "https://ai.cornell.edu/research/copair/",
+      "source": "Cornell AI Initiative",
+      "author": "Cornell AI Initiative",
+      "date": "2026-10-26",
+      "score": 7.5
+    },
+    {
+      "id": "scientists-ai-use-survey-seven-hours-saved",
+      "title": "A Google-led study finds scientists save almost seven hours a week with AI, and 41% report a growing backlog of untested hypotheses",
+      "primary_url": "https://www.soci.org/news/2026/10/ai-in-science-what-is-the-impact-on-research",
+      "source": "Society of Chemical Industry",
+      "author": "Steve Ranger",
+      "date": "2026-10-28",
+      "score": 5.5
+    },
+    {
+      "id": "autonomous-research-agents-formulate-own-question",
+      "title": "An off-the-shelf coding agent formulated its own research question and produced five reproducible papers on a laptop",
+      "primary_url": "https://arxiv.org/abs/2610.39620",
+      "source": "arXiv",
+      "author": "Ko Fujimura",
+      "date": "2026-10-29",
+      "score": 9.5
+    },
+    {
+      "id": "misattributed-numbers-ai-research-agent-papers",
+      "title": "Four in five unsupported numbers in AI-written papers come from the wrong run or metric, not invention",
+      "primary_url": "https://arxiv.org/abs/2610.38691",
+      "source": "arXiv",
+      "author": "Mosab Alfaqeeh, Omar Hourani, Muath Hourani, Hashem Alfaqeeh",
+      "date": "2026-10-28",
+      "score": 8.5
+    },
+    {
+      "id": "unified-training-single-algorithm-foundation-models",
+      "title": "Unified training puts pretraining, SFT and RL under one likelihood-based algorithm",
+      "primary_url": "https://arxiv.org/abs/2610.40564",
+      "source": "arXiv",
+      "author": "Yuda Song, Alvin Zhang, Fahim Tajwar, Daman Arora, Jeff Schneider, Daniel Khashabi, Ruslan Salakhutdinov, J. Andrew Bagnell, Aarti Singh, Andrea Zanette",
+      "date": "2026-10-29",
+      "score": 8
+    },
+    {
+      "id": "openai-frontier-misalignment-monitoring-layers",
+      "title": "OpenAI describes a four-layer system that monitors every reinforcement-learning run and evaluation for misalignment",
+      "primary_url": "https://openai.com/index/how-we-detect-frontier-model-misalignment/",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-10-29",
+      "score": 7
+    },
+    {
+      "id": "mistral-large-4-open-weights",
+      "title": "Mistral publishes open weights for Mistral Large 4, a 1T-parameter multimodal mixture-of-experts model",
+      "primary_url": "https://mistral.ai/news/mistral-large-4-oss/",
+      "source": "Mistral AI",
+      "author": "Mistral AI",
+      "date": "2026-10-29",
+      "score": 8
+    },
+    {
+      "id": "gpt-6-1-terra-launch-and-system-card",
+      "title": "OpenAI releases GPT-6.1 Terra, a fast model for computer use, with a system card addendum",
+      "primary_url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+      "source": "OpenAI",
+      "author": "OpenAI",
+      "date": "2026-10-26",
+      "score": 7
+    },
+    {
+      "id": "nemotron-3-5-transcribe-open-speech-model",
+      "title": "NVIDIA releases Nemotron 3.5 Transcribe, an open speech model with diarization and style control",
+      "primary_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+      "source": "Hugging Face",
+      "author": "NVIDIA",
+      "date": "2026-10-28",
+      "score": 8
+    },
+    {
+      "id": "colorado-admt-chatbot-rules-comment-close",
+      "title": "Colorado held its automated-decision and chatbot rulemaking hearing on 26 October; final rules are due before 1 January 2027",
+      "primary_url": "https://coag.gov/ai/",
+      "source": "Colorado Attorney General",
+      "author": "Colorado Department of Law",
+      "date": "2026-10-27",
+      "score": 7
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Agents that review other agents are becoming the standard design for autonomous research",
+      "evidence": "The quantum-spin lab, the Fujimura question-formulation system and OpenAI's layered monitoring all add a second model whose job is to reject the first one's work. The misattribution paper shows why: about four in five unsupported numbers came from the wrong run or metric.",
+      "what_to_watch": "Whether a public lab reports a number for how often the reviewer catches an error the author agent missed."
+    },
+    {
+      "pattern": "Cheap, small potentials and open datasets are lowering the entry cost for materials modeling",
+      "evidence": "The 12-element alloy potential trains on unary and binary data only, NVIDIA's emulated-precision path gives up to 1.7x per MD step, and ProtoStar opens a public challenge on climate data.",
+      "what_to_watch": "The first ProtoStar results in early 2027."
+    },
+    {
+      "pattern": "The SEC says it is examining AI company disclosures under existing rules",
+      "evidence": "Enforcement Director David Woodcock told Reuters on 30 October that the SEC does not plan a new AI rule and is applying existing disclosure standards (reported by Reuters through a regional outlet; no SEC document).",
+      "what_to_watch": "Whether the staff publishes an examination priority or sample letter."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Google released Gemini 4 Carbon on 28 October with cybersecurity and coding results.",
+      "reason": "Seen only on model-tracker sites; no model card or primary page was reached.",
+      "attempted_url": "https://deepmind.google/models/model-cards/"
+    },
+    {
+      "claim": "OpenAI released GPT-Rosalind-6 on 30 October with fewer dual-use biology refusals for approved research organisations.",
+      "reason": "Appears only on a tracker site; no OpenAI page found.",
+      "attempted_url": "https://openai.com/index/gpt-6-rosalind/"
+    },
+    {
+      "claim": "UK AI Security Institute published a report on 'motivated reasoning' in the Mythos 5 incident.",
+      "reason": "Reported in Indian Express on 27 October; the AISI research page lists no such report.",
+      "attempted_url": "https://www.aisi.gov.uk/research"
+    },
+    {
+      "claim": "A Nature Communications benchmark found machine-learned potentials can get thermal conductivity right for the wrong vibrational physics.",
+      "reason": "The Columbia Engineering page is dated 8 September, so it is outside this week; the journal page was not reached.",
+      "attempted_url": "https://www.engineering.columbia.edu/about/news/ai-materials-needs-be-more-physics-aware"
+    },
+    {
+      "claim": "Six Japanese companies and NEDO will build a quantum and AI materials platform for fiscal 2026 to 2028.",
+      "reason": "Only one secondary site (GEroundtable, 28 October); no NEDO or company primary found.",
+      "attempted_url": "https://geroundtable.com/six-companies-quantum-materials-platform/"
+    },
+    {
+      "claim": "Anthropic filed an SEC registration statement on 26 October.",
+      "reason": "Reported only by a Korean outlet; EDGAR not reachable by automated fetch.",
+      "attempted_url": "https://www.sec.gov/cgi-bin/browse-edgar"
+    },
+    {
+      "claim": "KRICT released a conversational Co-Scientist interface for self-driving labs (Ugi searches down from about 30 to under 10).",
+      "reason": "AlphaGalileo page is dated 21 October and the paper 10 August, so outside this week; interface link not provided.",
+      "attempted_url": "https://www.alphagalileo.org/en-gb/Item-Display/ItemId/279440"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "nature.com/ncomms and science.org table-of-contents pages for dated primaries",
+      "aisi.gov.uk blog and publication permalinks",
+      "SEC EDGAR full-text search with a declared user agent",
+      "cac.gov.cn notices",
+      "ec.europa.eu AI Office news feed"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "agent reviewer loops in lab automation",
+      "literature mining for forgotten materials",
+      "instrument-control standards for lab agents"
+    ],
+    "topics_to_drop": [],
+    "notes": "Gaps: (1) The index has 19 rows, above the floor, but regulation_global and enterprise_disclosures are empty: no in-window primary from the EU AI Office, UK AISI or China CAC was reachable, and EDGAR blocks automated fetches. (2) Building-science AI coverage was thin; the closest in-window item is the PNNL grid-planning award. (3) Several search results carried wrong dates (MIT crystal-narratives 19 October, KRICT 21 October, PNNL autonomy features March and August, Argonne study April 2025, NLR Genesis release July, Schmidt UCSD 2022) and were excluded. (4) Gemini 4 Carbon, GPT-Rosalind-6 and the UK AISI Mythos 5 report need primaries next week. (5) The Terra card addendum was confirmed only through the OpenAI listing page and launch post."
+  }
+}

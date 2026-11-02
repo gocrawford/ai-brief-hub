@@ -1,0 +1,94 @@
+{
+  "week": "2026-10-26",
+  "script": "data/2026-10-26/podcast.draft.json",
+  "pass": true,
+  "errors": [],
+  "warnings": [
+    {
+      "check": "repeated_phrases",
+      "segment": null,
+      "detail": "1 four-word phrases appear in 3+ segments",
+      "examples": [
+        {
+          "phrase": "steal this idea pick",
+          "segments": [
+            "launches_segment",
+            "reddit_segment",
+            "youtube_segment"
+          ]
+        }
+      ]
+    },
+    {
+      "check": "concept_saturation",
+      "segment": null,
+      "detail": "content words in 5+ of 7 correspondent segments; is the same point being made repeatedly?",
+      "terms": {
+        "claude": 5,
+        "hundred": 5,
+        "second": 5
+      }
+    },
+    {
+      "check": "lab_beat",
+      "segment": "research_segment",
+      "detail": "no 'Share this with your lab' beat; it's a required recurring segment"
+    }
+  ],
+  "info": [
+    {
+      "check": "acronyms",
+      "detail": "confirm each is pronounced as intended (letters vs word)",
+      "tokens": {
+        "AI": 12,
+        "US": 3,
+        "MCP": 2,
+        "YC": 2,
+        "GPT": 2,
+        "DJI": 1,
+        "RCS": 1,
+        "UT": 1,
+        "GLB": 1,
+        "README": 1,
+        "MIT": 1,
+        "API": 1,
+        "CAR": 1,
+        "HHMI": 1
+      }
+    }
+  ],
+  "metrics": {
+    "spoken_segments": 20,
+    "music_segments": 9,
+    "total_words": 3021,
+    "estimated_minutes": 19.9,
+    "avg_sentence_words": 12.3,
+    "long_sentences": 0,
+    "repeated_phrases": 1,
+    "tts_symbols": 0,
+    "caution_words_outside_research": 0,
+    "enterprise_words": 0,
+    "segment_words": {
+      "cold_open": 83,
+      "handoff_x": 15,
+      "pickup_x": 7,
+      "x_segment": 302,
+      "handoff_reddit": 12,
+      "reddit_segment": 390,
+      "handoff_youtube": 23,
+      "youtube_segment": 311,
+      "handoff_builders": 26,
+      "builders_segment": 309,
+      "handoff_launches": 7,
+      "launches_segment": 398,
+      "handoff_social": 8,
+      "pickup_social": 15,
+      "social_segment": 314,
+      "handoff_research": 22,
+      "research_segment": 578,
+      "things_to_try_this_week": 70,
+      "what_to_watch": 111,
+      "sign_off": 20
+    }
+  }
+}

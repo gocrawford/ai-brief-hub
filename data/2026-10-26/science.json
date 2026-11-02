@@ -1,0 +1,189 @@
+{
+  "week_start": "2026-10-26",
+  "week_end": "2026-11-01",
+  "generated_at": "2026-11-02T01:27:17Z",
+  "headline": "An AI-guided molecule screen reached 27.2% solar-cell efficiency, and AI mining of old papers surfaced 33 overlooked MXenes.",
+  "summary_for_scientists": "A Nature Synthesis screen narrowed 90,000 generated molecules to 300 and built perovskite cells at 27.2% efficiency, with the code public. Linköping mined historical reports to find 33 overlooked MXenes and made 11 new rare-earth ones. Reviewer agents ran a real quantum-spin experiment and caught their own drift, a robotic coatings lab at Nottingham ran an AI-driven loop, and a survey of 600 scientists reports almost seven hours saved a week.",
+  "lab_pick": {
+    "tab_id": "research",
+    "item_id": "ai-guided-sams-perovskite-solar-27-percent",
+    "title": "AI-guided screening finds a perovskite solar interface molecule that reaches 27.2% efficiency",
+    "primary_url": "https://www.nature.com/articles/s44160-026-01203-4",
+    "what_they_did": "The team combined retrosynthetic prediction, high-throughput DFT screening and chemical expertise to rank self-assembled monolayer molecules for perovskite solar cells. They built more than 90,000 structures from 308 fragments and narrowed them to 300 candidates scored on eight descriptors.",
+    "result": "Devices with the top molecule, AI-1, reached 27.2% power-conversion efficiency and kept more than 95% of initial efficiency after 2,000 hours of maximum-power-point tracking at 65 degrees C.",
+    "why_researchers_care": "The ranking score includes synthetic accessibility, so the shortlist is made of molecules a chemist can actually build. The same screen-by-synthesizability pattern fits coatings, binders and interface layers.",
+    "how_to_share": "Share with your lab: clone the public AI-SAM repository from the code link on the paper, swap in 20 fragments from your own coating or adhesion problem, and compare its top 10 against what your team would have picked by hand. It makes a good 20-minute lab-meeting demo."
+  },
+  "sections": [
+    {
+      "section_id": "materials_chemistry",
+      "title": "Materials & Chemistry",
+      "description": "A synthesizability-aware screen that reached a record-class solar cell, literature mining that reopened a whole materials family, and a general alloy potential.",
+      "items": [
+        {
+          "tab_id": "research",
+          "item_id": "data-mined-mxenes-rare-earth-synthesis",
+          "title": "Machine-learning mining of old reports finds 33 overlooked MXenes and yields 11 new rare-earth MXenes",
+          "source": "Science (Linköping University)",
+          "primary_url": "https://doi.org/10.1126/science.aeh5957",
+          "one_line": "The team mined historical synthesis reports to flag 33 candidates that had already been made but never recognized. Guided by them, they made seven multilayer MXenes in minutes with a self-propagating high-temperature method, plus 11 unexplored rare-earth MXenes.",
+          "try_this": "Point a literature-mining pass at one closed materials family in your area and list what earlier papers made without naming."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "lightweight-alloy-mlip-twelve-elements",
+          "title": "A lightweight interatomic potential covers 12 metals using only unary and binary training data",
+          "source": "arXiv",
+          "primary_url": "https://arxiv.org/abs/2610.38876",
+          "one_line": "Step-wise active learning builds a small, diverse dataset for Al, Sc, Ti, V, Cu, Zn, Zr, Nb, Mo, Hf, Ta and W. The potentials transfer to unseen ternary and quaternary alloys, and a new element can be added from its unary data alone.",
+          "try_this": "Run it on a ternary alloy your group already has reference energies for and see how far it gets without any refitting."
+        },
+        {
+          "tab_id": "social",
+          "item_id": "radical-ai-wiley-materials-discovery-hypersonic",
+          "title": "Radical AI links 195,359 Wiley papers to its materials discovery platform",
+          "source": "Wiley / Radical AI",
+          "primary_url": "https://www.wiley.com/en-us/insights/radical-ai-partners-with-wiley-to-accelerate-materials-discovery-with-trusted-scientific-knowledge",
+          "one_line": "Radical reports more than 1,000 novel material candidates, including over 300 in a first hypersonic-material campaign. The company says it beat an industry-leading hypersonic material within 16 weeks and generated 70 million experimental data points."
+        }
+      ]
+    },
+    {
+      "section_id": "simulation_building_science",
+      "title": "Simulation & Building Science",
+      "description": "Faster molecular dynamics for existing potentials and surrogate models for slow physics, both ideas that carry over to heat, moisture and energy models.",
+      "items": [
+        {
+          "tab_id": "research",
+          "item_id": "nvidia-tensor-core-mlip-speedups",
+          "title": "Emulated-precision tensor cores speed up machine-learned interatomic potential dynamics by up to 1.7x",
+          "source": "NVIDIA Technical Blog",
+          "primary_url": "https://developer.nvidia.com/blog/unlocking-tensor-core-performance-for-machine-learning-interatomic-potentials/",
+          "one_line": "BF16x9 on a B300 sped up major matrix multiplies by up to 2.5x and a full molecular dynamics step by up to 1.7x. TF32x3 on an A100 gave 1.5x on a 539-atom Cantor-alloy relaxation, and the post lists the library setting and kernel.",
+          "try_this": "Flip the setting on a PyTorch potential you already run and time one trajectory before and after."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "pnnl-genesis-grid-planning-awards",
+          "title": "Two national-lab grid projects use machine learning to speed up fast-transient physics and 10,000-scenario planning",
+          "source": "Pacific Northwest National Laboratory",
+          "primary_url": "https://www.pnnl.gov/news-media/two-genesis-awards-support-si-powered-grid-planning",
+          "one_line": "One project approximates electromagnetic transient models with a machine-learning algorithm so planners can study scenarios faster. The other builds a model that picks out the interesting cases among as many as 10,000 capacity-expansion scenarios and compares it with a traditional ensemble.",
+          "try_this": "Pick one slow simulator in your group and ask which 50 of its 10,000 runs a screening model would choose."
+        }
+      ]
+    },
+    {
+      "section_id": "lab_automation",
+      "title": "Lab Automation & Scientific Reasoning",
+      "description": "Robots that run the loop, agents that review each other, and AI-produced proofs handed to outside experts.",
+      "items": [
+        {
+          "tab_id": "social",
+          "item_id": "nottingham-self-driving-lab-heat-resistant-coatings",
+          "title": "Nottingham builds a two-robot self-driving lab for heat-resistant thermal barrier coatings",
+          "source": "University of Nottingham",
+          "primary_url": "https://www.nottingham.ac.uk/news/ai-powered-robotic-laboratory-paves-the-way-for-discovering-next-generation-heat-resistant-coatings",
+          "one_line": "Two robotic arms and a liquid-dispensing tool prepare a precursor solution, run furnace processing, control cooling and retrieve the sample. AI active learning helped identify and prepare several candidate pyrochlore materials."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "collaborating-agents-quantum-spins-diamond",
+          "title": "Agents that check each other ran a real quantum-spin experiment and caught their own signal drift",
+          "source": "arXiv (Institute of Science Tokyo)",
+          "primary_url": "https://arxiv.org/abs/2610.40589",
+          "one_line": "Reviewer agents can stop or redirect an investigation. Repeated reference measurements showed drift, so they called the first run inconclusive and revised the protocol without loosening the acceptance criteria. The revised run supported the theory.",
+          "try_this": "Add a second agent whose only job is to veto a result, then see what it rejects in your next analysis."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "openai-academic-communities-kakeya-eth-qft",
+          "title": "OpenAI reports AI-produced results on Kakeya, the Exponential Time Hypothesis and quantum field theory",
+          "source": "OpenAI",
+          "primary_url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+          "one_line": "OpenAI says its models proved the local smoothing conjecture in every dimension, proved the Exponential Time Hypothesis false with a Lean verification, and produced an existence proof for certain four-dimensional quantum field theories. Outside expert groups, including one led by David Gross, are examining the raw output."
+        },
+        {
+          "tab_id": "x",
+          "item_id": "nvidia-ai-agents-steer-allen-telescope-array",
+          "title": "AI agents steer the Allen Telescope Array from natural-language requests",
+          "source": "NVIDIA (SETI Institute)",
+          "primary_url": "https://x.com/NVIDIAAI/status/2116560120457142451",
+          "one_line": "Agents calibrate and focus the telescope, clean incoming data, run models and plot results. NVIDIA says the pipeline handles 2.4 terabits per second and produced the first real-time AI detection of a pulsar in the Crab Nebula."
+        }
+      ]
+    },
+    {
+      "section_id": "rd_adoption",
+      "title": "How R&D Teams Are Adopting AI",
+      "description": "Hard numbers from partner labs and a large survey of working scientists, plus a funded path for getting started.",
+      "items": [
+        {
+          "tab_id": "launches",
+          "item_id": "anthropic-drug-development-progress",
+          "title": "Anthropic reports lab results from Claude-driven drug discovery with six research partners",
+          "source": "Anthropic",
+          "primary_url": "https://www.anthropic.com/research/early-progress-drug-development",
+          "one_line": "Generate Biomedicines used Claude Code to redesign a CAR T-cell signaling domain that came out about 70% shorter with roughly 10 times as many surface receptors. BigHat tested about 1,010 antibody variants in about 10 weeks, and Enveda cut manufacturing-document review time 89%."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "scientists-ai-use-survey-seven-hours-saved",
+          "title": "A Google-led study finds scientists save almost seven hours a week with AI",
+          "source": "Society of Chemical Industry",
+          "primary_url": "https://www.soci.org/news/2026/10/ai-in-science-what-is-the-impact-on-research",
+          "one_line": "The study drew on 360,000 Gemini interactions and a survey of 600 scientists. Nearly half use AI daily, about three quarters save time, and about eight in 10 report higher lab output over three years, with the bottleneck moving to lab execution."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "anthropic-ai-for-science-foundations-institutions",
+          "title": "Anthropic extends its AI for Science program to 20 foundations and research institutions",
+          "source": "Anthropic",
+          "primary_url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+          "one_line": "Partners include Simons, Schmidt Sciences, the Sanger Institute, the Crick Institute and EMBL. HHMI Janelia is co-developing the Model Hardware Standard, a research preview that lets agents operate lab instruments."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "hugging-face-project-protostar-ai-ready-science",
+          "title": "Hugging Face and five universities launch Project ProtoStar for AI-ready science datasets",
+          "source": "Hugging Face",
+          "primary_url": "https://huggingface.co/blog/announcing-project-protostar",
+          "one_line": "Hugging Face reports more than 3x as many new science datasets in the first nine months of 2026 as in the same period of 2025. The first challenge, hosted by Carnegie Mellon, asks teams to forecast temperature, precipitation, hottest day and cooling degree days.",
+          "try_this": "Enter the climate forecasting challenge with a small team and compare a foundation-model approach against your usual regression."
+        }
+      ]
+    },
+    {
+      "section_id": "research_tools",
+      "title": "Tools Researchers Can Use Now",
+      "description": "A cluster-ready chemistry agent workflow and a one-word trick for reproducing papers.",
+      "items": [
+        {
+          "tab_id": "reddit",
+          "item_id": "comp-chem-agent-runs-hpc-calculations",
+          "title": "A computational chemist lets Codex queue QM/MM and MD jobs on an HPC",
+          "source": "r/comp_chem",
+          "primary_url": "https://www.reddit.com/r/comp_chem/comments/1xj8ff0/",
+          "one_line": "The agent prepares inputs, submits to the queue, resends failed runs and analyzes results while he checks progress from his phone. It also caught an error in an earlier docking procedure, which led him to redo the runs.",
+          "try_this": "Hand an agent the failed-job babysitting for one batch of simulations and keep the design decisions yourself."
+        },
+        {
+          "tab_id": "x",
+          "item_id": "alphaxiv-autoarxiv-minimal-reproduction",
+          "title": "alphaXiv autoarxiv runs a minimal reproduction from any paper address",
+          "source": "alphaXiv",
+          "primary_url": "https://x.com/askalphaxiv/status/2115851163106963770",
+          "one_line": "Swap the word arxiv for autoarxiv in a paper address and an environment on your own compute runs a minimal reproduction, tracks logs and produces artifacts.",
+          "try_this": "Try it on a paper you cite often and see which of its headline numbers come back."
+        }
+      ]
+    }
+  ],
+  "try_in_the_lab": [
+    "Run the perovskite screening code on 20 fragments from one of your own interface or coating problems and compare its top 10 with your team's hand-picked list.",
+    "Ask an agent to mine ten years of your group's reports for materials that were made but never followed up, as Linköping did for MXenes.",
+    "Add a veto agent to your next data analysis and log what it rejects, borrowing the reviewer setup from the quantum-spin experiment.",
+    "Switch on the faster tensor-core setting for a machine-learned potential you already run and time one trajectory before and after."
+  ],
+  "coverage_note": "Simulation and building science was lighter this week; the strongest signal was in materials screening, lab automation and adoption data."
+}

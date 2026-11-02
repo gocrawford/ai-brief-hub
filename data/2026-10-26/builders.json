@@ -1,0 +1,1806 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.941,
+    "items_total": 34,
+    "items_new": 32,
+    "items_returning": 2
+  },
+  "min_items": 18,
+  "executive_summary": [
+    {
+      "headline": "A phone agent, a pixel-art skill and a codebase mapper lead the week",
+      "body": "wangzan101/Mika added 3,860 stars in three days by running Android apps on a hidden screen, patch-gg/pixelfx reached 2,597 with 244 pixel-art effects plus a skill to make more, and haydenschmitty/floorplan reached 1,790 by drawing a plain-English map of any app.",
+      "primary_url": "https://github.com/wangzan101/Mika"
+    },
+    {
+      "headline": "Weights as programs is the week's fun find",
+      "body": "A Show HN put an NES CPU inside Qwen3.5 weights (292 points), another ran MNIST through DOOM maps at 97.2%, and a third fit a language model in a boot sector.",
+      "primary_url": "https://github.com/dbreunig/nesformer"
+    },
+    {
+      "headline": "Creators get production pipelines",
+      "body": "anymove turns one AI video into a rigged 3D move for about $3 by the maker's count, Frametell turns a sentence into a storyboarded explainer video, and Hallmark added 11,566 stars teaching agents to design pages that do not look machine-made.",
+      "primary_url": "https://github.com/patch-gg/anymove"
+    },
+    {
+      "headline": "Key takeaway",
+      "body": "The best builds this week package a craft, a phone or a whole studio as something an agent can drive and check by eye. Pick one task you do by hand and try a skill that renders and judges its own output.",
+      "primary_url": "https://github.com/patch-gg/pixelfx"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "patch-gg-pixelfx",
+      "title": "patch-gg/pixelfx",
+      "primary_url": "https://github.com/patch-gg/pixelfx",
+      "date": "2026-10-30",
+      "summary": "pixelfx is a free library of 244 pixel-art effects, each a small piece of code, plus a Claude Code skill that drafts, renders, looks and refines new ones. It was created Oct 30 and has 2,597 stars.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 10,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-02T01:30:00Z",
+      "tags": [
+        "creator",
+        "gamedev",
+        "skill",
+        "javascript",
+        "pixel-art"
+      ],
+      "category": "Creator Tool",
+      "engagement": {
+        "stars": 2597,
+        "total_stars": 2597
+      },
+      "results": "2,597 stars in its first two days (created Oct 30); 244 effects across fire, weather, UI, pickups and 12 chained attack moves; live gallery; MIT; 8 commits in the window.",
+      "secondary_urls": [
+        {
+          "label": "Live gallery",
+          "url": "https://patch-gg.github.io/pixelfx/"
+        }
+      ],
+      "key_takeaways": [
+        "Effects drop into a browser game, or export as sprite sheets for any engine.",
+        "The skill works as a loop: draft, render, look at the frames, refine.",
+        "The method credits Hugo Duprez's write-up on making pixel-art effects with Claude."
+      ],
+      "enterprise_adaptation": "The clever part is treating art as code the agent can render and judge by eye, so craft knowledge ships as a reusable skill. Experiment: write a skill for your own house style, such as slide diagrams or product renders, and let an agent produce ten variations in an afternoon."
+    },
+    {
+      "id": "wangzan101-mika",
+      "title": "wangzan101/Mika",
+      "primary_url": "https://github.com/wangzan101/Mika",
+      "date": "2026-10-29",
+      "summary": "Mika is an on-device Android agent that takes a sentence, then works your apps and the web on a hidden background screen while you keep using the phone. It was created Oct 29 and has 3,860 stars.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 10,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-02T01:30:00Z",
+      "tags": [
+        "consumer",
+        "android",
+        "mobile-agent",
+        "kotlin",
+        "individual"
+      ],
+      "category": "Consumer Agent",
+      "engagement": {
+        "stars": 3860,
+        "total_stars": 3860
+      },
+      "results": "3,860 stars in its first three days (created Oct 29); v0.1.33 on Nov 1; 100+ commits in the window; Apache-2.0; README demos include price-capped shopping, flight lookups and job-site outreach.",
+      "secondary_urls": [
+        {
+          "label": "Release v0.1.33",
+          "url": "https://github.com/wangzan101/Mika/releases/tag/v0.1.33"
+        }
+      ],
+      "key_takeaways": [
+        "Runs on a separate background screen, so the phone stays usable.",
+        "Demos: summarize a group chat, add the cheapest charger over 4.5 stars to the cart, read a creator's recent posts.",
+        "Works with any app or site; several demos use apps popular in China."
+      ],
+      "enterprise_adaptation": "The clever part is the hidden second screen, which makes a phone agent something you can run all day without losing the device. Experiment: hand it one recurring errand, such as comparing prices or checking a feed, and time it against doing it yourself."
+    },
+    {
+      "id": "haydenschmitty-floorplan",
+      "title": "haydenschmitty/floorplan",
+      "primary_url": "https://github.com/haydenschmitty/floorplan",
+      "date": "2026-10-27",
+      "summary": "Floorplan has Claude or Codex read a codebase and draw an interactive, plain-English map of every part, file and web request. It was created Oct 27 and has 1,790 stars and a live demo.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-02T01:30:00Z",
+      "tags": [
+        "indie",
+        "developer",
+        "visualization",
+        "javascript",
+        "skill"
+      ],
+      "category": "Dev Tool",
+      "engagement": {
+        "stars": 1790,
+        "total_stars": 1790
+      },
+      "results": "1,790 stars in its first six days (created Oct 27); v0.6.1 on Nov 1; about 90 commits in the window; MIT; live demo map of a four-repo coffee-subscription app.",
+      "secondary_urls": [
+        {
+          "label": "Live demo",
+          "url": "https://haydenschmitty.github.io/floorplan-demo/"
+        },
+        {
+          "label": "Release v0.6.1",
+          "url": "https://github.com/haydenschmitty/floorplan/releases/tag/floorplan--v0.6.1"
+        }
+      ],
+      "key_takeaways": [
+        "Every part and connection gets a plain-English name, so non-coders can follow the app.",
+        "The map updates as the agent changes code, showing which parts a change touched.",
+        "Works with Claude Code and Codex."
+      ],
+      "enterprise_adaptation": "The clever part is giving people who built an app with AI a map of it they can actually read. Experiment: run it on the messiest internal tool your team owns and ask a new teammate to explain checkout, or any core flow, using only the map."
+    },
+    {
+      "id": "dbreunig-nesformer",
+      "title": "dbreunig/nesformer",
+      "primary_url": "https://github.com/dbreunig/nesformer",
+      "date": "2026-10-30",
+      "summary": "nesformer compiles an NES CPU into the weights of a stock Qwen3.5 model, so Super Mario Bros. runs as the model predicts a CPU execution log one token at a time. The Show HN drew 292 points and 150 comments.",
+      "source": "Hacker News",
+      "platform": "hackernews",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-02T01:30:00Z",
+      "tags": [
+        "fun",
+        "show-hn",
+        "python",
+        "weights",
+        "individual"
+      ],
+      "category": "Fun Experiment",
+      "engagement": {
+        "stars": 263,
+        "total_stars": 263,
+        "upvotes": 292,
+        "comments": 150
+      },
+      "results": "292 HN points and 150 comments (Oct 30); repo created Oct 30 with 263 stars; nobody trained the weights, a compiler computed every one; builds on Qwenputer by Divyansh Agrawal.",
+      "secondary_urls": [
+        {
+          "label": "GitHub repo",
+          "url": "https://github.com/dbreunig/nesformer"
+        },
+        {
+          "label": "Qwenputer",
+          "url": "https://github.com/divagr18/qwenputer"
+        }
+      ],
+      "key_takeaways": [
+        "The model's Gated DeltaNet state acts as the machine's memory.",
+        "A small host program draws the picture and reads the controller; the model does the CPU.",
+        "Plays Super Mario Bros. World 1-1 and a homebrew game."
+      ],
+      "enterprise_adaptation": "The clever part is showing that a language model's weights can be a program, which reframes what 'running a model' means. Experiment: have your scientists compile a small deterministic calculator or unit-converter into a model and compare its outputs token by token with plain code."
+    },
+    {
+      "id": "patch-gg-anymove",
+      "title": "patch-gg/anymove",
+      "primary_url": "https://github.com/patch-gg/anymove",
+      "date": "2026-10-27",
+      "summary": "anymove turns one AI-generated video of a creature into a rigged 3D animation: two camera views in one frame pin every joint, and the rig is fitted frame by frame and exported as a GLB. The maker puts a usable move at about $3 all in.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 10,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-02T01:30:00Z",
+      "tags": [
+        "creator",
+        "gamedev",
+        "3d",
+        "python",
+        "animation"
+      ],
+      "category": "Creator Tool",
+      "engagement": {
+        "stars": 460,
+        "total_stars": 460
+      },
+      "results": "Maker states about $3 for a usable move (README); 460 stars in its first days (created Oct 27); examples shown for dragon, giant spider, fire demon and wolf; Apache-2.0; 10 commits in the window.",
+      "key_takeaways": [
+        "Works for wings, tails and eight legs, not just humanoids.",
+        "A joint reader trained on one creature finds joints in both views, and matching heights pin them in 3D.",
+        "Nine ready creatures, including T-rex, centaur and mech, are listed with 4 to 7 moves each."
+      ],
+      "enterprise_adaptation": "The clever part is using a video model as a cheap motion-capture studio. Experiment: film a product or mechanism with a video model from two angles and see if the same trick yields a usable 3D motion path for a demo."
+    },
+    {
+      "id": "muaaz9329-cheap-ag",
+      "title": "muaaz9329/cheap-ag",
+      "primary_url": "https://github.com/muaaz9329/cheap-ag",
+      "date": "2026-10-28",
+      "summary": "cheap-ag splits coding work so Opus plans and a model costing about half a cent per task writes the code, with a test required before anything returns. The builder reports 63% fewer Opus tokens for the same feature and prompt.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 9,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-02T01:30:00Z",
+      "tags": [
+        "indie",
+        "cost",
+        "developer",
+        "typescript",
+        "individual"
+      ],
+      "category": "Dev Tool",
+      "engagement": {
+        "stars": 196,
+        "total_stars": 196
+      },
+      "results": "Builder reports 63% fewer Opus tokens for the same feature and prompt (README); 196 stars in its first four days (created Oct 28); v1.2.7 on Oct 31; 56 commits in the window; MIT.",
+      "key_takeaways": [
+        "The cheap model works in its own copy of the project and must pass a test to hand work back.",
+        "Aimed at stretching a $20 or $100 Claude plan with a few dollars of DeepSeek.",
+        "Planner and typist roles mirror a senior engineer and a fast junior."
+      ],
+      "enterprise_adaptation": "The clever part is paying the expensive model only to think, and gating the cheap model with tests. Experiment: run one week of your own side-project coding through this split and compare plan usage with the previous week."
+    },
+    {
+      "id": "sitor-ai-frametell",
+      "title": "sitor-ai/frametell",
+      "primary_url": "https://github.com/sitor-ai/frametell",
+      "date": "2026-10-29",
+      "summary": "Frametell turns a sentence, notes or PDFs into an explainer video: a director agent drafts a storyboard for sign-off, then narration, voice and animated pages. It is local-first and works with any model, and v0.7.4 shipped Oct 29.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-02T01:30:00Z",
+      "tags": [
+        "creator",
+        "video",
+        "education",
+        "javascript",
+        "local-first"
+      ],
+      "category": "Creator Tool",
+      "engagement": {
+        "total_stars": 453
+      },
+      "results": "453 stars (created Oct 10); v0.7.4 on Oct 29; 57 commits in the window; AGPL-3.0; README example is a 72-second film made in one desktop run.",
+      "secondary_urls": [
+        {
+          "label": "Release v0.7.4",
+          "url": "https://github.com/sitor-ai/frametell/releases/tag/v0.7.4"
+        }
+      ],
+      "key_takeaways": [
+        "One sentence such as 'explain the uncertainty principle' is enough to start.",
+        "The storyboard is approved before narration and voice are produced.",
+        "Built for people who explain science, history, technology and books."
+      ],
+      "enterprise_adaptation": "The clever part is the storyboard checkpoint, which keeps a human in the creative seat while the agent does the production. Experiment: turn one dense research memo into a 60-second explainer and use it to open your next internal science review."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "AI repos ranked by weekly star delta from GitHub Trending, with total stars and what changed this week.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "nutlope-hallmark",
+          "title": "Nutlope/hallmark",
+          "primary_url": "https://github.com/Nutlope/hallmark",
+          "date": "2026-10-29",
+          "summary": "Hallmark is a design skill for Claude Code, Codex, Cursor and OpenCode that deals three themes from fifty and lints the page in a real browser for machine-made tells. It added 11,566 stars this week; the README credits Together AI.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "creator",
+            "design",
+            "skill",
+            "css",
+            "company-backed"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 11566,
+            "total_stars": 44892
+          },
+          "results": "11,566 weekly stars (GitHub Trending weekly snapshot, Nov 1 evening PT); 44,892 total; 13 commits in the window; MIT."
+        },
+        {
+          "id": "hkuds-deeptutor",
+          "title": "HKUDS/DeepTutor",
+          "primary_url": "https://github.com/HKUDS/DeepTutor",
+          "date": "2026-10-31",
+          "summary": "DeepTutor is an open-source personalized tutor that added 10,982 stars this week and shipped v1.7.1 on Oct 31. It is a candidate for getting skeptical researchers comfortable with AI through a guided learning tool.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "education",
+            "consumer",
+            "python",
+            "lab-project"
+          ],
+          "category": "Education Agent",
+          "engagement": {
+            "stars": 10982,
+            "total_stars": 53674
+          },
+          "results": "10,982 weekly stars (GitHub Trending weekly snapshot, Nov 1 evening PT); 53,674 total; v1.7.1 on Oct 31; 100+ commits in the window; Apache-2.0, university lab-backed.",
+          "secondary_urls": [
+            {
+              "label": "Release v1.7.1",
+              "url": "https://github.com/HKUDS/DeepTutor/releases/tag/v1.7.1"
+            }
+          ]
+        },
+        {
+          "id": "graphify-labs-graphify",
+          "title": "Graphify-Labs/graphify",
+          "primary_url": "https://github.com/Graphify-Labs/graphify",
+          "date": "2026-11-01",
+          "summary": "graphify turns a codebase, its docs, SQL schemas, configs and PDFs into a queryable knowledge graph via a /graphify skill. It added 5,670 stars this week and shipped v0.9.100 on Nov 1.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "developer",
+            "knowledge-graph",
+            "skill",
+            "python"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 5670,
+            "total_stars": 140545
+          },
+          "results": "5,670 weekly stars (GitHub Trending weekly snapshot, Nov 1 evening PT); 140,545 total; v0.9.100 on Nov 1; 100+ commits in the window; Apache-2.0.",
+          "recurrence": "returning_metric",
+          "recurrence_note": "graphify appeared in the July 6 and July 13 briefs; this week adds a v0.9.100 release and 5,670 new stars."
+        },
+        {
+          "id": "milind-soni-openmausbot",
+          "title": "milind-soni/OpenMausBot",
+          "primary_url": "https://github.com/milind-soni/OpenMausBot",
+          "date": "2026-11-01",
+          "summary": "OpenMausBot is an open-source desktop app that gives you a team of Claude and Codex bots in a chat sidebar, each with its own personality, cloud computer and connected apps. It added 4,793 stars this week.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "indie",
+            "desktop",
+            "agents",
+            "typescript",
+            "individual"
+          ],
+          "category": "Agent App",
+          "engagement": {
+            "stars": 4793,
+            "total_stars": 10544
+          },
+          "results": "4,793 weekly stars (GitHub Trending weekly snapshot, Nov 1 evening PT); 10,544 total; v0.1.137 on Nov 1; 100+ commits in the window; Apache-2.0."
+        },
+        {
+          "id": "wangzan101-mika-trending",
+          "title": "wangzan101/Mika",
+          "primary_url": "https://github.com/wangzan101/Mika",
+          "date": "2026-10-29",
+          "summary": "Mika is an on-device Android agent that works apps and the web on a hidden screen; it reached 3,860 stars within three days of creation.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 10,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "consumer",
+            "android",
+            "kotlin"
+          ],
+          "category": "Consumer Agent",
+          "engagement": {
+            "stars": 3860,
+            "total_stars": 3860
+          },
+          "results": "3,860 stars in 3 days (GitHub API at fetch, Nov 1)."
+        },
+        {
+          "id": "nightly-labs-openbot",
+          "title": "nightly-labs/openbot",
+          "primary_url": "https://github.com/nightly-labs/openbot",
+          "date": "2026-11-01",
+          "summary": "openbot is a local-first desktop workspace for persistent AI teammates that runs Codex, Claude and Grok with dedicated workspaces, task queues and shared files. It added 3,589 stars this week and shipped v0.58.0 on Nov 1.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "desktop",
+            "local-first",
+            "agents",
+            "typescript"
+          ],
+          "category": "Agent App",
+          "engagement": {
+            "stars": 3589,
+            "total_stars": 4531
+          },
+          "results": "3,589 weekly stars (GitHub Trending weekly snapshot, Nov 1 evening PT); 4,531 total; v0.58.0 on Nov 1; 100+ commits in the window."
+        },
+        {
+          "id": "lightpanda-io-browser",
+          "title": "lightpanda-io/browser",
+          "primary_url": "https://github.com/lightpanda-io/browser",
+          "date": "2026-11-01",
+          "summary": "Lightpanda is a headless browser written in Zig and built for AI agents and automation. It added 3,155 stars this week and had 100+ commits in the window.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "developer",
+            "browser",
+            "zig",
+            "small-team"
+          ],
+          "category": "Dev Tool",
+          "engagement": {
+            "stars": 3155,
+            "total_stars": 40141
+          },
+          "results": "3,155 weekly stars (GitHub Trending weekly snapshot, Nov 1 evening PT); 40,141 total; AGPL-3.0; 100+ commits in the window."
+        },
+        {
+          "id": "gitroomhq-postiz-app",
+          "title": "gitroomhq/postiz-app",
+          "primary_url": "https://github.com/gitroomhq/postiz-app",
+          "date": "2026-10-24",
+          "summary": "Postiz is an open-source agentic social media scheduler for creators and small brands. It added 2,824 stars this week and shipped v2.25.3 on Oct 24.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "creator",
+            "smb",
+            "social-media",
+            "typescript"
+          ],
+          "category": "Creator Tool",
+          "engagement": {
+            "stars": 2824,
+            "total_stars": 40595
+          },
+          "results": "2,824 weekly stars (GitHub Trending weekly snapshot, Nov 1 evening PT); 40,595 total; v2.25.3 on Oct 24; 32 commits in the window; AGPL-3.0."
+        },
+        {
+          "id": "patch-gg-pixelfx-trending",
+          "title": "patch-gg/pixelfx",
+          "primary_url": "https://github.com/patch-gg/pixelfx",
+          "date": "2026-10-30",
+          "summary": "pixelfx is a library of 244 pixel-art effects plus a Claude Code skill to make more; it reached 2,597 stars two days after creation.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 10,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "creator",
+            "gamedev",
+            "pixel-art"
+          ],
+          "category": "Creator Tool",
+          "engagement": {
+            "stars": 2597,
+            "total_stars": 2597
+          },
+          "results": "2,597 stars in 2 days (GitHub API at fetch, Nov 1)."
+        },
+        {
+          "id": "coreyhaines31-marketingskills",
+          "title": "coreyhaines31/marketingskills",
+          "primary_url": "https://github.com/coreyhaines31/marketingskills",
+          "date": "2026-10-30",
+          "summary": "marketingskills packages CRO, copywriting, SEO, analytics and growth engineering as skills for Claude Code and other agents. It added 1,370 stars this week and shipped v2.14.0 on Oct 30.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "smb",
+            "marketing",
+            "skill",
+            "javascript",
+            "individual"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 1370,
+            "total_stars": 57858
+          },
+          "results": "1,370 weekly stars (GitHub Trending weekly snapshot, Nov 1 evening PT); 57,858 total; v2.14.0 on Oct 30; 100+ commits in the window; MIT."
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Skills & MCP Servers",
+      "description": "Agent skills, MCP servers and prompt libraries published or shipped this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "niazmorshed2007-reanimate",
+          "title": "NiazMorshed2007/reanimate",
+          "primary_url": "https://github.com/NiazMorshed2007/reanimate",
+          "date": "2026-10-29",
+          "summary": "reanimate is a Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same. It reached 739 stars within three days of creation.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "creator",
+            "animation",
+            "skill",
+            "javascript",
+            "individual"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 739,
+            "total_stars": 739
+          },
+          "results": "739 stars in 3 days (created Oct 29); 20 commits in the window; MIT."
+        },
+        {
+          "id": "caru-ini-stack-diagram",
+          "title": "caru-ini/stack-diagram",
+          "primary_url": "https://github.com/caru-ini/stack-diagram",
+          "date": "2026-11-01",
+          "summary": "stack-diagram is an agent skill that turns one sentence about your stack into an architecture diagram with official logos. It reached 363 stars in its first day and shipped v0.2.0 on Nov 1.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "indie",
+            "developer",
+            "diagram",
+            "skill",
+            "python",
+            "individual"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 363,
+            "total_stars": 363
+          },
+          "results": "363 stars on release day (created Nov 1); v0.2.0 on Nov 1; works with Claude Code, Codex and Cursor; MIT."
+        },
+        {
+          "id": "tianfuzhibuyuci-readme-visual-kit",
+          "title": "tianfuzhibuyuci/readme-visual-kit",
+          "primary_url": "https://github.com/tianfuzhibuyuci/readme-visual-kit",
+          "date": "2026-10-27",
+          "summary": "readme-visual-kit turns a project's source-backed description into three README diagrams (feature flow, simplified architecture, quick start) with a local SVG renderer and an agent skill, no API key required. It has 186 stars within days of creation.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "indie",
+            "documentation",
+            "skill",
+            "javascript"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 186,
+            "total_stars": 186
+          },
+          "results": "186 stars (created Oct 27)."
+        },
+        {
+          "id": "moh4696-open-3d-skills",
+          "title": "Moh4696/open-3d-skills",
+          "primary_url": "https://github.com/Moh4696/open-3d-skills",
+          "date": "2026-10-31",
+          "summary": "open-3d-skills is a set of eight agent skills for 3D and animated websites, including three.js scenes from code and scroll films. It has 135 stars within a day of creation.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "creator",
+            "web",
+            "3d",
+            "skill",
+            "javascript"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 135,
+            "total_stars": 135
+          },
+          "results": "135 stars (created Oct 31)."
+        },
+        {
+          "id": "mayzmei-anime-series-maker",
+          "title": "Mayzmei/anime-series-maker",
+          "primary_url": "https://github.com/Mayzmei/anime-series-maker",
+          "date": "2026-10-26",
+          "summary": "anime-series-maker is an agent skill for Claude Code and Codex that takes two character sheets and one line of story and returns a finished AI anime episode. It has 134 stars within days of creation.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "creator",
+            "video",
+            "anime",
+            "skill",
+            "python"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 134,
+            "total_stars": 134
+          },
+          "results": "134 stars (created Oct 26)."
+        },
+        {
+          "id": "coreyhaines31-marketingskills-skill",
+          "title": "coreyhaines31/marketingskills v2.14.0",
+          "primary_url": "https://github.com/coreyhaines31/marketingskills/releases/tag/v2.14.0",
+          "date": "2026-10-30",
+          "summary": "marketingskills v2.14.0 shipped Oct 30 and gives small-business owners ready skills for copywriting, SEO and conversion work inside Claude Code and other agents.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "smb",
+            "marketing",
+            "skill",
+            "release"
+          ],
+          "category": "Agent Skill",
+          "results": "Release v2.14.0 published Oct 30."
+        },
+        {
+          "id": "aa1143-namiagent",
+          "title": "aa1143/NamiAgent",
+          "primary_url": "https://github.com/aa1143/NamiAgent",
+          "date": "2026-10-30",
+          "summary": "NamiAgent is a beginner course and a runnable local agent that starts from a 100-line loop and adds file access, shell, MCP and long-term memory one lesson at a time. It has 123 stars within days of creation.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "education",
+            "indie",
+            "agent",
+            "python"
+          ],
+          "category": "Eval / Tutorial",
+          "engagement": {
+            "stars": 123,
+            "total_stars": 123
+          },
+          "results": "123 stars (created Oct 30)."
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN & Indie Builds",
+      "description": "Show HN posts with working repos, plus hobby and maker projects.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "hn-nesformer",
+          "title": "Show HN: A working Nintendo in ~1GB of Qwen weights",
+          "primary_url": "https://news.ycombinator.com/item?id=50306442",
+          "date": "2026-10-30",
+          "summary": "A compiler placed an NES CPU into stock Qwen3.5 weights, and the model plays Super Mario Bros. one token at a time. The post drew 292 points and 150 comments.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "fun",
+            "show-hn",
+            "weights"
+          ],
+          "category": "Show HN",
+          "engagement": {
+            "upvotes": 292,
+            "comments": 150
+          },
+          "results": "292 points, 150 comments (HN, Oct 30).",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/dbreunig/nesformer"
+            }
+          ]
+        },
+        {
+          "id": "frigadehq-hob",
+          "title": "FrigadeHQ/hob",
+          "primary_url": "https://github.com/FrigadeHQ/hob",
+          "date": "2026-10-26",
+          "summary": "Hob is a free, open-source desktop app that picks the best open-weight model your computer can run, sets it up, and fills out PDFs and works through documents offline. The Show HN drew 177 points and 43 comments.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "consumer",
+            "local-first",
+            "show-hn",
+            "typescript"
+          ],
+          "category": "Local AI App",
+          "engagement": {
+            "total_stars": 428,
+            "upvotes": 177,
+            "comments": 43
+          },
+          "results": "177 HN points, 43 comments (Oct 26); 428 stars; v0.2.6 on Oct 30; MIT; 22 commits in the window.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50246238"
+            }
+          ]
+        },
+        {
+          "id": "mottopanikeiku-doomformer",
+          "title": "mottopanikeiku/doomformer",
+          "primary_url": "https://github.com/mottopanikeiku/doomformer",
+          "date": "2026-10-29",
+          "summary": "Doomformer compiles integer neural networks into DOOM maps where voodoo dolls do the arithmetic; the full 10,000-digit MNIST test set scored 97.2% through the game. The Show HN drew 131 points and 36 comments.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "fun",
+            "show-hn",
+            "python",
+            "individual"
+          ],
+          "category": "Fun Experiment",
+          "engagement": {
+            "total_stars": 55,
+            "upvotes": 131,
+            "comments": 36
+          },
+          "results": "131 HN points, 36 comments (Oct 29); README reports 97.2% on 10,000 MNIST digits run through DOOM; v0.7.1 on Oct 28; MIT.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50297697"
+            }
+          ]
+        },
+        {
+          "id": "kerlenton-bootgpt",
+          "title": "kerlenton/bootgpt",
+          "primary_url": "https://github.com/kerlenton/bootgpt",
+          "date": "2026-10-30",
+          "summary": "bootgpt is a 512-byte boot sector that loads an 11.5 KB int8 model and dreams a Linux boot log in 16-bit real mode, with no OS. The Show HN drew 95 points.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "fun",
+            "show-hn",
+            "assembly",
+            "individual"
+          ],
+          "category": "Fun Experiment",
+          "engagement": {
+            "stars": 56,
+            "total_stars": 56,
+            "upvotes": 95,
+            "comments": 6
+          },
+          "results": "95 HN points, 6 comments (Oct 31); 56 stars; MIT.",
+          "secondary_urls": [
+            {
+              "label": "Show HN thread",
+              "url": "https://news.ycombinator.com/item?id=50315782"
+            }
+          ]
+        },
+        {
+          "id": "fanhao375-microduck-replica",
+          "title": "fanhao375/microduck-replica",
+          "primary_url": "https://github.com/fanhao375/microduck-replica",
+          "date": "2026-11-01",
+          "summary": "microduck-replica is a community build of the Pollen Robotics Microduck, with a flashable image, a browser control studio, CAD and bill of materials, verified to stand, walk and roll over. It added 166 stars this week.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "hobby",
+            "robotics",
+            "maker",
+            "community"
+          ],
+          "category": "Hobby Hardware",
+          "engagement": {
+            "stars": 166,
+            "total_stars": 1514
+          },
+          "results": "166 weekly stars (GitHub Trending weekly snapshot, Nov 1 evening PT); 1,514 total; 100+ commits in the window; physical walking and roll-over verified by the builder on Oct 24.",
+          "recurrence": "returning_pattern",
+          "recurrence_note": "Pollen Robotics' Microduck was covered Oct 19; this week a third party published a full replica with a flashable image."
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent & RAG Implementations",
+      "description": "Agent and retrieval builds with linked code worth studying.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "hkuds-deeptutor-agent",
+          "title": "HKUDS/DeepTutor v1.7.1",
+          "primary_url": "https://github.com/HKUDS/DeepTutor/releases/tag/v1.7.1",
+          "date": "2026-10-31",
+          "summary": "DeepTutor v1.7.1 shipped Oct 31 as a tutoring agent with personalized, lifelong learning memory, a pattern for guiding researchers through new methods.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "education",
+            "agent",
+            "python",
+            "release"
+          ],
+          "category": "Education Agent",
+          "results": "Release v1.7.1 on Oct 31; 100+ commits in the window; 53,674 total stars."
+        },
+        {
+          "id": "robosimstudio-robosimstudio",
+          "title": "robosimstudio/robosimstudio",
+          "primary_url": "https://github.com/robosimstudio/robosimstudio",
+          "date": "2026-10-29",
+          "summary": "RoboSimStudio is an open toolkit for rebuilding real robot manipulation tasks in physics simulation by hand or with a coding agent; it added 15 material types including rope, dough, liquid and paper. It has 287 stars and a linked tech report.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "science",
+            "simulation",
+            "robotics",
+            "python"
+          ],
+          "category": "AI for Science",
+          "engagement": {
+            "total_stars": 287
+          },
+          "results": "287 stars (created Oct 12); News lists 500 demos in 4.2 minutes on one GPU (Oct 21) and fifteen material kinds (Oct 20); Apache-2.0; tech report on arXiv. Science bonus +0.5 included in score.",
+          "secondary_urls": [
+            {
+              "label": "Tech report",
+              "url": "https://arxiv.org/abs/2610.18835"
+            }
+          ]
+        },
+        {
+          "id": "graphify-labs-graphify-rag",
+          "title": "Graphify-Labs/graphify v0.9.100",
+          "primary_url": "https://github.com/Graphify-Labs/graphify",
+          "date": "2026-11-01",
+          "summary": "graphify builds a queryable knowledge graph from code, SQL schemas, configs and PDFs and exposes it to agents as a skill, a retrieval pattern that goes beyond vector search.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "developer",
+            "rag",
+            "knowledge-graph",
+            "python"
+          ],
+          "category": "Knowledge Graph",
+          "results": "v0.9.100 on Nov 1; 140,545 total stars."
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "Builds with a concrete cost or speed number from the maker.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "muaaz9329-cheap-ag-win",
+          "title": "muaaz9329/cheap-ag",
+          "primary_url": "https://github.com/muaaz9329/cheap-ag",
+          "date": "2026-10-31",
+          "summary": "The builder reports 63% fewer Opus tokens for the same feature and prompt by letting a half-cent model write the code and requiring tests to pass.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "indie",
+            "cost",
+            "developer"
+          ],
+          "category": "Cost Win",
+          "results": "63% fewer Opus tokens, same prompt and feature (builder-reported, README)."
+        },
+        {
+          "id": "patch-gg-anymove-win",
+          "title": "patch-gg/anymove",
+          "primary_url": "https://github.com/patch-gg/anymove",
+          "date": "2026-10-27",
+          "summary": "The maker puts a usable animation for any rigged creature at about $3 all in, from a single AI video.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "creator",
+            "gamedev",
+            "animation"
+          ],
+          "category": "Cost Win",
+          "results": "About $3 per usable move (maker-reported, README)."
+        },
+        {
+          "id": "carloslfu-slotstream",
+          "title": "carloslfu/slotstream",
+          "primary_url": "https://github.com/carloslfu/slotstream",
+          "date": "2026-10-26",
+          "summary": "Slotstream runs a 125-billion-parameter open model on Macs with 16 to 64 GB by streaming experts from SSD, and the builder measured 20.91 to 23.69 tokens per second on a 48 GB M5 Pro. It added 158 stars this week.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "local-first",
+            "apple-silicon",
+            "swift",
+            "individual"
+          ],
+          "category": "Local Inference",
+          "engagement": {
+            "stars": 158,
+            "total_stars": 640
+          },
+          "results": "20.91-23.69 tok/s on a 48 GB M5 Pro at a 33 GB memory budget (builder-measured, README); 158 weekly stars (GitHub Trending weekly snapshot, Nov 1 evening PT); v0.2.30."
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Meaningful releases from agent and model frameworks.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "huggingface-transformers-v5-22-0",
+          "title": "huggingface/transformers v5.22.0",
+          "primary_url": "https://github.com/huggingface/transformers/releases/tag/v5.22.0",
+          "date": "2026-10-29",
+          "summary": "Transformers v5.22.0 adds Mistral Large 4, a 1-trillion-parameter multimodal mixture-of-experts model with 49 billion active parameters per token, trained on 3,800 Grace Blackwell GPUs.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "framework",
+            "models",
+            "open-weight"
+          ],
+          "category": "Framework Release",
+          "results": "Mistral Large 4: 1T total parameters, 49B active, 160+ languages (release notes)."
+        },
+        {
+          "id": "pydantic-pydantic-ai-v2-62-0",
+          "title": "pydantic/pydantic-ai v2.62.0",
+          "primary_url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.62.0",
+          "date": "2026-10-27",
+          "summary": "Pydantic AI v2.62.0 lets an agent change thinking effort mid-conversation on OpenAI and Anthropic models and adds clearer model error categories.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "framework",
+            "agents",
+            "python"
+          ],
+          "category": "Framework Release",
+          "results": "v2.62.0 on Oct 27; v2.64.0 followed Oct 30."
+        },
+        {
+          "id": "mastra-ai-mastra-core-1-80-0",
+          "title": "mastra-ai/mastra @mastra/core 1.80.0",
+          "primary_url": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.80.0",
+          "date": "2026-10-28",
+          "summary": "Mastra core 1.80.0 adds per-user OAuth connections so an agent can use each end user's own accounts, plus an in-chat connect prompt and span aggregation in ClickHouse, Postgres and DuckDB.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "framework",
+            "typescript",
+            "agents"
+          ],
+          "category": "Framework Release",
+          "results": "Release Oct 28."
+        },
+        {
+          "id": "unslothai-unsloth-v0-1-912-beta",
+          "title": "unslothai/unsloth v0.1.912-beta",
+          "primary_url": "https://github.com/unslothai/unsloth/releases/tag/v0.1.912-beta",
+          "date": "2026-10-28",
+          "summary": "Unsloth v0.1.912-beta doubles first-launch speed and trains up to four compatible queued fine-tuning jobs together with multi-LoRA batching.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "framework",
+            "fine-tuning",
+            "local-first"
+          ],
+          "category": "Framework Release",
+          "results": "2x faster first launch; up to 4 jobs batched (release notes)."
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Cross-repo patterns seen this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "pattern-craft-skills",
+          "title": "Craft is shipping as render-and-look skills",
+          "primary_url": "https://github.com/patch-gg/pixelfx",
+          "date": "2026-10-30",
+          "summary": "pixelfx, reanimate, Hallmark and stack-diagram package a creative craft as a skill whose agent renders its output and judges it by eye before handing it back.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "pattern",
+            "skills",
+            "creator"
+          ],
+          "category": "Emerging Pattern",
+          "secondary_urls": [
+            {
+              "label": "reanimate",
+              "url": "https://github.com/NiazMorshed2007/reanimate"
+            },
+            {
+              "label": "Hallmark",
+              "url": "https://github.com/Nutlope/hallmark"
+            },
+            {
+              "label": "stack-diagram",
+              "url": "https://github.com/caru-ini/stack-diagram"
+            }
+          ],
+          "key_takeaways": [
+            "Visual feedback inside the loop is the common ingredient.",
+            "Skills are where a maker's taste becomes copyable."
+          ]
+        },
+        {
+          "id": "pattern-chat-app-bots",
+          "title": "Open 'bot in your chat' apps multiply",
+          "primary_url": "https://github.com/milind-soni/OpenMausBot",
+          "date": "2026-11-01",
+          "summary": "OpenMausBot (4,793 weekly stars), openbot (3,589), Codync and AnyModelBot each describe themselves as an open, bring-your-own-agent alternative to a chat-app bot team.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "pattern",
+            "agents",
+            "desktop"
+          ],
+          "category": "Emerging Pattern",
+          "secondary_urls": [
+            {
+              "label": "openbot",
+              "url": "https://github.com/nightly-labs/openbot"
+            },
+            {
+              "label": "Codync",
+              "url": "https://github.com/leepokai/Codync"
+            }
+          ],
+          "key_takeaways": [
+            "Builders reuse the Claude or Codex subscription they already pay for.",
+            "Messaging a teammate-style agent is replacing terminal windows."
+          ]
+        },
+        {
+          "id": "pattern-models-as-machines",
+          "title": "Models are being turned into machines",
+          "primary_url": "https://news.ycombinator.com/item?id=50306442",
+          "date": "2026-10-30",
+          "summary": "nesformer, Doomformer and bootgpt each run a computation inside a neural network, from a console CPU in model weights to MNIST in DOOM maps to a model in a boot sector.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-02T01:30:00Z",
+          "tags": [
+            "pattern",
+            "fun",
+            "weights"
+          ],
+          "category": "Emerging Pattern",
+          "secondary_urls": [
+            {
+              "label": "Doomformer",
+              "url": "https://github.com/mottopanikeiku/doomformer"
+            },
+            {
+              "label": "bootgpt",
+              "url": "https://github.com/kerlenton/bootgpt"
+            }
+          ],
+          "key_takeaways": [
+            "Three Show HN posts in one week built on the same idea.",
+            "Builders treat weights as compilable programs."
+          ]
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "patch-gg/pixelfx",
+      "source": "GitHub",
+      "date": "2026-10-30",
+      "primary_url": "https://github.com/patch-gg/pixelfx",
+      "score": 10,
+      "category": "Creator Tool"
+    },
+    {
+      "title": "wangzan101/Mika",
+      "source": "GitHub",
+      "date": "2026-10-29",
+      "primary_url": "https://github.com/wangzan101/Mika",
+      "score": 10,
+      "category": "Consumer Agent"
+    },
+    {
+      "title": "haydenschmitty/floorplan",
+      "source": "GitHub",
+      "date": "2026-10-27",
+      "primary_url": "https://github.com/haydenschmitty/floorplan",
+      "score": 9,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "dbreunig/nesformer",
+      "source": "Hacker News",
+      "date": "2026-10-30",
+      "primary_url": "https://github.com/dbreunig/nesformer",
+      "score": 9,
+      "category": "Fun Experiment"
+    },
+    {
+      "title": "patch-gg/anymove",
+      "source": "GitHub",
+      "date": "2026-10-27",
+      "primary_url": "https://github.com/patch-gg/anymove",
+      "score": 10,
+      "category": "Creator Tool"
+    },
+    {
+      "title": "muaaz9329/cheap-ag",
+      "source": "GitHub",
+      "date": "2026-10-28",
+      "primary_url": "https://github.com/muaaz9329/cheap-ag",
+      "score": 9,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "sitor-ai/frametell",
+      "source": "GitHub",
+      "date": "2026-10-29",
+      "primary_url": "https://github.com/sitor-ai/frametell",
+      "score": 8,
+      "category": "Creator Tool"
+    },
+    {
+      "title": "Nutlope/hallmark",
+      "source": "GitHub",
+      "date": "2026-10-29",
+      "primary_url": "https://github.com/Nutlope/hallmark",
+      "score": 8,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "HKUDS/DeepTutor",
+      "source": "GitHub",
+      "date": "2026-10-31",
+      "primary_url": "https://github.com/HKUDS/DeepTutor",
+      "score": 8,
+      "category": "Education Agent"
+    },
+    {
+      "title": "Graphify-Labs/graphify",
+      "source": "GitHub",
+      "date": "2026-11-01",
+      "primary_url": "https://github.com/Graphify-Labs/graphify",
+      "score": 8,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "milind-soni/OpenMausBot",
+      "source": "GitHub",
+      "date": "2026-11-01",
+      "primary_url": "https://github.com/milind-soni/OpenMausBot",
+      "score": 8,
+      "category": "Agent App"
+    },
+    {
+      "title": "nightly-labs/openbot",
+      "source": "GitHub",
+      "date": "2026-11-01",
+      "primary_url": "https://github.com/nightly-labs/openbot",
+      "score": 7,
+      "category": "Agent App"
+    },
+    {
+      "title": "lightpanda-io/browser",
+      "source": "GitHub",
+      "date": "2026-11-01",
+      "primary_url": "https://github.com/lightpanda-io/browser",
+      "score": 8,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "gitroomhq/postiz-app",
+      "source": "GitHub",
+      "date": "2026-10-24",
+      "primary_url": "https://github.com/gitroomhq/postiz-app",
+      "score": 7,
+      "category": "Creator Tool"
+    },
+    {
+      "title": "coreyhaines31/marketingskills",
+      "source": "GitHub",
+      "date": "2026-10-30",
+      "primary_url": "https://github.com/coreyhaines31/marketingskills",
+      "score": 7,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "NiazMorshed2007/reanimate",
+      "source": "GitHub",
+      "date": "2026-10-29",
+      "primary_url": "https://github.com/NiazMorshed2007/reanimate",
+      "score": 9,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "caru-ini/stack-diagram",
+      "source": "GitHub",
+      "date": "2026-11-01",
+      "primary_url": "https://github.com/caru-ini/stack-diagram",
+      "score": 8,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "tianfuzhibuyuci/readme-visual-kit",
+      "source": "GitHub",
+      "date": "2026-10-27",
+      "primary_url": "https://github.com/tianfuzhibuyuci/readme-visual-kit",
+      "score": 6,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "Moh4696/open-3d-skills",
+      "source": "GitHub",
+      "date": "2026-10-31",
+      "primary_url": "https://github.com/Moh4696/open-3d-skills",
+      "score": 7,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "Mayzmei/anime-series-maker",
+      "source": "GitHub",
+      "date": "2026-10-26",
+      "primary_url": "https://github.com/Mayzmei/anime-series-maker",
+      "score": 8,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "aa1143/NamiAgent",
+      "source": "GitHub",
+      "date": "2026-10-30",
+      "primary_url": "https://github.com/aa1143/NamiAgent",
+      "score": 7,
+      "category": "Eval / Tutorial"
+    },
+    {
+      "title": "FrigadeHQ/hob",
+      "source": "GitHub",
+      "date": "2026-10-26",
+      "primary_url": "https://github.com/FrigadeHQ/hob",
+      "score": 8,
+      "category": "Local AI App"
+    },
+    {
+      "title": "mottopanikeiku/doomformer",
+      "source": "GitHub",
+      "date": "2026-10-29",
+      "primary_url": "https://github.com/mottopanikeiku/doomformer",
+      "score": 9,
+      "category": "Fun Experiment"
+    },
+    {
+      "title": "kerlenton/bootgpt",
+      "source": "GitHub",
+      "date": "2026-10-30",
+      "primary_url": "https://github.com/kerlenton/bootgpt",
+      "score": 8,
+      "category": "Fun Experiment"
+    },
+    {
+      "title": "fanhao375/microduck-replica",
+      "source": "GitHub",
+      "date": "2026-11-01",
+      "primary_url": "https://github.com/fanhao375/microduck-replica",
+      "score": 7,
+      "category": "Hobby Hardware"
+    },
+    {
+      "title": "robosimstudio/robosimstudio",
+      "source": "GitHub",
+      "date": "2026-10-29",
+      "primary_url": "https://github.com/robosimstudio/robosimstudio",
+      "score": 7.5,
+      "category": "AI for Science"
+    },
+    {
+      "title": "carloslfu/slotstream",
+      "source": "GitHub",
+      "date": "2026-10-26",
+      "primary_url": "https://github.com/carloslfu/slotstream",
+      "score": 9,
+      "category": "Local Inference"
+    },
+    {
+      "title": "huggingface/transformers v5.22.0",
+      "source": "GitHub",
+      "date": "2026-10-29",
+      "primary_url": "https://github.com/huggingface/transformers/releases/tag/v5.22.0",
+      "score": 9,
+      "category": "Framework Release"
+    },
+    {
+      "title": "pydantic/pydantic-ai v2.62.0",
+      "source": "GitHub",
+      "date": "2026-10-27",
+      "primary_url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.62.0",
+      "score": 8,
+      "category": "Framework Release"
+    },
+    {
+      "title": "mastra-ai/mastra @mastra/core 1.80.0",
+      "source": "GitHub",
+      "date": "2026-10-28",
+      "primary_url": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.80.0",
+      "score": 8,
+      "category": "Framework Release"
+    },
+    {
+      "title": "unslothai/unsloth v0.1.912-beta",
+      "source": "GitHub",
+      "date": "2026-10-28",
+      "primary_url": "https://github.com/unslothai/unsloth/releases/tag/v0.1.912-beta",
+      "score": 8,
+      "category": "Framework Release"
+    },
+    {
+      "title": "Craft is shipping as render-and-look skills",
+      "source": "GitHub",
+      "date": "2026-10-30",
+      "primary_url": "https://github.com/patch-gg/pixelfx",
+      "score": 9,
+      "category": "Emerging Pattern"
+    },
+    {
+      "title": "Open 'bot in your chat' apps multiply",
+      "source": "GitHub",
+      "date": "2026-11-01",
+      "primary_url": "https://github.com/milind-soni/OpenMausBot",
+      "score": 9,
+      "category": "Emerging Pattern"
+    },
+    {
+      "title": "Models are being turned into machines",
+      "source": "Hacker News",
+      "date": "2026-10-30",
+      "primary_url": "https://news.ycombinator.com/item?id=50306442",
+      "score": 9,
+      "category": "Emerging Pattern"
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "AgriciDaniel/claude-seo: 5,034 weekly stars on GitHub Trending",
+      "reason": "No default-branch commits in the window and the latest release (v2.5.0) predates it on Oct 22; momentum without visible activity.",
+      "attempted_url": "https://github.com/AgriciDaniel/claude-seo"
+    },
+    {
+      "claim": "jakubkrehel/skills: 1,607 weekly stars",
+      "reason": "Last push Oct 25 with no commits in the window; momentum without activity.",
+      "attempted_url": "https://github.com/jakubkrehel/skills"
+    },
+    {
+      "claim": "YuJunZhiXue/dsh-purge: 6,644 weekly stars",
+      "reason": "A model-jailbreak prompt pack; outside the Builders brief and routed out.",
+      "attempted_url": "https://github.com/YuJunZhiXue/dsh-purge"
+    },
+    {
+      "claim": "cloudflare/security-audit-skill: 10,069 weekly stars",
+      "reason": "Corporate repo and a security topic; routed to Launches or Research.",
+      "attempted_url": "https://github.com/cloudflare/security-audit-skill"
+    },
+    {
+      "claim": "Show HN: Outcrop geology app (150 points)",
+      "reason": "Page describes an augmented-reality geology app but states no AI component, so it fails the builder-AI filter.",
+      "attempted_url": "https://outcrop.rocks/"
+    },
+    {
+      "claim": "Show HN: Marelleo story box for kids (194 points)",
+      "reason": "Page is a hardware build log with no AI component stated.",
+      "attempted_url": "https://zebra.rodeo/en/blog/marelleo/"
+    },
+    {
+      "claim": "Show HN: Arsaze, Cursor for video editing (60 points)",
+      "reason": "No repository or demo results were checked; 0 comments and a vendor page only.",
+      "attempted_url": "https://www.arsaze.com"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "GitHub search sorted by stars for repos created in the window, by topic (agent-skills, claude-code, mcp-server)",
+      "GitHub Trending filtered by Rust, Zig, Swift, Dart and Kotlin, where several fresh agent apps appeared",
+      "Hugging Face Spaces trending, filtered to community publishers",
+      "Replicate featured community models"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "AI for materials, chemistry and building science: only one physics-simulation toolkit (RoboSimStudio) surfaced with fresh activity",
+      "Phone and desktop agents for non-developers",
+      "Creator pipelines for video, 3D and animation",
+      "Scientist-friendly tutoring and learning agents"
+    ],
+    "topics_to_drop": [],
+    "notes": "Weekly star deltas come from GitHub Trending weekly pages fetched Nov 1 evening PT; repos created in the window carry total stars as the delta, and repos without a trending entry carry total stars only. Commit counts use the GitHub commits API since Oct 26 07:00 UTC and cap at 100. n8n and Make community pages, Latent Space, r/LocalLLaMA and Indie Hackers were not sampled, so Automation Wins uses README-reported builder numbers (cheap-ag, anymove, slotstream). Science coverage is thin: last week's science repos (idfkit-mcp, ChemGraph, computational-chemistry skills) had no release or only minor activity this week and are excluded as repeats."
+  }
+}
