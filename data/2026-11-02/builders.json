@@ -1,0 +1,1802 @@
+{
+  "tab_id": "builders",
+  "tab_name": "Builders",
+  "subtitle": "Builder Intelligence",
+  "icon": "Hammer",
+  "freshness": {
+    "target_pct_new": 0.85,
+    "pct_new": 0.97,
+    "items_total": 33,
+    "items_new": 32,
+    "items_returning": 1
+  },
+  "min_items": 18,
+  "executive_summary": [
+    {
+      "headline": "Background agents, a CPU-only 284B model and film-from-code lead the week",
+      "body": "KKKKhazix/agent-autoloop reached 4,107 stars in six days by letting command-line agents work in the background and send a card only when a decision is yours, llama-modchip runs a 284B DeepSeek model in 64 GB of RAM (359 Hacker News points), and sarpstar/cinecode reached 1,600 stars turning a coding agent into a film studio.",
+      "primary_url": "https://github.com/KKKKhazix/agent-autoloop"
+    },
+    {
+      "headline": "Agents get their own phones and computers",
+      "body": "terminal-mac (2,390 stars) gives an agent a virtual Mac, Pinky (825) and Poki (607) let agents drive real phones, and sandbox-mcp builds and deletes a Windows 11 machine in about 40 to 50 seconds per test.",
+      "primary_url": "https://github.com/govijr/terminal-mac"
+    },
+    {
+      "headline": "Creators and a Nature lab get code-first tools",
+      "body": "sand3d writes a washing machine in 38 lines of Python, LivLiv Player puts a lip-synced character in 30 KB, music-skill composes scores without an audio model, and AutoDNA, published in Nature on Nov 4, runs a DNA lab across 20-plus instrument types and 11,000 steps with its code on GitHub.",
+      "primary_url": "https://github.com/Sandflow-ai/sand3d"
+    },
+    {
+      "headline": "Key takeaway",
+      "body": "This week's best builds hand an agent a whole environment: its own machine, its own phone, a film timeline, a lab. Pick one chore you do by hand and give an agent a sandbox to do it in.",
+      "primary_url": "https://github.com/govijr/terminal-mac"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "kkkkhazix-agent-autoloop",
+      "title": "KKKKhazix/agent-autoloop",
+      "primary_url": "https://github.com/KKKKhazix/agent-autoloop",
+      "date": "2026-11-03",
+      "summary": "Agent Autoloop turns command-line agents like Claude Code and Codex into a background loop that picks up work, finishes it, and sends a decision card only when a call is yours. It reached 4,107 stars in six days and shipped v1.6.4 on Nov 8.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:20:00Z",
+      "tags": [
+        "agent",
+        "automation",
+        "individual",
+        "typescript",
+        "personal-productivity"
+      ],
+      "category": "Agent Framework",
+      "engagement": {
+        "stars": 4107,
+        "total_stars": 4107
+      },
+      "results": "4,107 stars and 747 forks since creation on Nov 3; 100+ commits in the window; v1.6.4 on Nov 8; MIT. The README lists a zero-dependency kernel with swappable event, agent, notification and delivery plugins.",
+      "key_takeaways": [
+        "Cards arrive on Feishu, DingTalk, WeCom, Slack, Discord or the desktop, and a waiting agent spends no tokens.",
+        "Any CLI that takes a prompt and prints a reply plugs in with one line, with no SDK.",
+        "A built-in try run walks through ask, exit, answer, resume in a few minutes."
+      ],
+      "enterprise_adaptation": "The clever part is a kernel that treats an agent as a worker that sleeps until a human decision is ready, so work continues while the window is closed. Experiment: point it at one recurring chore, such as a 9 AM digest of new issues, and answer the cards from your phone for a week."
+    },
+    {
+      "id": "synchopate-llama-modchip",
+      "title": "synchopate/llama-modchip",
+      "primary_url": "https://github.com/synchopate/llama-modchip",
+      "date": "2026-11-08",
+      "summary": "llama-modchip is a set of llama.cpp kernel patches and quantization tools that run a 284B-parameter DeepSeek mixture-of-experts model in 64 GB of RAM with no GPU. It hit 359 points on Hacker News on Nov 8 and shipped v2.4.0 on Nov 4.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:20:00Z",
+      "tags": [
+        "local-llm",
+        "open-weight",
+        "cpu-inference",
+        "individual",
+        "c++"
+      ],
+      "category": "Inference Tool",
+      "engagement": {
+        "stars": 494,
+        "total_stars": 494,
+        "upvotes": 359,
+        "comments": 152
+      },
+      "results": "The README reports a 56.56 GiB checkpoint at 1.71 bits per weight, 44.36 tokens/s prefill on a 16-core Zen 5 and 9.1 to 14.7 tokens/s decode; 45 commits in the window; Apache-2.0. On Hacker News one commenter reports 12 to 14 tokens/s on a Ryzen 7 5700U with 64 GB at 15 W, while another hit a tensor-shape error installing the DeepSeek build. Commenters disagree on output quality at roughly 2 bits.",
+      "secondary_urls": [
+        {
+          "label": "Hacker News thread",
+          "url": "https://news.ycombinator.com/item?id=50411961"
+        }
+      ],
+      "key_takeaways": [
+        "Prefill got +77% and decode +53% from register-tiled AVX-512 kernels, per the README.",
+        "A /dev/shm KV snapshot restores a 40-tool agent prompt in 13 to 33 ms.",
+        "A community leaderboard collects CPU benchmark submissions."
+      ],
+      "enterprise_adaptation": "The clever part is treating a frontier-size model as a memory-layout problem, so a desktop with no GPU runs it. Experiment: install the 30B Nemotron build on a spare 32 GB machine, point a coding agent at it, and time a real task against your hosted model."
+    },
+    {
+      "id": "sarpstar-cinecode",
+      "title": "sarpstar/cinecode",
+      "primary_url": "https://github.com/sarpstar/cinecode",
+      "date": "2026-11-03",
+      "summary": "cinecode lets a coding agent write the script, build every frame in code, design the sound and hand back a finished MP4, from 15-second clips to ten-minute documentaries. It reached 1,600 stars within a day of its Nov 3 launch.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:20:00Z",
+      "tags": [
+        "creator",
+        "video",
+        "skill",
+        "python",
+        "individual"
+      ],
+      "category": "Creator Tool",
+      "engagement": {
+        "stars": 1600,
+        "total_stars": 1600
+      },
+      "results": "1,600 stars and 291 forks, created Nov 3; MIT; 7 commits in the window; runs in Claude Code or Cursor with headless Chrome rendering and a free-tier narrator option.",
+      "key_takeaways": [
+        "Formats cover short films, YouTube explainers, ads in 9:16, 1:1 and 16:9, and music videos cut to a measured beat grid.",
+        "Each idea is crossed with a random real-world object so the film is not the obvious first one.",
+        "Long videos carry a sourced script for every claim about a real person or event."
+      ],
+      "enterprise_adaptation": "The clever part is that video becomes a build artifact: code renders every frame, so edits are text changes. Experiment: make a 30-second explainer of your own product or lab result, then regenerate it in three visual styles."
+    },
+    {
+      "id": "sandflow-ai-sand3d",
+      "title": "Sandflow-ai/sand3d",
+      "primary_url": "https://github.com/Sandflow-ai/sand3d",
+      "date": "2026-11-03",
+      "summary": "sand3d is a Python library for writing 3D objects as short, readable programs that a language model can author, with named parts, joints and assemblies. A washing machine takes 38 lines, and a part uses 2 to 6 times fewer tokens than Blender Python, CadQuery or FeatureScript.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 9,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:20:00Z",
+      "tags": [
+        "3d",
+        "cad",
+        "python",
+        "exports-urdf-usd",
+        "small-team"
+      ],
+      "category": "Dev Tool",
+      "engagement": {
+        "stars": 1399,
+        "total_stars": 1399
+      },
+      "results": "1,399 stars, created Nov 3; v1.6.3 on Nov 6; 20 commits in the window; Apache-2.0. The full API fits in about 3,600 tokens, output is deterministic, and export covers GLB, URDF, USD, OBJ and STL.",
+      "secondary_urls": [
+        {
+          "label": "Project site",
+          "url": "https://sandflow.ai/sand3d/"
+        }
+      ],
+      "key_takeaways": [
+        "Parts, edges and faces are reached by name instead of computed coordinates.",
+        "URDF and USD export feed ROS, MuJoCo, Isaac Sim and Omniverse directly.",
+        "The same program builds the same mesh bit for bit."
+      ],
+      "enterprise_adaptation": "The clever part is a modeling language small enough to fit in a prompt, so an agent can design movable assemblies and hand them to a simulator. Experiment: describe a hinge, window sash or tool housing in sand3d, export URDF, and drop it into a physics sandbox."
+    },
+    {
+      "id": "govijr-terminal-mac",
+      "title": "govijr/terminal-mac",
+      "primary_url": "https://github.com/govijr/terminal-mac",
+      "date": "2026-11-03",
+      "summary": "terminal-mac gives computer-use agents their own virtual Mac, streamed into a terminal, so an agent can click and type without touching the host machine. It reached 2,390 stars in five days, with the MCP tools and a Claude Code plugin included.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:20:00Z",
+      "tags": [
+        "agent",
+        "computer-use",
+        "macos",
+        "swift",
+        "individual"
+      ],
+      "category": "MCP Server",
+      "engagement": {
+        "stars": 2390,
+        "total_stars": 2390
+      },
+      "results": "2,390 stars and 162 forks, created Nov 3; v0.2.0-6 on Nov 3; 18 commits in the window; MIT; Apple silicon, macOS 14 or later.",
+      "key_takeaways": [
+        "The guest is a real macOS install with its own apps, files and accounts.",
+        "Tools are screenshot, click, drag, scroll, type and key, plus a skill that teaches observe, act, verify.",
+        "The viewer streams over Kitty or iTerm2 graphics."
+      ],
+      "enterprise_adaptation": "The clever part is a second computer that belongs to the agent, so computer use never competes with your own cursor. Experiment: ask an agent to configure a fresh app in the guest while you keep working, and watch it from a terminal split."
+    },
+    {
+      "id": "ipads-x-autodna-nature",
+      "title": "AutoDNA: an AI-native lab for autonomous biomolecular operations",
+      "primary_url": "https://www.nature.com/articles/s41586-026-11228-6",
+      "date": "2026-11-04",
+      "summary": "AutoDNA is an autonomous DNA laboratory that orchestrates over 20 instrument types across more than 11,000 steps with human help limited to restocking. Nature published it Nov 4 with the code on GitHub.",
+      "source": "Nature",
+      "platform": "web",
+      "score": {
+        "total": 8.5,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:20:00Z",
+      "tags": [
+        "science",
+        "lab-automation",
+        "nature",
+        "multi-agent",
+        "open-code"
+      ],
+      "category": "AI for Science",
+      "results": "Per the paper: matched expert-optimized enzymatic DNA synthesis yields, ran concurrent protocols 3.2 times faster, completed an end-to-end DNA data-storage cycle with exact recovery, and identified a KRAS G13D mutation. The linked repo (Apache-2.0, v1.1.1) holds the multi-agent protocol generator, C++ scheduler and PLC firmware. Science bonus +0.5 included in score.",
+      "secondary_urls": [
+        {
+          "label": "AutoDNA code",
+          "url": "https://github.com/IPADS-X/AutoDNA"
+        },
+        {
+          "label": "Zenodo archive",
+          "url": "https://doi.org/10.5281/zenodo.20624108"
+        }
+      ],
+      "key_takeaways": [
+        "Models, experiments and instruments are co-designed rather than bolted on.",
+        "A chat front end built on LobeChat sits over a multi-agent protocol generator.",
+        "Four applications span synthesis, storage and clinical mutation detection."
+      ],
+      "enterprise_adaptation": "The clever part is that the AI sees the whole experiment, not a single step, so protocols from many users share one instrument pool. Experiment: copy the pattern at small scale by letting an agent turn a plain-language test request into a runnable protocol file for one instrument in your lab."
+    },
+    {
+      "id": "livliv-dev-player",
+      "title": "livliv-dev/player",
+      "primary_url": "https://github.com/livliv-dev/player",
+      "date": "2026-11-04",
+      "summary": "LivLiv Player is a 2.5D character player for the web with lip sync and webcam face tracking in a core of about 30 KB gzipped. It reached 1,337 stars in five days and ships with 21 ready characters.",
+      "source": "GitHub",
+      "platform": "github",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:20:00Z",
+      "tags": [
+        "creator",
+        "avatar",
+        "webgl",
+        "typescript",
+        "small-team"
+      ],
+      "category": "Creator Tool",
+      "engagement": {
+        "stars": 1337,
+        "total_stars": 1337
+      },
+      "results": "1,337 stars, created Nov 4; v0.3.0 on Nov 6; 38 commits in the window; Apache-2.0; WebGL2 with no dependencies; also plays VRM and PNGTuber models.",
+      "secondary_urls": [
+        {
+          "label": "Live demo",
+          "url": "https://livliv-dev.github.io/player/"
+        }
+      ],
+      "key_takeaways": [
+        "A few lines of JavaScript put a speaking character on a page, stream overlay or app.",
+        "Lip sync runs from microphone, audio or video in the browser.",
+        "Face tracking uses MediaPipe and loads only when needed."
+      ],
+      "enterprise_adaptation": "The clever part is a tiny, free renderer that makes a character feel alive from a microphone alone. Experiment: put an animated mascot on a product page or internal demo and drive it from your voice."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "trending_repos",
+      "title": "Trending Repos",
+      "description": "Weekly leaderboard. Weekly stars come from GitHub Trending (Nov 8 PT) for older repos; repos created this week carry total stars as the delta.",
+      "layout": "leaderboard",
+      "items": [
+        {
+          "id": "d4vinci-scrapling",
+          "title": "D4Vinci/Scrapling",
+          "primary_url": "https://github.com/D4Vinci/Scrapling",
+          "date": "2026-11-04",
+          "summary": "Scrapling is an adaptive web data-extraction framework that handles a single request or a full multi-page run, and it ships an MCP server. It added 8,342 stars on GitHub Trending this week and released v0.5.1 on Nov 4.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "extraction",
+            "mcp",
+            "individual",
+            "python"
+          ],
+          "category": "Dev Tool",
+          "engagement": {
+            "stars": 8342,
+            "total_stars": 99892
+          },
+          "results": "8,342 weekly stars (GitHub Trending weekly, Nov 8 PT); 99,892 total; Python; BSD-3-Clause; 29 commits in the window."
+        },
+        {
+          "id": "kkkkhazix-agent-autoloop-trending",
+          "title": "KKKKhazix/agent-autoloop",
+          "primary_url": "https://github.com/KKKKhazix/agent-autoloop",
+          "date": "2026-11-03",
+          "summary": "Agent Autoloop runs command-line agents as a background loop and pings you only for decisions. Created Nov 3, it holds 4,107 stars from a standing start.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "agent",
+            "automation",
+            "individual",
+            "typescript"
+          ],
+          "category": "Agent Framework",
+          "engagement": {
+            "stars": 4107,
+            "total_stars": 4107
+          },
+          "results": "4,107 stars since Nov 3 (weekly delta equals total for a repo created in the window); v1.6.4 on Nov 8."
+        },
+        {
+          "id": "govijr-terminal-mac-trending",
+          "title": "govijr/terminal-mac",
+          "primary_url": "https://github.com/govijr/terminal-mac",
+          "date": "2026-11-03",
+          "summary": "terminal-mac runs a separate macOS desktop for agents and streams it into a terminal. Created Nov 3, it holds 2,390 stars.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "agent",
+            "computer-use",
+            "individual",
+            "swift"
+          ],
+          "category": "MCP Server",
+          "engagement": {
+            "stars": 2390,
+            "total_stars": 2390
+          },
+          "results": "2,390 stars since Nov 3; v0.2.0-6; 18 commits in the window."
+        },
+        {
+          "id": "max-sixty-worktrunk",
+          "title": "max-sixty/worktrunk",
+          "primary_url": "https://github.com/max-sixty/worktrunk",
+          "date": "2026-11-08",
+          "summary": "Worktrunk is a Rust command-line tool that manages Git worktrees so several agents can work on one repo in parallel. It added 2,313 stars on GitHub Trending this week.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "developer",
+            "parallel-agents",
+            "individual",
+            "rust"
+          ],
+          "category": "Dev Tool",
+          "engagement": {
+            "stars": 2313,
+            "total_stars": 12123
+          },
+          "results": "2,313 weekly stars (GitHub Trending weekly, Nov 8 PT); 12,123 total; 47 commits in the window; docs at worktrunk.dev."
+        },
+        {
+          "id": "vercel-labs-agent-browser",
+          "title": "vercel-labs/agent-browser",
+          "primary_url": "https://github.com/vercel-labs/agent-browser",
+          "date": "2026-11-03",
+          "summary": "agent-browser is a Rust command-line tool that lets an agent open pages, read them as an accessibility tree and act on elements. It added 2,190 stars on GitHub Trending this week and shipped v0.41.2 on Nov 3.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "browser",
+            "agent",
+            "company-backed",
+            "rust"
+          ],
+          "category": "Agent Tool",
+          "engagement": {
+            "stars": 2190,
+            "total_stars": 47620
+          },
+          "results": "2,190 weekly stars (GitHub Trending weekly, Nov 8 PT); 47,620 total; Apache-2.0; 38 commits in the window; Vercel Labs project."
+        },
+        {
+          "id": "sarpstar-cinecode-trending",
+          "title": "sarpstar/cinecode",
+          "primary_url": "https://github.com/sarpstar/cinecode",
+          "date": "2026-11-03",
+          "summary": "cinecode builds finished films from code through a coding agent. Created Nov 3, it holds 1,600 stars.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "creator",
+            "video",
+            "individual",
+            "python"
+          ],
+          "category": "Creator Tool",
+          "engagement": {
+            "stars": 1600,
+            "total_stars": 1600
+          },
+          "results": "1,600 stars since Nov 3; MIT."
+        },
+        {
+          "id": "sandflow-ai-sand3d-trending",
+          "title": "Sandflow-ai/sand3d",
+          "primary_url": "https://github.com/Sandflow-ai/sand3d",
+          "date": "2026-11-03",
+          "summary": "sand3d writes 3D assemblies as short Python programs for language models. Created Nov 3, it holds 1,399 stars.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "3d",
+            "cad",
+            "small-team",
+            "html"
+          ],
+          "category": "Dev Tool",
+          "engagement": {
+            "stars": 1399,
+            "total_stars": 1399
+          },
+          "results": "1,399 stars since Nov 3; v1.6.3 on Nov 6."
+        },
+        {
+          "id": "livliv-dev-player-trending",
+          "title": "livliv-dev/player",
+          "primary_url": "https://github.com/livliv-dev/player",
+          "date": "2026-11-04",
+          "summary": "LivLiv Player puts a lip-synced 2.5D character on any web page. Created Nov 4, it holds 1,337 stars.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "creator",
+            "avatar",
+            "small-team",
+            "typescript"
+          ],
+          "category": "Creator Tool",
+          "engagement": {
+            "stars": 1337,
+            "total_stars": 1337
+          },
+          "results": "1,337 stars since Nov 4; v0.3.0 on Nov 6."
+        },
+        {
+          "id": "woyun520-gif-factory",
+          "title": "WoYun520/gif-factory",
+          "primary_url": "https://github.com/WoYun520/gif-factory",
+          "date": "2026-11-05",
+          "summary": "gif-factory is an agent skill that turns one reference image into pixel, pet, clay-mascot, raster-card or poster GIFs, with 56 motion examples. It reached 851 stars in four days.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "creator",
+            "gif",
+            "skill",
+            "individual",
+            "python"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 851,
+            "total_stars": 851
+          },
+          "results": "851 stars since Nov 5; MIT; 23 commits in the window; 6 GIF categories and 9 style entries."
+        },
+        {
+          "id": "diygod-pinky",
+          "title": "DIYgod/pinky",
+          "primary_url": "https://github.com/DIYgod/pinky",
+          "date": "2026-11-06",
+          "summary": "Pinky lets Claude Code, Codex, Cursor or any MCP client operate a real iPhone or Android phone while you watch, approve risky steps and take over. It reached 825 stars in three days.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "mobile",
+            "mcp",
+            "agent",
+            "individual",
+            "go"
+          ],
+          "category": "MCP Server",
+          "engagement": {
+            "stars": 825,
+            "total_stars": 825
+          },
+          "results": "825 stars since Nov 6; Apache-2.0; 100+ commits in the window; a 16 to 22 MB native app that idles near 70 MB; Android agents work on a hidden second screen."
+        }
+      ]
+    },
+    {
+      "section_id": "new_skills_and_mcp_servers",
+      "title": "New Skills & MCP Servers",
+      "description": "Agent skills and MCP servers published this week.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "kubai087-kubai-icons",
+          "title": "kubai087/kubai-icons",
+          "primary_url": "https://github.com/kubai087/kubai-icons",
+          "date": "2026-11-03",
+          "summary": "kubai-icons is an agent skill that draws animated icons in one consistent style, plus 2,800 open-source icons made with it for React, Vue and the web. It reached 282 stars within a week.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "creator",
+            "design",
+            "skill",
+            "individual",
+            "javascript"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 282,
+            "total_stars": 282
+          },
+          "results": "282 stars since Nov 3; 54 commits in the window; 2,800+ icons; docs and a browsable gallery at icons.kubai.design.",
+          "secondary_urls": [
+            {
+              "label": "Icon gallery",
+              "url": "https://icons.kubai.design/icons/"
+            }
+          ]
+        },
+        {
+          "id": "owoevan-dev-music-skill",
+          "title": "owoevan-dev/music-skill",
+          "primary_url": "https://github.com/owoevan-dev/music-skill",
+          "date": "2026-11-02",
+          "summary": "music-skill has the agent write every note of an original instrumental piece, then plays it on sampled instruments, mixes and masters it, with no audio-generation model. You get MP3, WAV, MIDI, a stem per part and an editable project file.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "creator",
+            "music",
+            "skill",
+            "individual",
+            "python"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 48,
+            "total_stars": 48
+          },
+          "results": "48 stars since Nov 2; v0.4.0 on Nov 8; 39 commits in the window; MIT."
+        },
+        {
+          "id": "fantuan-lab-animated-sticker-studio",
+          "title": "fantuan-lab/animated-sticker-studio",
+          "primary_url": "https://github.com/fantuan-lab/animated-sticker-studio",
+          "date": "2026-11-05",
+          "summary": "animated-sticker-studio turns one character image into a full pack of animated chat stickers exported to the upload spec of WeChat, Telegram, LINE, Discord, Slack and WhatsApp.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "creator",
+            "stickers",
+            "skill",
+            "individual",
+            "python"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 44,
+            "total_stars": 44
+          },
+          "results": "44 stars since Nov 5; v1.0.0 on Nov 6; 11 commits in the window; MIT."
+        },
+        {
+          "id": "howznguyen-shorts-kit",
+          "title": "howznguyen/shorts-kit",
+          "primary_url": "https://github.com/howznguyen/shorts-kit",
+          "date": "2026-11-04",
+          "summary": "shorts-kit makes narrated vertical shorts for TikTok, YouTube Shorts and Reels with a coding agent and Remotion, using nine-plus agent skills.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "creator",
+            "video",
+            "skill",
+            "individual",
+            "typescript"
+          ],
+          "category": "Agent Skill",
+          "engagement": {
+            "stars": 114,
+            "total_stars": 114
+          },
+          "results": "114 stars and 50 forks since Nov 4; 11 commits in the window; MIT."
+        },
+        {
+          "id": "gmpetrov-agent-screenplay",
+          "title": "gmpetrov/agent-screenplay",
+          "primary_url": "https://github.com/gmpetrov/agent-screenplay",
+          "date": "2026-11-02",
+          "summary": "agent-screenplay films and edits a polished screen recording of any website or desktop app from one prompt, with smooth cursor, automatic zooms and click effects. The tool contains no AI and uses the agent's own model.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "creator",
+            "video",
+            "mcp",
+            "individual",
+            "typescript"
+          ],
+          "category": "MCP Server",
+          "engagement": {
+            "stars": 100,
+            "total_stars": 100
+          },
+          "results": "100 stars since Nov 2; v0.1.7 on Nov 3; 22 commits in the window; MIT; installs with one npx command."
+        },
+        {
+          "id": "josssphzhou-poki",
+          "title": "JosssphZhou/poki",
+          "primary_url": "https://github.com/JosssphZhou/poki",
+          "date": "2026-11-05",
+          "summary": "Poki is a local MCP server and optional agent that operates a real iPhone from a Mac with no jailbreak and no extra hardware. It reached 607 stars in four days.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "mobile",
+            "mcp",
+            "agent",
+            "individual",
+            "javascript"
+          ],
+          "category": "MCP Server",
+          "engagement": {
+            "stars": 607,
+            "total_stars": 607
+          },
+          "results": "607 stars and 126 forks since Nov 5; v0.1.1 on Nov 6; 100+ commits in the window; AGPL-3.0; community ports exist for Linux and Windows."
+        },
+        {
+          "id": "gogoymh-auto-ontology-mcp",
+          "title": "gogoymh/auto-ontology-mcp",
+          "primary_url": "https://github.com/gogoymh/auto-ontology-mcp",
+          "date": "2026-11-06",
+          "summary": "auto-ontology-mcp wraps NVIDIA's open-source Auto Ontology semantic layer as an MCP server and adds a personal knowledge base for Claude, ChatGPT and other clients. It reached 216 stars in three days.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "knowledge-base",
+            "mcp",
+            "individual",
+            "python"
+          ],
+          "category": "MCP Server",
+          "engagement": {
+            "stars": 216,
+            "total_stars": 216
+          },
+          "results": "216 stars since Nov 6; 7 commits in the window; Apache-2.0. The NVIDIA repo it builds on drew 291 points on Hacker News.",
+          "secondary_urls": [
+            {
+              "label": "NVIDIA Auto Ontology on Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50348962"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "show_hn_and_indie_builds",
+      "title": "Show HN & Indie Builds",
+      "description": "Show HN posts with a working demo or repo, plus solo and small-team projects.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "hn-linum-pjit-21k",
+          "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
+          "primary_url": "https://news.ycombinator.com/item?id=50368208",
+          "date": "2026-11-04",
+          "summary": "Linum, a two-person lab, trained a text-to-image model on 660M samples for about $20K and released Apache 2.0 weights. The post drew 284 points and 29 comments.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "open-weight",
+            "image-model",
+            "small-team"
+          ],
+          "category": "Show HN",
+          "engagement": {
+            "upvotes": 284,
+            "comments": 29
+          },
+          "results": "284 points, 29 comments (HN, Nov 4). The authors report 11x faster convergence and 4x more aggressive token reduction than the comparisons they cite, with a frozen Qwen3.5-4B text encoder.",
+          "secondary_urls": [
+            {
+              "label": "Model on Hugging Face",
+              "url": "https://huggingface.co/Linum-AI/pjit-21k"
+            }
+          ]
+        },
+        {
+          "id": "hn-uncracked-city",
+          "title": "Show HN: Uncracked City, detective game where you question LLM suspects that lie",
+          "primary_url": "https://news.ycombinator.com/item?id=50358352",
+          "date": "2026-11-03",
+          "summary": "A solo founder shipped a detective game where language models play suspects who lie, on fixed solvable cases. The post drew 127 points and 69 comments.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "game",
+            "consumer",
+            "solo",
+            "llm"
+          ],
+          "category": "Show HN",
+          "engagement": {
+            "upvotes": 127,
+            "comments": 69
+          },
+          "results": "127 points, 69 comments (HN, Nov 3). The builder reports six languages, suspect replies in 1 to 2 seconds, about a month of work and running costs of a few thousand dollars a year.",
+          "secondary_urls": [
+            {
+              "label": "Play it",
+              "url": "https://uncracked.city"
+            }
+          ]
+        },
+        {
+          "id": "hn-hackertv",
+          "title": "Show HN: HackerTV – HN's most-recommended Youtube videos as 24/7 TV channels",
+          "primary_url": "https://news.ycombinator.com/item?id=50346755",
+          "date": "2026-11-03",
+          "summary": "HackerTV turns the YouTube videos Hacker News recommends into 24/7 TV channels, and the builder says Claude Code produced it in a few hours. The post drew 488 points and 83 comments.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "fun",
+            "consumer",
+            "built-with-claude-code",
+            "solo"
+          ],
+          "category": "Show HN",
+          "engagement": {
+            "upvotes": 488,
+            "comments": 83
+          },
+          "results": "488 points, 83 comments (HN, Nov 3). Channels include HN Prime (the top 400) and a Late Night channel that runs 11pm to 5am local time.",
+          "secondary_urls": [
+            {
+              "label": "HackerTV",
+              "url": "https://hackertv.org"
+            }
+          ]
+        },
+        {
+          "id": "hn-warsaw-voxels",
+          "title": "Show HN: Warsaw in voxels – An interactive 3D map of the city centre",
+          "primary_url": "https://news.ycombinator.com/item?id=50339221",
+          "date": "2026-11-02",
+          "summary": "An interactive 3D diorama of central Warsaw at 1 m voxels, covering 3,950 by 3,150 m with a time-of-day slider. The builder says Opus 5.5 helped with the first draft and performance work, and the post drew 325 points.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "fun",
+            "3d",
+            "map",
+            "solo",
+            "web"
+          ],
+          "category": "Show HN",
+          "engagement": {
+            "upvotes": 325,
+            "comments": 55
+          },
+          "results": "325 points, 55 comments (HN, Nov 2). Detailed 1 m voxels for small areas and 8 m blocks elsewhere let phones render the map; 76 commits since Nov 2; MIT.",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/stared/warsaw-vibe-voxel"
+            },
+            {
+              "label": "Live map",
+              "url": "https://p.migdal.pl/warsaw-vibe-voxel/"
+            }
+          ]
+        },
+        {
+          "id": "hn-pcdealcheck",
+          "title": "Show HN: I built a tool that prices a pre-built PC part by part",
+          "primary_url": "https://news.ycombinator.com/item?id=50366929",
+          "date": "2026-11-04",
+          "summary": "PCDealCheck lets a shopper paste a pre-built PC listing, has AI identify each component, and grades the deal with a custom price engine. The post drew 120 points and 85 comments.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "consumer",
+            "shopping",
+            "solo"
+          ],
+          "category": "Show HN",
+          "engagement": {
+            "upvotes": 120,
+            "comments": 85
+          },
+          "results": "120 points, 85 comments (HN, Nov 4). Prices refresh daily at about 8 a.m.; the first deal alert went to 17 subscribers, per the builder.",
+          "secondary_urls": [
+            {
+              "label": "PCDealCheck",
+              "url": "https://pcdealcheck.com/"
+            }
+          ]
+        },
+        {
+          "id": "hn-hacker-times",
+          "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
+          "primary_url": "https://news.ycombinator.com/item?id=50346981",
+          "date": "2026-11-03",
+          "summary": "Hacker Times redraws Hacker News as a newspaper front page, updated hourly, with rewritten headlines that commenters identify as language-model output. The post drew 475 points and 148 comments.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "fun",
+            "design",
+            "solo"
+          ],
+          "category": "Show HN",
+          "engagement": {
+            "upvotes": 475,
+            "comments": 148
+          },
+          "results": "475 points, 148 comments (HN, Nov 3); updates once an hour.",
+          "secondary_urls": [
+            {
+              "label": "Hacker Times",
+              "url": "https://hackertimes.ca/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "agent_and_rag_implementations",
+      "title": "Agent & RAG Implementations",
+      "description": "Agent and retrieval builds with linked code.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "johnpsasser-lifeboat",
+          "title": "johnpsasser/lifeboat",
+          "primary_url": "https://github.com/johnpsasser/lifeboat",
+          "date": "2026-11-03",
+          "summary": "Lifeboat pairs a local language model with a 200 GB offline library on one Mac and answers emergency questions with every claim cited to a source passage. It reached 42 stars and v0.1.0 within a day.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "rag",
+            "offline",
+            "consumer",
+            "individual",
+            "python"
+          ],
+          "category": "RAG Build",
+          "engagement": {
+            "stars": 42,
+            "total_stars": 42
+          },
+          "results": "42 stars since Nov 3; v0.1.0 on Nov 3; 6 commits in the window; MIT; Apple silicon; network use at run time is none."
+        },
+        {
+          "id": "majorminorlabs-hermes-voice",
+          "title": "majorminorlabs/hermes-voice",
+          "primary_url": "https://github.com/majorminorlabs/hermes-voice",
+          "date": "2026-11-05",
+          "summary": "hermes-voice lets you talk to a Hermes Agent profile through Home Assistant Assist on an old Amazon Echo, and an Echo Show displays the heard text, the answer and the tools in use. It reached 537 stars in four days.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 10,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "voice",
+            "smart-home",
+            "consumer",
+            "individual",
+            "python"
+          ],
+          "category": "Agent Build",
+          "engagement": {
+            "stars": 537,
+            "total_stars": 537
+          },
+          "results": "537 stars since Nov 5; v0.2.0 on Nov 8; 42 commits in the window; MIT; the Echo Show screen is a web page you can restyle."
+        },
+        {
+          "id": "zeekk0-openamika",
+          "title": "zeekk0/OpenAmika",
+          "primary_url": "https://github.com/zeekk0/OpenAmika",
+          "date": "2026-11-03",
+          "summary": "OpenAmika is an open-source Live2D companion that talks by voice and text, keeps long-term memory, and runs on your PC with OpenRouter or fully local with Ollama. It reached 543 stars in five days.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "companion",
+            "voice",
+            "consumer",
+            "python"
+          ],
+          "category": "Agent Build",
+          "engagement": {
+            "stars": 543,
+            "total_stars": 543
+          },
+          "results": "543 stars since Nov 3. The README puts hosted-model cost near $1.50 a month at 30 turns a day and $5 at 100; local use wants a 27B or larger model and 19 GB or more of video memory."
+        }
+      ]
+    },
+    {
+      "section_id": "automation_wins",
+      "title": "Automation Wins",
+      "description": "Automations and tools with a number attached.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "shanselman-sandbox-mcp",
+          "title": "shanselman/sandbox-mcp",
+          "primary_url": "https://github.com/shanselman/sandbox-mcp",
+          "date": "2026-11-06",
+          "summary": "sandbox-mcp gives an agent a fresh disposable Windows 11 machine, drives the app, keeps the evidence and deletes the machine, in roughly 40 to 50 seconds end to end per GUI sample. It reached 336 stars in two days.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "testing",
+            "windows",
+            "mcp",
+            "individual"
+          ],
+          "category": "Automation Win",
+          "engagement": {
+            "stars": 336,
+            "total_stars": 336
+          },
+          "results": "Roughly 40 to 50 seconds per measured GUI sample (README); v1.2.0 on Nov 7; 58 commits in the window; MIT."
+        },
+        {
+          "id": "hn-gauge-docs-cli",
+          "title": "Show HN: Gauge – Open-Source CLI to recursively improve your docs",
+          "primary_url": "https://news.ycombinator.com/item?id=50371090",
+          "date": "2026-11-04",
+          "summary": "Gauge runs coding-agent sessions against your docs, finds where agents stumble and fixes the friction. The builder reports a 3x increase in coding agents using Clerk's init command after a rollout.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "docs",
+            "developer",
+            "agent-experience"
+          ],
+          "category": "Automation Win",
+          "engagement": {
+            "upvotes": 43,
+            "comments": 10
+          },
+          "results": "3x increase in coding agents using `clerk init` after the rollout (builder-reported, HN Nov 4).",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/gauge-sh/gauge-cli"
+            }
+          ]
+        },
+        {
+          "id": "hn-waymark-workflow-engine",
+          "title": "Show HN: Waymark – A workflow engine that compiles jobs instead of replaying",
+          "primary_url": "https://news.ycombinator.com/item?id=50379221",
+          "date": "2026-11-05",
+          "summary": "Waymark is an open-source durable workflow engine that compiles Python jobs instead of replaying them, with each model or tool call usable as a checkpoint. The authors report about 1,500 workflows a second.",
+          "source": "Hacker News",
+          "platform": "hackernews",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "workflow",
+            "agents",
+            "rust",
+            "small-team"
+          ],
+          "category": "Automation Win",
+          "engagement": {
+            "upvotes": 85,
+            "comments": 46
+          },
+          "results": "About 1,500 workflows per second on benchmark workflows of 0 to 6 tasks, averaging 2.6 (author-reported, HN Nov 5).",
+          "secondary_urls": [
+            {
+              "label": "GitHub repo",
+              "url": "https://github.com/piercefreeman/waymark"
+            },
+            {
+              "label": "Project site",
+              "url": "https://waymark.sh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "framework_releases",
+      "title": "Framework Releases",
+      "description": "Feature releases from widely used open-source frameworks.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "open-webui-v0-13-0",
+          "title": "open-webui/open-webui v0.13.0",
+          "primary_url": "https://github.com/open-webui/open-webui/releases/tag/v0.13.0",
+          "date": "2026-11-03",
+          "summary": "Open WebUI v0.13.0 raises the native tool-call limit from 256 to 1,024 rounds per response and removes the default sub-agent caps. It also adds side panels for tablets and updates the Desktop app through 0.1.4.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "framework",
+            "self-hosted",
+            "local-llm"
+          ],
+          "category": "Framework Release",
+          "results": "Tool-call rounds 256 to 1,024; sub-agent defaults change from 20 concurrent and 30 loops each to no limit (release notes)."
+        },
+        {
+          "id": "nousresearch-hermes-agent-v0-23-0",
+          "title": "NousResearch/hermes-agent v0.23.0",
+          "primary_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.0",
+          "date": "2026-11-05",
+          "summary": "Hermes Agent v0.23.0 adds a browser-served webapp, one gateway that owns sessions for CLI, desktop, editors, chat bots and cron, and a plugin catalog that grew from about 600 to over 1,050 entries.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "framework",
+            "agent",
+            "open-source"
+          ],
+          "category": "Framework Release",
+          "results": "Plugin catalog about 600 to 1,050+; built-in skills 58 to 44; about 1,570 fewer prompt tokens per one-shot call; a 35,000-run cron store went from a 121-second sidebar refresh to instant (release notes).",
+          "recurrence": "returning",
+          "recurrence_note": "Hermes Agent appeared in earlier weeks; v0.23.0 on Nov 5 is a feature release with the unified gateway and webapp."
+        }
+      ]
+    },
+    {
+      "section_id": "emerging_patterns",
+      "title": "Emerging Patterns",
+      "description": "Patterns seen across this week's repos.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "pattern-agents-get-own-devices",
+          "title": "Agents are getting their own phones and computers",
+          "primary_url": "https://github.com/govijr/terminal-mac",
+          "date": "2026-11-06",
+          "summary": "terminal-mac gives an agent a virtual Mac, sandbox-mcp a disposable Windows PC, and Pinky and Poki an iPhone or Android phone with a hidden second screen, so computer use stops sharing the owner's cursor.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "pattern",
+            "computer-use",
+            "devices"
+          ],
+          "category": "Emerging Pattern",
+          "secondary_urls": [
+            {
+              "label": "Pinky",
+              "url": "https://github.com/DIYgod/pinky"
+            },
+            {
+              "label": "Poki",
+              "url": "https://github.com/JosssphZhou/poki"
+            },
+            {
+              "label": "sandbox-mcp",
+              "url": "https://github.com/shanselman/sandbox-mcp"
+            }
+          ],
+          "key_takeaways": [
+            "The device boundary replaces permission prompts as the way to share a machine with an agent.",
+            "Every project ships observe, act, verify as a skill."
+          ]
+        },
+        {
+          "id": "pattern-big-models-small-hardware",
+          "title": "Frontier-size models are being fitted to cheap hardware",
+          "primary_url": "https://github.com/synchopate/llama-modchip",
+          "date": "2026-11-08",
+          "summary": "llama-modchip runs a 284B mixture-of-experts model in 64 GB of RAM, Linum trained a text-to-image model for about $20K, and Open WebUI now allows 1,024 tool rounds per answer, all aimed at people running models themselves.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "pattern",
+            "local-llm",
+            "cost"
+          ],
+          "category": "Emerging Pattern",
+          "secondary_urls": [
+            {
+              "label": "Linum pjit-21k",
+              "url": "https://news.ycombinator.com/item?id=50368208"
+            },
+            {
+              "label": "Open WebUI v0.13.0",
+              "url": "https://github.com/open-webui/open-webui/releases/tag/v0.13.0"
+            }
+          ],
+          "key_takeaways": [
+            "Memory layout and routing tricks matter more than raw GPU count.",
+            "Reproduction reports on the Hacker News thread are mixed, which is the normal state of a week-old claim."
+          ]
+        },
+        {
+          "id": "pattern-media-as-code",
+          "title": "Whole media formats are being written as code an agent can run",
+          "primary_url": "https://github.com/sarpstar/cinecode",
+          "date": "2026-11-03",
+          "summary": "cinecode renders films, music-skill composes scores note by note, sand3d writes 3D assemblies, and kubai-icons and gif-factory draw animation in one consistent style, each as a program an agent writes and a person can edit.",
+          "source": "GitHub",
+          "platform": "github",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:20:00Z",
+          "tags": [
+            "pattern",
+            "creator",
+            "skills"
+          ],
+          "category": "Emerging Pattern",
+          "secondary_urls": [
+            {
+              "label": "music-skill",
+              "url": "https://github.com/owoevan-dev/music-skill"
+            },
+            {
+              "label": "sand3d",
+              "url": "https://github.com/Sandflow-ai/sand3d"
+            },
+            {
+              "label": "kubai-icons",
+              "url": "https://github.com/kubai087/kubai-icons"
+            }
+          ],
+          "key_takeaways": [
+            "Editable source beats a one-shot generated file for anything you will revise.",
+            "Last week's render-and-look skills now cover film, music and 3D."
+          ],
+          "recurrence": "returning_pattern",
+          "recurrence_note": "Extends last week's pattern of craft shipping as render-and-look skills (pixelfx, reanimate, Hallmark)."
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "majorminorlabs/hermes-voice",
+      "source": "GitHub",
+      "date": "2026-11-05",
+      "primary_url": "https://github.com/majorminorlabs/hermes-voice",
+      "score": 10,
+      "category": "Agent Build"
+    },
+    {
+      "title": "KKKKhazix/agent-autoloop",
+      "source": "GitHub",
+      "date": "2026-11-03",
+      "primary_url": "https://github.com/KKKKhazix/agent-autoloop",
+      "score": 9,
+      "category": "Agent Framework"
+    },
+    {
+      "title": "synchopate/llama-modchip",
+      "source": "GitHub",
+      "date": "2026-11-08",
+      "primary_url": "https://github.com/synchopate/llama-modchip",
+      "score": 9,
+      "category": "Inference Tool"
+    },
+    {
+      "title": "sarpstar/cinecode",
+      "source": "GitHub",
+      "date": "2026-11-03",
+      "primary_url": "https://github.com/sarpstar/cinecode",
+      "score": 9,
+      "category": "Creator Tool"
+    },
+    {
+      "title": "Sandflow-ai/sand3d",
+      "source": "GitHub",
+      "date": "2026-11-03",
+      "primary_url": "https://github.com/Sandflow-ai/sand3d",
+      "score": 9,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "DIYgod/pinky",
+      "source": "GitHub",
+      "date": "2026-11-06",
+      "primary_url": "https://github.com/DIYgod/pinky",
+      "score": 9,
+      "category": "MCP Server"
+    },
+    {
+      "title": "owoevan-dev/music-skill",
+      "source": "GitHub",
+      "date": "2026-11-02",
+      "primary_url": "https://github.com/owoevan-dev/music-skill",
+      "score": 9,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
+      "source": "Hacker News",
+      "date": "2026-11-04",
+      "primary_url": "https://news.ycombinator.com/item?id=50368208",
+      "score": 9,
+      "category": "Show HN"
+    },
+    {
+      "title": "AutoDNA: an AI-native lab for autonomous biomolecular operations",
+      "source": "Nature",
+      "date": "2026-11-04",
+      "primary_url": "https://www.nature.com/articles/s41586-026-11228-6",
+      "score": 8.5,
+      "category": "AI for Science"
+    },
+    {
+      "title": "govijr/terminal-mac",
+      "source": "GitHub",
+      "date": "2026-11-03",
+      "primary_url": "https://github.com/govijr/terminal-mac",
+      "score": 8,
+      "category": "MCP Server"
+    },
+    {
+      "title": "livliv-dev/player",
+      "source": "GitHub",
+      "date": "2026-11-04",
+      "primary_url": "https://github.com/livliv-dev/player",
+      "score": 8,
+      "category": "Creator Tool"
+    },
+    {
+      "title": "WoYun520/gif-factory",
+      "source": "GitHub",
+      "date": "2026-11-05",
+      "primary_url": "https://github.com/WoYun520/gif-factory",
+      "score": 8,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "kubai087/kubai-icons",
+      "source": "GitHub",
+      "date": "2026-11-03",
+      "primary_url": "https://github.com/kubai087/kubai-icons",
+      "score": 8,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "fantuan-lab/animated-sticker-studio",
+      "source": "GitHub",
+      "date": "2026-11-05",
+      "primary_url": "https://github.com/fantuan-lab/animated-sticker-studio",
+      "score": 8,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "howznguyen/shorts-kit",
+      "source": "GitHub",
+      "date": "2026-11-04",
+      "primary_url": "https://github.com/howznguyen/shorts-kit",
+      "score": 8,
+      "category": "Agent Skill"
+    },
+    {
+      "title": "gmpetrov/agent-screenplay",
+      "source": "GitHub",
+      "date": "2026-11-02",
+      "primary_url": "https://github.com/gmpetrov/agent-screenplay",
+      "score": 8,
+      "category": "MCP Server"
+    },
+    {
+      "title": "JosssphZhou/poki",
+      "source": "GitHub",
+      "date": "2026-11-05",
+      "primary_url": "https://github.com/JosssphZhou/poki",
+      "score": 8,
+      "category": "MCP Server"
+    },
+    {
+      "title": "Show HN: Uncracked City, detective game where you question LLM suspects that lie",
+      "source": "Hacker News",
+      "date": "2026-11-03",
+      "primary_url": "https://news.ycombinator.com/item?id=50358352",
+      "score": 8,
+      "category": "Show HN"
+    },
+    {
+      "title": "Show HN: HackerTV – HN's most-recommended Youtube videos as 24/7 TV channels",
+      "source": "Hacker News",
+      "date": "2026-11-03",
+      "primary_url": "https://news.ycombinator.com/item?id=50346755",
+      "score": 8,
+      "category": "Show HN"
+    },
+    {
+      "title": "Show HN: Warsaw in voxels – An interactive 3D map of the city centre",
+      "source": "Hacker News",
+      "date": "2026-11-02",
+      "primary_url": "https://news.ycombinator.com/item?id=50339221",
+      "score": 8,
+      "category": "Show HN"
+    },
+    {
+      "title": "johnpsasser/lifeboat",
+      "source": "GitHub",
+      "date": "2026-11-03",
+      "primary_url": "https://github.com/johnpsasser/lifeboat",
+      "score": 8,
+      "category": "RAG Build"
+    },
+    {
+      "title": "shanselman/sandbox-mcp",
+      "source": "GitHub",
+      "date": "2026-11-06",
+      "primary_url": "https://github.com/shanselman/sandbox-mcp",
+      "score": 8,
+      "category": "Automation Win"
+    },
+    {
+      "title": "Show HN: Waymark – A workflow engine that compiles jobs instead of replaying",
+      "source": "Hacker News",
+      "date": "2026-11-05",
+      "primary_url": "https://news.ycombinator.com/item?id=50379221",
+      "score": 8,
+      "category": "Automation Win"
+    },
+    {
+      "title": "open-webui/open-webui v0.13.0",
+      "source": "GitHub",
+      "date": "2026-11-03",
+      "primary_url": "https://github.com/open-webui/open-webui/releases/tag/v0.13.0",
+      "score": 8,
+      "category": "Framework Release"
+    },
+    {
+      "title": "NousResearch/hermes-agent v0.23.0",
+      "source": "GitHub",
+      "date": "2026-11-05",
+      "primary_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.0",
+      "score": 8,
+      "category": "Framework Release"
+    },
+    {
+      "title": "D4Vinci/Scrapling",
+      "source": "GitHub",
+      "date": "2026-11-04",
+      "primary_url": "https://github.com/D4Vinci/Scrapling",
+      "score": 7,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "max-sixty/worktrunk",
+      "source": "GitHub",
+      "date": "2026-11-08",
+      "primary_url": "https://github.com/max-sixty/worktrunk",
+      "score": 7,
+      "category": "Dev Tool"
+    },
+    {
+      "title": "vercel-labs/agent-browser",
+      "source": "GitHub",
+      "date": "2026-11-03",
+      "primary_url": "https://github.com/vercel-labs/agent-browser",
+      "score": 7,
+      "category": "Agent Tool"
+    },
+    {
+      "title": "gogoymh/auto-ontology-mcp",
+      "source": "GitHub",
+      "date": "2026-11-06",
+      "primary_url": "https://github.com/gogoymh/auto-ontology-mcp",
+      "score": 7,
+      "category": "MCP Server"
+    },
+    {
+      "title": "Show HN: I built a tool that prices a pre-built PC part by part",
+      "source": "Hacker News",
+      "date": "2026-11-04",
+      "primary_url": "https://news.ycombinator.com/item?id=50366929",
+      "score": 7,
+      "category": "Show HN"
+    },
+    {
+      "title": "zeekk0/OpenAmika",
+      "source": "GitHub",
+      "date": "2026-11-03",
+      "primary_url": "https://github.com/zeekk0/OpenAmika",
+      "score": 7,
+      "category": "Agent Build"
+    },
+    {
+      "title": "Show HN: Gauge – Open-Source CLI to recursively improve your docs",
+      "source": "Hacker News",
+      "date": "2026-11-04",
+      "primary_url": "https://news.ycombinator.com/item?id=50371090",
+      "score": 7,
+      "category": "Automation Win"
+    },
+    {
+      "title": "Show HN: Hacker Times, a New York Times-inspired version of Hacker News",
+      "source": "Hacker News",
+      "date": "2026-11-03",
+      "primary_url": "https://news.ycombinator.com/item?id=50346981",
+      "score": 6,
+      "category": "Show HN"
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "Subvocal smart glasses (Show HN, 843 points)",
+      "reason": "Hardware product launch from a YC company with no source repository; routed to Launches.",
+      "attempted_url": "https://news.ycombinator.com/item?id=50340088"
+    },
+    {
+      "claim": "NVIDIA/auto-ontology: 9,327 weekly stars on GitHub Trending",
+      "reason": "Corporate open-source release; routed to Launches. The community MCP wrapper is listed instead.",
+      "attempted_url": "https://github.com/NVIDIA/auto-ontology"
+    },
+    {
+      "claim": "blader/humanizer: 3,118 weekly stars on GitHub Trending",
+      "reason": "No commits since Oct 28 and latest release Sep 28; momentum without in-window activity.",
+      "attempted_url": "https://github.com/blader/humanizer"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "Hugging Face Spaces and Replicate featured community models, which were not sampled",
+      "GitHub search by topic (agent-skills, mcp-server, claude-code) for repos created in the window, which produced most of this week's finds",
+      "Direct r/LocalLLaMA and Latent Space reads for local-model builds"
+    ],
+    "sources_to_drop": [
+      "GitHub search results sorted by stars for 'created this week' with no filter: roughly half of the top 100 are repos with fake 400-star counts and software-bundle names, plus bypass and jailbreak tools"
+    ],
+    "topics_to_add": [
+      "AI for materials, chemistry and building science: no new repo created or trending in the window; the only science item is the Nature AutoDNA paper (code last pushed Oct 13). Building-energy LLM controllers (EnergyPlus plus MCP) surfaced only as July hackathon repos with no in-window activity",
+      "Home-assistant and smart-speaker agents",
+      "Open-weight scientific models and interatomic-potential tooling releases"
+    ],
+    "topics_to_drop": [],
+    "notes": "Floor and freshness: the index has 33 unique rows against the floor of 18, and 32 of 33 are new (97.0%) against the 0.85 target. Verification: every Top Pick primary URL was fetched (HTTP 200) with title and key facts matched in page content; section-item URLs were fetched with an HTTP status check. Gaps: n8n and Make community pages, Indie Hackers, Latent Space and r/LocalLLaMA were not sampled, so Automation Wins uses README and Show HN builder-reported numbers (sandbox-mcp, Gauge, Waymark), and Gauge's 43 points fall under the 50-point Show HN bar and its repo predates the window (created Oct 20), so it enters on its in-window Show HN post. Weekly star deltas come from the GitHub Trending weekly page (Nov 8 PT) for Scrapling, worktrunk and agent-browser; repos created in the window carry total stars as the delta, and Show HN repos not on Trending (llama-modchip, Warsaw, Waymark, Gauge) carry total stars only. Framework Releases lists two entries against a target of 2 to 4: vLLM v0.33.0 was dropped because its release page is dated Nov 1, outside the window, and no other in-window feature release was verified. Excluded: claude-mem, Claude-Code-Game-Studios, t3code, mattpocock/skills and OpenMausBot (prior-week or earlier repeats); blader/humanizer and jakubkrehel/skills (no commits in the window); NVIDIA/auto-ontology and github/spec-kit (corporate releases, Launches); Subvocal (YC hardware launch, Launches); ziwei-doushu (astrology engine, not AI). llama-modchip's headline claim has mixed reproductions on its Hacker News thread, noted in the item. The Trending page lists 17 repos, so the leaderboard fills from new-repo star counts."
+  }
+}

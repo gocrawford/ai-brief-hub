@@ -1,0 +1,186 @@
+{
+  "week": "2026-11-02",
+  "script": "data/2026-11-02/podcast.draft.json",
+  "pass": true,
+  "errors": [],
+  "warnings": [
+    {
+      "check": "handback",
+      "segment": "youtube_segment",
+      "detail": "no handback in final lines"
+    },
+    {
+      "check": "handback",
+      "segment": "x_segment",
+      "detail": "no handback in final lines"
+    },
+    {
+      "check": "handback",
+      "segment": "reddit_segment",
+      "detail": "no handback in final lines"
+    },
+    {
+      "check": "handback",
+      "segment": "builders_segment",
+      "detail": "no handback in final lines"
+    },
+    {
+      "check": "handback",
+      "segment": "launches_segment",
+      "detail": "no handback in final lines"
+    },
+    {
+      "check": "handback",
+      "segment": "social_segment",
+      "detail": "no handback in final lines"
+    },
+    {
+      "check": "handback",
+      "segment": "research_segment",
+      "detail": "no handback in final lines"
+    },
+    {
+      "check": "long_sentences",
+      "segment": null,
+      "detail": "7 sentences over 30 words (one idea per sentence)",
+      "examples": [
+        {
+          "segment": "x_segment",
+          "words": 31,
+          "sentence": "Simon Willison and Daniel van Strien ran their own weight experiments the same week, and van Strien fixed an OCR model in under three hours for about ten dollar"
+        },
+        {
+          "segment": "x_segment",
+          "words": 33,
+          "sentence": "Steal this idea: take a small model that loops on your task, give an agent a few dozen example prompts and a budget of forward passes, and ask it to edit the we"
+        },
+        {
+          "segment": "x_segment",
+          "words": 34,
+          "sentence": "The campaign run by Perplexity Computer spent about twice as much as the non-AI campaign, brought in three and a half times the revenue, and posted a sixty-thre"
+        },
+        {
+          "segment": "builders_segment",
+          "words": 31,
+          "sentence": "Two quick ones. cinecode lets a coding agent write the script, build every frame in code, design the sound and hand back a finished MP4, from fifteen-second cli"
+        },
+        {
+          "segment": "builders_segment",
+          "words": 32,
+          "sentence": "It crossed sixteen hundred stars within a day of launching on Nov third, and it even crosses each idea with a random real-world object so the film isn't the obv"
+        },
+        {
+          "segment": "social_segment",
+          "words": 31,
+          "sentence": "Opus 5.5 rebuilds the house in Blender, one camera path runs through the rooms, Seedream 5 Pro sets each room's look as a still, and Seedance 2.5 follows that e"
+        },
+        {
+          "segment": "lab_pick",
+          "words": 35,
+          "sentence": "They wrote a set of structured prompts that lets a coding agent run VASP point-defect calculations, with the researcher answering at defined decision points: co"
+        }
+      ]
+    },
+    {
+      "check": "tts_symbols",
+      "segment": null,
+      "detail": "1 symbols/abbreviations; write them as spoken words",
+      "examples": [
+        {
+          "segment": "social_segment",
+          "token": "4K",
+          "context": "track timeline, keyframes and 4K export with no watermark, and"
+        }
+      ]
+    },
+    {
+      "check": "concept_saturation",
+      "segment": null,
+      "detail": "content words in 5+ of 7 correspondent segments; is the same point being made repeatedly?",
+      "terms": {
+        "second": 6,
+        "hundred": 5,
+        "claude": 5,
+        "thousand": 5
+      }
+    },
+    {
+      "check": "lab_beat",
+      "segment": "research_segment",
+      "detail": "no 'Share this with your lab' beat; it's a required recurring segment"
+    }
+  ],
+  "info": [
+    {
+      "check": "acronyms",
+      "detail": "confirm each is pronounced as intended (letters vs word)",
+      "tokens": {
+        "AI": 11,
+        "DNA": 3,
+        "GIFs": 3,
+        "PDF": 2,
+        "GPT": 2,
+        "MCP": 2,
+        "API": 2,
+        "LAMMPS": 2,
+        "OCR": 1,
+        "RAM": 1,
+        "GPU": 1,
+        "README": 1,
+        "AVX": 1,
+        "CPU": 1,
+        "SVG": 1,
+        "SVGs": 1,
+        "MIDI": 1,
+        "KRAS": 1,
+        "NMR": 1,
+        "UMA": 1,
+        "NVIDIA": 1,
+        "GPUs": 1,
+        "VASP": 1
+      }
+    }
+  ],
+  "metrics": {
+    "spoken_segments": 28,
+    "music_segments": 8,
+    "total_words": 3318,
+    "estimated_minutes": 21.7,
+    "avg_sentence_words": 13.1,
+    "long_sentences": 7,
+    "repeated_phrases": 0,
+    "tts_symbols": 1,
+    "caution_words_outside_research": 0,
+    "enterprise_words": 0,
+    "segment_words": {
+      "cold_open": 80,
+      "handoff_youtube": 11,
+      "youtube_ack": 15,
+      "youtube_segment": 328,
+      "handback_youtube": 8,
+      "handoff_x": 12,
+      "x_segment": 350,
+      "handback_x": 4,
+      "handoff_reddit": 20,
+      "reddit_segment": 407,
+      "handback_reddit": 8,
+      "handoff_builders": 11,
+      "builders_segment": 435,
+      "handback_builders": 4,
+      "handoff_launches": 9,
+      "launches_segment": 376,
+      "handback_launches": 7,
+      "handoff_social": 6,
+      "social_segment": 336,
+      "handback_social": 9,
+      "handoff_research": 8,
+      "research_ack": 7,
+      "research_segment": 394,
+      "lab_pick": 228,
+      "reality_check": 98,
+      "handback_research": 4,
+      "what_to_watch": 48,
+      "things_to_try": 95
+    }
+  }
+}

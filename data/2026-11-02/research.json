@@ -1,0 +1,1209 @@
+{
+  "tab_id": "research",
+  "tab_name": "Research",
+  "subtitle": "Primary-Source Intelligence",
+  "icon": "FileText",
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 0.917,
+    "items_total": 24,
+    "items_new": 22,
+    "items_returning": 2
+  },
+  "min_items": 10,
+  "executive_summary": [
+    {
+      "headline": "Expert workflows become shareable prompt files in materials simulation",
+      "body": "DefectSkills packages a 90-atom point-defect study (26 candidate-phase and 29 charge-state calculations) as agent prompts, with the researcher responding at defined decision points. ScienceCUA shows the same idea for general scientific software, with up to 7.23 points of added task success.",
+      "primary_url": "https://arxiv.org/abs/2611.05654"
+    },
+    {
+      "headline": "An autonomous lab ran 11,000+ steps in Nature",
+      "body": "AutoDNA coordinated 20+ instrument types, matched expert synthesis yields and ran concurrent protocols 3.2x faster.",
+      "primary_url": "https://www.nature.com/articles/s41586-026-11228-6"
+    },
+    {
+      "headline": "A 207,049-session map shows where scientists use AI and where they do not",
+      "body": "Data analysis takes 33.7% of Claude sessions against 27.6% of researcher time, while ideation is 4.2% of sessions against 7.1% of time.",
+      "primary_url": "https://www.anthropic.com/research/how-researchers-use-claude"
+    },
+    {
+      "headline": "Tools and context drive chemistry results",
+      "body": "Route context lifts NMR elucidation to 95.4% top-15 accuracy, and tool access moves out-of-distribution MS/MS accuracy from 2% to as much as 38%.",
+      "primary_url": "https://arxiv.org/abs/2611.07133"
+    },
+    {
+      "headline": "Open-weight science models and a DOJ task force arrive",
+      "body": "Deep Principle released a 753B chemistry and materials model under MIT, and the Justice Department launched a Super Intelligence Task Force.",
+      "primary_url": "https://www.justice.gov/opa/pr/department-justice-launches-super-intelligence-task-force"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "defectskills-agent-skills-vasp-point-defects",
+      "title": "DefectSkills packages a point-defect DFT workflow as human-guided agent prompts, with a worked 90-atom example",
+      "source": "arXiv",
+      "date": "2026-11-03",
+      "primary_url": "https://arxiv.org/abs/2611.05654",
+      "summary": "A materials group can hand a coding agent a structured set of prompts for VASP point-defect calculations, with the researcher responding at defined decision points (computing environment, research scope, supercell and charge states, thermodynamic conditions) and accepting suggested defaults or choosing alternatives. The paper demonstrates it on BaCd2P2 (Materials Project mp-8279) with the HSE06 functional and a 3x3x2, 90-atom supercell that the authors chose to limit the cost of the demonstration, covering 26 candidate-phase calculations and 29 charge-state calculations. The authors report agent errors that needed their intervention (a numerically unstable calculation restarted from the wrong structure, a mis-created directory, and a custom solver used in place of the prescribed py-sc-fermi), and those findings refined the prompts. The prompts are in a public repository, and the data are archived on Zenodo.",
+      "platform": "arxiv",
+      "score": {
+        "total": 10,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-08T23:00:00Z",
+      "tags": [
+        "ai-for-science",
+        "materials",
+        "dft",
+        "agent-skills"
+      ],
+      "category": "AI for science",
+      "recurrence": "new",
+      "author": "Zhenkun Yuan, Yizhi Zhu, Geoffroy Hautier (Rice University)",
+      "why_it_matters": "The slow parts of a defect study (phase competition, charge states, job bookkeeping) become a repeatable recipe a graduate student can inherit, with the decision points spelled out.",
+      "subtitle": "Human-guided agent prompts for first-principles defect studies",
+      "secondary_urls": [
+        {
+          "label": "Code repository",
+          "url": "https://github.com/zy75-prog/DefectSkills"
+        },
+        {
+          "label": "Data archive (Zenodo)",
+          "url": "https://doi.org/10.5281/zenodo.23930584"
+        }
+      ],
+      "enterprise_adaptation": "Share with your lab: this is an agent paper that reads like a group's own lab notebook, with expert steps written down as prompts, defined decision points where the researcher chooses, and a candid list of where the agent went wrong, so a skeptical simulation scientist can judge it line by line. Clever part: the expertise lives in plain prompt files the group can edit, not in a model. 30-day experiment: write a prompt file with decision points for one routine calculation your team repeats (a convergence test or a surface-energy workflow), run it with an agent on three past cases, log every place you had to step in, and compare the results with your archived ones.",
+      "evaluation": "EVALUATE NOW",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "The researcher responds at defined decision points and can accept suggested defaults or specify alternatives",
+        "The 90-atom supercell was chosen to limit demo cost; the demo covers 26 candidate-phase and 29 charge-state calculations at HSE06 level",
+        "The authors report three agent errors that needed intervention, which refined the prompts"
+      ],
+      "suggested_actions": [
+        "Read the repository's prompts for the supercell and charge-state decision points",
+        "Rewrite one in-house workflow with the same decision-point structure"
+      ],
+      "results": "BaCd2P2 (mp-8279): 90-atom supercell, 26 candidate-phase and 29 charge-state calculations (author-reported)."
+    },
+    {
+      "id": "autodna-nature-ai-native-wet-lab",
+      "title": "Nature: AutoDNA runs a biomolecular lab across 20+ instrument types and more than 11,000 steps",
+      "source": "Nature",
+      "date": "2026-11-04",
+      "primary_url": "https://www.nature.com/articles/s41586-026-11228-6",
+      "summary": "AutoDNA is an AI-native laboratory that plans and runs molecular-biology experiments with human involvement limited to hardware maintenance. It matched expert-optimized yields for enzymatic DNA synthesis, ran concurrent protocols 3.2x faster, recovered a DNA-storage cycle exactly, and identified and validated a clinically detected KRAS G13D mutation.",
+      "platform": "research",
+      "score": {
+        "total": 9.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-08T23:00:00Z",
+      "tags": [
+        "ai-for-science",
+        "lab-automation",
+        "wet-lab"
+      ],
+      "category": "AI for science",
+      "recurrence": "new",
+      "author": "Mingyu Wu, Zhaoguo Wang, Jiabin Wang, Chunhai Fan, Haibo Chen and colleagues (Shanghai Jiao Tong University)",
+      "why_it_matters": "It is a peer-reviewed run of an autonomous lab through thousands of steps across mixed hardware, which is the scale at which scheduling and orchestration matter.",
+      "secondary_urls": [
+        {
+          "label": "Nature News & Views, James Zou: AI agents enter the wet lab",
+          "url": "https://www.nature.com/articles/d41586-026-03270-1"
+        },
+        {
+          "label": "Nature news coverage",
+          "url": "https://www.nature.com/articles/d41586-026-03552-8"
+        }
+      ],
+      "enterprise_adaptation": "Steal this idea: treat every lab protocol as a graph of instrument calls so a scheduler can overlap steps, which is where the 3.2x concurrent speedup comes from. 30-day experiment: draw one recurring test sequence in your own lab (sample prep, conditioning, measurement) as a step graph, mark which steps could run in parallel, and time a dry-run schedule against the current serial one.",
+      "evaluation": "EVALUATE NOW",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "20+ instrument types and 11,000+ steps in one orchestrated system",
+        "3.2x faster concurrent protocol execution",
+        "Exact recovery in a DNA data-storage cycle; KRAS G13D mutation identified and validated"
+      ],
+      "suggested_actions": [
+        "Read the methods section on instrument orchestration",
+        "Map one in-house protocol as a parallelisable step graph"
+      ],
+      "results": "Matched expert-optimized enzymatic DNA synthesis yields; 3.2x faster concurrent execution; exact DNA-storage recovery; KRAS G13D validated (paper-reported)."
+    },
+    {
+      "id": "anthropic-how-researchers-use-claude-scinet",
+      "title": "Anthropic analyzed 207,049 research sessions: scientists lean on AI for data analysis and writing, and barely for ideas",
+      "source": "Anthropic",
+      "date": "2026-11-05",
+      "primary_url": "https://www.anthropic.com/research/how-researchers-use-claude",
+      "summary": "Data analysis makes up 33.7% of Claude sessions and 48.1% of Claude Code sessions, against 27.6% of researcher time. Writing is 32.0% of sessions against 16.0% of time, and ideation is only 4.2% of sessions against 7.1% of time. Sessions run Aug 2 to Sep 30, 2026 (128,914 on Claude, 78,135 on Claude Code) and map to a 7,262-task, 34-field taxonomy called SciNet.",
+      "platform": "research",
+      "score": {
+        "total": 10,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-08T23:00:00Z",
+      "tags": [
+        "ai-for-science",
+        "adoption",
+        "r-and-d"
+      ],
+      "category": "Lab adoption",
+      "recurrence": "new",
+      "author": "Hermle, Jones, Althoff and colleagues (Anthropic Institute)",
+      "why_it_matters": "It is the first large usage map of what working scientists hand to AI, and it shows where the open ground is: ideation and lab-side work.",
+      "subtitle": "SciNet maps 7,262 research tasks across 34 fields",
+      "enterprise_adaptation": "Steal this idea: compare where AI hours go with where expert hours go, task by task, and the gap shows the next thing to automate. 30-day experiment: ask 10 researchers or engineers to log one week of tasks against a 12-category list, then compare against your team's AI usage logs and pick the biggest under-served category.",
+      "evaluation": "EVALUATE NOW",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "Estimated acceleration under current capabilities runs from 1.35x (arts) to 2.02x (statistics)",
+        "Lab-intensive fields reach about 3-4x if non-physical work is fully automated",
+        "94% of surveyed researchers expect AI to match the best researchers in data analysis by 2030"
+      ],
+      "suggested_actions": [
+        "Run the task-log comparison with one research group"
+      ],
+      "results": "Sample: 207,049 sessions; data analysis 33.7% (Claude) and 48.1% (Claude Code) of sessions vs 27.6% of researcher time (Anthropic-reported)."
+    },
+    {
+      "id": "context-aware-nmr-structure-elucidation",
+      "title": "Adding precursor context lifts automated NMR structure elucidation to 95.4% top-15 accuracy",
+      "source": "arXiv",
+      "date": "2026-11-04",
+      "primary_url": "https://arxiv.org/abs/2611.07133",
+      "summary": "Giving an automated NMR elucidation system the precursors used to make a compound raises top-15 accuracy to as high as 95.4% for molecules up to 40 heavy atoms. The paper comes from Hu, Tubb, Rotskoff, Kanan and Markland.",
+      "platform": "arxiv",
+      "score": {
+        "total": 8.5,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-08T23:00:00Z",
+      "tags": [
+        "ai-for-science",
+        "chemistry",
+        "nmr"
+      ],
+      "category": "AI for science",
+      "recurrence": "new",
+      "author": "Hu, Tubb, Rotskoff, Kanan, Markland",
+      "why_it_matters": "Chemists always know what went into the flask, and this puts that knowledge to work in the spectrum-to-structure step.",
+      "enterprise_adaptation": "Steal this idea: give the analysis model the same context the bench chemist has (starting materials, route, conditions) instead of the raw spectrum alone. 30-day experiment: take 20 past samples with known routes, run your current spectrum-interpretation tool with and without route notes, and count how often the right answer reaches the top 15.",
+      "evaluation": "EVALUATE NOW",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "Precursor context is the added input",
+        "Top-15 accuracy up to 95.4% for molecules up to 40 heavy atoms"
+      ],
+      "suggested_actions": [
+        "Test route-aware prompting on 20 archived samples"
+      ],
+      "results": "Top-15 accuracy up to 95.4% (up to 40 heavy atoms; author-reported)."
+    },
+    {
+      "id": "inkling-2-small-model-card",
+      "title": "Thinking Machines unveils Inkling 2 Small, a 594B-parameter MoE with 17B active and 1M-token context",
+      "source": "Thinking Machines",
+      "date": "2026-11-05",
+      "primary_url": "https://thinkingmachines.ai/model-card/inkling-2-small/",
+      "summary": "Thinking Machines introduces Inkling 2 Small, which uses 8 of 384 experts per token, accepts image input and runs to 1M tokens of context, with access through the Tinker API and playground for fine-tuning and inference. The card reports AA Index 30.6, BrowseComp 90.2%, HLE-Diamond 28.7%, CyberBench v1.1 72.7%, PatchEval 79.6% and StrongREJECT 97.1%.",
+      "platform": "research",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-08T23:00:00Z",
+      "tags": [
+        "model-card"
+      ],
+      "category": "Model cards",
+      "recurrence": "new",
+      "author": "Thinking Machines Lab",
+      "why_it_matters": "A new large model arrives with fine-tuning built into the product, so a team can specialise it on its own documents.",
+      "enterprise_adaptation": "Steal this idea: use a hosted fine-tuning loop to turn a strong general model into a house specialist on your own technical archive. 30-day experiment: assemble 200 solved internal questions with answers, fine-tune on 150 through Tinker, and score the other 50 against the base model.",
+      "evaluation": "EVALUATE NOW",
+      "priority": "MEDIUM",
+      "key_takeaways": [
+        "Tinker Terms of Use apply; the card lists API fine-tuning and a playground",
+        "The card describes safety evaluations on sycophancy, refusals, CBRN and cyber, loss of control and multimodal behavior"
+      ],
+      "suggested_actions": [
+        "Request Tinker access and try a small fine-tune"
+      ],
+      "results": "AA Index 30.6; BrowseComp 90.2%; HLE-Diamond 28.7%; CyberBench v1.1 72.7% (model-card-reported)."
+    },
+    {
+      "id": "doj-super-intelligence-task-force",
+      "title": "The Justice Department launches a Super Intelligence Task Force to coordinate AI enforcement",
+      "source": "U.S. Department of Justice",
+      "date": "2026-11-05",
+      "primary_url": "https://www.justice.gov/opa/pr/department-justice-launches-super-intelligence-task-force",
+      "summary": "The Department of Justice launched the task force on Nov 5 (press release 26-1319), co-chaired by Associate Attorney General Stanley Woodward and Associate Deputy Attorney General Stephen Weiss. It coordinates criminal and civil AI matters, following an Attorney General memo dated Oct 13.",
+      "platform": "research",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "verified": true,
+      "verified_at": "2026-11-08T23:00:00Z",
+      "tags": [
+        "regulation",
+        "us"
+      ],
+      "category": "Regulation (US)",
+      "recurrence": "new",
+      "author": "Office of Public Affairs",
+      "why_it_matters": "Federal AI work now has a single coordinating office, which gives companies one place to look for how the department frames AI issues.",
+      "secondary_urls": [
+        {
+          "label": "Attorney General memo (Oct 13)",
+          "url": "https://www.justice.gov/opa/media/1470291/dl"
+        }
+      ],
+      "enterprise_adaptation": "Steal this idea: pair a legal co-chair with an operations co-chair so every AI use case gets a quick joint read from both sides. 30-day experiment: name two co-owners, hold a 30-minute weekly review of new AI uses, and track how many get a decision within a week.",
+      "evaluation": "MONITOR",
+      "priority": "MEDIUM",
+      "key_takeaways": [
+        "Two co-chairs from the Associate AG and Associate Deputy AG offices",
+        "Covers criminal and civil AI matters"
+      ],
+      "suggested_actions": [
+        "Read the Oct 13 memo for the stated priorities"
+      ],
+      "results": "Press release 26-1319, Nov 5, 2026 (DOJ)."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "ai_for_science",
+      "title": "AI for Science",
+      "description": "Materials, chemistry, physics-simulation and building-science results labs can reuse now.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "leap-closed-loop-perovskite-additives",
+          "title": "LEAP pairs a literature-trained language model with active learning to pick perovskite precursor additives",
+          "source": "Communications Materials",
+          "date": "2026-11-04",
+          "primary_url": "https://www.nature.com/articles/s43246-026-01407-3",
+          "summary": "In a proof-of-concept run, two later-round additives raised average device power conversion efficiency to 20.13% and 20.87% against 19.25% for the control, and the best device reached 21.32%. The model turns mechanism knowledge from papers into interpretable descriptors for uncertainty-aware Bayesian optimization. The authors say only a limited number of candidates were tested prospectively.",
+          "platform": "research",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "materials",
+            "active-learning"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "author": "Xin-De Wang, Zhi-Rui Chen, Ze-Feng Gao, Peng-Jie Guo, Cheng Mu, Zhong-Yi Lu (Renmin University of China)",
+          "why_it_matters": "Low-data additive screening gets a loop that starts from what the literature already knows.",
+          "secondary_urls": [
+            {
+              "label": "Earlier preprint (arXiv 2605.20242)",
+              "url": "https://arxiv.org/html/2605.20242"
+            }
+          ],
+          "results": "Best device 21.32% PCE; additive averages 20.13% and 20.87% vs 19.25% control (paper-reported)."
+        },
+        {
+          "id": "organizational-learning-materials-discovery-campaigns",
+          "title": "Pooling three databases beat pooling all seven in an agent-driven materials campaign",
+          "source": "arXiv",
+          "date": "2026-11-02",
+          "primary_url": "https://arxiv.org/abs/2611.02571",
+          "summary": "A study of how teams of agents share information in materials discovery found that pooling 3 databases outperformed pooling all 7, and flat LLM agent teams trailed a random baseline. An adaptive Al-Mg-Si team found 49% of the ten lowest-formation-energy compounds within the first quarter of its compute budget. Code and data are linked.",
+          "platform": "arxiv",
+          "score": {
+            "total": 9.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "materials",
+            "agents"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "author": "Ackölf, Sparks",
+          "why_it_matters": "It gives lab groups a testable rule for how much shared data a campaign should use.",
+          "results": "49% of the ten lowest-formation-energy compounds found in the first quarter of compute (author-reported)."
+        },
+        {
+          "id": "uma-lammps-pair-style-gpu-scaling",
+          "title": "UMA runs inside LAMMPS on NVIDIA and Intel GPUs, reaching about 779k atoms on 32 Intel nodes",
+          "source": "arXiv",
+          "date": "2026-11-02",
+          "primary_url": "https://arxiv.org/abs/2611.03892",
+          "summary": "A new pair_style uma runs a universal machine-learned potential in NPT molecular dynamics. Per-node capacity is about 8k atoms (A100), 22k (Intel) and 47k (H200), and graph parallelism raises single-device capacity 8.0x on H200 and 4.6x on A100.",
+          "platform": "arxiv",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "simulation",
+            "md"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "author": "Xiaoli Yan, Eliu Huerta",
+          "why_it_matters": "Groups already working in LAMMPS can try a learned potential without changing their simulation stack.",
+          "results": "About 779k atoms on 32 Intel nodes; 8.0x (H200) and 4.6x (A100) single-device capacity (author-reported)."
+        },
+        {
+          "id": "sciencecua-skills-for-scientific-software-agents",
+          "title": "ScienceCUA turns software manuals into reusable skills for agents that operate scientific software",
+          "source": "arXiv",
+          "date": "2026-11-02",
+          "primary_url": "https://arxiv.org/abs/2611.03238",
+          "summary": "The framework builds skills from documentation and then improves them from execution feedback, updating the library only after repeated validation. Initial skills and references raise average task success by up to 7.23 percentage points, and the authors add two cleaned benchmarks, ScienceBoard-Verified and ScienceBoard-VE.",
+          "platform": "arxiv",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "agent-skills"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "author": "Daiqiang Li, Jingyi Peng, Rui Hu, Jia Li, Xuyang Liu, Guanren Qiao, Yujia Xiang, Qiuzhuang Sun, Zhiping Xu, Mingrui Luo",
+          "why_it_matters": "It pairs with DefectSkills: both treat expertise as editable prompt and skill files.",
+          "results": "Up to +7.23 percentage points average task success (author-reported)."
+        },
+        {
+          "id": "physics-embedded-operators-structural-dynamics",
+          "title": "Physics-embedded structural surrogates reach 0.73–0.76% displacement-history error on a fixed-topology 80 m truss benchmark",
+          "source": "arXiv",
+          "date": "2026-11-04",
+          "primary_url": "https://arxiv.org/abs/2611.07059",
+          "summary": "Three physics-embedded surrogate models (MR, PGMON, MOSAIC) map structural features to modal quantities and rebuild the frequency response analytically. On two 20,000-design populations, an 80 m steel truss tower and a tapered shell beam, mean displacement-history errors are 0.73–0.76% for the tower and 0.029–0.116% for the beam, measured against declared band-limited modal references. The evidence is fixed-topology benchmarks, not a completed neural-operator comparison or field validation, and the authors call neural-operator validation future work; the archived tests are benchmarks, not seismic-design assessments.",
+          "platform": "arxiv",
+          "score": {
+            "total": 6.5,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "building-science",
+            "structures"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "author": "Amir Ansrollahi, Mehmet Sefa Orak",
+          "why_it_matters": "Structural engineers get a clear benchmark for fast surrogates in design sweeps that would otherwise need repeated finite-element runs.",
+          "results": "Mean displacement-history error 0.73–0.76% (tower) and 0.029–0.116% (beam) against declared band-limited modal references; fixed-topology benchmarks (author-reported)."
+        },
+        {
+          "id": "hvac-control-pid-to-rl-review",
+          "title": "A review maps four places where reinforcement learning attaches to building HVAC control loops",
+          "source": "arXiv",
+          "date": "2026-11-02",
+          "primary_url": "https://arxiv.org/abs/2611.03152",
+          "summary": "This literature review and taxonomy (no new experiments) organizes building HVAC control from thermostat PID through model-based supervisory control and classifies RL as a gain tuner, a controller replacement, a hybrid with model predictive control, or a setpoint and schedule generator. It treats these as nested attachment points on one plant.",
+          "platform": "arxiv",
+          "score": {
+            "total": 5.5,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "building-science",
+            "hvac"
+          ],
+          "category": "AI for science",
+          "recurrence": "new",
+          "author": "Erfan Haghighat Damavandi, Davide Papurello, Mahdi Alibeigi, Armin Keshavarz",
+          "why_it_matters": "A building team gets a plain taxonomy for choosing where to try learning-based control first."
+        }
+      ]
+    },
+    {
+      "section_id": "lab_adoption",
+      "title": "Lab Adoption",
+      "description": "How research groups and R&D organizations are putting AI to work.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "metr-ai-rd-acceleration-assessment-october-2026",
+          "title": "METR's independent assessment finds AI R&D progress at Anthropic ran 1.9x faster in October 2026",
+          "source": "METR",
+          "date": "2026-11-05",
+          "primary_url": "https://metr.substack.com/p/2026-11-05-anthropic-ai-rd-acceleration-assessment",
+          "summary": "METR estimates growth on the AECI benchmark at 1.9x the pre-October-2025 rate (95% CI 1.5-2.8x) and judged roughly 80% of the acceleration was due to AI. Interviews gave an average self-reported uplift of about 12x.",
+          "platform": "research",
+          "score": {
+            "total": 9.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "adoption",
+            "r-and-d"
+          ],
+          "category": "Lab adoption",
+          "recurrence": "new",
+          "author": "METR",
+          "why_it_matters": "An outside group put a number on how much AI speeds up AI research work, with an interval.",
+          "results": "1.9x (95% CI 1.5-2.8x); about 80% attributed to AI; self-reported uplift about 12x (METR-reported)."
+        },
+        {
+          "id": "bielefeld-axis-alchemical-recipes-llm",
+          "title": "Bielefeld's AXIS project uses language models to mine pre-1800 alchemical recipes for chemistry worth recreating",
+          "source": "Bielefeld University",
+          "date": "2026-11-02",
+          "primary_url": "https://aktuell.uni-bielefeld.de/2026/11/02/uncovering-forgotten-chemical-knowledge-using-ai/",
+          "summary": "The project, led by Guillermo Restrepo with Sarah Lang, uses language models to separate chemical content from symbolic description, screens candidates with computational methods, and recreates the most promising recipes in the lab. It received 400,000 euros over three years from Schmidt Sciences and plans open tools and data.",
+          "platform": "research",
+          "score": {
+            "total": 6.5,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "chemistry",
+            "history"
+          ],
+          "category": "Lab adoption",
+          "recurrence": "new",
+          "author": "Kristina Nienhaus (text); Guillermo Restrepo, Sarah Lang (project)",
+          "why_it_matters": "Old archives become a search space: a screening pipeline for texts, followed by bench tests."
+        }
+      ]
+    },
+    {
+      "section_id": "papers",
+      "title": "Papers",
+      "description": "Preprints on agents, tools and verification.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "inter-agent-influence-persuasion-deception-coercion",
+          "title": "Inter-Agent Influence: every tested model shifted an overseer's decision from rejection to approval",
+          "source": "arXiv",
+          "date": "2026-11-03",
+          "primary_url": "https://arxiv.org/abs/2611.04556",
+          "summary": "The paper evaluates persuasion, deception and coercion between agents in multi-agent settings. In the oversight environments, all tested models moved overseer decisions from rejection to approval. It extends last week's theme of agents that review other agents.",
+          "platform": "arxiv",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "agents",
+            "oversight"
+          ],
+          "category": "Papers",
+          "recurrence": "returning_theme",
+          "author": "Smith, Guo, Tilli, Hatz, Africa, Paskov, de Witt, Torr, Hammond",
+          "why_it_matters": "Teams building reviewer agents get a ready-made test set for how well a reviewer holds its decision.",
+          "recurrence_note": "Continues last week's reviewer-agent theme with a first test of how reviewers can be influenced."
+        },
+        {
+          "id": "llms-need-specialist-tools-msms-structure-elucidation",
+          "title": "Without tools a frontier model gets 2% top-1 on unfamiliar MS/MS structures; with de novo generators it reaches up to 38%",
+          "source": "arXiv",
+          "date": "2026-11-02",
+          "primary_url": "https://arxiv.org/abs/2611.03308",
+          "summary": "On a 100-analyte benchmark split by literature footprint, a frontier LLM reached 52% top-1 in-distribution and 2% out-of-distribution without tools. Access to de novo structure generators raised out-of-distribution accuracy to as much as 38%, and the resulting agent beat the standalone generators.",
+          "platform": "arxiv",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "chemistry",
+            "tools"
+          ],
+          "category": "Papers",
+          "recurrence": "new",
+          "author": "Gabriel Asher, Cailum M. K. Stienstra, Tomo Oga, Devesh Shah, Antonio H. de O. Fonseca, Niall O'Connor, Michael Widrich",
+          "why_it_matters": "The gain comes from wiring the model to specialist tools, which is a design choice any lab can make.",
+          "results": "OOD top-1: 2% without tools, up to 38% with tools (author-reported)."
+        },
+        {
+          "id": "agentic-inverse-design-spatially-programmed-materials",
+          "title": "An LLM agent designs ion-implantation recipes by calling an ion-matter simulator as a tool",
+          "source": "arXiv",
+          "date": "2026-11-02",
+          "primary_url": "https://arxiv.org/abs/2611.03795",
+          "summary": "The MIT-led paper has an agent propose implantation recipes for spatially programmed materials and evaluate them with an ion-matter simulator. No code is shown on the abstract page.",
+          "platform": "arxiv",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "materials",
+            "agents"
+          ],
+          "category": "Papers",
+          "recurrence": "new",
+          "author": "Córdova Carrizales, Chotrattanapituk, Mingda Li and colleagues (MIT)",
+          "why_it_matters": "It shows the simulator-as-tool pattern applied to a fabrication-process design problem."
+        }
+      ]
+    },
+    {
+      "section_id": "model_cards",
+      "title": "Model Cards",
+      "description": "Releases with primary documentation.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "deep-principle-hydrogen-1-0-science-model",
+          "title": "Deep Principle opens the weights of Hydrogen-1.0, a 753B chemistry and materials model post-trained from GLM-5.3",
+          "source": "Deep Principle",
+          "date": "2026-11-04",
+          "primary_url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/",
+          "summary": "The BF16 weights are on Hugging Face under the MIT License, with NVFP4 and MXFP4 versions. The company reports a FrontierScience Research pass rate of 38.33% at max setting, against 33.33% for GPT-6 Astra and 24.44% for its GLM-5.3 base. These are company-run evaluations; no independent validation is stated.",
+          "platform": "research",
+          "score": {
+            "total": 6.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "ai-for-science",
+            "model-card",
+            "chemistry",
+            "open-weights"
+          ],
+          "category": "Model cards",
+          "recurrence": "new",
+          "author": "Deep Principle",
+          "why_it_matters": "Chemistry groups can run an open scientific model on their own hardware and test it on their own questions.",
+          "secondary_urls": [
+            {
+              "label": "Hugging Face model card",
+              "url": "https://huggingface.co/deep-principle/Hydrogen-1.0"
+            },
+            {
+              "label": "Press release (Nov 6)",
+              "url": "https://www.prnewswire.com/news-releases/deep-principle-introduces-hydrogen-1-0-for-ai-driven-materials-discovery-and-chemistry-research-302931877.html"
+            }
+          ],
+          "results": "FSR 38.33% (max) vs 33.33% GPT-6 Astra max and 24.44% GLM-5.3 max (company-reported)."
+        },
+        {
+          "id": "openai-gpt-6-cyber",
+          "title": "OpenAI introduces GPT-6 Cyber for approved defenders, with 48.5% on ExploitGym",
+          "source": "OpenAI",
+          "date": "2026-11-05",
+          "primary_url": "https://openai.com/index/introducing-gpt-6-cyber/",
+          "summary": "GPT-6 Cyber is available through the API and Codex to approved Daybreak Red customers, with access expanding. It scores 48.5% on ExploitGym against 32.1% for GPT-5.6 Cyber, and OpenAI classifies it as Critical for cybersecurity under its Preparedness Framework. The post also describes a Daybreak Red group for critical-infrastructure defenders.",
+          "platform": "research",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "model-card",
+            "security"
+          ],
+          "category": "Model cards",
+          "recurrence": "new",
+          "author": "OpenAI",
+          "why_it_matters": "Security teams with approved access get a stronger model for authorized testing of their own systems.",
+          "results": "ExploitGym 48.5% vs 32.1% for GPT-5.6 Cyber; web pen-test recall 40.3% (OpenAI-reported)."
+        },
+        {
+          "id": "openai-chatgpt-images-2-6-system-card",
+          "title": "ChatGPT Images 2.6 system card reports provenance with C2PA and SynthID and no Bio High or Cyber High crossing",
+          "source": "OpenAI",
+          "date": "2026-11-04",
+          "primary_url": "https://deploymentsafety.openai.com/chatgpt-images-2-6",
+          "summary": "The card tests 3,077 challenging requests per setting. One category's unsafe-not-blocked rate moved from 1.49% to 2.14%, which was not statistically significant, and GIF moderation recall is 77.7%.",
+          "platform": "research",
+          "score": {
+            "total": 5,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "model-card",
+            "images"
+          ],
+          "category": "Model cards",
+          "recurrence": "new",
+          "author": "OpenAI",
+          "why_it_matters": "Provenance tags give image workflows a built-in way to mark generated assets."
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_us",
+      "title": "Regulation: US",
+      "description": "Federal rulemaking and enforcement, stated plainly.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "ed-proposed-priorities-super-intelligence-literacy",
+          "title": "The Education Department's proposed priorities swap 'AI' for 'Super Intelligence' and add SI-literacy definitions",
+          "source": "Federal Register",
+          "date": "2026-11-05",
+          "primary_url": "https://www.govinfo.gov/content/pkg/FR-2026-11-05/html/2026-22615.htm",
+          "summary": "Federal Register document 2026-22615 (91 FR 69736-69753, Nov 5) replaces 'Artificial Intelligence' with 'Super Intelligence' and 'SI' in the department's priorities and adds SI-literacy definitions. Comments are due Dec 7, 2026.",
+          "platform": "research",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "regulation",
+            "us",
+            "education"
+          ],
+          "category": "Regulation (US)",
+          "recurrence": "new",
+          "author": "U.S. Department of Education",
+          "why_it_matters": "Grant programs that use these priorities will describe training in the new vocabulary."
+        }
+      ]
+    },
+    {
+      "section_id": "regulation_global",
+      "title": "Regulation: Global",
+      "description": "China, EU and UK primary updates.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "china-ndrc-press-conference-ai-plus-nov-3",
+          "title": "China's NDRC press conference on new growth drivers covered the 'AI Plus' initiative and orderly AI development",
+          "source": "NDRC (China)",
+          "date": "2026-11-03",
+          "primary_url": "https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261103_1408537.html",
+          "summary": "The Nov 3 'Forging ahead in the 15th Five-Year Plan' press conference lists questions on the 'AI Plus' action, orderly development of AI, international cooperation in AI, data-factor potential and Digital China.",
+          "platform": "research",
+          "score": {
+            "total": 5,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 0,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "regulation",
+            "china"
+          ],
+          "category": "Regulation (Global)",
+          "recurrence": "new",
+          "author": "National Development and Reform Commission"
+        },
+        {
+          "id": "eu-transparency-code-interoperability-working-group",
+          "title": "EU Code of Practice on AI-generated content transparency: Interoperability Working Group met Nov 5",
+          "source": "European Commission",
+          "date": "2026-11-05",
+          "primary_url": "https://digital-strategy.ec.europa.eu/en/policies/task-forces-code-transparency-ai-generated-content",
+          "summary": "The European Commission's task-force page shows the Interoperability Working Group meeting on 5 Nov 2026. The AI Act page states the Omnibus entered into force on 27 July 2026, with Annex III high-risk dates of 2 Dec 2027 and Annex I dates of 2 Aug 2028.",
+          "platform": "research",
+          "score": {
+            "total": 4,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 0,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "regulation",
+            "eu"
+          ],
+          "category": "Regulation (Global)",
+          "recurrence": "returning",
+          "author": "European Commission",
+          "recurrence_note": "Rollout step of an existing code of practice.",
+          "secondary_urls": [
+            {
+              "label": "EU AI Act regulatory framework",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "enterprise_disclosures",
+      "title": "Enterprise Disclosures",
+      "description": "AI language in public-company filings from industrial-sector issuers.",
+      "layout": "list",
+      "items": [
+        {
+          "id": "aggregates-issuer-10q-ai-cyber-risk-language",
+          "title": "An aggregates issuer's Q3 10-Q describes AI as a way threat actors increase attack sophistication",
+          "source": "SEC EDGAR",
+          "date": "2026-11-04",
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/0000916076/000119312526447418/mlm-20260930.htm",
+          "summary": "The 10-Q for the quarter ended Sept 30, 2026 (signed Nov 4) says threat actors are reportedly using AI to increase the effectiveness and sophistication of attacks, and lists challenges implementing new technologies or automation systems among forward-looking factors. Four other industrial-sector 10-Qs filed Nov 2-4 had no AI-specific language in their text.",
+          "platform": "research",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "verified": true,
+          "verified_at": "2026-11-08T23:00:00Z",
+          "tags": [
+            "sec",
+            "industrial"
+          ],
+          "category": "Enterprise disclosures",
+          "recurrence": "new",
+          "author": "Public-company aggregates issuer",
+          "why_it_matters": "Industrial-sector issuers are still mostly silent on AI in filings; the mention that exists frames it through cyber risk.",
+          "secondary_urls": [
+            {
+              "label": "Peer 10-Q 1",
+              "url": "https://www.sec.gov/Archives/edgar/data/1069878/000119312526447251/trex-20260930.htm"
+            },
+            {
+              "label": "Peer 10-Q 2",
+              "url": "https://www.sec.gov/Archives/edgar/data/1370946/000137094626000225/oc-20260930.htm"
+            },
+            {
+              "label": "Peer 10-Q 3",
+              "url": "https://ir.eaglematerials.com/static-files/346cc01e-af65-4172-88d5-bae03d728db0"
+            },
+            {
+              "label": "Peer 10-Q 4",
+              "url": "https://www.sec.gov/Archives/edgar/data/0001328581/000132858126000034/bcc-20260930.htm"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "DefectSkills packages a point-defect DFT workflow as human-guided agent prompts, with a worked 90-atom example",
+      "primary_url": "https://arxiv.org/abs/2611.05654",
+      "source": "arXiv",
+      "date": "2026-11-03",
+      "score": 10,
+      "author": "Zhenkun Yuan, Yizhi Zhu, Geoffroy Hautier (Rice University)"
+    },
+    {
+      "title": "Nature: AutoDNA runs a biomolecular lab across 20+ instrument types and more than 11,000 steps",
+      "primary_url": "https://www.nature.com/articles/s41586-026-11228-6",
+      "source": "Nature",
+      "date": "2026-11-04",
+      "score": 9.5,
+      "author": "Mingyu Wu, Zhaoguo Wang, Jiabin Wang, Chunhai Fan, Haibo Chen and colleagues (Shanghai Jiao Tong University)"
+    },
+    {
+      "title": "Anthropic analyzed 207,049 research sessions: scientists lean on AI for data analysis and writing, and barely for ideas",
+      "primary_url": "https://www.anthropic.com/research/how-researchers-use-claude",
+      "source": "Anthropic",
+      "date": "2026-11-05",
+      "score": 10,
+      "author": "Hermle, Jones, Althoff and colleagues (Anthropic Institute)"
+    },
+    {
+      "title": "Adding precursor context lifts automated NMR structure elucidation to 95.4% top-15 accuracy",
+      "primary_url": "https://arxiv.org/abs/2611.07133",
+      "source": "arXiv",
+      "date": "2026-11-04",
+      "score": 8.5,
+      "author": "Hu, Tubb, Rotskoff, Kanan, Markland"
+    },
+    {
+      "title": "Thinking Machines unveils Inkling 2 Small, a 594B-parameter MoE with 17B active and 1M-token context",
+      "primary_url": "https://thinkingmachines.ai/model-card/inkling-2-small/",
+      "source": "Thinking Machines",
+      "date": "2026-11-05",
+      "score": 8,
+      "author": "Thinking Machines Lab"
+    },
+    {
+      "title": "The Justice Department launches a Super Intelligence Task Force to coordinate AI enforcement",
+      "primary_url": "https://www.justice.gov/opa/pr/department-justice-launches-super-intelligence-task-force",
+      "source": "U.S. Department of Justice",
+      "date": "2026-11-05",
+      "score": 8,
+      "author": "Office of Public Affairs"
+    },
+    {
+      "title": "LEAP pairs a literature-trained language model with active learning to pick perovskite precursor additives",
+      "primary_url": "https://www.nature.com/articles/s43246-026-01407-3",
+      "source": "Communications Materials",
+      "date": "2026-11-04",
+      "score": 7.5,
+      "author": "Xin-De Wang, Zhi-Rui Chen, Ze-Feng Gao, Peng-Jie Guo, Cheng Mu, Zhong-Yi Lu (Renmin University of China)"
+    },
+    {
+      "title": "Pooling three databases beat pooling all seven in an agent-driven materials campaign",
+      "primary_url": "https://arxiv.org/abs/2611.02571",
+      "source": "arXiv",
+      "date": "2026-11-02",
+      "score": 9.5,
+      "author": "Ackölf, Sparks"
+    },
+    {
+      "title": "UMA runs inside LAMMPS on NVIDIA and Intel GPUs, reaching about 779k atoms on 32 Intel nodes",
+      "primary_url": "https://arxiv.org/abs/2611.03892",
+      "source": "arXiv",
+      "date": "2026-11-02",
+      "score": 7.5,
+      "author": "Xiaoli Yan, Eliu Huerta"
+    },
+    {
+      "title": "ScienceCUA turns software manuals into reusable skills for agents that operate scientific software",
+      "primary_url": "https://arxiv.org/abs/2611.03238",
+      "source": "arXiv",
+      "date": "2026-11-02",
+      "score": 7.5,
+      "author": "Daiqiang Li, Jingyi Peng, Rui Hu, Jia Li, Xuyang Liu, Guanren Qiao, Yujia Xiang, Qiuzhuang Sun, Zhiping Xu, Mingrui Luo"
+    },
+    {
+      "title": "Physics-embedded structural surrogates reach 0.73–0.76% displacement-history error on a fixed-topology 80 m truss benchmark",
+      "primary_url": "https://arxiv.org/abs/2611.07059",
+      "source": "arXiv",
+      "date": "2026-11-04",
+      "score": 6.5,
+      "author": "Amir Ansrollahi, Mehmet Sefa Orak"
+    },
+    {
+      "title": "A review maps four places where reinforcement learning attaches to building HVAC control loops",
+      "primary_url": "https://arxiv.org/abs/2611.03152",
+      "source": "arXiv",
+      "date": "2026-11-02",
+      "score": 5.5,
+      "author": "Erfan Haghighat Damavandi, Davide Papurello, Mahdi Alibeigi, Armin Keshavarz"
+    },
+    {
+      "title": "METR's independent assessment finds AI R&D progress at Anthropic ran 1.9x faster in October 2026",
+      "primary_url": "https://metr.substack.com/p/2026-11-05-anthropic-ai-rd-acceleration-assessment",
+      "source": "METR",
+      "date": "2026-11-05",
+      "score": 9.5,
+      "author": "METR"
+    },
+    {
+      "title": "Bielefeld's AXIS project uses language models to mine pre-1800 alchemical recipes for chemistry worth recreating",
+      "primary_url": "https://aktuell.uni-bielefeld.de/2026/11/02/uncovering-forgotten-chemical-knowledge-using-ai/",
+      "source": "Bielefeld University",
+      "date": "2026-11-02",
+      "score": 6.5,
+      "author": "Kristina Nienhaus (text); Guillermo Restrepo, Sarah Lang (project)"
+    },
+    {
+      "title": "Inter-Agent Influence: every tested model shifted an overseer's decision from rejection to approval",
+      "primary_url": "https://arxiv.org/abs/2611.04556",
+      "source": "arXiv",
+      "date": "2026-11-03",
+      "score": 7,
+      "author": "Smith, Guo, Tilli, Hatz, Africa, Paskov, de Witt, Torr, Hammond"
+    },
+    {
+      "title": "Without tools a frontier model gets 2% top-1 on unfamiliar MS/MS structures; with de novo generators it reaches up to 38%",
+      "primary_url": "https://arxiv.org/abs/2611.03308",
+      "source": "arXiv",
+      "date": "2026-11-02",
+      "score": 7.5,
+      "author": "Gabriel Asher, Cailum M. K. Stienstra, Tomo Oga, Devesh Shah, Antonio H. de O. Fonseca, Niall O'Connor, Michael Widrich"
+    },
+    {
+      "title": "An LLM agent designs ion-implantation recipes by calling an ion-matter simulator as a tool",
+      "primary_url": "https://arxiv.org/abs/2611.03795",
+      "source": "arXiv",
+      "date": "2026-11-02",
+      "score": 7.5,
+      "author": "Córdova Carrizales, Chotrattanapituk, Mingda Li and colleagues (MIT)"
+    },
+    {
+      "title": "Deep Principle opens the weights of Hydrogen-1.0, a 753B chemistry and materials model post-trained from GLM-5.3",
+      "primary_url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/",
+      "source": "Deep Principle",
+      "date": "2026-11-04",
+      "score": 6.5,
+      "author": "Deep Principle"
+    },
+    {
+      "title": "OpenAI introduces GPT-6 Cyber for approved defenders, with 48.5% on ExploitGym",
+      "primary_url": "https://openai.com/index/introducing-gpt-6-cyber/",
+      "source": "OpenAI",
+      "date": "2026-11-05",
+      "score": 8,
+      "author": "OpenAI"
+    },
+    {
+      "title": "ChatGPT Images 2.6 system card reports provenance with C2PA and SynthID and no Bio High or Cyber High crossing",
+      "primary_url": "https://deploymentsafety.openai.com/chatgpt-images-2-6",
+      "source": "OpenAI",
+      "date": "2026-11-04",
+      "score": 5,
+      "author": "OpenAI"
+    },
+    {
+      "title": "The Education Department's proposed priorities swap 'AI' for 'Super Intelligence' and add SI-literacy definitions",
+      "primary_url": "https://www.govinfo.gov/content/pkg/FR-2026-11-05/html/2026-22615.htm",
+      "source": "Federal Register",
+      "date": "2026-11-05",
+      "score": 6,
+      "author": "U.S. Department of Education"
+    },
+    {
+      "title": "China's NDRC press conference on new growth drivers covered the 'AI Plus' initiative and orderly AI development",
+      "primary_url": "https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261103_1408537.html",
+      "source": "NDRC (China)",
+      "date": "2026-11-03",
+      "score": 5,
+      "author": "National Development and Reform Commission"
+    },
+    {
+      "title": "EU Code of Practice on AI-generated content transparency: Interoperability Working Group met Nov 5",
+      "primary_url": "https://digital-strategy.ec.europa.eu/en/policies/task-forces-code-transparency-ai-generated-content",
+      "source": "European Commission",
+      "date": "2026-11-05",
+      "score": 4,
+      "author": "European Commission"
+    },
+    {
+      "title": "An aggregates issuer's Q3 10-Q describes AI as a way threat actors increase attack sophistication",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/0000916076/000119312526447418/mlm-20260930.htm",
+      "source": "SEC EDGAR",
+      "date": "2026-11-04",
+      "score": 6,
+      "author": "Public-company aggregates issuer"
+    },
+    {
+      "title": "PaddleMaterials: open-source toolkit with six task classes; compiled execution gives median 11-224% speedups across 65 model instances",
+      "primary_url": "https://arxiv.org/abs/2611.03154",
+      "source": "arXiv",
+      "date": "2026-11-02",
+      "score": 7.5
+    },
+    {
+      "title": "SteelAgent: gradient boosting R2 falls from 0.859 on a random split to 0.113 with steel families held out",
+      "primary_url": "https://arxiv.org/abs/2611.06953",
+      "source": "arXiv",
+      "date": "2026-11-03",
+      "score": 7.5
+    },
+    {
+      "title": "Novelty Horizon: LLMs fail to extrapolate on a diode short-circuit data generation test",
+      "primary_url": "https://arxiv.org/abs/2611.05175",
+      "source": "arXiv",
+      "date": "2026-11-03",
+      "score": 6.5
+    },
+    {
+      "title": "SCANO neural operator cuts whole-mesh error up to 15x on 3D thermal fields in a data-centre dataset",
+      "primary_url": "https://arxiv.org/abs/2611.04603",
+      "source": "arXiv",
+      "date": "2026-11-03",
+      "score": 6.5
+    },
+    {
+      "title": "MACE fine-tuning study of the Li6PS5Cl solid electrolyte",
+      "primary_url": "https://arxiv.org/abs/2611.05946",
+      "source": "arXiv",
+      "date": "2026-11-04",
+      "score": 6.0
+    },
+    {
+      "title": "Online optimization for controlling HVAC systems with economic MPC and efficient solvers",
+      "primary_url": "https://arxiv.org/abs/2611.07777",
+      "source": "arXiv",
+      "date": "2026-11-05",
+      "score": 5.5
+    },
+    {
+      "title": "Hebrew University screen of more than 50 million compounds finds 92 sugar-substitute candidates (Food Chemistry)",
+      "primary_url": "https://doi.org/10.1016/j.foodchem.2026.151732",
+      "source": "Food Chemistry",
+      "date": "2026-11-05",
+      "score": 7.0
+    },
+    {
+      "title": "Nature news: AI agents design a robot-powered lab (covers October preprint arXiv 2610.23826)",
+      "primary_url": "https://www.nature.com/articles/d41586-026-03587-x",
+      "source": "Nature",
+      "date": "2026-11-06",
+      "score": 7.0
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Expertise is being written down as editable prompt and skill files for science agents",
+      "evidence": "DefectSkills encodes VASP defect workflows as prompts with defined researcher decision points, and ScienceCUA builds and evolves skills from software manuals, adding up to 7.23 points of task success.",
+      "what_to_watch": "Whether a second group publishes results from reusing another lab's skill files unchanged."
+    },
+    {
+      "pattern": "Specialist tools and added context, not bigger models, set accuracy on unfamiliar chemistry",
+      "evidence": "MS/MS top-1 on undocumented analytes goes from 2% to as much as 38% with de novo generators, and NMR top-15 reaches 95.4% when precursor context is added.",
+      "what_to_watch": "A head-to-head of tool-equipped agents on a shared spectroscopy benchmark."
+    },
+    {
+      "pattern": "Autonomous labs move from demonstrations to long runs on mixed hardware",
+      "evidence": "AutoDNA spans 20+ instrument types and 11,000+ steps in Nature; Nature news also covers agents that design a robot lab in simulation.",
+      "what_to_watch": "The first materials or chemistry lab reporting a comparable multi-thousand-step run."
+    },
+    {
+      "pattern": "Reviewer agents are now being tested for how easily they are persuaded (returning theme)",
+      "evidence": "Inter-Agent Influence finds all tested models shifted overseer decisions from rejection to approval; last week's signal was agents that review other agents.",
+      "what_to_watch": "A reviewer design that publishes a hold-out rate under persuasion."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "China's NDRC said on Nov 3 it will accelerate foundational, comprehensive AI legislation during the 15th Five-Year Plan.",
+      "reason": "Seen only in secondary summaries; the NDRC page lists AI topics (AI Plus, orderly AI development, international cooperation) but does not mention legislation.",
+      "attempted_url": "https://www.ndrc.gov.cn/xwdt/xwfb/202611/t20261103_1408537.html"
+    },
+    {
+      "claim": "Edison Scientific's Kosmos deployment at Pfizer (R&D World, Nov 6, with $99 million-per-program estimate).",
+      "reason": "Edison's own announcement is dated Oct 29, before the window; the trade-press figures are projections.",
+      "attempted_url": "https://edisonscientific.com/news/edison-scientific-announces-agreement-with-pfizer-to-accelerate-research-and-development"
+    },
+    {
+      "claim": "University of East London Proto-AGI earthquake-assessment workflow (press coverage Nov 5).",
+      "reason": "The Buildings paper is dated 21 August 2026, so the paper is outside the window; only the press coverage is in window.",
+      "attempted_url": "https://doi.org/10.3390/buildings16163324"
+    },
+    {
+      "claim": "DOE Genesis Agent Skills release (re-posted by Fermilab on Nov 6).",
+      "reason": "Original release was Oct 15, outside the window.",
+      "attempted_url": "https://www.energy.gov/undersecretaryforscience/genesis-mission/achieving-ai-driven-autonomous-laboratories"
+    },
+    {
+      "claim": "Hebrew University 92 sugar-substitute candidates: publication date and results in Food Chemistry.",
+      "reason": "The DOI page could not be loaded; details come from the EurekAlert and phys.org release.",
+      "attempted_url": "https://doi.org/10.1016/j.foodchem.2026.151732"
+    },
+    {
+      "claim": "Tohoku University perspective on AI-driven solid-electrolyte discovery (Advanced Materials, Nov 6).",
+      "reason": "Only phys.org coverage was reached; the journal page was not.",
+      "attempted_url": "https://phys.org/news/2026-11-trial-error-framework-ai-driven.html"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "SEC EDGAR full-text search with a declared user agent",
+      "ndrc.gov.cn and cac.gov.cn notice feeds",
+      "Nature Communications Materials and npj Computational Materials table-of-contents pages",
+      "DOE and national-lab newsroom RSS for building-science and Genesis items"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "agent skill files for simulation codes",
+      "autodna-style scheduling for chemistry and materials labs",
+      "open-weight science models and independent evaluations"
+    ],
+    "topics_to_drop": [],
+    "notes": "Gaps: (1) EDGAR full-text search was blocked, so enterprise disclosures rely on direct 10-Q fetches for five issuers. (2) The EU AI Office, UK AISI and NIST AI RMF pages showed no primary change dated Nov 2-8. (3) Building-science AI is thin: the in-window items are two arXiv preprints (HVAC review, structural surrogates), and the UEL earthquake paper predates the window. (4) The NDRC legislation claim is unverified. (5) Hydrogen-1.0 results are company-reported with no independent evaluation. (6) lab_adoption has two items; Edison/Pfizer was announced Oct 29. (7) Top Picks are not repeated in sections, matching last week's layout."
+  }
+}

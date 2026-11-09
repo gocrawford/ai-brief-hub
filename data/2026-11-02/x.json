@@ -1,0 +1,3245 @@
+{
+  "tab_id": "x",
+  "tab_name": "X",
+  "subtitle": "Social Intelligence",
+  "icon": "Twitter",
+  "freshness": {
+    "target_pct_new": 0.8,
+    "pct_new": 0.99,
+    "items_total": 72,
+    "items_new": 71,
+    "items_returning": 1
+  },
+  "min_items": 15,
+  "executive_summary": [
+    {
+      "headline": "A frontier model edited a small model's weights with no training, and Hugging Face copied it within a day",
+      "body": "GPT-6 Astra changed 0.016% of Qwen3.5-0.8B and the authors report MATH-500 rising from 7.9% to 48.1%. Hugging Face's ML Intern rebuilt the edit and measured 51.0%, and Daniel van Strien fixed an OCR model's loops for about $10. A community note says the main fix was ending repetition in thinking mode.",
+      "primary_url": "https://x.com/rikiyatakehi/status/2117313742891327994"
+    },
+    {
+      "headline": "Claude can now read your bank data and tell you where the money goes",
+      "body": "Personal Finance in Claude is a US beta on Pro, Max and Ultra plans, with read-only access through Plaid and up to two years of transactions. Deedy Das separately reports that a text-message agent found a 600 euro flight-delay claim that paid $700.",
+      "primary_url": "https://x.com/claudeai/status/2118403114890137895"
+    },
+    {
+      "headline": "A lobster retailer's $30,000 ad test: 3.5x the revenue with an agent-run campaign",
+      "body": "Perplexity Computer spent 2.1x the control and brought in 3.5x the revenue, a 63% higher ROAS, handling creative analysis, static and video ads and a daily Slack report.",
+      "primary_url": "https://x.com/perplexity_ai/status/2118035494898704781"
+    },
+    {
+      "headline": "AI-for-science had a big week: a Lean-checked proof, a new protein structure, and CAD for physical products",
+      "body": "Physical Superintelligence reports a Lean-accepted proof of the Aaronson-Ambainis conjecture, Anthropic's Claude helped solve the first 3D structure of a bacteriophage vault, and OpenAI showed Codex drafting CAD and simulations. Anthropic's field data puts the share of researcher time AI could take on at 27 to 52%.",
+      "primary_url": "https://x.com/psipbc/status/2118706269506949152"
+    },
+    {
+      "headline": "Images 2.6 adds GIFs and SVG, and creators got cheaper video",
+      "body": "ChatGPT Images 2.6 makes GIFs, exports SVG and runs about 50% faster. Gemini Omni 1.2 Flash drafts video at $0.07 per second, and Voyager prices video models at half of Higgsfield.",
+      "primary_url": "https://x.com/OpenAI/status/2118124944928432327"
+    }
+  ],
+  "top_picks": [
+    {
+      "id": "weight-space-programming-astra-edits-qwen-weights",
+      "title": "A frontier model edited 0.016% of a small model's weights, with no training, and raised MATH-500 from 7.9% to 48.1%",
+      "primary_url": "https://x.com/rikiyatakehi/status/2117313742891327994",
+      "source": "@rikiyatakehi",
+      "author": "Rikiya Takehi",
+      "date": "2026-11-02",
+      "summary": "GPT-6 Astra edited 131,072 of Qwen3.5-0.8B's weights (64 MLP output columns in each of layers 15 and 19) with no gradient training. The authors report MATH-500 rising from 7.9% to 48.1%, IFEval from 21.0% to 62.3% and GSM8K from 13.8% to 67.1%, with answers hitting the token limit falling from 93.0% to 33.1%. Hugging Face's ML Intern rebuilt the edit, hash-checked it and measured 51.0% on the full MATH-500 within a day; Simon Willison and Daniel van Strien ran related weight experiments the same week. An X community note adds that the model was handed the weights as text and used code and forward passes, and that the edit mainly fixed repetition loops in thinking mode.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "engagement": {
+        "views": 9894909,
+        "likes": 55947,
+        "comments": 2362,
+        "shares": 7276
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:45:00Z",
+      "platform": "x",
+      "tags": [
+        "weight-editing",
+        "qwen",
+        "open-weights",
+        "reproduced",
+        "mix:new-capability",
+        "source_via:viral_sweep"
+      ],
+      "category": "Research result",
+      "priority": "CRITICAL",
+      "key_takeaways": [
+        "The edit touched 131,072 weights, 0.016% of the model, in two layers.",
+        "Astra used 50 forward passes and practice problems from training sets; evaluation sets were unseen.",
+        "Hugging Face reproduced the checkpoint on 2026-11-02 and measured 51.0% on MATH-500.",
+        "The largest gain comes from ending reasoning loops: answers hitting the 32,768-token cap fell from 93.0% to 33.1%."
+      ],
+      "suggested_actions": [
+        "Open the Hugging Face demo and compare the base and edited Qwen3.5-0.8B on a few of your own prompts.",
+        "Point a coding agent at a small local model that loops on your task and ask it to find and ablate the looping direction."
+      ],
+      "enterprise_translation": "Steal this idea: hand an agent a small model that misbehaves on your own task, give it a budget of forward passes and a few dozen example prompts, and ask it to edit the weights directly. Daniel van Strien did this for an OCR model in under 3 hours for about $10 of compute.",
+      "why_it_matters": "Frontier models are now producing working edits to neural network weights, and the result was copied by independent teams within 24 hours.",
+      "secondary_urls": [
+        {
+          "label": "Authors' blog post",
+          "url": "https://rikiyat.github.io/blog/weight-space-programming/"
+        },
+        {
+          "label": "Hugging Face reproduction (checkpoint and hash checks)",
+          "url": "https://huggingface.co/ML-Intern-lab/Qwen3.5-0.8B-weight-space-programming"
+        },
+        {
+          "label": "Niels Rogge: Hugging Face reproduced the paper",
+          "url": "https://x.com/NielsRogge/status/2117541532827848972"
+        },
+        {
+          "label": "Simon Willison: a local Qwen reads game weights",
+          "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
+        },
+        {
+          "label": "Daniel van Strien: Claude Opus fixes an OCR model's loops",
+          "url": "https://x.com/vanstriendaniel/status/2117661605336928668"
+        }
+      ],
+      "recurrence": "new"
+    },
+    {
+      "id": "claude-personal-finance-plaid-beta",
+      "title": "Claude adds Personal Finance: read-only bank connections, two years of transactions, charts and duplicate-charge checks",
+      "primary_url": "https://x.com/claudeai/status/2118403114890137895",
+      "source": "@claudeai",
+      "author": "Claude",
+      "date": "2026-11-05",
+      "summary": "Personal Finance in Claude is a US beta for Pro, Max and Ultra subscribers. Accounts connect read-only through Plaid, Claude can see up to two years of transactions, and it categorizes spending, spots duplicate charges and builds charts on request. The launch post drew 11.5M views.",
+      "score": {
+        "total": 9,
+        "signal": 3,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "views": 11493441,
+        "likes": 46236,
+        "comments": 1532,
+        "shares": 2713
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:45:00Z",
+      "platform": "x",
+      "tags": [
+        "claude",
+        "personal-finance",
+        "consumer",
+        "plaid",
+        "mix:consumer-creator-smb"
+      ],
+      "category": "Product launch",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "Available in the US as a beta on Pro, Max and Ultra plans.",
+        "Connection is read-only through Plaid, with up to two years of transaction history.",
+        "Typical jobs: categorize spending, find duplicate charges, chart trends."
+      ],
+      "suggested_actions": [
+        "Connect one account and ask for a recurring-charge audit with a cancel list.",
+        "Ask for a chart of spending by category over the past 12 months."
+      ],
+      "enterprise_translation": "Steal this idea: ask your assistant for a one-page monthly money review (recurring charges, duplicates, three categories that grew) and keep it as a standing prompt. The same pattern works for a small business's card statements.",
+      "why_it_matters": "Mainstream assistants are moving from chat to doing a personal money task end to end, with the user's real data.",
+      "secondary_urls": [
+        {
+          "label": "Anthropic: Introducing Personal Finance in Claude",
+          "url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude"
+        }
+      ],
+      "recurrence": "new"
+    },
+    {
+      "id": "perplexity-computer-get-maine-lobster-ad-test",
+      "title": "Perplexity Computer ran a $30,000 ad test for Get Maine Lobster: 3.5x the revenue of the non-AI campaign and 63% higher ROAS",
+      "primary_url": "https://x.com/perplexity_ai/status/2118035494898704781",
+      "source": "@perplexity_ai",
+      "author": "Perplexity",
+      "date": "2026-11-04",
+      "summary": "Get Maine Lobster put $30,000 into a head-to-head test. The campaign run with Perplexity Computer spent 2.1x as much as the non-AI campaign, brought in 3.5x the revenue and delivered a 63% higher return on ad spend. Computer analyzed creative, produced static ads, made video ads with Higgsfield and posted a daily PDF report to Slack.",
+      "score": {
+        "total": 8,
+        "signal": 2,
+        "novelty": 2,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "views": 188150,
+        "likes": 760,
+        "comments": 107,
+        "shares": 51
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:45:00Z",
+      "platform": "x",
+      "tags": [
+        "perplexity-computer",
+        "marketing",
+        "smb",
+        "ads",
+        "case-study",
+        "mix:consumer-creator-smb"
+      ],
+      "category": "Success story",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "Test budget was $30,000; Computer's campaign spent 2.1x the control and returned 3.5x the revenue.",
+        "ROAS was 63% higher than the non-AI campaign.",
+        "The loop covered creative analysis, static ads, video ads and a daily Slack report."
+      ],
+      "suggested_actions": [
+        "Pick one product and ask an agent to analyze your last 30 days of ad creative, then draft ten statics and three video concepts.",
+        "Set up a daily Slack PDF of spend, revenue and top creative."
+      ],
+      "enterprise_translation": "Steal this idea: split a modest budget between your current campaign and an agent-run one with the same product and audience, and let the agent own creative analysis, new ads and the daily report. Compare ROAS after two weeks.",
+      "why_it_matters": "A small food retailer got a measured, budgeted comparison, with the numbers published on a case-study page.",
+      "secondary_urls": [
+        {
+          "label": "Get Maine Lobster case study",
+          "url": "https://pplx.ai/gml"
+        }
+      ],
+      "recurrence": "new"
+    },
+    {
+      "id": "psi-aaronson-ambainis-conjecture-lean-proof",
+      "title": "Physical Superintelligence reports a proof of the Aaronson-Ambainis conjecture, accepted by Lean",
+      "primary_url": "https://x.com/psipbc/status/2118706269506949152",
+      "source": "@psipbc",
+      "author": "Physical Superintelligence",
+      "date": "2026-11-06",
+      "summary": "Physical Superintelligence says its internal system, running a non-public Anthropic model, had a complete proof of the Aaronson-Ambainis conjecture by day 3 of the effort. Lean accepted the proof, and accepted the improved final version as well. The research page links the proofs and code.",
+      "score": {
+        "total": 9.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "engagement": {
+        "views": 1111543,
+        "likes": 3987,
+        "comments": 162,
+        "shares": 663
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:45:00Z",
+      "platform": "x",
+      "tags": [
+        "mathematics",
+        "lean",
+        "theorem-proving",
+        "quantum-computing",
+        "mix:new-capability",
+        "ai-for-science"
+      ],
+      "category": "Science result",
+      "priority": "CRITICAL",
+      "key_takeaways": [
+        "Lean, a proof checker, accepted both the first complete proof and the improved version.",
+        "A complete proof existed by day 3 of the run.",
+        "Proofs and code are linked from the company's research page."
+      ],
+      "suggested_actions": [
+        "Open the research page and read the Lean files.",
+        "Run your own open conjecture or lemma through a prover plus a checker loop."
+      ],
+      "enterprise_translation": "Steal this idea: pair any reasoning model with a formal checker so every claim it makes is machine-verified before you read it. This works for contract logic, spreadsheet models and proofs.",
+      "why_it_matters": "A long-open problem in quantum complexity theory has a machine-checked proof, and the authors publish the files.",
+      "secondary_urls": [
+        {
+          "label": "Physical Superintelligence research page",
+          "url": "https://psi.inc/research/aaronson-ambainis/"
+        }
+      ],
+      "recurrence": "new"
+    },
+    {
+      "id": "anthropic-claude-vault-particle-3d-structure",
+      "title": "Claude helped solve the first 3D structure of a bacteriophage vault particle: 96 protein copies, about 9.5 MDa",
+      "primary_url": "https://x.com/AnthropicAI/status/2118073665296228863",
+      "source": "@AnthropicAI",
+      "author": "Anthropic",
+      "date": "2026-11-04",
+      "summary": "Anthropic's science team used Claude to determine the first 3D structure of a bacteriophage L05 vault, built from 96 copies of one protein and about 9.5 MDa in mass. The shell measures roughly 54 by 45 nm and holds around 25% more volume than the mammalian vault. Structure determination took days rather than the weeks to months it takes manually.",
+      "score": {
+        "total": 8.5,
+        "signal": 2,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "engagement": {
+        "views": 995528,
+        "likes": 4887,
+        "comments": 569,
+        "shares": 529
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:45:00Z",
+      "platform": "x",
+      "tags": [
+        "structural-biology",
+        "cryo-em",
+        "claude",
+        "science",
+        "mix:new-capability",
+        "ai-for-science"
+      ],
+      "category": "Science result",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "First 3D structure of a bacteriophage L05 vault.",
+        "Structure determination took days instead of weeks to months.",
+        "The shell holds roughly 25% more volume than the mammalian vault."
+      ],
+      "suggested_actions": [
+        "Read the write-up for the step-by-step division of labor between scientist and Claude."
+      ],
+      "enterprise_translation": "Steal this idea: break your slowest expert workflow into numbered steps and give the agent the repetitive middle steps while the specialist reviews the outputs.",
+      "why_it_matters": "A months-long structural biology task now fits in a few days with an AI collaborator.",
+      "secondary_urls": [
+        {
+          "label": "Anthropic: Investigating vault particles with Claude",
+          "url": "https://www.anthropic.com/research/investigating-vault-particles-with-claude"
+        }
+      ],
+      "recurrence": "new"
+    },
+    {
+      "id": "chatgpt-images-2-6-gifs-svg-faster",
+      "title": "ChatGPT Images 2.6 adds GIFs, SVG export and 50% faster generation, with two new API models",
+      "primary_url": "https://x.com/OpenAI/status/2118124944928432327",
+      "source": "@OpenAI",
+      "author": "OpenAI",
+      "date": "2026-11-04",
+      "summary": "ChatGPT Images 2.6 generates GIFs, exports SVG, and runs about 50% faster. The API gets GPT-Image-2.6 Flare, which can return in as little as 6 seconds at low quality, and Sunburst, plus image markup and a complexity parameter. It is available in ChatGPT and Codex on all tiers.",
+      "score": {
+        "total": 8,
+        "signal": 3,
+        "novelty": 1,
+        "actionability": 2,
+        "source_quality": 2
+      },
+      "engagement": {
+        "views": 3664202,
+        "likes": 21927,
+        "comments": 1194,
+        "shares": 1888
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:45:00Z",
+      "platform": "x",
+      "tags": [
+        "chatgpt",
+        "images",
+        "creator",
+        "api",
+        "mix:consumer-creator-smb"
+      ],
+      "category": "Product launch",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "GIF output and SVG export are new.",
+        "Generation is about 50% faster.",
+        "API models: GPT-Image-2.6 Flare (as fast as 6 seconds at low quality) and Sunburst.",
+        "Available to all ChatGPT and Codex tiers."
+      ],
+      "suggested_actions": [
+        "Ask for a looping GIF of your logo and an SVG version of the same mark.",
+        "Test Flare on a batch of thumbnails."
+      ],
+      "enterprise_translation": "Steal this idea: generate an SVG icon set and animated GIF stickers for a product launch in one sitting, and keep the prompts as a reusable brand kit.",
+      "why_it_matters": "Creators and small shops get editable vector output and fast drafts from the same chat window.",
+      "secondary_urls": [
+        {
+          "label": "OpenAI: Introducing Images 2.6",
+          "url": "https://openai.com/index/introducing-images-2-6/"
+        }
+      ],
+      "recurrence": "new"
+    },
+    {
+      "id": "openai-chatgpt-codex-physical-engineering-cad",
+      "title": "OpenAI shows ChatGPT and Codex drafting CAD, drawings and simulations; two people designed a Codex device in under a week",
+      "primary_url": "https://x.com/OpenAI/status/2117692475775258785",
+      "source": "@OpenAI",
+      "author": "OpenAI",
+      "date": "2026-11-03",
+      "summary": "OpenAI says its models now help engineers create and revise CAD models, prepare manufacturing drawings, set up simulations and finite element analysis, and review designs. As a test, two team members designed a talk-to-Codex hardware device with Astra in under a week, and a contract manufacturer built a small batch of prototypes in under a month. Chip Ganassi Racing is turning 3D scans into editable CAD and drawings, and Mazda is exploring vehicle designs through simulation.",
+      "score": {
+        "total": 9.5,
+        "signal": 3,
+        "novelty": 3,
+        "actionability": 1,
+        "source_quality": 2
+      },
+      "engagement": {
+        "views": 1386945,
+        "likes": 8417,
+        "comments": 730,
+        "shares": 753
+      },
+      "verified": true,
+      "verified_at": "2026-11-09T01:45:00Z",
+      "platform": "x",
+      "tags": [
+        "cad",
+        "engineering",
+        "hardware",
+        "codex",
+        "mix:enterprise-platform",
+        "ai-for-science"
+      ],
+      "category": "Product direction",
+      "priority": "HIGH",
+      "key_takeaways": [
+        "Astra handled enclosure, PCB, firmware and UI work on the test device.",
+        "Prototypes were built in under a month.",
+        "Racing and automotive teams are already using it for scan-to-CAD and simulation."
+      ],
+      "suggested_actions": [
+        "Describe a gadget you want, ask for an enclosure CAD and a parts list, then 3D print it."
+      ],
+      "enterprise_translation": "Steal this idea: scan a part you need, ask the agent for an editable CAD file and drawing, and send it to a local print shop. Hardware prototypes now fit a side-project week.",
+      "why_it_matters": "Hardware design is following software toward agent-assisted iteration.",
+      "secondary_urls": [
+        {
+          "label": "OpenAI: Accelerating engineering for the physical world",
+          "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world/"
+        },
+        {
+          "label": "Greg Brockman on amateurs designing prototype devices",
+          "url": "https://x.com/gdb/status/2117781797555851515"
+        }
+      ],
+      "recurrence": "new"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "tool_announcements",
+      "title": "Tool Announcements",
+      "description": "New models, products and features announced on X this week, ordered by priority.",
+      "layout": "table",
+      "items": [
+        {
+          "id": "google-gemini-omni-1-2-flash-video",
+          "title": "Gemini Omni 1.2 Flash: videos up to 15 seconds, drafts at $0.07 per second, 30% cheaper",
+          "primary_url": "https://x.com/Google/status/2118390406316728555",
+          "source": "@Google",
+          "author": "Google",
+          "date": "2026-11-05",
+          "summary": "Google's updated video model makes clips from 3 to 15 seconds, drafts at 360p or 720p for $0.07 per second and upscales to 1080p or 4K. The post says cost is 30% lower and that edits happen in conversation, such as swapping backgrounds.",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 780760,
+            "likes": 3362,
+            "comments": 288,
+            "shares": 342
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "google",
+            "video",
+            "creator",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Model release",
+          "priority": "HIGH",
+          "recurrence": "new",
+          "pricing": "$0.07/s draft at 360p/720p; upscale to 1080p/4K"
+        },
+        {
+          "id": "claude-code-subagent-status-99-percent-cheaper",
+          "title": "Claude Code background subagents now use about 99% less of your limit on status updates",
+          "primary_url": "https://x.com/ClaudeDevs/status/2118063143167693011",
+          "source": "@ClaudeDevs",
+          "author": "ClaudeDevs",
+          "date": "2026-11-04",
+          "summary": "A running subagent's status line updates every 30 seconds. Each update used to re-read the whole conversation; Haiku 5.5 now writes it from short notes, so each update costs about 99% less.",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 2550596,
+            "likes": 23421,
+            "comments": 717,
+            "shares": 981
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "claude-code",
+            "cost",
+            "mix:new-capability"
+          ],
+          "category": "Feature",
+          "priority": "HIGH",
+          "recurrence": "new"
+        },
+        {
+          "id": "cursor-live-apps-share-by-link",
+          "title": "Cursor builds live apps with a database and shares them with a link",
+          "primary_url": "https://x.com/cursor_ai/status/2118458629091426304",
+          "source": "@cursor_ai",
+          "author": "Cursor",
+          "date": "2026-11-05",
+          "summary": "Describe a tool and Cursor builds it, sets up a database, runs deterministic and agentic checks, and deploys it to a shareable link.",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 483994,
+            "likes": 3727,
+            "comments": 488,
+            "shares": 358
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "cursor",
+            "indie",
+            "deploy",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Feature",
+          "priority": "HIGH",
+          "recurrence": "new"
+        },
+        {
+          "id": "gemini-api-computer-use-ga",
+          "title": "Gemini API computer use is generally available, with no breaking changes from preview",
+          "primary_url": "https://x.com/GoogleAIStudio/status/2118025709146829218",
+          "source": "@GoogleAIStudio",
+          "author": "Google AI Studio",
+          "date": "2026-11-04",
+          "summary": "The computer use tool is production-ready for browser, mobile and desktop agents.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 306361,
+            "likes": 1953,
+            "comments": 171,
+            "shares": 206
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "gemini",
+            "computer-use",
+            "mix:new-capability"
+          ],
+          "category": "Feature",
+          "priority": "MEDIUM",
+          "recurrence": "new"
+        },
+        {
+          "id": "perplexity-teammates-personal-agents",
+          "title": "Perplexity Teammates: personal agents that take high-level goals instead of session prompts",
+          "primary_url": "https://x.com/AravSrinivas/status/2118388400730591469",
+          "source": "@AravSrinivas",
+          "author": "Aravind Srinivas",
+          "date": "2026-11-05",
+          "summary": "Perplexity's CEO announced Teammates, rolling out on the web to Max subscribers, with mobile and desktop apps to follow.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 662256,
+            "likes": 1448,
+            "comments": 189,
+            "shares": 102
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "perplexity",
+            "agents",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Product launch",
+          "priority": "MEDIUM",
+          "recurrence": "new"
+        },
+        {
+          "id": "thinking-machines-inkling-2-small",
+          "title": "Inkling 2 Small scores 31 on the Artificial Analysis Intelligence Index; weights planned soon",
+          "primary_url": "https://x.com/thinkymachines/status/2118489527362912566",
+          "source": "@thinkymachines",
+          "author": "Thinking Machines",
+          "date": "2026-11-05",
+          "summary": "Thinking Machines released Inkling 2 Small for fine-tuning and inference on Tinker, with a full weight release planned. The company cites a big jump over its predecessor.",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 1896757,
+            "likes": 6201,
+            "comments": 282,
+            "shares": 579
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "open-weights",
+            "thinking-machines",
+            "mix:new-capability"
+          ],
+          "category": "Model release",
+          "priority": "HIGH",
+          "recurrence": "new"
+        },
+        {
+          "id": "ricursive-ripple-65b-preview",
+          "title": "Ripple-65B Preview: a 65B dense model pretrained from scratch, aimed at agentic coding",
+          "primary_url": "https://x.com/RicursiveAI/status/2118046765857546733",
+          "source": "@RicursiveAI",
+          "author": "Ricursive Intelligence",
+          "date": "2026-11-04",
+          "summary": "Ricursive Intelligence says Ripple-65B Preview sets a new state of the art for US open-weight models in agentic coding tasks, ahead of several larger models.",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 749835,
+            "likes": 4428,
+            "comments": 389,
+            "shares": 528
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "open-weights",
+            "coding",
+            "mix:new-capability"
+          ],
+          "category": "Model release",
+          "priority": "MEDIUM",
+          "recurrence": "new"
+        },
+        {
+          "id": "kimi-k3-1-pro-open-weights",
+          "title": "Kimi K3.1 Pro weights are on Hugging Face: 2.8T total parameters, 104B active, 1M context",
+          "primary_url": "https://x.com/Kimi_Moonshot/status/2118010528123773297",
+          "source": "@Kimi_Moonshot",
+          "author": "Kimi.ai",
+          "date": "2026-11-04",
+          "summary": "Moonshot released the weights of Kimi K3.1 Pro under the Kimi K3.1 Pro License. The model card lists 2.8T total and 104B active parameters and a 1M-token context.",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 1287160,
+            "likes": 8687,
+            "comments": 397,
+            "shares": 843
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "open-weights",
+            "kimi",
+            "mix:new-capability"
+          ],
+          "category": "Model release",
+          "priority": "HIGH",
+          "secondary_urls": [
+            {
+              "label": "Hugging Face model page",
+              "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"
+            }
+          ],
+          "recurrence": "new"
+        },
+        {
+          "id": "gemini-tts-voice-remixing",
+          "title": "Gemini 3.8 Flash TTS Voice Remixing: 2,000+ voices, tuned with prompts",
+          "primary_url": "https://x.com/Google/status/2118027058794148099",
+          "source": "@Google",
+          "author": "Google",
+          "date": "2026-11-04",
+          "summary": "Start from a preset or a designed voice and prompt for timbre, pitch, pace and accent, such as a subtle Southern U.S. accent or a fire-breathing dragon.",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 234076,
+            "likes": 1209,
+            "comments": 163,
+            "shares": 143
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "audio",
+            "voice",
+            "creator",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Feature",
+          "priority": "MEDIUM",
+          "recurrence": "new"
+        },
+        {
+          "id": "runway-dev-plugin-claude-code",
+          "title": "Runway Dev plugin brings AI video, image and audio into any app built with Claude Code",
+          "primary_url": "https://x.com/runwayml/status/2118011084955353212",
+          "source": "@runwayml",
+          "author": "Runway",
+          "date": "2026-11-04",
+          "summary": "Claude Code writes the Runway API integration from a description of what your app should generate.",
+          "score": {
+            "total": 5,
+            "signal": 0,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 15091,
+            "likes": 144,
+            "comments": 60,
+            "shares": 24
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "runway",
+            "claude-code",
+            "creator",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Plugin",
+          "priority": "MEDIUM",
+          "secondary_urls": [
+            {
+              "label": "Runway plugin for Cursor",
+              "url": "https://x.com/runwayml/status/2117341561759629709"
+            }
+          ],
+          "recurrence": "new"
+        },
+        {
+          "id": "codex-pro-plan-usage-tiers",
+          "title": "Codex Pro plans drop 5-hour limits: Pro 100 gives 10x Plus, Pro 200 gives 20x, Pro 500 gives 50x",
+          "primary_url": "https://x.com/thsottiaux/status/2119296267545419987",
+          "source": "@thsottiaux",
+          "author": "Tibo",
+          "date": "2026-11-08",
+          "summary": "A Codex lead clarified that all Pro plans have no 5-hour limits and that the 500 plan includes access to ultrafast mode.",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 2192188,
+            "likes": 8312,
+            "comments": 1499,
+            "shares": 231
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "codex",
+            "pricing",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Pricing",
+          "priority": "MEDIUM",
+          "recurrence": "new",
+          "pricing": "Pro 100 = 10x Plus; Pro 200 = 20x; Pro 500 = 50x with ultrafast"
+        },
+        {
+          "id": "openai-developers-showcase-api-credits",
+          "title": "Showcase tab in the OpenAI Developers plugin offers API credits to eligible Pro and Business subscribers",
+          "primary_url": "https://x.com/OpenAIDevs/status/2118856544733532452",
+          "source": "@OpenAIDevs",
+          "author": "OpenAI Developers",
+          "date": "2026-11-06",
+          "summary": "Eligible subscribers claim API credits in billing settings to cover a built app's usage.",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 156660,
+            "likes": 1017,
+            "comments": 119,
+            "shares": 58
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "openai",
+            "credits",
+            "indie",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Program",
+          "priority": "MEDIUM",
+          "recurrence": "new"
+        },
+        {
+          "id": "anthropic-agent-memory-dreaming",
+          "title": "Anthropic explains 'dreaming': how Claude organizes what it learned, fixes mistakes and finds notes faster",
+          "primary_url": "https://x.com/AnthropicAI/status/2118814753154064501",
+          "source": "@AnthropicAI",
+          "author": "Anthropic",
+          "date": "2026-11-06",
+          "summary": "A new engineering post describes the memory components that let an agent learn from experience, including a consolidation step called dreaming.",
+          "score": {
+            "total": 9,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 1931909,
+            "likes": 13919,
+            "comments": 992,
+            "shares": 1267
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "memory",
+            "claude",
+            "agents",
+            "mix:new-capability"
+          ],
+          "category": "Engineering post",
+          "priority": "HIGH",
+          "secondary_urls": [
+            {
+              "label": "Anthropic: Components of agent memory",
+              "url": "https://www.anthropic.com/research/components-of-agent-memory"
+            }
+          ],
+          "recurrence": "new"
+        },
+        {
+          "id": "maket-text-to-furniture",
+          "title": "Maket Text to Furniture turns a description into a 3D piece with correct dimensions you can place in a floor plan",
+          "primary_url": "https://x.com/testingcatalog/status/2118783285123756206",
+          "source": "@testingcatalog",
+          "author": "TestingCatalog",
+          "date": "2026-11-06",
+          "summary": "Describe an oval burl wood dining table and Maket builds a 3D model with height, width and depth, then places it in a floor plan.",
+          "score": {
+            "total": 3,
+            "signal": 0,
+            "novelty": 0,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 8987,
+            "likes": 143,
+            "comments": 8,
+            "shares": 4
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "design",
+            "3d",
+            "home",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Feature",
+          "priority": "MEDIUM",
+          "recurrence": "new"
+        },
+        {
+          "id": "nvidia-lyra-2-image-to-3d-world",
+          "title": "NVIDIA Lyra 2.0 turns a single image into a 3D world you can explore",
+          "primary_url": "https://x.com/NVIDIAAI/status/2118800021013643269",
+          "source": "@NVIDIAAI",
+          "author": "NVIDIA AI",
+          "date": "2026-11-06",
+          "summary": "Lyra combines video generation with 3D reconstruction along a chosen camera path and corrects accumulating visual errors; paper, code and demos are public.",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 77806,
+            "likes": 1069,
+            "comments": 56,
+            "shares": 119
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "3d",
+            "world-model",
+            "open-source",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Research release",
+          "priority": "MEDIUM",
+          "recurrence": "new"
+        },
+        {
+          "id": "xenova-lfm3-omni-offline-iphone",
+          "title": "LFM3-Omni-2B runs fully offline on an iPhone at about 80 tokens per second",
+          "primary_url": "https://x.com/xenovacom/status/2118024537812217962",
+          "source": "@xenovacom",
+          "author": "Xenova",
+          "date": "2026-11-04",
+          "summary": "Xenova ported Liquid AI's omni model to an iPhone using custom WebGPU kernels in a React Native app, and is asking whether to release it on the App Store.",
+          "score": {
+            "total": 3,
+            "signal": 0,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 36571,
+            "likes": 354,
+            "comments": 39,
+            "shares": 45
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "on-device",
+            "webgpu",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Demo",
+          "priority": "MEDIUM",
+          "recurrence": "new"
+        },
+        {
+          "id": "figma-code-layers-available-to-everyone",
+          "title": "Figma Code Layers is open to everyone",
+          "primary_url": "https://x.com/figma/status/2117699180198342775",
+          "source": "@figma",
+          "author": "Figma",
+          "date": "2026-11-03",
+          "summary": "Figma opened Code Layers to all users.",
+          "score": {
+            "total": 4,
+            "signal": 1,
+            "novelty": 0,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 57450,
+            "likes": 449,
+            "comments": 37,
+            "shares": 54
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "figma",
+            "design",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Feature",
+          "priority": "MEDIUM",
+          "recurrence": "new"
+        },
+        {
+          "id": "pika-h3-flex-turbo-lora-in-24-hours",
+          "title": "A community Turbo LoRA for Pika H3 Flex arrived within 24 hours of the open-weights release",
+          "primary_url": "https://x.com/pika_labs/status/2117772839642386856",
+          "source": "@pika_labs",
+          "author": "Pika",
+          "date": "2026-11-03",
+          "summary": "Hugging Face's @_akhaliq built a 2-step draft Turbo LoRA with 4-step fast and 8-step HD variants for ComfyUI and Diffusers.",
+          "score": {
+            "total": 5,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 21807,
+            "likes": 230,
+            "comments": 28,
+            "shares": 21
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "open-weights",
+            "video",
+            "comfyui",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Community",
+          "priority": "MEDIUM",
+          "recurrence": "new"
+        },
+        {
+          "id": "huggingface-ml-intern-slack-bot",
+          "title": "Hugging Face ML Intern is now a Slack bot that evaluates models, builds datasets and fine-tunes",
+          "primary_url": "https://x.com/huggingface/status/2118430862949945612",
+          "source": "@huggingface",
+          "author": "Hugging Face",
+          "date": "2026-11-05",
+          "summary": "The open-source ML Intern installs in your own Slack workspace.",
+          "score": {
+            "total": 4,
+            "signal": 0,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 33576,
+            "likes": 313,
+            "comments": 82,
+            "shares": 41
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "hugging-face",
+            "agents",
+            "mix:new-capability"
+          ],
+          "category": "Feature",
+          "priority": "MEDIUM",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "key_insights",
+      "title": "Key Insights",
+      "description": "Builder wins, success stories and patterns worth copying.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "levelsio-infinite-slop-tv-results",
+          "title": "Infinite Slop TV: 17.8M clip views, 47K people made videos, $8,500 in prizes paid, in under three months",
+          "primary_url": "https://x.com/levelsio/status/2119564112208257515",
+          "source": "@levelsio",
+          "author": "Pieter Levels",
+          "date": "2026-11-08",
+          "summary": "Pieter Levels shut down Infinite Slop TV after August to October 2026. His retrospective lists 210,196 clips aired, 17.8M clip views, 47K people who made videos, 185K visitors, 860 hours of video, 3 sponsors and $8,500 in prizes. fal sponsored GPU capacity for the run after speeding up MiniMax's H3.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 24899,
+            "likes": 149,
+            "comments": 49,
+            "shares": 3
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "indie",
+            "video",
+            "levelsio",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Builder win",
+          "priority": "HIGH",
+          "key_takeaways": [
+            "Anyone could type into a chat that fed a perpetual live AI video stream.",
+            "Faster-than-real-time generation made the format possible.",
+            "Sponsors covered GPU capacity and prize money."
+          ],
+          "suggested_actions": [
+            "List which part of your product would work as a public live stream that visitors steer."
+          ],
+          "enterprise_translation": "Steal this idea: put a shared prompt box in front of a live generation pipeline, pay small prizes for the best outputs, and let sponsors fund the compute.",
+          "recurrence": "new"
+        },
+        {
+          "id": "deedy-instinct-flight-delay-700",
+          "title": "Instinct, a text-message agent, found an EU rule owed a delayed traveler 600 euros and the claim paid $700",
+          "primary_url": "https://x.com/deedydas/status/2117553817013329959",
+          "source": "@deedydas",
+          "author": "Deedy",
+          "date": "2026-11-03",
+          "summary": "Deedy Das texted Instinct about a 6-hour flight delay on a trip from Europe. It cited the EU compensation rule, he exchanged emails for a month, and he was paid out.",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 148515,
+            "likes": 1128,
+            "comments": 126,
+            "shares": 23
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "personal-agent",
+            "consumer",
+            "instinct",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Success story",
+          "priority": "HIGH",
+          "key_takeaways": [
+            "The agent identified the specific entitlement from a plain text message.",
+            "Payout took about a month of email exchanges."
+          ],
+          "suggested_actions": [
+            "Text your assistant the next time a flight, delivery or bill goes wrong and ask what you are owed."
+          ],
+          "enterprise_translation": "Steal this idea: keep a standing prompt, 'what am I owed here?', for every delayed trip and bad charge, and collect the payouts.",
+          "recurrence": "new"
+        },
+        {
+          "id": "trq212-location-reminder-prompts",
+          "title": "A favorite agent prompt: location-based reminders that keep nagging until you confirm",
+          "primary_url": "https://x.com/trq212/status/2118399561324699655",
+          "source": "@trq212",
+          "author": "Thariq",
+          "date": "2026-11-05",
+          "summary": "Thariq's example asks the agent to track laundry and, if it has been more than 5 days, remind him 30 minutes after he gets home on a weekday until he confirms or delays.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 245435,
+            "likes": 3005,
+            "comments": 207,
+            "shares": 52
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "personal-agent",
+            "prompts",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Tip",
+          "priority": "MEDIUM",
+          "suggested_actions": [
+            "Write one recurring-chore reminder with a trigger, a delay and a stop condition."
+          ],
+          "enterprise_translation": "Steal this idea: write chores as trigger, delay and stop rules, and let the agent nag until done.",
+          "recurrence": "new"
+        },
+        {
+          "id": "sidramiconi-returnwitness-returns-desk",
+          "title": "ReturnWitness holds a $340 refund until a camera check and a human approve it",
+          "primary_url": "https://x.com/SidraMiconi/status/2117756371097837610",
+          "source": "@SidraMiconi",
+          "author": "Sidra Miconi",
+          "date": "2026-11-03",
+          "summary": "A returns-desk tool built on Meta's SAM 3.1 for tracking, custom counting code and Muse models for review. The demo catches a missing lens on a camera kit, holds the refund and lets a person override.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 857553,
+            "likes": 1210,
+            "comments": 30,
+            "shares": 74
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "smb",
+            "vision",
+            "sam",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Builder win",
+          "priority": "MEDIUM",
+          "suggested_actions": [
+            "Pick one counter or bench in your shop where items are checked by eye and film it for a pilot."
+          ],
+          "enterprise_translation": "Steal this idea: point a camera at the packing bench, let vision count items against the slip and flag mismatches, and keep refund release with a person.",
+          "recurrence": "new"
+        },
+        {
+          "id": "cultfit-codex-dashboards-weekend",
+          "title": "One Cult.fit engineer rebuilt internal dashboards over a weekend with Codex, saving over $100,000 a year",
+          "primary_url": "https://x.com/derrickcchoi/status/2118510141305987387",
+          "source": "@derrickcchoi",
+          "author": "Derrick Choi",
+          "date": "2026-11-05",
+          "summary": "Cult.fit runs 708 centers across 77 cities. OpenAI's case study says non-engineering teams there built more than 20 internal apps with Codex.",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 6102,
+            "likes": 76,
+            "comments": 2,
+            "shares": 4
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "codex",
+            "case-study",
+            "internal-tools",
+            "mix:enterprise-platform"
+          ],
+          "category": "Success story",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: list your five costliest software subscriptions and ask one person to rebuild the most-used dashboard with an agent over a weekend.",
+          "secondary_urls": [
+            {
+              "label": "OpenAI: Cult.fit builds with Codex",
+              "url": "https://openai.com/index/cultfit-builds-with-codex/"
+            }
+          ],
+          "recurrence": "new"
+        },
+        {
+          "id": "alexfinn-grok-bot-automations",
+          "title": "Alex Finn lists the automations he handed to Grok Bot, including watching AI company accounts every 15 minutes",
+          "primary_url": "https://x.com/AlexFinn/status/2118882927610360204",
+          "source": "@AlexFinn",
+          "author": "Alex Finn",
+          "date": "2026-11-06",
+          "summary": "After a couple of months of daily use he calls it the best AI agent he has used and shares examples to copy, starting with an X plugin watching AI company accounts around the clock.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 106438,
+            "likes": 1288,
+            "comments": 238,
+            "shares": 50
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "personal-agent",
+            "grok",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Builder win",
+          "priority": "MEDIUM",
+          "suggested_actions": [
+            "Copy the 15-minute monitoring pattern for the five accounts you follow most."
+          ],
+          "enterprise_translation": "Steal this idea: have an agent watch a short list of accounts every 15 minutes and ping you only when something changes.",
+          "recurrence": "new"
+        },
+        {
+          "id": "gregisenberg-agent-stack-50-person-company",
+          "title": "A 50-person company across 12 countries runs product work through agents: voice note, spec, Linear ticket, competitor scan",
+          "primary_url": "https://x.com/gregisenberg/status/2117734977312047537",
+          "source": "@gregisenberg",
+          "author": "Greg Isenberg",
+          "date": "2026-11-03",
+          "summary": "Greg Isenberg's stack: a voice note to Grok Bot, a grill-me skill that interrogates the idea, a spec sent to Linear through MCP, and research agents reading every competitor's site, pricing and changelog.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 732141,
+            "likes": 5844,
+            "comments": 572,
+            "shares": 333
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "agents",
+            "founder",
+            "mcp",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Playbook",
+          "priority": "MEDIUM",
+          "suggested_actions": [
+            "Run the grill-me step on your next feature idea before writing a spec."
+          ],
+          "enterprise_translation": "Steal this idea: chain voice note, interview-the-founder skill, ticket and competitor scan so an idea turns into a tracked spec in one sitting.",
+          "recurrence": "new"
+        },
+        {
+          "id": "yongfook-marketing-loop-portfolio",
+          "title": "A daily marketing loop reads analytics, Search Console, Ahrefs and competitors, suggests site changes, and learns from approvals",
+          "primary_url": "https://x.com/yongfook/status/2117555432525099013",
+          "source": "@yongfook",
+          "author": "Jon Yongfook",
+          "date": "2026-11-03",
+          "summary": "Jon Yongfook approves or rejects each suggestion, the agent executes the approved ones and adjusts, and it now runs daily across his portfolio of sites.",
+          "score": {
+            "total": 5,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 30510,
+            "likes": 483,
+            "comments": 140,
+            "shares": 10
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "indie",
+            "marketing",
+            "agents",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Builder win",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: build an approve-or-reject queue where the agent proposes site changes and learns from your choices.",
+          "recurrence": "new"
+        },
+        {
+          "id": "trq212-200-plans-cheapest-intelligence",
+          "title": "After one week, the $200 plans are enough for great work, and this is the most expensive intelligence will ever be",
+          "primary_url": "https://x.com/trq212/status/2117305792923889731",
+          "source": "@trq212",
+          "author": "Thariq",
+          "date": "2026-11-02",
+          "summary": "Thariq's takeaway after a week on a $200 plan: you do not need unlimited tokens to do serious work.",
+          "score": {
+            "total": 6,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 489835,
+            "likes": 8345,
+            "comments": 483,
+            "shares": 164
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "pricing",
+            "plans",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Insight",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: trial a top-tier plan for one month on your highest-value project and measure what you shipped.",
+          "recurrence": "new"
+        },
+        {
+          "id": "trq212-creator-apps-built-in-mcps",
+          "title": "Creator apps such as Instagram Edits and Roblox Studio are shipping with built-in MCPs",
+          "primary_url": "https://x.com/trq212/status/2118822238262853904",
+          "source": "@trq212",
+          "author": "Thariq",
+          "date": "2026-11-06",
+          "summary": "Agents can do part of the work while power users continue in the tools they already know.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 134858,
+            "likes": 1888,
+            "comments": 147,
+            "shares": 37
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "mcp",
+            "creator-tools",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Pattern",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: connect your agent to the editing app you already use through its MCP and hand it the rough-cut work.",
+          "recurrence": "new"
+        },
+        {
+          "id": "simonw-qwen-reads-game-weights-on-laptop",
+          "title": "A local Qwen 3.8 27B on a laptop identified Pong and Breakout from raw network weights, with no tools",
+          "primary_url": "https://x.com/simonw/status/2117655816581071203",
+          "source": "@simonw",
+          "author": "Simon Willison",
+          "date": "2026-11-03",
+          "summary": "Simon Willison fed raw weights of small game-playing networks to Qwen 3.8 27B in LM Studio. It named Breakout with 88% confidence in 52 minutes and Pong with 75% in about an hour, and missed Freeway. Kimi K3.1 Pro got Breakout in 9 minutes 41 seconds.",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 336671,
+            "likes": 5426,
+            "comments": 413,
+            "shares": 443
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "local-models",
+            "interpretability",
+            "simon-willison",
+            "mix:new-capability"
+          ],
+          "category": "Experiment",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: ask a local model to describe an artifact it was never trained to read, and see how far it gets before spending on a bigger one.",
+          "secondary_urls": [
+            {
+              "label": "Simon Willison's post",
+              "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
+            }
+          ],
+          "recurrence": "new"
+        },
+        {
+          "id": "vanstrien-opus-fixes-ocr-model-loops-10-dollars",
+          "title": "Claude Opus edited 0.0085% of an OCR model's weights to stop repetition loops, in under 3 hours for about $10",
+          "primary_url": "https://x.com/vanstriendaniel/status/2117661605336928668",
+          "source": "@vanstriendaniel",
+          "author": "Daniel van Strien",
+          "date": "2026-11-03",
+          "summary": "Daniel van Strien asked Claude Opus to find a small OCR model and fix its doom loops with a budget of 5 hours and $100 on Hugging Face Jobs. The edit changed 0.0085% of weights with no training, and the model now reads a 1881 page instead of writing 16,399 characters of dots.",
+          "score": {
+            "total": 7,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 53152,
+            "likes": 1039,
+            "comments": 48,
+            "shares": 89
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "weight-editing",
+            "ocr",
+            "hugging-face",
+            "mix:new-capability"
+          ],
+          "category": "Success story",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: tell an agent the failure you see, set a time and dollar budget, and let it repair the model directly.",
+          "recurrence": "new"
+        },
+        {
+          "id": "joelniklaus-harness-leaderboard",
+          "title": "Harness Leaderboard: nine coding-agent harnesses compared on open models across 28,849 trials",
+          "primary_url": "https://x.com/joelniklaus/status/2118373808692437403",
+          "source": "@joelniklaus",
+          "author": "Joel Niklaus",
+          "date": "2026-11-05",
+          "summary": "Joel Niklaus fixed model, provider and reasoning effort and changed only the harness, with three attempts per task.",
+          "score": {
+            "total": 8,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 315400,
+            "likes": 2571,
+            "comments": 269,
+            "shares": 267
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "benchmarks",
+            "coding-agents",
+            "open-models",
+            "mix:new-capability"
+          ],
+          "category": "Benchmark",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: before picking a model, run your own tasks through several harnesses with the model held fixed.",
+          "recurrence": "new"
+        },
+        {
+          "id": "rasbt-open-october-llm-architectures",
+          "title": "Raschka's Open October roundup covers 10 open LLM architecture releases from one month",
+          "primary_url": "https://x.com/rasbt/status/2117637894315626719",
+          "source": "@rasbt",
+          "author": "Sebastian Raschka",
+          "date": "2026-11-03",
+          "summary": "Sebastian Raschka walks through each, starting with Kolibri-1 (78B), which uses grouped-query and sliding-window attention, and Ling 3.1 Flash (560B).",
+          "score": {
+            "total": 6,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 64060,
+            "likes": 1644,
+            "comments": 107,
+            "shares": 226
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "open-weights",
+            "architectures",
+            "mix:new-capability"
+          ],
+          "category": "Roundup",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: skim an expert's monthly roundup, then pick the one open model that fits your hardware and try it.",
+          "recurrence": "new"
+        },
+        {
+          "id": "emollick-verification-concern-too-high",
+          "title": "Ethan Mollick argues concern about AI verification is overstated and shares data from recent models",
+          "primary_url": "https://x.com/emollick/status/2119140502746308674",
+          "source": "@emollick",
+          "author": "Ethan Mollick",
+          "date": "2026-11-07",
+          "summary": "He posted charts from recent model results to make the case that people overweight the worry.",
+          "score": {
+            "total": 5,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 105495,
+            "likes": 1482,
+            "comments": 294,
+            "shares": 204
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "evals",
+            "mollick",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Insight",
+          "priority": "LOW",
+          "enterprise_translation": "Steal this idea: run a 20-question check of your own domain facts on the model you use, then decide how much to trust it.",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "ai_for_science",
+      "title": "AI for Science",
+      "description": "Research results and datasets showing AI at work in labs, math and modeling.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "mistral-large-4-quantum-chemistry-scf-solver",
+          "title": "Mistral Large 4 wrote a quantum chemistry SCF solver from scratch and built a 3D orbital view around it",
+          "primary_url": "https://x.com/MistralAI/status/2117229259425038344",
+          "source": "@MistralAI",
+          "author": "Mistral AI",
+          "date": "2026-11-02",
+          "summary": "From a short prompt, the model wrote a self-consistent field solver, validated its output, chose how to break the molecule and which orbitals to show, and built the 3D view.",
+          "score": {
+            "total": 6.5,
+            "signal": 1,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 59442,
+            "likes": 1345,
+            "comments": 139,
+            "shares": 125
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "chemistry",
+            "mistral",
+            "mix:new-capability",
+            "ai-for-science"
+          ],
+          "category": "Science demo",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: ask a model to write the solver, validate it against a known answer, and wrap it in an interactive view.",
+          "recurrence": "new"
+        },
+        {
+          "id": "anthropic-how-researchers-use-claude-by-field",
+          "title": "Anthropic: AI could take on 27 to 52% of researcher time per study, median 38%, with field speedups from 1.41x to 2.02x",
+          "primary_url": "https://x.com/emollick/status/2118859591798980657",
+          "source": "@emollick",
+          "author": "Ethan Mollick",
+          "date": "2026-11-06",
+          "summary": "Based on 207,049 sessions from Aug 2 to Sep 30, 2026. Estimated acceleration is 1.41x in chemistry, 1.96x in computer science and 2.02x in statistics, and physical steps make up 38 to 41% of time in chemistry and materials science.",
+          "score": {
+            "total": 8.5,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 61325,
+            "likes": 702,
+            "comments": 190,
+            "shares": 104
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "science-adoption",
+            "data",
+            "mix:new-capability",
+            "ai-for-science"
+          ],
+          "category": "Data",
+          "priority": "HIGH",
+          "enterprise_translation": "Steal this idea: split your own workflow into steps, mark which are digital and which are physical, and automate the digital ones first.",
+          "secondary_urls": [
+            {
+              "label": "Anthropic: How researchers use Claude",
+              "url": "https://www.anthropic.com/research/how-researchers-use-claude"
+            }
+          ],
+          "recurrence": "new"
+        },
+        {
+          "id": "openai-biobasicsbench-with-ligo",
+          "title": "BioBasicsBench tests agents on 100 real wet-lab analysis tasks, built with Ligo",
+          "primary_url": "https://x.com/OpenAI/status/2118782708767965238",
+          "source": "@OpenAI",
+          "author": "OpenAI",
+          "date": "2026-11-06",
+          "summary": "Tasks come from real experiments and ask whether agents can interpret raw lab data, identify errors and recognize when evidence does not support a conclusion.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 831323,
+            "likes": 3721,
+            "comments": 808,
+            "shares": 279
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "biology",
+            "benchmark",
+            "mix:new-capability",
+            "ai-for-science"
+          ],
+          "category": "Benchmark",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: build a 100-task benchmark from your own real work and use it to pick tools.",
+          "secondary_urls": [
+            {
+              "label": "OpenAI: Measuring how AI agents handle wet-lab science",
+              "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/"
+            }
+          ],
+          "recurrence": "new"
+        },
+        {
+          "id": "anthropic-science-blog-scientific-modeling",
+          "title": "Anthropic Science Blog: how AI is beginning to change scientific modeling",
+          "primary_url": "https://x.com/AnthropicAI/status/2118792930211107115",
+          "source": "@AnthropicAI",
+          "author": "Anthropic",
+          "date": "2026-11-06",
+          "summary": "Covers models that explain and predict systems such as a single nerve cell firing or neutron stars colliding, and how AI helps with fitting them to data.",
+          "score": {
+            "total": 7.5,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 445138,
+            "likes": 3651,
+            "comments": 356,
+            "shares": 400
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "modeling",
+            "physics",
+            "neuroscience",
+            "mix:new-capability",
+            "ai-for-science"
+          ],
+          "category": "Essay",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: give an agent your data and ask it to propose three candidate models and fit each.",
+          "secondary_urls": [
+            {
+              "label": "Anthropic: Teaching AI to build scientific models",
+              "url": "https://www.anthropic.com/research/teaching-ai-to-build-scientific-models"
+            }
+          ],
+          "recurrence": "new"
+        },
+        {
+          "id": "mistral-large-4-open-math-os",
+          "title": "Mistral Large 4 joins Open Math OS, a research workspace for mathematicians and agents on open models",
+          "primary_url": "https://x.com/MistralAI/status/2117670644506861900",
+          "source": "@MistralAI",
+          "author": "Mistral AI",
+          "date": "2026-11-03",
+          "summary": "The 1.05T open-weight, 1M-context model is live for approved teams in a workspace built only on open models so the community can inspect and run them.",
+          "score": {
+            "total": 5.5,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 30025,
+            "likes": 647,
+            "comments": 90,
+            "shares": 63
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "mathematics",
+            "open-models",
+            "mix:new-capability",
+            "ai-for-science"
+          ],
+          "category": "Platform",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: run shared projects where humans and agents work on the same problem in one open workspace.",
+          "recurrence": "new"
+        },
+        {
+          "id": "gemini-4-argon-freecad-mcp-brake",
+          "title": "Gemini 4 Argon in Antigravity drives FreeCAD through an MCP server to model a Brembo GT brake",
+          "primary_url": "https://x.com/ai_for_success/status/2118757076302475274",
+          "source": "@ai_for_success",
+          "author": "Ashutosh Shrivastava",
+          "date": "2026-11-06",
+          "summary": "A quick test set up the MCP server and asked the agent to build the part; the video is shown at 10x speed.",
+          "score": {
+            "total": 4.5,
+            "signal": 0,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 6966,
+            "likes": 152,
+            "comments": 22,
+            "shares": 7
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "cad",
+            "mcp",
+            "freecad",
+            "mix:consumer-creator-smb",
+            "ai-for-science"
+          ],
+          "category": "Demo",
+          "priority": "LOW",
+          "enterprise_translation": "Steal this idea: connect an open-source CAD tool through MCP and ask for your first part by name.",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "viral_breakouts",
+      "title": "Viral Breakouts",
+      "description": "High-engagement posts from accounts outside the curated list.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "axiom-stacks-project-16m-line-formalization",
+          "title": "Axiom released a 16M-line formalization of the entire Stacks Project",
+          "primary_url": "https://x.com/axiommathai/status/2118028834515874112",
+          "source": "@axiommathai",
+          "author": "Axiom",
+          "date": "2026-11-04",
+          "summary": "Axiom's post says it is a counterexample to the idea that vibecoding at scale is slop, with code quality optimized and the project's interconnected structure preserved. Details come from the post.",
+          "score": {
+            "total": 9.5,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 6972458,
+            "likes": 7027,
+            "comments": 851,
+            "shares": 1553
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "mathematics",
+            "formalization",
+            "lean",
+            "mix:new-capability",
+            "ai-for-science",
+            "source_via:viral_sweep"
+          ],
+          "category": "Science result",
+          "priority": "HIGH",
+          "enterprise_translation": "Steal this idea: have an agent formalize your company's rules into a checked specification so errors surface as failing checks.",
+          "recurrence": "new"
+        },
+        {
+          "id": "deepseek-harness-creator-mode-plugins",
+          "title": "DeepSeek Harness Creator Mode turns ideas into plugins, from a design workspace to a sandbox game",
+          "primary_url": "https://x.com/DeepSeekHarness/status/2117256196227019194",
+          "source": "@DeepSeekHarness",
+          "author": "DeepSeek Harness",
+          "date": "2026-11-02",
+          "summary": "The launch post drew 2.5M views and 25K likes with the line 'Your harness. You define it.'",
+          "score": {
+            "total": 10,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 2495110,
+            "likes": 25273,
+            "comments": 752,
+            "shares": 2116
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "plugins",
+            "harness",
+            "mix:consumer-creator-smb",
+            "source_via:viral_sweep"
+          ],
+          "category": "Product launch",
+          "priority": "HIGH",
+          "enterprise_translation": "Steal this idea: describe the tool you wish your agent had and have it build the plugin.",
+          "recurrence": "new"
+        },
+        {
+          "id": "vork-3d-engine-for-agents",
+          "title": "Vork, a 3D and VFX engine for agents: core API in about 2,500 tokens, up to 24x faster rendering",
+          "primary_url": "https://x.com/ravisparikh/status/2118744950825275680",
+          "source": "@ravisparikh",
+          "author": "Ravi Parikh",
+          "date": "2026-11-06",
+          "summary": "Ravi Parikh says agents can write their own shaders, materials, cameras and physics, with 2x better token efficiency than Blender, Unreal Engine or Houdini.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 646269,
+            "likes": 6727,
+            "comments": 220,
+            "shares": 433
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "3d",
+            "graphics",
+            "agents",
+            "mix:new-capability",
+            "source_via:viral_sweep"
+          ],
+          "category": "Launch",
+          "priority": "HIGH",
+          "enterprise_translation": "Steal this idea: give your agent a small, text-first API for a visual domain instead of a human-sized GUI.",
+          "recurrence": "new"
+        },
+        {
+          "id": "maxxbench-small-changes-to-deepswe",
+          "title": "MaxxBench: 89 DeepSWE tasks with small changes move models that tie at 74% as far as 23 points apart",
+          "primary_url": "https://x.com/loresjpg/status/2118880329490637049",
+          "source": "@loresjpg",
+          "author": "Justin Lo",
+          "date": "2026-11-06",
+          "summary": "Justin Lo changed instructions or starting code slightly on the same engineering problem and asks whether a model is good at coding or good at the benchmark.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 3,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 838366,
+            "likes": 5292,
+            "comments": 216,
+            "shares": 398
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "benchmarks",
+            "coding",
+            "mix:new-capability",
+            "source_via:viral_sweep"
+          ],
+          "category": "Benchmark",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: perturb your own test cases slightly and see which tool keeps its score.",
+          "recurrence": "new"
+        },
+        {
+          "id": "voyager-cheaper-higgsfield",
+          "title": "Voyager prices AI video models like Seedance 2.5 at half of Higgsfield, with 2-3x fewer wasted generations",
+          "primary_url": "https://x.com/anvisha/status/2118048598957109303",
+          "source": "@anvisha",
+          "author": "Anvisha",
+          "date": "2026-11-04",
+          "summary": "Anvisha says final outputs take 2 to 3x fewer API calls, so the saving compounds.",
+          "score": {
+            "total": 10,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 2093826,
+            "likes": 2091,
+            "comments": 260,
+            "shares": 156
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "video",
+            "creator",
+            "pricing",
+            "mix:consumer-creator-smb",
+            "source_via:viral_sweep"
+          ],
+          "category": "Launch",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: compare cost per usable clip, not cost per generation.",
+          "recurrence": "new",
+          "pricing": "Half of Higgsfield per generation, per the post"
+        }
+      ]
+    },
+    {
+      "section_id": "fun_finds",
+      "title": "Fun Finds",
+      "description": "Playful builds and demos from anyone.",
+      "layout": "cards",
+      "items": [
+        {
+          "id": "karpathy-tristantube-one-shot",
+          "title": "TristanTube: Karpathy turned a YouTube tier list into a viewing site, one-shot with Claude Code in 3 minutes",
+          "primary_url": "https://x.com/karpathy/status/2119114537442189652",
+          "source": "@karpathy",
+          "author": "Andrej Karpathy",
+          "date": "2026-11-07",
+          "summary": "The post describes 47K super nerdy videos plus a TV mode for laid-back watching, built from Tristan Hume's published list of top channels. The 47K figure is from the post.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 840787,
+            "likes": 8601,
+            "comments": 583,
+            "shares": 716
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "claude-code",
+            "weekend-hack",
+            "karpathy",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Fun find",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: turn any friend's or expert's published list into a browsable site in one prompt.",
+          "secondary_urls": [
+            {
+              "label": "Tristan Hume's YouTube tier list",
+              "url": "https://thume.ca/2026/11/01/youtube-tier-list-2026/"
+            },
+            {
+              "label": "TristanTube",
+              "url": "https://karpathy.ai/tristan-tube/"
+            }
+          ],
+          "recurrence": "returning",
+          "recurrence_note": "Follows HackerTube, last week's Top Pick, with the same author and the same one-shot-with-Claude pattern."
+        },
+        {
+          "id": "google-gemini-4-argon-crt-tv-video",
+          "title": "Google built a video with Gemini 4 Argon and played it on a real vintage CRT TV",
+          "primary_url": "https://x.com/Google/status/2117305921936269425",
+          "source": "@Google",
+          "author": "Google",
+          "date": "2026-11-02",
+          "summary": "The team used Argon in Antigravity to script Blender boot animations and retro SuperCollider audio, piped through a Raspberry Pi.",
+          "score": {
+            "total": 7,
+            "signal": 3,
+            "novelty": 1,
+            "actionability": 1,
+            "source_quality": 2
+          },
+          "engagement": {
+            "views": 1031860,
+            "likes": 5521,
+            "comments": 278,
+            "shares": 385
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "retro",
+            "creator",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Fun find",
+          "priority": "LOW",
+          "enterprise_translation": "Steal this idea: send AI-made video to unusual hardware, like a Raspberry Pi and a CRT, for a memorable demo.",
+          "recurrence": "new"
+        },
+        {
+          "id": "dwarkesh-clocktower-ai-benchmark",
+          "title": "Dwarkesh spent $20,000 in API credits having models play Blood on the Clocktower",
+          "primary_url": "https://x.com/dwarkesh_sp/status/2118449808402681911",
+          "source": "@dwarkesh_sp",
+          "author": "Dwarkesh Patel",
+          "date": "2026-11-05",
+          "summary": "He says models improved this year at on-the-spot scheming, bluffing and team reasoning in the social deduction game.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 502127,
+            "likes": 3014,
+            "comments": 184,
+            "shares": 173
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "games",
+            "benchmark",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Fun find",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: test models in a game where they must lie and cooperate and watch them.",
+          "secondary_urls": [
+            {
+              "label": "Clocktower Bench",
+              "url": "https://clocktowerbench.com"
+            }
+          ],
+          "recurrence": "new"
+        },
+        {
+          "id": "thomasmc-satmux-inflight-wifi",
+          "title": "satmux: an agent-built trick for roughly 4x faster, reset-free inflight wifi, open-sourced mid-flight",
+          "primary_url": "https://x.com/thomasmc/status/2119102696280240176",
+          "source": "@thomasmc",
+          "author": "th0rgal",
+          "date": "2026-11-07",
+          "summary": "Th0rgal posted a split-TCP proxy bypass using a $0.03/h BBR multiplexer, with code on GitHub.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 248540,
+            "likes": 3516,
+            "comments": 65,
+            "shares": 129
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "hack",
+            "open-source",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Fun find",
+          "priority": "LOW",
+          "enterprise_translation": "Steal this idea: ask your agent to fix your most annoying connection problem and open-source the fix.",
+          "secondary_urls": [
+            {
+              "label": "satmux on GitHub",
+              "url": "https://github.com/Th0rgal/satmux"
+            }
+          ],
+          "recurrence": "new"
+        },
+        {
+          "id": "rauchg-vinyl-gl-record-player",
+          "title": "vinyl-gl: a WebGL2 record player that turns songs into groove geometry and a stylus rides it 384,000 times a second",
+          "primary_url": "https://x.com/rauchg/status/2119536313712230802",
+          "source": "@rauchg",
+          "author": "Guillermo Rauch",
+          "date": "2026-11-08",
+          "summary": "Guillermo Rauch built it with WebGL2 and Web Audio; you hear the voltage the stylus motion would produce.",
+          "score": {
+            "total": 5,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 65184,
+            "likes": 1375,
+            "comments": 134,
+            "shares": 79
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "web",
+            "audio",
+            "simulation",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Fun find",
+          "priority": "LOW",
+          "enterprise_translation": "Steal this idea: simulate a physical device from first principles instead of playing a sample.",
+          "secondary_urls": [
+            {
+              "label": "vinyl-gl demo",
+              "url": "http://vinyl-gl.vercel.app"
+            }
+          ],
+          "recurrence": "new"
+        },
+        {
+          "id": "world-labs-atlas-real-time-world-demo",
+          "title": "World Labs released a real-time world generation demo powered by Atlas",
+          "primary_url": "https://x.com/jcjohnss/status/2118431468217414036",
+          "source": "@jcjohnss",
+          "author": "Justin Johnson",
+          "date": "2026-11-05",
+          "summary": "Justin Johnson describes it as a successor to last year's RTFM demo, with frames streamed from a generative model.",
+          "score": {
+            "total": 4,
+            "signal": 0,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 13606,
+            "likes": 100,
+            "comments": 4,
+            "shares": 10
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "world-model",
+            "interactive",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Fun find",
+          "priority": "LOW",
+          "enterprise_translation": "Steal this idea: stream a generated world to a browser tab for instant prototyping.",
+          "recurrence": "new"
+        },
+        {
+          "id": "mistral-large-4-orbital-trace-satellite-tracker",
+          "title": "Orbital Trace: Mistral Large 4 built a real-time 3D tracker of roughly 19,000 satellites and debris",
+          "primary_url": "https://x.com/MistralAI/status/2117574509179900410",
+          "source": "@MistralAI",
+          "author": "Mistral AI",
+          "date": "2026-11-03",
+          "summary": "The model built a working app, tested it like a user, made it fast and passed strict verification.",
+          "score": {
+            "total": 5,
+            "signal": 1,
+            "novelty": 1,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 46605,
+            "likes": 1109,
+            "comments": 130,
+            "shares": 116
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "space",
+            "app",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Fun find",
+          "priority": "LOW",
+          "enterprise_translation": "Steal this idea: ask for a live 3D view of any public dataset you are curious about.",
+          "recurrence": "new"
+        },
+        {
+          "id": "runway-catch-me-single-creative",
+          "title": "'Catch Me' was made by a single creative in a couple of days using Runway",
+          "primary_url": "https://x.com/runwayml/status/2117300718533312933",
+          "source": "@runwayml",
+          "author": "Runway",
+          "date": "2026-11-02",
+          "summary": "Runway's showcase of what one person can make.",
+          "score": {
+            "total": 3,
+            "signal": 1,
+            "novelty": 0,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 32039,
+            "likes": 166,
+            "comments": 38,
+            "shares": 22
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "film",
+            "creator",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Fun find",
+          "priority": "LOW",
+          "enterprise_translation": "Steal this idea: set a two-day deadline and make a short film alone.",
+          "recurrence": "new"
+        },
+        {
+          "id": "kling-redline-ai-original",
+          "title": "Redline, a Kling AI Original on Kling 4.0, takes on racing sequences and performances",
+          "primary_url": "https://x.com/Kling_ai/status/2118656417255321616",
+          "source": "@Kling_ai",
+          "author": "Kling AI",
+          "date": "2026-11-06",
+          "summary": "Kling says the film handles speed, space and risk while keeping the human side of racing.",
+          "score": {
+            "total": 6,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 1,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 959438,
+            "likes": 1362,
+            "comments": 50,
+            "shares": 65
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "film",
+            "kling",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Fun find",
+          "priority": "LOW",
+          "enterprise_translation": "Steal this idea: storyboard a genre that is hard to shoot and generate it.",
+          "recurrence": "new"
+        },
+        {
+          "id": "theahmadosman-claude-code-edited-video",
+          "title": "Claude Code edited a video end to end, from picking quotes and clips to cuts, zooms, music, text and upscaling",
+          "primary_url": "https://x.com/TheAhmadOsman/status/2119039736002249212",
+          "source": "@TheAhmadOsman",
+          "author": "Ahmad",
+          "date": "2026-11-07",
+          "summary": "Ahmad Osman says Opus 5.5 produced the whole thing.",
+          "score": {
+            "total": 3,
+            "signal": 0,
+            "novelty": 0,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 34830,
+            "likes": 294,
+            "comments": 56,
+            "shares": 14
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "video",
+            "claude-code",
+            "mix:consumer-creator-smb"
+          ],
+          "category": "Fun find",
+          "priority": "LOW",
+          "enterprise_translation": "Steal this idea: give an agent raw footage and a quote list and ask for a finished edit.",
+          "recurrence": "new"
+        }
+      ]
+    },
+    {
+      "section_id": "hot_takes",
+      "title": "Hot Takes",
+      "description": "Two live debates this week.",
+      "layout": "debate",
+      "items": [
+        {
+          "id": "asahi-linux-bans-generative-ai-vs-dhh",
+          "title": "Asahi Linux bans generative AI contributions; DHH and Peter Steinberger say that is the wrong call",
+          "primary_url": "https://x.com/dhh/status/2119362947629891891",
+          "source": "@dhh",
+          "author": "DHH",
+          "date": "2026-11-08",
+          "summary": "Asahi's policy broadly forbids using generative AI for material contributions, citing harms to software freedom, the open-source community, the environment, privacy, user consent and developers, plus clean-room reverse-engineering concerns. DHH says Omarchy's Apple Silicon work, which uses agents and expanded on Asahi's, now faces rejected upstreaming. Steipete argues the project began by opening up closed systems and that a new restriction cuts against that.",
+          "score": {
+            "total": 7,
+            "signal": 2,
+            "novelty": 2,
+            "actionability": 2,
+            "source_quality": 1
+          },
+          "engagement": {
+            "views": 181430,
+            "likes": 3323,
+            "comments": 125,
+            "shares": 82
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "open-source",
+            "policy",
+            "debate",
+            "mix:new-capability"
+          ],
+          "category": "Debate",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: write down your team's rule for AI-assisted contributions in one page so contributors know where they stand.",
+          "secondary_urls": [
+            {
+              "label": "Asahi Linux generative AI policy",
+              "url": "https://asahilinux.org/llm-policy/"
+            },
+            {
+              "label": "DHH quoting the policy",
+              "url": "https://x.com/dhh/status/2119402147083379052"
+            },
+            {
+              "label": "Peter Steinberger",
+              "url": "https://x.com/steipete/status/2119264334627090514"
+            }
+          ],
+          "recurrence": "new"
+        },
+        {
+          "id": "sutton-new-methods-vs-roon-sparks-superhuman",
+          "title": "Sutton says brute force is not enough and new methods are needed; roon says any spark of ability means superhuman within months to years",
+          "primary_url": "https://x.com/RichardSSutton/status/2119142310894334262",
+          "source": "@RichardSSutton",
+          "author": "Richard Sutton",
+          "date": "2026-11-07",
+          "summary": "Richard Sutton: 'Brute force computation is not enough for intelligence. Clever new methods are needed. The science of AI is far from finished.' Elvis Saravia agrees and expects a new algorithmic paradigm. roon, days earlier: any spark of an ability means months to years from superhuman, 'today grade school math, tomorrow Navier-Stokes', and it is hard to overhype.",
+          "score": {
+            "total": 8,
+            "signal": 3,
+            "novelty": 3,
+            "actionability": 2,
+            "source_quality": 0
+          },
+          "engagement": {
+            "views": 1104518,
+            "likes": 5767,
+            "comments": 380,
+            "shares": 658
+          },
+          "verified": true,
+          "verified_at": "2026-11-09T01:45:00Z",
+          "platform": "x",
+          "tags": [
+            "scaling",
+            "debate",
+            "mix:new-capability"
+          ],
+          "category": "Debate",
+          "priority": "MEDIUM",
+          "enterprise_translation": "Steal this idea: split your own roadmap into bets that ride scale and bets that need a new method, and fund both.",
+          "secondary_urls": [
+            {
+              "label": "roon's post",
+              "url": "https://x.com/tszzl/status/2117403028101996799"
+            },
+            {
+              "label": "Elvis Saravia agreeing",
+              "url": "https://x.com/omarsar0/status/2119225029770576249"
+            }
+          ],
+          "recurrence": "new"
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "title": "DeepSeek Harness Creator Mode turns ideas into plugins, from a design workspace to a sandbox game",
+      "source": "@DeepSeekHarness",
+      "author": "DeepSeek Harness",
+      "date": "2026-11-02",
+      "primary_url": "https://x.com/DeepSeekHarness/status/2117256196227019194",
+      "score": 10
+    },
+    {
+      "title": "Voyager prices AI video models like Seedance 2.5 at half of Higgsfield, with 2-3x fewer wasted generations",
+      "source": "@anvisha",
+      "author": "Anvisha",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/anvisha/status/2118048598957109303",
+      "score": 10
+    },
+    {
+      "title": "Physical Superintelligence reports a proof of the Aaronson-Ambainis conjecture, accepted by Lean",
+      "source": "@psipbc",
+      "author": "Physical Superintelligence",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/psipbc/status/2118706269506949152",
+      "score": 9.5
+    },
+    {
+      "title": "OpenAI shows ChatGPT and Codex drafting CAD, drawings and simulations; two people designed a Codex device in under a week",
+      "source": "@OpenAI",
+      "author": "OpenAI",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/OpenAI/status/2117692475775258785",
+      "score": 9.5
+    },
+    {
+      "title": "Axiom released a 16M-line formalization of the entire Stacks Project",
+      "source": "@axiommathai",
+      "author": "Axiom",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/axiommathai/status/2118028834515874112",
+      "score": 9.5
+    },
+    {
+      "title": "A frontier model edited 0.016% of a small model's weights, with no training, and raised MATH-500 from 7.9% to 48.1%",
+      "source": "@rikiyatakehi",
+      "author": "Rikiya Takehi",
+      "date": "2026-11-02",
+      "primary_url": "https://x.com/rikiyatakehi/status/2117313742891327994",
+      "score": 9
+    },
+    {
+      "title": "Claude adds Personal Finance: read-only bank connections, two years of transactions, charts and duplicate-charge checks",
+      "source": "@claudeai",
+      "author": "Claude",
+      "date": "2026-11-05",
+      "primary_url": "https://x.com/claudeai/status/2118403114890137895",
+      "score": 9
+    },
+    {
+      "title": "Kimi K3.1 Pro weights are on Hugging Face: 2.8T total parameters, 104B active, 1M context",
+      "source": "@Kimi_Moonshot",
+      "author": "Kimi.ai",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/Kimi_Moonshot/status/2118010528123773297",
+      "score": 9
+    },
+    {
+      "title": "Codex Pro plans drop 5-hour limits: Pro 100 gives 10x Plus, Pro 200 gives 20x, Pro 500 gives 50x",
+      "source": "@thsottiaux",
+      "author": "Tibo",
+      "date": "2026-11-08",
+      "primary_url": "https://x.com/thsottiaux/status/2119296267545419987",
+      "score": 9
+    },
+    {
+      "title": "Anthropic explains 'dreaming': how Claude organizes what it learned, fixes mistakes and finds notes faster",
+      "source": "@AnthropicAI",
+      "author": "Anthropic",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/AnthropicAI/status/2118814753154064501",
+      "score": 9
+    },
+    {
+      "title": "Claude helped solve the first 3D structure of a bacteriophage vault particle: 96 protein copies, about 9.5 MDa",
+      "source": "@AnthropicAI",
+      "author": "Anthropic",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/AnthropicAI/status/2118073665296228863",
+      "score": 8.5
+    },
+    {
+      "title": "Anthropic: AI could take on 27 to 52% of researcher time per study, median 38%, with field speedups from 1.41x to 2.02x",
+      "source": "@emollick",
+      "author": "Ethan Mollick",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/emollick/status/2118859591798980657",
+      "score": 8.5
+    },
+    {
+      "title": "Perplexity Computer ran a $30,000 ad test for Get Maine Lobster: 3.5x the revenue of the non-AI campaign and 63% higher ROAS",
+      "source": "@perplexity_ai",
+      "author": "Perplexity",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/perplexity_ai/status/2118035494898704781",
+      "score": 8
+    },
+    {
+      "title": "ChatGPT Images 2.6 adds GIFs, SVG export and 50% faster generation, with two new API models",
+      "source": "@OpenAI",
+      "author": "OpenAI",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/OpenAI/status/2118124944928432327",
+      "score": 8
+    },
+    {
+      "title": "Gemini Omni 1.2 Flash: videos up to 15 seconds, drafts at $0.07 per second, 30% cheaper",
+      "source": "@Google",
+      "author": "Google",
+      "date": "2026-11-05",
+      "primary_url": "https://x.com/Google/status/2118390406316728555",
+      "score": 8
+    },
+    {
+      "title": "Claude Code background subagents now use about 99% less of your limit on status updates",
+      "source": "@ClaudeDevs",
+      "author": "ClaudeDevs",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/ClaudeDevs/status/2118063143167693011",
+      "score": 8
+    },
+    {
+      "title": "Cursor builds live apps with a database and shares them with a link",
+      "source": "@cursor_ai",
+      "author": "Cursor",
+      "date": "2026-11-05",
+      "primary_url": "https://x.com/cursor_ai/status/2118458629091426304",
+      "score": 8
+    },
+    {
+      "title": "Inkling 2 Small scores 31 on the Artificial Analysis Intelligence Index; weights planned soon",
+      "source": "@thinkymachines",
+      "author": "Thinking Machines",
+      "date": "2026-11-05",
+      "primary_url": "https://x.com/thinkymachines/status/2118489527362912566",
+      "score": 8
+    },
+    {
+      "title": "Ripple-65B Preview: a 65B dense model pretrained from scratch, aimed at agentic coding",
+      "source": "@RicursiveAI",
+      "author": "Ricursive Intelligence",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/RicursiveAI/status/2118046765857546733",
+      "score": 8
+    },
+    {
+      "title": "A local Qwen 3.8 27B on a laptop identified Pong and Breakout from raw network weights, with no tools",
+      "source": "@simonw",
+      "author": "Simon Willison",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/simonw/status/2117655816581071203",
+      "score": 8
+    },
+    {
+      "title": "Harness Leaderboard: nine coding-agent harnesses compared on open models across 28,849 trials",
+      "source": "@joelniklaus",
+      "author": "Joel Niklaus",
+      "date": "2026-11-05",
+      "primary_url": "https://x.com/joelniklaus/status/2118373808692437403",
+      "score": 8
+    },
+    {
+      "title": "Sutton says brute force is not enough and new methods are needed; roon says any spark of ability means superhuman within months to years",
+      "source": "@RichardSSutton",
+      "author": "Richard Sutton",
+      "date": "2026-11-07",
+      "primary_url": "https://x.com/RichardSSutton/status/2119142310894334262",
+      "score": 8
+    },
+    {
+      "title": "BioBasicsBench tests agents on 100 real wet-lab analysis tasks, built with Ligo",
+      "source": "@OpenAI",
+      "author": "OpenAI",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/OpenAI/status/2118782708767965238",
+      "score": 7.5
+    },
+    {
+      "title": "Anthropic Science Blog: how AI is beginning to change scientific modeling",
+      "source": "@AnthropicAI",
+      "author": "Anthropic",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/AnthropicAI/status/2118792930211107115",
+      "score": 7.5
+    },
+    {
+      "title": "Gemini API computer use is generally available, with no breaking changes from preview",
+      "source": "@GoogleAIStudio",
+      "author": "Google AI Studio",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/GoogleAIStudio/status/2118025709146829218",
+      "score": 7
+    },
+    {
+      "title": "Infinite Slop TV: 17.8M clip views, 47K people made videos, $8,500 in prizes paid, in under three months",
+      "source": "@levelsio",
+      "author": "Pieter Levels",
+      "date": "2026-11-08",
+      "primary_url": "https://x.com/levelsio/status/2119564112208257515",
+      "score": 7
+    },
+    {
+      "title": "ReturnWitness holds a $340 refund until a camera check and a human approve it",
+      "source": "@SidraMiconi",
+      "author": "Sidra Miconi",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/SidraMiconi/status/2117756371097837610",
+      "score": 7
+    },
+    {
+      "title": "A 50-person company across 12 countries runs product work through agents: voice note, spec, Linear ticket, competitor scan",
+      "source": "@gregisenberg",
+      "author": "Greg Isenberg",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/gregisenberg/status/2117734977312047537",
+      "score": 7
+    },
+    {
+      "title": "Claude Opus edited 0.0085% of an OCR model's weights to stop repetition loops, in under 3 hours for about $10",
+      "source": "@vanstriendaniel",
+      "author": "Daniel van Strien",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/vanstriendaniel/status/2117661605336928668",
+      "score": 7
+    },
+    {
+      "title": "Vork, a 3D and VFX engine for agents: core API in about 2,500 tokens, up to 24x faster rendering",
+      "source": "@ravisparikh",
+      "author": "Ravi Parikh",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/ravisparikh/status/2118744950825275680",
+      "score": 7
+    },
+    {
+      "title": "MaxxBench: 89 DeepSWE tasks with small changes move models that tie at 74% as far as 23 points apart",
+      "source": "@loresjpg",
+      "author": "Justin Lo",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/loresjpg/status/2118880329490637049",
+      "score": 7
+    },
+    {
+      "title": "TristanTube: Karpathy turned a YouTube tier list into a viewing site, one-shot with Claude Code in 3 minutes",
+      "source": "@karpathy",
+      "author": "Andrej Karpathy",
+      "date": "2026-11-07",
+      "primary_url": "https://x.com/karpathy/status/2119114537442189652",
+      "score": 7
+    },
+    {
+      "title": "Google built a video with Gemini 4 Argon and played it on a real vintage CRT TV",
+      "source": "@Google",
+      "author": "Google",
+      "date": "2026-11-02",
+      "primary_url": "https://x.com/Google/status/2117305921936269425",
+      "score": 7
+    },
+    {
+      "title": "Asahi Linux bans generative AI contributions; DHH and Peter Steinberger say that is the wrong call",
+      "source": "@dhh",
+      "author": "DHH",
+      "date": "2026-11-08",
+      "primary_url": "https://x.com/dhh/status/2119362947629891891",
+      "score": 7
+    },
+    {
+      "title": "A playbook to find, build and grow an iOS app now that Xcode is inside Claude Code",
+      "source": "@gregisenberg",
+      "author": "Greg Isenberg",
+      "date": "2026-11-07",
+      "primary_url": "https://x.com/gregisenberg/status/2119229734563271124",
+      "score": 7
+    },
+    {
+      "title": "Mistral Large 4 wrote a quantum chemistry SCF solver from scratch and built a 3D orbital view around it",
+      "source": "@MistralAI",
+      "author": "Mistral AI",
+      "date": "2026-11-02",
+      "primary_url": "https://x.com/MistralAI/status/2117229259425038344",
+      "score": 6.5
+    },
+    {
+      "title": "Perplexity Teammates: personal agents that take high-level goals instead of session prompts",
+      "source": "@AravSrinivas",
+      "author": "Aravind Srinivas",
+      "date": "2026-11-05",
+      "primary_url": "https://x.com/AravSrinivas/status/2118388400730591469",
+      "score": 6
+    },
+    {
+      "title": "Gemini 3.8 Flash TTS Voice Remixing: 2,000+ voices, tuned with prompts",
+      "source": "@Google",
+      "author": "Google",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/Google/status/2118027058794148099",
+      "score": 6
+    },
+    {
+      "title": "Showcase tab in the OpenAI Developers plugin offers API credits to eligible Pro and Business subscribers",
+      "source": "@OpenAIDevs",
+      "author": "OpenAI Developers",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/OpenAIDevs/status/2118856544733532452",
+      "score": 6
+    },
+    {
+      "title": "NVIDIA Lyra 2.0 turns a single image into a 3D world you can explore",
+      "source": "@NVIDIAAI",
+      "author": "NVIDIA AI",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/NVIDIAAI/status/2118800021013643269",
+      "score": 6
+    },
+    {
+      "title": "Instinct, a text-message agent, found an EU rule owed a delayed traveler 600 euros and the claim paid $700",
+      "source": "@deedydas",
+      "author": "Deedy",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/deedydas/status/2117553817013329959",
+      "score": 6
+    },
+    {
+      "title": "A favorite agent prompt: location-based reminders that keep nagging until you confirm",
+      "source": "@trq212",
+      "author": "Thariq",
+      "date": "2026-11-05",
+      "primary_url": "https://x.com/trq212/status/2118399561324699655",
+      "score": 6
+    },
+    {
+      "title": "One Cult.fit engineer rebuilt internal dashboards over a weekend with Codex, saving over $100,000 a year",
+      "source": "@derrickcchoi",
+      "author": "Derrick Choi",
+      "date": "2026-11-05",
+      "primary_url": "https://x.com/derrickcchoi/status/2118510141305987387",
+      "score": 6
+    },
+    {
+      "title": "Alex Finn lists the automations he handed to Grok Bot, including watching AI company accounts every 15 minutes",
+      "source": "@AlexFinn",
+      "author": "Alex Finn",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/AlexFinn/status/2118882927610360204",
+      "score": 6
+    },
+    {
+      "title": "After one week, the $200 plans are enough for great work, and this is the most expensive intelligence will ever be",
+      "source": "@trq212",
+      "author": "Thariq",
+      "date": "2026-11-02",
+      "primary_url": "https://x.com/trq212/status/2117305792923889731",
+      "score": 6
+    },
+    {
+      "title": "Creator apps such as Instagram Edits and Roblox Studio are shipping with built-in MCPs",
+      "source": "@trq212",
+      "author": "Thariq",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/trq212/status/2118822238262853904",
+      "score": 6
+    },
+    {
+      "title": "Raschka's Open October roundup covers 10 open LLM architecture releases from one month",
+      "source": "@rasbt",
+      "author": "Sebastian Raschka",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/rasbt/status/2117637894315626719",
+      "score": 6
+    },
+    {
+      "title": "Dwarkesh spent $20,000 in API credits having models play Blood on the Clocktower",
+      "source": "@dwarkesh_sp",
+      "author": "Dwarkesh Patel",
+      "date": "2026-11-05",
+      "primary_url": "https://x.com/dwarkesh_sp/status/2118449808402681911",
+      "score": 6
+    },
+    {
+      "title": "satmux: an agent-built trick for roughly 4x faster, reset-free inflight wifi, open-sourced mid-flight",
+      "source": "@thomasmc",
+      "author": "th0rgal",
+      "date": "2026-11-07",
+      "primary_url": "https://x.com/thomasmc/status/2119102696280240176",
+      "score": 6
+    },
+    {
+      "title": "Redline, a Kling AI Original on Kling 4.0, takes on racing sequences and performances",
+      "source": "@Kling_ai",
+      "author": "Kling AI",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/Kling_ai/status/2118656417255321616",
+      "score": 6
+    },
+    {
+      "title": "Mistral Large 4 joins Open Math OS, a research workspace for mathematicians and agents on open models",
+      "source": "@MistralAI",
+      "author": "Mistral AI",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/MistralAI/status/2117670644506861900",
+      "score": 5.5
+    },
+    {
+      "title": "Runway Dev plugin brings AI video, image and audio into any app built with Claude Code",
+      "source": "@runwayml",
+      "author": "Runway",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/runwayml/status/2118011084955353212",
+      "score": 5
+    },
+    {
+      "title": "A community Turbo LoRA for Pika H3 Flex arrived within 24 hours of the open-weights release",
+      "source": "@pika_labs",
+      "author": "Pika",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/pika_labs/status/2117772839642386856",
+      "score": 5
+    },
+    {
+      "title": "A daily marketing loop reads analytics, Search Console, Ahrefs and competitors, suggests site changes, and learns from approvals",
+      "source": "@yongfook",
+      "author": "Jon Yongfook",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/yongfook/status/2117555432525099013",
+      "score": 5
+    },
+    {
+      "title": "Ethan Mollick argues concern about AI verification is overstated and shares data from recent models",
+      "source": "@emollick",
+      "author": "Ethan Mollick",
+      "date": "2026-11-07",
+      "primary_url": "https://x.com/emollick/status/2119140502746308674",
+      "score": 5
+    },
+    {
+      "title": "vinyl-gl: a WebGL2 record player that turns songs into groove geometry and a stylus rides it 384,000 times a second",
+      "source": "@rauchg",
+      "author": "Guillermo Rauch",
+      "date": "2026-11-08",
+      "primary_url": "https://x.com/rauchg/status/2119536313712230802",
+      "score": 5
+    },
+    {
+      "title": "Orbital Trace: Mistral Large 4 built a real-time 3D tracker of roughly 19,000 satellites and debris",
+      "source": "@MistralAI",
+      "author": "Mistral AI",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/MistralAI/status/2117574509179900410",
+      "score": 5
+    },
+    {
+      "title": "Hugging Face reproduced the weight-space programming paper with ML Intern",
+      "source": "@NielsRogge",
+      "author": "Niels Rogge",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/NielsRogge/status/2117541532827848972",
+      "score": 5
+    },
+    {
+      "title": "OpenRouter crosses a 10 quadrillion annual token run rate; volume doubles every 10.5 weeks",
+      "source": "@deedydas",
+      "author": "Deedy",
+      "date": "2026-11-02",
+      "primary_url": "https://x.com/deedydas/status/2117185584330645931",
+      "score": 5
+    },
+    {
+      "title": "Gemini 4 Argon in Antigravity drives FreeCAD through an MCP server to model a Brembo GT brake",
+      "source": "@ai_for_success",
+      "author": "Ashutosh Shrivastava",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/ai_for_success/status/2118757076302475274",
+      "score": 4.5
+    },
+    {
+      "title": "Figma Code Layers is open to everyone",
+      "source": "@figma",
+      "author": "Figma",
+      "date": "2026-11-03",
+      "primary_url": "https://x.com/figma/status/2117699180198342775",
+      "score": 4
+    },
+    {
+      "title": "Hugging Face ML Intern is now a Slack bot that evaluates models, builds datasets and fine-tunes",
+      "source": "@huggingface",
+      "author": "Hugging Face",
+      "date": "2026-11-05",
+      "primary_url": "https://x.com/huggingface/status/2118430862949945612",
+      "score": 4
+    },
+    {
+      "title": "World Labs released a real-time world generation demo powered by Atlas",
+      "source": "@jcjohnss",
+      "author": "Justin Johnson",
+      "date": "2026-11-05",
+      "primary_url": "https://x.com/jcjohnss/status/2118431468217414036",
+      "score": 4
+    },
+    {
+      "title": "Re-OCR of 14,483 pages for $1.47 on one GPU with Saturate",
+      "source": "@vanstriendaniel",
+      "author": "Daniel van Strien",
+      "date": "2026-11-02",
+      "primary_url": "https://x.com/vanstriendaniel/status/2117279062565523863",
+      "score": 4
+    },
+    {
+      "title": "LeRobot v0.7.0 is live",
+      "source": "@LeRobotHF",
+      "author": "LeRobot",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/LeRobotHF/status/2118622053628551431",
+      "score": 4
+    },
+    {
+      "title": "Maket Text to Furniture turns a description into a 3D piece with correct dimensions you can place in a floor plan",
+      "source": "@testingcatalog",
+      "author": "TestingCatalog",
+      "date": "2026-11-06",
+      "primary_url": "https://x.com/testingcatalog/status/2118783285123756206",
+      "score": 3
+    },
+    {
+      "title": "LFM3-Omni-2B runs fully offline on an iPhone at about 80 tokens per second",
+      "source": "@xenovacom",
+      "author": "Xenova",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/xenovacom/status/2118024537812217962",
+      "score": 3
+    },
+    {
+      "title": "'Catch Me' was made by a single creative in a couple of days using Runway",
+      "source": "@runwayml",
+      "author": "Runway",
+      "date": "2026-11-02",
+      "primary_url": "https://x.com/runwayml/status/2117300718533312933",
+      "score": 3
+    },
+    {
+      "title": "Claude Code edited a video end to end, from picking quotes and clips to cuts, zooms, music, text and upscaling",
+      "source": "@TheAhmadOsman",
+      "author": "Ahmad",
+      "date": "2026-11-07",
+      "primary_url": "https://x.com/TheAhmadOsman/status/2119039736002249212",
+      "score": 3
+    },
+    {
+      "title": "NVIDIA Agent Toolkit expands, with Lila Sciences, Siemens and Dassault as users",
+      "source": "@NVIDIAAI",
+      "author": "NVIDIA AI",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/NVIDIAAI/status/2118014372845142048",
+      "score": 3
+    },
+    {
+      "title": "Furniture designed with an agent from a mood board and ordered from China",
+      "source": "@levelsio",
+      "author": "Pieter Levels",
+      "date": "2026-11-08",
+      "primary_url": "https://x.com/levelsio/status/2119450489561731567",
+      "score": 3
+    },
+    {
+      "title": "A browser agent books dinner after a single login",
+      "source": "@sydneyrunkle",
+      "author": "Sydney Runkle",
+      "date": "2026-11-04",
+      "primary_url": "https://x.com/sydneyrunkle/status/2118037894422278480",
+      "score": 3
+    }
+  ],
+  "emerging_signals": [
+    {
+      "pattern": "Models editing models",
+      "evidence": "Rikiya Takehi's post (https://x.com/rikiyatakehi/status/2117313742891327994), Hugging Face's reproduction (https://x.com/NielsRogge/status/2117541532827848972), Simon Willison's local weight reading (https://x.com/simonw/status/2117655816581071203) and Daniel van Strien's OCR fix (https://x.com/vanstriendaniel/status/2117661605336928668) all landed within 48 hours.",
+      "what_to_watch": "Whether results hold on larger models and tasks beyond repetition loops."
+    },
+    {
+      "pattern": "Personal agents taking on money tasks",
+      "evidence": "Personal Finance in Claude (https://x.com/claudeai/status/2118403114890137895), Instinct's flight claim (https://x.com/deedydas/status/2117553817013329959), Perplexity Teammates (https://x.com/AravSrinivas/status/2118388400730591469) and Alex Finn's Grok Bot list (https://x.com/AlexFinn/status/2118882927610360204).",
+      "what_to_watch": "Which assistant first handles disputes and refunds end to end."
+    },
+    {
+      "pattern": "Creator apps adding built-in MCPs and plugins",
+      "evidence": "Thariq on Instagram Edits and Roblox Studio (https://x.com/trq212/status/2118822238262853904), Runway Dev in Claude Code (https://x.com/runwayml/status/2118011084955353212), FreeCAD through MCP (https://x.com/ai_for_success/status/2118757076302475274).",
+      "what_to_watch": "Which design and video tools ship official agent interfaces next."
+    },
+    {
+      "pattern": "AI-for-science releases clustering",
+      "evidence": "Pushmeet Kohli says DeepMind will show 'a genuine phase transition in the pace of scientific discovery' in releases over the next few weeks (https://x.com/pushmeet/status/2119373171321196892). This week also brought the Aaronson-Ambainis proof, the vault structure and BioBasicsBench.",
+      "what_to_watch": "The DeepMind science releases."
+    },
+    {
+      "pattern": "Open-weight wave",
+      "evidence": "Kimi K3.1 Pro weights (https://x.com/Kimi_Moonshot/status/2118010528123773297), Ripple-65B (https://x.com/RicursiveAI/status/2118046765857546733), Inkling 2 Small weights planned (https://x.com/thinkymachines/status/2118489527362912566), Pika H3 Flex (https://x.com/pika_labs/status/2117772839642386856).",
+      "what_to_watch": "Whether open models match closed ones on agentic coding."
+    },
+    {
+      "pattern": "Rumor, unconfirmed: Qwen teaser",
+      "evidence": "Alibaba's Qwen account posted only 'The becoming begins.' (https://x.com/Alibaba_Qwen/status/2118674834632978755); TestingCatalog expects Qwen 4, which Alibaba has not confirmed.",
+      "what_to_watch": "An official Qwen release."
+    },
+    {
+      "pattern": "Rumor, unconfirmed: GPT-6.2 Sol",
+      "evidence": "Posts from users say some ChatGPT accounts are routed to GPT-6.2 Sol (https://x.com/kimmonismus/status/2119409780691284404); OpenAI has not announced it.",
+      "what_to_watch": "An official OpenAI model announcement."
+    }
+  ],
+  "flagged_unverified": [
+    {
+      "claim": "GPT-6.2 Sol routing for some ChatGPT users.",
+      "reason": "Based on user sightings relayed by a third-party account; no OpenAI confirmation. Listed under emerging signals as a rumor only.",
+      "attempted_url": "https://x.com/kimmonismus/status/2119409780691284404"
+    },
+    {
+      "claim": "Qwen 4 is coming, following the 'The becoming begins' teaser.",
+      "reason": "The teaser names no model; the Qwen 4 expectation comes from TestingCatalog. Not promoted.",
+      "attempted_url": "https://x.com/Alibaba_Qwen/status/2118674834632978755"
+    },
+    {
+      "claim": "OpenAI teasing Modretro Chromatic with a Codex game-creation integration for Nov 9.",
+      "reason": "Relayed by TestingCatalog; not confirmed on an OpenAI page. Not promoted.",
+      "attempted_url": "https://x.com/testingcatalog/status/2119525387688374726"
+    },
+    {
+      "claim": "Weight-Space Programming: that frontier LLMs 'natively read and write weights'.",
+      "reason": "The page confirms the numbers, but an X community note says the model was given weights as text and used code and forward passes, mostly fixing repetition in thinking mode. The Top Pick states both.",
+      "attempted_url": "https://rikiyat.github.io/blog/weight-space-programming/"
+    },
+    {
+      "claim": "Axiom's 16M-line formalization of the Stacks Project.",
+      "reason": "Axiom's homepage did not mention it when checked, so the claim rests on the post alone. Kept in Viral Breakouts, not Top Picks.",
+      "attempted_url": "https://x.com/axiommathai/status/2118028834515874112"
+    },
+    {
+      "claim": "Karpathy's '47K super nerdy videos' on TristanTube.",
+      "reason": "The post's figure; the site displayed 48 videos and Tristan's tier list names 156 channels. Attributed to the post only.",
+      "attempted_url": "https://x.com/karpathy/status/2119114537442189652"
+    },
+    {
+      "claim": "Perplexity's post saying Computer beat the agency on Get Maine Lobster ads.",
+      "reason": "The case-study page gives a comparison against a non-AI campaign; the page's numbers are used and the agency wording is not.",
+      "attempted_url": "https://pplx.ai/gml"
+    }
+  ],
+  "suggested_refinements": {
+    "sources_to_add": [
+      "@rikiyatakehi: Weight-Space Programming post, 55,947 likes and 9.9M views",
+      "@vanstriendaniel: weight-editing and OCR builds with cost figures",
+      "@deedydas: Instinct flight-claim win",
+      "@SidraMiconi: small-business vision tool",
+      "@ravisparikh: Vork 3D engine",
+      "@axiommathai: Stacks Project formalization",
+      "@psipbc: Aaronson-Ambainis proof",
+      "@DeepSeekHarness: Creator Mode, 2.5M views",
+      "@NielsRogge and @joelniklaus: reproductions and benchmarks",
+      "@thomasmc: satmux"
+    ],
+    "sources_to_drop": [],
+    "topics_to_add": [
+      "AI-for-science: formal proofs, structural biology, lab benchmarks",
+      "Weight-level model editing",
+      "Personal finance and consumer-rights agents",
+      "Hardware and CAD design with agents"
+    ],
+    "topics_to_drop": [],
+    "notes": "Access: X search and a logged-in timeline were not available. Posts came from api.fxtwitter.com profile timelines for about 174 handles (about 20 recent posts each, not full chronological feeds), so the viral sweep covers handles queried only. Window: Nov 2 00:00 ET to Nov 8 23:59 ET. These handles returned 404: DarioAmodei, arthurmensch, xai, aider_ai, LangChainAI, ChatGPTapp, lovable_dev, elevenlabsio, heygen_official, CanvaAI, NotebookLM, MicrosoftCopilot, huggingface_hub, ccanonne_, chatgpt21, benedictevans, ProfessorPlum. Materials-science and building-science posts were thin on X this week; nearest items are OpenAI's physical engineering post, Maket Text to Furniture, the FreeCAD MCP demo, Anthropic's researcher-time data and Mistral's chemistry solver. Security and policy posts (OpenAI's Linux kernel pipeline, GPT-6 Cyber, DeepMind's RSA research) were left for the Research tab. Engagement counts were captured Nov 9 and keep rising. Top Pick pages verified: Claude Personal Finance, Get Maine Lobster, PSI proof, Anthropic vault, OpenAI Images 2.6, OpenAI physical engineering, authors' weight-space blog and the Hugging Face checkpoint."
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "week_start": "2026-11-02",
+  "week_end": "2026-11-08",
+  "generated_at": "2026-11-09T02:30:00Z",
+  "headline": "A Rice group published agent prompts for VASP point-defect studies, and a Nature lab ran 11,000+ steps with humans only maintaining hardware.",
+  "summary_for_scientists": "DefectSkills turns a point-defect DFT workflow into editable agent prompts with defined decision points for the researcher, demonstrated on BaCd2P2. AutoDNA matched expert-optimized DNA synthesis yields in a lab run by an AI planner, DeepMind put cheminformatics skills into Antigravity, and Deep Principle opened the weights of a chemistry and materials model. On the building side, physics-embedded surrogates reproduce truss-tower displacement histories to under 1% on a fixed-topology benchmark.",
+  "lab_pick": {
+    "tab_id": "research",
+    "item_id": "defectskills-agent-skills-vasp-point-defects",
+    "title": "DefectSkills packages a point-defect DFT workflow as human-guided agent prompts, with a worked 90-atom example",
+    "primary_url": "https://arxiv.org/abs/2611.05654",
+    "what_they_did": "The Rice group wrote a set of structured prompts that lets a coding agent run VASP point-defect calculations, with the researcher responding at defined decision points: computing environment, research scope, supercell and charge states, and thermodynamic conditions. At each of those points the researcher can accept the suggested default or choose an alternative.",
+    "result": "On BaCd2P2 (Materials Project mp-8279) at HSE06, the demo covered 26 candidate-phase and 29 charge-state calculations in a 3x3x2, 90-atom supercell that the authors chose to limit the cost of the demonstration. The authors report three agent errors that needed their intervention (a restart from the wrong structure after a numerically unstable calculation, a mis-created directory, and a custom solver used in place of the prescribed py-sc-fermi), and those findings refined the prompts.",
+    "why_researchers_care": "The expertise lives in plain prompt files a group can read and edit, and the decision points and failure list let a simulation scientist judge the workflow line by line. Phase competition, charge states and job bookkeeping become a recipe a new student can inherit.",
+    "how_to_share": "Open the public repository in a lab meeting and walk through the supercell and charge-state decision points. Then take a 20-minute slot to draft the same kind of prompt file for one calculation your group repeats, such as a convergence test."
+  },
+  "sections": [
+    {
+      "section_id": "materials_chemistry",
+      "title": "Materials & Chemistry",
+      "description": "Agents, language models and databases applied to discovering and characterizing molecules and materials.",
+      "items": [
+        {
+          "tab_id": "research",
+          "item_id": "leap-closed-loop-perovskite-additives",
+          "title": "LEAP pairs a literature-trained language model with active learning to pick perovskite precursor additives",
+          "source": "Communications Materials",
+          "primary_url": "https://www.nature.com/articles/s43246-026-01407-3",
+          "one_line": "A literature-trained language model turns mechanism knowledge into interpretable descriptors for Bayesian optimization of perovskite precursor additives. In a proof-of-concept run, two later-round additives averaged 20.13% and 20.87% power conversion efficiency against 19.25% for the control, and the best device reached 21.32%.",
+          "try_this": "Run the same descriptor-plus-active-learning loop on one additive or dopant question where your group already has a paper trail."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "context-aware-nmr-structure-elucidation",
+          "title": "Adding precursor context lifts automated NMR structure elucidation to 95.4% top-15 accuracy",
+          "source": "arXiv",
+          "primary_url": "https://arxiv.org/abs/2611.07133",
+          "one_line": "Giving an automated NMR structure-elucidation system the precursors used to make a compound lifts top-15 accuracy to as high as 95.4% for molecules up to 40 heavy atoms (author-reported).",
+          "try_this": "Take 20 past samples with known routes and compare your spectrum-interpretation tool with and without route notes."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "llms-need-specialist-tools-msms-structure-elucidation",
+          "title": "Without tools a frontier model gets 2% top-1 on unfamiliar MS/MS structures; with de novo generators it reaches up to 38%",
+          "source": "arXiv",
+          "primary_url": "https://arxiv.org/abs/2611.03308",
+          "one_line": "On a 100-analyte MS/MS benchmark, a frontier model without tools reached 2% top-1 out of distribution, and with de novo structure generators as tools it reached up to 38%, beating the standalone generators (author-reported).",
+          "try_this": "Wire a model to one tool your group already trusts and compare it against the tool alone."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "uma-lammps-pair-style-gpu-scaling",
+          "title": "UMA runs inside LAMMPS on NVIDIA and Intel GPUs, reaching about 779k atoms on 32 Intel nodes",
+          "source": "arXiv",
+          "primary_url": "https://arxiv.org/abs/2611.03892",
+          "one_line": "A new pair_style uma runs the UMA machine-learned potential inside LAMMPS NPT molecular dynamics on NVIDIA and Intel GPUs, reaching about 779k atoms on 32 Intel nodes and raising single-device capacity 8.0x on H200 (author-reported).",
+          "try_this": "Swap the pair_style in an existing LAMMPS input and compare against your current potential on a system you know."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "deep-principle-hydrogen-1-0-science-model",
+          "title": "Deep Principle opens the weights of Hydrogen-1.0, a 753B chemistry and materials model post-trained from GLM-5.3",
+          "source": "Deep Principle",
+          "primary_url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0/",
+          "one_line": "The 753B chemistry and materials model Hydrogen-1.0 ships with MIT-licensed BF16 weights on Hugging Face, plus NVFP4 and MXFP4 versions. The company reports a FrontierScience Research pass rate of 38.33% against 33.33% for GPT-6 Astra (company-run evaluation).",
+          "try_this": "Put five of your group's own chemistry questions to it and to your current model, side by side."
+        },
+        {
+          "tab_id": "launches",
+          "item_id": "deepmind-agentic-cheminformatics-antigravity",
+          "title": "DeepMind adds Cheminformatics Skills to Antigravity and offers 10,000 scientists six months of top-tier access free",
+          "source": "Google DeepMind",
+          "primary_url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+          "one_line": "Cheminformatics Skills in Google Antigravity build on RDKit, ChEMBL and PubChem, and an agent proposed rigidified macrocycles with synthesis routes in about an hour on a workflow that normally takes days per iteration. Google offers 10,000 scientists its highest usage tier free for six months, with applications open.",
+          "try_this": "Apply for the access and rerun one multi-day property-modeling workflow."
+        }
+      ]
+    },
+    {
+      "section_id": "simulation_building_science",
+      "title": "Simulation & Building Science",
+      "description": "Surrogate models and control approaches for structures and building systems.",
+      "items": [
+        {
+          "tab_id": "research",
+          "item_id": "physics-embedded-operators-structural-dynamics",
+          "title": "Physics-embedded structural surrogates reach 0.73–0.76% displacement-history error on a fixed-topology 80 m truss benchmark",
+          "source": "arXiv",
+          "primary_url": "https://arxiv.org/abs/2611.07059",
+          "one_line": "Three physics-embedded surrogates (MR, PGMON, MOSAIC) map structural features to modal quantities and rebuild the frequency response analytically. On two 20,000-design fixed-topology benchmarks, mean displacement-history error was 0.73-0.76% for an 80 m steel truss tower and 0.029-0.116% for a tapered shell beam, against band-limited modal references; this is a benchmark result, not field or seismic validation, and the authors list neural-operator comparison as future work.",
+          "try_this": "Reproduce the modal-reconstruction idea on a frame model you already have FE results for."
+        },
+        {
+          "tab_id": "research",
+          "item_id": "hvac-control-pid-to-rl-review",
+          "title": "A review maps four places where reinforcement learning attaches to building HVAC control loops",
+          "source": "arXiv",
+          "primary_url": "https://arxiv.org/abs/2611.03152",
+          "one_line": "A review with no new experiments maps four places where reinforcement learning attaches to building HVAC control: gain tuner, controller replacement, hybrid with model predictive control, and setpoint and schedule generator.",
+          "try_this": "Use the four-way taxonomy to place your current control project on one plant diagram."
+        }
+      ]
+    },
+    {
+      "section_id": "lab_automation",
+      "title": "Lab Automation & Scientific Reasoning",
+      "description": "Autonomous labs, agents that operate instruments, and formal mathematics.",
+      "items": [
+        {
+          "tab_id": "research",
+          "item_id": "autodna-nature-ai-native-wet-lab",
+          "title": "Nature: AutoDNA runs a biomolecular lab across 20+ instrument types and more than 11,000 steps",
+          "source": "Nature",
+          "primary_url": "https://www.nature.com/articles/s41586-026-11228-6",
+          "one_line": "AutoDNA plans and runs molecular-biology experiments across 20+ instrument types and more than 11,000 steps with human involvement limited to hardware maintenance. It matched expert-optimized enzymatic DNA synthesis yields and ran concurrent protocols 3.2x faster (paper-reported).",
+          "try_this": "Draw one recurring test sequence as a step graph and mark which steps could overlap."
+        },
+        {
+          "tab_id": "youtube",
+          "item_id": "pnnl-autonomous-lab-designs-own-experiments",
+          "title": "PNNL's Autonomous Lab That Designs Its Own Experiments",
+          "source": "Pacific Northwest National Laboratory",
+          "primary_url": "https://www.youtube.com/watch?v=Xos4zYRkKDw",
+          "one_line": "PNNL shows an autonomous lab where agents read results mid-experiment and change the protocol, for recovering critical materials from complex chemical mixtures. The agents run a techno-economic analysis, form an extraction hypothesis and write the code that drives a liquid-handling robot."
+        },
+        {
+          "tab_id": "x",
+          "item_id": "psi-aaronson-ambainis-conjecture-lean-proof",
+          "title": "Physical Superintelligence reports a proof of the Aaronson-Ambainis conjecture, accepted by Lean",
+          "source": "Physical Superintelligence on X",
+          "primary_url": "https://x.com/psipbc/status/2118706269506949152",
+          "one_line": "Physical Superintelligence reports a proof of the Aaronson-Ambainis conjecture that Lean accepted (company-reported on X)."
+        }
+      ]
+    },
+    {
+      "section_id": "rd_adoption",
+      "title": "How R&D Teams Are Adopting AI",
+      "description": "Usage data and adoption stories from research groups.",
+      "items": [
+        {
+          "tab_id": "research",
+          "item_id": "anthropic-how-researchers-use-claude-scinet",
+          "title": "Anthropic analyzed 207,049 research sessions: scientists lean on AI for data analysis and writing, and barely for ideas",
+          "source": "Anthropic",
+          "primary_url": "https://www.anthropic.com/research/how-researchers-use-claude",
+          "one_line": "Across 207,049 research sessions (Aug 2 to Sep 30, 2026), data analysis is 33.7% of Claude sessions and 48.1% of Claude Code sessions against 27.6% of researcher time, while ideation is 4.2% of sessions against 7.1% of time (Anthropic-reported).",
+          "try_this": "Log one week of your group's tasks against a category list and compare with where AI hours go."
+        },
+        {
+          "tab_id": "social",
+          "item_id": "10x-genomics-cto-ai-adoption-as-much-or-as-little",
+          "title": "10x Genomics CTO: coders have adopted AI, experimentation is 'extremely niche'",
+          "source": "R&D World",
+          "primary_url": "https://www.rdworldonline.com/10x-genomics-cto-expects-ai-to-leave-some-of-biomedical-rd-painfully-slow-while-other-parts-are-massively-accelerated/",
+          "one_line": "The 10x Genomics CTO says nearly all coders have adopted AI while use in experimentation is extremely niche. Their adoption tactic is to let scientists use it as much or as little as they like."
+        },
+        {
+          "tab_id": "social",
+          "item_id": "discovered-materials-1m-five-open-problems",
+          "title": "A Y Combinator startup puts $1M behind five open materials-science problems for AI",
+          "source": "TechCrunch",
+          "primary_url": "https://techcrunch.com/2026/11/05/a-yc-startup-is-putting-1m-behind-five-unsolved-materials-science-problems-for-ai/",
+          "one_line": "Discovered Materials has put a $1M prize pool behind five open materials-science problems for AI; frontier models with internet access worked autonomously for days on each and made little headway.",
+          "try_this": "Pick one of the five problems as a journal-club discussion."
+        }
+      ]
+    },
+    {
+      "section_id": "research_tools",
+      "title": "Tools Researchers Can Use Now",
+      "description": "Agent skills, workspaces and software a research group can pick up this week.",
+      "items": [
+        {
+          "tab_id": "research",
+          "item_id": "sciencecua-skills-for-scientific-software-agents",
+          "title": "ScienceCUA turns software manuals into reusable skills for agents that operate scientific software",
+          "source": "arXiv",
+          "primary_url": "https://arxiv.org/abs/2611.03238",
+          "one_line": "ScienceCUA builds reusable skills from software manuals and refines them from execution feedback, raising average task success by up to 7.23 percentage points on scientific-software tasks, with two cleaned benchmarks released (author-reported).",
+          "try_this": "Turn the manual of one analysis package your group uses into a skill file and test it on a routine task."
+        }
+      ]
+    }
+  ],
+  "try_in_the_lab": [
+    "Write a decision-point prompt file for one calculation your group repeats, run it with an agent on three archived cases, and log every point where a person has to step in.",
+    "Run an NMR or MS/MS interpretation tool on 20 past samples with and without synthesis-route context or an added structure generator, and count the changes in top-ranked answers.",
+    "Swap pair_style uma into an existing LAMMPS input and compare against your current potential on a system with known behavior.",
+    "Rebuild the modal-reconstruction idea on a frame or tower model you have FE results for, and compare displacement histories against your own reference."
+  ],
+  "coverage_note": "Building science is represented by one fixed-topology structural benchmark and one HVAC review this week; neither is field-validated or tested on real buildings."
+}
